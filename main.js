@@ -15,6 +15,7 @@ class Participant {
         this.criticalInjuries = criticalInjuries;
         this.cover = null; // { type: string, hp: number, maxHp: number }
         this.humanShield = null; // Store reference to participant being used as shield
+        this.isGrappling = false;
     }
 
     rollInitiative() {
@@ -73,22 +74,51 @@ class Participant {
     }
 
     takeHumanShield(target) {
-        if (this.humanShield || this.cover || target.health <= 0) return false;
-        this.humanShield = target;
+        if (this.humanShield || this.cover || 
+            target.health <= 0 || target.humanShield ||
+            this.weapons.some(w => w.name === 'Shield')) {
+            return false;
+        }
+        
+        this.humanShield = target.name;
+        this.isGrappling = true;
         return true;
     }
 
     releaseHumanShield() {
         if (!this.humanShield) return;
-        if (this.humanShield.health <= 0) {
-            // Convert dead human shield to regular cover
-            this.cover = {
-                type: "Dead Body",
-                hp: this.humanShield.body || 10, // Default to 10 if BODY stat not present
-                maxHp: this.humanShield.body || 10
-            };
+        
+        const encounter = encounters.find(e => 
+            e.participants.some(p => p.name === this.humanShield)
+        );
+        
+        if (!encounter) return;
+        
+        const humanShield = encounter.participants.find(p => 
+            p.name === this.humanShield
+        );
+        
+        if (humanShield) {
+            if (humanShield.health <= 0) {
+                // Convert to corpse shield with half maxHealth
+                this.cover = {
+                    type: "Corpse Shield",
+                    hp: Math.floor(humanShield.maxHealth / 2),
+                    maxHp: Math.floor(humanShield.maxHealth / 2)
+                };
+            }
         }
+        
         this.humanShield = null;
+        this.isGrappling = false;
+    }
+
+    getHumanShieldUsers() {
+        return encounters.flatMap(e => 
+            e.participants.filter(p => 
+                p.humanShield === this.name && p.health > 0
+            )
+        );
     }
 
     toJSON() {
@@ -107,7 +137,7 @@ class Participant {
             weapons: this.weapons,
             criticalInjuries: this.criticalInjuries,
             cover: this.cover,
-            humanShield: this.humanShield ? this.humanShield.name : null
+            humanShield: this.humanShield
         };
     }
 }
@@ -240,9 +270,12 @@ class Encounter {
                     
                     const effectiveBodyArmor = p.getEffectiveArmor('body');
                     const effectiveHeadArmor = p.getEffectiveArmor('head');
+
+                    const humanShieldedBy = this.participants.find(attacker => attacker.humanShield === p.name);
+                    const isBeingUsedAsShield = !!humanShieldedBy;
                     
                     return `
-                    <div class="participant ${this.active && index === this.currentTurn ? 'active-participant' : ''} ${p.health <= 0 ? 'flatlined' : ''}">
+                    <div class="participant ${this.active && index === this.currentTurn ? 'active-participant' : ''} ${p.health <= 0 ? 'flatlined' : ''} ${isBeingUsedAsShield ? 'using-human-shield' : ''}">
                         <div class="participant-name">${p.name} ${p.health <= 0 ? '(FLATLINED)' : ''}</div>
                         
                         <div class="participant-stats">
@@ -297,11 +330,11 @@ class Encounter {
                                 </select>
                                 <button onclick="takeCover(${this.id}, '${p.name}')">Take Cover</button>
                             `}
-                            ${!p.cover && !p.humanShield ? `
+                            ${!p.cover && !p.humanShield && !isBeingUsedAsShield ? `
                                 <select id="human-shield-${this.id}-${p.name}">
                                     <option value="">Select Human Shield</option>
                                     ${this.participants.filter(target => 
-                                        target.name !== p.name && target.health > 0 && !target.humanShield
+                                        target.name !== p.name && target.health > 0 && !target.humanShield && !this.participants.find(attacker => attacker.humanShield === target.name)
                                     ).map(target => 
                                         `<option value="${target.name}">${target.name}</option>`
                                     ).join('')}
@@ -310,7 +343,7 @@ class Encounter {
                             ` : ''}
                             ${p.humanShield ? `
                                 <div class="human-shield">
-                                    Using ${p.humanShield.name} as human shield
+                                    Using ${this.participants.find(hs => hs.name === p.humanShield)?.name || 'Unknown'} as human shield
                                     <button onclick="releaseHumanShield(${this.id}, '${p.name}')">Release</button>
                                 </div>
                             ` : ''}
@@ -716,7 +749,7 @@ function applyDamage(encounterId, participantName) {
 
     // Find if someone is using this participant as a human shield
     const shieldUser = encounter.participants.find(p => 
-        p.humanShield && p.humanShield.name === participant.name
+        p.humanShield === participant.name
     );
 
     if (shieldUser) {
@@ -725,7 +758,13 @@ function applyDamage(encounterId, participantName) {
     } else if (participant.humanShield) {
         // This participant is using someone as a shield
         // Apply damage to the human shield instead
-		const humanShield = participant.humanShield;
+		const humanShield = encounter.participants.find(p => p.name === participant.humanShield);
+		if (!humanShield) {
+			participant.releaseHumanShield();
+			encounter.render();
+			localStorage.setItem('encounters', JSON.stringify(encounters.map(e => e.toJSON())));
+			return;
+		}
 		const damageToShield = incomingDamage;
 		
 		applyDamageToParticipant(humanShield, damageToShield, location, encounter);
@@ -745,65 +784,115 @@ function applyDamage(encounterId, participantName) {
 }
 
 // Helper function to handle the actual damage application
-function applyDamageToParticipant(participant, incomingDamage, location, encounter, shieldUser = null) {
-    const previousHealth = participant.health;
+function applyDamageToParticipant(participant, incomingDamage, location, encounter, damageSource = null) {
+    const originalHealth = participant.health;
+    let remainingDamage = incomingDamage;
 
-    // Handle cover first if present
-    if (participant.cover) {
-        if (incomingDamage >= participant.cover.hp) {
-            incomingDamage -= participant.cover.hp;
-            participant.cover = null;
-        } else {
-            participant.cover.hp -= incomingDamage;
-            incomingDamage = 0;
-        }
-    }
+    const shieldUsers = participant.getHumanShieldUsers();
     
-    // Handle shield if active and there's remaining damage
-    if (incomingDamage > 0 && participant.shieldActive && participant.shield > 0) {
-        if (incomingDamage >= participant.shield) {
-            incomingDamage -= participant.shield;
-            participant.shield = Math.max(0, participant.shield - 1);
-            if (participant.shield === 0) {
-                participant.shieldActive = false;
-            }
-        } else {
-            incomingDamage = 0;
-        }
+    if (shieldUsers.length > 0 && damageSource && damageSource.rangeType === 'RANGED' && location !== 'head') {
+        const shieldUser = shieldUsers[0];
+        remainingDamage = applyHumanShieldDamage(participant, shieldUser, remainingDamage, location, encounter);
+    } else {
+        remainingDamage = applyStandardDamage(participant, remainingDamage, location);
     }
-    
-    // Handle remaining damage with body/head armor
-    if (incomingDamage > 0) {
-        const baseArmor = participant.getEffectiveArmor(location);
-        if (incomingDamage >= baseArmor) {
-            const effectiveDamage = Math.max(0, incomingDamage - baseArmor);
-            participant.health = Math.max(0, participant.health - effectiveDamage);
+
+    if (participant.health <= 0) {
+        handleParticipantDeath(participant, encounter);
+        
+        shieldUsers.forEach(shieldUser => {
+            shieldUser.releaseHumanShield();
             
-            // Apply SP ablation
+            const overflow = Math.abs(participant.health);
+            if (overflow > 0) {
+                applyDamageToParticipant(
+                    shieldUser,
+                    overflow,
+                    location,
+                    encounter,
+                    { rangeType: 'OVERRUN', source: participant.name }
+                );
+            }
+        });
+    }
+
+    updatePlayerCharacterState(participant);
+}
+
+function applyHumanShieldDamage(target, shieldUser, damage, location, encounter) {
+    let remainingDamage = damage;
+    
+    remainingDamage = applyStandardDamage(target, remainingDamage, location);
+    
+    if (target.health <= 0) {
+        shieldUser.releaseHumanShield();
+        
+        if (remainingDamage > 0) {
+            applyStandardDamage(shieldUser, remainingDamage, location);
+        }
+    }
+    
+    return 0;
+}
+
+function applyStandardDamage(participant, damage, location) {
+    let remainingDamage = damage;
+    
+    if (participant.cover) {
+        const coverDamage = Math.min(remainingDamage, participant.cover.hp);
+        participant.cover.hp -= coverDamage;
+        remainingDamage -= coverDamage;
+        
+        if (participant.cover.hp <= 0) {
+            participant.cover = null;
+        }
+    }
+    
+    if (remainingDamage > 0 && participant.shieldActive && participant.shield > 0) {
+        const shieldProtection = Math.min(remainingDamage, participant.shield);
+        participant.shield -= shieldProtection;
+        remainingDamage -= shieldProtection;
+        
+        if (participant.shield <= 0) {
+            participant.shieldActive = false;
+        }
+    }
+    
+    if (remainingDamage > 0) {
+        const armor = location === 'head' ? participant.headArmor : participant.bodyArmor;
+        
+        if (remainingDamage >= armor) {
+            const effectiveDamage = remainingDamage - armor;
+            participant.health = Math.max(-participant.maxHealth, participant.health - effectiveDamage);
+            
             if (location === 'head') {
                 participant.headArmor = Math.max(0, participant.headArmor - 1);
             } else {
                 participant.bodyArmor = Math.max(0, participant.bodyArmor - 1);
             }
             
-            // Handle critical injuries if dropped to 0
-            if (participant.health <= 0) {
-                handleCriticalInjury(participant, location, encounter);
-            }
+            remainingDamage = 0;
+        } else {
+            remainingDamage = 0;
         }
     }
+    
+    return remainingDamage;
+}
 
-    updatePlayerCharacterState(participant);
-
-    // If this participant is a human shield and dies, release them and apply remaining damage to the shield user
-    if (shieldUser && participant.health <= 0) {
-        shieldUser.releaseHumanShield();
-        const remainingDamage = Math.abs(participant.health); // Convert negative health to positive damage
-
-        if (remainingDamage > 0) {
-            // Apply remaining damage to the shield user
-			applyDamageToParticipant(shieldUser, remainingDamage, location, encounter);
-        }
+function handleParticipantDeath(participant, encounter) {
+    const criticalInjury = rollCriticalInjury('Body');
+    if (criticalInjury && !participant.criticalInjuries.some(ci => ci.name === criticalInjury.name)) {
+        participant.criticalInjuries.push({ ...criticalInjury, autoApplied: true });
+    }
+    
+    participant.getHumanShieldUsers().forEach(user => {
+        user.releaseHumanShield();
+        encounter.render();
+    });
+    
+    if (encounter.active) {
+        participant.resetInitiative();
     }
 }
 
@@ -943,6 +1032,7 @@ function importEncounters(event) {
                         if (p.shieldActive !== undefined) {
                             participant.shieldActive = p.shieldActive;
                         }
+                        participant.humanShield = p.humanShield || null;
                         return participant;
                     });
                     encounter.active = encounterData.active;
@@ -1006,6 +1096,7 @@ function loadEncounters() {
                 if (p.shieldActive !== undefined) {
                     participant.shieldActive = p.shieldActive;
                 }
+                participant.humanShield = p.humanShield || null;
                 return participant;
             });
             encounter.active = encounterData.active;
@@ -1374,9 +1465,25 @@ function releaseHumanShield(encounterId, participantName) {
     if (!encounter) return;
 
     const participant = encounter.participants.find(p => p.name === participantName);
-    if (participant) {
-        participant.releaseHumanShield();
+    if (!participant) return;
+
+    const humanShield = encounter.participants.find(p => p.name === participant.humanShield);
+    if (!humanShield) {
+        participant.humanShield = null;
         encounter.render();
         localStorage.setItem('encounters', JSON.stringify(encounters.map(e => e.toJSON())));
+        return;
     }
+
+    if (humanShield.health <= 0) {
+        // Convert dead human shield to regular cover with half maxHealth
+        participant.cover = {
+            type: "Dead Body",
+            hp: Math.floor(humanShield.maxHealth / 2),
+            maxHp: Math.floor(humanShield.maxHealth / 2)
+        };
+    }
+    participant.humanShield = null;
+    encounter.render();
+    localStorage.setItem('encounters', JSON.stringify(encounters.map(e => e.toJSON())));
 }
