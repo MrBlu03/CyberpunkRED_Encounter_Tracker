@@ -87,9 +87,9 @@
                     <input type="number" id="pc-shield" placeholder="Shield SP">
                     <input type="text" id="pc-weapon-name" placeholder="Weapon Name">
                     <input type="text" id="pc-weapon-damage" placeholder="Weapon Damage (e.g. 3d6)">
-                    <button onclick="savePlayerCharacter()">Save Character</button>
                 </div>
                 <div class="import-export-controls">
+					<button onclick="savePlayerCharacter()">Save Character</button>
                     <button onclick="exportPlayerCharacters()">Export All Characters</button>
                     <input type="file" id="importPCFile" accept=".json" style="display: none" onchange="importPlayerCharacters(event)">
                     <button onclick="document.getElementById('importPCFile').click()">Import Characters</button>
