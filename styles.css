@@ -1,6 +1,9 @@
+* {
+    font-family: 'Bruno Ace SC', monospace;
+}
+
 body {
     background-color: #111;
-    font-family: 'Courier New', monospace;
     color: #e0e0e0;
     transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
 }
