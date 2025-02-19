@@ -1,0 +1,647 @@
+body {
+    background-color: #111;
+    font-family: 'Courier New', monospace;
+    color: #e0e0e0;
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+#app {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 20px;
+    padding: 20px;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+#initiative-tracker {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: auto;
+    height: 100%;
+}
+
+.section {
+    border: 1px solid #444;
+    background-color: #222;
+    padding: 15px;
+    overflow-y: auto;
+    border-radius: 5px;
+    transition: background-color 0.5s ease-in-out, border-color 0.5s ease-in-out;
+    max-height: 100%;
+}
+
+.encounter {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.encounter {
+    border-top: 1px solid #444;
+    padding-top: 20px;
+}
+
+.participant {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 10px 0;
+    padding: 12px;
+    background-color: #333;
+    border-left: 4px solid #c00; /* Darker red */
+    border-radius: 3px;
+    transition: background-color 0.5s ease-in-out, border-color 0.5s ease-in-out;
+}
+
+.participant-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 8px;
+}
+
+.stat-item {
+    padding: 4px;
+    border-left: 2px solid #c00; /* Darker red */
+    line-height: 1.4;
+}
+
+.active-participant {
+    background-color: #555;
+    border: 1px solid #ff6b6b; /* Brighter red */
+    transform: scale(1.02);
+    transition: background-color 3s ease-in-out, border-color 3s ease-in-out, transform 3s ease-in-out;
+}
+
+.flatlined {
+    background-color: #3a0a0a;
+    border: 1px solid #ff0000;
+    opacity: 0.7;
+    transition: 
+        background-color 1s ease-in-out, 
+        border-color 1s ease-in-out, 
+        opacity 1s ease-in-out;
+    animation: flatlinePulse 2s infinite alternate;
+}
+
+@keyframes flatlinePulse {
+    from {
+        box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+    }
+    to {
+        box-shadow: 0 0 20px rgba(255, 0, 0, 0.9);
+    }
+}
+
+.round-counter {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.health-tracker,
+.initiative-controls,
+.character-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.armor-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.shield-toggle {
+    background-color: #555;
+    padding: 3px 8px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.5s ease-in-out;
+}
+
+.shield-active {
+    background-color: #0a0;
+}
+
+button {
+    background-color: #f88; /* Lighter red */
+    color: #111;
+    border: none;
+    padding: 6px 12px;
+    cursor: pointer;
+    margin: 2px;
+    border-radius: 3px;
+    transition: background-color 0.5s ease-in-out;
+}
+
+button:hover {
+    background-color: #faa; /* Lighter red hover */
+}
+
+button:disabled {
+    background-color: #772;
+    cursor: not-allowed;
+    transition: background-color 0.5s ease-in-out;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    background-color: #333;
+    color: #c00; /* Darker red */
+    border: 1px solid #c00; /* Darker red */
+    padding: 6px;
+    margin: 2px;
+    border-radius: 3px;
+}
+
+.import-export-controls,
+.npc-controls,
+.player-character-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.import-export-info,
+.npc-details {
+    color: #888;
+    font-size: 0.9em;
+    font-style: italic;
+}
+
+.player-character-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+#player-character-manager {
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr 1fr;  /* Split into two equal rows */
+    gap: 20px;
+    height: calc(100vh - 40px);  /* Full height minus padding */
+    position: sticky;
+    top: 20px;
+}
+
+#player-character-manager .section {
+    flex: 1;
+    overflow-y: auto;
+    margin: 0;
+    max-height: 100%;
+}
+
+.participant-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #e00; /* Darker red */
+    transition: color 0.5s ease-in-out;
+}
+
+.flatlined .participant-name {
+    text-decoration: line-through;
+    text-decoration-color: #f00;
+    transition: text-decoration-color 0.5s ease-in-out;
+}
+
+/* Dice Roller Styles */
+#dice-roller {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 15px;
+    margin-top: 0; /* Increased from existing or none */
+    height: auto;
+    box-sizing: border-box;
+    gap: 10px;
+}
+
+#dice-input {
+    margin-bottom: 5px;
+}
+
+.dice-presets {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.dice-presets button {
+    padding: 5px 10px;
+    background-color: #666;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#dice-result {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#roll-history {
+    margin-top: 10px;
+    font-size: 0.8em;
+    color: #aaa;
+}
+#critical-injury-result {
+    color: #ff0; /* Yellow */
+    font-weight: bold;
+    margin-top: 10px;
+    padding: 8px;
+    border: 1px solid #ff0;
+    border-radius: 5px;
+    background-color: #440;
+    display: none; /* Hide by default */
+    width: 100%; /* Take full width of container */
+}
+.critical-injury {
+    display: inline-block;
+    background-color: #440;
+    padding: 4px 8px;
+    margin: 2px;
+    border-radius: 3px;
+    border: 1px solid #ff0;
+    color: #ff0;
+}
+
+.critical-injury:hover {
+    background-color: #660;
+}
+.injury-description {
+    display: block;
+    font-size: 0.9em;
+    color: #aaa;
+    margin-left: 12px;
+    margin-top: 4px;
+    font-style: italic;
+}
+.auto-crit-message {
+    color: #ff0;
+    font-style: italic;
+    margin-top: 4px;
+    font-size: 0.9em;
+}
+.death-saves {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 8px;
+    padding: 8px;
+    background-color: #330000;
+    border-radius: 3px;
+}
+
+.death-save-counter {
+    color: #ff0000;
+    font-weight: bold;
+}
+
+.death-save-buttons {
+    display: flex;
+    gap: 5px;
+}
+.button-with-icon {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.button-with-icon i {
+    font-size: 1.2em;
+}
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Position above the button */
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+.encounter-select {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+}
+
+.export-group {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.player-actions {
+    display: flex;
+    gap: 5px;
+    margin-top: 5px;
+}
+.encounter {
+    position: relative;
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.encounter.selected {
+    border-color: #00ff44;
+    background-color: rgba(0, 255, 68, 0.1);
+}
+
+.encounter-select-wrapper {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: #333;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.encounter-select-wrapper input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+}
+
+.encounter-select-wrapper label {
+    color: #fff;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+.turret-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 5px 0;
+}
+
+.turret-controls label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.turret-controls input[type="number"] {
+    width: 80px;
+}
+
+.turret-controls input[type="checkbox"] {
+    margin: 0;
+    cursor: pointer;
+}
+
+/* Random Encounter Generator Styles */
+.generator-section {
+    min-height: auto;
+    margin-bottom: 20px;
+    padding: 15px !important;
+}
+
+.encounter-generator {
+    background-color: #333;
+    padding: 12px;
+    border-radius: 4px;
+}
+
+.generator-controls {
+    width: 100%;
+}
+
+.generator-row {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap */
+    gap: 12px;
+    align-items: center;
+    justify-content: flex-start; /* Align items to the start */
+    height: auto; /* Remove fixed height */
+}
+
+.generator-group {
+    display: flex;
+    flex-direction: column; /* Stack labels and inputs */
+    align-items: flex-start; /* Align items to the start */
+    gap: 4px;
+    margin-bottom: 8px; /* Add spacing between groups */
+}
+
+.generator-group label {
+    color: #aaa;
+    font-size: 0.9em;
+    font-weight: bold;
+    min-width: auto; /* Remove fixed width */
+    display: block; /* Ensure label takes full width */
+}
+
+.generator-group select,
+.generator-group input[type="number"] {
+    width: 100%; /* Make inputs take full width */
+    max-width: 150px; /* Increased max width */
+    height: 36px; /* Increased input height */
+    padding: 0 10px; /* Adjusted padding */
+    background-color: #222;
+    border: 1px solid #444;
+    color: #fff;
+    border-radius: 3px;
+    font-size: 1.0em; /* Increased font size */
+    box-sizing: border-box; /* Include padding and border in width */
+}
+
+.turret-input-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: auto; /* Remove fixed height */
+}
+
+.turret-input-group input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    cursor: pointer; /* Add cursor style */
+}
+
+.turret-input-group input[type="number"] {
+    width: 70px; /* Adjusted width */
+    height: 36px; /* Increased input height */
+    padding: 0 8px; /* Adjusted padding */
+    font-size: 1.0em; /* Increased font size */
+}
+
+.turret-input-group label {
+    color: #aaa;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+.generate-button {
+    height: 30px; /* Reduce button height */
+    padding: 0 16px;
+    background-color: #f88;
+    color: #111;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.9em;
+    margin-left: auto;
+    margin-top: 10px; /* Push button to the next line */
+}
+
+h2 {
+    margin: 0 0 12px 0;
+    font-size: 1.2em;
+}
+
+/* Update section height */
+#initiative-tracker .section:first-child {
+    min-height: calc(14.28vh);  /* 1/7 of viewport height */
+    margin-bottom: 20px;
+    padding: 12px;
+}
+
+h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    text-align: center;  /* Center title */
+}
+
+/* Remove any conflicting styles */
+.generator-controls > *:last-child {
+    margin-bottom: 0;
+}
+
+/* Rest of your existing styles... */
+
+.controls-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.import-export-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 8px;
+    align-items: center;
+    background-color: #333;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.import-export-controls > * {
+    margin-bottom: 0;
+}
+
+.encounter-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    background-color: #333;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+/* Streamlined Fieldset Legends */
+fieldset legend {
+    color: #aaa;
+    font-size: 1em;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 3px;
+    background-color: #333;
+    border: 1px solid #444;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+/* Streamlined Labels in Encounter Controls */
+.controls-group label,
+.npc-controls label,
+.player-character-form label {
+    color: #aaa;
+    font-size: 0.9em;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Streamlined Encounter Select Label */
+.encounter-select-wrapper label {
+    color: #fff;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+.cover-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+    padding: 8px;
+    background-color: #333;
+    border-radius: 3px;
+}
+
+.current-cover {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 8px;
+    background-color: #444;
+    border-radius: 3px;
+}
+
+.human-shield {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 8px;
+    background-color: #443333;
+    border-radius: 3px;
+}
+
+.cover-controls select,
+.cover-controls input[type="number"] {
+    min-width: 100px;
+}
+
+.participant.in-cover {
+    border-left-color: #0c0;
+}
+
+.participant.using-human-shield {
+    border-left-color: #c00;
+}
