@@ -1342,6 +1342,9 @@ function importEncounters(event) {
                         if (p.weaponNotes !== undefined) {
                             participant.weaponNotes = p.weaponNotes;
                         }
+                        if (p.notes !== undefined) {
+                            participant.notes = p.notes;
+                        }
                         return participant;
                     });
                     encounter.active = encounterData.active;
@@ -1408,6 +1411,9 @@ function loadEncounters() {
                 participant.humanShield = p.humanShield || null;
                 if (p.weaponNotes !== undefined) {
                     participant.weaponNotes = p.weaponNotes;
+                }
+                if (p.notes !== undefined) {
+                    participant.notes = p.notes;
                 }
                 return participant;
             });
