@@ -1,11 +1,90 @@
+:root {
+    --bg-primary: #111;
+    --bg-secondary: #222;
+    --text-primary: #e0e0e0;
+    --accent-primary: #f88;
+    --accent-secondary: #c00;
+    --border-color: #444;
+    --critical-color: #ff0;
+    --primary-color: #f88;
+    --secondary-color: #111;
+    --text-color: #e0e0e0;
+    --div-bg: #333;
+    --div-bg-alt: #444;
+    --div-border: #555;
+}
+
+/* Add this near the top of the file, after :root */
+html {
+    --theme-transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* Theme Classes */
+.theme-default {
+    /* Current theme values remain unchanged */
+    --primary-color: #f88;
+    --secondary-color: #111;
+    --text-color: #e0e0e0;
+    --border-color: #444;
+    --accent-color: #c00;
+}
+
+.theme-high-contrast {
+    --bg-primary: #000;
+    --bg-secondary: #111;
+    --text-primary: #fff;
+    --accent-primary: #0ff;
+    --accent-secondary: #0cc;
+    --border-color: #fff;
+    --critical-color: #ff0;
+    --primary-color: #fff;
+    --secondary-color: #000;
+    --text-color: #fff;
+    --accent-color: #0ff;
+}
+
+.theme-cyberpunk {
+    --bg-primary: #120b1d;
+    --bg-secondary: #1d1229;
+    --text-primary: #00ffff;
+    --accent-primary: #ff00ff;
+    --accent-secondary: #bf00ff;
+    --border-color: #00ffff;
+    --critical-color: #ffff00;
+    --primary-color: #0ff;
+    --secondary-color: #120b1d;
+    --text-color: #0ff;
+    --accent-color: #f0f;
+}
+
+.theme-classic {
+    --bg-primary: #f0f0f0;
+    --bg-secondary: #ffffff;
+    --text-primary: #000000;
+    --accent-primary: #ff4444;
+    --accent-secondary: #cc0000;
+    --border-color: #cccccc;
+    --critical-color: #ff0000;
+    --primary-color: #444;
+    --secondary-color: #fff;
+    --text-color: #000;
+    --accent-color: #800;
+    --input-bg: #ffffff;
+    --input-text: #000000;
+    --input-border: #cccccc;
+    --div-bg: #e0e0e0;
+    --div-bg-alt: #d0d0d0;
+    --div-border: #999999;
+}
+
 * {
     font-family: 'Bruno Ace SC', monospace;
 }
 
 body {
-    background-color: #111;
-    color: #e0e0e0;
-    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: var(--theme-transition);
 }
 
 #app {
@@ -26,8 +105,8 @@ body {
 }
 
 .section {
-    border: 1px solid #444;
-    background-color: #222;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-secondary);
     padding: 15px;
     overflow-y: auto;
     border-radius: 5px;
@@ -51,8 +130,8 @@ body {
     gap: 8px;
     margin: 10px 0;
     padding: 12px;
-    background-color: #333;
-    border-left: 4px solid #c00; /* Darker red */
+    background-color: var(--div-bg);
+    border-left: 4px solid var(--accent-secondary); /* Darker red */
     border-radius: 3px;
     transition: background-color 0.5s ease-in-out, border-color 0.5s ease-in-out;
 }
@@ -65,7 +144,7 @@ body {
 
 .stat-item {
     padding: 4px;
-    border-left: 2px solid #c00; /* Darker red */
+    border-left: 2px solid var(--accent-secondary); /* Darker red */
     line-height: 1.4;
 }
 
@@ -130,8 +209,8 @@ body {
 }
 
 button {
-    background-color: #f88; /* Lighter red */
-    color: #111;
+    background-color: var(--accent-primary);
+    color: var(--bg-primary);
     border: none;
     padding: 6px 12px;
     cursor: pointer;
@@ -141,7 +220,7 @@ button {
 }
 
 button:hover {
-    background-color: #faa; /* Lighter red hover */
+    background-color: var(--accent-secondary);
 }
 
 button:disabled {
@@ -152,13 +231,23 @@ button:disabled {
 
 input[type="text"],
 input[type="number"],
-select {
-    background-color: #333;
-    color: #c00; /* Darker red */
-    border: 1px solid #c00; /* Darker red */
+select,
+textarea {
+    background-color: var(--input-bg, #333);
+    color: var(--input-text, var(--text-primary));
+    border: 1px solid var(--input-border, var(--accent-secondary));
     padding: 6px;
     margin: 2px;
     border-radius: 3px;
+}
+
+.theme-classic input[type="text"],
+.theme-classic input[type="number"],
+.theme-classic select,
+.theme-classic textarea {
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #cccccc;
 }
 
 .import-export-controls,
@@ -203,13 +292,13 @@ select {
 .participant-name {
     font-size: 1.2em;
     font-weight: bold;
-    color: #e00; /* Darker red */
+    color: var(--accent-primary); /* Changed from #e00 to use theme color */
     transition: color 0.5s ease-in-out;
 }
 
 .flatlined .participant-name {
     text-decoration: line-through;
-    text-decoration-color: #f00;
+    text-decoration-color: var(--accent-secondary); /* Changed from #f00 to use theme color */
     transition: text-decoration-color 0.5s ease-in-out;
 }
 
@@ -256,11 +345,11 @@ select {
     color: #aaa;
 }
 #critical-injury-result {
-    color: #ff0; /* Yellow */
+    color: var(--critical-color); /* Yellow */
     font-weight: bold;
     margin-top: 10px;
     padding: 8px;
-    border: 1px solid #ff0;
+    border: 1px solid var(--critical-color);
     border-radius: 5px;
     background-color: #440;
     display: none; /* Hide by default */
@@ -272,8 +361,8 @@ select {
     padding: 4px 8px;
     margin: 2px;
     border-radius: 3px;
-    border: 1px solid #ff0;
-    color: #ff0;
+    border: 1px solid var(--critical-color);
+    color: var(--critical-color);
 }
 
 .critical-injury:hover {
@@ -288,7 +377,7 @@ select {
     font-style: italic;
 }
 .auto-crit-message {
-    color: #ff0;
+    color: var(--critical-color);
     font-style: italic;
     margin-top: 4px;
     font-size: 0.9em;
@@ -299,7 +388,8 @@ select {
     align-items: center;
     margin-top: 8px;
     padding: 8px;
-    background-color: #330000;
+    background-color: var(--div-bg);
+    border: 1px solid var(--div-border);
     border-radius: 3px;
 }
 
@@ -384,7 +474,7 @@ select {
     display: flex;
     align-items: center;
     gap: 5px;
-    background-color: #333;
+    background-color: var(--div-bg);
     padding: 5px 10px;
     border-radius: 5px;
     cursor: pointer;
@@ -432,9 +522,10 @@ select {
 }
 
 .encounter-generator {
-    background-color: #333;
+    background-color: var(--div-bg);
     padding: 12px;
     border-radius: 4px;
+    border: 1px solid var(--div-border);
 }
 
 .generator-controls {
@@ -510,8 +601,8 @@ select {
 .generate-button {
     height: 30px; /* Reduce button height */
     padding: 0 16px;
-    background-color: #f88;
-    color: #111;
+    background-color: var(--accent-primary);
+    color: var(--bg-primary);
     border: none;
     border-radius: 3px;
     cursor: pointer;
@@ -559,9 +650,10 @@ h2 {
     gap: 8px;
     margin-bottom: 8px;
     align-items: center;
-    background-color: #333;
+    background-color: var(--div-bg);
     padding: 8px;
     border-radius: 5px;
+    border: 1px solid var(--div-border);
 }
 
 .import-export-controls > * {
@@ -572,9 +664,10 @@ h2 {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    background-color: #333;
+    background-color: var(--div-bg);
     padding: 8px;
     border-radius: 5px;
+    border: 1px solid var(--div-border);
 }
 
 /* Streamlined Fieldset Legends */
@@ -614,8 +707,9 @@ fieldset legend {
     gap: 8px;
     margin: 10px 0;
     padding: 8px;
-    background-color: #333;
+    background-color: var(--div-bg);
     border-radius: 3px;
+    border: 1px solid var(--div-border);
 }
 
 .current-cover {
@@ -647,4 +741,372 @@ fieldset legend {
 
 .participant.using-human-shield {
     border-left-color: #c00;
+}
+
+.damage-calculator {
+    background-color: var(--secondary-color);
+    border: 1px solid var(--border-color);
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+.damage-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.damage-preview {
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+}
+
+/* Remove .notes-section and related styles as they're now redundant */
+
+.participant-notes {
+    width: 100%;
+    min-height: 60px;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    padding: 5px;
+    border-radius: 3px;
+    resize: vertical;
+}
+
+#settings-panel {
+    margin-top: 20px;
+    padding: 15px;
+}
+
+.theme-selector {
+    margin-bottom: 15px;
+}
+
+.color-picker {
+    display: grid;
+    gap: 10px;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+}
+
+/* Settings Icon */
+.settings-icon {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    cursor: pointer;
+    background-color: var(--bg-secondary);
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.settings-icon:hover {
+    transform: rotate(45deg);
+}
+
+.settings-icon svg {
+    color: var(--text-primary);
+}
+
+/* Back Icon */
+.back-icon {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    cursor: pointer;
+    background-color: var(--bg-secondary);
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.back-icon:hover {
+    transform: translateX(-5px);
+}
+
+.back-icon svg {
+    color: var(--text-primary);
+}
+
+/* Settings Page Styles */
+.settings-page {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.settings-container {
+    display: grid;
+    gap: 30px;
+}
+
+.settings-section {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.settings-section h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: var(--accent-primary);
+}
+
+.theme-selector {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.theme-selector select {
+    padding: 8px;
+    border-radius: 4px;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+.data-management {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.danger-button {
+    background-color: #ff4444;
+    color: white;
+}
+
+.danger-button:hover {
+    background-color: #ff0000;
+}
+
+/* Color Picker Improvements */
+.color-picker {
+    display: grid;
+    gap: 15px;
+    margin-top: 15px;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.color-picker label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.color-picker input[type="color"] {
+    width: 60px;
+    height: 30px;
+    padding: 0;
+    border: none;
+    border-radius: 4px;
+}
+
+.weapons-section {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: var(--div-bg);
+    border-radius: 3px;
+    border: 1px solid var(--div-border);
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.weapons-section h4 {
+    margin: 0 0 10px 0;
+    color: var(--accent-primary);
+    font-size: 1em;
+}
+
+.weapon-notes.character-notes {
+    margin-top: 10px;
+    width: 100%;
+    min-height: 60px;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    padding: 8px;
+    border-radius: 4px;
+    resize: vertical;
+    font-family: inherit;
+}
+
+.weapon-notes.character-notes:focus {
+    border-color: var(--accent-primary);
+    outline: none;
+}
+
+.weapon-notes {
+    width: calc(100% - 10px); /* Account for padding and border */
+    min-height: 60px;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    padding: 5px;
+    border-radius: 3px;
+    resize: vertical;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+.weapons-input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 8px 0;
+    width: 100%;
+}
+
+.weapon-field-pair {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.weapon-field-pair input {
+    flex: 1;
+}
+
+.weapon-field-pair button {
+    padding: 2px 8px;
+    background-color: #ff4444;
+    min-width: 30px;
+}
+
+.weapon-name-field {
+    width: 150px;
+}
+
+.weapon-damage-field {
+    width: 100px;
+}
+
+/* PC Manager Styles */
+.pc-quickview {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.manage-pc-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--accent-primary);
+    color: var(--bg-primary);
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.manage-pc-button:hover {
+    background-color: var(--accent-secondary);
+}
+
+.pc-list-compact {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.pc-card-compact {
+    background-color: var(--div-bg);
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid var(--div-border);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.pc-card-compact h4 {
+    margin: 0;
+    color: var(--accent-primary);
+}
+
+.pc-card-compact .stats {
+    font-size: 0.9em;
+    color: var(--text-primary);
+}
+
+.pc-card-compact .actions {
+    display: flex;
+    gap: 5px;
+}
+
+/* Character Form Styles */
+.weapon-field-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 8px;
+    margin-bottom: 8px;
+    align-items: center;
+}
+
+.weapon-field-pair input {
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.weapon-field-pair button {
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+/* Make textareas and inputs more visible */
+textarea, input {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    padding: 8px;
+    border-radius: 4px;
+}
+
+textarea:focus, input:focus {
+    border-color: var(--accent-primary);
+    outline: none;
+}
+
+.character-notes {
+    width: 100%;
+    min-height: 60px;
+    margin: 5px 0;
+    padding: 5px;
+    resize: vertical;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+
+.weapons-section, .critical-injuries-section {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--bg-secondary);
+}
+
+.weapon-entry-readonly {
+    padding: 5px;
+    margin: 2px 0;
+    background-color: var(--bg-primary);
+    border-radius: 4px;
 }

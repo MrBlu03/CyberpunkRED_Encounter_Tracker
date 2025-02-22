@@ -16,6 +16,8 @@ class Participant {
         this.cover = null; // { type: string, hp: number, maxHp: number }
         this.humanShield = null; // Store reference to participant being used as shield
         this.isGrappling = false;
+        this.notes = '';
+        this.customDamagePresets = [];
     }
 
     rollInitiative() {
@@ -121,6 +123,40 @@ class Participant {
         );
     }
 
+    calculateDamage(baseDamage, options = {}) {
+        const {
+            isAP = false,
+            isHalfArmor = false,
+            isHeadshot = false,
+            location = 'body'
+        } = options;
+
+        let armor = this.getEffectiveArmor(location);
+        let finalDamage = baseDamage;
+
+        // Apply armor piercing
+        if (isAP) {
+            armor = Math.max(0, armor - 2);
+        }
+
+        // Apply half armor
+        if (isHalfArmor) {
+            armor = Math.floor(armor / 2);
+        }
+
+        // Apply headshot multiplier
+        if (isHeadshot) {
+            finalDamage *= 2;
+        }
+
+        // Subtract final armor from damage
+        return Math.max(0, finalDamage - armor);
+    }
+
+    saveDamagePreset(name, options) {
+        this.customDamagePresets.push({ name, options });
+    }
+
     toJSON() {
         return {
             name: this.name,
@@ -135,9 +171,12 @@ class Participant {
             shield: this.shield,
             shieldActive: this.shieldActive,
             weapons: this.weapons,
+            weaponNotes: this.weaponNotes, // Add this line
             criticalInjuries: this.criticalInjuries,
             cover: this.cover,
-            humanShield: this.humanShield
+            humanShield: this.humanShield,
+            notes: this.notes,
+            customDamagePresets: this.customDamagePresets
         };
     }
 }
@@ -237,6 +276,8 @@ class Encounter {
                     <input type="number" id="bodyArmor-${this.id}" placeholder="Body SP">
                     <input type="number" id="headArmor-${this.id}" placeholder="Head SP">
                     <input type="number" id="shield-${this.id}" placeholder="Shield SP">
+                    <div id="weapon-fields-${this.id}"></div>
+                    <button type="button" onclick="addWeaponFields(${this.id})">Add Weapon</button>
                     <button onclick="addParticipantToEncounter(${this.id})">Add Participant</button>
                 </div>
                 <label>Encounter Controls</label>
@@ -265,9 +306,27 @@ class Encounter {
             ` : ''}
             <div class="participants">
                 ${this.participants.map((p, index) => {
-                    const weaponsDisplay = p.weapons && p.weapons.length > 0 ? 
-                        `<div class="npc-details">Weapons: ${p.weapons.map(w => `${w.name} (${w.damage})`).join(', ')}</div>` : '';
-                    
+                    const weaponsDisplay = `
+                        <div class="weapons-section">
+                            <h4>Weapons & Notes</h4>
+                            ${p.weapons && p.weapons.length > 0 ? `
+                                <div class="weapons-list">
+                                    ${p.weapons.map(w => `
+                                        <div class="weapon-entry-readonly">
+                                            ${w.name}: ${w.damage}
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            ` : ''}
+                            <textarea 
+                                class="weapon-notes character-notes" 
+                                onchange="updateCharacterNotes(event)"
+                                data-character-name="${p.name}"
+                                placeholder="Enter weapons, abilities, cyberware, and other notes here..."
+                            >${p.notes || ''}</textarea>
+                        </div>
+                    `;
+
                     const effectiveBodyArmor = p.getEffectiveArmor('body');
                     const effectiveHeadArmor = p.getEffectiveArmor('head');
 
@@ -391,13 +450,14 @@ class Encounter {
             </div>
         `;
     }
-    
+
     toJSON() {
         return {
             id: this.id,
             name: this.name,
             participants: this.participants.map(p => p.toJSON()),
             active: this.active,
+            selected: this.selected,
             currentRound: this.currentRound,
             currentTurn: this.currentTurn
         };
@@ -409,7 +469,7 @@ let encounterCounter = 1;
 let playerCharacters = [];
 
 class PlayerCharacter {
-    constructor(name, base, maxHealth, bodyArmor, headArmor, shield, criticalInjuries = []) {
+    constructor(name, base, maxHealth, bodyArmor, headArmor, shield, weapons = [], criticalInjuries = []) {
         this.name = name;
         this.base = parseInt(base);
         this.maxHealth = parseInt(maxHealth);
@@ -418,7 +478,9 @@ class PlayerCharacter {
         this.shield = shield || 0;
         this.shieldActive = false;
         this.health = parseInt(maxHealth);
-        this.criticalInjuries = criticalInjuries;
+        this.weapons = weapons;         // Store weapons here
+        this.criticalInjuries = criticalInjuries; // Store critical injuries here
+        this.notes = '';
     }
 
     toJSON() {
@@ -431,151 +493,267 @@ class PlayerCharacter {
             headArmor: this.headArmor,
             shield: this.shield,
             shieldActive: this.shieldActive,
-            criticalInjuries: this.criticalInjuries
+            weapons: this.weapons,
+            criticalInjuries: this.criticalInjuries,
+            notes: this.notes
         };
     }
 }
 
-function createNewEncounter() {
-    const nameInput = document.getElementById('new-encounter-name');
-    const name = nameInput.value || `Encounter ${encounterCounter}`;
-    const encounter = new Encounter(encounterCounter++, name);
-    encounters.push(encounter);
-    
-    const encountersDiv = document.getElementById('encounters');
-    const newEncounterDiv = document.createElement('div');
-    newEncounterDiv.id = `encounter-${encounter.id}`;
-    newEncounterDiv.className = 'encounter';
-    encountersDiv.appendChild(newEncounterDiv);
-    
-    encounter.render();
-    localStorage.setItem('encounters', JSON.stringify(encounters.map(e => e.toJSON())));
-    localStorage.setItem('encounterCounter', encounterCounter.toString());
-    nameInput.value = '';
-}
-
-function addParticipantToEncounter(encounterId) {
-    const encounter = encounters.find(e => e.id === encounterId);
-    if (!encounter) return;
-
-    const nameInput = document.getElementById(`name-${encounterId}`);
-    const baseInput = document.getElementById(`base-${encounterId}`);
-    const maxHealthInput = document.getElementById(`maxHealth-${encounterId}`);
-    const bodyArmorInput = document.getElementById(`bodyArmor-${encounterId}`);
-    const headArmorInput = document.getElementById(`headArmor-${encounterId}`);
-    const shieldInput = document.getElementById(`shield-${encounterId}`);
-    
-    if (nameInput.value && baseInput.value && maxHealthInput.value) {
-        encounter.addParticipant(
-            nameInput.value, 
-            baseInput.value, 
-            maxHealthInput.value,
-            bodyArmorInput.value || 0,
-            headArmorInput.value || 0,
-            shieldInput.value || 0,
-            []
-        );
-        nameInput.value = '';
-        baseInput.value = '';
-        maxHealthInput.value = '';
-        bodyArmorInput.value = '';
-        headArmorInput.value = '';
-        shieldInput.value = '';
-        localStorage.setItem('encounters', JSON.stringify(encounters.map(e => e.toJSON())));
-    }
-}
-
-function addNPCsToEncounter(encounterId) {
-    const encounter = encounters.find(e => e.id === encounterId);
-    if (!encounter) return;
-
-    const npcTypeSelect = document.getElementById(`npc-type-${encounterId}`);
-    const npcCountInput = document.getElementById(`npc-count-${encounterId}`);
-    const npcType = npcTypeSelect.value;
-    const npcCount = parseInt(npcCountInput.value) || 1;
-    
-    if (NPC_PRESETS[npcType]) {
-        const preset = NPC_PRESETS[npcType];
-        
-        for (let i = 0; i < npcCount; i++) {
-            const namePrefix = preset.namePrefixes[Math.floor(Math.random() * preset.namePrefixes.length)];
-            const nameSuffix = preset.namePool[Math.floor(Math.random() * preset.namePool.length)];
-            const name = `${namePrefix} ${nameSuffix}`;
-            
-            encounter.addParticipant(
-                name,
-                preset.baseInitiative,
-                preset.maxHealth,
-                preset.bodyArmor || 0,
-                preset.headArmor || 0,
-                preset.shield || 0,
-                []
-            );
-        }
-        
-        localStorage.setItem('encounters', JSON.stringify(encounters.map(e => e.toJSON())));
-    }
-}
-
+// Update savePlayerCharacter function to properly save notes
 function savePlayerCharacter() {
-    const nameInput = document.getElementById('pc-name');
-    const baseInput = document.getElementById('pc-base');
-    const maxHealthInput = document.getElementById('pc-maxHealth');
-    const bodyArmorInput = document.getElementById('pc-bodyArmor');
-    const headArmorInput = document.getElementById('pc-headArmor');
-    const shieldInput = document.getElementById('pc-shield');
+    const name = document.getElementById('pc-name').value;
+    const baseInit = parseInt(document.getElementById('pc-base').value) || 0;
+    const maxHealth = parseInt(document.getElementById('pc-maxHealth').value) || 0;
+    const bodyArmor = parseInt(document.getElementById('pc-bodyArmor').value) || 0;
+    const headArmor = parseInt(document.getElementById('pc-headArmor').value) || 0;
+    const shield = parseInt(document.getElementById('pc-shield').value) || 0;
+    const notes = document.getElementById('pc-notes').value;
     
-    if (nameInput.value && baseInput.value && maxHealthInput.value) {
-        const pc = new PlayerCharacter(
-            nameInput.value,
-            baseInput.value,
-            maxHealthInput.value,
-            bodyArmorInput.value || 0,
-            headArmorInput.value || 0,
-            shieldInput.value || 0
-        );
-        
-        // Check if PC with same name exists and replace it
-        const existingIndex = playerCharacters.findIndex(p => p.name === pc.name);
-        if (existingIndex !== -1) {
-            playerCharacters[existingIndex] = pc;
-        } else {
-            playerCharacters.push(pc);
+    // Get weapons from weapon fields
+    const weapons = [];
+    const weaponFields = document.getElementById('pc-weapon-fields').getElementsByClassName('weapon-field-pair');
+    Array.from(weaponFields).forEach(field => {
+        const nameInput = field.querySelector('.weapon-name-field');
+        const damageInput = field.querySelector('.weapon-damage-field');
+        if (nameInput && damageInput && nameInput.value && damageInput.value) {
+            weapons.push({
+                name: nameInput.value,
+                damage: damageInput.value
+            });
         }
-        
-        localStorage.setItem('playerCharacters', JSON.stringify(playerCharacters.map(p => p.toJSON())));
-        renderPlayerCharacterList();
-        
-        // Clear inputs
-        nameInput.value = '';
-        baseInput.value = '';
-        maxHealthInput.value = '';
-        bodyArmorInput.value = '';
-        headArmorInput.value = '';
-        shieldInput.value = '';
+    });
+
+    // Create new character with proper order of parameters
+    const character = new PlayerCharacter(
+        name,
+        baseInit,
+        maxHealth,
+        bodyArmor,
+        headArmor,
+        shield,
+        weapons,    // Pass weapons array here
+        []         // Empty array for critical injuries
+    );
+    character.notes = notes; // Make sure notes are saved
+
+    // Load existing characters
+    let characters = JSON.parse(localStorage.getItem('playerCharacters') || '[]');
+    
+    // Update if character exists, otherwise add new
+    const existingIndex = characters.findIndex(c => c.name === character.name);
+    if (existingIndex >= 0) {
+        // Preserve existing critical injuries and notes when updating
+        character.criticalInjuries = characters[existingIndex].criticalInjuries || [];
+        character.health = characters[existingIndex].health;
+        characters[existingIndex] = character;
+    } else {
+        characters.push(character);
+    }
+    
+    // Save back to localStorage
+    localStorage.setItem('playerCharacters', JSON.stringify(characters));
+    
+    // Refresh the display
+    loadPlayerCharacters();
+    
+    // Clear the form
+    document.getElementById('pc-name').value = '';
+    document.getElementById('pc-base').value = '';
+    document.getElementById('pc-maxHealth').value = '';
+    document.getElementById('pc-bodyArmor').value = '';
+    document.getElementById('pc-headArmor').value = '';
+    document.getElementById('pc-shield').value = '';
+    document.getElementById('pc-notes').value = '';
+    document.getElementById('pc-weapon-fields').innerHTML = '';
+    addWeaponFields('pc-weapon-fields');
+}
+
+// Add this new function to handle note updates
+function updateCharacterNotes(event) {
+    const notes = event.target.value;
+    const participantDiv = event.target.closest('.participant, .pc-card-compact');
+    if (!participantDiv) return;
+
+    const participantName = participantDiv.querySelector('.participant-name')?.textContent?.split(' ')[0] || 
+                          participantDiv.querySelector('h4')?.textContent;
+    if (!participantName) return;
+
+    // Update in player characters
+    const playerCharacters = JSON.parse(localStorage.getItem('playerCharacters') || '[]');
+    const pcIndex = playerCharacters.findIndex(pc => pc.name === participantName);
+    if (pcIndex !== -1) {
+        playerCharacters[pcIndex].notes = notes;
+        localStorage.setItem('playerCharacters', JSON.stringify(playerCharacters));
+    }
+
+    // Update in active encounters
+    let encounters = JSON.parse(localStorage.getItem('encounters') || '[]');
+    let updated = false;
+    encounters.forEach(encounter => {
+        encounter.participants.forEach(participant => {
+            if (participant.name === participantName) {
+                participant.notes = notes;
+                updated = true;
+            }
+        });
+    });
+
+    if (updated) {
+        localStorage.setItem('encounters', JSON.stringify(encounters));
+        // Refresh all instances where this character appears
+        document.querySelectorAll(`textarea[data-character-name="${participantName}"]`).forEach(textarea => {
+            if (textarea !== event.target) {
+                textarea.value = notes;
+            }
+        });
     }
 }
 
+// Update editCharacter function to load notes
+function editCharacter(index) {
+    const characters = JSON.parse(localStorage.getItem('playerCharacters') || '[]');
+    const character = characters[index];
+    
+    document.getElementById('pc-name').value = character.name;
+    document.getElementById('pc-base').value = character.base;
+    document.getElementById('pc-maxHealth').value = character.maxHealth;
+    document.getElementById('pc-bodyArmor').value = character.bodyArmor;
+    document.getElementById('pc-headArmor').value = character.headArmor;
+    document.getElementById('pc-shield').value = character.shield || 0;
+    document.getElementById('pc-notes').value = character.notes || '';
+    
+    // Clear and recreate weapon fields
+    const weaponFields = document.getElementById('pc-weapon-fields');
+    weaponFields.innerHTML = '';
+    if (character.weapons && character.weapons.length > 0) {
+        character.weapons.forEach(weapon => {
+            addWeaponFields('pc-weapon-fields', weapon.name, weapon.damage);
+        });
+    } else {
+        addWeaponFields('pc-weapon-fields');
+    }
+}
+
+// Update loadPlayerCharacters to properly display notes in PC list
+function loadPlayerCharacters() {
+    const savedCharacters = localStorage.getItem('playerCharacters');
+    if (savedCharacters) {
+        playerCharacters = [];
+        const loadedCharacters = JSON.parse(savedCharacters);
+        
+        loadedCharacters.forEach(charData => {
+            const pc = new PlayerCharacter(
+                charData.name,
+                charData.base,
+                charData.maxHealth,
+                charData.bodyArmor || 0,
+                charData.headArmor || 0,
+                charData.shield || 0,
+                charData.weapons || [],
+                charData.criticalInjuries || []
+            );
+            
+            if (charData.health !== undefined) {
+                pc.health = charData.health;
+            }
+            if (charData.shieldActive !== undefined) {
+                pc.shieldActive = charData.shieldActive;
+            }
+            if (charData.notes !== undefined) {
+                pc.notes = charData.notes;
+            }
+            
+            playerCharacters.push(pc);
+        });
+
+        // Update PC Manager list if we're on that page
+        const pcList = document.getElementById('pc-list');
+        if (pcList) {
+            pcList.innerHTML = playerCharacters.map((pc, index) => `
+                <div class="pc-card-compact">
+                    <h4>${pc.name}</h4>
+                    <div class="stats">
+                        <div>Base Initiative: ${pc.base}</div>
+                        <div>Health: ${pc.maxHealth}</div>
+                        <div>Body Armor: ${pc.bodyArmor}</div>
+                        <div>Head Armor: ${pc.headArmor}</div>
+                        ${pc.shield ? `<div>Shield: ${pc.shield}</div>` : ''}
+                    </div>
+                    <div class="weapons-section">
+                        <h4>Weapons</h4>
+                        ${pc.weapons && pc.weapons.length > 0 ? `
+                            <div class="weapons-list">
+                                ${pc.weapons.map(w => `
+                                    <div class="weapon-entry-readonly">
+                                        ${w.name}: ${w.damage}
+                                    </div>
+                                `).join('')}
+                            </div>
+                        ` : '<div class="weapon-entry-readonly">No weapons</div>'}
+                    </div>
+                    ${pc.notes ? `
+                        <div class="notes-section">
+                            <h4>Notes</h4>
+                            <div class="notes-display">${pc.notes}</div>
+                        </div>
+                    ` : ''}
+                    <div class="actions">
+                        <button onclick="editCharacter(${index})">Edit</button>
+                        <button onclick="deleteCharacter(${index})" class="danger-button">Delete</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Update compact list if we're on main page
+        const pcListCompact = document.querySelector('.pc-list-compact');
+        if (pcListCompact) {
+            renderCompactPCList();
+        }
+    }
+}
+
+function deleteCharacter(index) {
+    if (!confirm('Are you sure you want to delete this character?')) return;
+    
+    let characters = JSON.parse(localStorage.getItem('playerCharacters') || '[]');
+    characters.splice(index, 1);
+    localStorage.setItem('playerCharacters', JSON.stringify(characters));
+    loadPlayerCharacters();
+}
+
+function addWeaponFields(containerId, name = '', damage = '') {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+    
+    const fieldPair = document.createElement('div');
+    fieldPair.className = 'weapon-field-pair';
+    fieldPair.innerHTML = `
+        <input type="text" class="weapon-name-field" placeholder="Weapon Name" value="${name}">
+        <input type="text" class="weapon-damage-field" placeholder="Damage (e.g. 3d6)" value="${damage}">
+        <button type="button" onclick="this.parentElement.remove()">×</button>
+    `;
+    container.appendChild(fieldPair);
+}
 
 function renderPlayerCharacterList() {
     const pcListDiv = document.getElementById('pc-list');
     if (!pcListDiv) return;
     
-    const hasSelectedEncounters = encounters.some(e => e.selected);
-    
     pcListDiv.innerHTML = playerCharacters.map(pc => `
         <div class="participant">
             <span>${pc.name}</span>
-            <span>Base: ${pc.base}</span>
-            <span>HP: ${pc.health || pc.maxHealth}/${pc.maxHealth}</span>
-            <span>Body SP: ${pc.bodyArmor}</span>
-            <span>Head SP: ${pc.headArmor}</span>
-            ${pc.shield > 0 ? `
-                <span>Shield SP: ${pc.shield} [${pc.shieldActive ? 'Active' : 'Inactive'}]</span>
-                <button class="shield-toggle ${pc.shieldActive ? 'shield-active' : ''}" 
-                        onclick="togglePlayerCharacterShield('${pc.name}')">
-                    ${pc.shieldActive ? 'Deactivate Shield' : 'Activate Shield'}
-                </button>
+            <div class="stats">
+                <span>Base: ${pc.base}</span>
+                <span>HP: ${pc.health || pc.maxHealth}/${pc.maxHealth}</span>
+                <span>Body SP: ${pc.bodyArmor}</span>
+                <span>Head SP: ${pc.headArmor}</span>
+            </div>
+            ${pc.notes ? `
+                <div class="notes-section">
+                    <p class="notes">${pc.notes}</p>
+                </div>
             ` : ''}
             <div class="critical-injuries">
                 ${pc.criticalInjuries.map((injury, index) => `
@@ -593,10 +771,28 @@ function renderPlayerCharacterList() {
             </div>
             <div class="player-actions">
                 <button onclick="deletePlayerCharacter('${pc.name}')">Delete</button>
+            </div>
+        </div>
+    `).join('');
+}
+
+function renderCompactPCList() {
+    const pcListCompact = document.querySelector('.pc-list-compact');
+    if (!pcListCompact) return;
+    
+    const hasSelectedEncounters = encounters.some(e => e.selected);
+    
+    pcListCompact.innerHTML = playerCharacters.map(pc => `
+        <div class="pc-card-compact">
+            <h4>${pc.name}</h4>
+            <div class="stats">
+                Base: ${pc.base} | HP: ${pc.health}/${pc.maxHealth}<br>
+                SP: ${pc.bodyArmor}/${pc.headArmor}
+            </div>
+            <div class="actions">
                 <button onclick="addPlayerCharacterToEncounter('${pc.name}')"
-                        ${!hasSelectedEncounters ? 'disabled' : ''}
-                        style="background-color: ${hasSelectedEncounters ? '#f88' : '#772'}">
-                    Add to Selected Encounters ${hasSelectedEncounters ? '' : '(Select encounters first)'}
+                    ${!hasSelectedEncounters ? 'disabled' : ''}>
+                    Add to Encounter
                 </button>
             </div>
         </div>
@@ -616,40 +812,47 @@ function deletePlayerCharacter(name) {
     playerCharacters = playerCharacters.filter(pc => pc.name !== name);
     localStorage.setItem('playerCharacters', JSON.stringify(playerCharacters.map(p => p.toJSON())));
     renderPlayerCharacterList();
+    renderCompactPCList();
 }
 
 function addPlayerCharacterToEncounter(name) {
     const selectedEncounters = encounters.filter(e => e.selected);
     if (selectedEncounters.length === 0) {
-        return; // Silently return if no encounters selected
+        console.log('No encounters selected');
+        return;
     }
     
     const pc = playerCharacters.find(p => p.name === name);
-    if (pc) {
-        selectedEncounters.forEach(encounter => {
-            // Only add if the PC isn't already in the encounter
-            if (!encounter.participants.some(p => p.name === pc.name)) {
-                const participant = new Participant(
-                    pc.name,
-                    pc.base,
-                    pc.maxHealth,
-                    0,
-                    pc.base,
-                    pc.health || pc.maxHealth,
-                    pc.bodyArmor,
-                    pc.headArmor,
-                    pc.shield,
-                    [],
-                    pc.criticalInjuries
-                );
-                participant.shieldActive = pc.shieldActive;
-                encounter.participants.push(participant);
-                encounter.sortParticipants();
-                encounter.render();
-            }
-        });
-        localStorage.setItem('encounters', JSON.stringify(encounters.map(e => e.toJSON())));
+    if (!pc) {
+        console.log('Player character not found');
+        return;
     }
+
+    selectedEncounters.forEach(encounter => {
+        // Only add if the PC isn't already in the encounter
+        if (!encounter.participants.some(p => p.name === pc.name)) {
+            const participant = new Participant(
+                pc.name,
+                pc.base,
+                pc.maxHealth,
+                0,
+                pc.base,
+                pc.health || pc.maxHealth,
+                pc.bodyArmor,
+                pc.headArmor,
+                pc.shield,
+                pc.weapons,
+                pc.criticalInjuries
+            );
+            participant.shieldActive = pc.shieldActive;
+            participant.notes = pc.notes; // Add this line
+            encounter.participants.push(participant);
+            encounter.sortParticipants();
+            encounter.render();
+        }
+    });
+    
+    localStorage.setItem('encounters', JSON.stringify(encounters.map(e => e.toJSON())));
 }
 
 function removeParticipant(encounterId, participantName) {
@@ -744,40 +947,21 @@ function applyDamage(encounterId, participantName) {
     
     if (!participant || !damageInput.value) return;
 
-    let incomingDamage = parseInt(damageInput.value);
+    const baseDamage = parseInt(damageInput.value);
     const location = locationSelect.value;
+    const options = {
+        isAP: document.getElementById(`armor-piercing-${encounterId}-${participantName}`).checked,
+        isHalfArmor: document.getElementById(`half-armor-${encounterId}-${participantName}`).checked,
+        isHeadshot: document.getElementById(`headshot-${encounterId}-${participantName}`).checked,
+        location: location
+    };
 
-    // Find if someone is using this participant as a human shield
-    const shieldUser = encounter.participants.find(p => 
-        p.humanShield === participant.name
-    );
-
-    if (shieldUser) {
-        // This participant is being used as a human shield
-        applyDamageToParticipant(participant, incomingDamage, location, encounter, shieldUser);
-    } else if (participant.humanShield) {
-        // This participant is using someone as a shield
-        // Apply damage to the human shield instead
-		const humanShield = encounter.participants.find(p => p.name === participant.humanShield);
-		if (!humanShield) {
-			participant.releaseHumanShield();
-			encounter.render();
-			localStorage.setItem('encounters', JSON.stringify(encounters.map(e => e.toJSON())));
-			return;
-		}
-		const damageToShield = incomingDamage;
-		
-		applyDamageToParticipant(humanShield, damageToShield, location, encounter);
-		
-        damageInput.value = '';
-        encounter.render();
-        localStorage.setItem('encounters', JSON.stringify(encounters.map(e => e.toJSON())));
-        return;
-    } else {
-        // Normal damage application
-        applyDamageToParticipant(participant, incomingDamage, location, encounter);
-    }
-
+    const calculatedDamage = participant.calculateDamage(baseDamage, options);
+    
+    // Apply the calculated damage
+    participant.health = Math.max(0, participant.health - calculatedDamage);
+    
+    // Update display
     damageInput.value = '';
     encounter.render();
     localStorage.setItem('encounters', JSON.stringify(encounters.map(e => e.toJSON())));
@@ -1033,6 +1217,9 @@ function importEncounters(event) {
                             participant.shieldActive = p.shieldActive;
                         }
                         participant.humanShield = p.humanShield || null;
+                        if (p.weaponNotes !== undefined) {
+                            participant.weaponNotes = p.weaponNotes;
+                        }
                         return participant;
                     });
                     encounter.active = encounterData.active;
@@ -1097,6 +1284,9 @@ function loadEncounters() {
                     participant.shieldActive = p.shieldActive;
                 }
                 participant.humanShield = p.humanShield || null;
+                if (p.weaponNotes !== undefined) {
+                    participant.weaponNotes = p.weaponNotes;
+                }
                 return participant;
             });
             encounter.active = encounterData.active;
@@ -1149,13 +1339,20 @@ function importPlayerCharacters(event) {
                         charData.maxHealth,
                         charData.bodyArmor,
                         charData.headArmor,
-                        charData.shield || 0,
+                        charData.shield,
+                        charData.weapons || [],
                         charData.criticalInjuries || []
                     );
                     
-                    // Copy shield active state if present
+                    // Copy additional properties
                     if (charData.shieldActive !== undefined) {
                         pc.shieldActive = charData.shieldActive;
+                    }
+                    if (charData.notes !== undefined) {
+                        pc.notes = charData.notes;
+                    }
+                    if (charData.health !== undefined) {
+                        pc.health = charData.health;
                     }
                     
                     // Check if character already exists
@@ -1167,46 +1364,14 @@ function importPlayerCharacters(event) {
                     }
                 });
                 
-                localStorage.setItem('playerCharacters', JSON.stringify(playerCharacters.map(p => p.toJSON())));
-                renderPlayerCharacterList();
+                localStorage.setItem('playerCharacters', JSON.stringify(playerCharacters));
+                loadPlayerCharacters(); // Call this instead of render functions
                 document.getElementById('pc-import-export-status').textContent = 'Characters imported successfully';
             } catch (error) {
                 alert('Error importing characters: ' + error.message);
             }
         };
         reader.readAsText(file);
-    }
-}
-
-function loadPlayerCharacters() {
-    const savedCharacters = localStorage.getItem('playerCharacters');
-    if (savedCharacters) {
-        playerCharacters = [];
-        const loadedCharacters = JSON.parse(savedCharacters);
-        loadedCharacters.forEach(charData => {
-            const pc = new PlayerCharacter(
-                charData.name,
-                charData.base,
-                charData.maxHealth,
-                charData.bodyArmor || 0,
-                charData.headArmor || 0,
-                charData.shield || 0,
-                charData.criticalInjuries || []
-            );
-            
-            // Copy health if present
-            if (charData.health !== undefined) {
-                pc.health = charData.health;
-            }
-            
-            // Copy shield active state if present
-            if (charData.shieldActive !== undefined) {
-                pc.shieldActive = charData.shieldActive;
-            }
-            
-            playerCharacters.push(pc);
-        });
-        renderPlayerCharacterList();
     }
 }
 
@@ -1275,9 +1440,29 @@ function removeCriticalInjury(characterName, injuryIndex, isPC) {
     }
 }
 
-window.onload = function() {
-    loadEncounters();
-    loadPlayerCharacters();
+window.onload = async function() {
+    // Apply theme first
+    const currentTheme = localStorage.getItem('theme') || 'default';
+    document.documentElement.style.setProperty('--theme-transition', 'none');
+    document.body.className = `theme-${currentTheme}`;
+    document.body.offsetHeight; // Force reflow
+    document.documentElement.style.removeProperty('--theme-transition');
+    
+    // Then load the data
+    await loadEncounters();
+    await loadPlayerCharacters();
+    
+    // Add initial weapon field if on PC manager page
+    if (document.getElementById('pc-weapon-fields')) {
+        addWeaponFields('pc-weapon-fields');
+    }
+    
+    // Call both renderers
+    renderPlayerCharacterList();
+    renderCompactPCList();
+    
+    // Initial update of player character buttons
+    updatePlayerCharacterButtons();
 };
 
 function rollCriticalInjury(location) {
@@ -1357,12 +1542,31 @@ function toggleEncounterSelection(encounterId) {
     if (encounter) {
         encounter.selected = !encounter.selected;
         encounter.render();
-        updateImportExportStatus();
-        renderPlayerCharacterList(); // Refresh player list to update button states
+        
+        // Update all encounter checkboxes to match their encounter's selected state
+        encounters.forEach(e => {
+            const checkbox = document.getElementById(`select-${e.id}`);
+            if (checkbox) {
+                checkbox.checked = e.selected;
+            }
+        });
+        
+        // Immediately update the PC list to reflect new selection state
+        renderCompactPCList();
+        renderPlayerCharacterList();
     }
 }
 
-// Add this new function after your existing functions
+function updatePlayerCharacterButtons() {
+    const hasSelectedEncounters = encounters.some(e => e.selected);
+    
+    // Update buttons on the main page
+    document.querySelectorAll('.add-to-encounter-button').forEach(button => {
+        button.disabled = !hasSelectedEncounters;
+        button.style.backgroundColor = hasSelectedEncounters ? 'var(--accent-primary)' : '#772';
+    });
+}
+
 function generateEncounter() {
     const difficulty = document.getElementById('encounter-difficulty').value;
     const enemyCount = parseInt(document.getElementById('enemy-count').value) || 4;
@@ -1487,3 +1691,458 @@ function releaseHumanShield(encounterId, participantName) {
     encounter.render();
     localStorage.setItem('encounters', JSON.stringify(encounters.map(e => e.toJSON())));
 }
+
+let currentTheme = localStorage.getItem('theme') || 'default';
+let largeText = localStorage.getItem('largeText') === 'true';
+let disableAnimations = localStorage.getItem('disableAnimations') === 'true';
+
+function initializeThemeSystem() {
+    // Apply saved settings
+    if (currentTheme === 'custom' && localStorage.getItem('customTheme')) {
+        const customTheme = JSON.parse(localStorage.getItem('customTheme'));
+        Object.entries(customTheme).forEach(([property, value]) => {
+            document.documentElement.style.setProperty(property, value);
+        });
+    }
+    
+    document.body.className = `theme-${currentTheme}`;
+    document.body.classList.toggle('large-text', largeText);
+    document.body.classList.toggle('disable-animations', disableAnimations);
+    
+    // Set initial select value
+    document.getElementById('theme-select').value = currentTheme;
+    document.getElementById('large-text').checked = largeText;
+    document.getElementById('disable-animations').checked = disableAnimations;
+    
+    // Add event listeners
+    document.getElementById('theme-select').addEventListener('change', (e) => {
+        currentTheme = e.target.value;
+        document.body.className = `theme-${currentTheme}`;
+        localStorage.setItem('theme', currentTheme);
+    });
+    
+    document.getElementById('large-text').addEventListener('change', (e) => {
+        largeText = e.target.checked;
+        document.body.classList.toggle('large-text', largeText);
+        localStorage.setItem('largeText', largeText);
+    });
+    
+    document.getElementById('disable-animations').addEventListener('change', (e) => {
+        disableAnimations = e.target.checked;
+        document.body.classList.toggle('disable-animations', disableAnimations);
+        localStorage.setItem('disableAnimations', disableAnimations);
+    });
+}
+
+function updateWeaponNotes(encounterId, participantName, notes) {
+    const encounter = encounters.find(e => e.id === encounterId);
+    if (!encounter) return;
+
+    const participant = encounter.participants.find(p => p.name === participantName);
+    if (!participant) return;
+
+    participant.weaponNotes = notes;
+    localStorage.setItem('encounters', JSON.stringify(encounters.map(e => e.toJSON())));
+}
+
+function addWeaponFields(containerId) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+    
+    const fieldPair = document.createElement('div');
+    fieldPair.className = 'weapon-field-pair';
+    fieldPair.innerHTML = `
+        <input type="text" class="weapon-name-field" placeholder="Weapon Name">
+        <input type="text" class="weapon-damage-field" placeholder="Damage (e.g. 3d6)">
+        <button type="button" onclick="this.parentElement.remove()">×</button>
+    `;
+    container.appendChild(fieldPair);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    loadPlayerCharacters();
+    
+    // Initialize player character select if we're on the main page
+    const pcSelect = document.getElementById('player-character-select');
+    if (pcSelect) {
+        const characters = JSON.parse(localStorage.getItem('playerCharacters') || '[]');
+        pcSelect.innerHTML = '<option value="">Select a character...</option>' +
+            characters.map(char => `<option value="${char.name}">${char.name}</option>`).join('');
+    }
+});
+
+function updateUI() {
+    // ...existing code...
+
+    // Enable/disable "Add to Selected Encounters" button based on encounter selection
+    const selectedEncounters = encounters.filter(encounter => encounter.selected);
+    const addToEncounterButton = document.getElementById('add-to-encounter-button');
+
+    if (addToEncounterButton) {
+        addToEncounterButton.disabled = selectedEncounters.length === 0;
+    }
+}
+
+function renderPlayerCharacterList() {
+    const pcList = document.getElementById('pc-list');
+    const characters = JSON.parse(localStorage.getItem('playerCharacters')) || [];
+
+    pcList.innerHTML = characters.map((pc, index) => `
+        <div class="pc-card-compact">
+            <h4>${pc.name}</h4>
+            <div class="stats">
+                <div>Base Initiative: ${pc.base}</div>
+                <div>Health: ${pc.maxHealth}</div>
+                <div>Body Armor: ${pc.bodyArmor}</div>
+                <div>Head Armor: ${pc.headArmor}</div>
+                ${pc.shield ? `<div>Shield: ${pc.shield}</div>` : ''}
+            </div>
+            <div class="weapons-section">
+                <div class="weapons-list">
+                    ${pc.weapons ? pc.weapons.map(weapon => `
+                        <div class="weapon-entry-readonly">
+                            <span class="weapon-name">${weapon.name}</span>
+                            <span class="weapon-damage">${weapon.damage}</span>
+                        </div>
+                    `).join('') : ''}
+                </div>
+            </div>
+            <div class="actions">
+                <button onclick="deletePlayerCharacter(${index})">Delete</button>
+            </div>
+        </div>
+    `).join('');
+}
+
+// ...existing code...
+
+function renderPlayerCharacterList() {
+    const pcListContainer = document.querySelector('.pc-list-compact');
+    if (!pcListContainer) return;
+
+    const playerCharacters = JSON.parse(localStorage.getItem('playerCharacters') || '[]');
+    pcListContainer.innerHTML = '';
+
+    playerCharacters.forEach(pc => {
+        const pcCard = document.createElement('div');
+        pcCard.className = 'pc-card-compact';
+        pcCard.innerHTML = `
+            <h4>${pc.name}</h4>
+            <div class="stats">
+                HP: ${pc.maxHealth} | SP: ${pc.bodyArmor}/${pc.headArmor}
+            </div>
+            <div class="actions">
+                <button onclick="addPCToEncounter('${encodeURIComponent(JSON.stringify(pc))}')">Add to Encounter</button>
+            </div>
+        `;
+        pcListContainer.appendChild(pcCard);
+    });
+}
+
+function addPCToEncounter(pcData) {
+    const pc = JSON.parse(decodeURIComponent(pcData));
+    const encounter = getCurrentEncounter();
+    if (!encounter) {
+        alert('Please create an encounter first');
+        return;
+    }
+
+    const participant = {
+        id: generateId(),
+        name: pc.name,
+        baseInitiative: pc.baseInitiative || 0,
+        initiative: 0,
+        maxHealth: pc.maxHealth,
+        currentHealth: pc.maxHealth,
+        bodyArmor: pc.bodyArmor,
+        headArmor: pc.headArmor,
+        shield: pc.shield || 0,
+        weapons: pc.weapons || [],
+        notes: pc.notes || '',
+        isPC: true
+    };
+
+    encounter.participants.push(participant);
+    saveEncounters();
+    renderEncounters();
+}
+
+// Add this to your initialization code or DOMContentLoaded event
+document.addEventListener('DOMContentLoaded', () => {
+    // ...existing initialization code...
+    renderPlayerCharacterList();
+});
+
+// Update this existing function to include re-rendering the PC list
+function loadAndDisplayData() {
+    // ...existing code...
+    renderEncounters();
+    renderPlayerCharacterList();
+}
+
+function loadPlayerCharacters() {
+    const savedCharacters = localStorage.getItem('playerCharacters');
+    if (savedCharacters) {
+        playerCharacters = [];
+        const loadedCharacters = JSON.parse(savedCharacters);
+        
+        loadedCharacters.forEach(charData => {
+            const pc = new PlayerCharacter(
+                charData.name,
+                charData.base,
+                charData.maxHealth,
+                charData.bodyArmor || 0,
+                charData.headArmor || 0,
+                charData.shield || 0,
+                charData.weapons || [],
+                charData.criticalInjuries || []
+            );
+            
+            // Copy all additional properties
+            if (charData.health !== undefined) pc.health = charData.health;
+            if (charData.shieldActive !== undefined) pc.shieldActive = charData.shieldActive;
+            if (charData.notes !== undefined) pc.notes = charData.notes;
+            if (charData.deathSaves !== undefined) pc.deathSaves = charData.deathSaves;
+            if (charData.deathSavePenalty !== undefined) pc.deathSavePenalty = charData.deathSavePenalty;
+            
+            playerCharacters.push(pc);
+        });
+
+        // Update both display types
+        renderPlayerCharacterList();
+        renderCompactPCList();
+    }
+}
+
+// Merged renderPlayerCharacterList function
+function renderPlayerCharacterList() {
+    const pcList = document.getElementById('pc-list');
+    if (!pcList) return;
+
+    pcList.innerHTML = playerCharacters.map((pc, index) => `
+        <div class="pc-card-compact" data-character-id="${pc.name}">
+            <h4>${pc.name}</h4>
+            <div class="stats">
+                <div>Base Initiative: ${pc.base}</div>
+                <div>Health: ${pc.health}/${pc.maxHealth}</div>
+                <div>Body Armor: ${pc.bodyArmor}</div>
+                <div>Head Armor: ${pc.headArmor}</div>
+                ${pc.shield ? `<div>Shield: ${pc.shield} [${pc.shieldActive ? 'Active' : 'Inactive'}]</div>` : ''}
+            </div>
+            <div class="weapons-section">
+                <h4>Weapons</h4>
+                ${pc.weapons && pc.weapons.length > 0 ? `
+                    <div class="weapons-list">
+                        ${pc.weapons.map(w => `
+                            <div class="weapon-entry-readonly">
+                                ${w.name}: ${w.damage}
+                            </div>
+                        `).join('')}
+                    </div>
+                ` : '<div class="weapon-entry-readonly">No weapons</div>'}
+            </div>
+            <div class="critical-injuries-section">
+                <h4>Critical Injuries</h4>
+                ${pc.criticalInjuries && pc.criticalInjuries.length > 0 ? `
+                    <div class="critical-injuries-list">
+                        ${pc.criticalInjuries.map((injury, idx) => `
+                            <div class="critical-injury">
+                                ${injury.name}
+                                <button onclick="removeCriticalInjury('${pc.name}', ${idx}, true)">×</button>
+                            </div>
+                        `).join('')}
+                    </div>
+                ` : '<div>No critical injuries</div>'}
+            </div>
+            <div class="notes-section">
+                <h4>Notes</h4>
+                <textarea 
+                    class="character-notes"
+                    onchange="updateCharacterNotes(event)"
+                >${pc.notes || ''}</textarea>
+            </div>
+            <div class="actions">
+                <button onclick="editCharacter(${index})">Edit</button>
+                <button onclick="deleteCharacter(${index})" class="danger-button">Delete</button>
+            </div>
+        </div>
+    `).join('');
+}
+
+// Keep only one editCharacter function
+function editCharacter(index) {
+    const characters = JSON.parse(localStorage.getItem('playerCharacters') || '[]');
+    const character = characters[index];
+    
+    document.getElementById('pc-name').value = character.name;
+    document.getElementById('pc-base').value = character.base;
+    document.getElementById('pc-maxHealth').value = character.maxHealth;
+    document.getElementById('pc-bodyArmor').value = character.bodyArmor;
+    document.getElementById('pc-headArmor').value = character.headArmor;
+    document.getElementById('pc-shield').value = character.shield || 0;
+    document.getElementById('pc-notes').value = character.notes || '';
+    
+    // Clear and recreate weapon fields
+    const weaponFields = document.getElementById('pc-weapon-fields');
+    weaponFields.innerHTML = '';
+    if (character.weapons && character.weapons.length > 0) {
+        character.weapons.forEach(weapon => {
+            addWeaponFields('pc-weapon-fields', weapon.name, weapon.damage);
+        });
+    } else {
+        addWeaponFields('pc-weapon-fields');
+    }
+}
+
+// ...rest of existing code...
+
+const UIRenderer = {
+    renderAllViews() {
+        this.renderPlayerLists();
+        this.renderEncounters();
+        this.updateUI();
+    },
+
+    renderPlayerLists() {
+        this.renderMainPlayerList();
+        this.renderCompactPlayerList();
+    },
+
+    renderMainPlayerList() {
+        const pcList = document.getElementById('pc-list');
+        if (!pcList) return;
+
+        pcList.innerHTML = playerCharacters.map((pc, index) => `
+            <div class="pc-card-compact" data-character-id="${pc.name}">
+                ${this.renderPlayerHeader(pc)}
+                ${this.renderWeaponsSection(pc)}
+                ${this.renderCriticalInjuries(pc)}
+                ${this.renderNotesSection(pc)}
+                ${this.renderActionButtons(pc, index)}
+            </div>
+        `).join('');
+    },
+
+    renderCompactPlayerList() {
+        const pcListCompact = document.querySelector('.pc-list-compact');
+        if (!pcListCompact) return;
+        
+        const hasSelectedEncounters = encounters.some(e => e.selected);
+        
+        pcListCompact.innerHTML = playerCharacters.map(pc => `
+            <div class="pc-card-compact">
+                <h4>${pc.name}</h4>
+                <div class="stats">
+                    Base: ${pc.base} | HP: ${pc.health}/${pc.maxHealth}<br>
+                    SP: ${pc.bodyArmor}/${pc.headArmor}
+                </div>
+                <div class="actions">
+                    <button onclick="addPlayerCharacterToEncounter('${pc.name}')"
+                        ${!hasSelectedEncounters ? 'disabled' : ''}>
+                        Add to Encounter
+                    </button>
+                </div>
+            </div>
+        `).join('');
+    },
+
+    // Helper render functions
+    renderPlayerHeader(pc) {
+        return `
+            <h4>${pc.name}</h4>
+            <div class="stats">
+                <div>Base Initiative: ${pc.base}</div>
+                <div>Health: ${pc.health}/${pc.maxHealth}</div>
+                <div>Body Armor: ${pc.bodyArmor}</div>
+                <div>Head Armor: ${pc.headArmor}</div>
+                ${pc.shield ? `<div>Shield: ${pc.shield} [${pc.shieldActive ? 'Active' : 'Inactive'}]</div>` : ''}
+            </div>
+        `;
+    },
+
+    renderWeaponsSection(pc) {
+        return `
+            <div class="weapons-section">
+                <h4>Weapons</h4>
+                ${pc.weapons && pc.weapons.length > 0 ? `
+                    <div class="weapons-list">
+                        ${pc.weapons.map(w => `
+                            <div class="weapon-entry-readonly">
+                                ${w.name}: ${w.damage}
+                            </div>
+                        `).join('')}
+                    </div>
+                ` : '<div class="weapon-entry-readonly">No weapons</div>'}
+            </div>
+        `;
+    }
+};
+
+const DamageSystem = {
+    applyDamage(participant, damage, options = {}) {
+        if (participant.humanShield && options.rangeType === 'RANGED' && options.location !== 'head') {
+            return this.applyHumanShieldDamage(participant, damage, options);
+        }
+        return this.applyStandardDamage(participant, damage, options);
+    },
+
+    applyHumanShieldDamage(target, damage, options) {
+        let remainingDamage = this.applyStandardDamage(target, damage, options);
+        
+        if (target.health <= 0) {
+            const shieldUsers = target.getHumanShieldUsers();
+            shieldUsers.forEach(user => {
+                user.releaseHumanShield();
+                if (remainingDamage > 0) {
+                    this.applyStandardDamage(user, remainingDamage, options);
+                }
+            });
+        }
+        
+        return 0;
+    },
+
+    applyStandardDamage(participant, damage, options) {
+        let remainingDamage = damage;
+        
+        // Apply cover damage
+        remainingDamage = this.applyCoverDamage(participant, remainingDamage);
+        
+        // Apply shield damage
+        remainingDamage = this.applyShieldDamage(participant, remainingDamage);
+        
+        // Apply armor and health damage
+        remainingDamage = this.applyArmorAndHealthDamage(participant, remainingDamage, options.location);
+        
+        return remainingDamage;
+    }
+};
+
+const CharacterManager = {
+    saveCharacter(character) {
+        const existingIndex = playerCharacters.findIndex(p => p.name === character.name);
+        if (existingIndex >= 0) {
+            this.updateExistingCharacter(existingIndex, character);
+        } else {
+            playerCharacters.push(character);
+        }
+        this.saveToStorage();
+        UIRenderer.renderAllViews();
+    },
+
+    updateCharacterNotes(characterId, notes) {
+        const character = this.findCharacterById(characterId);
+        if (character) {
+            character.notes = notes;
+            this.saveToStorage();
+            UIRenderer.renderAllViews();
+        }
+    },
+
+    editCharacter(index) {
+        const character = playerCharacters[index];
+        if (!character) return;
+        
+        this.populateEditForm(character);
+    }
+};

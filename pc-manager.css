@@ -1,0 +1,151 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#app {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+}
+
+.character-form-section {
+    background-color: var(--bg-secondary);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.character-list-section {
+    background-color: var(--bg-secondary);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    max-height: 85vh;
+    overflow-y: auto;
+}
+
+.player-character-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.player-character-form input {
+    padding: 10px;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.player-character-form textarea {
+    grid-column: span 2;
+    min-height: 100px;
+    resize: vertical;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.full-width {
+    grid-column: span 2;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: var(--accent-primary);
+    text-align: center;
+}
+
+/* Weapons display styling */
+.weapons-section {
+    margin: 8px 0;
+    padding: 8px;
+    background-color: var(--bg-primary);
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+}
+
+.weapons-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.weapon-entry-readonly {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 8px;
+    background-color: var(--div-bg);
+    border-left: 3px solid var(--accent-secondary);
+    border-radius: 3px;
+}
+
+.weapon-name {
+    color: var(--text-primary);
+    font-weight: bold;
+}
+
+.weapon-damage {
+    color: var(--accent-primary);
+    font-style: italic;
+}
+
+.notes-section {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: var(--bg-primary);
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 1rem;
+}
+
+.notes-section textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: #fff;
+    border: 1px solid #f0f0f0;
+    resize: vertical;
+}
+
+.notes-section h4 {
+    margin: 0 0 8px 0;
+    color: var(--accent-primary);
+    margin-bottom: 0.5rem;
+    color: #f0f0f0;
+}
+
+.character-notes {
+    width: 100%;
+    min-height: 80px;
+    padding: 8px;
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    resize: vertical;
+    font-family: inherit;
+    margin-top: 4px;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+.character-notes:focus {
+    border-color: var(--accent-primary);
+    outline: none;
+}

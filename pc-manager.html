@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Character Manager - Cyberpunk Red Initiative Tracker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="pc-manager.css">
+</head>
+<body>
+    <div class="back-icon" onclick="window.location.href='index.html'">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+            <path fill="currentColor" d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+        </svg>
+    </div>
+    <div id="app">
+        <div class="character-form-section">
+            <h2>Create Character</h2>
+            <div class="player-character-form">
+                <input type="text" id="pc-name" placeholder="Character Name" class="full-width">
+                <input type="number" id="pc-base" placeholder="Base Initiative">
+                <input type="number" id="pc-maxHealth" placeholder="Max Health">
+                <input type="number" id="pc-bodyArmor" placeholder="Body SP">
+                <input type="number" id="pc-headArmor" placeholder="Head SP">
+                <input type="number" id="pc-shield" placeholder="Shield SP">
+                <div id="pc-weapon-fields" class="full-width"></div>
+                <button type="button" onclick="addWeaponFields('pc-weapon-fields')" class="full-width">Add Weapon</button>
+                <div class="notes-section full-width">
+                    <h4>Character Notes</h4>
+                    <textarea id="pc-notes" class="character-notes" placeholder="Add notes about abilities, cyberware, or other details..." oninput="updateCharacterNotes(event)"></textarea>
+                </div>
+                <div class="import-export-controls full-width">
+                    <button onclick="savePlayerCharacter()">Save Character</button>
+                    <button onclick="exportPlayerCharacters()">Export All</button>
+                    <input type="file" id="importPCFile" accept=".json" style="display: none" onchange="importPlayerCharacters(event)">
+                    <button onclick="document.getElementById('importPCFile').click()">Import</button>
+                </div>
+                <span class="import-export-info full-width" id="pc-import-export-status"></span>
+            </div>
+        </div>
+        
+        <div class="character-list-section">
+            <h2>Character List</h2>
+            <div id="pc-list" class="player-character-list"></div>
+        </div>
+    </div>
+    <script src="npc-presets.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
