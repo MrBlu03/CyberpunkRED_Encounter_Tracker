@@ -190,6 +190,63 @@ body {
     margin-top: 8px;
 }
 
+.health-tracker {
+    background-color: var(--div-bg);
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid var(--div-border);
+    margin: 5px 0;
+}
+
+.damage-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.damage-inputs {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.damage-inputs select,
+.damage-inputs input {
+    min-width: 80px;
+}
+
+.damage-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+}
+
+.damage-options select {
+    min-width: 120px;
+}
+
+.damage-modifier {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background-color: var(--bg-secondary);
+    padding: 4px 8px;
+    border-radius: 3px;
+    font-size: 0.9em;
+    cursor: pointer;
+}
+
+.damage-modifier input[type="checkbox"] {
+    margin: 0;
+}
+
+.damage-buttons {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
 .armor-controls {
     display: flex;
     flex-wrap: wrap;
@@ -790,7 +847,6 @@ fieldset legend {
     display: grid;
     gap: 10px;
     margin-top: 10px;
-    padding: 10px;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 5px;
 }
@@ -1109,4 +1165,72 @@ textarea:focus, input:focus {
     margin: 2px 0;
     background-color: var(--bg-primary);
     border-radius: 4px;
+}
+
+.initiative-controls-box {
+    background-color: var(--div-bg);
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid var(--div-border);
+    margin: 5px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.initiative-inputs {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.initiative-inputs input {
+    min-width: 80px;
+}
+
+.initiative-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+/* Update existing initiative controls styling */
+.initiative-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+/* Floating Next Turn Button */
+.floating-next-turn {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--accent-primary);
+    color: var(--bg-primary);
+    padding: 12px 24px;
+    border-radius: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.floating-next-turn:hover {
+    background-color: var(--accent-secondary);
+    transform: translateX(-50%) translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+.floating-next-turn .round-info {
+    font-size: 0.8em;
+    opacity: 0.8;
+    margin-left: 8px;
 }

@@ -123,13 +123,23 @@
             <div class="character-actions">
                 <div class="damage-calculator">
                     <div class="damage-options">
+                        <select id="attack-type-${encounterId}-${p.name}">
+                            <option value="ranged">Ranged Attack</option>
+                            <option value="melee">Melee Attack</option>
+                            <option value="brawling">Brawling</option>
+                            <option value="martialArts">Martial Arts</option>
+                        </select>
                         <label>
-                            <input type="checkbox" id="armor-piercing-${id}" class="damage-modifier">
+                            <input type="checkbox" id="armor-piercing-${encounterId}-${p.name}" class="damage-modifier">
                             Armor Piercing
                         </label>
                         <label>
-                            <input type="checkbox" id="half-armor-${id}" class="damage-modifier">
+                            <input type="checkbox" id="half-armor-${encounterId}-${p.name}" class="damage-modifier">
                             Half Armor
+                        </label>
+                        <label>
+                            <input type="checkbox" id="ignore-armor-${encounterId}-${p.name}" class="damage-modifier">
+                            Ignore Armor
                         </label>
                         <label>
                             <input type="checkbox" id="headshot-${id}" class="damage-modifier">

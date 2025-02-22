@@ -128,29 +128,75 @@ class Participant {
             isAP = false,
             isHalfArmor = false,
             isHeadshot = false,
-            location = 'body'
+            ignoreArmor = false,
+            location = 'body',
+            attackType = 'ranged',  // 'ranged', 'melee', 'brawling', 'martialArts'
+            diceRolls = [],        // Array of individual dice results for critical detection
+            hasCrackedSkull = false
         } = options;
 
-        let armor = this.getEffectiveArmor(location);
+        // Calculate initial damage
         let finalDamage = baseDamage;
+        let armorAblationAmount = 1;
+        let damageGotThrough = false;
 
-        // Apply armor piercing
-        if (isAP) {
-            armor = Math.max(0, armor - 2);
+        // Process armor and damage
+        if (!ignoreArmor) {
+            let armor = this.getEffectiveArmor(location);
+            
+            // Handle special armor piercing cases
+            if (isAP) {
+                armorAblationAmount = 2;
+            }
+
+            // Handle armor halving for melee and martial arts
+            if (isHalfArmor && attackType !== 'brawling') {
+                armor = Math.ceil(armor / 2);
+            }
+
+            // Subtract armor from damage
+            finalDamage = Math.max(0, finalDamage - armor);
+            damageGotThrough = finalDamage > 0;
+
+            // Apply armor ablation if damage was dealt
+            if (damageGotThrough) {
+                this.ablateArmor(location, armorAblationAmount);
+            }
         }
 
-        // Apply half armor
-        if (isHalfArmor) {
-            armor = Math.floor(armor / 2);
+        // Apply headshot multiplier after armor reduction
+        if (isHeadshot && damageGotThrough) {
+            finalDamage *= hasCrackedSkull ? 3 : 2;
         }
 
-        // Apply headshot multiplier
-        if (isHeadshot) {
-            finalDamage *= 2;
+        // Check for critical injury
+        let criticalDamage = 0;
+        if (this.hasCriticalFromDice(diceRolls)) {
+            criticalDamage = 5; // Critical injuries always deal 5 bonus damage
         }
 
-        // Subtract final armor from damage
-        return Math.max(0, finalDamage - armor);
+        // Return detailed damage information
+        return {
+            totalDamage: finalDamage + criticalDamage,
+            baseDamage: finalDamage,
+            criticalDamage: criticalDamage,
+            damageGotThrough,
+            armorAblated: damageGotThrough ? armorAblationAmount : 0
+        };
+    }
+
+    hasCriticalFromDice(diceRolls) {
+        if (!Array.isArray(diceRolls) || diceRolls.length < 2) return false;
+        let sixes = diceRolls.filter(roll => roll === 6).length;
+        return sixes >= 2;
+    }
+
+    ablateArmor(location, amount) {
+        if (location === 'head') {
+            this.headArmor = Math.max(0, this.headArmor - amount);
+        } else {
+            this.bodyArmor = Math.max(0, this.bodyArmor - amount);
+        }
     }
 
     saveDamagePreset(name, options) {
@@ -252,6 +298,15 @@ class Encounter {
         }
 
         this.render();
+        
+        // Scroll to active participant
+        const activeParticipant = document.querySelector('.active-participant');
+        if (activeParticipant) {
+            activeParticipant.scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'center'
+            });
+        }
     }
 
     render() {
@@ -409,26 +464,58 @@ class Encounter {
                         </div>
                         <div class="character-actions">
                             <div class="health-tracker">
-                                <select id="hit-location-${this.id}-${p.name}">
-                                    <option value="body">Body</option>
-                                    <option value="head">Head</option>
-                                </select>
-                                <input type="number" class="damage-input" id="damage-${this.id}-${p.name}" placeholder="Amount">
-                                <button onclick="applyDamage(${this.id}, '${p.name}')">Damage</button>
-                                <button onclick="applyHealing(${this.id}, '${p.name}')">Heal</button>
-                                ${p.shield > 0 ? `
-                                    <button class="shield-toggle ${p.shieldActive ? 'shield-active' : ''}" 
-                                          onclick="toggleShield(${this.id}, '${p.name}')">
-                                        ${p.shieldActive ? 'Deactivate Shield' : 'Activate Shield'}
-                                    </button>
-                                ` : ''}
+                                <div class="damage-controls">
+                                    <div class="damage-inputs">
+                                        <select id="hit-location-${this.id}-${p.name}">
+                                            <option value="body">Body</option>
+                                            <option value="head">Head</option>
+                                        </select>
+                                        <input type="number" class="damage-input" id="damage-${this.id}-${p.name}" placeholder="Amount">
+                                    </div>
+                                    <div class="damage-options">
+                                        <select id="attack-type-${this.id}-${p.name}">
+                                            <option value="ranged">Ranged Attack</option>
+                                            <option value="melee">Melee Attack</option>
+                                            <option value="brawling">Brawling</option>
+                                            <option value="martialArts">Martial Arts</option>
+                                        </select>
+                                        <label class="damage-modifier">
+                                            <input type="checkbox" id="armor-piercing-${this.id}-${p.name}">
+                                            Armor Piercing
+                                        </label>
+                                        <label class="damage-modifier">
+                                            <input type="checkbox" id="half-armor-${this.id}-${p.name}">
+                                            Halved Armor
+                                        </label>
+                                        <label class="damage-modifier">
+                                            <input type="checkbox" id="ignore-armor-${this.id}-${p.name}">
+                                            Ignore Armor
+                                        </label>
+                                    </div>
+                                    <div class="damage-buttons">
+                                        <button onclick="applyDamage(${this.id}, '${p.name}')">Damage</button>
+                                        <button onclick="applyHealing(${this.id}, '${p.name}')">Heal</button>
+                                        ${p.shield > 0 ? `
+                                            <button class="shield-toggle ${p.shieldActive ? 'shield-active' : ''}" 
+                                                  onclick="toggleShield(${this.id}, '${p.name}')">
+                                                ${p.shieldActive ? 'Deactivate Shield' : 'Activate Shield'}
+                                            </button>
+                                        ` : ''}
+                                    </div>
+                                </div>
                             </div>
                             
-                            <div class="initiative-controls">
-                                <input type="number" class="initiative-input" id="initiative-${this.id}-${p.name}" placeholder="Total">
-                                <button onclick="setManualInitiative(${this.id}, '${p.name}')">Set Initiative</button>
-                                <button onclick="rollIndividualInitiative(${this.id}, '${p.name}')">Roll Initiative</button>
-                                <button onclick="resetInitiative(${this.id}, '${p.name}')">Reset Initiative</button>
+                            <div class="initiative-tracker">
+                                <div class="initiative-controls-box">
+                                    <div class="initiative-inputs">
+                                        <input type="number" class="initiative-input" id="initiative-${this.id}-${p.name}" placeholder="Total">
+                                    </div>
+                                    <div class="initiative-buttons">
+                                        <button onclick="setManualInitiative(${this.id}, '${p.name}')">Set Initiative</button>
+                                        <button onclick="rollIndividualInitiative(${this.id}, '${p.name}')">Roll Initiative</button>
+                                        <button onclick="resetInitiative(${this.id}, '${p.name}')">Reset Initiative</button>
+                                    </div>
+                                </div>
                             </div>
                             <div>
                                 <select id="critical-injury-select-${this.id}-${p.name}">
@@ -449,6 +536,30 @@ class Encounter {
                 }).join('')}
             </div>
         `;
+
+        // Add floating next turn button if encounter is active
+        if (this.active) {
+            const floatingButton = document.createElement('button');
+            floatingButton.className = 'floating-next-turn';
+            floatingButton.innerHTML = `
+                Next Turn
+                <span class="round-info">Round ${this.currentRound}</span>
+            `;
+            floatingButton.onclick = () => nextTurn(this.id);
+
+            // Remove any existing floating button before adding new one
+            const existingButton = document.querySelector('.floating-next-turn');
+            if (existingButton) {
+                existingButton.remove();
+            }
+            document.body.appendChild(floatingButton);
+        } else {
+            // Remove floating button when encounter ends
+            const existingButton = document.querySelector('.floating-next-turn');
+            if (existingButton) {
+                existingButton.remove();
+            }
+        }
     }
 
     toJSON() {
@@ -944,22 +1055,33 @@ function applyDamage(encounterId, participantName) {
     const participant = encounter.participants.find(p => p.name === participantName);
     const damageInput = document.getElementById(`damage-${encounterId}-${participantName}`);
     const locationSelect = document.getElementById(`hit-location-${encounterId}-${participantName}`);
-    
+    const diceRolls = window.lastDiceRolls || []; // Get dice rolls from dice roller
+
     if (!participant || !damageInput.value) return;
 
     const baseDamage = parseInt(damageInput.value);
     const location = locationSelect.value;
+    
+    // Get all damage modifiers
     const options = {
         isAP: document.getElementById(`armor-piercing-${encounterId}-${participantName}`).checked,
         isHalfArmor: document.getElementById(`half-armor-${encounterId}-${participantName}`).checked,
-        isHeadshot: document.getElementById(`headshot-${encounterId}-${participantName}`).checked,
-        location: location
+        isHeadshot: location === 'head',
+        ignoreArmor: document.getElementById(`ignore-armor-${encounterId}-${participantName}`)?.checked || false,
+        location: location,
+        attackType: document.getElementById(`attack-type-${encounterId}-${participantName}`).value,
+        diceRolls: diceRolls,
+        hasCrackedSkull: participant.criticalInjuries.some(ci => ci.name === "Cracked Skull")
     };
 
-    const calculatedDamage = participant.calculateDamage(baseDamage, options);
+    const damageResult = participant.calculateDamage(baseDamage, options);
     
     // Apply the calculated damage
-    participant.health = Math.max(0, participant.health - calculatedDamage);
+    participant.health = Math.max(0, participant.health - damageResult.totalDamage);
+    
+    // Show damage breakdown
+    const damageMessage = `Damage dealt: ${damageResult.totalDamage} (${damageResult.baseDamage} base + ${damageResult.criticalDamage} critical)`;
+    console.log(damageMessage);
     
     // Update display
     damageInput.value = '';
