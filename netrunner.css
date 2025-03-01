@@ -1,0 +1,649 @@
+.netrunner-container {
+    max-width: 1600px; /* Increased max-width for more space */
+    margin: 60px auto 20px; /* Increased top margin to account for navigation */
+    padding: 0 20px;
+}
+
+.netrunner-grid {
+    display: grid;
+    grid-template-columns: minmax(280px, 320px) minmax(400px, 1fr) minmax(280px, 350px);
+    gap: 20px;
+    height: auto; /* Changed from fixed height to auto */
+    min-height: calc(100vh - 120px);
+}
+
+.control-panel, .net-architecture, .active-runner {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Added consistent gap between children */
+    height: auto; /* Changed from fixed height */
+    max-height: calc(100vh - 120px); /* Maximum height with scrolling */
+}
+
+h1, h2, h3 {
+    color: var(--accent-primary);
+    margin-bottom: 15px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--text-primary);
+}
+
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 8px;
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    color: var(--text-primary);
+}
+
+.neon-button {
+    background-color: var(--accent-primary);
+    color: var(--bg-primary);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
+
+.neon-button:hover {
+    background-color: var(--accent-secondary);
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+}
+
+.danger-btn {
+    background-color: #ff4444;
+}
+
+.danger-btn:hover {
+    background-color: #ff0000;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+.save-btn {
+    background-color: #44ff44;
+    color: #000;
+}
+
+.save-btn:hover {
+    background-color: #00ff00;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+.load-btn {
+    background-color: #4444ff;
+}
+
+.load-btn:hover {
+    background-color: #0000ff;
+    box-shadow: 0 0 10px rgba(0, 0, 255, 0.5);
+}
+
+.node-creator, .program-manager, .architecture-generator {
+    margin-top: 0; /* Remove top margin to use parent's gap */
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Consistent inner spacing */
+}
+
+.architecture-visualization {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    gap: 15px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    min-height: 300px;
+    max-height: calc(100vh - 180px);
+    overflow-y: auto;
+}
+
+.entrance-node {
+    width: 200px;
+    height: 60px;
+    background-color: #00ff00;
+    color: #000;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: glow 2s infinite alternate;
+}
+
+.node {
+    width: 240px; /* Slightly wider for better content fit */
+    min-height: 80px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 0; /* Removed margin in favor of parent gap */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.node::before {
+    content: '';
+    position: absolute;
+    top: -20px; /* Increased connection line length */
+    width: 2px;
+    height: 20px;
+    background-color: var(--accent-primary);
+}
+
+.password-node {
+    background-color: #4466ff;
+    color: white;
+}
+
+.file-node {
+    background-color: #44ff44;
+    color: black;
+}
+
+.control-node {
+    background-color: #ffaa44;
+    color: black;
+}
+
+.blackICE-node {
+    background-color: #ff4444;
+    color: white;
+    animation: danger-pulse 2s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 5px #00ff00;
+    }
+    to {
+        box-shadow: 0 0 20px #00ff00;
+    }
+}
+
+@keyframes danger-pulse {
+    from {
+        box-shadow: 0 0 5px #ff0000;
+    }
+    to {
+        box-shadow: 0 0 20px #ff0000;
+    }
+}
+
+.node-content {
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+}
+
+.node-content h4 {
+    margin: 0 0 8px;
+    font-size: 1.1rem;
+    word-break: break-word; /* Prevent text overflow */
+}
+
+.node-content p {
+    margin: 8px 0;
+    font-size: 0.9rem;
+}
+
+.node-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.node-controls button {
+    padding: 2px 5px;
+    font-size: 0.8rem;
+}
+
+.program {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+
+.program span {
+    color: #00ffff;
+}
+
+.use-program-btn {
+    background-color: #00cccc;
+    color: black;
+    border: none;
+    border-radius: 3px;
+    padding: 3px 8px;
+    cursor: pointer;
+}
+
+.program-custom {
+    display: flex;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.program-custom input {
+    flex: 1;
+    padding: 5px;
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    color: var(--text-primary);
+}
+
+.add-custom-program {
+    background-color: var(--accent-primary);
+    color: var(--bg-primary);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.runner-status {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+
+.stat-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat-row:last-child {
+    border-bottom: none;
+}
+
+.runner-log {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 200px; /* Minimum height for the log */
+    max-height: 300px; /* Maximum height with scrolling */
+}
+
+#log-entries {
+    flex: 1;
+    overflow-y: auto;
+    padding: 8px;
+    background-color: #000;
+    border: 1px solid #333;
+    border-radius: 5px;
+}
+
+.log-entry {
+    margin-bottom: 8px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 8px;
+}
+
+.log-entry:last-child {
+    border-bottom: none;
+}
+
+.log-timestamp {
+    color: #888;
+    font-size: 0.8rem;
+}
+
+.log-success {
+    color: #00ff00;
+}
+
+.log-failure {
+    color: #ff0000;
+}
+
+.log-info {
+    color: #00ffff;
+}
+
+.log-attack {
+    color: #ff00ff;
+}
+
+/* New styles for architecture generator */
+.architecture-generator {
+    margin-top: 0; /* Remove top margin to use parent's gap */
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Consistent inner spacing */
+}
+
+/* Export/Import buttons */
+.export-btn {
+    background-color: #44aaff;
+    color: #000;
+}
+
+.export-btn:hover {
+    background-color: #0088ff;
+    box-shadow: 0 0 10px rgba(0, 136, 255, 0.5);
+}
+
+.import-btn {
+    background-color: #aa44ff;
+    color: #fff;
+}
+
+.import-btn:hover {
+    background-color: #8800ff;
+    box-shadow: 0 0 10px rgba(136, 0, 255, 0.5);
+}
+
+/* Modal styles for architecture export/import */
+.modal {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: var(--bg-secondary);
+    padding: 25px;
+    border: 1px solid var(--accent-primary);
+    border-radius: 8px;
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.close-modal {
+    color: var(--text-primary);
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-modal:hover {
+    color: var(--accent-primary);
+}
+
+#modal-title {
+    margin-top: 0;
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+#modal-body {
+    padding: 10px 0;
+}
+
+#export-json {
+    width: 100%;
+    height: 250px; /* Increased height */
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 15px;
+    font-family: monospace;
+    font-size: 14px;
+    margin: 15px 0;
+    resize: vertical;
+}
+
+/* Action buttons container */
+.action-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* Architecture list in load modal */
+#architecture-select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 1200px) {
+    .netrunner-grid {
+        grid-template-columns: minmax(250px, 300px) minmax(350px, 1fr) minmax(250px, 300px);
+        gap: 15px;
+    }
+}
+
+@media (max-width: 992px) {
+    .netrunner-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+    }
+    
+    .control-panel {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+    
+    .net-architecture {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+    }
+    
+    .active-runner {
+        grid-column: 1 / 3;
+        grid-row: 2 / 3;
+    }
+}
+
+@media (max-width: 768px) {
+    .netrunner-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+    }
+    
+    .control-panel {
+        grid-column: 1;
+        grid-row: 1;
+    }
+    
+    .net-architecture {
+        grid-column: 1;
+        grid-row: 2;
+    }
+    
+    .active-runner {
+        grid-column: 1;
+        grid-row: 3;
+    }
+    
+    .architecture-visualization {
+        max-height: 500px;
+    }
+}
+
+/* Better spacing for small devices */
+@media (max-width: 576px) {
+    .action-buttons {
+        grid-template-columns: 1fr;
+    }
+    
+    .netrunner-container {
+        margin: 60px auto 10px;
+        padding: 0 10px;
+    }
+    
+    .control-panel, .net-architecture, .active-runner {
+        padding: 15px;
+    }
+    
+    .node {
+        width: 200px;
+    }
+}
+
+/* Visual improvements for the node container */
+#node-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px; /* More space between nodes */
+    padding: 10px 0 30px; /* Added bottom padding for better scrolling */
+}
+
+/* Style the NET Architecture type selector */
+#architecture-type {
+    margin-bottom: 10px;
+}
+
+/* Animated transition for node deletion */
+.node.removing {
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+/* Add back button navigation animation */
+.back-button {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 5px 10px;
+    background-color: var(--accent-primary);
+    color: var(--bg-primary);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.3s ease;
+}
+
+.back-button:hover {
+    transform: translateX(-5px);
+    background-color: var(--accent-secondary);
+}
+
+/* Player Roll Input Section Styles */
+.player-roll-section {
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--accent-primary);
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 15px;
+}
+
+.player-roll-section h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: var(--accent-primary);
+}
+
+.roll-input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.roll-input-container .form-group {
+    margin-bottom: 0;
+}
+
+.roll-info {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 5px;
+}
+
+.roll-info p {
+    margin: 0;
+    color: var(--text-primary);
+}
+
+#roll-result {
+    font-weight: bold;
+}
+
+#roll-result.log-success {
+    color: #00ff00;
+}
+
+#roll-result.log-failure {
+    color: #ff0000;
+}
+
+#confirm-roll-btn {
+    margin-top: 10px;
+    background-color: #00ccff;
+    color: #000;
+}
+
+#confirm-roll-btn:hover {
+    background-color: #00aadd;
+    box-shadow: 0 0 10px rgba(0, 204, 255, 0.5);
+}
+
+/* Interface skill input styling */
+#pc-interface {
+    border-color: var(--accent-primary);
+    background-color: var(--bg-primary);
+}
+
+#pc-interface:focus {
+    box-shadow: 0 0 5px var(--accent-primary);
+}
+
+/* Style for Interface skill in player list */
+.interface-skill {
+    color: #00ffff;
+    font-weight: bold;
+}

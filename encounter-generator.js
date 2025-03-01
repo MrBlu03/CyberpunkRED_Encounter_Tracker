@@ -50,6 +50,95 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// Encounter Generator for Cyberpunk RED
+// This provides procedurally generated encounters based on difficulty
+
+// Encounter templates
+const ENCOUNTER_TEMPLATES = {
+    easy: [
+        {
+            name: "Street Scum Ambush",
+            enemyType: "Street Scum",
+            enemyCount: { min: 2, max: 4 },
+            include_turrets: false
+        },
+        {
+            name: "Gang Territory Patrol",
+            enemyType: "Street Scum",
+            enemyCount: { min: 2, max: 5 },
+            include_turrets: false
+        }
+    ],
+    medium: [
+        {
+            name: "Corporate Security Detail",
+            enemyType: "Edgerunners",
+            enemyCount: { min: 3, max: 6 },
+            include_turrets: false
+        },
+        {
+            name: "Gang Showdown",
+            enemyType: "Street Scum",
+            enemyCount: { min: 4, max: 8 },
+            include_turrets: false
+        },
+        {
+            name: "Security Checkpoint",
+            enemyType: "Edgerunners",
+            enemyCount: { min: 2, max: 4 },
+            include_turrets: true,
+            turret_count: { min: 1, max: 2 }
+        }
+    ],
+    hard: [
+        {
+            name: "Corporate Strike Team",
+            enemyType: "Edgerunners",
+            enemyCount: { min: 4, max: 6 },
+            include_turrets: true,
+            turret_count: { min: 1, max: 3 }
+        },
+        {
+            name: "Max-Tac Raid",
+            enemyType: "Max-Tac",
+            enemyCount: { min: 2, max: 4 },
+            include_turrets: false
+        },
+        {
+            name: "Security Lockdown",
+            enemyType: "Edgerunners",
+            enemyCount: { min: 3, max: 5 },
+            include_turrets: true,
+            turret_count: { min: 2, max: 4 }
+        }
+    ]
+};
+
+// Cyberpunk-themed location names for encounters
+const LOCATION_NAMES = [
+    "Abandoned Mallplex",
+    "Night City Subway",
+    "Corpo Plaza",
+    "Combat Zone Alley",
+    "Watson District",
+    "Japantown Market",
+    "Pacifica Ruins",
+    "Arasaka Tower",
+    "Militech R&D Lab",
+    "Afterlife Club",
+    "Kabuki Market",
+    "Charter Hill Penthouse",
+    "Biotechnica Farms",
+    "City Center Plaza",
+    "The Badlands Outpost",
+    "Orbital Air Spaceport",
+    "Megabuilding H10",
+    "Trauma Team Landing Zone",
+    "Underground Ripperdoc Clinic",
+    "Petrochem Refinery"
+];
+
+// Generate a random encounter based on difficulty
 function generateRandomEncounter(difficulty, enemyCount) {
     const preset = DIFFICULTY_PRESETS[difficulty];
     if (!preset) return null;

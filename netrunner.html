@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netrunner Interface - Cyberpunk Red Initiative Tracker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="netrunner.css">
+</head>
+<body>
+    <!-- Navigation Dropdown -->
+    <div class="nav-container">
+        <div class="nav-dropdown">
+            <button class="nav-button">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                    <path fill="currentColor" d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                </svg>
+                Navigation
+            </button>
+            <div class="nav-content">
+                <a href="index.html">Initiative Tracker</a>
+                <a href="pc-manager.html">Player Characters</a>
+                <a href="netrunner.html">Netrunner Interface</a>
+                <a href="settings.html">Settings</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="netrunner-container">
+        <h1>NET Architecture Builder</h1>
+        
+        <div class="netrunner-grid">
+            <div class="control-panel">
+                <h2>Control Panel</h2>
+                <div class="form-group">
+                    <label for="architecture-name">Architecture Name:</label>
+                    <input type="text" id="architecture-name" placeholder="Corporate Server">
+                </div>
+                <div class="form-group">
+                    <label for="difficulty">Difficulty Level:</label>
+                    <select id="difficulty">
+                        <option value="basic">Basic (DV 6)</option>
+                        <option value="standard" selected>Standard (DV 8)</option>
+                        <option value="advanced">Advanced (DV 10)</option>
+                        <option value="blackICE">Black ICE (DV 12)</option>
+                        <option value="custom">Custom</option>
+                    </select>
+                    <input type="number" id="custom-dv" placeholder="Custom DV" min="1" max="20" style="display: none;">
+                </div>
+                
+                <div class="node-creator">
+                    <h3>Add Node</h3>
+                    <div class="form-group">
+                        <label for="node-type">Type:</label>
+                        <select id="node-type">
+                            <option value="password">Password</option>
+                            <option value="file">File</option>
+                            <option value="control">Control Node</option>
+                            <option value="blackICE">Black ICE</option>
+                        </select>
+                    </div>
+                    <div class="form-group" id="blackICE-options" style="display: none;">
+                        <label for="blackICE-type">Black ICE Type:</label>
+                        <select id="blackICE-type">
+                            <option value="hellhound">Hellhound</option>
+                            <option value="wisp">Wisp</option>
+                            <option value="killer">Killer</option>
+                            <option value="raven">Raven</option>
+                            <option value="asp">ASP</option>
+                            <option value="sabertooth">Sabertooth</option>
+                            <option value="kraken">Kraken</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="node-name">Name:</label>
+                        <input type="text" id="node-name" placeholder="Node Name">
+                    </div>
+                    <button id="add-node-btn" class="neon-button">Add Node</button>
+                </div>
+                
+                <!-- New Random Architecture Generator -->
+                <div class="architecture-generator">
+                    <h3>Random Architecture Generator</h3>
+                    <div class="form-group">
+                        <label for="random-difficulty">Difficulty:</label>
+                        <select id="random-difficulty">
+                            <option value="basic">Basic (DV 6)</option>
+                            <option value="standard" selected>Standard (DV 8)</option>
+                            <option value="advanced">Advanced (DV 10)</option>
+                            <option value="blackICE">Black ICE (DV 12)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="architecture-type">Architecture Type:</label>
+                        <select id="architecture-type">
+                            <option value="corporate">Corporate</option>
+                            <option value="military">Military</option>
+                            <option value="personal">Personal</option>
+                            <option value="government">Government</option>
+                            <option value="criminal">Criminal Syndicate</option>
+                        </select>
+                    </div>
+                    <button id="generate-architecture-btn" class="neon-button">Generate Random Architecture</button>
+                </div>
+                
+                <!-- Updated Program Manager Section -->
+                <div class="program-manager">
+                    <h3>Netrunner Programs</h3>
+                    <div class="program-list">
+                        <div class="program">
+                            <span>Banhammer</span>
+                            <button class="use-program-btn">Use</button>
+                        </div>
+                        <div class="program">
+                            <span>Sword</span>
+                            <button class="use-program-btn">Use</button>
+                        </div>
+                        <div class="program">
+                            <span>Worm</span>
+                            <button class="use-program-btn">Use</button>
+                        </div>
+                        <div class="program">
+                            <span>Armor</span>
+                            <button class="use-program-btn">Use</button>
+                        </div>
+                        <div class="program">
+                            <span>Flak</span>
+                            <button class="use-program-btn">Use</button>
+                        </div>
+                        <div class="program-custom">
+                            <input type="text" placeholder="Custom Program">
+                            <button class="add-custom-program">Add</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="action-buttons">
+                    <button id="save-architecture" class="neon-button save-btn">Save Architecture</button>
+                    <button id="load-architecture" class="neon-button load-btn">Load Architecture</button>
+                    <button id="clear-architecture" class="neon-button danger-btn">Clear Architecture</button>
+                    <button id="export-architecture" class="neon-button export-btn">Export Architecture</button>
+                    <input type="file" id="import-architecture-file" accept=".json" style="display: none;">
+                    <button id="import-architecture" class="neon-button import-btn">Import Architecture</button>
+                </div>
+            </div>
+            
+            <div class="net-architecture">
+                <h2>NET Architecture</h2>
+                <div class="architecture-visualization">
+                    <div class="entrance-node">
+                        <div class="node-content">
+                            <h4>Net Access Point</h4>
+                            <p>Entry Point</p>
+                        </div>
+                    </div>
+                    <div id="node-container">
+                        <!-- Nodes will be added here dynamically -->
+                    </div>
+                </div>
+            </div>
+            
+            <div class="active-runner">
+                <h2>Active Netrunner</h2>
+                <div class="netrunner-stats">
+                    <div class="form-group">
+                        <label for="netrunner-name">Name:</label>
+                        <select id="netrunner-select">
+                            <option value="">Select a Netrunner...</option>
+                            <!-- Will be populated from player characters -->
+                        </select>
+                    </div>
+                    <div class="runner-status">
+                        <div class="stat-row">
+                            <span>Interface Skill: </span>
+                            <span id="interface-value">4</span>
+                        </div>
+                        <div class="stat-row">
+                            <span>Net Actions: </span>
+                            <span id="net-actions-remaining">4</span>/<span id="net-actions-total">4</span>
+                        </div>
+                        <div class="stat-row">
+                            <span>HP: </span>
+                            <span id="runner-hp">25</span>/<span id="runner-max-hp">25</span>
+                        </div>
+                    </div>
+                    <button id="reset-actions" class="neon-button">Reset Actions</button>
+                </div>
+                
+                <!-- Add Player Roll Input Section -->
+                <div class="player-roll-section">
+                    <h3>Player Roll Input</h3>
+                    <div class="roll-input-container">
+                        <div class="form-group">
+                            <label for="player-roll">Player's Dice Roll (1d10):</label>
+                            <input type="number" id="player-roll" min="1" max="10" placeholder="Enter 1-10">
+                        </div>
+                        <div class="form-group">
+                            <label for="target-dv">Target DV:</label>
+                            <input type="number" id="target-dv" readonly>
+                        </div>
+                        <div class="form-info">
+                            <p>Total Check: <span id="roll-total">-</span> (<span id="roll-result">-</span>)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="runner-log">
+                    <h3>Netrunning Log</h3>
+                    <div id="log-entries">
+                        <!-- Log entries will appear here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Netrunner Architecture Export/Import Modal -->
+    <div id="architecture-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 id="modal-title">Export Architecture</h2>
+            <div id="modal-body">
+                <p>Your architecture has been prepared for export:</p>
+                <textarea id="export-json" readonly></textarea>
+                <button id="copy-json" class="neon-button">Copy to Clipboard</button>
+                <button id="download-json" class="neon-button save-btn">Download as JSON</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Add navigation.js before other scripts -->
+    <script src="navigation.js"></script>
+    <script src="npc-presets.js"></script>
+    <script src="main.js"></script>
+    <script src="netrunner.js"></script>
+</body>
+</html>

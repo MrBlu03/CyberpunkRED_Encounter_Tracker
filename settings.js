@@ -1,49 +1,40 @@
-let currentTheme = localStorage.getItem('theme') || 'default';
-
-function initializeSettings() {
-    document.body.className = `theme-${currentTheme}`;
+document.addEventListener('DOMContentLoaded', function() {
+    // Load current theme
+    const currentTheme = localStorage.getItem('theme') || 'default';
     document.getElementById('theme-select').value = currentTheme;
-}
-
-// Event Listeners
-document.getElementById('theme-select').addEventListener('change', (e) => {
-    const newTheme = e.target.value;
-    // Apply theme before changing class to prevent flash
-    document.documentElement.style.setProperty('--theme-transition', 'none');
-    document.body.className = `theme-${newTheme}`;
-    // Force reflow
-    document.body.offsetHeight;
-    document.documentElement.style.removeProperty('--theme-transition');
+    document.body.className = `theme-${currentTheme}`;
     
-    currentTheme = newTheme;
-    localStorage.setItem('theme', newTheme);
+    // Theme select change handler
+    document.getElementById('theme-select').addEventListener('change', function(e) {
+        const theme = e.target.value;
+        document.body.className = `theme-${theme}`;
+        localStorage.setItem('theme', theme);
+    });
+    
+    // Setup data management buttons
+    document.getElementById('importDataFile').addEventListener('change', handleDataImport);
 });
 
 function clearAllData() {
-    if (confirm('Are you sure you want to clear all saved data? This cannot be undone.')) {
+    if (confirm('Are you sure you want to clear all data? This will delete all encounters and player characters.')) {
         localStorage.clear();
-        alert('All data has been cleared. The page will now reload.');
-        window.location.reload();
+        alert('All data has been cleared. Refresh the page to start fresh.');
     }
 }
 
 function exportAllData() {
     const data = {
-        encounters: JSON.parse(localStorage.getItem('encounters') || '[]'),
         playerCharacters: JSON.parse(localStorage.getItem('playerCharacters') || '[]'),
-        settings: {
-            theme: currentTheme,
-            largeText,
-            disableAnimations,
-            customTheme: JSON.parse(localStorage.getItem('customTheme') || '{}')
-        }
+        encounters: JSON.parse(localStorage.getItem('encounters') || '[]'),
+        encounterCounter: localStorage.getItem('encounterCounter'),
+        theme: localStorage.getItem('theme')
     };
     
     const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = 'cpred_tracker_backup.json';
+    a.download = `cpred_tracker_backup_${new Date().toISOString().split('T')[0]}.json`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
@@ -54,8 +45,8 @@ function importAllData() {
     document.getElementById('importDataFile').click();
 }
 
-document.getElementById('importDataFile').addEventListener('change', (e) => {
-    const file = e.target.files[0];
+function handleDataImport(event) {
+    const file = event.target.files[0];
     if (!file) return;
     
     const reader = new FileReader();
@@ -63,32 +54,31 @@ document.getElementById('importDataFile').addEventListener('change', (e) => {
         try {
             const data = JSON.parse(e.target.result);
             
-            if (data.encounters) localStorage.setItem('encounters', JSON.stringify(data.encounters));
-            if (data.playerCharacters) localStorage.setItem('playerCharacters', JSON.stringify(data.playerCharacters));
-            if (data.settings) {
-                localStorage.setItem('theme', data.settings.theme);
-                localStorage.setItem('largeText', data.settings.largeText);
-                localStorage.setItem('disableAnimations', data.settings.disableAnimations);
-                if (data.settings.customTheme) {
-                    localStorage.setItem('customTheme', JSON.stringify(data.settings.customTheme));
-                }
+            // Import all data
+            if (data.playerCharacters) {
+                localStorage.setItem('playerCharacters', JSON.stringify(data.playerCharacters));
             }
             
-            alert('Data imported successfully. The page will now reload.');
-            window.location.reload();
+            if (data.encounters) {
+                localStorage.setItem('encounters', JSON.stringify(data.encounters));
+            }
+            
+            if (data.encounterCounter) {
+                localStorage.setItem('encounterCounter', data.encounterCounter);
+            }
+            
+            if (data.theme) {
+                localStorage.setItem('theme', data.theme);
+                document.body.className = `theme-${data.theme}`;
+                document.getElementById('theme-select').value = data.theme;
+            }
+            
+            alert('Data imported successfully. Refresh the page to see changes.');
         } catch (error) {
             alert('Error importing data: ' + error.message);
         }
     };
     reader.readAsText(file);
-});
-
-// Replace the existing back button handler
-document.querySelector('.back-icon')?.addEventListener('click', (e) => {
-    e.preventDefault();
-    // Just navigate back, don't force reload
-    window.location.href = 'index.html';
-});
-
-// Initialize settings when the page loads
-document.addEventListener('DOMContentLoaded', initializeSettings);
+    // Reset the input so the same file can be selected again
+    event.target.value = '';
+}

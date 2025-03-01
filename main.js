@@ -48,8 +48,13 @@ class Participant {
 
     getEffectiveArmor(location) {
         let baseArmor = location === 'head' ? this.headArmor : this.bodyArmor;
-        // Instead of adding shield SP to base armor, return the higher of the two when shield is active
-        return this.shieldActive ? Math.max(baseArmor, this.shield) : baseArmor;
+        // Add shield SP to base armor when shield is active instead of taking the higher value
+        // Note: Shield only applies to body armor, not head armor
+        if (this.shieldActive && location !== 'head') {
+            return baseArmor + this.shield;
+        } else {
+            return baseArmor;
+        }
     }
 
     takeCover(coverType) {
@@ -160,7 +165,16 @@ class Participant {
 
             // Apply armor ablation if damage was dealt
             if (damageGotThrough) {
+                // Ablate base armor
                 this.ablateArmor(location, armorAblationAmount);
+                
+                // Ablate shield separately if active
+                if (this.shieldActive && this.shield > 0) {
+                    this.shield = Math.max(0, this.shield - armorAblationAmount);
+                    if (this.shield === 0) {
+                        this.shieldActive = false;
+                    }
+                }
             }
         }
 
@@ -592,6 +606,7 @@ class PlayerCharacter {
         this.weapons = weapons;         // Store weapons here
         this.criticalInjuries = criticalInjuries; // Store critical injuries here
         this.notes = '';
+        this.interface = 0; // Add interface skill with default 0
     }
 
     toJSON() {
@@ -606,7 +621,8 @@ class PlayerCharacter {
             shieldActive: this.shieldActive,
             weapons: this.weapons,
             criticalInjuries: this.criticalInjuries,
-            notes: this.notes
+            notes: this.notes,
+            interface: this.interface // Include interface skill in JSON
         };
     }
 }
@@ -619,6 +635,7 @@ function savePlayerCharacter() {
     const bodyArmor = parseInt(document.getElementById('pc-bodyArmor').value) || 0;
     const headArmor = parseInt(document.getElementById('pc-headArmor').value) || 0;
     const shield = parseInt(document.getElementById('pc-shield').value) || 0;
+    const interfaceSkill = parseInt(document.getElementById('pc-interface').value) || 0; // Get interface skill value
     const notes = document.getElementById('pc-notes').value;
     
     // Get weapons from weapon fields
@@ -646,6 +663,9 @@ function savePlayerCharacter() {
         weapons,    // Pass weapons array here
         []         // Empty array for critical injuries
     );
+    
+    // Set the interface skill
+    character.interface = interfaceSkill;
     character.notes = notes; // Make sure notes are saved
 
     // Load existing characters
@@ -675,6 +695,7 @@ function savePlayerCharacter() {
     document.getElementById('pc-bodyArmor').value = '';
     document.getElementById('pc-headArmor').value = '';
     document.getElementById('pc-shield').value = '';
+    document.getElementById('pc-interface').value = ''; // Clear interface field
     document.getElementById('pc-notes').value = '';
     document.getElementById('pc-weapon-fields').innerHTML = '';
     addWeaponFields('pc-weapon-fields');
@@ -683,41 +704,78 @@ function savePlayerCharacter() {
 // Add this new function to handle note updates
 function updateCharacterNotes(event) {
     const notes = event.target.value;
-    const participantDiv = event.target.closest('.participant, .pc-card-compact');
-    if (!participantDiv) return;
+    
+    // Try to get character name from data attribute first (most reliable)
+    const characterName = event.target.dataset.characterName;
+    
+    if (characterName) {
+        // Update in player characters
+        const playerCharacters = JSON.parse(localStorage.getItem('playerCharacters') || '[]');
+        const pcIndex = playerCharacters.findIndex(pc => pc.name === characterName);
+        if (pcIndex !== -1) {
+            playerCharacters[pcIndex].notes = notes;
+            localStorage.setItem('playerCharacters', JSON.stringify(playerCharacters));
+        }
 
-    const participantName = participantDiv.querySelector('.participant-name')?.textContent?.split(' ')[0] || 
-                          participantDiv.querySelector('h4')?.textContent;
-    if (!participantName) return;
-
-    // Update in player characters
-    const playerCharacters = JSON.parse(localStorage.getItem('playerCharacters') || '[]');
-    const pcIndex = playerCharacters.findIndex(pc => pc.name === participantName);
-    if (pcIndex !== -1) {
-        playerCharacters[pcIndex].notes = notes;
-        localStorage.setItem('playerCharacters', JSON.stringify(playerCharacters));
-    }
-
-    // Update in active encounters
-    let encounters = JSON.parse(localStorage.getItem('encounters') || '[]');
-    let updated = false;
-    encounters.forEach(encounter => {
-        encounter.participants.forEach(participant => {
-            if (participant.name === participantName) {
-                participant.notes = notes;
-                updated = true;
-            }
+        // Update in active encounters
+        let encounters = JSON.parse(localStorage.getItem('encounters') || '[]');
+        let updated = false;
+        encounters.forEach(encounter => {
+            encounter.participants.forEach(participant => {
+                if (participant.name === characterName) {
+                    participant.notes = notes;
+                    updated = true;
+                }
+            });
         });
-    });
 
-    if (updated) {
-        localStorage.setItem('encounters', JSON.stringify(encounters));
-        // Refresh all instances where this character appears
-        document.querySelectorAll(`textarea[data-character-name="${participantName}"]`).forEach(textarea => {
-            if (textarea !== event.target) {
-                textarea.value = notes;
-            }
+        if (updated) {
+            localStorage.setItem('encounters', JSON.stringify(encounters));
+            // Refresh all instances where this character appears
+            document.querySelectorAll(`textarea[data-character-name="${characterName}"]`).forEach(textarea => {
+                if (textarea !== event.target) {
+                    textarea.value = notes;
+                }
+            });
+        }
+    } else {
+        // Fallback to old method if data attribute isn't present
+        const participantDiv = event.target.closest('.participant, .pc-card-compact');
+        if (!participantDiv) return;
+
+        const participantName = participantDiv.querySelector('.participant-name')?.textContent?.split(' ')[0] || 
+                            participantDiv.querySelector('h4')?.textContent;
+        if (!participantName) return;
+
+        // Update in player characters
+        const playerCharacters = JSON.parse(localStorage.getItem('playerCharacters') || '[]');
+        const pcIndex = playerCharacters.findIndex(pc => pc.name === participantName);
+        if (pcIndex !== -1) {
+            playerCharacters[pcIndex].notes = notes;
+            localStorage.setItem('playerCharacters', JSON.stringify(playerCharacters));
+        }
+
+        // Update in active encounters
+        let encounters = JSON.parse(localStorage.getItem('encounters') || '[]');
+        let updated = false;
+        encounters.forEach(encounter => {
+            encounter.participants.forEach(participant => {
+                if (participant.name === participantName) {
+                    participant.notes = notes;
+                    updated = true;
+                }
+            });
         });
+
+        if (updated) {
+            localStorage.setItem('encounters', JSON.stringify(encounters));
+            // Refresh all instances where this character appears
+            document.querySelectorAll(`textarea[data-character-name="${participantName}"]`).forEach(textarea => {
+                if (textarea !== event.target) {
+                    textarea.value = notes;
+                }
+            });
+        }
     }
 }
 
@@ -732,6 +790,7 @@ function editCharacter(index) {
     document.getElementById('pc-bodyArmor').value = character.bodyArmor;
     document.getElementById('pc-headArmor').value = character.headArmor;
     document.getElementById('pc-shield').value = character.shield || 0;
+    document.getElementById('pc-interface').value = character.interface || 0; // Load interface skill
     document.getElementById('pc-notes').value = character.notes || '';
     
     // Clear and recreate weapon fields
@@ -774,6 +833,8 @@ function loadPlayerCharacters() {
             if (charData.notes !== undefined) {
                 pc.notes = charData.notes;
             }
+            if (charData.interface !== undefined) pc.interface = charData.interface; // Load interface skill
+            else pc.interface = 0; // Default to 0 if not present in data
             
             playerCharacters.push(pc);
         });
@@ -790,6 +851,7 @@ function loadPlayerCharacters() {
                         <div>Body Armor: ${pc.bodyArmor}</div>
                         <div>Head Armor: ${pc.headArmor}</div>
                         ${pc.shield ? `<div>Shield: ${pc.shield}</div>` : ''}
+                        ${pc.interface > 0 ? `<div>Interface: ${pc.interface}</div>` : ''} <!-- Show Interface if > 0 -->
                     </div>
                     <div class="weapons-section">
                         <h4>Weapons</h4>
@@ -846,6 +908,85 @@ function addWeaponFields(containerId, name = '', damage = '') {
         <button type="button" onclick="this.parentElement.remove()">×</button>
     `;
     container.appendChild(fieldPair);
+}
+
+function renderPlayerCharacterList() {
+    const pcList = document.getElementById('pc-list');
+    if (!pcList) return;
+
+    pcList.innerHTML = playerCharacters.map((pc, index) => `
+        <div class="pc-card-compact" data-character-id="${pc.name}">
+            <h4>${pc.name}</h4>
+            <div class="stats">
+                <div>Base Initiative: ${pc.base}</div>
+                <div>Health: ${pc.health}/${pc.maxHealth}</div>
+                <div>Body Armor: ${pc.bodyArmor}</div>
+                <div>Head Armor: ${pc.headArmor}</div>
+                ${pc.shield ? `<div>Shield: ${pc.shield} [${pc.shieldActive ? 'Active' : 'Inactive'}]</div>` : ''}
+                ${pc.interface > 0 ? `<div>Interface: ${pc.interface}</div>` : ''} <!-- Show Interface if > 0 -->
+            </div>
+            <div class="weapons-section">
+                <h4>Weapons</h4>
+                ${pc.weapons && pc.weapons.length > 0 ? `
+                    <div class="weapons-list">
+                        ${pc.weapons.map(w => `
+                            <div class="weapon-entry-readonly">
+                                ${w.name}: ${w.damage}
+                            </div>
+                        `).join('')}
+                    </div>
+                ` : '<div class="weapon-entry-readonly">No weapons</div>'}
+            </div>
+            <div class="critical-injuries-section">
+                <h4>Critical Injuries</h4>
+                ${pc.criticalInjuries && pc.criticalInjuries.length > 0 ? `
+                    <div class="critical-injuries-list">
+                        ${pc.criticalInjuries.map((injury, idx) => `
+                            <div class="critical-injury">
+                                ${injury.name}
+                                <button onclick="removeCriticalInjury('${pc.name}', ${idx}, true)">×</button>
+                            </div>
+                        `).join('')}
+                    </div>
+                ` : '<div>No critical injuries</div>'}
+            </div>
+            <div class="notes-section">
+                <h4>Notes</h4>
+                <textarea 
+                    class="character-notes"
+                    data-character-name="${pc.name}"
+                    onchange="updateCharacterNotes(event)"
+                >${pc.notes || ''}</textarea>
+            </div>
+            <div class="actions">
+                <button onclick="editCharacter(${index})">Edit</button>
+                <button onclick="deleteCharacter(${index})" class="danger-button">Delete</button>
+            </div>
+        </div>
+    `).join('');
+}
+
+function renderCompactPCList() {
+    const pcListCompact = document.querySelector('.pc-list-compact');
+    if (!pcListCompact) return;
+    
+    const hasSelectedEncounters = encounters.some(e => e.selected);
+    
+    pcListCompact.innerHTML = playerCharacters.map(pc => `
+        <div class="pc-card-compact">
+            <h4>${pc.name}</h4>
+            <div class="stats">
+                Base: ${pc.base} | HP: ${pc.health}/${pc.maxHealth}<br>
+                SP: ${pc.bodyArmor}/${pc.headArmor}
+            </div>
+            <div class="actions">
+                <button onclick="addPlayerCharacterToEncounter('${pc.name}')"
+                    ${!hasSelectedEncounters ? 'disabled' : ''}>
+                    Add to Encounter
+                </button>
+            </div>
+        </div>
+    `).join('');
 }
 
 function renderPlayerCharacterList() {
@@ -1055,7 +1196,7 @@ function applyDamage(encounterId, participantName) {
     const participant = encounter.participants.find(p => p.name === participantName);
     const damageInput = document.getElementById(`damage-${encounterId}-${participantName}`);
     const locationSelect = document.getElementById(`hit-location-${encounterId}-${participantName}`);
-    const diceRolls = window.lastDiceRolls || []; // Get dice rolls from dice roller
+    const diceRolls = window.lastDiceRolls || [];
 
     if (!participant || !damageInput.value) return;
 
@@ -1074,14 +1215,8 @@ function applyDamage(encounterId, participantName) {
         hasCrackedSkull: participant.criticalInjuries.some(ci => ci.name === "Cracked Skull")
     };
 
-    const damageResult = participant.calculateDamage(baseDamage, options);
-    
-    // Apply the calculated damage
-    participant.health = Math.max(0, participant.health - damageResult.totalDamage);
-    
-    // Show damage breakdown
-    const damageMessage = `Damage dealt: ${damageResult.totalDamage} (${damageResult.baseDamage} base + ${damageResult.criticalDamage} critical)`;
-    console.log(damageMessage);
+    // Process damage through the layered defense system
+    applyDamageSequentially(participant, baseDamage, options, encounter);
     
     // Update display
     damageInput.value = '';
@@ -1089,118 +1224,331 @@ function applyDamage(encounterId, participantName) {
     localStorage.setItem('encounters', JSON.stringify(encounters.map(e => e.toJSON())));
 }
 
-// Helper function to handle the actual damage application
-function applyDamageToParticipant(participant, incomingDamage, location, encounter, damageSource = null) {
-    const originalHealth = participant.health;
-    let remainingDamage = incomingDamage;
-
-    const shieldUsers = participant.getHumanShieldUsers();
+// New function to apply damage through the proper sequence
+function applyDamageSequentially(participant, baseDamage, options, encounter) {
+    let remainingDamage = baseDamage;
+    const { location, isAP, isHalfArmor, isHeadshot, ignoreArmor, attackType, diceRolls, hasCrackedSkull } = options;
     
-    if (shieldUsers.length > 0 && damageSource && damageSource.rangeType === 'RANGED' && location !== 'head') {
-        const shieldUser = shieldUsers[0];
-        remainingDamage = applyHumanShieldDamage(participant, shieldUser, remainingDamage, location, encounter);
-    } else {
-        remainingDamage = applyStandardDamage(participant, remainingDamage, location);
-    }
-
-    if (participant.health <= 0) {
-        handleParticipantDeath(participant, encounter);
-        
-        shieldUsers.forEach(shieldUser => {
-            shieldUser.releaseHumanShield();
-            
-            const overflow = Math.abs(participant.health);
-            if (overflow > 0) {
-                applyDamageToParticipant(
-                    shieldUser,
-                    overflow,
-                    location,
-                    encounter,
-                    { rangeType: 'OVERRUN', source: participant.name }
-                );
-            }
-        });
-    }
-
-    updatePlayerCharacterState(participant);
-}
-
-function applyHumanShieldDamage(target, shieldUser, damage, location, encounter) {
-    let remainingDamage = damage;
+    // Log initial damage info for debugging
+    console.log(`Applying ${remainingDamage} damage to ${participant.name} at ${location} location`);
     
-    remainingDamage = applyStandardDamage(target, remainingDamage, location);
-    
-    if (target.health <= 0) {
-        shieldUser.releaseHumanShield();
-        
-        if (remainingDamage > 0) {
-            applyStandardDamage(shieldUser, remainingDamage, location);
-        }
-    }
-    
-    return 0;
-}
-
-function applyStandardDamage(participant, damage, location) {
-    let remainingDamage = damage;
-    
-    if (participant.cover) {
+    // Step 1: Apply damage to cover if present
+    if (participant.cover && !ignoreArmor) {
+        console.log(`Participant has cover: ${participant.cover.type} with ${participant.cover.hp}/${participant.cover.maxHp} HP`);
         const coverDamage = Math.min(remainingDamage, participant.cover.hp);
         participant.cover.hp -= coverDamage;
         remainingDamage -= coverDamage;
+        console.log(`Cover absorbed ${coverDamage} damage, ${remainingDamage} damage remaining`);
         
         if (participant.cover.hp <= 0) {
+            console.log(`Cover destroyed: ${participant.cover.type}`);
             participant.cover = null;
         }
-    }
-    
-    if (remainingDamage > 0 && participant.shieldActive && participant.shield > 0) {
-        const shieldProtection = Math.min(remainingDamage, participant.shield);
-        participant.shield -= shieldProtection;
-        remainingDamage -= shieldProtection;
         
-        if (participant.shield <= 0) {
-            participant.shieldActive = false;
+        // If all damage was absorbed by cover, we're done
+        if (remainingDamage <= 0) {
+            console.log(`All damage absorbed by cover`);
+            return;
         }
     }
     
-    if (remainingDamage > 0) {
-        const armor = location === 'head' ? participant.headArmor : participant.bodyArmor;
+    // Step 2: Apply damage to human shield
+    if (participant.humanShield && !ignoreArmor && location !== 'head' && attackType === 'ranged') {
+        const allEncounters = encounters; // Accessing all encounters
+        let humanShieldParticipant = null;
         
-        if (remainingDamage >= armor) {
-            const effectiveDamage = remainingDamage - armor;
-            participant.health = Math.max(-participant.maxHealth, participant.health - effectiveDamage);
+        // Find the human shield participant across all encounters
+        for (const enc of allEncounters) {
+            const shield = enc.participants.find(p => p.name === participant.humanShield);
+            if (shield) {
+                humanShieldParticipant = shield;
+                break;
+            }
+        }
+        
+        if (humanShieldParticipant) {
+            console.log(`Using ${humanShieldParticipant.name} as human shield`);
+            const initialHealth = humanShieldParticipant.health;
             
-            if (location === 'head') {
-                participant.headArmor = Math.max(0, participant.headArmor - 1);
-            } else {
-                participant.bodyArmor = Math.max(0, participant.bodyArmor - 1);
+            // Apply damage to human shield
+            let shieldDamage = applyDamageToDefense(humanShieldParticipant, remainingDamage, location, isAP);
+            remainingDamage -= shieldDamage;
+            console.log(`Human shield took ${shieldDamage} damage, ${remainingDamage} damage remaining`);
+            
+            // If human shield died, convert to corpse shield
+            if (initialHealth > 0 && humanShieldParticipant.health <= 0) {
+                console.log(`Human shield ${humanShieldParticipant.name} died, converting to corpse shield`);
+                participant.humanShield = null; // Release human shield
+                participant.isGrappling = false;
+                
+                // Create corpse shield
+                participant.cover = {
+                    type: "Corpse Shield",
+                    hp: Math.floor(humanShieldParticipant.maxHealth / 2),
+                    maxHp: Math.floor(humanShieldParticipant.maxHealth / 2)
+                };
+                
+                // If there's remaining damage, apply it to the new corpse shield
+                if (remainingDamage > 0) {
+                    const corpseDamage = Math.min(remainingDamage, participant.cover.hp);
+                    participant.cover.hp -= corpseDamage;
+                    remainingDamage -= corpseDamage;
+                    console.log(`Corpse shield absorbed ${corpseDamage} damage, ${remainingDamage} damage remaining`);
+                    
+                    if (participant.cover.hp <= 0) {
+                        console.log(`Corpse shield destroyed`);
+                        participant.cover = null;
+                    }
+                }
             }
             
-            remainingDamage = 0;
-        } else {
-            remainingDamage = 0;
+            // If all damage was absorbed, we're done
+            if (remainingDamage <= 0) {
+                console.log(`All damage absorbed by human shield/corpse shield`);
+                return;
+            }
         }
     }
     
-    return remainingDamage;
+    // Step 3: Apply damage to armor and health
+    if (!ignoreArmor) {
+        // Calculate effective armor including shield
+        let effectiveArmor = participant.getEffectiveArmor(location);
+        
+        // Handle armor piercing and half armor options
+        if (isAP) {
+            effectiveArmor = Math.floor(effectiveArmor / 2);
+            console.log(`Armor piercing: Effective armor reduced to ${effectiveArmor}`);
+        } else if (isHalfArmor && attackType !== 'brawling') {
+            effectiveArmor = Math.ceil(effectiveArmor / 2);
+            console.log(`Half armor: Effective armor reduced to ${effectiveArmor}`);
+        }
+        
+        // Subtract armor from damage
+        if (effectiveArmor > 0) {
+            const armoredDamage = Math.max(0, remainingDamage - effectiveArmor);
+            const absorbedByArmor = remainingDamage - armoredDamage;
+            console.log(`${absorbedByArmor} damage absorbed by armor, ${armoredDamage} penetrated`);
+            remainingDamage = armoredDamage;
+            
+            // Only ablate armor if damage got through
+            if (armoredDamage > 0) {
+                // Ablate base armor
+                if (location === 'head') {
+                    participant.headArmor = Math.max(0, participant.headArmor - (isAP ? 2 : 1));
+                    console.log(`Head armor ablated to ${participant.headArmor}`);
+                } else {
+                    participant.bodyArmor = Math.max(0, participant.bodyArmor - (isAP ? 2 : 1));
+                    console.log(`Body armor ablated to ${participant.bodyArmor}`);
+                }
+                
+                // Ablate shield separately if active
+                if (participant.shieldActive && participant.shield > 0) {
+                    participant.shield = Math.max(0, participant.shield - (isAP ? 2 : 1));
+                    console.log(`Shield ablated to ${participant.shield}`);
+                    
+                    // Deactivate shield if it reaches 0
+                    if (participant.shield === 0) {
+                        participant.shieldActive = false;
+                        console.log(`Shield deactivated due to complete ablation`);
+                    }
+                }
+            }
+        }
+    }
+    
+    // Apply headshot multiplier AFTER armor reduction
+    if (isHeadshot && remainingDamage > 0) {
+        const multiplier = hasCrackedSkull ? 3 : 2;
+        const oldDamage = remainingDamage;
+        remainingDamage *= multiplier;
+        console.log(`Headshot multiplier (${multiplier}x): ${oldDamage} -> ${remainingDamage}`);
+    }
+    
+    // Check for critical injury from dice rolls
+    let criticalDamage = 0;
+    if (hasCriticalFromDice(diceRolls)) {
+        criticalDamage = 5; // Critical injuries always deal 5 bonus damage
+        console.log(`Added ${criticalDamage} damage from critical roll`);
+    }
+    
+    // Apply final damage to health
+    if (remainingDamage + criticalDamage > 0) {
+        const totalDamage = remainingDamage + criticalDamage;
+        const oldHealth = participant.health;
+        participant.health = Math.max(0, participant.health - totalDamage);
+        console.log(`Health reduced by ${totalDamage}: ${oldHealth} -> ${participant.health}`);
+        
+        // Handle death and critical injuries
+        if (participant.health <= 0 && oldHealth > 0) {
+            handleParticipantDeath(participant, encounter);
+            
+            // Handle human shield users if this participant was being used as a shield
+            const shieldUsers = getHumanShieldUsers(participant.name);
+            shieldUsers.forEach(user => {
+                console.log(`${user.name} was using ${participant.name} as shield - releasing`);
+                user.releaseHumanShield();
+            });
+        }
+    }
+    
+    // Update player character state if applicable
+    updatePlayerCharacterState(participant);
 }
 
+// Helper function to apply damage to a defense (armor/shield)
+function applyDamageToDefense(participant, damage, location, isAP) {
+    const effectiveArmor = participant.getEffectiveArmor(location);
+    const armorAbsorbed = Math.min(damage, effectiveArmor);
+    
+    // If damage gets through armor, apply to health
+    if (damage > effectiveArmor) {
+        const healthDamage = damage - effectiveArmor;
+        participant.health = Math.max(0, participant.health - healthDamage);
+        
+        // Ablate armor
+        if (location === 'head') {
+            participant.headArmor = Math.max(0, participant.headArmor - (isAP ? 2 : 1));
+        } else {
+            participant.bodyArmor = Math.max(0, participant.bodyArmor - (isAP ? 2 : 1));
+        }
+        
+        // Ablate shield if active
+        if (participant.shieldActive && participant.shield > 0) {
+            participant.shield = Math.max(0, participant.shield - (isAP ? 2 : 1));
+            if (participant.shield === 0) {
+                participant.shieldActive = false;
+            }
+        }
+    }
+    
+    // Return the total damage dealt to this target
+    return damage;
+}
+
+// Helper function to check for critical from dice rolls
+function hasCriticalFromDice(diceRolls) {
+    if (!Array.isArray(diceRolls) || diceRolls.length < 2) return false;
+    let sixes = diceRolls.filter(roll => roll === 6).length;
+    return sixes >= 2;
+}
+
+// Get all participants using a specific participant as a human shield
+function getHumanShieldUsers(humanShieldName) {
+    return encounters.flatMap(e => 
+        e.participants.filter(p => 
+            p.humanShield === humanShieldName && p.health > 0
+        )
+    );
+}
+
+// Handle participant death and apply critical injury
 function handleParticipantDeath(participant, encounter) {
+    console.log(`${participant.name} died - applying critical injury`);
+    
+    // Add a random critical injury to body when character dies
     const criticalInjury = rollCriticalInjury('Body');
     if (criticalInjury && !participant.criticalInjuries.some(ci => ci.name === criticalInjury.name)) {
         participant.criticalInjuries.push({ ...criticalInjury, autoApplied: true });
+        console.log(`Applied critical injury: ${criticalInjury.name}`);
     }
     
-    participant.getHumanShieldUsers().forEach(user => {
-        user.releaseHumanShield();
-        encounter.render();
-    });
+    // Release any human shields this participant was using
+    if (participant.humanShield) {
+        console.log(`${participant.name} was using ${participant.humanShield} as shield - releasing`);
+        participant.releaseHumanShield();
+    }
     
-    if (encounter.active) {
+    // Reset initiative if encounter is active
+    if (encounter && encounter.active) {
         participant.resetInitiative();
     }
 }
+
+// Replace the old function with the improved one
+Participant.prototype.calculateDamage = function(baseDamage, options = {}) {
+    // This function is kept for backward compatibility
+    // The actual damage calculation is now handled by applyDamageSequentially
+    
+    const {
+        isAP = false,
+        isHalfArmor = false,
+        isHeadshot = false,
+        ignoreArmor = false,
+        location = 'body',
+        attackType = 'ranged',
+        diceRolls = [],
+        hasCrackedSkull = false
+    } = options;
+
+    // Calculate effective armor
+    let armor = this.getEffectiveArmor(location);
+    
+    if (isAP) {
+        armor = Math.floor(armor / 2);
+    } else if (isHalfArmor && attackType !== 'brawling') {
+        armor = Math.ceil(armor / 2);
+    }
+    
+    // Calculate damage
+    let finalDamage = Math.max(0, baseDamage - armor);
+    const damageGotThrough = finalDamage > 0;
+    
+    // Apply headshot multiplier
+    if (isHeadshot && damageGotThrough) {
+        finalDamage *= hasCrackedSkull ? 3 : 2;
+    }
+    
+    // Calculate critical damage
+    let criticalDamage = 0;
+    if (hasCriticalFromDice(diceRolls)) {
+        criticalDamage = 5;
+    }
+    
+    // Return damage info without actually applying it
+    return {
+        totalDamage: finalDamage + criticalDamage,
+        baseDamage: finalDamage,
+        criticalDamage: criticalDamage,
+        damageGotThrough,
+        armorAblated: damageGotThrough ? (isAP ? 2 : 1) : 0
+    };
+};
+
+// Override the old applyStandardDamage function - using our new system instead
+function applyStandardDamage(participant, damage, location) {
+    // This function is kept for backward compatibility
+    // The actual damage application is now handled by applyDamageSequentially
+    console.warn('applyStandardDamage is deprecated - use applyDamageSequentially instead');
+    
+    const options = {
+        location: location,
+        isAP: false,
+        isHalfArmor: false,
+        isHeadshot: location === 'head',
+        ignoreArmor: false,
+        attackType: 'ranged',
+        diceRolls: [],
+        hasCrackedSkull: participant.criticalInjuries.some(ci => ci.name === "Cracked Skull")
+    };
+    
+    applyDamageSequentially(participant, damage, options, 
+        encounters.find(e => e.participants.some(p => p.name === participant.name)));
+    
+    return 0; // All damage processed
+}
+
+// Replace the existing getEffectiveArmor method with a corrected version
+Participant.prototype.getEffectiveArmor = function(location) {
+    let baseArmor = location === 'head' ? this.headArmor : this.bodyArmor;
+    // Add shield SP to base armor when shield is active instead of taking the higher value
+    // Note: Shield only applies to body armor, not head armor
+    if (this.shieldActive && location !== 'head') {
+        return baseArmor + this.shield;
+    } else {
+        return baseArmor;
+    }
+};
 
 function applyHealing(encounterId, participantName) {
     const encounter = encounters.find(e => e.id === encounterId);
@@ -1482,6 +1830,8 @@ function importPlayerCharacters(event) {
                     if (charData.health !== undefined) {
                         pc.health = charData.health;
                     }
+                    if (charData.interface !== undefined) pc.interface = charData.interface; // Load interface skill
+                    else pc.interface = 0; // Default to 0 if not present in data
                     
                     // Check if character already exists
                     const existingIndex = playerCharacters.findIndex(p => p.name === pc.name);
@@ -1916,7 +2266,7 @@ function renderPlayerCharacterList() {
     const characters = JSON.parse(localStorage.getItem('playerCharacters')) || [];
 
     pcList.innerHTML = characters.map((pc, index) => `
-        <div class="pc-card-compact">
+        <div class="pc-card-compact" data-character-id="${pc.name}">
             <h4>${pc.name}</h4>
             <div class="stats">
                 <div>Base Initiative: ${pc.base}</div>
@@ -1924,6 +2274,7 @@ function renderPlayerCharacterList() {
                 <div>Body Armor: ${pc.bodyArmor}</div>
                 <div>Head Armor: ${pc.headArmor}</div>
                 ${pc.shield ? `<div>Shield: ${pc.shield}</div>` : ''}
+                ${pc.interface > 0 ? `<div>Interface: ${pc.interface}</div>` : ''} <!-- Show Interface if > 0 -->
             </div>
             <div class="weapons-section">
                 <div class="weapons-list">
@@ -2032,6 +2383,8 @@ function loadPlayerCharacters() {
             if (charData.notes !== undefined) pc.notes = charData.notes;
             if (charData.deathSaves !== undefined) pc.deathSaves = charData.deathSaves;
             if (charData.deathSavePenalty !== undefined) pc.deathSavePenalty = charData.deathSavePenalty;
+            if (charData.interface !== undefined) pc.interface = charData.interface; // Load interface skill
+            else pc.interface = 0; // Default to 0 if not present in data
             
             playerCharacters.push(pc);
         });
@@ -2056,6 +2409,7 @@ function renderPlayerCharacterList() {
                 <div>Body Armor: ${pc.bodyArmor}</div>
                 <div>Head Armor: ${pc.headArmor}</div>
                 ${pc.shield ? `<div>Shield: ${pc.shield} [${pc.shieldActive ? 'Active' : 'Inactive'}]</div>` : ''}
+                ${pc.interface > 0 ? `<div>Interface: ${pc.interface}</div>` : ''} <!-- Show Interface if > 0 -->
             </div>
             <div class="weapons-section">
                 <h4>Weapons</h4>
@@ -2086,6 +2440,7 @@ function renderPlayerCharacterList() {
                 <h4>Notes</h4>
                 <textarea 
                     class="character-notes"
+                    data-character-name="${pc.name}"
                     onchange="updateCharacterNotes(event)"
                 >${pc.notes || ''}</textarea>
             </div>
@@ -2108,6 +2463,7 @@ function editCharacter(index) {
     document.getElementById('pc-bodyArmor').value = character.bodyArmor;
     document.getElementById('pc-headArmor').value = character.headArmor;
     document.getElementById('pc-shield').value = character.shield || 0;
+    document.getElementById('pc-interface').value = character.interface || 0; // Load interface skill
     document.getElementById('pc-notes').value = character.notes || '';
     
     // Clear and recreate weapon fields
@@ -2184,6 +2540,7 @@ const UIRenderer = {
                 <div>Body Armor: ${pc.bodyArmor}</div>
                 <div>Head Armor: ${pc.headArmor}</div>
                 ${pc.shield ? `<div>Shield: ${pc.shield} [${pc.shieldActive ? 'Active' : 'Inactive'}]</div>` : ''}
+                ${pc.interface > 0 ? `<div>Interface: ${pc.interface}</div>` : ''} <!-- Show Interface if > 0 -->
             </div>
         `;
     },
@@ -2274,3 +2631,158 @@ const CharacterManager = {
         this.populateEditForm(character);
     }
 };
+
+// Fix 1: Create the missing createNewEncounter function
+function createNewEncounter() {
+    const name = document.getElementById('new-encounter-name').value || `Encounter ${encounterCounter}`;
+    const encounter = new Encounter(encounterCounter++, name);
+    encounters.push(encounter);
+    
+    const encountersDiv = document.getElementById('encounters');
+    const newEncounterDiv = document.createElement('div');
+    newEncounterDiv.id = `encounter-${encounter.id}`;
+    newEncounterDiv.className = 'encounter';
+    encountersDiv.appendChild(newEncounterDiv);
+    
+    encounter.render();
+    localStorage.setItem('encounters', JSON.stringify(encounters.map(e => e.toJSON())));
+    localStorage.setItem('encounterCounter', encounterCounter.toString());
+    
+    // Clear the input field
+    document.getElementById('new-encounter-name').value = '';
+}
+
+// Fix 2: Fix the updateCharacterNotes function to correctly extract participant name
+function updateCharacterNotes(event) {
+    const notes = event.target.value;
+    
+    // Try to get character name from data attribute first (most reliable)
+    const characterName = event.target.dataset.characterName;
+    
+    if (characterName) {
+        // Update in player characters
+        const playerCharacters = JSON.parse(localStorage.getItem('playerCharacters') || '[]');
+        const pcIndex = playerCharacters.findIndex(pc => pc.name === characterName);
+        if (pcIndex !== -1) {
+            playerCharacters[pcIndex].notes = notes;
+            localStorage.setItem('playerCharacters', JSON.stringify(playerCharacters));
+        }
+
+        // Update in active encounters
+        let encounters = JSON.parse(localStorage.getItem('encounters') || '[]');
+        let updated = false;
+        encounters.forEach(encounter => {
+            encounter.participants.forEach(participant => {
+                if (participant.name === characterName) {
+                    participant.notes = notes;
+                    updated = true;
+                }
+            });
+        });
+
+        if (updated) {
+            localStorage.setItem('encounters', JSON.stringify(encounters));
+            // Refresh all instances where this character appears
+            document.querySelectorAll(`textarea[data-character-name="${characterName}"]`).forEach(textarea => {
+                if (textarea !== event.target) {
+                    textarea.value = notes;
+                }
+            });
+        }
+    } else {
+        // Fallback to old method if data attribute isn't present
+        const participantDiv = event.target.closest('.participant, .pc-card-compact');
+        if (!participantDiv) return;
+
+        const participantName = participantDiv.querySelector('.participant-name')?.textContent?.split(' ')[0] || 
+                            participantDiv.querySelector('h4')?.textContent;
+        if (!participantName) return;
+
+        // Update in player characters
+        const playerCharacters = JSON.parse(localStorage.getItem('playerCharacters') || '[]');
+        const pcIndex = playerCharacters.findIndex(pc => pc.name === participantName);
+        if (pcIndex !== -1) {
+            playerCharacters[pcIndex].notes = notes;
+            localStorage.setItem('playerCharacters', JSON.stringify(playerCharacters));
+        }
+
+        // Update in active encounters
+        let encounters = JSON.parse(localStorage.getItem('encounters') || '[]');
+        let updated = false;
+        encounters.forEach(encounter => {
+            encounter.participants.forEach(participant => {
+                if (participant.name === participantName) {
+                    participant.notes = notes;
+                    updated = true;
+                }
+            });
+        });
+
+        if (updated) {
+            localStorage.setItem('encounters', JSON.stringify(encounters));
+            // Refresh all instances where this character appears
+            document.querySelectorAll(`textarea[data-character-name="${participantName}"]`).forEach(textarea => {
+                if (textarea !== event.target) {
+                    textarea.value = notes;
+                }
+            });
+        }
+    }
+}
+
+// Fix 3: Replace duplicate renderPlayerCharacterList functions with a single implementation
+function renderPlayerCharacterList() {
+    const pcList = document.getElementById('pc-list');
+    if (!pcList) return;
+
+    pcList.innerHTML = playerCharacters.map((pc, index) => `
+        <div class="pc-card-compact" data-character-id="${pc.name}">
+            <h4>${pc.name}</h4>
+            <div class="stats">
+                <div>Base Initiative: ${pc.base}</div>
+                <div>Health: ${pc.health}/${pc.maxHealth}</div>
+                <div>Body Armor: ${pc.bodyArmor}</div>
+                <div>Head Armor: ${pc.headArmor}</div>
+                ${pc.shield ? `<div>Shield: ${pc.shield} [${pc.shieldActive ? 'Active' : 'Inactive'}]</div>` : ''}
+                ${pc.interface > 0 ? `<div>Interface: ${pc.interface}</div>` : ''} <!-- Show Interface if > 0 -->
+            </div>
+            <div class="weapons-section">
+                <h4>Weapons</h4>
+                ${pc.weapons && pc.weapons.length > 0 ? `
+                    <div class="weapons-list">
+                        ${pc.weapons.map(w => `
+                            <div class="weapon-entry-readonly">
+                                ${w.name}: ${w.damage}
+                            </div>
+                        `).join('')}
+                    </div>
+                ` : '<div class="weapon-entry-readonly">No weapons</div>'}
+            </div>
+            <div class="critical-injuries-section">
+                <h4>Critical Injuries</h4>
+                ${pc.criticalInjuries && pc.criticalInjuries.length > 0 ? `
+                    <div class="critical-injuries-list">
+                        ${pc.criticalInjuries.map((injury, idx) => `
+                            <div class="critical-injury">
+                                ${injury.name}
+                                <button onclick="removeCriticalInjury('${pc.name}', ${idx}, true)">×</button>
+                            </div>
+                        `).join('')}
+                    </div>
+                ` : '<div>No critical injuries</div>'}
+            </div>
+            <div class="notes-section">
+                <h4>Notes</h4>
+                <textarea 
+                    class="character-notes"
+                    data-character-name="${pc.name}"
+                    onchange="updateCharacterNotes(event)"
+                >${pc.notes || ''}</textarea>
+            </div>
+            <div class="actions">
+                <button onclick="editCharacter(${index})">Edit</button>
+                <button onclick="deleteCharacter(${index})" class="danger-button">Delete</button>
+            </div>
+        </div>
+    `).join('');
+}

@@ -13,13 +13,26 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="settings-icon" onclick="window.location.href='settings.html'">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-            <path fill="currentColor" d="M12 8c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4zm0 6c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2-2-.9 2-2 2z"/>
-            <path fill="currentColor" d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8z"/>
-        </svg>
+    <!-- Navigation Dropdown - Fixed in top-left corner -->
+    <div class="nav-container">
+        <div class="nav-dropdown">
+            <button class="nav-button">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                    <path fill="currentColor" d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                </svg>
+                Navigation
+            </button>
+            <div class="nav-content">
+                <a href="index.html">Initiative Tracker</a>
+                <a href="pc-manager.html">Player Characters</a>
+                <a href="netrunner.html">Netrunner Interface</a>
+                <a href="settings.html">Settings</a>
+            </div>
+        </div>
     </div>
-    <div id="app">
+
+    <!-- Add padding to main content to avoid overlap with navigation -->
+    <div id="app" style="padding-top: 50px;">
         <div id="initiative-tracker">
             <div class="section generator-section">
                 <h2>Random Encounter Generator</h2>
@@ -82,6 +95,8 @@
                 </fieldset>
                 <div id="encounters"></div>
             </div>
+
+            <!-- Removed damage log section -->
         </div>
 
         <div id="player-character-manager">
@@ -173,6 +188,8 @@
         </script>
     </div>
 
+    <!-- Add navigation.js before other scripts -->
+    <script src="navigation.js"></script>
     <script src="npc-presets.js"></script>
     <script src="dice-roller.js"></script>
     <script src="critical-injury-definitions.js"></script>
