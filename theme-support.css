@@ -1,0 +1,87 @@
+/*
+ * Theme Support CSS
+ * This file provides RGB values for CSS variables to allow transparency effects
+ */
+
+/* Default Theme */
+.theme-default {
+    --accent-primary-rgb: 255, 87, 87;
+    --accent-secondary-rgb: 255, 177, 41;
+    --text-primary-rgb: 255, 255, 255;
+    --text-secondary-rgb: 200, 200, 200;
+    --bg-primary-rgb: 22, 22, 29;
+    --bg-secondary-rgb: 32, 32, 39;
+    --bg-tertiary-rgb: 42, 42, 49;
+    --border-color-rgb: 60, 60, 67;
+}
+
+/* Netrunner (Green) Theme */
+.theme-netrunner {
+    --accent-primary-rgb: 0, 255, 102;
+    --accent-secondary-rgb: 0, 204, 82;
+    --text-primary-rgb: 230, 255, 230;
+    --text-secondary-rgb: 180, 200, 180;
+    --bg-primary-rgb: 10, 20, 15;
+    --bg-secondary-rgb: 20, 30, 25;
+    --bg-tertiary-rgb: 30, 40, 35;
+    --border-color-rgb: 50, 60, 55;
+}
+
+/* Corporate (Blue) Theme */
+.theme-corporate {
+    --accent-primary-rgb: 41, 121, 255;
+    --accent-secondary-rgb: 0, 162, 255;
+    --text-primary-rgb: 230, 240, 255;
+    --text-secondary-rgb: 180, 190, 200;
+    --bg-primary-rgb: 12, 20, 29;
+    --bg-secondary-rgb: 22, 30, 39;
+    --bg-tertiary-rgb: 32, 40, 49;
+    --border-color-rgb: 50, 60, 69;
+}
+
+/* Night City (Purple) Theme */
+.theme-night {
+    --accent-primary-rgb: 187, 51, 255;
+    --accent-secondary-rgb: 140, 40, 190;
+    --text-primary-rgb: 245, 230, 255;
+    --text-secondary-rgb: 180, 170, 200;
+    --bg-primary-rgb: 20, 10, 30;
+    --bg-secondary-rgb: 30, 20, 40;
+    --bg-tertiary-rgb: 40, 30, 50;
+    --border-color-rgb: 60, 50, 70;
+}
+
+/* Stylize all dropdown options consistently */
+select option {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+}
+
+/* Support for large text mode */
+.large-text {
+    font-size: 1.15rem;
+}
+
+.large-text .calendar-day {
+    font-size: 1rem;
+}
+
+.large-text h1 {
+    font-size: 2.5rem;
+}
+
+.large-text h2 {
+    font-size: 2rem;
+}
+
+.large-text h3 {
+    font-size: 1.5rem;
+}
+
+.large-text #current-date {
+    font-size: 2.3rem !important;
+}
+
+.large-text #current-time {
+    font-size: 3.5rem !important;
+}

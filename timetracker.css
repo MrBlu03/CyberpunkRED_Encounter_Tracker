@@ -1,0 +1,625 @@
+.timetracker-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.timetracker-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+        "time events"
+        "recovery events";
+    gap: 20px;
+}
+
+@media (max-width: 1024px) {
+    .timetracker-grid {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "time"
+            "events"
+            "recovery";
+    }
+}
+
+.timetracker-panel {
+    background-color: var(--bg-secondary);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--border-color);
+}
+
+.time-panel {
+    grid-area: time;
+}
+
+.events-panel {
+    grid-area: events;
+}
+
+.recovery-panel {
+    grid-area: recovery;
+}
+
+/* Digital Clock Styles */
+.digital-clock {
+    background-color: var(--bg-primary);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    border: 1px solid var(--accent-secondary);
+    box-shadow: 0 0 10px var(--accent-secondary);
+}
+
+.clock-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'VT323', monospace;
+}
+
+.clock-display #current-date {
+    font-size: 2rem;
+    margin-bottom: 5px;
+    color: var(--accent-primary);
+}
+
+.clock-display #current-time {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--text-primary);
+}
+
+.day-phase {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.day-indicator {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 10px;
+    background: linear-gradient(to right, #ffdb58, #ff6b6b);
+}
+
+.day-indicator.night {
+    background: linear-gradient(to right, #2c3e50, #4b6cb7);
+}
+
+.day-indicator.dawn {
+    background: linear-gradient(to right, #4b6cb7, #ffdb58);
+}
+
+.day-indicator.dusk {
+    background: linear-gradient(to right, #ff6b6b, #2c3e50);
+}
+
+/* Calendar Styles - Improved */
+.calendar-container {
+    background-color: var(--bg-primary);
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border-color);
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.calendar-header button {
+    background-color: transparent;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--accent-primary);
+    cursor: pointer;
+    padding: 0 10px;
+    transition: transform 0.2s;
+}
+
+.calendar-header button:hover {
+    transform: scale(1.2);
+    background-color: transparent;
+}
+
+.calendar-header h3 {
+    margin: 0;
+    color: var(--text-primary);
+}
+
+.weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--accent-secondary);
+}
+
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    /* Ensure consistent height for calendar */
+    grid-template-rows: repeat(6, 1fr);
+}
+
+.calendar-day {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    background-color: var(--bg-tertiary);
+    cursor: pointer;
+    position: relative;
+    font-size: 0.9rem;
+    transition: background-color 0.2s, color 0.2s;
+    min-height: 30px; /* Add minimum height for better display */
+}
+
+.calendar-day:hover {
+    background-color: var(--accent-primary);
+    color: var(--bg-primary);
+}
+
+.calendar-day.current {
+    background-color: var(--accent-primary);
+    color: var(--bg-primary);
+    font-weight: bold;
+    box-shadow: 0 0 0 2px var(--accent-secondary);
+}
+
+.calendar-day.has-events::after {
+    content: '';
+    position: absolute;
+    bottom: 3px;
+    right: 3px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--accent-secondary);
+}
+
+.calendar-day.other-month {
+    opacity: 0.3;
+    background-color: var(--bg-secondary);
+}
+
+/* Time Controls */
+.time-controls, .time-settings {
+    background-color: var(--bg-primary);
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border-color);
+}
+
+.increment-controls {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.custom-increment {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.custom-increment input {
+    width: 60px;
+}
+
+/* Events Panel Styles */
+.events-header {
+    margin-bottom: 20px;
+}
+
+.event-tabs {
+    display: flex;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 15px;
+}
+
+.event-tab {
+    padding: 8px 16px;
+    background-color: transparent;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+}
+
+.event-tab.active {
+    color: var(--accent-primary);
+    border-bottom: 2px solid var(--accent-primary);
+}
+
+.events-list {
+    display: none;
+    max-height: 300px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
+
+.events-list.active-tab {
+    display: block;
+}
+
+.event-card {
+    background-color: var(--bg-primary);
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-left: 4px solid var(--accent-primary);
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.event-card:hover {
+    transform: translateX(5px);
+}
+
+.event-card h4 {
+    margin: 0 0 5px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.event-card .event-time {
+    font-size: 0.9em;
+    color: var(--text-secondary);
+}
+
+.event-card .event-location {
+    font-size: 0.85em;
+    color: var(--text-secondary);
+    margin-top: 5px;
+}
+
+.event-card.job {
+    border-left-color: #30b341;
+}
+
+.event-card.recovery {
+    border-left-color: #4c9be8;
+}
+
+.event-card.lifestyle {
+    border-left-color: #e8a74c;
+}
+
+.event-card.downtime {
+    border-left-color: #9c4ce8;
+}
+
+.event-message {
+    color: var(--text-secondary);
+    font-style: italic;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Add Event Form */
+.add-event-container {
+    background-color: var(--bg-primary);
+    border-radius: 8px;
+    padding: 15px;
+    border: 1px solid var(--border-color);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--text-secondary);
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    width: 100%;
+    padding: 8px;
+    background-color: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 4px;
+}
+
+/* Form Controls - Fix dropdown styling */
+.form-group select {
+    width: 100%;
+    padding: 8px;
+    background-color: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    border-radius: 4px;
+    appearance: auto; /* Allow browser's native dropdown styling */
+    -webkit-appearance: menulist; /* For better cross-browser compatibility */
+}
+
+.form-group select option {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    padding: 8px;
+}
+
+.form-group textarea {
+    height: 80px;
+    resize: vertical;
+}
+
+/* Recovery Tracking */
+#character-recovery-list {
+    margin-bottom: 20px;
+}
+
+.recovery-card {
+    background-color: var(--bg-primary);
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-left: 4px solid #4c9be8;
+    position: relative;
+}
+
+.recovery-card .recovery-progress {
+    height: 8px;
+    background-color: var(--bg-tertiary);
+    border-radius: 4px;
+    margin: 10px 0;
+    overflow: hidden;
+}
+
+.recovery-card .progress-bar {
+    height: 100%;
+    background-color: var(--accent-secondary);
+}
+
+.recovery-card .recovery-time {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85em;
+    color: var(--text-secondary);
+}
+
+.recovery-card .remove-recovery {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: var(--accent-primary);
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
+/* Weather Section */
+.weather-section {
+    background-color: var(--bg-primary);
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 20px;
+    border: 1px solid var(--border-color);
+}
+
+.weather-display {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.weather-icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: drop-shadow(0px 0px 3px rgba(255, 255, 255, 0.3));
+}
+
+.weather-icon.clear {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23FFD700"><circle cx="12" cy="12" r="5"/><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>');
+}
+
+.weather-icon.cloudy {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23A9A9A9"><path d="M19 18H6a4 4 0 1 1 0-8h1a6 6 0 0 1 11 2v.5a3.5 3.5 0 0 1 1 6.5z"/></svg>');
+}
+
+.weather-icon.rain {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2369b3e7"><path d="M19 16.9A5 5 0 0 0 18 7h-1.26a8 8 0 1 0-11.62 9"/><path d="M9 13v2M13 13v8M15 16v4M11 15v2"/></svg>');
+}
+
+.weather-icon.acid-rain {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 16.9A5 5 0 0 0 18 7h-1.26a8 8 0 1 0-11.62 9" fill="%23A9A9A9"/><path d="M9 13v5M13 13v8M15 16v5M11 15v4" stroke="%23A0E515" stroke-width="1.5" fill="none"/></svg>');
+}
+
+.weather-icon.smog {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23937264"><path d="M3 15h18M3 12h18M3 9h18M3 18h18"/></svg>');
+}
+
+.weather-icon.storm {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 16.9A5 5 0 0 0 18 7h-1.26a8 8 0 1 0-11.62 9" fill="%23A9A9A9"/><polygon points="13,14 9,14 11,10 7,18 11,18 9,22" fill="%23FFD700"/></svg>');
+}
+
+.weather-info {
+    flex: 1;
+}
+
+#weather-condition {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#generate-weather {
+    width: 100%;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    position: relative;
+    background-color: var(--bg-secondary);
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    animation: slide-in 0.3s ease-out;
+}
+
+@keyframes slide-in {
+    from { transform: translateY(-30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.close-modal {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+}
+
+.close-modal:hover {
+    color: var(--accent-primary);
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid var(--border-color);
+}
+
+#modal-event-details {
+    margin: 20px 0;
+}
+
+#modal-event-details .detail-item {
+    margin-bottom: 10px;
+}
+
+#modal-event-details .detail-label {
+    font-weight: bold;
+    color: var(--accent-secondary);
+    margin-right: 5px;
+}
+
+/* Buttons and Inputs */
+button {
+    background-color: var(--accent-primary);
+    color: var(--bg-primary);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: var(--accent-secondary);
+}
+
+.danger-button {
+    background-color: #e74c3c;
+}
+
+.danger-button:hover {
+    background-color: #c0392b;
+}
+
+input, select, textarea {
+    background-color: var(--bg-tertiary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    padding: 8px;
+    border-radius: 4px;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: var(--accent-primary);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255, 87, 87, 0.2);
+}
+
+/* Style for all inputs, selects, and textareas */
+select, input, textarea {
+    background-color: var(--bg-tertiary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    padding: 8px;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+select:focus, input:focus, textarea:focus {
+    border-color: var(--accent-primary);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(var(--accent-primary-rgb), 0.2);
+}
+
+/* Weather Icons */
+.weather-icon.clear {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23FFD700"><circle cx="12" cy="12" r="5"/><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>');
+}
+
+.weather-icon.cloudy {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23A9A9A9"><path d="M19 18H6a4 4 0 1 1 0-8h1a6 6 0 0 1 11 2v.5a3.5 3.5 0 0 1 1 6.5z"/></svg>');
+}
+
+.weather-icon.acid-rain {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 16.9A5 5 0 0 0 18 7h-1.26a8 8 0 1 0-11.62 9" fill="%23A9A9A9"/><path d="M9 13v5M13 13v8M15 16v5M11 15v4" stroke="%23A0E515" stroke-width="1.5" fill="none"/></svg>');
+}
+
+.weather-icon.smog {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23937264"><path d="M3 15h18M3 12h18M3 9h18M3 18h18"/></svg>');
+}
+
+.weather-icon.storm {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 16.9A5 5 0 0 0 18 7h-1.26a8 8 0 1 0-11.62 9" fill="%23A9A9A9"/><polygon points="13,14 9,14 11,10 7,18 11,18 9,22" fill="%23FFD700"/></svg>');
+}

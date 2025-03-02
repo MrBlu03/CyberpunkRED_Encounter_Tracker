@@ -1012,7 +1012,7 @@ fieldset legend {
     width: calc(100% - 10px); /* Account for padding and border */
     min-height: 60px;
     background-color: var(--secondary-color);
-    color: var(--text-color);
+    color: var (--text-color);
     border: 1px solid var(--border-color);
     padding: 5px;
     border-radius: 3px;
@@ -1235,12 +1235,13 @@ textarea:focus, input:focus {
     margin-left: 8px;
 }
 
-/* Navigation dropdown styles - Updated for top-left sticky position with solid color */
+/* Navigation dropdown styles - Fixed top left positioning */
 .nav-container {
     position: fixed;
-    top: 15px;
-    left: 15px;
+    top: 10px;
+    left: 10px;
     z-index: 1000;
+    margin: 0; /* Remove margin that could push it away from edges */
 }
 
 .nav-dropdown {
