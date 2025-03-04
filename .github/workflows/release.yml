@@ -90,7 +90,7 @@ jobs:
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: ${{ steps.create-tag.outputs.TAG_NAME }}  # Use the created tag
+          tag_name: v$(node -p "require('./package.json').version")  # Explicitly set the tag name
           files: dist/**
           generate_release_notes: true
         env:
