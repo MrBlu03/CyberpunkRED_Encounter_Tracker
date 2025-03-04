@@ -1,4 +1,4 @@
-Collecting workspace information# Cyberpunk RED Encounter Tracker
+# Cyberpunk RED Encounter Tracker
 
 A comprehensive tool for Game Masters running Cyberpunk RED tabletop RPG sessions. This application helps manage combat encounters, track characters, and streamline gameplay mechanics.
 
