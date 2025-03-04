@@ -1,0 +1,58 @@
+name: Release Electron App
+
+on:
+  push:
+    branches:
+      - main # or master
+  release:
+    types: [created]
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [windows-latest, ubuntu-latest, macos-latest] # Adjust as needed
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18' # or your desired version
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build Electron App (if needed)
+        # If your build process involves compiling or bundling, add it here.
+        # For example, if you use a build script:
+        # run: npm run build
+
+      - name: Package Electron App with Electron Builder
+        run: npm run dist # Assuming you have "dist": "electron-builder" in scripts
+
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: electron-builds
+          path: dist/
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download all artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: electron-builds
+          path: dist/
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: dist/**
+          generate_release_notes: true
