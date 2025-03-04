@@ -31,7 +31,7 @@ jobs:
         if: matrix.os != 'windows-latest'
         run: |
           if [[ "${{ matrix.os }}" == "ubuntu-latest" ]]; then
-            sudo apt-get install -y imagemagick icnsutils
+            sudo apt-get install -y imagemagick
           elif [[ "${{ matrix.os }}" == "macos-latest" ]]; then
             brew install imagemagick
           fi
@@ -47,7 +47,6 @@ jobs:
           convert favicon.ico -resize 64x64 build/icons/64x64.png
           convert favicon.ico -resize 32x32 build/icons/32x32.png
           convert favicon.ico -resize 16x16 build/icons/16x16.png
-          png2icns build/icons/icon.icns build/icons/1024x1024.png build/icons/512x512.png build/icons/256x256.png build/icons/128x128.png build/icons/64x64.png build/icons/32x32.png build/icons/16x16.png
 
       - name: Build Electron App
         run: npm run build
@@ -55,7 +54,7 @@ jobs:
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: electron-builds
+          name: electron-builds-${{ matrix.os }}
           path: dist/
 
   release:
@@ -65,7 +64,6 @@ jobs:
       - name: Download all artifacts
         uses: actions/download-artifact@v4
         with:
-          name: electron-builds
           path: dist/
 
       - name: Create Release
