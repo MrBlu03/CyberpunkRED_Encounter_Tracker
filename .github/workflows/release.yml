@@ -28,14 +28,16 @@ jobs:
         run: npm install
 
       - name: Install ImageMagick (for icon conversion)
-        if: matrix.os == 'ubuntu-latest'
-        run: sudo apt-get install -y imagemagick icnsutils
-
-      - name: Install ImageMagick on macOS
-        if: matrix.os == 'macos-latest'
-        run: brew install imagemagick
+        if: matrix.os != 'windows-latest'
+        run: |
+          if [[ "${{ matrix.os }}" == "ubuntu-latest" ]]; then
+            sudo apt-get install -y imagemagick icnsutils
+          elif [[ "${{ matrix.os }}" == "macos-latest" ]]; then
+            brew install imagemagick
+          fi
 
       - name: Convert ICO to PNG and ICNS
+        if: matrix.os != 'windows-latest'
         run: |
           mkdir -p build/icons
           convert favicon.ico -resize 1024x1024 build/icons/1024x1024.png
