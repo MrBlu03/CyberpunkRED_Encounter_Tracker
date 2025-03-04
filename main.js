@@ -48,27 +48,6 @@ function createWindow() {
       ]
     },
     {
-      label: 'Tools',
-      submenu: [
-        {
-          label: 'Netrunner',
-          click: () => mainWindow.loadFile(path.join(__dirname, 'src', 'html', 'netrunner.html'))
-        },
-        {
-          label: 'PC Manager',
-          click: () => mainWindow.loadFile(path.join(__dirname, 'src', 'html', 'pc-manager.html'))
-        },
-        {
-          label: 'Time Tracker',
-          click: () => mainWindow.loadFile(path.join(__dirname, 'src', 'html', 'timetracker.html'))
-        },
-        {
-          label: 'Settings',
-          click: () => mainWindow.loadFile(path.join(__dirname, 'src', 'html', 'settings.html'))
-        }
-      ]
-    },
-    {
       label: 'Help',
       submenu: [
         {
