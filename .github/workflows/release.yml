@@ -35,7 +35,7 @@ jobs:
         run: npm run dist # Assuming you have "dist": "electron-builder" in scripts
 
       - name: Upload Artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: electron-builds
           path: dist/
