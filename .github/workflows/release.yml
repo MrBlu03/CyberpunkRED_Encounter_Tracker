@@ -3,7 +3,7 @@ name: Release Electron App
 on:
   push:
     branches:
-      - main # or master
+      - main
   release:
     types: [created]
 
@@ -13,7 +13,7 @@ jobs:
 
     strategy:
       matrix:
-        os: [windows-latest, ubuntu-latest, macos-latest] # Adjust as needed
+        os: [windows-latest, ubuntu-latest, macos-latest]
 
     steps:
       - name: Checkout Repository
@@ -22,19 +22,15 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18' # or your desired version
+          node-version: '18'
 
       - name: Install Dependencies
         run: npm install
 
-      # Install ImageMagick for icon conversion (Linux only)
       - name: Install ImageMagick (for icon conversion)
-        if: matrix.os == 'ubuntu-latest'
         run: sudo apt-get install -y imagemagick icnsutils
 
-      # Convert ICO to PNG and ICNS (Linux only)
       - name: Convert ICO to PNG and ICNS
-        if: matrix.os == 'ubuntu-latest'
         run: |
           mkdir -p build/icons
           convert favicon.ico -resize 1024x1024 build/icons/1024x1024.png
@@ -46,42 +42,29 @@ jobs:
           convert favicon.ico -resize 16x16 build/icons/16x16.png
           png2icns build/icons/icon.icns build/icons/1024x1024.png build/icons/512x512.png build/icons/256x256.png build/icons/128x128.png build/icons/64x64.png build/icons/32x32.png build/icons/16x16.png
 
-      # Add steps to prepare icon files for Windows and macOS if needed
-      - name: Prepare Windows Icons
-        if: matrix.os == 'windows-latest'
-        shell: pwsh
-        run: |
-          New-Item -ItemType Directory -Force -Path build\icons
-          Copy-Item favicon.ico -Destination build\icons\icon.ico
-
-      - name: Build Electron App (if needed)
-        # If your build process involves compiling or bundling, add it here.
+      - name: Build Electron App
         run: npm run build
-
-      - name: Package Electron App with Electron Builder
-        run: npm run dist # Assuming you have "dist": "electron-builder" in scripts
 
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: electron-builds-${{ matrix.os }}
+          name: electron-builds
           path: dist/
 
   release:
     needs: build
     runs-on: ubuntu-latest
-    if: github.event_name == 'release'
     steps:
       - name: Download all artifacts
         uses: actions/download-artifact@v4
         with:
-          pattern: electron-builds-*
+          name: electron-builds
           path: dist/
-          merge-multiple: true
 
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
           files: dist/**
           generate_release_notes: true
-          token: ${{ secrets.GITHUB_TOKEN }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
