@@ -27,10 +27,9 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Build Electron App (if needed)
-        # If your build process involves compiling or bundling, add it here.
-        # For example, if you use a build script:
-        # run: npm run build
+      - name: Build Electron App
+        run: npm run build
+
 
       - name: Package Electron App with Electron Builder
         run: npm run dist # Assuming you have "dist": "electron-builder" in scripts
