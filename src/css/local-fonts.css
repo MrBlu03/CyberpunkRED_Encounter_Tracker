@@ -1,0 +1,35 @@
+/* Local font definitions */
+@font-face {
+    font-family: 'Bruno Ace SC';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../assets/fonts/Bruno_Ace_SC/BrunoAceSC-Regular.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'VT323';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../assets/fonts/vt323/VT323-Regular.ttf') format('truetype');
+    font-display: swap;
+}
+
+/* Set default font usage */
+:root {
+    --font-primary: 'Bruno Ace SC', sans-serif;
+    --font-secondary: 'VT323', monospace;
+}
+
+body {
+    font-family: var(--font-primary);
+}
+
+/* Use VT323 for specific elements like digital displays, code blocks, etc */
+.digital-clock,
+.code-block,
+pre,
+code,
+.mono-text {
+    font-family: var(--font-secondary);
+}

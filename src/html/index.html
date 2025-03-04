@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        document.documentElement.className = `theme-${localStorage.getItem('theme') || 'default'}`;
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyberpunk Red Initiative Tracker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <!-- Navigation Dropdown - Fixed in top-left corner -->
+    <div class="nav-container">
+        <div class="nav-dropdown">
+            <button class="nav-button">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                    <path fill="currentColor" d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                </svg>
+                Navigation
+            </button>
+            <div class="nav-content">
+                <a href="index.html">Initiative Tracker</a>
+                <a href="pc-manager.html">Player Characters</a>
+                <a href="netrunner.html">Netrunner Interface</a>
+                <a href="timetracker.html">Time Tracker</a>
+                <a href="settings.html">Settings</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add padding to main content to avoid overlap with navigation -->
+    <div id="app" style="padding-top: 50px;">
+        <div id="initiative-tracker">
+            <div class="section generator-section">
+                <h2>Random Encounter Generator</h2>
+                <div class="encounter-generator">
+                    <div class="generator-row">
+                        <div class="generator-group">
+                            <label>Difficulty:</label>
+                            <select id="encounter-difficulty">
+                                <option value="easy">Easy</option>
+                                <option value="medium">Medium</option>
+                                <option value="hard">Hard</option>
+                            </select>
+                        </div>
+                        <div class="generator-group">
+                            <label>Enemies:</label>
+                            <input type="number" id="enemy-count" min="1" max="10" value="4">
+                        </div>
+                        <div class="generator-group">
+                            <label>Turrets:</label>
+                            <div class="turret-input-group">
+                                <input type="checkbox" id="include-turrets">
+                                <label for="include-turrets">Include Turrets:</label>
+                                <input type="number" id="turret-count" min="0" max="6" value="0" disabled>
+                            </div>
+                        </div>
+                        <button class="generate-button" onclick="generateEncounter()">Generate</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Encounters</h2>
+                <fieldset>
+                    <legend>Create a New Encounter</legend>
+                    <div class="import-export-controls">
+                        <div class="input-group">
+                            <input type="text" id="new-encounter-name" placeholder="Encounter Name">
+                            <button onclick="createNewEncounter()">New Encounter</button>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Import/Export encounters</legend>
+                    <div class="import-export-controls">
+                        <div class="button-group">
+                            <button class="button-with-icon tooltip" onclick="exportSelectedEncounters()">
+                                <i class="fas fa-file-export"></i>
+                                Export Selected Encounters
+                                <span class="tooltiptext">Export all selected encounters</span>
+                            </button>
+                            <input type="file" id="importFile" accept=".json" multiple style="display: none" onchange="importEncounters(event)">
+                            <button class="button-with-icon tooltip" onclick="document.getElementById('importFile').click()">
+                                <i class="fas fa-file-import"></i>
+                                Import Encounters
+                                <span class="tooltiptext">Import one or more encounters</span>
+                            </button>
+                        </div>
+                        <span class="import-export-info" id="import-export-status"></span>
+                    </div>
+                </fieldset>
+                <div id="encounters"></div>
+            </div>
+
+            <!-- Removed damage log section -->
+        </div>
+
+        <div id="player-character-manager">
+            <div class="section">
+                <h2>Player Characters</h2>
+                <div class="pc-quickview">
+                    <a href="pc-manager.html" class="manage-pc-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                            <path fill="currentColor" d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                        </svg>
+                        Manage Characters
+                    </a>
+                    <div class="pc-list-compact">
+                        <!-- This will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+            <div class = "section" id="dice-roller">
+                <h2>Dice Roller</h2>
+                <div class="dice-presets">
+                    <button onclick="quickRoll('1d6')">1d6</button>
+                    <button onclick="quickRoll('2d6')">2d6</button>
+                    <button onclick="quickRoll('3d6')">3d6</button>
+                    <button onclick="quickRoll('1d10')">1d10</button>
+                </div>
+                <input type="text" id="dice-input" placeholder="Enter dice notation (e.g., 2d6+3)">
+                <select id="hit-location">
+                    <option value="body">Body</option>
+                    <option value="head">Head</option>
+                </select>
+                <button onclick="rollDice()">Roll Dice</button>
+				<div id="critical-injury-result"></div>
+                <div id="dice-result"></div>
+                <div id="roll-history"></div>
+            </div>
+        </div>
+
+        <script id="participant-template" type="text/template">
+            <div class="character-actions">
+                <div class="damage-calculator">
+                    <div class="damage-options">
+                        <select id="attack-type-${encounterId}-${p.name}">
+                            <option value="ranged">Ranged Attack</option>
+                            <option value="melee">Melee Attack</option>
+                            <option value="brawling">Brawling</option>
+                            <option value="martialArts">Martial Arts</option>
+                        </select>
+                        <label>
+                            <input type="checkbox" id="armor-piercing-${encounterId}-${p.name}" class="damage-modifier">
+                            Armor Piercing
+                        </label>
+                        <label>
+                            <input type="checkbox" id="half-armor-${encounterId}-${p.name}" class="damage-modifier">
+                            Half Armor
+                        </label>
+                        <label>
+                            <input type="checkbox" id="ignore-armor-${encounterId}-${p.name}" class="damage-modifier">
+                            Ignore Armor
+                        </label>
+                        <label>
+                            <input type="checkbox" id="headshot-${id}" class="damage-modifier">
+                            Headshot (2x Damage)
+                        </label>
+                    </div>
+                    <div class="damage-preview">
+                        Calculated Damage: <span class="damage-result">-</span>
+                    </div>
+                </div>
+                <div class="notes-section">
+                    <textarea class="participant-notes" 
+                              placeholder="Add notes about abilities, cyberware, or other details..."
+                              oninput="updateCharacterNotes(event, this.dataset.characterId)"
+                              data-character-id="${id}"></textarea>
+                </div>
+                <div class="import-export-controls">
+                    <input type="text" id="name-${this.id}" placeholder="Participant Name">
+                    <input type="number" id="base-${this.id}" placeholder="Base Initiative">
+                    <input type="number" id="maxHealth-${this.id}" placeholder="Max Health">
+                    <input type="number" id="bodyArmor-${this.id}" placeholder="Body SP">
+                    <input type="number" id="headArmor-${this.id}" placeholder="Head SP">
+                    <input type="number" id="shield-${this.id}" placeholder="Shield SP">
+                    <div class="weapons-input-container">
+                        <div id="weapon-fields-${this.id}"></div>
+                        <button type="button" onclick="addWeaponFields('weapon-fields-${this.id}')">Add Weapon</button>
+                    </div>
+                    <button onclick="addParticipantToEncounter(${this.id})">Add Participant</button>
+                </div>
+            </div>
+        </script>
+    </div>
+
+    <!-- Add navigation.js before other scripts -->
+    <script src="../js/utils/navigation.js"></script>
+    <script src="../js/components/npc-presets.js"></script>
+    <script src="../js/components/dice-roller.js"></script>
+    <script src="../js/components/critical-injury-definitions.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/components/encounter-generator.js"></script>
+</body>
+</html>
+
