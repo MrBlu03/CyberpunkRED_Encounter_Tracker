@@ -63,10 +63,23 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
       - name: Download all artifacts
         uses: actions/download-artifact@v4
         with:
           path: dist/
+
+      - name: Create Git Tag
+        id: create-tag
+        run: |
+          TAG_NAME="v$(node -p "require('./package.json').version")"
+          echo "Creating tag: $TAG_NAME"
+          git tag $TAG_NAME
+          git push origin $TAG_NAME
+        env:
+          GH_TOKEN: ${{ secrets.SUPER_COOL_KEY }}
 
       - name: Create Release
         uses: softprops/action-gh-release@v1
@@ -74,4 +87,4 @@ jobs:
           files: dist/**
           generate_release_notes: true
         env:
-          GH_TOKEN: ${{ secrets.SUPER_COOL_KEY}}
+          GH_TOKEN: ${{ secrets.SUPER_COOL_KEY }}
