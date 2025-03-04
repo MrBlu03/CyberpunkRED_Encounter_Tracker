@@ -18,6 +18,8 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.SUPER_COOL_KEY }}  # Use PAT for checkout
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -88,6 +90,7 @@ jobs:
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
+          tag_name: ${{ steps.create-tag.outputs.TAG_NAME }}  # Use the created tag
           files: dist/**
           generate_release_notes: true
         env:
