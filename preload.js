@@ -25,22 +25,3 @@ contextBridge.exposeInMainWorld('api', {
   },
   // You can add more API functions here as needed
 });
-
-contextBridge.exposeInMainWorld('electronAPI', {
-  // Auto-update functions
-  checkForUpdates: () => ipcRenderer.send('check-for-updates'),
-  restartAndInstall: () => ipcRenderer.send('restart-and-install'),
-  
-  // Auto-update event listeners
-  onUpdateChecking: (callback) => ipcRenderer.on('update-checking', callback),
-  onUpdateAvailable: (callback) => ipcRenderer.on('update-available', callback),
-  onUpdateNotAvailable: (callback) => ipcRenderer.on('update-not-available', callback),
-  onUpdateError: (callback) => ipcRenderer.on('update-error', (_event, message) => callback(message)),
-  onUpdateProgress: (callback) => ipcRenderer.on('update-download-progress', (_event, progressObj) => callback(progressObj)),
-  onUpdateDownloaded: (callback) => ipcRenderer.on('update-downloaded', callback),
-  
-  // Remove event listeners when no longer needed
-  removeAllListeners: (channel) => {
-    ipcRenderer.removeAllListeners(channel);
-  }
-});

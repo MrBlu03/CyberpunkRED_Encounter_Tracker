@@ -1,6 +1,6 @@
 {
   "name": "cyberpunk-red-encounter-tracker",
-  "version": "1.0.8",
+  "version": "1.0.7",
   "description": "An Electron application for tracking encounters in Cyberpunk RED",
   "main": "main.js",
   "scripts": {
@@ -8,8 +8,7 @@
     "build": "electron-builder",
     "build:win": "electron-builder --win",
     "build:mac": "electron-builder --mac",
-    "build:linux": "electron-builder --linux",
-    "publish": "electron-builder --publish always"
+    "build:linux": "electron-builder --linux"
   },
   "author": "MrBlu03",
   "license": "SEE LICENSE IN LICENSE",
@@ -30,13 +29,6 @@
       "preload.js",
       "package.json"
     ],
-    "publish": [
-      {
-        "provider": "github",
-        "owner": "MrBlu03",
-        "repo": "RontiReworked"
-      }
-    ],
     "win": {
       "icon": "favicon.ico",
       "target": "nsis"
@@ -51,7 +43,6 @@
     }
   },
   "dependencies": {
-    "electron-squirrel-startup": "^1.0.1",
-    "electron-updater": "^6.1.7"
+    "electron-squirrel-startup": "^1.0.1"
   }
 }
