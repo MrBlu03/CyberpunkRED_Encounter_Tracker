@@ -65,6 +65,8 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.SUPER_COOL_KEY }}  # Use PAT for checkout
 
       - name: Download all artifacts
         uses: actions/download-artifact@v4
@@ -76,10 +78,12 @@ jobs:
         run: |
           TAG_NAME="v$(node -p "require('./package.json').version")"
           echo "Creating tag: $TAG_NAME"
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git tag $TAG_NAME
           git push origin $TAG_NAME
         env:
-          GH_TOKEN: ${{ secrets.SUPER_COOL_KEY }}
+          GH_TOKEN: ${{ secrets.SUPER_COOL_KEY }}  # Use PAT for pushing tags
 
       - name: Create Release
         uses: softprops/action-gh-release@v1
@@ -87,4 +91,4 @@ jobs:
           files: dist/**
           generate_release_notes: true
         env:
-          GH_TOKEN: ${{ secrets.SUPER_COOL_KEY }}
+          GH_TOKEN: ${{ secrets.SUPER_COOL_KEY }}  # Use PAT for creating releases
