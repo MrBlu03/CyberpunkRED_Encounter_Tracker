@@ -1,6 +1,6 @@
 {
   "name": "cyberpunk-red-encounter-tracker",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "An Electron application for tracking encounters in Cyberpunk RED",
   "main": "main.js",
   "scripts": {
