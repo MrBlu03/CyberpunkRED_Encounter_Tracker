@@ -49,6 +49,8 @@ jobs:
           convert favicon.ico -resize 16x16 build/icons/16x16.png
 
       - name: Build Electron App
+        env:
+          GH_TOKEN: ${{ secrets.TOKEN }}
         run: npm run build
 
       - name: Upload Artifacts
@@ -72,4 +74,4 @@ jobs:
           files: dist/**
           generate_release_notes: true
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.TOKEN }}
