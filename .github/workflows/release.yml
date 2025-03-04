@@ -10,7 +10,7 @@ on:
 jobs:
   build:
     runs-on: ${{ matrix.os }}
-
+    
     strategy:
       matrix:
         os: [windows-latest, ubuntu-latest, macos-latest]
@@ -19,38 +19,37 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.SUPER_COOL_KEY }}  # Use PAT for checkout
+          token: ${{ secrets.SUPER_COOL_KEY }}
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '18'
+          cache: 'npm'
 
       - name: Install Dependencies
         run: npm install
 
-      - name: Install ImageMagick (for icon conversion)
+      - name: Install ImageMagick
         if: matrix.os != 'windows-latest'
         run: |
           if [[ "${{ matrix.os }}" == "ubuntu-latest" ]]; then
+            sudo apt-get update
             sudo apt-get install -y imagemagick
           elif [[ "${{ matrix.os }}" == "macos-latest" ]]; then
             brew install imagemagick
           fi
 
-      - name: Convert ICO to PNG and ICNS
+      - name: Convert Icons
         if: matrix.os != 'windows-latest'
         run: |
           mkdir -p build/icons
           convert favicon.ico -resize 1024x1024 build/icons/1024x1024.png
           convert favicon.ico -resize 512x512 build/icons/512x512.png
           convert favicon.ico -resize 256x256 build/icons/256x256.png
-          convert favicon.ico -resize 128x128 build/icons/128x128.png
-          convert favicon.ico -resize 64x64 build/icons/64x64.png
-          convert favicon.ico -resize 32x32 build/icons/32x32.png
-          convert favicon.ico -resize 16x16 build/icons/16x16.png
 
-      - name: Build Electron App
+      - name: Build App
         env:
           GH_TOKEN: ${{ secrets.SUPER_COOL_KEY }}
         run: npm run build
@@ -58,40 +57,48 @@ jobs:
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: electron-builds-${{ matrix.os }}
+          name: builds-${{ matrix.os }}
           path: dist/
 
   release:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
+      - name: Checkout Code
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.SUPER_COOL_KEY }}  # Use PAT for checkout
+          token: ${{ secrets.SUPER_COOL_KEY }}
+          fetch-depth: 0
 
-      - name: Download all artifacts
-        uses: actions/download-artifact@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          path: dist/
+          node-version: '18'
 
-      - name: Create Git Tag
-        id: create-tag
+      - name: Get Version
+        id: version
+        run: echo "version=$(node -p 'require('./package.json').version')" >> $GITHUB_OUTPUT
+
+      - name: Create Tag
         run: |
-          TAG_NAME="v$(node -p "require('./package.json').version")"
-          echo "Creating tag: $TAG_NAME"
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git tag $TAG_NAME
-          git push origin $TAG_NAME
+          git tag -a v${{ steps.version.outputs.version }} -m "Release v${{ steps.version.outputs.version }}"
+          git push origin v${{ steps.version.outputs.version }}
         env:
-          GH_TOKEN: ${{ secrets.SUPER_COOL_KEY }}  # Use PAT for pushing tags
+          GH_TOKEN: ${{ secrets.SUPER_COOL_KEY }}
+
+      - name: Download Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: dist
 
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: v$(node -p "require('./package.json').version")  # Explicitly set the tag name
-          files: dist/**
+          tag_name: v${{ steps.version.outputs.version }}
+          files: |
+            dist/**/*
           generate_release_notes: true
         env:
-          GH_TOKEN: ${{ secrets.SUPER_COOL_KEY }}  # Use PAT for creating releases
+          GH_TOKEN: ${{ secrets.SUPER_COOL_KEY }}
