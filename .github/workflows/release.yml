@@ -81,7 +81,6 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.SUPER_COOL_KEY }}
 
-          
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
