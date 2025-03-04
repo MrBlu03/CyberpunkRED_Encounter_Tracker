@@ -15,6 +15,14 @@ jobs:
     strategy:
       matrix:
         os: [windows-latest, ubuntu-latest, macos-latest]
+        include:
+          - os: windows-latest
+            ext: exe
+          - os: ubuntu-latest
+            ext: AppImage
+          - os: macos-latest
+            ext: dmg
+
     runs-on: ${{ matrix.os }}
 
     steps:
@@ -32,40 +40,22 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
-      - name: Install ImageMagick
-        if: matrix.os != 'windows-latest'
-        run: |
-          if [ "${{ matrix.os }}" == "ubuntu-latest" ]; then
-            sudo apt-get update
-            sudo apt-get install -y imagemagick
-          elif [ "${{ matrix.os }}" == "macos-latest" ]; then
-            brew install imagemagick
-          fi
-
-      - name: Prepare App Icons
-        if: matrix.os != 'windows-latest'
-        run: |
-          mkdir -p build/icons
-          convert favicon.ico -resize 1024x1024 build/icons/1024x1024.png
-          convert favicon.ico -resize 512x512 build/icons/512x512.png
-          convert favicon.ico -resize 256x256 build/icons/256x256.png
-
       - name: Build Electron App
         run: npm run build
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Rename Artifacts
+      - name: Rename Executable
         shell: bash
         run: |
           cd dist
-          for file in *; do
+          for file in *.${{ matrix.ext }}; do
             if [[ "${{ matrix.os }}" == "windows-latest" ]]; then
-              mv "$file" "CyberpunkRED_Encounter_Tracker-Windows-$file"
+              mv "$file" "CyberpunkRED_Encounter_Tracker-Windows-Setup.exe"
             elif [[ "${{ matrix.os }}" == "ubuntu-latest" ]]; then
-              mv "$file" "CyberpunkRED_Encounter_Tracker-Linux-$file"
+              mv "$file" "CyberpunkRED_Encounter_Tracker-Linux.AppImage"
             elif [[ "${{ matrix.os }}" == "macos-latest" ]]; then
-              mv "$file" "CyberpunkRED_Encounter_Tracker-macOS-$file"
+              mv "$file" "CyberpunkRED_Encounter_Tracker-macOS.dmg"
             fi
           done
 
@@ -73,7 +63,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: electron-build-${{ matrix.os }}
-          path: dist/
+          path: dist/*.${{ matrix.ext }}
           retention-days: 5
 
   release:
@@ -106,7 +96,7 @@ jobs:
           tag_name: v${{ steps.package-version.outputs.version }}
           name: Release v${{ steps.package-version.outputs.version }}
           files: |
-            dist/*
+            dist/CyberpunkRED_Encounter_Tracker-*
           generate_release_notes: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
