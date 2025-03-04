@@ -57,6 +57,20 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Rename Artifacts for Release
+        shell: bash
+        run: |
+          cd dist
+          for file in *; do
+            if [[ "${{ matrix.os }}" == "windows-latest" ]]; then
+              mv "$file" "CyberpunkRED_Encounter_Tracker-Windows-$file"
+            elif [[ "${{ matrix.os }}" == "ubuntu-latest" ]]; then
+              mv "$file" "CyberpunkRED_Encounter_Tracker-Linux-$file"
+            elif [[ "${{ matrix.os }}" == "macos-latest" ]]; then
+              mv "$file" "CyberpunkRED_Encounter_Tracker-macOS-$file"
+            fi
+          done
+
       - name: Upload Build Artifacts
         uses: actions/upload-artifact@v4
         with:
@@ -93,7 +107,7 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: |
-            dist/**/*
+            dist/*
           generate_release_notes: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
