@@ -4,44 +4,47 @@ on:
   push:
     branches:
       - main
-  release:
-    types: [created]
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: read
 
 jobs:
   build:
-    runs-on: ${{ matrix.os }}
-    
     strategy:
       matrix:
         os: [windows-latest, ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
 
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.SUPER_COOL_KEY }}
           fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'
           cache: 'npm'
 
       - name: Install Dependencies
-        run: npm install
+        run: npm ci
 
       - name: Install ImageMagick
         if: matrix.os != 'windows-latest'
         run: |
-          if [[ "${{ matrix.os }}" == "ubuntu-latest" ]]; then
+          if [ "${{ matrix.os }}" == "ubuntu-latest" ]; then
             sudo apt-get update
             sudo apt-get install -y imagemagick
-          elif [[ "${{ matrix.os }}" == "macos-latest" ]]; then
+          elif [ "${{ matrix.os }}" == "macos-latest" ]; then
             brew install imagemagick
           fi
 
-      - name: Convert Icons
+      - name: Prepare App Icons
         if: matrix.os != 'windows-latest'
         run: |
           mkdir -p build/icons
@@ -49,56 +52,53 @@ jobs:
           convert favicon.ico -resize 512x512 build/icons/512x512.png
           convert favicon.ico -resize 256x256 build/icons/256x256.png
 
-      - name: Build App
-        env:
-          GH_TOKEN: ${{ secrets.SUPER_COOL_KEY }}
+      - name: Build Electron App
         run: npm run build
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Upload Artifacts
+      - name: Upload Build Artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: builds-${{ matrix.os }}
+          name: electron-build-${{ matrix.os }}
           path: dist/
+          retention-days: 5
 
   release:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Code
+      - name: Checkout Repository
         uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.SUPER_COOL_KEY }}
-          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'
 
-      - name: Get Version
-        id: version
-        run: echo "version=$(node -p 'require('./package.json').version')" >> $GITHUB_OUTPUT
-
-      - name: Create Tag
+      - name: Get Package Version
+        id: package-version
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git tag -a v${{ steps.version.outputs.version }} -m "Release v${{ steps.version.outputs.version }}"
-          git push origin v${{ steps.version.outputs.version }}
-        env:
-          GH_TOKEN: ${{ secrets.SUPER_COOL_KEY }}
+          VERSION=$(node -p "require('./package.json').version")
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
 
-      - name: Download Artifacts
+      - name: Download Build Artifacts
         uses: actions/download-artifact@v4
         with:
           path: dist
+          merge-multiple: true
 
-      - name: Create Release
-        uses: softprops/action-gh-release@v1
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        if: startsWith(github.ref, 'refs/tags/')
         with:
-          tag_name: v${{ steps.version.outputs.version }}
           files: |
             dist/**/*
           generate_release_notes: true
         env:
-          GH_TOKEN: ${{ secrets.SUPER_COOL_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: List Release Assets
+        run: |
+          echo "Release assets:"
+          ls -R dist/
