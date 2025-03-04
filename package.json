@@ -19,7 +19,6 @@
   "build": {
     "appId": "com.MrBlu03.cyberpunkredtracker",
     "productName": "Cyberpunk RED Encounter Tracker",
-    "icon": "favicon.ico", 
     "directories": {
       "output": "dist"
     },
@@ -31,12 +30,15 @@
       "package.json"
     ],
     "win": {
+      "icon": "favicon.ico",
       "target": "nsis"
     },
     "mac": {
+      "icon": "build/icons/icon.icns",
       "target": "dmg"
     },
     "linux": {
+      "icon": "build/icons",
       "target": "AppImage"
     }
   },
