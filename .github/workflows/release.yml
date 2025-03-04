@@ -17,10 +17,10 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4  # Update to v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4  # Update to v4
         with:
           node-version: '18' # or your desired version
 
@@ -30,13 +30,13 @@ jobs:
       - name: Build Electron App (if needed)
         # If your build process involves compiling or bundling, add it here.
         # For example, if you use a build script:
-        # run: npm run build
+        run: npm run build
 
       - name: Package Electron App with Electron Builder
         run: npm run dist # Assuming you have "dist": "electron-builder" in scripts
 
       - name: Upload Artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4  # Upgrade to v4
         with:
           name: electron-builds
           path: dist/
@@ -46,7 +46,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Download all artifact
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4  # Upgrade to v4
         with:
           name: electron-builds
           path: dist/
