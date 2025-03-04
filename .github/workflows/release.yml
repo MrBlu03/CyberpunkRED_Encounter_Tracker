@@ -28,7 +28,12 @@ jobs:
         run: npm install
 
       - name: Install ImageMagick (for icon conversion)
+        if: matrix.os == 'ubuntu-latest'
         run: sudo apt-get install -y imagemagick icnsutils
+
+      - name: Install ImageMagick on macOS
+        if: matrix.os == 'macos-latest'
+        run: brew install imagemagick
 
       - name: Convert ICO to PNG and ICNS
         run: |
