@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; font-src 'self'; font-src 'self'">
-    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'; font-src 'self'; font-src 'self'">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self'">
     <title>Player Character Manager - Cyberpunk Red Initiative Tracker</title>
     <link rel="stylesheet" href="../css/local-fonts.css">
     <link rel="stylesheet" href="../css/styles.css">
@@ -31,8 +30,8 @@
         </div>
     </div>
     
-    <!-- Add padding to main content to avoid overlap with navigation -->
-    <div id="app" style="padding-top: 50px;">
+    <!-- Main content -->
+    <div id="app">
         <div class="character-form-section">
             <h2>Create Character</h2>
             <div class="player-character-form">
@@ -45,16 +44,16 @@
                 <!-- Add Interface Skill field -->
                 <input type="number" id="pc-interface" placeholder="Interface Skill" min="0" max="10">
                 <div id="pc-weapon-fields" class="full-width"></div>
-                <button type="button" onclick="addWeaponFields('pc-weapon-fields')" class="full-width">Add Weapon</button>
+                <button type="button" id="add-weapon-btn" class="full-width">Add Weapon</button>
                 <div class="notes-section full-width">
                     <h4>Character Notes</h4>
-                    <textarea id="pc-notes" class="character-notes" placeholder="Add notes about abilities, cyberware, or other details..." oninput="updateCharacterNotes(event)"></textarea>
+                    <textarea id="pc-notes" class="character-notes" placeholder="Add notes about abilities, cyberware, or other details..."></textarea>
                 </div>
                 <div class="import-export-controls full-width">
-                    <button onclick="savePlayerCharacter()">Save Character</button>
-                    <button onclick="exportPlayerCharacters()">Export All</button>
-                    <input type="file" id="importPCFile" accept=".json" style="display: none" onchange="importPlayerCharacters(event)">
-                    <button onclick="document.getElementById('importPCFile').click()">Import</button>
+                    <button id="save-character-btn">Save Character</button>
+                    <button id="export-characters-btn">Export All</button>
+                    <input type="file" id="importPCFile" accept=".json" style="display: none">
+                    <button id="import-btn">Import</button>
                 </div>
                 <span class="import-export-info full-width" id="pc-import-export-status"></span>
             </div>
@@ -65,10 +64,12 @@
             <div id="pc-list" class="player-character-list"></div>
         </div>
     </div>
+
     <!-- Add navigation.js before other scripts -->
     <script src="../js/utils/navigation.js"></script>
     <script src="../js/components/npc-presets.js"></script>
     <script src="../js/main.js"></script>
+    <script src="../js/pc-manager-init.js"></script>
 </body>
 </html>
 

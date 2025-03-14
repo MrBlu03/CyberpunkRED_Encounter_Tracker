@@ -15,6 +15,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 20px;
+    padding-top: 50px;
 }
 
 .character-form-section {
@@ -148,4 +149,12 @@ h2 {
 .character-notes:focus {
     border-color: var(--accent-primary);
     outline: none;
+}
+
+/* Add the navigation styling that was previously inline */
+.nav-container {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
 }
