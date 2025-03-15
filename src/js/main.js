@@ -2865,10 +2865,13 @@ function addNPCsToEncounter(encounterId) {
         const nameIndex = i + 1;
         const name = `${npcType} ${nameIndex}`;
         
+        // Use baseInitiative if available, otherwise use base
+        const baseInitiative = preset.base !== undefined ? preset.base : preset.baseInitiative;
+        
         // Add the participant using the preset data
         encounter.addParticipant(
             name, 
-            preset.base, 
+            baseInitiative, 
             preset.maxHealth, 
             preset.bodyArmor || 0, 
             preset.headArmor || 0, 

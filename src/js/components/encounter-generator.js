@@ -160,14 +160,17 @@ function generateRandomEncounter(difficulty, enemyCount) {
         // Determine level scaling for this NPC
 		const level = Math.floor(Math.random() * preset.maxLevel) + 1;
         const combatSkill = `1d10+${LEVEL_SCALING[npcType][level]}`;
+        
+        // Get the correct initiative value, checking both possible property names
+        const baseInitiative = npcBase.base !== undefined ? npcBase.base : npcBase.baseInitiative;
 		
         // Create base participant from NPC preset
         const participant = {
             name: generateNPCName(npcType, i + 1),
-            base: npcBase.baseInitiative,
+            base: baseInitiative,
             maxHealth: npcBase.maxHealth,
             roll: 0,
-            total: npcBase.baseInitiative,
+            total: baseInitiative,
             health: npcBase.maxHealth,
             hasRolled: false,
             bodyArmor: npcBase.bodyArmor,
@@ -190,13 +193,16 @@ function generateRandomEncounter(difficulty, enemyCount) {
 		const level = Math.floor(Math.random() * preset.maxLevel) + 1;
         const combatSkill = `1d10+${LEVEL_SCALING[turretType][level]}`;
         
+        // Get the correct initiative value for turrets
+        const turretInitiative = turretBase.base !== undefined ? turretBase.base : turretBase.baseInitiative;
+        
         for (let i = 0; i < turretCount; i++) {
             const turret = {
                 name: generateNPCName(turretType, i + 1),
-                base: turretBase.baseInitiative,
+                base: turretInitiative,
                 maxHealth: turretBase.maxHealth,
                 roll: 0,
-                total: turretBase.baseInitiative,
+                total: turretInitiative,
                 health: turretBase.maxHealth,
                 hasRolled: false,
                 bodyArmor: turretBase.bodyArmor,
