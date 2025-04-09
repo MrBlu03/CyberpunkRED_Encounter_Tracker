@@ -200,9 +200,17 @@ class Participant {
     }
 
     hasCriticalFromDice(diceRolls) {
-        if (!Array.isArray(diceRolls) || diceRolls.length < 2) return false;
-        let sixes = diceRolls.filter(roll => roll === 6).length;
-        return sixes >= 2;
+        const criticalSystem = localStorage.getItem('criticalInjurySystem') || 'default';
+        
+        if (criticalSystem === 'tarot') {
+            // For Tarot system, need 3 or more 6s
+            const sixes = diceRolls.filter(roll => roll === 6).length;
+            return sixes >= 3;
+        } else {
+            // Default system: 2 or more 6s
+            const sixes = diceRolls.filter(roll => roll === 6).length;
+            return sixes >= 2;
+        }
     }
 
     ablateArmor(location, amount) {
@@ -419,14 +427,16 @@ class Encounter {
                         ${weaponsDisplay}
 
                         <div class="critical-injuries">
-                            ${p.criticalInjuries.map(injury => `
+                            ${p.criticalInjuries.map((injury, index) => `
                                 <div>
                                     <span class="critical-injury">
-                                        ${injury.name}
-                                        <button onclick="removeCriticalInjury('${p.name}', ${p.criticalInjuries.indexOf(injury)}, false)">×</button>
+                                        ${injury.isTarot 
+                                            ? `<span class="tarot-card-name">${injury.name}</span>` // Display only name, but styled if Tarot
+                                            : injury.name} 
+                                        <button onclick="removeCriticalInjury('${p.name}', ${index}, false)">×</button>
                                     </span>
                                     <div class="injury-description">
-                                        ${injury.description}
+                                        ${injury.description || ''}
                                         ${injury.autoApplied ? '<div class="auto-crit-message">(Automatically applied at 0 HP)</div>' : ''}
                                     </div>
                                 </div>
@@ -533,13 +543,28 @@ class Encounter {
                             </div>
                             <div>
                                 <select id="critical-injury-select-${this.id}-${p.name}">
-                                    ${Object.keys(CRITICAL_INJURIES).map(location => `
-                                        <optgroup label="${location}">
-                                            ${CRITICAL_INJURIES[location].map(injury => `
-                                                <option value="${injury.name}">${injury.name}</option>
-                                            `).join('')}
-                                        </optgroup>
-                                    `).join('')}
+                                    ${(() => {
+                                        const criticalSystem = localStorage.getItem('criticalInjurySystem') || 'default';
+                                        if (criticalSystem === 'tarot') {
+                                            return `
+                                                <optgroup label="Tarot Cards">
+                                                    ${Object.keys(TAROT_CARDS).map(card => `
+                                                        <option value="${card}">${card}</option>
+                                                    `).join('')}
+                                                </optgroup>
+                                            `;
+                                        } else {
+                                            return `
+                                                ${Object.keys(CRITICAL_INJURIES).map(location => `
+                                                    <optgroup label="${location}">
+                                                        ${CRITICAL_INJURIES[location].map(injury => `
+                                                            <option value="${injury.name}">${injury.name}</option>
+                                                        `).join('')}
+                                                    </optgroup>
+                                                `).join('')}
+                                            `;
+                                        }
+                                    })()}
                                 </select>
                                 <button onclick="applyCriticalInjury(${this.id}, '${p.name}')">Apply Critical Injury</button>
                             </div>
@@ -1019,8 +1044,10 @@ function renderPlayerCharacterList() {
                 ${pc.criticalInjuries.map((injury, index) => `
                     <div>
                         <span class="critical-injury">
-                            ${injury.name}
-                            <button onclick="removeCriticalInjury('${pc.name}', ${index}, true)">×</button>
+                            ${injury.isTarot 
+                                ? `<span class="tarot-card-name">${injury.name}</span>` // Display only name, but styled if Tarot
+                                : injury.name} 
+                            <button onclick="removeCriticalInjury('${pc.name}', ${index}, false)">×</button>
                         </span>
                         <div class="injury-description">
                             ${injury.description}
@@ -1377,9 +1404,8 @@ function applyDamageSequentially(participant, baseDamage, options, encounter) {
     let criticalDamage = 0;
     if (hasCriticalFromDice(diceRolls)) {
         criticalDamage = 5; // Critical injuries always deal 5 bonus damage
-        console.log(`Added ${criticalDamage} damage from critical roll`);
     }
-    
+
     // Apply final damage to health
     if (remainingDamage + criticalDamage > 0) {
         const totalDamage = remainingDamage + criticalDamage;
@@ -1867,28 +1893,53 @@ function applyCriticalInjury(encounterId, participantName) {
         const participant = encounter.participants.find(p => p.name === participantName);
         const injurySelect = document.getElementById(`critical-injury-select-${encounterId}-${participantName}`);
         const injuryName = injurySelect.value;
+        const criticalSystem = localStorage.getItem('criticalInjurySystem') || 'default';
 
-        // Find the injury in CRITICAL_INJURIES
-        let selectedInjury = null;
-        for (const location in CRITICAL_INJURIES) {
-            selectedInjury = CRITICAL_INJURIES[location].find(injury => injury.name === injuryName);
-            if (selectedInjury) break;
-        }
+        if (participant) {
+            if (criticalSystem === 'tarot') {
+                let injuryToAdd = null; // Initialize injury object to null
+                const card = TAROT_CARDS[injuryName]; // injuryName is the card name here
+                
+                if (card) {
+                    // Tarot card found - create the informational injury object
+                    injuryToAdd = { 
+                        name: injuryName, // Use the card's name as the injury name
+                        description: card.description || 'No description available.', // Use the card's main description
+                        isTarot: true,
+                        tarotCard: injuryName // Store the card name 
+                    };
+                } else {
+                     showNotification(`Tarot card definition not found for '${injuryName}'.`, 'error');
+                }
 
-        if (participant && selectedInjury) {
-            // Check if the injury already exists
-            const injuryExists = participant.criticalInjuries.some(injury => injury.name === selectedInjury.name);
-            if (!injuryExists) {
-                participant.criticalInjuries.push(selectedInjury);
+                // Add the injury if one was created and it's not a duplicate
+                // Check duplicate based on the Tarot card name itself
+                if (injuryToAdd && !participant.criticalInjuries.some(inj => 
+                    inj.isTarot && inj.tarotCard === injuryName
+                )) {
+                    participant.criticalInjuries.push(injuryToAdd);
+                    showNotification(`Applied Tarot Card: ${injuryName}`, 'warning');
+                } else if (injuryToAdd) { // Injury object created, but it's a duplicate
+                    showNotification(`Tarot Card '${injuryName}' is already applied.`, 'info');
+                }
+                // If injuryToAdd remained null (card not found), notification was already shown.
+            } else {
+                // Handle default system (existing logic)
+                let selectedInjury = null;
+                for (const location in CRITICAL_INJURIES) {
+                    selectedInjury = CRITICAL_INJURIES[location].find(injury => injury.name === injuryName);
+                    if (selectedInjury) break;
+                }
+
+                if (selectedInjury && !participant.criticalInjuries.some(injury => injury.name === selectedInjury.name)) {
+                    participant.criticalInjuries.push(selectedInjury);
+                }
             }
 
             // If the participant is a player character, update the player character list
             const pc = playerCharacters.find(p => p.name === participant.name);
             if (pc) {
-                const pcInjuryExists = pc.criticalInjuries.some(injury => injury.name === selectedInjury.name);
-                if (!pcInjuryExists) {
-                    pc.criticalInjuries.push(selectedInjury);
-                }
+                pc.criticalInjuries = [...participant.criticalInjuries];
                 localStorage.setItem('playerCharacters', JSON.stringify(playerCharacters.map(p => p.toJSON())));
                 renderPlayerCharacterList();
             }
@@ -2255,6 +2306,24 @@ document.addEventListener('DOMContentLoaded', function() {
         pcSelect.innerHTML = '<option value="">Select a character...</option>' +
             characters.map(char => `<option value="${char.name}">${char.name}</option>`).join('');
     }
+
+    // Listen for storage changes to update settings across tabs
+    window.addEventListener('storage', function(e) {
+        if (e.key === 'criticalInjurySystem') {
+            // Update the critical injury system
+            const criticalSystem = e.newValue || 'default';
+            
+            // Update all encounter displays
+            encounters.forEach(encounter => {
+                encounter.render();
+            });
+            
+            // Update player character list if on that page
+            if (document.getElementById('pc-list')) {
+                renderPlayerCharacterList();
+            }
+        }
+    });
 });
 
 function updateUI() {
@@ -2285,17 +2354,41 @@ function renderPlayerCharacterList() {
                 ${pc.interface > 0 ? `<div>Interface: ${pc.interface}</div>` : ''} <!-- Show Interface if > 0 -->
             </div>
             <div class="weapons-section">
-                <div class="weapons-list">
-                    ${pc.weapons ? pc.weapons.map(weapon => `
-                        <div class="weapon-entry-readonly">
-                            <span class="weapon-name">${weapon.name}</span>
-                            <span class="weapon-damage">${weapon.damage}</span>
-                        </div>
-                    `).join('') : ''}
-                </div>
+                <h4>Weapons</h4>
+                ${pc.weapons && pc.weapons.length > 0 ? `
+                    <div class="weapons-list">
+                        ${pc.weapons.map(w => `
+                            <div class="weapon-entry-readonly">
+                                ${w.name}: ${w.damage}
+                            </div>
+                        `).join('')}
+                    </div>
+                ` : '<div class="weapon-entry-readonly">No weapons</div>'}
+            </div>
+            <div class="critical-injuries-section">
+                <h4>Critical Injuries</h4>
+                ${pc.criticalInjuries && pc.criticalInjuries.length > 0 ? `
+                    <div class="critical-injuries-list">
+                        ${pc.criticalInjuries.map((injury, idx) => `
+                            <div class="critical-injury">
+                                ${injury.name}
+                                <button onclick="removeCriticalInjury('${pc.name}', ${idx}, true)">×</button>
+                            </div>
+                        `).join('')}
+                    </div>
+                ` : '<div>No critical injuries</div>'}
+            </div>
+            <div class="notes-section">
+                <h4>Notes</h4>
+                <textarea 
+                    class="character-notes"
+                    data-character-name="${pc.name}"
+                    onchange="updateCharacterNotes(event)"
+                >${pc.notes || ''}</textarea>
             </div>
             <div class="actions">
-                <button onclick="deletePlayerCharacter(${index})">Delete</button>
+                <button onclick="editCharacter(${index})">Edit</button>
+                <button onclick="deleteCharacter(${index})" class="danger-button">Delete</button>
             </div>
         </div>
     `).join('');
@@ -2885,3 +2978,149 @@ function addNPCsToEncounter(encounterId) {
 }
 
 // ...rest of existing code...
+
+// Function to check for critical injury from dice rolls
+function hasCriticalFromDice(diceRolls) {
+    const criticalSystem = localStorage.getItem('criticalInjurySystem') || 'default';
+    
+    if (criticalSystem === 'tarot') {
+        // For Tarot system, need 3 or more 6s
+        const sixes = diceRolls.filter(roll => roll === 6).length;
+        return sixes >= 3;
+    } else {
+        // Default system: 2 or more 6s
+        const sixes = diceRolls.filter(roll => roll === 6).length;
+        return sixes >= 2;
+    }
+}
+
+// Function to handle critical injury
+function handleCriticalInjury(participant, diceRolls, isHeadshot = false) {
+    const criticalSystem = localStorage.getItem('criticalInjurySystem') || 'default';
+    
+    if (criticalSystem === 'tarot') {
+        // Check if we've already drawn a Tarot card this session
+        const hasDrawnTarot = localStorage.getItem('hasDrawnTarot') === 'true';
+        if (hasDrawnTarot) {
+            // If we've already drawn a card, use default system
+            applyDefaultCriticalInjury(participant, isHeadshot);
+            return;
+        }
+        
+        // Draw and apply Tarot card
+        const card = drawTarotCard();
+        const effect = applyTarotEffect(card, participant);
+        
+        // Mark that we've drawn a card for this session
+        localStorage.setItem('hasDrawnTarot', 'true');
+        
+        // Apply the effect based on its type
+        switch (effect.type) {
+            case 'injury':
+                if (effect.injury) {
+                    // Single injury
+                    const injury = CRITICAL_INJURIES[isHeadshot ? 'Head' : 'Body']
+                        .find(i => i.name === effect.injury);
+                    if (injury && !participant.criticalInjuries.some(ci => ci.name === injury.name)) {
+                        participant.criticalInjuries.push({
+                            ...injury,
+                            isTarot: true,
+                            tarotCard: card.name
+                        });
+                    }
+                } else if (effect.injuries) {
+                    // Multiple injuries
+                    effect.injuries.forEach(injuryName => {
+                        const injury = CRITICAL_INJURIES[isHeadshot ? 'Head' : 'Body']
+                            .find(i => i.name === injuryName);
+                        if (injury && !participant.criticalInjuries.some(ci => ci.name === injury.name)) {
+                            participant.criticalInjuries.push({
+                                ...injury,
+                                isTarot: true,
+                                tarotCard: card.name
+                            });
+                        }
+                    });
+                }
+                break;
+                
+            case 'damage':
+                if (effect.bonus) {
+                    // Add bonus damage
+                    participant.health = Math.max(0, participant.health - effect.bonus);
+                }
+                if (effect.multiplier) {
+                    // Apply damage multiplier
+                    const damage = diceRolls.reduce((a, b) => a + b, 0);
+                    participant.health = Math.max(0, participant.health - (damage * (effect.multiplier - 1)));
+                }
+                break;
+                
+            case 'status':
+                // Apply status effects (e.g., prone, grappled)
+                if (effect.status === 'prone') {
+                    participant.status = 'prone';
+                }
+                break;
+                
+            case 'armor':
+                // Ablate armor
+                if (effect.ablation) {
+                    if (isHeadshot) {
+                        participant.headArmor = Math.max(0, participant.headArmor - effect.ablation);
+                    } else {
+                        participant.bodyArmor = Math.max(0, participant.bodyArmor - effect.ablation);
+                    }
+                }
+                break;
+        }
+        
+        // Show notification about the Tarot card
+        showNotification(`Drew ${card.name}: ${card.description}`, 'info');
+    } else {
+        // Use default system
+        applyDefaultCriticalInjury(participant, isHeadshot);
+    }
+}
+
+// Function to apply default critical injury
+function applyDefaultCriticalInjury(participant, isHeadshot) {
+    const criticalInjury = rollCriticalInjury(isHeadshot ? 'Head' : 'Body');
+    if (criticalInjury && !participant.criticalInjuries.some(ci => ci.name === criticalInjury.name)) {
+        participant.criticalInjuries.push(criticalInjury);
+    }
+}
+
+function renderParticipant(participant) {
+    const participantElement = document.createElement('div');
+    participantElement.className = 'participant';
+    participantElement.id = `participant-${participant.id}`;
+    
+    // ... existing code ...
+    
+    // Critical Injuries
+    const criticalInjuriesElement = document.createElement('div');
+    criticalInjuriesElement.className = 'critical-injuries';
+    if (participant.criticalInjuries.length > 0) {
+        participant.criticalInjuries.forEach(injury => {
+            const injuryElement = document.createElement('div');
+            injuryElement.className = 'critical-injury';
+            
+            if (injury.isTarot) {
+                injuryElement.innerHTML = `
+                    <span class="tarot-injury">
+                        <span class="tarot-card-name">${injury.tarotCard}:</span>
+                        ${injury.name}
+                    </span>
+                `;
+            } else {
+                injuryElement.textContent = injury.name;
+            }
+            
+            criticalInjuriesElement.appendChild(injuryElement);
+        });
+    }
+    participantElement.appendChild(criticalInjuriesElement);
+    
+    // ... existing code ...
+}

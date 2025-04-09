@@ -1466,3 +1466,11 @@ textarea:focus, input:focus {
         opacity: 1;
     }
 }
+
+/* Dice Roller Styles */
+.highlight-six {
+    color: #ff4444;
+    font-weight: bold;
+    font-size: 1.1em;
+    text-shadow: 0 0 5px rgba(255, 68, 68, 0.5);
+}

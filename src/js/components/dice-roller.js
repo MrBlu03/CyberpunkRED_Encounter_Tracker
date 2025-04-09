@@ -22,34 +22,44 @@ function rollDice(diceNotation) {
 
     try {
         result = parseDiceNotation(diceNotation);
-        resultText = `Result: ${result.total} (${result.rolls.join(', ')})`;
+        // Format rolls to highlight 6s
+        const formattedRolls = result.rolls.map(roll => 
+            roll === 6 ? `<span class="highlight-six">${roll}</span>` : roll
+        );
+        resultText = `Result: ${result.total} (${formattedRolls.join(', ')})`;
 
         // Critical Injury Detection
+        const criticalSystem = localStorage.getItem('criticalInjurySystem') || 'default';
         const sixes = result.rolls.filter(roll => roll === 6).length;
-        isCritical = (result.rolls.length >= 2 && sixes >= 2);
+        
+        if (criticalSystem === 'tarot') {
+            isCritical = (result.rolls.length >= 3 && sixes >= 3);
+            if (isCritical) {
+                resultText += ' - Tarot Critical!';
+                const card = drawTarotCard();
+                criticalInjuryText = `Tarot Card: ${card.name} - ${card.description}`;
+                criticalInjuryDiv.style.display = 'block';
+            }
+        } else {
+            isCritical = (result.rolls.length >= 2 && sixes >= 2);
+            if (isCritical) {
+                resultText += ' - Critical Injury! +5 Bonus Damage';
+                const table = CRITICAL_INJURIES[hitLocation.charAt(0).toUpperCase() + hitLocation.slice(1)];
+                if (table) {
+                    let roll1 = Math.floor(Math.random() * 6) + 1;
+                    let roll2 = Math.floor(Math.random() * 6) + 1;
+                    let index = roll1 + roll2 - 2;
+                    if (index >= 0 && index < table.length) {
+                        const injury = table[index];
+                        criticalInjuryText = `Critical Injury (${roll1}+${roll2}=${roll1+roll2}): ${injury.name} - ${injury.description}`;
+                        criticalInjuryDiv.style.display = 'block';
+                    }
+                }
+            }
+        }
 
     } catch (error) {
         resultText = 'Invalid dice notation. Please use the format XdY+Z.';
-    }
-
-    if (result && isCritical) {
-        resultText += ' - Critical Injury! +5 Bonus Damage';
-        const table = CRITICAL_INJURIES[hitLocation.charAt(0).toUpperCase() + hitLocation.slice(1)];
-        if (table) {
-            let roll1 = Math.floor(Math.random() * 6) + 1;
-            let roll2 = Math.floor(Math.random() * 6) + 1;
-            let index = roll1 + roll2 - 2; // Adjust for 0-based index
-            if (index >= 0 && index < table.length) {
-                const injury = table[index];
-                criticalInjuryText = `Critical Injury (${roll1}+${roll2}=${roll1+roll2}): ${injury.name} - ${injury.description}`;
-                criticalInjuryDiv.style.display = 'block'; // Show the div
-            }
-        } else {
-            criticalInjuryText = 'Critical Injury: Invalid hit location.';
-            criticalInjuryDiv.style.display = 'block'; // Show the div
-        }
-    } else {
-        criticalInjuryDiv.style.display = 'none'; // Hide the div when no crit
     }
 
     criticalInjuryDiv.innerHTML = criticalInjuryText;
@@ -57,6 +67,7 @@ function rollDice(diceNotation) {
     resultDiv.className = isCritical ? 'critical-injury' : '';
 
     if (!isCritical) {
+        criticalInjuryDiv.style.display = 'none';
         criticalInjuryDiv.innerHTML = '';
     }
 

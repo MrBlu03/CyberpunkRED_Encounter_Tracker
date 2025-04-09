@@ -24,6 +24,7 @@
                 <a href="pc-manager.html">Player Characters</a>
                 <a href="netrunner.html">Netrunner Interface</a>
                 <a href="timetracker.html">Time Tracker</a>
+                <a href="tarot-deck.html">Tarot Deck</a>
                 <a href="settings.html">Settings</a>
             </div>
         </div>
@@ -44,6 +45,21 @@
                         <option value="cyberpunk">Cyberpunk (Neon/Black)</option>
                         <option value="classic">Classic (Light)</option>
                     </select>
+                </div>
+            </section>
+
+            <section class="settings-section">
+                <h2>Critical Injury System</h2>
+                <div class="critical-injury-selector">
+                    <label for="critical-injury-system">Critical Injury System:</label>
+                    <select id="critical-injury-system">
+                        <option value="default">Default System</option>
+                        <option value="tarot">Night City Tarot System</option>
+                    </select>
+                    <div class="tarot-info" style="display: none;">
+                        <p>The Night City Tarot system activates when three or more damage dice come up as 6s in a single-target attack. Draw a Tarot card to determine the critical effect instead of using the standard critical injury tables.</p>
+                        <p>Note: Only one Tarot card can be drawn per game session.</p>
+                    </div>
                 </div>
             </section>
 

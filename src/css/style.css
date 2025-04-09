@@ -1,0 +1,22 @@
+.critical-injury {
+    background-color: #fff3cd;
+    border: 1px solid #ffeeba;
+    border-radius: 4px;
+    padding: 8px;
+    margin: 4px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tarot-injury {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.tarot-card-name {
+    font-weight: bold;
+    color: #856404;
+    font-style: italic;
+} 

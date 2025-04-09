@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        document.documentElement.className = `theme-${localStorage.getItem('theme') || 'default'}`;
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Night City Tarot Deck - Cyberpunk RED</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            height: 100vh;
+        }
+        
+        html {
+            overflow: hidden;
+        }
+        
+        #app {
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            padding-top: 50px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .tarot-container {
+            width: 100%;
+            max-width: 1200px;
+            height: calc(100vh - 50px);
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .section {
+            text-align: center;
+            width: 100%;
+            margin-bottom: 10px;
+            flex-shrink: 0;
+        }
+        
+        .tarot-controls {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 15px 0;
+        }
+        
+        .tarot-controls button {
+            padding: 12px 24px;
+            cursor: pointer;
+            background-color: var(--accent-primary);
+            color: var(--text-on-accent);
+            border: none;
+            border-radius: 4px;
+            font-family: 'Bruno Ace SC', cursive;
+            transition: background-color 0.3s;
+            font-size: 1.1rem;
+        }
+        
+        .tarot-controls button:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .tarot-controls button:disabled {
+            background-color: #666;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        
+        .deck-status {
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--accent-primary);
+        }
+        
+        .tarot-areas {
+            flex: 1;
+            display: flex;
+            gap: 30px;
+            width: 100%;
+            overflow: hidden;
+        }
+        
+        .tarot-area {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background-color: var(--background-secondary);
+            overflow: hidden;
+        }
+        
+        .tarot-area h3 {
+            text-align: center;
+            margin: 0;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border-color);
+            background-color: var(--background-primary);
+        }
+        
+        .card-container {
+            flex: 1;
+            overflow-y: auto;
+            padding: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            align-content: flex-start;
+        }
+        
+        .current-card {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+        }
+        
+        .tarot-card {
+            position: relative;
+            width: 250px;
+            height: 400px;
+            border-radius: 10px;
+            border: 2px solid var(--accent-secondary);
+            background: linear-gradient(to bottom right, var(--background-primary), var(--background-secondary));
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            cursor: default;
+            transition: transform 0.3s, box-shadow 0.3s;
+            overflow: hidden;
+            margin-bottom: 15px;
+        }
+        
+        .tarot-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(to right, crimson, gold);
+            opacity: 0.8;
+        }
+        
+        /* Elegant background pattern for cards */
+        .tarot-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 50% 0, rgba(255,255,255,.1), rgba(255,255,255,0) 70.71%),
+                radial-gradient(circle at 6.7% 75%, rgba(255,0,0,.1), rgba(255,0,0,0) 70.71%),
+                radial-gradient(circle at 93.3% 75%, rgba(255,215,0,.1), rgba(255,215,0,0) 70.71%);
+            opacity: 0.3;
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        .tarot-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        }
+        
+        .card-name {
+            font-family: 'Bruno Ace SC', cursive;
+            text-align: center;
+            font-size: 1.3rem;
+            margin: 25px 0 15px 0;
+            color: var(--accent-primary);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 5px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .card-name::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 10%;
+            width: 80%;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--accent-primary), transparent);
+        }
+        
+        .card-description {
+            font-size: 0.95rem;
+            overflow-y: auto;
+            flex-grow: 1;
+            padding: 10px 5px;
+            line-height: 1.5;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .card-number {
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            font-family: 'Bruno Ace SC', cursive;
+            font-size: 1.8rem;
+            color: crimson;
+            text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+            z-index: 2;
+            font-weight: bold;
+        }
+        
+        .card-mini {
+            width: 120px;
+            height: 180px;
+            font-size: 0.7rem;
+            margin: 5px;
+        }
+        
+        .card-mini .card-name {
+            font-size: 0.9rem;
+            padding-bottom: 2px;
+            margin: 15px 0 10px 0;
+        }
+        
+        .card-mini .card-description {
+            font-size: 0.7rem;
+            padding: 2px;
+            max-height: 100px;
+        }
+        
+        .card-mini .card-number {
+            font-size: 1rem;
+            top: 5px;
+            left: 8px;
+        }
+        
+        .card-face-down {
+            background: linear-gradient(145deg, #444, #222);
+            border: 2px solid crimson;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: rgba(0, 0, 0, 0);
+            cursor: default;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card-face-down:hover {
+            box-shadow: 0 0 20px rgba(220, 20, 60, 0.7);
+        }
+        
+        /* Card back pattern */
+        .card-face-down::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at center, #444 0, #222 100%),
+                repeating-linear-gradient(45deg, 
+                    transparent 0px, 
+                    transparent 10px, 
+                    rgba(220, 20, 60, 0.1) 10px, 
+                    rgba(220, 20, 60, 0.1) 20px),
+                repeating-linear-gradient(-45deg, 
+                    transparent 0px, 
+                    transparent 10px, 
+                    rgba(220, 20, 60, 0.1) 10px, 
+                    rgba(220, 20, 60, 0.1) 20px);
+            z-index: 1;
+        }
+        
+        /* Question mark in the center */
+        .card-face-down::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Bruno Ace SC', cursive;
+            font-size: 8rem;
+            color: rgba(220, 20, 60, 0.2);
+            z-index: 2;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='120' height='120'%3E%3Cpath fill='%23DC143C20' d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-4h2v2h-2zm0-2V7h2v7h-2z'/%3E%3C/svg%3E");
+            width: 120px;
+            height: 120px;
+            background-repeat: no-repeat;
+        }
+        
+        /* Remove the misleading draw label */
+        .card-face-down .card-label {
+            display: none;
+        }
+        
+        .cards-remaining {
+            font-weight: bold;
+        }
+        
+        .empty-deck-placeholder {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+        
+        .empty-card-placeholder {
+            width: 220px;
+            height: 360px;
+            border-radius: 10px;
+            border: 2px dashed var(--border-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+        
+        @media (max-width: 768px) {
+            .tarot-areas {
+                flex-direction: column;
+            }
+            
+            .tarot-area {
+                min-height: 0;
+                height: auto;
+                max-height: 45vh;
+            }
+            
+            .tarot-card {
+                width: 200px;
+                height: 320px;
+            }
+            
+            .card-mini {
+                width: 100px;
+                height: 160px;
+            }
+
+            .section h2 {
+                font-size: 1.5rem;
+                margin-top: 0;
+            }
+            
+            .section p {
+                font-size: 0.9rem;
+                margin-bottom: 10px;
+            }
+            
+            .tarot-controls {
+                margin: 10px 0;
+            }
+            
+            .tarot-controls button {
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
+            
+            .primary-btn {
+                padding: 10px 20px !important;
+                font-size: 1rem !important;
+            }
+        }
+        
+        .primary-btn {
+            background-color: crimson !important;
+            box-shadow: 0 4px 8px rgba(220, 20, 60, 0.3);
+            font-size: 1.2rem !important;
+            padding: 14px 28px !important;
+        }
+        
+        .primary-btn:hover {
+            box-shadow: 0 6px 12px rgba(220, 20, 60, 0.5) !important;
+        }
+        
+        .section h2 {
+            color: var(--accent-primary);
+            font-size: 1.8rem;
+            margin: 0 0 5px 0;
+        }
+        
+        .section p {
+            font-size: 1rem;
+            max-width: 800px;
+            margin: 0 auto 10px auto;
+            color: var(--text-secondary);
+        }
+        
+        .cards-remaining {
+            color: crimson;
+            font-size: 1.4rem;
+        }
+        
+        .empty-deck-placeholder {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+            font-style: italic;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            text-align: center;
+            border: 2px dashed var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Dropdown - Fixed in top-left corner -->
+    <div class="nav-container">
+        <div class="nav-dropdown">
+            <button class="nav-button">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                    <path fill="currentColor" d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                </svg>
+                Navigation
+            </button>
+            <div class="nav-content">
+                <a href="index.html">Initiative Tracker</a>
+                <a href="pc-manager.html">Player Characters</a>
+                <a href="netrunner.html">Netrunner Interface</a>
+                <a href="timetracker.html">Time Tracker</a>
+                <a href="tarot-deck.html">Tarot Deck</a>
+                <a href="settings.html">Settings</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add padding to main content to avoid overlap with navigation -->
+    <div id="app">
+        <div class="tarot-container">
+            <div class="section">
+                <h2>Night City Tarot Deck</h2>
+                <p>This Tarot deck is used for critical injuries in Cyberpunk RED. Each card can only be drawn once until the deck is shuffled or reset.</p>
+                
+                <div class="tarot-controls">
+                    <button id="draw-card-btn" class="primary-btn">Draw Tarot Card</button>
+                    <button id="shuffle-deck-btn">Shuffle Deck</button>
+                    <button id="reset-deck-btn">Reset Deck</button>
+                </div>
+                
+                <div class="deck-status">
+                    Cards remaining: <span class="cards-remaining">22</span>/22
+                </div>
+            </div>
+            
+            <div class="tarot-areas">
+                <div class="tarot-area">
+                    <h3>Current Card</h3>
+                    <div class="current-card" id="current-card">
+                        <div class="tarot-card card-face-down">
+                            <!-- Empty div to fix Safari rendering issues -->
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tarot-area">
+                    <h3>Drawn Cards</h3>
+                    <div class="card-container" id="drawn-cards">
+                        <div class="empty-deck-placeholder">No cards have been drawn yet.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add navigation.js before other scripts -->
+    <script src="../js/utils/navigation.js"></script>
+    <script src="../js/utils/settings.js"></script>
+    <script src="../js/components/tarot-cards.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize variables
+            let availableCards = Object.keys(TAROT_CARDS);
+            let drawnCards = [];
+            const totalCards = Object.keys(TAROT_CARDS).length;
+            
+            // DOM elements
+            const drawCardBtn = document.getElementById('draw-card-btn');
+            const shuffleDeckBtn = document.getElementById('shuffle-deck-btn');
+            const resetDeckBtn = document.getElementById('reset-deck-btn');
+            const cardsRemainingEl = document.querySelector('.cards-remaining');
+            const currentCardEl = document.getElementById('current-card');
+            const drawnCardsEl = document.getElementById('drawn-cards');
+            
+            // Load saved deck state from localStorage
+            const loadDeckState = () => {
+                const savedState = localStorage.getItem('tarotDeckState');
+                if (savedState) {
+                    const state = JSON.parse(savedState);
+                    availableCards = state.availableCards;
+                    drawnCards = state.drawnCards;
+                    
+                    // Update UI based on loaded state
+                    updateDeckStatus();
+                    renderDrawnCards();
+                    
+                    // Show current card if one exists
+                    if (drawnCards.length > 0) {
+                        const latestCard = TAROT_CARDS[drawnCards[drawnCards.length - 1]];
+                        renderCurrentCard(latestCard);
+                    }
+                }
+            };
+            
+            // Save current deck state to localStorage
+            const saveDeckState = () => {
+                const state = {
+                    availableCards,
+                    drawnCards
+                };
+                localStorage.setItem('tarotDeckState', JSON.stringify(state));
+            };
+            
+            // Update the deck status counter
+            const updateDeckStatus = () => {
+                cardsRemainingEl.textContent = availableCards.length;
+                drawCardBtn.disabled = availableCards.length === 0;
+                
+                // Update button text if deck is empty
+                if (availableCards.length === 0) {
+                    drawCardBtn.textContent = "Deck Empty";
+                    shuffleDeckBtn.classList.add('primary-btn');
+                } else {
+                    drawCardBtn.textContent = "Draw Tarot Card";
+                    shuffleDeckBtn.classList.remove('primary-btn');
+                }
+            };
+            
+            // Render a card in the current card area
+            const renderCurrentCard = (card) => {
+                currentCardEl.innerHTML = `
+                    <div class="tarot-card">
+                        <div class="card-number">${getCardNumber(card.name)}</div>
+                        <div class="card-name">${card.name}</div>
+                        <div class="card-description">${card.description}</div>
+                    </div>
+                `;
+            };
+            
+            // Get Roman numeral or other card number
+            const getCardNumber = (cardName) => {
+                const numberMap = {
+                    "The Fool": "0",
+                    "The Magician": "I",
+                    "The High Priestess": "II", 
+                    "The Empress": "III",
+                    "The Emperor": "IV",
+                    "The Hierophant": "V",
+                    "The Lovers": "VI",
+                    "The Chariot": "VII",
+                    "Strength": "VIII",
+                    "The Hermit": "IX",
+                    "Wheel of Fortune": "X",
+                    "Justice": "XI",
+                    "The Hanged Man": "XII",
+                    "Death": "XIII",
+                    "Temperance": "XIV",
+                    "The Devil": "XV",
+                    "The Tower": "XVI",
+                    "The Star": "XVII",
+                    "The Moon": "XVIII",
+                    "The Sun": "XIX",
+                    "Judgement": "XX",
+                    "The World": "XXI"
+                };
+                return numberMap[cardName] || "";
+            };
+            
+            // Render all drawn cards
+            const renderDrawnCards = () => {
+                if (drawnCards.length === 0) {
+                    drawnCardsEl.innerHTML = '<div class="empty-deck-placeholder">No cards have been drawn yet.</div>';
+                    return;
+                }
+                
+                drawnCardsEl.innerHTML = '';
+                drawnCards.forEach(cardName => {
+                    const card = TAROT_CARDS[cardName];
+                    const cardEl = document.createElement('div');
+                    cardEl.className = 'tarot-card card-mini';
+                    cardEl.innerHTML = `
+                        <div class="card-number">${getCardNumber(card.name)}</div>
+                        <div class="card-name">${card.name}</div>
+                        <div class="card-description">${card.description}</div>
+                    `;
+                    drawnCardsEl.appendChild(cardEl);
+                });
+            };
+            
+            // Draw a random card
+            const drawCard = () => {
+                if (availableCards.length === 0) {
+                    showNotification('The deck is empty! Shuffle or reset the deck to continue.', 'warning');
+                    return;
+                }
+                
+                // Get a random card from the available cards
+                const randomIndex = Math.floor(Math.random() * availableCards.length);
+                const cardName = availableCards[randomIndex];
+                const card = TAROT_CARDS[cardName];
+                
+                // Remove the card from available and add to drawn
+                availableCards.splice(randomIndex, 1);
+                drawnCards.push(cardName);
+                
+                // Update UI
+                renderCurrentCard(card);
+                renderDrawnCards();
+                updateDeckStatus();
+                saveDeckState();
+                
+                // Show notification
+                showNotification(`You drew: ${card.name}`, 'info');
+            };
+            
+            // Shuffle the deck (returning all cards)
+            const shuffleDeck = () => {
+                // Combine all cards
+                const allCards = [...availableCards, ...drawnCards];
+                
+                // Randomize the order
+                for (let i = allCards.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [allCards[i], allCards[j]] = [allCards[j], allCards[i]]; // Swap
+                }
+                
+                // Reset the decks
+                availableCards = allCards;
+                drawnCards = [];
+                
+                // Update UI
+                currentCardEl.innerHTML = `
+                    <div class="tarot-card card-face-down">
+                        <!-- Empty div to fix Safari rendering issues -->
+                        <div></div>
+                    </div>
+                `;
+                renderDrawnCards();
+                updateDeckStatus();
+                saveDeckState();
+                
+                // Show notification
+                showNotification('The deck has been shuffled. All cards are now available.', 'success');
+            };
+            
+            // Reset the deck to initial state
+            const resetDeck = () => {
+                availableCards = Object.keys(TAROT_CARDS);
+                drawnCards = [];
+                
+                // Update UI
+                currentCardEl.innerHTML = `
+                    <div class="tarot-card card-face-down">
+                        <!-- Empty div to fix Safari rendering issues -->
+                        <div></div>
+                    </div>
+                `;
+                renderDrawnCards();
+                updateDeckStatus();
+                saveDeckState();
+                
+                // Show notification
+                showNotification('The deck has been reset to its initial state.', 'success');
+            };
+            
+            // Event Listeners
+            drawCardBtn.addEventListener('click', drawCard);
+            shuffleDeckBtn.addEventListener('click', shuffleDeck);
+            resetDeckBtn.addEventListener('click', resetDeck);
+            
+            // Initialize
+            loadDeckState();
+            updateDeckStatus();
+        });
+    </script>
+</body>
+</html> 
