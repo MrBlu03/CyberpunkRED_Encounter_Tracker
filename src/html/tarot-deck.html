@@ -42,13 +42,16 @@
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
+            align-items: center;
         }
         
         .section {
             text-align: center;
             width: 100%;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
             flex-shrink: 0;
+            max-width: 1160px; /* Match the total width of the tarot-areas */
+            box-sizing: border-box;
         }
         
         .tarot-controls {
@@ -95,19 +98,24 @@
         .tarot-areas {
             flex: 1;
             display: flex;
-            gap: 30px;
+            gap: 10px; /* Exactly 10px padding between sections */
             width: 100%;
             overflow: hidden;
+            max-width: 1160px; /* Match the width of the section above */
+            justify-content: space-between;
+            box-sizing: border-box;
         }
         
         .tarot-area {
-            flex: 1;
+            flex: 0 0 calc(50% - 5px); /* Exactly 50% width minus half the gap */
             display: flex;
             flex-direction: column;
             border: 1px solid var(--border-color);
             border-radius: 8px;
             background-color: var(--background-secondary);
             overflow: hidden;
+            width: calc(50% - 5px); /* Exact 50% with half of gap subtracted */
+            box-sizing: border-box;
         }
         
         .tarot-area h3 {
@@ -116,6 +124,8 @@
             padding: 10px 0;
             border-bottom: 1px solid var(--border-color);
             background-color: var(--background-primary);
+            font-size: 1.2rem;
+            font-weight: bold;
         }
         
         .card-container {
@@ -127,6 +137,8 @@
             gap: 15px;
             justify-content: center;
             align-content: flex-start;
+            box-sizing: border-box;
+            width: 100%;
         }
         
         .current-card {
@@ -135,12 +147,14 @@
             justify-content: center;
             align-items: center;
             padding: 15px;
+            box-sizing: border-box;
+            width: 100%;
         }
         
         .tarot-card {
             position: relative;
-            width: 250px;
-            height: 400px;
+            width: 230px;
+            height: 380px;
             border-radius: 10px;
             border: 2px solid var(--accent-secondary);
             background: linear-gradient(to bottom right, var(--background-primary), var(--background-secondary));
@@ -151,7 +165,8 @@
             cursor: default;
             transition: transform 0.3s, box-shadow 0.3s;
             overflow: hidden;
-            margin-bottom: 15px;
+            margin: 0 auto;
+            box-sizing: border-box;
         }
         
         .tarot-card::before {
@@ -325,9 +340,17 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100px;
+            height: 200px;
             font-style: italic;
             color: var(--text-secondary);
+            font-size: 1.1rem;
+            text-align: center;
+            border: 2px dashed var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 10px;
+            width: calc(100% - 20px);
+            box-sizing: border-box;
         }
         
         .empty-card-placeholder {
@@ -415,21 +438,6 @@
         .cards-remaining {
             color: crimson;
             font-size: 1.4rem;
-        }
-        
-        .empty-deck-placeholder {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 200px;
-            font-style: italic;
-            color: var(--text-secondary);
-            font-size: 1.1rem;
-            text-align: center;
-            border: 2px dashed var(--border-color);
-            border-radius: 8px;
-            padding: 20px;
-            margin: 10px;
         }
     </style>
 </head>
