@@ -2,108 +2,94 @@
 const CRITICAL_INJURIES = {
     Head: [
         {
-            name: "Lightly Wounded Head",
-            description: "Minor Concussion. -1 to all actions until healed. Healing time: 1 week."
-        },
-        {
-            name: "Seriously Wounded Head",
-            description: "Moderate Concussion. -2 to all actions until healed. Healing time: 2 weeks."
-        },
-        {
-            name: "Damaged Eye",
-            description: "-2 to Perception Checks, Ranged Attacks, and any other task using vision. Healing time: 2 weeks."
-        },
-        {
-            name: "Foreign Object in the Eye",
-            description: "As Damaged Eye but surgery removes foreign body. Without surgery, -4 to Perception, Ranged Attacks, and other vision tasks. Healing time: 2 weeks."
-        },
-        {
-            name: "Destroyed Eye",
-            description: "Person loses eye, suffers -4 to Perception, Ranged Attacks, and other vision tasks. Surgery and cybereye restore penalties. Healing time: 3 weeks."
+            name: "Lost Eye",
+            description: "The Lost Eye is gone. -4 to Ranged Attacks & Perception Checks involving vision. Base Death Save Penalty is increased by 1. Quick Fix: N/A. Treatment: Surgery DV17"
         },
         {
             name: "Brain Injury",
-            description: "-2 to all INT, REF, & DEX based Actions. Healing time: 4 weeks."
+            description: "-2 to all Actions. Base Death Save Penalty is increased by 1. Quick Fix: N/A. Treatment: Surgery DV17"
         },
         {
-            name: "Damaged Ear",
-            description: "-2 to Perception involving hearing, -2 to Balance checks. Healing time: 2 weeks."
+            name: "Damaged Eye",
+            description: "-2 to Ranged Attacks & Perception Checks involving vision. Quick Fix: Paramedic DV15. Treatment: Surgery DV13"
         },
         {
-            name: "Foreign Object in the Ear",
-            description: "As Damaged Ear but surgery removes object. Without surgery, -4 to hearing and balance. Healing time: 2 weeks."
+            name: "Concussion",
+            description: "-2 to all Actions. Quick Fix: First Aid or Paramedic DV13. Treatment: Quick Fix removes Injury Effect permanently"
         },
         {
-            name: "Destroyed Ear",
-            description: "Person loses ear, -4 to hearing and balance. Surgery and cyberaudio restore penalties. Healing time: 3 weeks."
+            name: "Broken Jaw",
+            description: "-4 to all Actions involving speech. Quick Fix: Paramedic DV13. Treatment: Paramedic or Surgery DV13"
         },
         {
-            name: "Damaged Jaw",
-            description: "-2 to verbal communication. Healing time: 2 weeks."
+            name: "Foreign Object",
+            description: "At the end of every Turn where you move farther than 4m/yds on foot, you re-suffer this Critical Injury's Bonus Damage directly to your Hit Points. Quick Fix: First Aid or Paramedic DV13. Treatment: Quick Fix removes Injury Effect permanently"
+        },
+        {
+            name: "Whiplash",
+            description: "Base Death Save Penalty is increased by 1. Quick Fix: Paramedic DV13. Treatment: Paramedic or Surgery DV13"
         },
         {
             name: "Cracked Skull",
-            description: "Headshots do 2x damage (instead of 2x) until healed. Healing time: 4 weeks."
+            description: "Aimed Shots to your head multiply the damage that gets through your SP by 3 instead of 2. Base Death Save Penalty is increased by 1. Quick Fix: Paramedic DV15. Treatment: Paramedic or Surgery DV15"
         },
         {
-            name: "Broken Nose",
-            description: "-2 to Personal Grooming checks. Healing time: 1 week."
+            name: "Damaged Ear",
+            description: "Whenever you move farther than 4m/yds on foot in a Turn, you cannot take a Move Action on your next Turn. Additionally you take a -2 to Perception Checks involving hearing. Quick Fix: Paramedic DV13. Treatment: Surgery DV13"
+        },
+        {
+            name: "Crushed Windpipe",
+            description: "You cannot speak. Base Death Save Penalty is increased by 1. Quick Fix: N/A. Treatment: Surgery DV15"
+        },
+        {
+            name: "Lost Ear",
+            description: "The Lost Ear is gone. Whenever you move farther than 4m/yds on foot in a Turn, you cannot take a Move Action on your next Turn. Additionally you take a -4 to Perception Checks involving hearing. Base Death Save Penalty is increased by 1. Quick Fix: N/A. Treatment: Surgery DV17"
         }
     ],
     Body: [
         {
-            name: "Lightly Wounded Torso",
-            description: "Minor Bruises. -1 to all actions until healed. Healing time: 1 week."
+            name: "Dismembered Arm",
+            description: "The Dismembered Arm is gone. You drop any items in that dismembered arm's hand immediately. Base Death Save Penalty is increased by 1. Quick Fix: N/A. Treatment: Surgery DV17"
         },
         {
-            name: "Seriously Wounded Torso",
-            description: "Moderate Bruises. -2 to all actions until healed. Healing time: 2 weeks."
-        },
-        {
-            name: "Broken Ribs",
-            description: "Extra 1d6 damage when hit in body area, -2 to all physical actions. Healing time: 3 weeks."
-        },
-        {
-            name: "Foreign Object in Torso",
-            description: "As Broken Ribs but surgery removes foreign body. Without surgery, -4 to all physical actions. Healing time: 3 weeks."
+            name: "Dismembered Hand",
+            description: "The Dismembered Hand is gone. You drop any items in the dismembered hand immediately. Base Death Save Penalty is increased by 1. Quick Fix: N/A. Treatment: Surgery DV17"
         },
         {
             name: "Collapsed Lung",
-            description: "Move halved. Doubles movement penalties from wounds. Healing time: 4 weeks."
+            description: "-2 to MOVE (minimum 1). Base Death Save Penalty is increased by 1. Quick Fix: Paramedic DV15. Treatment: Surgery DV15"
         },
         {
-            name: "Damaged Heart",
-            description: "Character takes 1d6 damage per round of strenuous activity. Healing time: 1 month."
-        },
-        {
-            name: "Damaged Spine",
-            description: "-2 to all physical actions. Healing time: 1 month."
-        },
-        {
-            name: "Major Organ Damage",
-            description: "-2 to Body checks. Character takes 1d6 damage per day. Healing time: 1 month."
-        },
-        {
-            name: "Crushed Windpipe",
-            description: "Cannot speak. -4 to all actions due to pain. Healing time: 4 weeks."
+            name: "Broken Ribs",
+            description: "At the end of every turn where you move farther than 4m/yds on foot, you re-suffer this Critical Injury's Bonus Damage directly to your Hit Points. Quick Fix: Paramedic DV13. Treatment: Paramedic DV15 or Surgery DV13"
         },
         {
             name: "Broken Arm",
-            description: "Arm unusable. -2 to all actions due to pain. Healing time: 3 weeks."
+            description: "The Broken Arm cannot be used. You drop any items in that arm's hand immediately. Quick Fix: Paramedic DV13. Treatment: Paramedic DV15 or Surgery DV13"
+        },
+        {
+            name: "Foreign Object",
+            description: "At the end of every Turn where you move farther than 4m/yds on foot, you re-suffer this Critical Injury's Bonus Damage directly to your Hit Points. Quick Fix: First Aid or Paramedic DV13. Treatment: Quick Fix removes Injury Effect permanently"
         },
         {
             name: "Broken Leg",
-            description: "Move halved. -2 to all actions due to pain. Healing time: 3 weeks."
+            description: "-4 to MOVE (minimum 1). Quick Fix: Paramedic DV13. Treatment: Surgery DV13 or Paramedic DV15"
         },
         {
-            name: "Severed Limb",
-            description: "Limb is gone, surgery and cyberimplant needed. +2 to death saves until wounds stabilized. Healing time: 4 weeks."
-        }
-    ],
-    Death: [
+            name: "Torn Muscle",
+            description: "-2 to Melee Attacks. Quick Fix: First Aid or Paramedic DV13. Treatment: Quick Fix removes Injury Effect permanently"
+        },
         {
-            name: "Lucky Break",
-            description: "Despite all odds, you survive! You have 1 HP and are considered stabilized."
+            name: "Spinal Injury",
+            description: "Next Turn, you cannot take an Action, but you can still take a Move Action. Base Death Save Penalty is increased by 1. Quick Fix: Paramedic DV15. Treatment: Surgery DV15"
+        },
+        {
+            name: "Crushed Fingers",
+            description: "-4 to all Actions involving that hand. Quick Fix: Paramedic DV13. Treatment: Surgery DV15"
+        },
+        {
+            name: "Dismembered Leg",
+            description: "The Dismembered Leg is gone. -6 to MOVE (minimum 1). You cannot dodge attacks. Base Death Save Penalty is increased by 1. Quick Fix: N/A. Treatment: Surgery DV17"
         }
     ]
 };
