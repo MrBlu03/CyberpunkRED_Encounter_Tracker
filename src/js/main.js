@@ -621,17 +621,32 @@ let playerCharacters = [];
 class PlayerCharacter {
     constructor(name, base, maxHealth, bodyArmor, headArmor, shield, weapons = [], criticalInjuries = []) {
         this.name = name;
-        this.base = parseInt(base);
-        this.maxHealth = parseInt(maxHealth);
-        this.bodyArmor = bodyArmor || 0;
-        this.headArmor = headArmor || 0;
-        this.shield = shield || 0;
+        this.base = parseInt(base) || 0;
+        this.maxHealth = parseInt(maxHealth) || 0;
+        this.bodyArmor = parseInt(bodyArmor) || 0;
+        this.headArmor = parseInt(headArmor) || 0;
+        this.shield = parseInt(shield) || 0;
         this.shieldActive = false;
-        this.health = parseInt(maxHealth);
-        this.weapons = weapons;         // Store weapons here
-        this.criticalInjuries = criticalInjuries; // Store critical injuries here
+        this.health = parseInt(maxHealth) || 0;
+        
+        // Ensure weapons array is properly structured
+        this.weapons = Array.isArray(weapons) ? weapons : [];
+        // Make sure each weapon has name and damage properties
+        this.weapons = this.weapons.map(weapon => {
+            if (typeof weapon === 'object' && weapon !== null) {
+                return {
+                    name: weapon.name || '',
+                    damage: weapon.damage || ''
+                };
+            }
+            return { name: '', damage: '' };
+        });
+        
+        this.criticalInjuries = Array.isArray(criticalInjuries) ? criticalInjuries : []; 
         this.notes = '';
         this.interface = 0; // Add interface skill with default 0
+        
+        console.log(`Created PlayerCharacter ${name} with weapons:`, this.weapons);
     }
 
     toJSON() {
@@ -666,9 +681,15 @@ function savePlayerCharacter() {
     // Get weapons from weapon fields
     const weapons = [];
     const weaponFields = document.getElementById('pc-weapon-fields').getElementsByClassName('weapon-field-pair');
+    
+    console.log("Found weapon fields:", weaponFields.length);
+    
     Array.from(weaponFields).forEach(field => {
         const nameInput = field.querySelector('.weapon-name-field');
         const damageInput = field.querySelector('.weapon-damage-field');
+        
+        console.log("Weapon inputs:", nameInput?.value, damageInput?.value);
+        
         if (nameInput && damageInput && nameInput.value && damageInput.value) {
             weapons.push({
                 name: nameInput.value,
@@ -676,6 +697,8 @@ function savePlayerCharacter() {
             });
         }
     });
+    
+    console.log("Saving weapons:", weapons);
 
     // Create new character with proper order of parameters
     const character = new PlayerCharacter(
@@ -706,6 +729,8 @@ function savePlayerCharacter() {
     } else {
         characters.push(character);
     }
+    
+    console.log("Saving character:", character);
     
     // Save back to localStorage
     localStorage.setItem('playerCharacters', JSON.stringify(characters));
@@ -809,23 +834,33 @@ function editCharacter(index) {
     const characters = JSON.parse(localStorage.getItem('playerCharacters') || '[]');
     const character = characters[index];
     
+    console.log("Editing character:", character);
+    
+    // Set basic character info
     document.getElementById('pc-name').value = character.name;
     document.getElementById('pc-base').value = character.base;
     document.getElementById('pc-maxHealth').value = character.maxHealth;
     document.getElementById('pc-bodyArmor').value = character.bodyArmor;
     document.getElementById('pc-headArmor').value = character.headArmor;
     document.getElementById('pc-shield').value = character.shield || 0;
-    document.getElementById('pc-interface').value = character.interface || 0; // Load interface skill
+    document.getElementById('pc-interface').value = character.interface || 0;
     document.getElementById('pc-notes').value = character.notes || '';
     
-    // Clear and recreate weapon fields
+    // Clear existing weapon fields
     const weaponFields = document.getElementById('pc-weapon-fields');
     weaponFields.innerHTML = '';
+    
+    console.log("Character weapons:", character.weapons);
+    
+    // Add weapon fields for each weapon
     if (character.weapons && character.weapons.length > 0) {
         character.weapons.forEach(weapon => {
+            console.log("Adding weapon field:", weapon.name, weapon.damage);
             addWeaponFields('pc-weapon-fields', weapon.name, weapon.damage);
         });
     } else {
+        // Add one empty weapon field if no weapons
+        console.log("No weapons found, adding empty field");
         addWeaponFields('pc-weapon-fields');
     }
 }
@@ -837,7 +872,26 @@ function loadPlayerCharacters() {
         playerCharacters = [];
         const loadedCharacters = JSON.parse(savedCharacters);
         
+        console.log("Loaded characters from localStorage:", loadedCharacters);
+        
         loadedCharacters.forEach(charData => {
+            // Ensure weapons array is properly structured
+            let weapons = [];
+            if (charData.weapons && Array.isArray(charData.weapons)) {
+                weapons = charData.weapons.map(weapon => {
+                    // Make sure each weapon has a name and damage property
+                    if (typeof weapon === 'object') {
+                        return {
+                            name: weapon.name || '',
+                            damage: weapon.damage || ''
+                        };
+                    }
+                    return { name: '', damage: '' };
+                });
+            }
+            
+            console.log(`Character ${charData.name} weapons:`, weapons);
+            
             const pc = new PlayerCharacter(
                 charData.name,
                 charData.base,
@@ -845,7 +899,7 @@ function loadPlayerCharacters() {
                 charData.bodyArmor || 0,
                 charData.headArmor || 0,
                 charData.shield || 0,
-                charData.weapons || [],
+                weapons,  // Pass the processed weapons array
                 charData.criticalInjuries || []
             );
             
@@ -858,7 +912,7 @@ function loadPlayerCharacters() {
             if (charData.notes !== undefined) {
                 pc.notes = charData.notes;
             }
-            if (charData.interface !== undefined) pc.interface = charData.interface; // Load interface skill
+            if (charData.interface !== undefined) pc.interface = charData.interface;
             else pc.interface = 0; // Default to 0 if not present in data
             
             playerCharacters.push(pc);
@@ -935,12 +989,27 @@ function addWeaponFields(containerId, name = '', damage = '') {
     
     const fieldPair = document.createElement('div');
     fieldPair.className = 'weapon-field-pair';
+    
+    // Ensure name and damage are properly escaped for use in HTML attributes
+    const escapedName = (name || '').replace(/"/g, '&quot;');
+    const escapedDamage = (damage || '').replace(/"/g, '&quot;');
+    
     fieldPair.innerHTML = `
-        <input type="text" class="weapon-name-field" placeholder="Weapon Name" value="${name}">
-        <input type="text" class="weapon-damage-field" placeholder="Damage (e.g. 3d6)" value="${damage}">
-        <button type="button" onclick="this.parentElement.remove()">×</button>
+        <input type="text" class="weapon-name-field" placeholder="Weapon Name" value="${escapedName}">
+        <input type="text" class="weapon-damage-field" placeholder="Damage (e.g. 3d6)" value="${escapedDamage}">
+        <button type="button" class="remove-weapon-btn">×</button>
     `;
+    
+    // Add event listener for the remove button
+    const removeBtn = fieldPair.querySelector('.remove-weapon-btn');
+    removeBtn.addEventListener('click', function() {
+        fieldPair.remove();
+    });
+    
     container.appendChild(fieldPair);
+    
+    // For debugging
+    console.log(`Added weapon field with name: "${name}", damage: "${damage}"`);
 }
 
 function renderPlayerCharacterList() {
@@ -992,7 +1061,7 @@ function renderPlayerCharacterList() {
                 >${pc.notes || ''}</textarea>
             </div>
             <div class="actions">
-                <button onclick="editCharacter(${index})">Edit</button>
+                <button onclick="window.editCharacter(${index})">Edit</button>
                 <button onclick="deleteCharacter(${index})" class="danger-button">Delete</button>
             </div>
         </div>
@@ -2274,7 +2343,7 @@ function initializeThemeSystem() {
 function updateWeaponNotes(encounterId, participantName, notes) {
     const encounter = encounters.find(e => e.id === encounterId);
     if (!encounter) return;
-
+    
     const participant = encounter.participants.find(p => p.name === participantName);
     if (!participant) return;
 
@@ -2291,8 +2360,15 @@ function addWeaponFields(containerId) {
     fieldPair.innerHTML = `
         <input type="text" class="weapon-name-field" placeholder="Weapon Name">
         <input type="text" class="weapon-damage-field" placeholder="Damage (e.g. 3d6)">
-        <button type="button" onclick="this.parentElement.remove()">×</button>
+        <button type="button" class="remove-weapon-btn">×</button>
     `;
+    
+    // Add event listener for the remove button
+    const removeBtn = fieldPair.querySelector('.remove-weapon-btn');
+    removeBtn.addEventListener('click', function() {
+        fieldPair.remove();
+    });
+    
     container.appendChild(fieldPair);
 }
 
@@ -2340,17 +2416,17 @@ function updateUI() {
 
 function renderPlayerCharacterList() {
     const pcList = document.getElementById('pc-list');
-    const characters = JSON.parse(localStorage.getItem('playerCharacters')) || [];
+    if (!pcList) return;
 
-    pcList.innerHTML = characters.map((pc, index) => `
+    pcList.innerHTML = playerCharacters.map((pc, index) => `
         <div class="pc-card-compact" data-character-id="${pc.name}">
             <h4>${pc.name}</h4>
             <div class="stats">
                 <div>Base Initiative: ${pc.base}</div>
-                <div>Health: ${pc.maxHealth}</div>
+                <div>Health: ${pc.health}/${pc.maxHealth}</div>
                 <div>Body Armor: ${pc.bodyArmor}</div>
                 <div>Head Armor: ${pc.headArmor}</div>
-                ${pc.shield ? `<div>Shield: ${pc.shield}</div>` : ''}
+                ${pc.shield ? `<div>Shield: ${pc.shield} [${pc.shieldActive ? 'Active' : 'Inactive'}]</div>` : ''}
                 ${pc.interface > 0 ? `<div>Interface: ${pc.interface}</div>` : ''} <!-- Show Interface if > 0 -->
             </div>
             <div class="weapons-section">
@@ -2387,7 +2463,7 @@ function renderPlayerCharacterList() {
                 >${pc.notes || ''}</textarea>
             </div>
             <div class="actions">
-                <button onclick="editCharacter(${index})">Edit</button>
+                <button onclick="window.editCharacter(${index})">Edit</button>
                 <button onclick="deleteCharacter(${index})" class="danger-button">Delete</button>
             </div>
         </div>
@@ -2466,7 +2542,26 @@ function loadPlayerCharacters() {
         playerCharacters = [];
         const loadedCharacters = JSON.parse(savedCharacters);
         
+        console.log("Loaded characters from localStorage:", loadedCharacters);
+        
         loadedCharacters.forEach(charData => {
+            // Ensure weapons array is properly structured
+            let weapons = [];
+            if (charData.weapons && Array.isArray(charData.weapons)) {
+                weapons = charData.weapons.map(weapon => {
+                    // Make sure each weapon has a name and damage property
+                    if (typeof weapon === 'object') {
+                        return {
+                            name: weapon.name || '',
+                            damage: weapon.damage || ''
+                        };
+                    }
+                    return { name: '', damage: '' };
+                });
+            }
+            
+            console.log(`Character ${charData.name} weapons:`, weapons);
+            
             const pc = new PlayerCharacter(
                 charData.name,
                 charData.base,
@@ -2474,25 +2569,26 @@ function loadPlayerCharacters() {
                 charData.bodyArmor || 0,
                 charData.headArmor || 0,
                 charData.shield || 0,
-                charData.weapons || [],
+                weapons,  // Pass the processed weapons array
                 charData.criticalInjuries || []
             );
             
-            // Copy all additional properties
-            if (charData.health !== undefined) pc.health = charData.health;
-            if (charData.shieldActive !== undefined) pc.shieldActive = charData.shieldActive;
-            if (charData.notes !== undefined) pc.notes = charData.notes;
-            if (charData.deathSaves !== undefined) pc.deathSaves = charData.deathSaves;
-            if (charData.deathSavePenalty !== undefined) pc.deathSavePenalty = charData.deathSavePenalty;
-            if (charData.interface !== undefined) pc.interface = charData.interface; // Load interface skill
+            if (charData.health !== undefined) {
+                pc.health = charData.health;
+            }
+            if (charData.shieldActive !== undefined) {
+                pc.shieldActive = charData.shieldActive;
+            }
+            if (charData.notes !== undefined) {
+                pc.notes = charData.notes;
+            }
+            if (charData.interface !== undefined) pc.interface = charData.interface;
             else pc.interface = 0; // Default to 0 if not present in data
             
             playerCharacters.push(pc);
         });
 
-        // Update both display types
-        renderPlayerCharacterList();
-        renderCompactPCList();
+        // ... existing rendering code ...
     }
 }
 
@@ -2546,7 +2642,7 @@ function renderPlayerCharacterList() {
                 >${pc.notes || ''}</textarea>
             </div>
             <div class="actions">
-                <button onclick="editCharacter(${index})">Edit</button>
+                <button onclick="window.editCharacter(${index})">Edit</button>
                 <button onclick="deleteCharacter(${index})" class="danger-button">Delete</button>
             </div>
         </div>
@@ -2558,23 +2654,27 @@ function editCharacter(index) {
     const characters = JSON.parse(localStorage.getItem('playerCharacters') || '[]');
     const character = characters[index];
     
+    // Set basic character info
     document.getElementById('pc-name').value = character.name;
     document.getElementById('pc-base').value = character.base;
     document.getElementById('pc-maxHealth').value = character.maxHealth;
     document.getElementById('pc-bodyArmor').value = character.bodyArmor;
     document.getElementById('pc-headArmor').value = character.headArmor;
     document.getElementById('pc-shield').value = character.shield || 0;
-    document.getElementById('pc-interface').value = character.interface || 0; // Load interface skill
+    document.getElementById('pc-interface').value = character.interface || 0;
     document.getElementById('pc-notes').value = character.notes || '';
     
-    // Clear and recreate weapon fields
+    // Clear existing weapon fields
     const weaponFields = document.getElementById('pc-weapon-fields');
     weaponFields.innerHTML = '';
+    
+    // Add weapon fields for each weapon
     if (character.weapons && character.weapons.length > 0) {
         character.weapons.forEach(weapon => {
             addWeaponFields('pc-weapon-fields', weapon.name, weapon.damage);
         });
     } else {
+        // Add one empty weapon field if no weapons
         addWeaponFields('pc-weapon-fields');
     }
 }
@@ -2881,7 +2981,7 @@ function renderPlayerCharacterList() {
                 >${pc.notes || ''}</textarea>
             </div>
             <div class="actions">
-                <button onclick="editCharacter(${index})">Edit</button>
+                <button onclick="window.editCharacter(${index})">Edit</button>
                 <button onclick="deleteCharacter(${index})" class="danger-button">Delete</button>
             </div>
         </div>
@@ -3124,3 +3224,81 @@ function renderParticipant(participant) {
     
     // ... existing code ...
 }
+
+// Define the global addWeaponFields function early, before other definitions
+document.addEventListener('DOMContentLoaded', function() {
+    // Define the enhanced addWeaponFields function globally to ensure there's only one definition
+    window.addWeaponFields = function(containerId, name = '', damage = '') {
+        // If containerId is a number (encounter ID), convert it to the expected string format
+        if (typeof containerId === 'number') {
+            containerId = `weapon-fields-${containerId}`;
+        }
+        
+        const container = document.getElementById(containerId);
+        if (!container) {
+            console.error(`Container not found: ${containerId}`);
+            return;
+        }
+        
+        const fieldPair = document.createElement('div');
+        fieldPair.className = 'weapon-field-pair';
+        
+        // Ensure name and damage are properly escaped for use in HTML attributes
+        const escapedName = (name || '').replace(/"/g, '&quot;');
+        const escapedDamage = (damage || '').replace(/"/g, '&quot;');
+        
+        fieldPair.innerHTML = `
+            <input type="text" class="weapon-name-field" placeholder="Weapon Name" value="${escapedName}">
+            <input type="text" class="weapon-damage-field" placeholder="Damage (e.g. 3d6)" value="${escapedDamage}">
+            <button type="button" class="remove-weapon-btn">×</button>
+        `;
+        
+        // Add event listener for the remove button
+        const removeBtn = fieldPair.querySelector('.remove-weapon-btn');
+        removeBtn.addEventListener('click', function() {
+            fieldPair.remove();
+        });
+        
+        container.appendChild(fieldPair);
+        
+        console.log(`Added weapon field with name: "${name}", damage: "${damage}"`);
+    };
+    
+    // Define the global editCharacter function to ensure there's only one definition
+    window.editCharacter = function(index) {
+        const characters = JSON.parse(localStorage.getItem('playerCharacters') || '[]');
+        const character = characters[index];
+        
+        console.log("Editing character:", character);
+        
+        // Set basic character info
+        document.getElementById('pc-name').value = character.name;
+        document.getElementById('pc-base').value = character.base;
+        document.getElementById('pc-maxHealth').value = character.maxHealth;
+        document.getElementById('pc-bodyArmor').value = character.bodyArmor;
+        document.getElementById('pc-headArmor').value = character.headArmor;
+        document.getElementById('pc-shield').value = character.shield || 0;
+        document.getElementById('pc-interface').value = character.interface || 0;
+        document.getElementById('pc-notes').value = character.notes || '';
+        
+        // Clear existing weapon fields
+        const weaponFields = document.getElementById('pc-weapon-fields');
+        weaponFields.innerHTML = '';
+        
+        console.log("Character weapons:", character.weapons);
+        
+        // Add weapon fields for each weapon
+        if (character.weapons && character.weapons.length > 0) {
+            character.weapons.forEach(weapon => {
+                console.log("Adding weapon field:", weapon.name, weapon.damage);
+                window.addWeaponFields('pc-weapon-fields', weapon.name, weapon.damage);
+            });
+        } else {
+            // Add one empty weapon field if no weapons
+            console.log("No weapons found, adding empty field");
+            window.addWeaponFields('pc-weapon-fields');
+        }
+    };
+    
+    // More initialization code can go here
+});

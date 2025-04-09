@@ -72,16 +72,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Add a fallback implementation of addWeaponFields in case it's not defined in main.js
 if (typeof window.addWeaponFields !== 'function') {
-    window.addWeaponFields = function(containerId) {
-        console.log('Using fallback addWeaponFields');
+    window.addWeaponFields = function(containerId, name = '', damage = '') {
+        console.log('Using fallback addWeaponFields with name:', name, 'damage:', damage);
         const container = document.getElementById(containerId);
         if (!container) return;
         
         const fieldPair = document.createElement('div');
         fieldPair.className = 'weapon-field-pair';
+        
+        // Ensure name and damage are properly escaped for use in HTML attributes
+        const escapedName = (name || '').replace(/"/g, '&quot;');
+        const escapedDamage = (damage || '').replace(/"/g, '&quot;');
+        
         fieldPair.innerHTML = `
-            <input type="text" class="weapon-name-field" placeholder="Weapon Name">
-            <input type="text" class="weapon-damage-field" placeholder="Damage (e.g. 3d6)">
+            <input type="text" class="weapon-name-field" placeholder="Weapon Name" value="${escapedName}">
+            <input type="text" class="weapon-damage-field" placeholder="Damage (e.g. 3d6)" value="${escapedDamage}">
             <button type="button" class="remove-weapon-btn">×</button>
         `;
         
@@ -92,5 +97,8 @@ if (typeof window.addWeaponFields !== 'function') {
         });
         
         container.appendChild(fieldPair);
+        
+        // For debugging
+        console.log(`Fallback added weapon field with name: "${name}", damage: "${damage}"`);
     };
 }

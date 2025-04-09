@@ -82,6 +82,8 @@ function rollDice(diceNotation) {
 }
 
 function parseDiceNotation(notation) {
+    // Make the notation case insensitive
+    notation = notation.toLowerCase();
     const match = notation.match(/^(\d+)d(\d+)([+-]\d+)?$/);
     if (!match) {
         throw new Error('Invalid dice notation');
@@ -111,5 +113,104 @@ function quickRoll(diceNotation, hitLocation) {
     document.getElementById('dice-input').value = diceNotation;
     rollDice(diceNotation);
 }
+
+function makeDiceNotationsClickable(element) {
+    if (!element) return;
+    
+    // Regular expression to match dice notations (case insensitive)
+    const diceRegex = /\b(\d+)[dD](\d+)([+-]\d+)?\b/g;
+    
+    // Function to process a text node
+    function processTextNode(textNode) {
+        const text = textNode.nodeValue;
+        const matches = [...text.matchAll(diceRegex)];
+        
+        if (matches.length === 0) return;
+        
+        // Create a document fragment to hold the new nodes
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        
+        matches.forEach(match => {
+            // Add text before the match
+            if (match.index > lastIndex) {
+                fragment.appendChild(document.createTextNode(text.slice(lastIndex, match.index)));
+            }
+            
+            // Create clickable span for the dice notation
+            const span = document.createElement('span');
+            span.className = 'clickable-dice';
+            span.textContent = match[0];
+            span.onclick = () => quickRoll(match[0].toLowerCase());
+            
+            fragment.appendChild(span);
+            lastIndex = match.index + match[0].length;
+        });
+        
+        // Add remaining text after the last match
+        if (lastIndex < text.length) {
+            fragment.appendChild(document.createTextNode(text.slice(lastIndex)));
+        }
+        
+        // Replace the original text node with the fragment
+        textNode.parentNode.replaceChild(fragment, textNode);
+    }
+    
+    // Function to recursively process all text nodes in an element
+    function processElement(element) {
+        // Skip if element is a script or style tag
+        if (element.tagName === 'SCRIPT' || element.tagName === 'STYLE') return;
+        
+        // Process all child nodes
+        const childNodes = Array.from(element.childNodes);
+        childNodes.forEach(node => {
+            if (node.nodeType === Node.TEXT_NODE) {
+                processTextNode(node);
+            } else if (node.nodeType === Node.ELEMENT_NODE) {
+                processElement(node);
+            }
+        });
+    }
+    
+    // Process the element and all its children
+    processElement(element);
+}
+
+// Initialize clickable dice notations for weapons and notes sections
+document.addEventListener('DOMContentLoaded', () => {
+    // Process all weapons sections
+    const weaponsSections = document.querySelectorAll('.weapons-section');
+    weaponsSections.forEach(section => {
+        makeDiceNotationsClickable(section);
+    });
+    
+    // Also handle any dynamically added weapons sections
+    const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+            if (mutation.addedNodes.length) {
+                mutation.addedNodes.forEach((node) => {
+                    if (node.nodeType === 1) { // Element node
+                        // Check if the node is a weapons section or contains one
+                        if (node.classList.contains('weapons-section')) {
+                            makeDiceNotationsClickable(node);
+                        } else {
+                            const weaponsSections = node.querySelectorAll('.weapons-section');
+                            weaponsSections.forEach(section => {
+                                makeDiceNotationsClickable(section);
+                            });
+                        }
+                    }
+                });
+            }
+        });
+    });
+    
+    // Start observing the document with the configured parameters
+    observer.observe(document.body, { 
+        childList: true, 
+        subtree: true,
+        characterData: true
+    });
+});
 
 

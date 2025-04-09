@@ -1474,3 +1474,28 @@ textarea:focus, input:focus {
     font-size: 1.1em;
     text-shadow: 0 0 5px rgba(255, 68, 68, 0.5);
 }
+
+/* Clickable dice notation styles */
+.clickable-dice {
+    color: #ff4444;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.clickable-dice:hover {
+    color: #ff0000;
+    text-decoration: none;
+}
+
+/* Dice preview styles */
+.dice-preview {
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 1px solid #333;
+    padding: 8px;
+    margin-top: 4px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    color: #ccc;
+    white-space: pre-wrap;
+}
