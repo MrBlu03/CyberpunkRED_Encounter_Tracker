@@ -1,0 +1,76 @@
+<div class="item-netarch-section">
+  <li class="items-header flexrow">
+    <span class="item-name netarch-level text-nowrap text-padding-left">{{localize "CPR.netArchitecture.floor.shortWord"}}</span>
+    <span class="item-name netarch-dv text-nowrap text-padding-left">{{localize "CPR.netArchitecture.floor.dv"}}</span>
+    <span class="item-name netarch-content text-nowrap text-padding-left">{{localize "CPR.netArchitecture.floor.data"}}</span>
+    <span class="item-name netarch-actions text-nowrap text-padding-left">
+      <a class="netarch-level-action"
+         data-action-type="create"
+         data-action-target="-1"><i class="fas fa-circle-plus text-padding-right"
+   data-tooltip="{{localize "CPR.dialog.netArchitectureNewFloor.title"}}"></i></a>
+    </span>
+  </li>
+  <div class="netarch-list-content">
+    <ol class="items-list">
+      {{#each (cprSort item.system.floors "index") as |floor| }}
+        <li class="item item-netarch-grid flexrow">
+          <div class="netarch-level">
+            {{floor.floor}}{{floor.branch}}
+          </div>
+          <div class="netarch-dv">
+            {{#if (cprCompare floor.content "!==" "CPR.global.programClass.blackice") }}
+              {{floor.dv}}
+            {{/if}}
+          </div>
+          <div class="netarch-content">
+            {{#if (cprCompare (cprCompare floor.content "===" "CPR.global.programClass.blackice") "&&" (cprCompare floor.blackice "!==" "--")) }}
+              {{#if (cprCompare (cprItemIdFromName (localize floor.blackice) "program") "!==" "DOES NOT EXIST") }}
+                <div class="text-semi">
+                  <a class="netarch-item-link"
+                     data-item-id="{{cprItemIdFromName (localize floor.blackice) "program"}}"
+                     data-tooltip="{{localize "CPR.itemSheet.netArchitecture.clickToViewItem"}}">{{localize floor.blackice}}</a>
+                </div>
+              {{else}}
+                <div class="text-semi"
+                     data-tooltip="{{localize "CPR.itemSheet.netArchitecture.itemNotFound"}}">
+                  {{localize floor.blackice}}
+                </div>
+              {{/if}}
+              <div>{{floor.description}}</div>
+            {{else}}
+              <div class="text-semi">{{localize floor.content}}</div>
+              <div>{{floor.description}}</div>
+            {{/if}}
+          </div>
+          <div class="netarch-actions">
+            <a class="netarch-level-action"
+               data-action-type="up"
+               data-action-target="{{floor.index}}"><i class="fas fa-arrow-up"
+   data-tooltip="{{localize "CPR.netArchitecture.floor.moveUp"}}"></i></a>
+            <a class="netarch-level-action"
+               data-action-type="down"
+               data-action-target="{{floor.index}}"><i class="fas fa-arrow-down"
+   data-tooltip="{{localize "CPR.netArchitecture.floor.moveDown"}}"></i></a>
+            <a class="netarch-level-action"
+               data-action-type="edit"
+               data-action-target="{{floor.index}}"><i class="fas fa-pen-to-square"
+   data-tooltip="{{localize "CPR.netArchitecture.floor.edit"}}"></i></a>
+            <a class="netarch-level-action"
+               data-action-type="delete"
+               data-action-target="{{floor.index}}"><i class="fas fa-trash-can"
+   data-tooltip="{{localize "CPR.netArchitecture.floor.delete"}}"></i></a>
+          </div>
+        </li>
+      {{/each}}
+    </ol>
+  </div>
+  <div class="netarch-roll-level">
+    <i class="fas fa-dice fa-sm"></i>{{localize "CPR.netArchitecture.generation.useRolltables"}}
+  </div>
+  <div class="netarch-generate-auto">
+    <i class="fas fa-gear fa-sm"></i>{{localize "CPR.netArchitecture.generation.auto"}}
+  </div>
+  <div class="netarch-generate-custom">
+    <i class="fas fa-gear fa-sm"></i>{{localize "CPR.netArchitecture.generation.custom"}}
+  </div>
+</div>

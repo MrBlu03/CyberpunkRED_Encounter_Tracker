@@ -1,0 +1,24 @@
+{
+  "description": "What is the weaponType?",
+  "type": "string",
+  "enum": [
+    "",
+    "assaultRifle",
+    "bow",
+    "grenadeLauncher",
+    "heavyMelee",
+    "heavyPistol",
+    "lightMelee",
+    "martialArts",
+    "medMelee",
+    "medPistol",
+    "rocketLauncher",
+    "shotgun",
+    "smg",
+    "sniperRifle",
+    "thrownWeapon",
+    "unarmed",
+    "vHeavyMelee",
+    "vHeavyPistol"
+  ]
+}

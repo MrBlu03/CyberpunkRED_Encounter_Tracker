@@ -1,0 +1,74 @@
+{
+  "label": "Die Zwölf Knarrentage",
+  "mapping": {
+    "dvTable": "system.dvTable"
+  },
+  "entries": {
+    "Nova Model 757 Rounds": {
+      "name": "Nova Model 757 Munition",
+      "description": "<p>Nur für die Verwendung mit Nova Model 757 Cityhunter. Jeweils 18er-Packungen statt der normalen mit 10 Schuss.</p>\n<p>&nbsp;</p>\n<p>Benötigt Zielerfassung-Cyberware zum Abschießen. Wenn ein Einzelschuss um 4 oder weniger verfehlt, wirf einen zweiten Angriff gegen den selben SG mittels 1d10+10 (ohne deine eigenen Werte zu nutzen, GLK kann wie normal genutzt werden). Das Ziel kann wie gewohnt versuchen, dem zweiten Schuss auszuweichen, wenn es dazu in der Lage ist.</p>"
+    },
+    "Sub-Flechette Rounds": {
+      "name": "Sub-Flechette-Munition",
+      "description": "<p>Spezielle Munition für die Malorian Arms Sub-Flechette-Maschinenpistole. Trägt Panzerung um 4 SW pro Treffer ab.</p>"
+    },
+    "ARS-5 Submachine Gun": {
+      "name": "ARS-5 Maschinenpistole",
+      "description": "<p>Diese schwere Maschinenpistole ist ein Komplettpaket: Smartgun-Verbindung, Infrarot-Nachtsicht-Zielfernrohr und Scharfschützen-Zielfernrohr sind inklusive.*</p>\n<p><em>*Alle drei müssen nach Erhalt der Waffe in Foundry manuell hinzugefügt werden</em></p>",
+      "dvTable": "SG MP"
+    },
+    "Chainknife": {
+      "name": "Kettenmesser",
+      "description": "<p>Braucht eine Aktion zum Anlassen, aber ist dann eine starke Nahkampfwaffe. Ausgeschaltet verursacht sie 2d6 Schaden*.</p>\n<p><em>*Ausgeschalteter Modus wird in Foundry momentan nicht unterstützt, Schaden muss manuell reduziert werden</em></p>"
+    },
+    "Crusher": {
+      "name": "Crusher",
+      "description": "<p>Eine Pistole, die nur Schrotpatronen verschießt. Wie kann man sie nicht lieben?</p>",
+      "dvTable": "SG Pistole"
+    },
+    "Dragon Flamethrower": {
+      "name": "Dragon-Flammenwerfer",
+      "description": "<p>Feuer stets Griffbereit. Verschießt nur Flinten-Brandpatronen, aber Ziele, die durch diese Waffe in Brand gesteckt werden verlieren durch das Feuer 4 TP pro Zug.</p>"
+    },
+    "Hellbringer": {
+      "name": "Hellbringer",
+      "description": "<p>Wenn dieses Ding loslegt, spürst du's. Wenn diese Waffe von jemandem mit weniger als 10 KRA abgefeuert wird, hat sie eine Ladehemmung. Es erfordert eine Aktion, die Ladehemmung zu beheben.</p>",
+      "dvTable": "SG Pistole"
+    },
+    "Multiple Ammunition Pistol": {
+      "name": "Multi-Munitions-Pistole",
+      "description": "<p>Eine Sehr Schwere Pistole, die bis zu fünf verschiedene Munitionstypen auf einmal laden kann*, wobei der Nutzer vor jedem Schuss wählen kann, welche er abfeuert.</p>\n<p><em>*Aktuell nicht unterstützt, Munitionstyp muss manuell gewechselt werden</em></p>",
+      "dvTable": "SG Pistole"
+    },
+    "Nomad Pneumatic Bolt Gun": {
+      "name": "Pneumatisches Nomaden-Bolzenschussgewehr",
+      "description": "<p>Ein Exotisches Scharfschützengewehr, das alle Pfeilmunition, auch Nicht-Basismunition verwenden kann und damit noch immer so vielseitig ist wie bei seiner Erfindung vor über zwei Jahrzehnten.</p>",
+      "dvTable": "SG Scharfschützengewehr"
+    },
+    "Nova Model 757 Cityhunter": {
+      "name": "Nova Model 757 Cityhunter",
+      "description": "<p>Diese Pistole nutzt ihre eigene spezielle Munition in 18er-Packungen, die aber immerhin so viel wie sonst die normalen 10er-Packungen kosten. Smartgun-Verbindung inklusive*.</p>\n<p><em>*Smartgun-Verbindung muss nach Erhalt der Waffe manuell hinzugefügt werden</em></p>",
+      "dvTable": "SG Pistole"
+    },
+    "ST-5 Assault Rifle": {
+      "name": "ST-5 Sturmgewehr",
+      "description": "<p>Eine - relativ - zuverlässige Waffe. Wenn du beim Angriff einen Kritischen Fehlschlag (eine 1) würfelst, musst du eine Münze werfen; bei Kopf (1) schießt die Waffe normal, bei Zahl (0) bekommt sie eine Ladehemmung, die mit einer Aktion beseitigt werden muss, bevor die Waffe wieder verwendet werden kann.</p>",
+      "dvTable": "SG Sturmgewehr"
+    },
+    "Sub-Flechette Gun": {
+      "name": "Sub-Flechette-Pistole",
+      "description": "<p>Diese Maschinenpistole kann nur ihre spezielle panzerbrechende Munition verschießen, die dafür die Panzerung von Zielen um 4 abnutzt, wenn sie Schaden verursacht. Smartgun-Verbindung inklusive*.</p>\n<p><em>*Smartgun-Verbindung muss nach Erhalt der Waffe manuell hinzugefügt werden</em></p>",
+      "dvTable": "SG MP"
+    },
+    "Teen Dreem": {
+      "name": "Teen Dreem",
+      "description": "<p>Diese Maschinenpistole kann Automatisches Feuer und Unterdrückungsfeuer bis zu ihren letzten 2 Schuss nutzen. Vorsicht ist jedoch geboten, da beide Feuermodi die Waffe so schmelzen lassen, dass sogar eine Reparatur unmöglich wird.</p>",
+      "dvTable": "SG MP"
+    },
+    "WAA Bullpup Assault Weapon": {
+      "name": "WAA Bullpup-Sturmwaffe",
+      "description": "<p>Ein Exotisches Hinterschaftlader-Sturmgewehr, das seit über zwei Jahrzehnten verwendet wird. Kann auch Nicht-Basismunition verwenden. Smartgun-Verbindung inklusive*.</p>\n<p><em>*Smartgun-Verbindung muss nach Erhalt manuell hinzugefügt werden</em></p>",
+      "dvTable": "SG Sturmgewehr"
+    }
+  }
+}

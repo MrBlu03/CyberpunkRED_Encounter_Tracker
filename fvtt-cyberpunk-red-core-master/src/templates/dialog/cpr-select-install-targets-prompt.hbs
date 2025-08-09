@@ -1,0 +1,49 @@
+<form class="dialog-sheet">
+  <div class="dialog-header flexcol">
+    <div class="text-normal text-center">
+      {{header}}
+    </div>
+    <div class="text-center">
+      {{!-- Display Item Size --}}
+      <span class="text-semi">{{localize "CPR.global.generic.size"}}: {{size}}</span>
+    </div>
+  </div>
+  <hr/>
+  <div class="dialog-grid flexcol">
+    {{#each installationTargetTypes as |itemType| }}
+      <ol class="dialog-list">
+        <li class="dialog-item dialog-item-header flexrow">
+          <div class="flex-width-55 dialog-item-name">
+            <span class="text-semi">
+              {{localize (cprFindConfigValue "objectTypes" itemType)}}
+            </span>
+          </div>
+          <div class="flex-width-30 dialog-item-detail">
+            {{localize "CPR.dialog.install.availableSlots"}}
+          </div>
+          <div class="flex-width-15 dialog-item-input">
+            {{localize "CPR.dialog.common.select"}}
+          </div>
+        </li>
+        {{#each ../installationTargets as |item| }}
+          {{#if (cprCompare item.type "===" itemType) }}
+            <li class="dialog-item flexrow">
+              <div class="flex-width-55 text-nowrap dialog-item-name">
+                {{item.name}}
+              </div>
+              <div class="flex-width-30 dialog-item-detail">
+                {{cprMath "subtract" (cprApplyUpgrade item item.system.installedItems.slots "slots") item.system.installedItems.usedSlots}}/{{cprApplyUpgrade item item.system.installedItems.slots "slots"}}
+              </div>
+              <div class="flex-width-15 dialog-item-input">
+                <input type="radio" name="selectedTarget" value="{{item.id}}" {{checked (cprCompare ../../selectedTarget "===" item.id)}}/>
+              </div>
+            </li>
+          {{/if}}
+        {{/each}}
+      </ol>
+      {{#unless @last}}<br>{{/unless}}
+    {{/each}}
+  </div>
+  {{> "systems/cyberpunk-red-core/templates/dialog/cpr-dialog-buttons.hbs"}}
+
+</form>

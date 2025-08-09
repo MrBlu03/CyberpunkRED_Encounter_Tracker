@@ -1,0 +1,50 @@
+_id: 1O4nQzf7gVLVwqnL
+_key: "!items!1O4nQzf7gVLVwqnL"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/black-chrome/outlet-explosive.svg
+name: OUTLet Explosive
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: ""
+  concealable:
+    concealable: true
+    isConcealed: false
+  critFailEffect: jammed
+  damage: 6d6
+  description:
+    value: |
+      <p>Explosive look-alike of an electrical plug adapter.</p>
+  dvTable: ""
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 1
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+      - ammo
+    list: []
+    slots: 3
+    usedSlots: 0
+  isRanged: false
+  magazine:
+    max: 0
+    value: 0
+  price:
+    market: 100
+  quality: standard
+  revealed: true
+  rof: 1
+  source:
+    book: BC
+    page: 89
+  unarmedAutomaticCalculation: true
+  usage: toggled
+  usesType: magazine
+  weaponSkill: Demolitions
+  weaponType: thrownWeapon
+type: weapon

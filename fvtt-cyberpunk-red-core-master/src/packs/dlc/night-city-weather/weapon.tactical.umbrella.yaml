@@ -1,0 +1,59 @@
+_id: pNkckh9tZBwSBxA2
+_key: "!items!pNkckh9tZBwSBxA2"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/night-city-weather/tactical-umbrella.svg
+name: Tactical Umbrella
+system:
+  ammoVariety:
+    - heavyPistol
+  attackmod: 0
+  brand: Militech
+  concealable:
+    concealable: true
+    isConcealed: false
+  critFailEffect: jammed
+  damage: 3d6
+  description:
+    value: |
+      <p>
+        A stylish umbrella with pop-out weapons. Contains a Poor Quality Exotic Heavy
+        Pistol (2 bullet capacity).
+      </p>
+      <p>
+        Multiple Weapon Modes: Tactical Umbrella also contains an Excellent Quality
+        Exotic Heavy Melee Weapon.
+      </p>
+      <p>Provides the protection of a normal umbrella (NCW pg 6)</p>
+  dvTable: DV Pistol
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 1
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isRanged: true
+  magazine:
+    max: 2
+    value: 0
+  price:
+    market: 1000
+  quality: poor
+  revealed: true
+  rof: 2
+  source:
+    book: NCW
+    page: 6
+  unarmedAutomaticCalculation: true
+  usage: toggled
+  usesType: magazine
+  weaponSkill: Handgun
+  weaponType: heavyPistol
+type: weapon

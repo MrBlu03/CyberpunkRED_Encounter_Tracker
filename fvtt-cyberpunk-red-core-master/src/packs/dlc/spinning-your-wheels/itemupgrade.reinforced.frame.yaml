@@ -1,0 +1,77 @@
+_id: zZYQHXJ96WQS8FAu
+_key: "!items!zZYQHXJ96WQS8FAu"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/spinning_your_wheels/reinforced_frame.svg
+name: Reinforced Frame
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  damage: 1d6
+  description:
+    value: >
+      <p>Bike is now more resistant: +5 SDP and rider can be BODY 11 or
+      more.</p>
+
+      <p>Can't install this Upgrade with Folding Frame Upgrade.</p>
+  dvTable: ""
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 0
+  installLocation: mall
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: false
+  isRanged: false
+  magazine:
+    max: 0
+    value: 0
+  modifiers:
+    attackmod:
+      type: modifier
+      value: null
+    damage:
+      type: modifier
+      value: null
+    magazine:
+      type: modifier
+      value: null
+    rof:
+      type: modifier
+      value: null
+    sdp:
+      type: modifier
+      value: 5
+    seats:
+      type: modifier
+      value: null
+    secondaryWeapon:
+      configured: false
+    speedCombat:
+      type: modifier
+      value: null
+  price:
+    market: 100
+  providesHardening: false
+  rof: 1
+  size: 1
+  source:
+    book: SYW
+    page: 5
+  type: vehicle
+  unarmedAutomaticCalculation: true
+  usesType: magazine
+  weaponSkill: ""
+  weaponType: ""
+type: itemUpgrade

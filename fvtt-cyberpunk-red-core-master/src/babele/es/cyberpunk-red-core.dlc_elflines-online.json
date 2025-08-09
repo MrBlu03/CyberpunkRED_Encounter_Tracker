@@ -1,0 +1,18 @@
+{
+  "label": "Elflines Online Macros",
+  "mapping": {},
+  "entries": {
+    "Elflines Online": {
+      "name": "Elflines Online",
+      "description": "<p>Una nueva copia en caja del juegazo BDMMORPG Elflines Online.</p>"
+    },
+    "Rank 10 ELO Character": {
+      "name": "Personaje Rango 10 de ELO",
+      "description": "<p>Un personaje ELO de rango 10 de poder. (El personaje de ELO debe ser creado a través de la Macro y subido de rango manualmente.)</p>"
+    },
+    "Rush Revolution": {
+      "name": "Revolución Apresurada",
+      "description": "<p>Dispositivo de Danza Cerebral para jugar a Elflines Online.</p>"
+    }
+  }
+}

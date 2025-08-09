@@ -1,0 +1,22 @@
+{
+  "type": "array",
+  "additionalProperties": false,
+  "description": "An array of ammo Types",
+  "items": {
+    "type": "string",
+    "enum": [
+      "arrow",
+      "battery",
+      "custom",
+      "grenade",
+      "heavyPistol",
+      "medPistol",
+      "paintball",
+      "rifle",
+      "rocket",
+      "shotgunShell",
+      "shotgunSlug",
+      "vHeavyPistol"
+    ]
+  }
+}

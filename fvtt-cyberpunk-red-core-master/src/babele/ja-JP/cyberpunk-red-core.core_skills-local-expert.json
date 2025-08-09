@@ -1,0 +1,62 @@
+{
+  "label": "技能 (土地鑑)",
+  "mapping": {},
+  "entries": {
+    "Local Expert (Badlands)": {
+      "name": "土地鑑(バッドランド)",
+      "description": ""
+    },
+    "Local Expert (Little China)": {
+      "name": "土地鑑(リトル・チャイナ)",
+      "description": ""
+    },
+    "Local Expert (Little Europe)": {
+      "name": "土地鑑(リトル・ヨーロッパ)",
+      "description": ""
+    },
+    "Local Expert (Morro Rock)": {
+      "name": "土地鑑(モロ島)",
+      "description": ""
+    },
+    "Local Expert (New Westbrook)": {
+      "name": "土地鑑(ニュー・ウェストブルック)",
+      "description": ""
+    },
+    "Local Expert (Norcal Military Base)": {
+      "name": "土地鑑(北カリフォルニア軍事基地)",
+      "description": ""
+    },
+    "Local Expert (Old Combat Zone)": {
+      "name": "土地鑑(旧コンバット・ゾーン)",
+      "description": ""
+    },
+    "Local Expert (Old Corp Center)": {
+      "name": "土地鑑(旧コーポレート・センター)",
+      "description": ""
+    },
+    "Local Expert (Old Japan Town)": {
+      "name": "土地鑑(旧ジャパンタウン)",
+      "description": ""
+    },
+    "Local Expert (South Night City)": {
+      "name": "土地鑑(南ナイトシティ)",
+      "description": ""
+    },
+    "Local Expert (The Glen)": {
+      "name": "土地鑑(グレン)",
+      "description": ""
+    },
+    "Local Expert (University District)": {
+      "name": "土地鑑(ユニバーシティ・ディストリクト)",
+      "description": ""
+    },
+    "Local Expert (Upper Marina)": {
+      "name": "土地鑑(アッパー・マリーナ)",
+      "description": ""
+    },
+    "Local Expert (Watson)": {
+      "name": "土地鑑(ワトソン)",
+      "description": ""
+    }
+  }
+}

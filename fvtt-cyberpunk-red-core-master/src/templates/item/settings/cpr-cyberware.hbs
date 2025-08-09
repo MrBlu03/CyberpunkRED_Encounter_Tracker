@@ -1,0 +1,158 @@
+{{!-- Cyberware Item Setting --}}
+{{!-- Type Setting --}}
+<li class="item flexrow">
+  <div class="item flexrow setting-name text-nowrap">
+    {{localize "CPR.global.generic.type"}}
+  </div>
+  <div class="item flexrow setting-value text-nowrap item-end">
+    {{#if this.editable }}
+      <select name="system.type" data-dtype="{{item.system.type}}">
+        {{selectOptions (cprFindConfigObj "cyberwareTypes") selected=item.system.type localize=true}}
+      </select>
+    {{else}}
+      <span class="text-flex-end">{{localize (cprFindConfigValue "cyberwareTypes" item.system.type)}}</span>
+    {{/if}}
+  </div>
+</li>
+{{!-- Install Location Settings --}}
+<li class="item flexrow">
+  <div class="item flexrow setting-name text-nowrap">
+    {{localize "CPR.global.generic.install"}}
+  </div>
+  <div class="item flexrow setting-value text-nowrap item-end">
+    {{#if this.editable }}
+      <select name="system.installLocation" data-dtype="{{item.system.installLocation}}">
+        {{selectOptions (cprFindConfigObj "cyberwareInstallList") selected=item.system.installLocation localize=true}}
+      </select>
+    {{else}}
+      <span class="text-flex-end">{{localize (cprFindConfigValue "cyberwareInstallList" item.system.installLocation)}}</span>
+    {{/if}}
+  </div>
+</li>
+{{!- Static Humanity Loss Settings --}}
+<li class="item flexrow">
+  <div class="item flexrow setting-name text-nowrap">
+    {{localize "CPR.dialog.installCyberware.static"}} {{localize "CPR.dialog.installCyberware.humanityLoss"}}
+  </div>
+  <div class="item flexrow setting-value text-nowrap item-end">
+    {{#if this.editable }}
+      <input name="system.humanityLoss.static"
+             type="text"
+             value="{{item.system.humanityLoss.static}}"/>
+    {{else}}
+      <span class="text-flex-end">{{item.system.humanityLoss.static}}</span>
+    {{/if}}
+  </div>
+</li>
+{{!- Rolled Humanity Loss Settings --}}
+<li class="item flexrow">
+  <div class="item flexrow setting-name text-nowrap">
+    {{localize "CPR.itemSheet.cyberware.rolled"}} {{localize "CPR.dialog.installCyberware.humanityLoss"}}
+  </div>
+  <div class="item flexrow setting-value text-nowrap item-end">
+    {{#if this.editable }}
+      <input name="system.humanityLoss.roll"
+             type="text"
+             value="{{item.system.humanityLoss.roll}}"/>
+    {{else}}
+      <span class="text-flex-end">{{item.system.humanityLoss.roll}}</span>
+    {{/if}}
+  </div>
+</li>
+{{!-- Requires Foundational Settings--}}
+{{#unless (cprListContains "fashionware,cyberwareExternal" item.system.type)}}
+<li class="item flexrow">
+  <div class="item flexrow setting-name text-nowrap">
+    {{localize "CPR.itemSheet.cyberware.requiresFoundational"}}
+  </div>
+  <div class="item flexrow setting-value text-nowrap item-end">
+    {{#if this.editable }}
+      {{#if item.system.isFoundational }}
+        <a class="item-checkbox" data-target="system.isFoundational"><i class="far fa-circle"></i></a>
+      {{else}}
+        <a class="item-checkbox" data-target="system.isFoundational"><i class="far fa-circle-check"></i></a>
+      {{/if}}
+    {{else}}
+      {{#if item.system.isFoundational }}
+        <i class="far fa-circle"></i>
+      {{else}}
+        <i class="far fa-circle-check"></i>
+      {{/if}}
+    {{/if}}
+  </div>
+</li>
+{{#if item.system.isFoundational }}
+  <li class="item flexrow">
+    <div class="item flexrow setting-name text-nowrap">
+      {{localize "CPR.itemSheet.cyberware.hasOptionSlots"}}
+    </div>
+    <div class="item flexrow setting-value text-nowrap item-end">
+      {{#if this.editable }}
+        {{#if item.system.installedItems.allowed }}
+          <a class="item-checkbox" data-target="system.installedItems.allowed"><i class="far fa-circle-check"></i></a>
+        {{else}}
+          <a class="item-checkbox" data-target="system.installedItems.allowed"><i class="far fa-circle"></i></a>
+        {{/if}}
+      {{else}}
+        {{#if item.system.installedItems.allowed }}
+          <i class="far fa-circle-check"></i>
+        {{else}}
+          <i class="far fa-circle"></i>
+        {{/if}}
+      {{/if}}
+    </div>
+  </li>
+  {{#if item.system.installedItems.allowed }}
+    {{!- Installation Size Settings --}}
+    <li class="item flexrow">
+      <div class="item flexrow setting-name text-nowrap">
+        {{localize "CPR.itemSheet.cyberware.optionalSlots"}}
+      </div>
+      <div class="item flexrow setting-value text-nowrap item-end">
+        {{#if this.editable }}
+          <input name="system.installedItems.slots" type="number" value="{{item.system.installedItems.slots}}"/>
+        {{else}}
+          <span class="text-flex-end">{{item.system.installedItems.slots}}</span>
+        {{/if}}
+      </div>
+    </li>
+  {{/if}}
+{{else}}
+  <li class="item flexrow">
+    <div class="item flexrow setting-name text-nowrap">
+      {{localize "CPR.itemSheet.cyberware.slotSize"}}
+    </div>
+    <div class="item flexrow setting-value text-nowrap item-end">
+      {{#if this.editable }}
+        <input name="system.size" type="number" value="{{item.system.size}}"/>
+      {{else}}
+        <span class="text-flex-end">{{item.system.size}}</span>
+      {{/if}}
+    </div>
+  </li>
+{{/if}}
+{{/unless}}
+{{!- Is A Weapon Settings --}}
+<li class="item flexrow">
+  <div class="item flexrow setting-name text-nowrap">
+    {{localize "CPR.itemSheet.common.isAWeapon"}}
+  </div>
+  <div class="item flexrow setting-value text-nowrap item-end">
+    {{#if this.editable }}
+      {{#if item.system.isWeapon }}
+        <a class="item-checkbox" data-target="system.isWeapon"><i class="far fa-circle-check"></i></a>
+      {{else}}
+        <a class="item-checkbox" data-target="system.isWeapon"><i class="far fa-circle"></i></a>
+      {{/if}}
+    {{else}}
+      {{#if item.system.isWeapon }}
+        <i class="far fa-circle-check"></i>
+      {{else}}
+        <i class="far fa-circle"></i>
+      {{/if}}
+    {{/if}}
+  </div>
+</li>
+{{#if item.system.isWeapon }}
+  {{> "systems/cyberpunk-red-core/templates/item/settings/mixin/cpr-attackable.hbs" this}}
+{{/if}}

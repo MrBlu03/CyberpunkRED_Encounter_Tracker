@@ -1,0 +1,111 @@
+{
+  "label": "NET architecture Rolltables",
+  "mapping": {},
+  "entries": {
+    "All Other Floors (Advanced)": {
+      "name": "Alle anderen Stockwerke (Fortgeschritten)",
+      "results": [
+        {
+          "3-3": "Höllenhund",
+          "4-4": "Viper x2",
+          "5-5": "Höllenhund, Killer",
+          "6-6": "Höllenhund",
+          "7-7": "Höllenhund, Säbelzahntiger",
+          "8-8": "Höllenhund",
+          "9-9": "Passwort SG10",
+          "10-10": "Datei SG10",
+          "11-11": "Kontrollknoten SG10",
+          "12-12": "Passwort SG10",
+          "13-13": "Viper",
+          "14-14": "Viper",
+          "15-15": "Dragon",
+          "16-16": "Viper",
+          "17-17": "Drache, Irrlicht",
+          "18-18": "Drache x2"
+        }
+      ]
+    },
+    "All Other Floors (Basic)": {
+      "name": "Alle anderen Stockwerke (Grund)",
+      "results": [
+        {
+          "3-3": "Höllenhund",
+          "4-4": "Viper x2",
+          "5-5": "Höllenhund, Killer",
+          "6-6": "Höllenhund",
+          "7-7": "Höllenhund, Säbelzahntiger",
+          "8-8": "Höllenhund",
+          "9-9": "Passwort SG10",
+          "10-10": "Datei SG10",
+          "11-11": "Kontrollknoten SG10",
+          "12-12": "Passwort SG10",
+          "13-13": "Viper",
+          "14-14": "Viper",
+          "15-15": "Dragon",
+          "16-16": "Viper",
+          "17-17": "Drache, Irrlicht",
+          "18-18": "Drache x2"
+        }
+      ]
+    },
+    "All Other Floors (Standard)": {
+      "name": "Alle anderen Stockwerke (Standard)",
+      "results": [
+        {
+          "3-3": "Höllenhund",
+          "4-4": "Viper x2",
+          "5-5": "Höllenhund, Killer",
+          "6-6": "Höllenhund",
+          "7-7": "Höllenhund, Säbelzahntiger",
+          "8-8": "Höllenhund",
+          "9-9": "Passwort SG10",
+          "10-10": "Datei SG10",
+          "11-11": "Kontrollknoten SG10",
+          "12-12": "Passwort SG10",
+          "13-13": "Viper",
+          "14-14": "Viper",
+          "15-15": "Dragon",
+          "16-16": "Viper",
+          "17-17": "Drache, Irrlicht",
+          "18-18": "Drache x2"
+        }
+      ]
+    },
+    "All Other Floors (Uncommon)": {
+      "name": "Alle anderen Stockwerke (Ungewöhnlich)",
+      "results": [
+        {
+          "3-3": "Höllenhund",
+          "4-4": "Viper x2",
+          "5-5": "Höllenhund, Killer",
+          "6-6": "Höllenhund",
+          "7-7": "Höllenhund, Säbelzahntiger",
+          "8-8": "Höllenhund",
+          "9-9": "Passwort SG10",
+          "10-10": "Datei SG10",
+          "11-11": "Kontrollknoten SG10",
+          "12-12": "Passwort SG10",
+          "13-13": "Viper",
+          "14-14": "Viper",
+          "15-15": "Drache",
+          "16-16": "Viper",
+          "17-17": "Drache, Irrlicht",
+          "18-18": "Drache x2"
+        }
+      ]
+    },
+    "First Two Floors (The Lobby)": {
+      "name": "Erste zwei Stockwerke (Die Lobby)",
+      "results": [
+        {
+          "1-1": "Datei SG6",
+          "2-2": "Passwort SG6",
+          "3-3": "Passwort SG8",
+          "4-4": "Stinktier",
+          "5-5": "Irrlicht",
+          "6-6": "Killer"
+        }
+      ]
+    }
+  }
+}

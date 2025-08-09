@@ -1,0 +1,37 @@
+<form class="dialog-sheet">
+  <div class="dialog-header flexcol">
+    <div class="text-normal text-center">
+      {{localize "CPR.dialog.container.vendor.configureDescription"}}
+    </div>
+  </div>
+  <hr/>
+  <div class="dialog-grid flexcol">
+    <ol class="dialog-list">
+      <li class="dialog-item dialog-item-header flexrow">
+        <div class="dialog-item-name text-nowrap">
+          <span class="text-semi">{{localize "CPR.dialog.container.vendor.itemType"}}</span>
+        </div>
+        <div class="dialog-item-detail text-nowrap">
+          <span class="text-semi">{{localize "CPR.dialog.container.vendor.buyType"}}</span>
+        </div>
+        <div class="dialog-item-input text-nowrap">
+          <span class="text-semi">{{localize "CPR.dialog.container.vendor.typePercentage"}}</span>
+        </div>
+      </li>
+      {{#each itemTypes as |type| }}
+        <li class="dialog-item flexrow">
+          <div class="dialog-item-name text-nowrap">
+            {{localize (cprFindConfigValue "objectTypes" type)}}
+          </div>
+          <div class="dialog-item-detail text-nowrap">
+            <input type="checkbox" name="currentConfig.itemTypes.{{type}}.isPurchasing" {{checked (cprGetProp (cprGetProp ../currentConfig.itemTypes type) "isPurchasing") }}/>
+          </div>
+          <div class="dialog-item-input text-nowrap">
+            <input name="currentConfig.itemTypes.{{type}}.purchasePercentage" type="number" value="{{cprGetProp (cprGetProp ../currentConfig.itemTypes type) "purchasePercentage"}}"/>
+          </div>
+        </li>
+      {{/each}}
+    </ol>
+  </div>
+  {{> "systems/cyberpunk-red-core/templates/dialog/cpr-dialog-buttons.hbs"}}
+</form>

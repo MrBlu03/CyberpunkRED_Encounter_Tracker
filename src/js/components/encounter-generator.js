@@ -1,19 +1,8 @@
+// Difficulty presets now refer to archetype tags instead of hardcoded types
 const DIFFICULTY_PRESETS = {
-    easy: {
-        npcTypes: ["Street Scum"],
-        maxLevel: 1,
-        weaponSets: ["standard"]
-    },
-    medium: {
-        npcTypes: ["Street Scum", "Edgerunners"],
-        maxLevel: 2,
-        weaponSets: ["standard", "melee", "heavy"]
-    },
-    hard: {
-        npcTypes: ["Edgerunners", "Max-Tac"],
-        maxLevel: 3,
-        weaponSets: ["heavy", "cyber", "sniper"]
-    }
+    easy: { tags: ["gang"], maxLevel: 1 },
+    medium: { tags: ["edgerunner", "gang"], maxLevel: 2 },
+    hard: { tags: ["elite", "edgerunner"], maxLevel: 3 }
 };
 
 const LEVEL_SCALING = {
@@ -139,7 +128,7 @@ const LOCATION_NAMES = [
 ];
 
 // Generate a random encounter based on difficulty
-function generateRandomEncounter(difficulty, enemyCount) {
+async function generateRandomEncounter(difficulty, enemyCount) {
     const preset = DIFFICULTY_PRESETS[difficulty];
     if (!preset) return null;
 
@@ -151,69 +140,33 @@ function generateRandomEncounter(difficulty, enemyCount) {
         participants: []
     };
 
+    // Load catalog archetypes
+    const catalog = await Catalog.loadCatalog();
+    const allArchetypes = CatalogAdapters.getArchetypesFromCatalog(catalog);
+    const archetypes = allArchetypes.filter(a => a.tags.some(t => preset.tags.includes(t)));
+
     // Generate regular enemies
     for (let i = 0; i < enemyCount; i++) {
-        // Select random NPC type from allowed types for this difficulty
-        const npcType = preset.npcTypes[Math.floor(Math.random() * preset.npcTypes.length)];
-        const npcBase = NPC_PRESETS[npcType];
+        // Select random archetype
+        const archetype = archetypes[Math.floor(Math.random() * archetypes.length)];
 
-        // Determine level scaling for this NPC
+        // Determine level scaling (retained for backward compatibility; can evolve later)
 		const level = Math.floor(Math.random() * preset.maxLevel) + 1;
-        const combatSkill = `1d10+${LEVEL_SCALING[npcType][level]}`;
-        
-        // Get the correct initiative value, checking both possible property names
-        const baseInitiative = npcBase.base !== undefined ? npcBase.base : npcBase.baseInitiative;
-		
-        // Create base participant from NPC preset
-        const participant = {
-            name: generateNPCName(npcType, i + 1),
-            base: baseInitiative,
-            maxHealth: npcBase.maxHealth,
-            roll: 0,
-            total: baseInitiative,
-            health: npcBase.maxHealth,
-            hasRolled: false,
-            bodyArmor: npcBase.bodyArmor,
-            headArmor: npcBase.headArmor,
-            shield: npcBase.shield,
-            shieldActive: false,
-            weapons: generateWeaponLoadout(preset.weaponSets, combatSkill),
-            criticalInjuries: []
-        };
-
+        const participant = CatalogAdapters.generateNPCFromArchetype(catalog, archetype, i + 1);
+        // Add dynamic "Combat/Skills" entry for readability
+        participant.weapons = [{ name: 'Combat/Skills', damage: `1d10+${LEVEL_SCALING[archetype.name]?.[level] || 10}` }, ...participant.weapons];
         encounter.participants.push(participant);
     }
 
     // Generate turrets if enabled
     if (includeTurrets && turretCount > 0) {
-        const turretType = "Turrets";
-        const turretBase = NPC_PRESETS[turretType];
-		
-		// Determine level scaling for this NPC
-		const level = Math.floor(Math.random() * preset.maxLevel) + 1;
-        const combatSkill = `1d10+${LEVEL_SCALING[turretType][level]}`;
-        
-        // Get the correct initiative value for turrets
-        const turretInitiative = turretBase.base !== undefined ? turretBase.base : turretBase.baseInitiative;
-        
+        // If you have a turret archetype, filter by tags e.g., ["turret"]
+        const turretArchetypes = allArchetypes.filter(a => a.tags.includes('turret'));
         for (let i = 0; i < turretCount; i++) {
-            const turret = {
-                name: generateNPCName(turretType, i + 1),
-                base: turretInitiative,
-                maxHealth: turretBase.maxHealth,
-                roll: 0,
-                total: turretInitiative,
-                health: turretBase.maxHealth,
-                hasRolled: false,
-                bodyArmor: turretBase.bodyArmor,
-                headArmor: turretBase.headArmor,
-                shield: turretBase.shield,
-                shieldActive: false,
-                weapons: generateWeaponLoadout(preset.weaponSets, combatSkill),
-                criticalInjuries: []
-            };
-            
-            encounter.participants.push(turret);
+            const archetype = turretArchetypes[0] || archetypes[0];
+            const participant = CatalogAdapters.generateNPCFromArchetype(catalog, archetype, i + 1);
+            participant.name = `Turret ${i + 1}`;
+            encounter.participants.push(participant);
         }
     }
 
@@ -221,10 +174,7 @@ function generateRandomEncounter(difficulty, enemyCount) {
 }
 
 function generateNPCName(type, index) {
-    const preset = NPC_PRESETS[type];
-    const prefix = preset.namePrefixes[Math.floor(Math.random() * preset.namePrefixes.length)];
-    const suffix = preset.namePool[Math.floor(Math.random() * preset.namePool.length)];
-    return `${prefix}-${suffix} ${index}`;
+    return `${type} ${index}`;
 }
 
 function generateEncounterName(difficulty, hasTurrets) {
@@ -238,29 +188,7 @@ function generateEncounterName(difficulty, hasTurrets) {
     return `${location} ${type}${turretSuffix} (${difficulty})`;
 }
 
-function generateWeaponLoadout(allowedSets, combatSkill) {
-    const weapons = [];
-    
-    // Always include combat skills
-    weapons.push({ name: "Combat/Skills", damage: combatSkill });
-    
-    // Add 2-3 random weapons from allowed sets
-    const weaponCount = 2 + Math.floor(Math.random() * 2);
-    const availableWeapons = allowedSets.flatMap(set => WEAPON_PRESETS[set]);
-    
-    for (let i = 0; i < weaponCount; i++) {
-        const weapon = availableWeapons[Math.floor(Math.random() * availableWeapons.length)];
-        if (!weapons.some(w => w.name === weapon.name)) {
-            weapons.push(weapon);
-        }
-    }
-    
-    // 25% chance to add Mantis Blades for medium/hard encounters
-    if (allowedSets.includes("cyber") && Math.random() < 0.25) {
-        weapons.push({ name: "Mantis Blades", damage: "4d6" });
-    }
-    
-    return weapons;
-}
+// Legacy no-op retained for compatibility with existing calls in UI templates
+function generateWeaponLoadout() { return []; }
 
 

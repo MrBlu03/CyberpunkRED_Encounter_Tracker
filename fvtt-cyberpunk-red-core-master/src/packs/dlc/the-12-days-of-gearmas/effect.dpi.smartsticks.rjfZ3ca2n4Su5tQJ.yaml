@@ -1,0 +1,31 @@
+_id: rjfZ3ca2n4Su5tQJ
+_key: "!items.effects!DH4W3aiKxj7aQA9D.rjfZ3ca2n4Su5tQJ"
+changes:
+  - key: bonuses.playInstrument(Drums)
+    mode: 2
+    priority: null
+    value: "1"
+description: ""
+disabled: false
+duration:
+  combat: null
+  rounds: null
+  seconds: null
+  startRound: null
+  startTime: null
+  startTurn: null
+  turns: null
+flags:
+  cyberpunk-red-core:
+    changes:
+      cats:
+        "0": skill
+      situational:
+        "0":
+          isSituational: true
+          onByDefault: false
+icon: systems/cyberpunk-red-core/icons/compendium/gear/electric_guitar.svg
+name: DPI Smartsticks
+statuses: []
+tint: null
+transfer: true

@@ -1,0 +1,112 @@
+{{!-- taken from Foundry code in resources/app/templates/sheets/active-effect-config.html --}}
+{{!-- We are assuming this sheet is never shown for effects on owned items, since they cannot be changed --}}
+<form>
+  <div class="active-effects-sheet">
+    <!-- Effect Header -->
+    <header class="sheet-header">
+      <img class="effect-icon" src="{{effect.img}}" data-edit="img"/>
+      <h1 class="effect-title">{{effect.name}}</h1>
+    </header>
+    <!-- Effect Configuration Tabs -->
+    <nav class="sheet-tabs tabs">
+      <a class="item" data-tab="details"><i class="fas fa-book"></i> {{localize "EFFECT.TabDetails"}}</a>
+      <a class="item" data-tab="effects"><i class="fas fa-gears"></i> {{localize "EFFECT.TabEffects"}}</a>
+    </nav>
+    <!-- Details Tab -->
+    <section class="tab" data-tab="details">
+      <div class="form-group">
+        <label>{{ localize "EFFECT.Name" }}</label>
+        <div class="form-fields">
+          <input type="text" name="name" value="{{effect.name}}"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>{{ localize "EFFECT.Image" }}</label>
+        <div class="form-fields">
+          <file-picker type="image" name="img" value="{{effect.img}}">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>{{ localize "EFFECT.Tint" }}</label>
+        <div class="form-fields">
+          <input class="color" type="text" name="tint" value="{{effect.tint}}"/>
+          <input type="color" value="{{effect.tint}}" data-edit="tint"/>
+        </div>
+      </div>
+    </section>
+    <!-- Effects Tab -->
+    <section class="tab" data-tab="effects">
+      <ol class="changes-list">
+        <header class="change-header flexrow">
+          <div class="change-key">{{ localize "EFFECT.ChangeKey" }}</div>
+          <div class="change-value">{{ localize "EFFECT.ChangeValue" }}</div>
+          <div class="change-mode">{{ localize "EFFECT.ChangeMode" }}</div>
+          <div class="situational">
+            {{ localize "CPR.effectSheet.header.situational" }}
+          </div>
+          <div class="on-by-default">
+            {{ localize "CPR.effectSheet.header.onByDefault" }}
+          </div>
+          <div class="change-actions">
+            {{ localize "CPR.effectSheet.actions" }}
+          </div>
+        </header>
+        {{#each modList as |change i| }}
+          <li class="flexrow">
+            <div class="change-key" data-index="{{i}}">
+              <span class="form-fields effect-key-category" data-index="{{i}}">
+                <select class="key-cat" name="flags.cyberpunk-red-core.changes.cats.{{i}}">
+                  {{selectOptions (cprFindConfigObj "activeEffectCategories" ) selected=change.category localize=true}}
+                </select>
+              </span>
+            {{!-- The next line is responsible for displaying the input for the 'key' field. --}}
+            {{change.keyInput}}
+      </div>
+      <div class="change-value force-submit">
+        <input type="text" name="changes.{{i}}.value" value="{{change.value}}"/>
+      </div>
+      <div class="change-mode force-submit">
+        {{!-- Using other modes for skills means we need to make changes to actor.bonuses. Rather than 0 all values out, it
+        needs to persist the existing value, and the mode so the math applies correctly. This has implications
+        on how to present in the actor sheet too. --}}
+        {{#if (cprCompare change.category "===" "stat") }}
+          <select name="changes.{{i}}.mode" data-dtype="Number">
+            {{selectOptions (cprFindConfigObj "effectModifierModes") selected=change.changeMode localize=true}}
+          </select>
+        {{else}}
+          <input type="hidden" name="changes.{{i}}.mode" data-dtype="Number" value="2"/>
+          <span>
+            {{localize "CPR.effectSheet.modifiers.addSubtract"}}
+            <i class="fas fa-circle-question" data-tooltip="{{localize "CPR.effectSheet.info.deleteAndModesComing"}}"></i>
+          </span>
+        {{/if}}
+      </div>
+    <div class="situational">
+      <input name="isSituational" class="toggle-situational" type="checkbox" data-index="{{i}}" {{checked change.isSituational}} {{disabled (cprCompare change.category "===" "stat")}}/>
+    </div>
+    <div class="on-by-default">
+      <input {{#unless change.isSituational}}disabled{{/unless}} name="onByDefault" class="toggle-on-by-default" type="checkbox" data-index="{{i}}" {{checked change.onByDefault}} {{disabled (cprCompare change.category "===" "stat")}}/>
+    </div>
+    <div class="change-actions">
+      <a class="effect-change-control" data-action="delete" data-index="{{i}}"><i class="fas fa-trash-can"></i></a>
+    </div>
+  </li>
+{{/each}}
+</ol>
+<br/>
+<div class="item-controls effect-controls">
+  <a class="effect-change-control"
+     data-action="add"
+     data-tooltip="{{localize "CPR.effectSheet.createModDesc"}}">
+    <i class="far fa-square-plus"></i> {{localize "CPR.effectSheet.createMod"}}
+  </a>
+</div>
+<br/>
+</section>
+<footer class="sheet-footer">
+  <button type="submit">
+    <i class="fas fa-floppy-disk"></i> {{localize submitText}}
+  </button>
+</footer>
+</div>
+</form>

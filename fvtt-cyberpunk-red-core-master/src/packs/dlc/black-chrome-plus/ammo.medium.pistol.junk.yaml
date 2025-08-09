@@ -1,0 +1,36 @@
+_id: EZ2R3oCObc2qMJdw
+_key: "!items!EZ2R3oCObc2qMJdw"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/black-chrome-plus/pistolmedium_junk.png
+name: Medium Pistol (Junk)
+system:
+  ablationValue: 1
+  amount: 50
+  brand: ""
+  concealable:
+    concealable: true
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        Junk ammo; cheap but deals 1d6 less damage against anyone with 1SP or more.
+      </p>
+  favorite: false
+  overrides:
+    autofire:
+      minimum: 3
+      mode: modify
+      value: -1
+    damage:
+      minimum: 1d6
+      mode: modify
+      value: "-1d6"
+  price:
+    market: 10
+  source:
+    book: BC+
+    page: 3
+  type: special
+  variety: medPistol
+type: ammo

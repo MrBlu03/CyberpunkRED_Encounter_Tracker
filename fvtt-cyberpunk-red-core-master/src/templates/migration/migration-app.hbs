@@ -1,0 +1,54 @@
+<div class="migration-grid dialog-sheet">
+  <header class="header text-center">
+    <div class="title text-hero">
+      {{localize "CPR.migration.app.title"}}
+    </div>
+    <hr>
+    <div class="subtitle">
+      {{localize "CPR.migration.app.subtitle"}}
+      <a class="wiki-link" href="https://gitlab.com/cyberpunk-red-team/fvtt-cyberpunk-red-core/-/wikis/Release-Information/migrations">
+        {{localize "CPR.migration.app.wikiLink"}}<i class="fas fa-arrow-up-right-from-square"></i>
+      </a>
+    </div>
+  <hr>
+  </header>
+
+  <section class="status flexcol">
+    <div class="dialog-item text-semi">
+      <span class="progress-status">{{status}}</span>
+      <span class="spinner"><i class="fas fa-rotate fa-spin"></i></span>
+    </div>
+    <hr>
+  </section>
+
+  <section class="progress compendia-selection">
+    <div class="alert-overlay">
+      <div class="text-rotate">
+        <span class="alert-text text-hero">{{localize "CPR.migration.app.error"}}</span>
+      </div>
+    </div>
+    {{> "systems/cyberpunk-red-core/templates/migration/compendia-selection.hbs" worldPacks=worldPacks packModules=packModules}}
+    <hr>
+  </section>
+
+  <footer class="messages flexcol">
+    <ol class="dialog-list flexcol">
+      <li class="dialog-item dialog-item-header text-semi text-center flexrow">
+        <a class="message-nav" data-action="navigate" data-direction="back">
+          <i class="fas fa-arrow-left"></i>
+        </a>
+        <div>
+          {{localize "CPR.migration.app.messagesTitle"}}
+          (<span class="message-count">{{currentMessage}}/{{messages.length}}</span>)
+          <span class="notification-icon"><i class="fas fa-circle-exclamation"></i></span>
+        </div>
+        <a class="message-nav" data-action="navigate" data-direction="next">
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </li>
+      <li class="dialog-item message">
+        {{localize messages.[0]}}
+      </li>
+    </ol>
+  </footer>
+</div>

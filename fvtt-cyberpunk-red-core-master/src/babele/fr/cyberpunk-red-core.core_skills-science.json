@@ -1,0 +1,38 @@
+{
+  "label": "Compétences (Science)",
+  "mapping": {},
+  "entries": {
+    "Science (Anthropology)": {
+      "name": "Science (Anthropologie)",
+      "description": ""
+    },
+    "Science (Biology)": {
+      "name": "Science (Biologie)",
+      "description": ""
+    },
+    "Science (Chemistry)": {
+      "name": "Science (Chimie)",
+      "description": ""
+    },
+    "Science (Geology)": {
+      "name": "Science (Géologie)",
+      "description": ""
+    },
+    "Science (History)": {
+      "name": "Science (Histoire)",
+      "description": ""
+    },
+    "Science (Mathematics)": {
+      "name": "Science (Mathématiques)",
+      "description": ""
+    },
+    "Science (Physics)": {
+      "name": "Science (Physique)",
+      "description": ""
+    },
+    "Science (Zoology)": {
+      "name": "Science (Zoologie)",
+      "description": ""
+    }
+  }
+}

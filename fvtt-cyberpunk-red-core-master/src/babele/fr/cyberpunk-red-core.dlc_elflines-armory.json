@@ -1,0 +1,77 @@
+{
+  "label": "Armurerie d'Elflines Online",
+  "entries": {
+    "Arrow": {
+      "name": "Flèche",
+      "description": "<p>Munition standard, rien de spécial.</p>"
+    },
+    "Poison Arrow": {
+      "name": "Flèche empoisonnée",
+      "description": "<p>L'attaque n'inflige aucun dégât. Quiconque est touché par l'attaque doit à la place effectuer un jet de Résistance à la torture/aux drogues contre un SD 13. En cas d'échec 2d6 points de dégâts aux PS. L'armure de la cible n'est pas perforée.</p>"
+    },
+    "Chainmail Armor (Body)": {
+      "name": "Cotte de mailles (Corps)",
+      "description": "<p>Version d'une tenue blindée moyenne (Corps). -2 en REF, DEX et MOUV.</p>"
+    },
+    "Chainmail Armor (Head)": {
+      "name": "Cotte de mailles (Tête)",
+      "description": "<p>Version d'une tenue blindée moyenne pour la tête. -2 en REF, DEX et MOUV.</p>"
+    },
+    "Full Plate Armor (Body)": {
+      "name": "Armure de plate (Corps)",
+      "description": "<p>Armure de plaques métalliques pour résister aux coups les plus puissants. -4 en REF, DEX et MOUV.</p>"
+    },
+    "Full Plate Armor (Head)": {
+      "name": "Armure de plate (Tête)",
+      "description": "<p>Casque de plaques métalliques pour résister aux coups les plus puissants. -4 en REF, DEX et MOUV.</p>"
+    },
+    "Leather Armor (Body)": {
+      "name": "Armure de cuir (Corps)",
+      "description": "<p>Une simple armure de cuir. Pas de pénalité d'armure.</p>"
+    },
+    "Leather Armor (Head)": {
+      "name": "Armure de cuir (Tête)",
+      "description": "<p>Simple armure de cuir pour la tête. Pas de pénalité d'armure.</p>"
+    },
+    "Shield": {
+      "name": "Bouclier",
+      "description": "<p>Nécessite un bras et possède des PV réduits par des dégâts.</p>"
+    },
+    "Studded Leather Armor (Body)": {
+      "name": "Armure de cuir clouté (Corps)",
+      "description": "<p>Armure classique correspondant au kevlar. Pas de pénalité d'armure.</p>"
+    },
+    "Studded Leather Armor (Head)": {
+      "name": "Armure de cuir clouté (Tête)",
+      "description": "<p>Armure correspondant au kevlar pour votre tête. Pas de pénalité d'armure.</p>"
+    },
+    "Sacred Herbs": {
+      "name": "Herbes sacrées",
+      "description": ""
+    },
+    "Vial of Poison": {
+      "name": "Fiole de poison",
+      "description": "<p>Inflige 2d6 dégâts qui ne sont pas réduits par l'armure. Pour contrer son effet, on utilise Résistance à la torture/aux drogues.</p>"
+    },
+    "Bow": {
+      "name": "Arc",
+      "description": "<p>Un arc revitalisé, rechargement compris dans l'action d'attaque.</p>"
+    },
+    "Dagger": {
+      "name": "Dague",
+      "description": "<p>Un couteau adapté à la Rue.</p>"
+    },
+    "Greataxe": {
+      "name": "Hache de guerre",
+      "description": "<p>Arme d'origine japonaise, proche du fauchard à lame courbe. Utilisé par les équipes tactiques d'Arasaka lors des confrontations aux corps à corps.</p>"
+    },
+    "Longsword": {
+      "name": "Épée longue",
+      "description": "<p>Un cylindre creux, typiquement fait de métal ou de fibre de verre.</p>"
+    },
+    "Shortsword": {
+      "name": "Épée courte",
+      "description": "<p>Utile autant comme outil que comme arme.</p>"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+<li class="item flexrow">
+<div class="item flexrow setting-name text-nowrap"
+     data-tooltip=" {{#if (cprCompare item.type "===" "ammo") }} {{localize "CPR.itemSheet.physical.priceHoverExplanationAmmo" }} {{else }} {{localize "CPR.itemSheet.physical.priceHoverExplanation" }} {{/if }} ">
+  {{localize "CPR.itemSheet.physical.price.price"}}
+</div>
+<div class="item flexrow setting-value text-nowrap item-end">
+  {{#if this.editable }}
+    <input name="system.price.market"
+           type="number"
+           value="{{item.system.price.market}}"/>
+  {{else}}
+    <span class="text-flex-end">{{cprNumberFormat item.system.price.market}}</span>
+  {{/if}}
+</div>
+</li>
+<li class="item flexrow">
+  <div class="item flexrow setting-name text-nowrap">
+    {{localize "CPR.itemSheet.physical.price.category"}}
+  </div>
+  <div class="item flexrow setting-value text-nowrap item-end">
+    <span class="text-flex-end">{{localize (cprFindConfigValue "itemPriceCategory" (cprGetPriceCategory item.system.price.market))}}</span>
+  </div>
+</li>

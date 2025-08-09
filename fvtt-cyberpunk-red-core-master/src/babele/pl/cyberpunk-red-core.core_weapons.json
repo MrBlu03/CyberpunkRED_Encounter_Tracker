@@ -1,0 +1,456 @@
+{
+  "label": "Bronie",
+  "mapping": {
+    "dvTable": "system.dvTable"
+  },
+  "entries": {
+    "Air Pistol": {
+      "name": "Pistolet pneumatyczny",
+      "description": "<p>Egzotyczny średni pistolet strzelający kulkami farby (lub kwasu!).</p>",
+      "dvTable": "PT Pistolety"
+    },
+    "Assault Rifle (Excellent)": {
+      "name": "Karabin szturmowy (doskonałej jakości)",
+      "description": "<p>Standardowy karabin szturmowy. +1 do ataku.</p>",
+      "dvTable": "PT Karabiny szturmowe"
+    },
+    "Assault Rifle (Poor)": {
+      "name": "Karabin szturmowy (słabej jakości)",
+      "description": "<p>Standardowy karabin szturmowy. Przy krytycznej porażce broń zacina się i wymaga akcji do usunięcia usterki.</p>",
+      "dvTable": "PT Karabiny szturmowe"
+    },
+    "Assault Rifle": {
+      "name": "Karabin szturmowy",
+      "description": "<p>Standardowy karabin szturmowy. </p>",
+      "dvTable": "PT Karabiny szturmowe"
+    },
+    "Baseball Bat (Excellent)": {
+      "name": "Kij bejsbolowy (doskonałej jakości)",
+      "description": "<p>Obciążony kij. Ulubiona broń Baseball Furies. +1 do ataku.</p>"
+    },
+    "Baseball Bat (Poor)": {
+      "name": "Kij bejsbolowy (słabej jakości)",
+      "description": "<p>Obciążony kij. Ulubiona broń Baseball Furies. Przy krytycznej porażce broń uszkadza się w jakiś sposób i wymaga akcji do usunięcia usterki.</p>"
+    },
+    "Baseball Bat": {
+      "name": "Kij bejsbolowy",
+      "description": "<p>Obciążony kij. Ulubiona broń Baseball Furies.</p>"
+    },
+    "Bow (Excellent)": {
+      "name": "Łuk (doskonałej jakości)",
+      "description": "<p>Doskonałej jakości łuk, przeładowywany w ramach akcji Ataku.</p>\n<p>+1 do testów broni.</p>",
+      "dvTable": "PT Łuki i kusze"
+    },
+    "Bow (Poor)": {
+      "name": "Łuk (słabej jakości)",
+      "description": "<p> Słabej jakości łuk, przeładowywany w ramach akcji Ataku.</p> <p>Jeżeli wyrzucisz 1 w teście broni (Krytyczny pech) broń zacina się i wymaga akcji, by ją wyczyścić.</p>",
+      "dvTable": "PT Łuki i kusze"
+    },
+    "Bow": {
+      "name": "Łuk",
+      "description": "<p>Zrewitalizowany łuk, przeładowywany w ramach akcji Ataku..</p>",
+      "dvTable": "PT Łuki i kusze"
+    },
+    "Chainsaw (Excellent)": {
+      "name": "Piła łańcuchowa (doskonałej jakości)",
+      "description": "<p>Przenośna piła na CHOOH2. Cały zbiornik wystarcza na 2-3 godziny. +1 do ataku.</p>"
+    },
+    "Chainsaw (Poor)": {
+      "name": "Piła łańcuchowa (słabej jakości)",
+      "description": "<p>Przenośna piła na CHOOH2. Cały zbiornik wystarcza na 2-3 godziny. Przy krytycznej porażce broń uszkadza się w jakiś sposób i wymaga akcji do usunięcia usterki.</p>"
+    },
+    "Chainsaw": {
+      "name": "Piła łańcuchowa",
+      "description": "<p>Przenośna piła na CHOOH2. Cały zbiornik wystarcza na 2-3 godziny.</p>"
+    },
+    "Combat Knife (Excellent)": {
+      "name": "Nóż bojowy (doskonałej jakości)",
+      "description": "<p>Nóż pasujący na ulicę. +1 do ataku.</p>"
+    },
+    "Combat Knife (Poor)": {
+      "name": "Nóż bojowy (słabej jakości)",
+      "description": "<p>Nóż pasujący na ulicę. Przy krytycznej porażce broń uszkadza się w jakiś sposób i wymaga akcji do usunięcia usterki.</p>"
+    },
+    "Combat Knife": {
+      "name": "Nóż bojowy",
+      "description": "<p>Nóż pasujący na ulicę.</p>"
+    },
+    "Constitutional Arms Hurricane Assault Weapon": {
+      "name": "Constitutional Arms Hurricane Assault Weapon",
+      "description": "<p>\n  An Exotic Shotgun with 2 ROF. Cannot make aimed shots and needs BODY 11 or\n  higher (unless mounted).\n</p>\n",
+      "dvTable": "DV Shotgun (Slug)"
+    },
+    "Crossbow (Excellent)": {
+      "name": "Kusza (doskonałej jakości)",
+      "description": "<p>Doskonałej jakości kusza, przeładowywana w ramach akcji Ataku.</p>\n<p>+1 do testów broni.</p>",
+      "dvTable": "PT Łuki i kusze"
+    },
+    "Crossbow (Poor)": {
+      "name": "Kusza (słabej jakości)",
+      "description": "<p>Słabej jakości kusza, przeładowywana w ramach akcji Ataku..</p> <p>Jeżeli wyrzucisz 1 w teście broni (Krytyczny pech) broń zacina się i wymaga akcji, by ją wyczyścić.</p>",
+      "dvTable": "PT Łuki i kusze"
+    },
+    "Crossbow": {
+      "name": "Kusza",
+      "description": "<p>Standardowa kusza, przeładowywana w ramach akcji Ataku.</p>",
+      "dvTable": "PT Łuki i kusze"
+    },
+    "Crowbar (Excellent)": {
+      "name": "Łom (doskonałej jakości)",
+      "description": "<p>Użyteczny jako narzędzie jak i broń. Stalowy pręt z rozdwojonymi klinami na końcach. +1 do ataku.</p>"
+    },
+    "Crowbar (Poor)": {
+      "name": "Łom (słabej jakości)",
+      "description": "<p>Użyteczny jako narzędzie jak i broń. Stalowy pręt z rozdwojonymi klinami na końcach. Przy krytycznej porażce broń uszkadza się w jakiś sposób i wymaga akcji do usunięcia usterki.</p>"
+    },
+    "Crowbar": {
+      "name": "Łom",
+      "description": "<p>Użyteczny jako narzędzie jak i broń. Stalowy pręt z rozdwojonymi klinami na końcach.</p>"
+    },
+    "Dartgun": {
+      "name": "Pistolet strzałkowy",
+      "description": "<p>Egzotyczny bardzo ciężki pistolet. Pełny opis przedmiotu na stronie 348.</p>",
+      "dvTable": "PT Pistolety"
+    },
+    "Flamethrower": {
+      "name": "Miotacz ognia",
+      "description": "<p>Egzotyczna strzelba która używa umiejętności broń ciężka.</p>",
+      "dvTable": "PT Strzelba (Pocisk)"
+    },
+    "Grenade Launcher (Excellent)": {
+      "name": "Granatnik (doskonałej jakości)",
+      "description": "<p>Granatnik o dużym zasięgu działania. Można wystrzelić dużą różnorodność granatów. +1 do ataku.</p>",
+      "dvTable": "PT Granatniki"
+    },
+    "Grenade Launcher (Poor)": {
+      "name": "Granatnik (słabej jakości)",
+      "description": "<p>Granatnik o dużym zasięgu działania. Można wystrzelić dużą różnorodność granatów. Przy krytycznej porażce broń zacina się i wymaga akcji do usunięcia usterki.</p>",
+      "dvTable": "PT Granatniki"
+    },
+    "Grenade Launcher": {
+      "name": "Granatnik",
+      "description": "<p>Granatnik o dużym zasięgu działania. Można wystrzelić dużą różnorodność granatów.</p>",
+      "dvTable": "PT Granatniki"
+    },
+    "Heavy Melee (Excellent)": {
+      "name": "Duża broń Biała (Doskonałej jakości)",
+      "description": "<p>Generyczna ciężka broń biała doskonałej jakości</p>\n<p>+1 do testów.</p>"
+    },
+    "Heavy Melee (Poor)": {
+      "name": "Duża broń Biała (Słabej jakości)",
+      "description": "<p>Generyczna ciężka broń biała słabej jakości.</p>\n<p>Przy krytycznej porażce broń uszkadza się w jakiś sposób i wymaga akcji do usunięcia usterki.</p>"
+    },
+    "Heavy Melee": {
+      "name": "Duża Broń Biała",
+      "description": "<p>Generyczna ciężka broń biała.</p>"
+    },
+    "Heavy Pistol (Excellent)": {
+      "name": "Ciężki pistolet (doskonałej jakości)",
+      "description": "<p>Ciężki pistolet. Nadający się do ukrycia. +1 do ataku.</p>",
+      "dvTable": "PT Pistolety"
+    },
+    "Heavy Pistol (Poor)": {
+      "name": "Ciężki pistolet (słabej jakości)",
+      "description": "<p>Ciężki pistolet. Nadający się do ukrycia. Przy krytycznej porażce broń zacina się i wymaga akcji do usunięcia usterki.</p>",
+      "dvTable": "PT Pistolety"
+    },
+    "Heavy Pistol": {
+      "name": "Ciężki pistolet",
+      "description": "<p>Ciężki pistolet. Nadający się do ukrycia.</p>",
+      "dvTable": "PT Pistolety"
+    },
+    "Heavy SMG (Excellent)": {
+      "name": "Ciężki pistolet maszynowy (doskonałej jakości)",
+      "description": "<p>Ciężki pistolet maszynowy. Ze względu na jego rozmiar nie można go ukryć. +1 do ataku.</p>",
+      "dvTable": "PT PM-y"
+    },
+    "Heavy SMG (Poor)": {
+      "name": "Ciężki pistolet maszynowy (słabej jakości)",
+      "description": "<p>Ciężki pistolet maszynowy. Ze względu na jego rozmiar nie można go ukryć. Przy krytycznej porażce broń zacina się i wymaga akcji do usunięcia usterki.</p>",
+      "dvTable": "PT PM-y"
+    },
+    "Heavy SMG": {
+      "name": "Ciężki pistolet maszynowy",
+      "description": "<p>Ciężki pistolet maszynowy. Ze względu na jego rozmiar nie można go ukryć. </p>",
+      "dvTable": "PT PM-y"
+    },
+    "Helicopter Blades (Excellent)": {
+      "name": "Łopata helikoptera (doskonałej jakości)",
+      "description": "<p>Część starego helikoptera. Te łopaty przetną się przez większość rzeczy jak przez masło. +1 do ataku.</p>"
+    },
+    "Helicopter Blades (Poor)": {
+      "name": "Łopata helikoptera (słabej jakości)",
+      "description": "<p>Część starego helikoptera. Te łopaty przetną się przez większość rzeczy jak przez masło. Przy krytycznej porażce broń uszkadza się w jakiś sposób i wymaga akcji do usunięcia usterki.</p>"
+    },
+    "Helicopter Blades": {
+      "name": "Łopata helikoptera",
+      "description": "<p>Część starego helikoptera. Te łopaty przetną się przez większość rzeczy jak przez masło.</p>"
+    },
+    "Kendachi Mono-Three": {
+      "name": "Kendachi Mono-Three",
+      "description": "<p>\n  An Exotic, Excellent Quality, Two-Handed Very Heavy Melee Weapon. It appears\n  as a high-tech katana, able to ignore any armor below SP11.\n</p>\n"
+    },
+    "Lead Pipe (Excellent)": {
+      "name": "Gazrurka (doskonałej jakości)",
+      "description": "<p>Pusta rurka, przeważnie z metalu lub włókna szklanego. +1 do ataku.</p>"
+    },
+    "Lead Pipe (Poor)": {
+      "name": "Gazrurka (słabej jakości)",
+      "description": "<p>Pusta rurka, przeważnie z metalu lub włókna szklanego. Mogły przepływać przez nią kiedyś jakieś płyny. Przy krytycznej porażce broń uszkadza się w jakiś sposób i wymaga akcji do usunięcia usterki.</p>"
+    },
+    "Lead Pipe": {
+      "name": "Gazrurka",
+      "description": "<p>Pusta rurka, przeważnie z metalu lub włókna szklanego.</p>"
+    },
+    "Light Melee (Excellent)": {
+      "name": "Lekka broń Biała (Doskonałej jakości)",
+      "description": "<p>Generyczna lekka broń biała doskonałej jakości.</p>\n<p>+1 do testów broni.</p>"
+    },
+    "Light Melee (Poor)": {
+      "name": "Lekka broń Biała (Słabej jakości)",
+      "description": "<p>Generyczna lekka broń biała słabej jakości.</p>\n<p>Jeżeli wyrzucisz 1 w teście broni (Krytyczny pech) broń w pewien sposób psuje się i musisz zużyć akcję żeby znów nadawała się do użytku.</p>"
+    },
+    "Light Melee": {
+      "name": "Lekka Broń Biała",
+      "description": "<p>Generyczna lekka broń biała.</p>"
+    },
+    "Machete (Excellent)": {
+      "name": "Maczeta (doskonałej jakości)",
+      "description": "<p>Nóż o wyjątkowo długim ostrzu o wielu zastosowaniach. Ulubienica niektórych gangów Night City. +1 do ataku.</p>"
+    },
+    "Machete (Poor)": {
+      "name": "Maczeta (słabej jakości)",
+      "description": "<p>Nóż o wyjątkowo długim ostrzu o wielu zastosowaniach. Ulubienica niektórych gangów Night City. Przy krytycznej porażce broń uszkadza się w jakiś sposób i wymaga akcji do usunięcia usterki.</p>"
+    },
+    "Machete": {
+      "name": "Maczeta",
+      "description": "<p>Nóż o wyjątkowo długim ostrzu o wielu zastosowaniach. Ulubienica niektórych gangów Night City.</p>"
+    },
+    "Malorian Arms 3516": {
+      "name": "Malorian Arms 3516",
+      "description": "<p>Egzotyczny, doskonałej jakości bardzo ciężki pistolet. Standardowo wyposażono w złącze smartguna* które musi zostać użyte.</p>\n<p><em>*Musi zostać dodane manualnie po zdobyciu broni</em></p>",
+      "dvTable": "PT Pistolety"
+    },
+    "Martial Arts": {
+      "name": "Sztuki walki",
+      "description": "<p>Puste łapy. Nie ignoruje połowy pancerza.</p>"
+    },
+    "Medium Melee (Excellent)": {
+      "name": "Średnia broń Biała (Doskonałej jakości)",
+      "description": "<p>Generyczna średnia broń biała doskonałej jakości.</p>\n<p>+1 do testów broni.</p>"
+    },
+    "Medium Melee (Poor)": {
+      "name": "Średnia broń Biała (Słabej jakości)",
+      "description": "<p>Generyczna średnia broń biała słabej jakości.</p>\n<p>Jeżeli wyrzucisz 1 w teście broni (Krytyczny pech) broń w pewien sposób psuje się i musisz zużyć akcję żeby znów nadawała się do użytku.</p>"
+    },
+    "Medium Melee": {
+      "name": "Średnia Broń Biała",
+      "description": "<p>Generyczna średnia broń biała.</p>"
+    },
+    "Medium Pistol (Excellent)": {
+      "name": "Średni pistolet (doskonałej jakości)",
+      "description": "<p>Średni pistolet. Nadający się do ukrycia. +1 do ataku.</p>",
+      "dvTable": "PT Pistolety"
+    },
+    "Medium Pistol (Poor)": {
+      "name": "Średni pistolet (słabej jakości)",
+      "description": "<p>Średni pistolet. Nadający się do ukrycia. Przy krytycznej porażce broń zacina się i wymaga akcji do usunięcia usterki.</p>",
+      "dvTable": "PT Pistolety"
+    },
+    "Medium Pistol": {
+      "name": "Średni pistolet",
+      "description": "<p>Średni pistolet. Nadający się do ukrycia.</p>",
+      "dvTable": "PT Pistolety"
+    },
+    "Microwaver": {
+      "name": "Pistolet mikrofalowy",
+      "description": "<p>Egzotyczny bardzo ciężki pistolet. Sprawia że cyborgizacje lub urządzenia elektryczne przestają działać na minutę chyba że cel zda test Cyberinżynierii o PT 15.</p>",
+      "dvTable": "PT Pistolety"
+    },
+    "Militech \"Cowboy\" U-56 Grenade Launcher": {
+      "name": "Militech \"Cowboy\" U-56 Grenade Launcher",
+      "description": "<p>\n  An Exotic Grenade Launcher with 2 ROF. Holds four grenades. Requires BODY 11\n  or higher (unless mounted).\n</p>\n",
+      "dvTable": "DV Grenade Launcher"
+    },
+    "Naginata (Excellent)": {
+      "name": "Naginata (doskonałej jakości)",
+      "description": "<p>Japońska broń drzewcowa zakończona zagiętym ostrzem z jednej strony. Ulubiona broń do starć na bliskim zasięgu drużyn taktycznych Arasaki. +1 do ataku.</p>"
+    },
+    "Naginata (Poor)": {
+      "name": "Naginata (słabej jakości)",
+      "description": "<p>Japońska broń drzewcowa zakończona zagiętym ostrzem z jednej strony. Ulubiona broń do starć na bliskim zasięgu drużyn taktycznych Arasaki. Przy krytycznej porażce broń uszkadza się w jakiś sposób i wymaga akcji do usunięcia usterki.</p>"
+    },
+    "Naginata": {
+      "name": "Naginata",
+      "description": "<p>Japońska broń drzewcowa zakończona zagiętym ostrzem z jednej strony. Ulubiona broń do starć na bliskim zasięgu drużyn taktycznych Arasaki.</p>"
+    },
+    "Rhinemetall EMG-86 Railgun": {
+      "name": "Rhinemetall EMG-86 Railgun",
+      "description": "<p>\n  An Exotic Assault Rifle. It cannot make Aimed or Autofire Shots. Requires BODY\n  11 or higher (unless mounted). Ignores any armor below SP11*.\n</p>\n<p>\n  <em\n    >*Not currently supported to will need to manually apply damage to armoured\n    targets</em\n  >\n</p>\n",
+      "dvTable": "DV Assault Rifle"
+    },
+    "Rocket Launcher (Excellent)": {
+      "name": "Wyrzutnia rakiet (doskonałej jakości)",
+      "description": "<p>Wytoczyć duże działa. Ta wyrzutnia rakiet zada trochę obrażeń. +1 do ataku.</p>",
+      "dvTable": "PT Wyrzutnie rakiet"
+    },
+    "Rocket Launcher (Poor)": {
+      "name": "Wyrzutnia rakiet (słabej jakości)",
+      "description": "<p>Wytoczyć duże działa. Ta wyrzutnia rakiet zada trochę obrażeń. Przy krytycznej porażce broń zacina się i wymaga akcji do usunięcia usterki.</p>",
+      "dvTable": "PT Wyrzutnie rakiet"
+    },
+    "Rocket Launcher": {
+      "name": "Wyrzutnia rakiet",
+      "description": "<p>Wytoczyć duże działa. Ta wyrzutnia rakiet zada trochę obrażeń.</p>",
+      "dvTable": "PT Wyrzutnie rakiet"
+    },
+    "Shotgun (Excellent)": {
+      "name": "Strzelba (doskonałej jakości)",
+      "description": "<p>Wielozadaniowa strzelba. +1 do ataku.</p>",
+      "dvTable": "PT Strzelba (Pocisk)"
+    },
+    "Shotgun (Poor)": {
+      "name": "Strzelba (słabej jakości)",
+      "description": "<p>Wielozadaniowa strzelba. Przy krytycznej porażce broń zacina się i wymaga akcji do usunięcia usterki.</p>",
+      "dvTable": "PT Strzelba (Pocisk)"
+    },
+    "Shotgun": {
+      "name": "Strzelba",
+      "description": "<p>Wielozadaniowa strzelba.</p>",
+      "dvTable": "PT Strzelba (Pocisk)"
+    },
+    "Shrieker": {
+      "name": "Wrzaskun",
+      "description": "<p>Egzotyczny bardzo ciężki pistolet. Wymaga ochrony ucha aby nie otrzymać rany krytycznej Uraz Ucha. Cel musi zdać test Odporności na tortury/narkotyki o PT 15. W przypadku porażki otrzymuje ranę krytyczną Uraz Ucha.</p>",
+      "dvTable": "PT Pistolety"
+    },
+    "Sledgehammer (Excellent)": {
+      "name": "Młot (doskonałej jakości)",
+      "description": "<p>Duży młot. Nic skomplikowanego. +1 do ataku.</p>"
+    },
+    "Sledgehammer (Poor)": {
+      "name": "Młot (słabej jakości)",
+      "description": "<p>Duży młot. Nic skomplikowanego. Przy krytycznej porażce broń uszkadza się w jakiś sposób i wymaga akcji do usunięcia usterki.</p>"
+    },
+    "Sledgehammer": {
+      "name": "Młot",
+      "description": "<p>Duży młot. Nic skomplikowanego.</p>"
+    },
+    "SMG (Excellent)": {
+      "name": "Pistolet maszynowy (doskonałej jakości)",
+      "description": "<p>Pistolet maszynowy możliwy do ukrycia. +1 do ataku.</p>",
+      "dvTable": "PT PM-y"
+    },
+    "SMG (Poor)": {
+      "name": "Pistolet maszynowy (słabej jakości)",
+      "description": "<p>Pistolet maszynowy możliwy do ukrycia. Przy krytycznej porażce broń zacina się i wymaga akcji do usunięcia usterki.</p>",
+      "dvTable": "PT PM-y"
+    },
+    "SMG": {
+      "name": "Pistolet maszynowy",
+      "description": "<p>Pistolet maszynowy możliwy do ukrycia.</p>",
+      "dvTable": "PT PM-y"
+    },
+    "Sniper Rifle (Excellent)": {
+      "name": "Karabin snajperski (doskonałej jakości)",
+      "description": "<p>Daleko zasięgowy karabin snajperski. 4 naboje w magazynku. +1 do ataku.</p>",
+      "dvTable": "PT Karabiny snajperskie"
+    },
+    "Sniper Rifle (Poor)": {
+      "name": "Karabin snajperski (słabej jakości)",
+      "description": "<p>Daleko zasięgowy karabin snajperski. 4 naboje w magazynku. Przy krytycznej porażce broń zacina się i wymaga akcji do usunięcia usterki.</p>",
+      "dvTable": "PT Karabiny snajperskie"
+    },
+    "Sniper Rifle": {
+      "name": "Karabin snajperski",
+      "description": "<p>Daleko zasięgowy karabin snajperski. 4 naboje w magazynku.</p>",
+      "dvTable": "PT Karabiny snajperskie"
+    },
+    "Spiked Bat (Excellent)": {
+      "name": "Nabijana kolcami pała (doskonałej jakości)",
+      "description": "<p>Ulepszony kij bejsbolowy. Wiele wystających gwoździ na końcu kija. +1 do ataku.</p>"
+    },
+    "Spiked Bat (Poor)": {
+      "name": "Nabijana kolcami pała (słabej jakości)",
+      "description": "<p>Ulepszony kij bejsbolowy. Wiele wystających gwoździ na końcu kija. Przy krytycznej porażce broń uszkadza się w jakiś sposób i wymaga akcji do usunięcia usterki.</p>"
+    },
+    "Spiked Bat": {
+      "name": "Nabijana kolcami pała",
+      "description": "<p>Ulepszony kij bejsbolowy. Wiele wystających gwoździ na końcu kija.</p>"
+    },
+    "Stun Baton": {
+      "name": "Pałka ogłuszająca",
+      "description": "<p>Egzotyczna, jednoręczna średnia broń biała. Cel traci przytomność jeśli obrażenia zredukują jego PW poniżej 1. Nie powoduje ran krytycznych ani nie uszkadza pancerza. Pełny opis przedmiotu na stronie 349.</p>"
+    },
+    "Stun Gun": {
+      "name": "Pistolet ogłuszający",
+      "description": "<p>Egzotyczny ciężki pistolet. Cel otrzymuje stan nieprzytomny jeżeli zadane obrażenia zmniejszą jego PW poniżej 1. Nie powoduje ran krytycznych i uszkodzeń pancerza.</p>",
+      "dvTable": "PT Pistolety"
+    },
+    "Sword (Excellent)": {
+      "name": "Miecz (doskonałej jakości)",
+      "description": "<p>Standardowy miecz. +1 do ataku.</p>"
+    },
+    "Sword (Poor)": {
+      "name": "Miecz (słabej jakości)",
+      "description": "<p>Standardowy miecz. Przy krytycznej porażce broń uszkadza się w jakiś sposób i wymaga akcji do usunięcia usterki.</p>"
+    },
+    "Sword": {
+      "name": "Miecz",
+      "description": "<p>Standardowy miecz.</p>"
+    },
+    "Thrown Weapon": {
+      "name": "Broń rzucana",
+      "description": "<p>Użyj akcji, by wykonać atak dystansowy do 25m. Cel może spróbować uniknąć twojego rzutu, jeżeli umie unikać pocisków. Rzucone bronie białe zadają tyle samo obrażeń co zwykłe, ale przy takim ataku rozpatruje się pełną OB pancerza, a nie połowę.</p>",
+      "dvTable": "PT Broń rzucana"
+    },
+    "Tomahawk (Excellent)": {
+      "name": "Tomahawk (doskonałej jakości)",
+      "description": "<p>Lekki toporek do rzucania. +1 do ataku.</p>"
+    },
+    "Tomahawk (Poor)": {
+      "name": "Tomahawk (słabej jakości)",
+      "description": "<p>Lekki toporek do rzucania. Przy krytycznej porażce broń uszkadza się w jakiś sposób i wymaga akcji do usunięcia usterki.\n</p>"
+    },
+    "Tomahawk": {
+      "name": "Tomahawk",
+      "description": "<p>Lekki toporek do rzucania.</p>"
+    },
+    "Tsunami Arms Helix": {
+      "name": "Tsunami Arms Helix",
+      "description": "<p>\n  An Exotic Assault Rifle that uses only Autofire. Holds 40 bullets, using 20\n  bullets with each attack. Uses Autofire rules with a multiplication up to a\n  maximum of 5. Requires BODY 11 or higher (unless mounted).\n</p>\n",
+      "dvTable": "DV Assault Rifle"
+    },
+    "Unarmed": {
+      "name": "Gołe pięści",
+      "description": "<p>Puste łapy. Nie ignoruje połowy pancerza.</p>"
+    },
+    "Very Heavy Melee (Excellent)": {
+      "name": "Bardzo Duża broń Biała (Doskonałej jakości)",
+      "description": "<p>Generyczna bardzo ciężka broń biała doskonałej jakości.</p>\n<p>+1 do testów broni.</p>"
+    },
+    "Very Heavy Melee (Poor)": {
+      "name": "Bardzo Duża broń Biała (Słabej jakości)",
+      "description": "<p>Generyczna bardzo ciężka broń biała słabej jakości.</p>\n<p>Jeżeli wyrzucisz 1 w teście broni (Krytyczny pech) broń w pewien sposób psuje się i musisz zużyć akcję żeby znów nadawała się do użytku.</p>"
+    },
+    "Very Heavy Melee": {
+      "name": "Bardzo Duża Broń Biała",
+      "description": "<p>Generyczna bardzo ciężka broń biała.</p>"
+    },
+    "Very Heavy Pistol (Excellent)": {
+      "name": "Bardzo ciężki pistolet (doskonałej jakości)",
+      "description": "<p>Bardzo ciężki pistolet. Nie można go ukryć. +1 do ataku.</p>",
+      "dvTable": "PT Pistolety"
+    },
+    "Very Heavy Pistol (Poor)": {
+      "name": "Bardzo ciężki pistolet (słabej jakości)",
+      "description": "<p>Bardzo ciężki pistolet. Nie można go ukryć. Przy krytycznej porażce broń zacina się i wymaga akcji do usunięcia usterki.</p>",
+      "dvTable": "PT Pistolety"
+    },
+    "Very Heavy Pistol": {
+      "name": "Bardzo ciężki pistolet",
+      "description": "<p>Bardzo ciężki pistolet. Nie można go ukryć. </p>",
+      "dvTable": "PT Pistolety"
+    }
+  }
+}

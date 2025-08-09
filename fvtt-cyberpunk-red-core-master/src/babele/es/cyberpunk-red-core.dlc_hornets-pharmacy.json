@@ -1,0 +1,54 @@
+{
+  "label": "Farmacia del Avispón",
+  "mapping": {},
+  "entries": {
+    "Bodyweight AutoInjector": {
+      "name": "AutoInyector Corporal",
+      "description": "<p>Ciberware corporal interno.</p>\n<p>Utilice una acción para cargar una dosis de drogas callejeras en un receptáculo de almacenamiento subdérmico. Opcionalmente, uno puede configurar un Biomonitor para que automáticamente dosifique el usuario al entrar en combate, sufriendo una lesión crítica, o llegando a un umbral predeterminado del Estado de la Herida.</p>"
+    },
+    "Gas Jet": {
+      "name": "Gas Jet",
+      "description": "<p>Opción de ciberbrazo. Toma 2 ranuras de opciones.</p>\n<p>El chorro de gas lanza una ráfaga de 3 dosis de una droga callejera o 3 viales de veneno/biotoxina en un cuadrado de 3x3 justo delante del tiro (similar al ataque de escopeta de perdigones). Se puede utilizar a una mano y es prácticamente indetectable incluso sin una tirada de Ocultar/Revelar Objetos.</p>\n<p>Todos los objetivos susceptibles en el rango sufren los efectos del medicamento o del veneno. Los objetivos equipados con un equipo que neutraliza los ataques de gas (filtros nasales, &amp; máscara de respiración antihumo) no se ven afectados. El Gas Jet debe cargarse con 3 dosis más antes de disparar de nuevo.</p>"
+    },
+    "Berserker": {
+      "name": "Berserker",
+      "description": "<p><strong>Efecto Primario</strong></p>\n<p>La dosis dura 10 minutos.</p>\n<ul>\n<li>Induce un estado de frenesí y aumento de la agresión.</li>\n<li>El usuario no recibe daño adicional por ninguna lesión crítica.</li>\n<li dir=\"ltr\">Las penalizaciones por estado de herida/boca abajo a las tiradas de habilidad o estadísticas se reducen a la mitad.</li>\n</ul>\n<p><strong>Efecto secundario (VD17)</strong></p>\n<p>Cuando el efecto de la dosis desaparece, el usuario tira VOL + Resistir tortura/drogas + 1d10 contra VD secundario.</p>\n<ul>\n<li>-2 Pérdida de Humanidad.</li>\n<li>El usuario ahora es adicto al Berserker si aún no lo es. +1 a la penalización base de salvación por muerte mientras estás adicto.</li>\n</ul>"
+    },
+    "Prime Time": {
+      "name": "Tiempo de Primera",
+      "description": "<p><strong>Efecto Primario</strong></p>\n<p>La dosis dura 4 horas.</p>\n<ul>\n<li>Agudiza el enfoque y la fuerza de voluntad a costa de las emociones apagadas</li>\n<li>-4d6 Humanidad hasta que la dosis desaparezca*</li>\n<li>+2 a las estadísticas FRI y VOL. Los PV máximos del usuario no se ve afectado por la VOL de +2</li>\n</ul>\n<p><em>* La humanidad no puede caer bajo 0 por tomar Hora de Primera</em></p>\n<p><strong>Secundaria (VD17)</strong></p>\n<p>Cuando el efecto de la dosis desaparece, el usuario tira VOL + Resistir tortura/drogas + 1d10 contra VD secundario.</p>\n<ul>\n<li>-1 pérdida de humanidad</li>\n<li>-2 a FRI mientras sea adicto y actualmente no está dosificado con Prime Time.</li>\n</ul>"
+    },
+    "Sedative": {
+      "name": "Sedativo",
+      "description": "<p>Farmacéutico de TecnoMédico</p>\n<p>Aplica la condición Inconsciente durante 4 horas a un objetivo voluntario. +2 bonus para chequeos de cirugía Técnica Médica sobre objetivos dosificados con Sedativo.</p>\n<p>El objetivo no dispuesto debe hacer una tirada de Resistir Torturas/Drogas de VD15. Sí falla la tirada, el objetivo está inconsciente durante 1 minuto o 20 rondas en combate. El objetivo se despierta al recibir daño. Otros pueden usar una acción para despertar al objetivo.</p>"
+    },
+    "Sixgun": {
+      "name": "Arma-6",
+      "description": "<p>Deje atrás el espacio físico y sobrecargue sus sinapsis.</p>\n<p><strong>Efecto principal</strong></p>\n<p>La dosis dura 4 horas.</p>\n<ul>\n<li>+2 a la velocidad mientras se está conectado a la RED</li>\n<li>-2 para MOV (Mínimo 1)</li>\n<li>-2 a REF (mínimo 1)</li>\n<li>El usuario no sufre las penalizaciones de una Desconexión insegura a menos que un programa lo obligue a hacerlo.</li>\n<li>El usuario puede cambiar 1 Humanidad por 1 Acción RED adicional una vez por turno.</li>\n</ul>\n<p><strong>Secundaria (VD17)</strong></p>\n<p>A menos que esté bajo el Efecto Primario</p>\n<ul>\n<li>-2 a la velocidad mientras se ejecuta la red</li>\n</ul>"
+    },
+    "Timewarp": {
+      "name": "Transporte Temporal",
+      "description": "<p><strong>Efecto Primario</strong></p>\n<p>La dosis dura 1 minuto.</p>\n<ul>\n<li>+3 a cualquier tirada de Iniciativa. Si ya está en combate, +3 a la Iniciativa actual.</li>\n</ul>\n<p><strong>Secundaria (VD17)</strong></p>\n<p>Cuando la dosis se desgaste, el usuario lanza VOL + Resistir Torture/Drogas + 1d10 contra VD Secundaria.</p>\n<ul>\n<li>-2 a las tiradas de iniciativa, mientras que no este usando actualmente Transporte Temporal.</li>\n</ul>"
+    },
+    "Veritas": {
+      "name": "Veritas",
+      "description": "<p>La dosis dura 10 minutos.</p>\n<p>Farmacéutico de TecnoMédico.</p>\n<p>El objetivo debe hacer una tirada de Resistir Torturas/Drogas VD17. Si falla la tirada, el objetivo sufre -5 a la Actuación, Concentración, Conversación, Deducción, Percepción Humana y Persuasión</p>"
+    },
+    "Delaying Compound": {
+      "name": "Compuesto de Retraso",
+      "description": "<p>Este aditivo retrasa los efectos de un Vial de Veneno o Biotoxina en un minuto o una hora. Mezclar múltiples componentes de retraso no aumenta el período de retraso.</p>"
+    },
+    "Distilling Compound": {
+      "name": "Compuesto de Destilación",
+      "description": "<p>Este aditivo aumenta en 2 la VD para Resistir Torturas/Drogas de Veneno o Viales de Biotoxina. Mezclar múltiples componentes no incrementa el VD de resistencia/fármacos más allá del +2 inicial.</p>"
+    },
+    "Osmosis Compound": {
+      "name": "Compuesto de Osmosis",
+      "description": "<p>Este aditivo permite absorber un Vial de Veneno o Biotoxina a través del contacto con la piel. Un vial puede cubrir 2 pies cuadrados cuando se aplica a una superficie y dura una hora. Se puede neutralizar mediante el enjuague con agua.&nbsp;</p>\n<p>El primer objetivo de carne que toca la zona afectada con una parte del cuerpo recibe una dosis del veneno. Un chequeo de Percepción VD17 revela el veneno. Más de una dosis en la misma área de 2 pies cuadrados no tiene efecto añadido.</p>"
+    },
+    "Suzumebachi Assassin Drone": {
+      "name": "Drón Asesino Suzumebachi",
+      "description": "<p>Un pequeño dron con forma de avispa diseñado para asesinatos silenciosos.</p>\n<p>Estadísticas: 6 MOV - 7 CP - 10 PV.</p>\n<p>Se puede neutralizar en 5 minutos con una tirada de Seguridad/Electrónica VD17.</p>\n<p>Programación por defecto:</p>\n<ol>\n<li>Ubicar el objetivo con la cámara integrada.</li>\n<li>Ataque al objetivo con la pistola de dardos hasta que se agote la munición o hasta que el infrarrojo del objetivo&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ya no se detecte calor</li>\n<li>Extraer y devolver al operador</li>\n</ol>\n<p>El dron se controla comúnmente con una Arquitectura de RED.</p>\n<p>Rango:</p>\n<p>Perímetro de un edificio equipado con Arquitectura de RED o a 50 m/yd de una Arquitectura de RED portátil.</p>\n<p>Equipamiento:</p>\n<ul>\n<li>Cámara con modos de luz baja, UV e infrarrojos</li>\n<li>Pistola de dardos con 8 flechas de biotoxinas</li>\n<li>Hipodérmica de Aire</li>\n</ul>"
+    }
+  }
+}

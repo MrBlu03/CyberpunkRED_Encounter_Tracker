@@ -1,0 +1,33 @@
+_id: ECoCsPyfIEBCSggM
+_key: "!items!ECoCsPyfIEBCSggM"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/gear/virtuality_goggles.svg
+name: Virtuality Goggles
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>Overlay cyberspace imagery onto vision.</p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: true
+  price:
+    market: 100
+  providesHardening: false
+  revealed: true
+  source:
+    book: Core
+    page: 355
+  usage: toggled
+type: gear

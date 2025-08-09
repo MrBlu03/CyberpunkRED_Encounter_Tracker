@@ -71,4 +71,4 @@ This project is released under CC0 1.0 Universal.
 ## Credits
 
 Built using JavaScript, HTML, and CSS.
-Font: Bruno Ace SC (Google Fonts)
+Fonts: Bruno Ace SC, VT323 (bundled locally for offline use)

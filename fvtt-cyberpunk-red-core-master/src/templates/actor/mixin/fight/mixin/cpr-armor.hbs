@@ -1,0 +1,106 @@
+<div class="item armor-grid" data-item-id="{{this.id}}">
+  <div class="armor-image">
+    <img alt="{{this.name}}" src="{{this.img}}"/>
+    {{#if this.system.isUpgraded }}
+      <i class="text-super fa-solid fa-square-caret-up"></i>
+    {{/if}}
+  </div>
+  <div class="armor-name">
+    <a class="name item-edit text-semi{{#if (cprCompare (cprGetProp actor "type") '===' "mook")}} deletable changeable{{/if}}"
+       {{#if (cprCompare (cprGetProp actor "type") '===' "mook")}}
+         tabindex="0"
+       {{/if}}
+       data-item-id="{{this.id}}"
+       data-tooltip="{{localize "CPR.mookSheet.items.clickToViewItem"}}
+         <br/>
+         {{localize "CPR.actorSheets.commonActions.ctrlClickToSendToChat"}}
+         {{#if (cprCompare (cprGetProp actor "type") '===' "mook")}}
+           <br/>
+           {{localize "CPR.mookSheet.items.pressDeleteToDelete"}}
+         {{/if}}">
+      {{ this.name }}
+    </a>
+  </div>
+
+  {{!--
+    If the armor covers both locations
+      else
+    If the armor is head location
+      else
+    If the armor is body location
+      else
+    The armor is a shield
+  --}}
+
+  {{#if (cprCompare this.system.isHeadLocation "&&" this.system.isBodyLocation) }}
+    {{> "systems/cyberpunk-red-core/templates/actor/mixin/fight/mixin/cpr-armor-location.hbs"
+      cssLoc=1
+      armorId=this.id
+      armorLocation="head"
+      armorLocationLocal=(localize "CPR.global.location.head")
+      armorStatsMax=(cprApplyUpgrade this this.system.headLocation.sp "headSp")
+      armorStatsCur=(cprMath "subtract" (cprApplyUpgrade this this.system.headLocation.sp "headSp") this.system.headLocation.ablation)
+      armorType=(localize "CPR.global.itemType.armor.sp")
+      armorAblateTip=(localize "CPR.actorSheets.fightActions.ablateArmor")
+      armorResyncTip=(localize "CPR.actorSheets.commonActions.resyncHeadArmor")
+      armorActiveTip=(localize "CPR.actorSheets.commonActions.makeHeadArmorActive")
+      armorCurrent=actor.system.externalData.currentArmorHead.id
+    }}
+    {{> "systems/cyberpunk-red-core/templates/actor/mixin/fight/mixin/cpr-armor-location.hbs"
+      cssLoc="2"
+      armorId=this.id
+      armorLocation="body"
+      armorLocationLocal=(localize "CPR.global.location.body")
+      armorStatsMax=(cprApplyUpgrade this this.system.bodyLocation.sp "bodySp")
+      armorStatsCur=(cprMath "subtract" (cprApplyUpgrade this this.system.bodyLocation.sp "bodySp") this.system.bodyLocation.ablation)
+      armorType=(localize "CPR.global.itemType.armor.sp")
+      armorAblateTip=(localize "CPR.actorSheets.fightActions.ablateArmor")
+      armorResyncTip=(localize "CPR.actorSheets.commonActions.resyncBodyArmor")
+      armorActiveTip=(localize "CPR.actorSheets.commonActions.makeBodyArmorActive")
+      armorCurrent=actor.system.externalData.currentArmorBody.id
+    }}
+  {{else if this.system.isHeadLocation}}
+    {{> "systems/cyberpunk-red-core/templates/actor/mixin/fight/mixin/cpr-armor-location.hbs"
+      cssLoc="1"
+      armorId=this.id
+      armorLocation="head"
+      armorLocationLocal=(localize "CPR.global.location.head")
+      armorStatsMax=(cprApplyUpgrade this this.system.headLocation.sp "headSp")
+      armorStatsCur=(cprMath "subtract" (cprApplyUpgrade this this.system.headLocation.sp "headSp") this.system.headLocation.ablation)
+      armorType=(localize "CPR.global.itemType.armor.sp")
+      armorAblateTip=(localize "CPR.actorSheets.fightActions.ablateArmor")
+      armorResyncTip=(localize "CPR.actorSheets.commonActions.resyncHeadArmor")
+      armorActiveTip=(localize "CPR.actorSheets.commonActions.makeHeadArmorActive")
+      armorCurrent=actor.system.externalData.currentArmorHead.id
+    }}
+  {{else if this.system.isBodyLocation}}
+    {{> "systems/cyberpunk-red-core/templates/actor/mixin/fight/mixin/cpr-armor-location.hbs"
+      cssLoc="1"
+      armorId=this.id
+      armorLocation="body"
+      armorLocationLocal=(localize "CPR.global.location.body")
+      armorStatsMax=(cprApplyUpgrade this this.system.bodyLocation.sp "bodySp")
+      armorStatsCur=(cprMath "subtract" (cprApplyUpgrade this this.system.bodyLocation.sp "bodySp") this.system.bodyLocation.ablation)
+      armorType=(localize "CPR.global.itemType.armor.sp")
+      armorAblateTip=(localize "CPR.actorSheets.fightActions.ablateArmor")
+      armorResyncTip=(localize "CPR.actorSheets.commonActions.resyncBodyArmor")
+      armorActiveTip=(localize "CPR.actorSheets.commonActions.makeBodyArmorActive")
+      armorCurrent=actor.system.externalData.currentArmorBody.id
+    }}
+  {{else}}
+    {{> "systems/cyberpunk-red-core/templates/actor/mixin/fight/mixin/cpr-armor-location.hbs"
+      cssLoc="1"
+      armorId=this.id
+      armorLocation="shield"
+      armorLocationLocal=(localize "CPR.global.generic.shield")
+      armorStatsMax=(cprApplyUpgrade this this.system.shieldHitPoints.max "shieldHp")
+      armorStatsCur=this.system.shieldHitPoints.value
+      armorType=(localize "CPR.global.itemType.armor.hp")
+      armorAblateTip=(localize "CPR.actorSheets.fightActions.damageShield")
+      armorResyncTip=(localize "CPR.actorSheets.commonActions.resyncShield")
+      armorActiveTip=(localize "CPR.actorSheets.commonActions.makeShieldActive")
+      armorCurrent=actor.system.externalData.currentArmorShield.id
+    }}
+  {{/if}}
+</div>
+

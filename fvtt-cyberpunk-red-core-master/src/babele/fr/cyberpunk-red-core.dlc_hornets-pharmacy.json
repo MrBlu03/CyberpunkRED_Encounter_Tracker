@@ -1,0 +1,54 @@
+{
+  "label": "Pharmacie de Hornet",
+  "mapping": {},
+  "entries": {
+    "Bodyweight AutoInjector": {
+      "name": "Autoinjecteur Bodyweight",
+      "description": "<p>Cyberimplant interne.</p>\n<p>Utilisez une action pour charger une dose de Drogue de rue dans une poche de stockage sous-dermique. Optionnellement, on peut configurer un Biomonitor pour qu'il injecte automatiquement l'utilisateur soit au commencement d'un combat, soit en subissant une blessure critique, ou en atteignant un seuil d'état de blessure prédéterminé.</p>\n"
+    },
+    "Gas Jet": {
+      "name": "Jet de Gaz",
+      "description": "<p>Option de Cyberbras. Prend 2 emplacements.</p>\n<p>Le jet de gaz pulvérise 3 doses d'une Drogue de rue ou 3 fioles de Poison/Biotoxine dans un carré de 3x3m directement en face du tireur (similaire à l'attaque de Chevrotine). Peut être utilisé à une main et est pratiquement indétectable, même sans jet de dissimulation.</p>\n<p>Toutes les cibles sensibles à portée subissent les effets de la drogue ou du poison. Les cibles équipées d'équipements qui neutralisent les attaques à gaz (Filtres Nasal  &amp; Masque anti-smog) ne sont pas affectées. Le jet de gaz doit être chargé avec 3 doses supplémentaires après chaque tir avant de pouvoir relancer le tir.</p>\n"
+    },
+    "Berserker": {
+      "name": "Berserker",
+      "description": "<p><strong>Effet principal</strong></p>\n<p>Une dose dure 10 minutes.</p>\n<ul>\n<li>Induit un état de frénésie et d'agressivité accrue.</li>\n<li>L'utilisateur ne prend pas de dégâts supplémentaires en cas de blessure critique.</li>\n<li>Les pénalités d'état de blessure/Baston de regard suite aux tests de compétences ou de statistiques sont réduites de moitié.*</li>\n</ul>\n<p><strong>Effet secondaire (SD17)</strong></p>\n<p>Lorsque la dose s'épuise, l'utilisateur lance <strong>VOL + Resistance Torture/Drogues + 1d10 contre SD.</strong></p>\n<ul>\n<li>-2 Points d'Humanité.</li>\n<li>L'utilisateur est désormais accro à Berserker s'il n'est pas déjà accro. Pénalité de sauvegarde de la mort +1 lorsqu'il est dépendant.</li>\n</ul>\n<p>\n  <em>*N'est pas supporté par le système et doit être ajusté manuellement.</em>\n</p>\n"
+    },
+    "Prime Time": {
+      "name": "Prime Time",
+      "description": "<p><strong>Effet principal</strong></p>\n<p>Une dose dure 4 heures.</p>\n<ul>\n<li>Aiguise la concentration et la volonté au détriment des émotions qui sont atténuées</li>\n<li>-4d6 d'Humanité jusqu'à ce que la dose s'épuise*</li>\n<li>+2 aux statistiques PRES et VOL. Les PS max de l'utilisateur ne sont pas affectés par le +2 VOL</li>\n</ul>\n<p><em>* L'Humanité ne peut pas tomber en dessous de 0 en prenant le Prime Time</em></p>\n<p><strong>Effet Secondaire (SD17)</strong></p>\n<p>Lorsque la dose s'épuise, l'utilisateur lance <strong>PRES + Résistance Torture/Drogues + 1d10 contre SD.</strong></p>\n<ul>\n<li>-1 point d'Humanité</li>\n<li>-2 en PRES si accro et pas soumis à l'effet principal du Prime Time.</li>\n</ul>\n"
+    },
+    "Sedative": {
+      "name": "Sédatif",
+      "description": "<p>Médicament MedTech.</p>\n<p>Applique l'état inconscient pendant 4 heures sur une cible volontaire. Bonus de +2 aux tests de Chirurgie de MedTech sur les cibles sous Sédatif.</p>\n<p>Une cible non consentante doit effectuer un jet <strong>SD15 de Résistance à la torture/aux drogues</strong>. Lors d'un test raté, la cible est inconsciente pendant 1 minute ou 20 rounds en combat. La cible se réveille lorsqu'elle subit des dégâts. Les autres peuvent utiliser une action pour réveiller la cible.</p>\n"
+    },
+    "Sixgun": {
+      "name": "Six Coups",
+      "description": "<p>Laissez la chair derrière vous et surchargez vos synapses.</p>\n<p><strong>Effet Principal</strong></p>\n<p>La dose dure 4 heures.</p>\n<ul>\n<li>+2 à la Vitesse pendant le Netrunning</li>\n<li>-2 au MOUV (minimum 1)</li>\n<li>-2 au REF (minimum 1)</li>\n<li>L'utilisateur ne subit pas les pénalités d'une déconnexion non sécurisée à moins qu'il ne soit forcé par un programme à se déconnecter.</li>\n<li>L'utilisateur peut sacrifier 1 pont d'Humanité pour 1 action NET supplémentaire une fois par tour.</li>\n</ul>\n<p><strong>Effet Secondaire (SD17)</strong></p>\n<p>Sauf sous l'effet principal</p>\n<ul>\n<li>-2 à la Vitesse pendant Netrunning</li>\n</ul>\n"
+    },
+    "Timewarp": {
+      "name": "Timewarp",
+      "description": "<p><strong>Effet principal</strong></p>\n<p>Dose dure 1 minute.</p>\n<ul>\n<li>+3 à n'importe quel jet d'Initiative. Si déjà en combat, +3 à l'Initiative actuelle.</li>\n</ul>\n<p><strong>Effet secondaire (SD17)</strong></p>\n<p>Lorsque la dose s'épuise, l'utilisateur lance <strong>VOL + Résistance torture/Drogues + 1d10 contre SD.</strong></p>\n<ul>\n<li>-2 sur les lancers d'Initiative alors que le toxicomane n'est pas actuellement sous effet principal TimeWarp.</li>\n</ul>\n"
+    },
+    "Veritas": {
+      "name": "Veritas",
+      "description": "<p>La dose dure 10 minutes.</p>\n<p>Médicament Medtech.</p>\n<p>La cible doit effectuer un jet de <strong>Résistance à la torture/aux drogues SD17</strong>. En cas d'échec, la cible souffre de -5 à ses jets de Jeu d'acteur, Concentration, Conversation, Déduction, Psychologie, et Persuasion</p>\n"
+    },
+    "Delaying Compound": {
+      "name": "Composé retardateur",
+      "description": "<p>Cet additif retarde d'une minute ou d'une heure les effets d'une Fiole de Poison ou de Biotoxine. Mixer plusieurs composés retardateur n'augmente pas la période de retard.</p>\n"
+    },
+    "Distilling Compound": {
+      "name": "Composé de Distillation",
+      "description": "<p>Cet additif augmente le SD de 2 aux jets de Résistance à la torture/aux médicaments des fioles de poison ou de biotoxine. Mélanger plusieurs Composés de distillation n'augmente pas le SD à la Résistance à la torture/drogues au-delà du +2 initial.</p>"
+    },
+    "Osmosis Compound": {
+      "name": "Composé d'Osmose",
+      "description": "<p>Cet additif permet d'absorber une Fiole de Poison ou de Biotoxine par contact cutané. Une fiole peut couvrir 20 cm carrés lorsqu'elle est appliquée sur une surface et dure une heure. Peut être neutralisée en rinçant avec de l'eau.</p>\n<p>La première cible à toucher la zone affectée avec de la chair subit le poison. Un test de <strong>Perception SD17</strong> révèle le poison. Plus d'une dose dans la même zone n'a pas d'effet supplémentaire.</p>\n"
+    },
+    "Suzumebachi Assassin Drone": {
+      "name": "Drone Assassin Suzumebachi",
+      "description": "<p>Un petit drone en forme de guêpe conçu pour des assassinats silencieux.</p>\n<p>Statistiques : MOUV 6 - PA 7 - PS 10.</p>\n<p>Peut être neutralisé en 5 min avec un jet<strong> SD17 Sécurité électronique.</strong></p>\n<p>Programmation par défaut :</p>\n<ol>\n<li>Localiser la cible à l'aide de la caméra embarquée.</li>\n<li>Attaquer la cible avec un pistolet à fléchettes jusqu'à ce que les munitions soient épuisées ou que les traces infrarouge de la cible ne soient plus détectés</li>\n<li>S'exfiltrer et retour à l'opérateur</li>\n</ol>\n<p>Le Drone est communément contrôlé avec une architecture NET.</p>\n<p>Aire :</p>\n<p>Périmètre d'un bâtiment équipé d'architecture NET ou à 50 m d'une architecture NET.</p>\n<p>Equipement :</p>\n<ul>\n<li>Caméra avec Lumière faible, UV, IR</li>\n<li>Pistolet fléchettes avec 8 flèches Biotoxines</li>\n<li>Hypodair</li>\n</ul>\n"
+    }
+  }
+}

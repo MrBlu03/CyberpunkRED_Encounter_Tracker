@@ -1,0 +1,12 @@
+_id: pXWJgAjL94Fgr83F
+_key: "!tables.results!xWZowpQzG7fpmoP7.pXWJgAjL94Fgr83F"
+documentCollection: cyberpunk-red-core.core_ammo
+documentId: 3rtsVDMaB16lc5tY
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/ammo/grenade_teargas.png
+range:
+  - 1
+  - 1
+text: Grenade (Teargas)
+type: 2
+weight: 1

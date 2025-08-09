@@ -1,0 +1,42 @@
+{
+  "label": "Table des blessures critiques",
+  "mapping": {},
+  "entries": {
+    "Critical Injuries (Body)": {
+      "name": "Blessures critiques (Corps)",
+      "results": [
+        {
+          "2-2": "Bras arraché",
+          "3-3": "Main arrachée",
+          "4-4": "Poumon affaissé",
+          "5-5": "Côtes cassées",
+          "6-6": "Bras cassé",
+          "7-7": "Plaie avec corps étranger",
+          "8-8": "Jambe cassée",
+          "9-9": "Muscle déchiré",
+          "10-10": "Vertèbre endommagée",
+          "11-11": "Doigts écrasés",
+          "12-12": "Jambe arrachée"
+        }
+      ]
+    },
+    "Critical Injuries (Head)": {
+      "name": "Blessures critiques (Tête)",
+      "results": [
+        {
+          "2-2": "Oeil crevé",
+          "3-3": "Lésion cérébrale",
+          "4-4": "Oeil endommagé",
+          "5-5": "Commotion cérébrale",
+          "6-6": "Mâchoire cassée",
+          "7-7": "Plaie avec corps étranger (Tête)",
+          "8-8": "Coup du lapin",
+          "9-9": "Fracture du crâne",
+          "10-10": "Oreille endommagée",
+          "11-11": "Trachée écrasée",
+          "12-12": "Oreille arrachée"
+        }
+      ]
+    }
+  }
+}

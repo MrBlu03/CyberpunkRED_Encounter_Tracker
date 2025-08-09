@@ -1,0 +1,115 @@
+<form>
+  <div class="blackice-sheet">
+    <div class="blackice-image">
+      <img src="{{actor.img}}"
+           data-edit="img"
+           data-tooltip="{{actor.name}}"/>
+    </div>
+    <div class="blackice-info">
+      <div class="blackice-info-name text-hero text-large">
+        <input name="name" type="text" value="{{actor.name}}"/>
+      </div>
+      <div class="blackice-info-class">
+        <div class="blackice-info-class-title text-padding-right-small text-semi">
+          {{localize "CPR.global.generic.class"}}:
+        </div>
+        <div class="blackice-info-class-value">
+          <select name="system.class">
+            {{selectOptions (cprFindConfigObj "blackIceType") selected=actor.system.class localize=true}}
+          </select>
+        </div>
+      </div>
+      <div class="blackice-info-price">
+        <div class="blackice-info-price-title text-semi">
+          {{localize "CPR.blackIceSheet.cost"}}:
+        </div>
+        <div class="blackice-info-price-value">
+          <input name="system.cost" type="number" value="{{actor.system.cost}}"/>
+        </div>
+      </div>
+    </div>
+    <div class="blackice-actions text-center text-semi">
+      <div class="blackice-actions-title">
+        {{localize "CPR.global.generic.actions"}}
+      </div>
+      <div class="blackice-actions-value text-normal">
+        {{#if externalData.programUUID }}
+          {{#if (cprCompare actor.system.class "!==" "other") }}
+            <a class="rollable text-padding-right-normal"
+               data-roll-type="damage"
+               data-program-uuid="{{externalData.programUUID}}"
+               data-netrunner-id="{{externalData.netrunnerTokenId}}"
+               data-scene-id="{{externalData.sceneId}}">
+              <i class="fas fa-droplet"
+                data-tooltip="{{localize "CPR.actorSheets.commonActions.rollDamage"}}">
+              </i>
+            </a>
+          {{/if}}
+        {{/if}}
+        {{#unless externalData.netrunnerTokenId}}
+          <a class="configure-from-program">
+            <i class="fas fa-wrench"
+               data-tooltip="{{localize "CPR.blackIceSheet.configureFromProgram"}}">
+            </i>
+          </a>
+        {{/unless}}
+      </div>
+    </div>
+    <div class="blackice-stats text-normal">
+      {{#each actor.system.stats as |stat s| }}
+        <div class="blackice-stats-{{s}}">
+          <div class="blackice-stats-{{s}}-title text-center text-semi">
+            {{#unless (cprCompare s "===" "rez")}}
+              <a class="rollable"
+                 data-roll-type="stat"
+                 data-roll-title="{{s}}"
+                 data-tooltip="{{localize "CPR.actorSheets.rolling.clickToRollThisStat"}}">
+                   {{cprTextTransform (localize (concat "CPR.global.blackIce.stats." s)) "upper"}}
+            {{/unless}}
+            {{#if (cprCompare s "===" "rez")}}
+                {{cprTextTransform (localize "CPR.global.generic.rez") "upper"}}
+              </a>
+            {{/if}}
+          </div>
+          <div class="blackice-stats-{{s}}-value">
+            {{#if (cprCompare s "===" "rez") }}
+              <div class="blackice-stats-{{s}}-value-min">
+                <input name="system.stats.rez.value"
+                       type="number"
+                       value="{{this.value}}"/>
+              </div>
+              <div class="blackice-stats-{{s}}-value-divider">
+                /
+              </div>
+              <div class="blackice-stats-{{s}}-value-min">
+                <input name="system.stats.rez.max"
+                       type="number"
+                       value="{{this.max}}"/>
+              </div>
+            {{else}}
+              <input name="system.stats.{{s}}" type="number" value="{{this}}"/>
+            {{/if}}
+          </div>
+        </div>
+      {{/each}}
+      <div class="blackice-stats-dmg">
+        <div class="blackice-stats-dmg-title text-center text-semi">
+          {{localize "CPR.global.generic.damageShort"}}
+        </div>
+        <div class="blackice-stats-dmg-value text-center"
+             data-tooltip="{{localize 'CPR.blackIceSheet.damage'}}">
+          {{damageFormula}}
+        </div>
+      </div>
+    </div>
+    <div class="blackice-notes">
+      {{editor enrichedHTML.notes
+          target="system.notes"
+          button=true
+          owner=owner
+          editable=editable
+          engine="prosemirror"
+      }}
+    </div>
+  </div>
+</form>

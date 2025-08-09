@@ -1,0 +1,218 @@
+{
+  "label": "技能(言語)",
+  "mapping": {},
+  "entries": {
+    "Language (Arabic)": {
+      "name": "言語 (アラビア語)",
+      "description": ""
+    },
+    "Language (Bengali)": {
+      "name": "言語 (ベンガル語)",
+      "description": ""
+    },
+    "Language (Berber)": {
+      "name": "言語 (ベルベル語)",
+      "description": ""
+    },
+    "Language (Burmese)": {
+      "name": "言語 (ビルマ語)",
+      "description": ""
+    },
+    "Language (Cantonese Chinese)": {
+      "name": "言語 (中国(広東) 語)",
+      "description": ""
+    },
+    "Language (Cree)": {
+      "name": "言語 (クリー語)",
+      "description": ""
+    },
+    "Language (Creole)": {
+      "name": "言語 (クレオール言語)",
+      "description": ""
+    },
+    "Language (Dari)": {
+      "name": "言語 (ダリー語)",
+      "description": ""
+    },
+    "Language (Dutch)": {
+      "name": "言語 (オランダ語)",
+      "description": ""
+    },
+    "Language (English)": {
+      "name": "言語(英語)",
+      "description": ""
+    },
+    "Language (Farsi)": {
+      "name": "言語 (ペルシア語)",
+      "description": ""
+    },
+    "Language (Filipino)": {
+      "name": "言語 (フィリピン語)",
+      "description": ""
+    },
+    "Language (Finnish)": {
+      "name": "言語 (フィンランド語)",
+      "description": ""
+    },
+    "Language (French)": {
+      "name": "言語 (フランス語)",
+      "description": ""
+    },
+    "Language (German)": {
+      "name": "言語 (ドイツ語)",
+      "description": ""
+    },
+    "Language (Guarani)": {
+      "name": "言語 (グアラニ語)",
+      "description": ""
+    },
+    "Language (Hausa)": {
+      "name": "言語 (ハウサ語)",
+      "description": ""
+    },
+    "Language (Hawaiian)": {
+      "name": "言語 (ハワイ語)",
+      "description": ""
+    },
+    "Language (Hebrew)": {
+      "name": "言語 (ヘブライ語)",
+      "description": ""
+    },
+    "Language (Hindi)": {
+      "name": "言語 (ヒンディー語)",
+      "description": ""
+    },
+    "Language (Indonesian)": {
+      "name": "言語 (インドネシア語)",
+      "description": ""
+    },
+    "Language (Italian)": {
+      "name": "言語 (イタリア語)",
+      "description": ""
+    },
+    "Language (Japanese)": {
+      "name": "言語 (日本語)",
+      "description": ""
+    },
+    "Language (Khmer)": {
+      "name": "言語 (クメール語)",
+      "description": ""
+    },
+    "Language (Korean)": {
+      "name": "言語 (韓国語)",
+      "description": ""
+    },
+    "Language (Lingala)": {
+      "name": "言語 (リンガラ語)",
+      "description": ""
+    },
+    "Language (Malayan)": {
+      "name": "言語 (マレー語)",
+      "description": ""
+    },
+    "Language (Mandarin Chinese)": {
+      "name": "言語 (中国語)",
+      "description": ""
+    },
+    "Language (Maori)": {
+      "name": "言語 (マオリ語)",
+      "description": ""
+    },
+    "Language (Mayan)": {
+      "name": "言語 (マヤ語)",
+      "description": ""
+    },
+    "Language (Mongolian)": {
+      "name": "言語 (モンゴル語)",
+      "description": ""
+    },
+    "Language (Navajo)": {
+      "name": "言語 (ナバホ語)",
+      "description": ""
+    },
+    "Language (Nepali)": {
+      "name": "言語 (ネパール語)",
+      "description": ""
+    },
+    "Language (Norwegian)": {
+      "name": "言語 (ノルウェー語)",
+      "description": ""
+    },
+    "Language (Oromo)": {
+      "name": "言語 (オロモ語)",
+      "description": ""
+    },
+    "Language (Pama-Nyungan)": {
+      "name": "言語(パマ・ニョンガン語)",
+      "description": ""
+    },
+    "Language (Polish)": {
+      "name": "言語 (ポーランド語)",
+      "description": ""
+    },
+    "Language (Portuguese)": {
+      "name": "言語 (ポルトガル語)",
+      "description": ""
+    },
+    "Language (Quechua)": {
+      "name": "言語 (ケチュア語)",
+      "description": ""
+    },
+    "Language (Romanian)": {
+      "name": "言語 (ルーマニア語)",
+      "description": ""
+    },
+    "Language (Russian)": {
+      "name": "言語 (ロシア語)",
+      "description": ""
+    },
+    "Language (Sinhalese)": {
+      "name": "言語 (シンハラ語)",
+      "description": ""
+    },
+    "Language (Spanish)": {
+      "name": "言語 (スペイン語)",
+      "description": ""
+    },
+    "Language (Swahili)": {
+      "name": "言語 (スワヒリ語)",
+      "description": ""
+    },
+    "Language (Swedish)": {
+      "name": "言語 (スウェーデン語)",
+      "description": ""
+    },
+    "Language (Tahitian)": {
+      "name": "言語 (タヒチ語)",
+      "description": ""
+    },
+    "Language (Tamil)": {
+      "name": "言語 (タミル語)",
+      "description": ""
+    },
+    "Language (Turkish)": {
+      "name": "言語 (トルコ語)",
+      "description": ""
+    },
+    "Language (Twi)": {
+      "name": "言語 (トウィ語)",
+      "description": ""
+    },
+    "Language (Ukrainian)": {
+      "name": "言語 (ウクライナ語)",
+      "description": ""
+    },
+    "Language (Urdu)": {
+      "name": "言語 (ウルドゥー語)",
+      "description": ""
+    },
+    "Language (Vietnamese)": {
+      "name": "言語 (ベトナム語)",
+      "description": ""
+    },
+    "Language (Yoruba)": {
+      "name": "言語 (ヨルバ語)",
+      "description": ""
+    }
+  }
+}

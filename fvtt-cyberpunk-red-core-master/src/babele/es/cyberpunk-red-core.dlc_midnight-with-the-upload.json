@@ -1,0 +1,110 @@
+{
+  "label": "Medianoche con la Carga",
+  "mapping": {},
+  "entries": {
+    "Hummingbird": {
+      "name": "Colibrí",
+      "description": "<p>No frills, just raw processing power.</p>\n<p>2 slots only for Hardware</p>\n<p>+1 to Net Actions each turn.</p>"
+    },
+    "Kaliya": {
+      "name": "Kaliya",
+      "description": "<p>Una opción fantástica para desmantelar a los Netrunners hostiles. Solo espere que no tengan ningún Hielo Negro.</p>\n<p>6 ranuras para programas o hardware, 3 ranuras extra solo para programas de Flak.</p>\n<p>Restricciones para Programas de Defensa o Hielo Negro: Solo se puede instalar Flak y Aspid en cualquier ranura</p>"
+    },
+    "Kerberos": {
+      "name": "Kerberos",
+      "description": "<p dir=\"ltr\">Desata los fuegos del Infierno contra tus rivales.</p>\n<p dir=\"ltr\">6 ranuras para Programas, 5 ranuras para Hardware.</p>\n<p dir=\"ltr\">Las ranuras del programa solo aceptarán el Hielo Negro Perro del Infierno.</p>\n<p>&nbsp;</p>"
+    },
+    "Kestrel 2": {
+      "name": "Kestrel 2",
+      "description": "<p>El Hielo Negro no puede golpear lo que puede atrapar.</p>\n<p>7 ranuras solo para Programas.</p>\n<p>Justo después de Conectarse, el Netrunner puede activar un máximo de 2 programas Speedy Gonzalvez instalados sin una acción RED.</p>"
+    },
+    "Kirama Advanced Deck": {
+      "name": "Terminal Avanzada de Kirama",
+      "description": "<p>Aunque puede que no sea la opción más llamativa, la más fina Ciberterminal de Kirama está equilibrada expertamente y ofrece algunas características de seguridad muy prácticas.</p>\n<p>5 ranura para Programas o Hardware.</p>\n<p>El Netrunner no sufre ningún efecto negativo de una Desconexión Insegura.</p>"
+    },
+    "Kirama Entry Deck": {
+      "name": "Terminal de Entrada de Kirama",
+      "description": "<p>Un Ciberterminal accesible y equilibrado para los novatos Netrunners. Aunque limitado por sus modestas especificaciones de hardware, conserva las características de seguridad avanzadas de las Ciberterminales de bandera de Kirama.</p>\n<p>5 ranuras solo para programas.</p>\n<p>Solo se puede instalar una de cada categoría de Programa a la vez (Ataque, Defensa, Potenciador, Hielo Negro). El Netrunner no sufre ningún efecto negativo de una Desconexión Insegura.</p>"
+    },
+    "Kirama Training Deck": {
+      "name": "Terminal de Entrenamiento de Kirama",
+      "description": "<p>The quintessential starter Cyberdeck. Bargain-bin price with bare-minimum hardware specs.</p>\n<p>5 slots only for Programs.</p>\n<p>Netrunner must be 2m/yds or closer to Access Point to Jack In. All brain damage from Net combat is doubled.</p>"
+    },
+    "MicroMate": {
+      "name": "MicroMate",
+      "description": "<p>Perfecto para Netrunners que solo conocen una velocidad: Todo al ataque, todo el tiempo. Solamente no dejes que te golpeen, te va a doler. Mucho.</p>\n<p>9 ranuras para Programas o Hardware.</p>\n<p>No se aceptarán programas de defensa. Todo el daño cerebral del combate RED se duplicará</p>"
+    },
+    "Microtech Assault": {
+      "name": "Asalto de Microtech",
+      "description": "<p>Relájese y deje que su Hielo Negro haga todo el trabajo pesado.</p>\n<p>4 ranuras para Programas, 5 ranuras para Hardware.</p>\n<p>Las ranuras de programa solo aceptan Hielo Negro</p>"
+    },
+    "Microtech Scout": {
+      "name": "Explorador de Microtech",
+      "description": "<p>5 ranuras para Programas o Hardware.</p>\n<p>El Netrunner puede ejecutar Exploración sin usar una Acción de RED justo después de Conectarse.</p>"
+    },
+    "Microtech Warrior": {
+      "name": "Guerrero de Microtech",
+      "description": "<p>7 ranuras solo para programas.</p>\n<p>El Netrunner puede activar un programa de Armadura sin gastar una Acción de RED justo después de Conectarse.</p>"
+    },
+    "Parraline 6000": {
+      "name": "Parraline 6000",
+      "description": "<p>Todas las opciones de Hardware sin restricciones.</p>\n<p>3 ranuras del programa, 6 ranuras de Hardware</p>"
+    },
+    "Phoenix": {
+      "name": "Fénix",
+      "description": "<p>Nunca más pierdas un Programa.</p>\n<p>6 ranuras para Programas o Hardware.</p>\n<p>Cualquier programa destruido en una sesión de RED se restaura con una Desconexión Segura.</p>"
+    },
+    "Verdant Knight": {
+      "name": "Caballero Verdoso",
+      "description": "<p>La combinación justa de Ciberterminal con Espada, es altamente efectiva contra el Hielo Negro. Solo no tienes que ir mano a mano con un Netrunner hostil.</p>\n<p>9 ranuras solo para programas.</p>\n<p>Los ranuras solo aceptan programas de espada o escudo.</p>"
+    },
+    "Warlock's Book": {
+      "name": "Libro del Brujo",
+      "description": "<p>\n  If you prefer sliding through NET Architectures avoiding Black ICE this is the\n  deck for you.\n</p>\n<p>9 slots to install either Programs or Hardware.</p>\n<p><em>No Attacker or Black ICE Program may be installed.</em></p>\n"
+    },
+    "Aerie": {
+      "name": "Aguilera",
+      "description": "<p>Cada Hielo Negro Curvo instalado destruye programas en lugar de desrezearse.</p>"
+    },
+    "Bushido Accelerator": {
+      "name": "Acelerador Bushido",
+      "description": "<p>+3 Velocidad a todos los Hielos Negros Asesinos instalados.</p>"
+    },
+    "Combat Recorder": {
+      "name": "Grabador de Combate",
+      "description": "<p>Los datos de combate del mundo real son invaluables para el desarrollo del Hielo Negro.</p>\n<p>Si otro Netrunner en la misma Arquitectura de RED falla una Salvación contra la Muerte, los últimos 5 minutos de los datos de combate Netrun no incriminadores se guardan en el Ciberterminal. Las grabaciones pueden ser vendidas por 50ed.</p>"
+    },
+    "Defense Sequencer": {
+      "name": "Secuenciador de Defensa",
+      "description": "<p>Si un programa de armadura activo es desrezeado o destruido, El secuenciador de defensa activa una copia del programa de armaduras aun sin usar al inicio del turno del Netrunner.</p>"
+    },
+    "Feline Instinct": {
+      "name": "Instinto Felino",
+      "description": "<p>Si un Hielo Negro Dientes de Sable instalado destruye un programa, añade 1d6 de daño extra a cada ataque subsecuente por la duración del Netrun.</p>"
+    },
+    "Hangry Hangry Dragon": {
+      "name": "Dragón Hambriento Enojado",
+      "description": "<p>Cada vez que un Hielo Negro Dragón instalado destruye un programa, recupera el REZ completo.</p>"
+    },
+    "Perfume Shoppe": {
+      "name": "Perfumería",
+      "description": "<p>El Hielo Negro Mofeta solo tomará una ranura para instalar.</p>"
+    },
+    "Smithy": {
+      "name": "Herrería",
+      "description": "<p dir=\"ltr\">Esté preparado para cualquier cosa. Entró a una Arquitectura de RED llena de Hielo Negro y usted no tiene un programa de Espada a mano. Intercambia tu inútil Banhammer con la pulsación de un botón.</p>\n<p dir=\"ltr\">Use una Acción de Carne para cambiar todos y cada uno de los Programas de Espada instalados en los Programas de Banhammer o viceversa.</p>\n<p>&nbsp;</p>"
+    },
+    "Snaketrap": {
+      "name": "Trampa de Serpientes",
+      "description": "<p>Protege contra el primer ataque (efectos Aspid, Cuervo o el efecto Mortal del Veneno) que destruirían un programa instalado aleatoriamente. Este efecto protector puede ser usado solo una vez por Netrun incluso si se instalan varias copias de Trampa de Serpientes.</p>"
+    },
+    "Swamp Mist": {
+      "name": "Niebla del Pantano",
+      "description": "<p>El Hielo Negro Fuego Fatuo inflige 2d6 puntos de daño en lugar de 1d6.</p>\n<p>Restricciones del Programa de Hielo Negro: Solo se pueden instalar Fuego Fatuo.</p>"
+    },
+    "Swifty Clean": {
+      "name": "Limpieza Rápida",
+      "description": "<p>El Netrunner puede tirar Camuflaje dos veces en una sola Acción de RED y tomar el resultado más alto. Camuflaje solo puede utilizarse una vez por Netrun cuando se instala Limpieza Rápida.</p>"
+    }
+  }
+}

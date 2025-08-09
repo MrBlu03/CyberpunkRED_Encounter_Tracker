@@ -1,0 +1,20 @@
+_id: RkNmXeJttYnBdgTK
+_key: "!items!RkNmXeJttYnBdgTK"
+effects: []
+img: icons/svg/item-bag.svg
+name: Deduction
+system:
+  basic: false
+  category: educationSkills
+  core: true
+  description:
+    value: ""
+  difficulty: typical
+  favorite: false
+  level: 0
+  skillType: generic
+  source:
+    book: Core
+    page: 134
+  stat: int
+type: skill

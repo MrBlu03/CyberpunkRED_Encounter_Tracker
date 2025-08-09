@@ -1,0 +1,62 @@
+{
+  "label": "ヴィークル",
+  "mapping": {},
+  "entries": {
+    "Aerozep": {
+      "name": "エアロゼップ",
+      "description": "<p>A modern-day cargo blimp. Requires a minimum of two rooms. The price is for each room below deck. </p>"
+    },
+    "AV-4 Multipurpose Aerodyne": {
+      "name": "AV-4 多用途エアロダイン",
+      "description": "<p>A multipurpose aircraft capable of quick insertion thanks to vertical thrusters. Used commonly by Trauma Teams. </p>"
+    },
+    "AV-9 Super Aerodyne": {
+      "name": "AV-9 スーパー・エアロダイン",
+      "description": "<p>A highly advanced AV with limited seats. Can travel up to 300 miles per hour. </p>"
+    },
+    "Cabin Cruiser": {
+      "name": "キャビンクルーザー",
+      "description": "<p>A very fast speedboat. Requires a minimum of two rooms. The price is for each room below deck. </p>"
+    },
+    "Compact Groundcar": {
+      "name": "小型地上車",
+      "description": "<p>A CHOOH2-powered groundcar. Very common with a few dozen manufacturers producing similar models. </p>"
+    },
+    "Gyrocopter": {
+      "name": "ジャイロコプター",
+      "description": "<p>A small two-seater rotorcraft. </p>"
+    },
+    "Helicopter": {
+      "name": "ヘリコプター",
+      "description": "<p>A four-seater helicopter capable of high speeds and long flights. </p>"
+    },
+    "High Performance Groundcar": {
+      "name": "高性能地上車",
+      "description": "<p>A specialised groundcar designed for sports performance. </p>"
+    },
+    "Jetski": {
+      "name": "ジェットスキー",
+      "description": "<p>A common CHOOH2-powered jetski that can seat two people. </p>"
+    },
+    "Roadbike": {
+      "name": "オートバイ",
+      "description": "<p>A common CHOOH2-powered roadbike seen during the time of the Red.</p>"
+    },
+    "Speedboat": {
+      "name": "スピードボート",
+      "description": "<p>A fast CHOOH2-powered speedboat. </p>"
+    },
+    "Super Groundcar": {
+      "name": "スーパーカー",
+      "description": "<p>An expensive, exotic CHOOH2 powered sportscar. It is capable of very high speeds. </p>"
+    },
+    "Superbike": {
+      "name": "スーパーバイク",
+      "description": "<p>A beefed-up version of a roadbike, capable of very high speeds. </p>"
+    },
+    "Yacht": {
+      "name": "ヨット",
+      "description": "<p>A luxury speedboat. Requires a minimum of two rooms. The price is for each room below or above deck. </p>"
+    }
+  }
+}

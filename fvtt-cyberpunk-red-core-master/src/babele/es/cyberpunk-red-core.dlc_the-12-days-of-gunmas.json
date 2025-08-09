@@ -1,0 +1,74 @@
+{
+  "label": "Los 12 días de NavidArmas",
+  "mapping": {
+    "dvTable": "sistema.Tablavd"
+  },
+  "entries": {
+    "Nova Model 757 Rounds": {
+      "name": "Rondas del Modelo de Nova 757",
+      "description": "<p>Solo para uso en el Modelo Cityhunter 757 de Nova. Viene en paquetes de 18 en lugar de los 10 normales.</p><p>&nbsp;</p><p>Requiere implante de sistema de puntería, de lo contrario no se disparará. Si falla un ataque único por 4 o menos, tira de nuevo un segundo ataque al mismo DV 1d10+10 (sin atributo normal). Puede añadir suerte. El objetivo puede esquivar el segundo tiro como normal si es capaz de hacerlo</p>"
+    },
+    "Sub-Flechette Rounds": {
+      "name": "Munición Sub-Flechette",
+      "description": "<p>Munición especial para usar solo con la pistola Sub-Flechette de Malorian Arms. Produce ablacion de armadura de 4 CP por golpe.</p>"
+    },
+    "ARS-5 Submachine Gun": {
+      "name": "Subfusil ARS-5",
+      "description": "<p>Este SMG pesado es el paquete completo; viene con un conector de arma inteligente, una mira de visión de Infrarroja/Nocturna y una mira de francotirador*.</p><p><em>*Los tres deben ser añadidos manualmente después de adquirir el arma</em></p>",
+      "dvTable": "VD SMG"
+    },
+    "Chainknife": {
+      "name": "CuchilloCadena",
+      "description": "<p>Toma una acción para acelerar, pero una vez acelerado es una poderosa arma cuerpo a cuerpo. Cuando no está acelerado inflige 2d6 de daño*.</p><p><em>*Modo no acelerado no compatible actualmente, así que tendrá que reducir manualmente el daño</em></p>"
+    },
+    "Crusher": {
+      "name": "Triturador",
+      "description": "<p>Una pistola que dispara cartuchos de perdigones de escopeta. Lo que no hay que amar.</p>",
+      "dvTable": "VD Pistola"
+    },
+    "Dragon Flamethrower": {
+      "name": "Lanzallamas Dragón",
+      "description": "<p>Fuego en la punta de tus dedos. Solo puedes disparar proyectiles de escopeta incendiaria, pero los objetivos encendidos por esta arma se queman por 4 PV por turno.</p>"
+    },
+    "Hellbringer": {
+      "name": "Portador del Infierno",
+      "description": "<p>Cuando esto dispara, lo sabrás. Si alguien con menos de TCO 10 dispara esta pistola, se atasca. Se requiere una acción para desatascarla.</p>",
+      "dvTable": "VD Pistola"
+    },
+    "Multiple Ammunition Pistol": {
+      "name": "Pistola de Munición Múltiple",
+      "description": "<p>Una pistola muy pesada capaz de cargar hasta cinco tipos de munición diferentes a la vez*, con el usuario capaz de elegir entre ellos antes de disparar.</p><p><em>*Actualmente no es compatible, por lo que los usuarios tienen que cambiar manualmente los tipos de munición</em></p>",
+      "dvTable": "VD Pistola"
+    },
+    "Nomad Pneumatic Bolt Gun": {
+      "name": "Cañón de perno pneumático Nomade",
+      "description": "<p>Capaz de disparar todas las municiones no básicas, esta arma sigue siendo tan versátil como cuando fue inventada hace más de dos décadas.</p>",
+      "dvTable": "VD Rifle de Francotirador"
+    },
+    "Nova Model 757 Cityhunter": {
+      "name": "Nova Modelo 757 Cityhunter",
+      "description": "<p>Esta pistola dispara sus propias rondas personalizadas compradas en paquetes de 18, aunque cuestan lo mismo que un paquete de 10. Viene con un conector de arma inteligente*.</p><p><em>*El conector de arma inteligente debe ser añadido manualmente después de adquirir el arma</em></p>",
+      "dvTable": "VD Pistola"
+    },
+    "ST-5 Assault Rifle": {
+      "name": "Rifle de Asalto ST-5",
+      "description": "<p>A - arma relativamente fiable. Si tira 1 en Ataque (fallo crítico), entonces debe tirar una moneda; si usted gana el tiro sale como de costumbre, mientras que si pierde el arma se atasca y requiere utilizar una acción para desatascar.</p>",
+      "dvTable": "VD Rifle de Asalto"
+    },
+    "Sub-Flechette Gun": {
+      "name": "Arma Sub-Flechette (Subfusil)",
+      "description": "<p>Este SMG solo puede disparar su propia munición perfora blindaje personalizada; sin embargo, esa munición produce ablación de 4 cuando inflige daño. Viene con un conector de arma inteligente*.</p><p><em>*El conector de arma inteligente debe ser añadido manualmente después de adquirir el arma</em></p>",
+      "dvTable": "VD SMG"
+    },
+    "Teen Dreem": {
+      "name": "Teen Dreem",
+      "description": "<p>Este SMG puede usar fuego automático y fuego supresivo hasta las últimas 2 balas. Sin embargo, es necesario tener cuidado, ya que usar cualquiera de los modos de disparo fundir la pistola más allá de la reparación.</p>",
+      "dvTable": "VD SMG"
+    },
+    "WAA Bullpup Assault Weapon": {
+      "name": "Arma de Asalto Bullpup Arasaka WAA",
+      "description": "<p>Un rifle tipo bullpup en funcionamiento desde hace más de dos décadas. Puede disparar munición no básica y viene con un conector de Arma Inteligente*.</p><p><em>*El conector de Arma Inteligente debe ser añadido manualmente después de adquirir el arma</em></p>",
+      "dvTable": "VD Rifle de Asalto"
+    }
+  }
+}

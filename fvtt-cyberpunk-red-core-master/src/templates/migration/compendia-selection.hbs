@@ -1,0 +1,44 @@
+<form class="compendia-selection">
+  <ol class="dialog-list flexcol">
+      <li class="dialog-item dialog-item-header text-semi text-center flexrow">
+        {{localize "CPR.migration.app.compendiaWorld"}}
+      </li>
+      {{#if (cprIsEmpty worldPacks)}}
+        <li class="dialog-item">
+          {{localize "CPR.migration.app.noWorldCompendia"}}
+        </li>
+      {{else}}
+        <li class="dialog-item">
+          {{#each worldPacks as |label id|}}
+            {{label}}
+            {{~#unless @last}}, {{/unless}}
+          {{/each}}
+        </li>
+      {{/if}}
+      <li class="dialog-item dialog-item-header text-semi flexrow">
+        <div class="dialog-item-name text-nowrap">
+          {{localize "CPR.migration.app.compendiaModule"}}
+        </div>
+      </li>
+      {{#if (cprIsEmpty packModules)}}
+        <li class="dialog-item">
+          {{localize "CPR.migration.app.noModuleCompendia"}}
+        </li>
+      {{else}}
+        <li class="dialog-item module-choices">
+          {{#each packModules as |modData id|}}
+            <label class="{{#if modData.selected}}text-pill{{/if}}" data-action="togglePackSelection">
+              {{modData.title}}
+              <input class="toggle" type="checkbox" name="moduleChoices" value="{{id}}" {{checked modData.selected}}/>
+            </label>
+          {{/each}}
+        </li>
+      {{/if}}
+      <li class="dialog-item dialog-item-footer">
+        <label>
+          {{localize "CPR.migration.app.saveCompendiaSelection"}}
+          <input class="toggle" type="checkbox" name="saveSelection" checked/>
+        </label>
+      </li>
+  </ol>
+</form>

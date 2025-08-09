@@ -1,0 +1,39 @@
+_id: 2h87i3r9DkK7sabX
+_key: "!items!2h87i3r9DkK7sabX"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/black-chrome/paintball_tracking.png
+name: Doberman 500 Marking Scent
+system:
+  ablationValue: 0
+  amount: 12
+  brand: KTech
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        Unique form of ammunition for the Air Pistol. Provides specialized scent
+        marking on target.
+      </p>
+  favorite: false
+  installLocation: mall
+  overrides:
+    autofire:
+      minimum: 3
+      mode: none
+      value: -1
+    damage:
+      minimum: 1d6
+      mode: set
+      value: "0"
+  price:
+    market: 50
+  size: 0
+  source:
+    book: BC
+    page: 44
+  type: special
+  variety: custom
+type: ammo

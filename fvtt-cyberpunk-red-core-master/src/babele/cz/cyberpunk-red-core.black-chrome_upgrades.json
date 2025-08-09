@@ -1,0 +1,26 @@
+{
+  "label": "Vylepšení",
+  "mapping": {},
+  "entries": {
+    "4Tify": {
+      "name": "4Tify",
+      "description": "<p>An app for your agent. Can reveals weak points by scanning your home. Or a section of cover...</p>\n<p>Full rules can be found on page 13.</p>"
+    },
+    "Digital Gladiator": {
+      "name": "Digital Gladiator",
+      "description": "<p>An app for your agent. Create a virtual Solo and take your fights into the digital realm!</p>\n<p>Rules for fights can be found on page 12.</p>"
+    },
+    "NCPD Crime Database": {
+      "name": "NCPD Crime Database",
+      "description": "<p>An app for your agent. Allows the user to look up public criminal information. Full rules for using can be found on page 13.</p>\n<p>&nbsp;</p>"
+    },
+    "Trauma Team MedScan": {
+      "name": "Trauma Team MedScan",
+      "description": "<p>Agent App.</p>\n<p>\n  Requires CitiNet access. MedScan can connect you to a Trauma Team Remote\n  Specialist but their actual guidance costs extra.\n</p>\n<p>\n  For an increased fee, a remote Trauma Specialist can be hired to direct the\n  user through an entire 4-hour procedure.\n</p>\n<p>\n  Rules related to cost of hiring and procedures allowed to be done with this\n  App are contained in Black Chrome rulebook for this item.\n</p>\n"
+    },
+    "Ziggurat City Database": {
+      "name": "Ziggurat City Database",
+      "description": "<p>Agent App.</p>\n<p>\n  +1 bonus to all Local Expert Skills Checks related to communities and\n  neighborhoods for that city.\n</p>\n"
+    }
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "label": "Accomplissements et Caisses de Butin",
+  "mapping": {},
+  "entries": {
+    "A Box Bound Tightly in Rope": {
+      "name": "Une boîte serrée dans une corde",
+      "results": [
+        {
+          "1-1": "Corde (60 m)",
+          "2-2": "Lunettes de réalité virtuelle",
+          "3-3": "Lance-grappin",
+          "4-4": "Fiole de poison",
+          "5-5": "Bijou Urbain flash",
+          "6-6": "Batterie"
+        }
+      ]
+    },
+    "A Box Covered in Chipped Paint": {
+      "name": "Une boîte recouverte de peinture écaillée",
+      "results": [
+        {
+          "1-1": "Grenade (Lacrymogène)",
+          "2-2": "Pistolet lourd (Standard)",
+          "3-3": "Vélo",
+          "4-4": "Fusée éclairante",
+          "5-5": "Bouclier balistique",
+          "6-6": "Chevrotine de fusil à pompe (Standard)"
+        }
+      ]
+    },
+    "A Box Dripping Wet With Fluid": {
+      "name": "Une boîte dégoulinante de liquide",
+      "results": [
+        {
+          "1-1": "Smash",
+          "2-2": "Dentelle noire",
+          "3-3": "Auto-injecteur Bodyweight",
+          "4-4": "AirWell 50",
+          "5-5": "Grenade (Poison)",
+          "6-6": "Fluide détonateur TR-4"
+        }
+      ]
+    },
+    "A Box Freezing Cold To The Touch": {
+      "name": "Une boite glaciale au toucher",
+      "results": [
+        {
+          "1-1": "Lunettes miroirs Bohème",
+          "2-2": "Combinaison Street Viper",
+          "3-3": "Cyberoptique sponsorisé",
+          "4-4": "Trench-coat SkidRow",
+          "5-5": "Prime Time",
+          "6-6": "Veste de rue Laser Light"
+        }
+      ]
+    },
+    "A Box Handsomely Gift Wrapped": {
+      "name": "Une boite emballée dans un beau papier",
+      "results": [
+        {
+          "1-1": "Jumelles",
+          "2-2": "Tenue pare-balles légère (Corps)",
+          "3-3": "Pistolet moyen (Intelligent)",
+          "4-4": "Caméra vidéo",
+          "5-5": "NovLangue",
+          "6-6": "Coprocesseur de réflexes"
+        }
+      ]
+    },
+    "A Box Marked With A Lime Green X": {
+      "name": "Une boîte marquée avec un X vert fluo",
+      "results": [
+        {
+          "1-1": "Elflines Online",
+          "2-2": "Téléphone jetable",
+          "3-3": "Cybermain à doigts modulaires",
+          "4-4": "Bijou Décontracté",
+          "5-5": "Agent",
+          "6-6": "Lunettes connectées"
+        }
+      ]
+    },
+    "A Box Melted Out Of Shape": {
+      "name": "Une boite à la forme fondue",
+      "results": [
+        {
+          "1-1": "Armure de récupération",
+          "2-2": "Grenade (Incendiaire)",
+          "3-3": "Cyberbras néo-soviétique",
+          "4-4": "Fusil d'assaut (Standard)",
+          "5-5": "Fusil (Standard)",
+          "6-6": "Chevrotine de fusil à pompe (Incendiaire)"
+        }
+      ]
+    },
+    "A Box Reeking Of Oil": {
+      "name": "Une boîte empestant l'huile",
+      "results": [
+        {
+          "1-1": "Chevrotine de fusil à pompe (Standard)",
+          "2-2": "Pistolet lourd (Standard)",
+          "3-3": "Chaussures Âme nomade",
+          "4-4": "Fusil de précision (Intelligent)",
+          "5-5": "Lunette de précision",
+          "6-6": "Liaison smartgun"
+        }
+      ]
+    },
+    "A Box Sealed With A Lipstick Kiss": {
+      "name": "Une boîte scellée d'un baiser de rouge à lèvres",
+      "results": [
+        {
+          "1-1": "Couteau de combat",
+          "3-3": "Grenade Shuriken Tornado",
+          "4-4": "Chaussures Pop asiatique",
+          "5-5": "Haut de Cadre sup",
+          "6-6": "Tanto Frelon blanc",
+          "2-2": "Implant sexuel Mr. Studd"
+        }
+      ]
+    },
+    "A Box Showing Signs Of Repair": {
+      "name": "Une boîte montrant des signes de réparation",
+      "results": [
+        {
+          "1-1": "Tomahawk utilitaire",
+          "2-2": "Holo projecteur de paume",
+          "3-3": "Technioutil",
+          "4-4": "Enregistreur audio",
+          "5-5": "Grenade (Perforante)",
+          "6-6": "Technoscanner"
+        }
+      ]
+    }
+  }
+}

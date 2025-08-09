@@ -1,0 +1,12 @@
+_id: o7LoF8VyTstDqqQh
+_key: "!tables.results!amZejGzbh9vPIYgD.o7LoF8VyTstDqqQh"
+documentCollection: ""
+documentId: null
+drawn: false
+img: icons/svg/d20-black.svg
+range:
+  - 3
+  - 3
+text: Lieutenant orders their allies to focus on a particular player.
+type: 0
+weight: 1

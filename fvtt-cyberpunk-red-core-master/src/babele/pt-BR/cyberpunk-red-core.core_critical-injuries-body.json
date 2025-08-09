@@ -1,0 +1,50 @@
+{
+  "label": "Ferimento Crítico (Corpo)",
+  "mapping": {},
+  "entries": {
+    "Broken Arm": {
+      "name": "Braço Quebrado",
+      "description": "<p>Inutilizável. Solte o que estava segurando</p>"
+    },
+    "Broken Leg": {
+      "name": "Perna Quebrada",
+      "description": "<p>-4 MOVE (minimum MOVE of 1).</p>"
+    },
+    "Broken Ribs": {
+      "name": "Costelas Quebradas",
+      "description": "<p>Recebe dano crítico no final do turno se andou mais de 4m/jardas</p>"
+    },
+    "Collapsed Lung": {
+      "name": "Pulmão Comprometido",
+      "description": "<p>-2 MOVE (minimum MOVE of 1).</p>"
+    },
+    "Crushed Fingers": {
+      "name": "Dedos Esmagados",
+      "description": "<p>-4 em ações de mão.</p>"
+    },
+    "Dismembered Arm": {
+      "name": "Braço Desmembrado",
+      "description": "<p>Braço removido, solte o que estava segurando.</p>"
+    },
+    "Dismembered Hand": {
+      "name": "Mão Desmembrada",
+      "description": "<p>Mão removida, solte o que estava segurando.</p>"
+    },
+    "Dismembered Leg": {
+      "name": "Perna Desmembrada",
+      "description": "<p>Leg is removed. Cannot Dodge. -6 MOVE (minimum MOVE of 1).</p>"
+    },
+    "Foreign Object": {
+      "name": "Objeto Estranho",
+      "description": "<p>Recebe dano crítico no final do turno se andou mais de 4m/jardas.</p>"
+    },
+    "Spinal Injury": {
+      "name": "Lesão na Espinha",
+      "description": "<p>No próximo turno: Sem ação, apenas movimento.</p>"
+    },
+    "Torn Muscle": {
+      "name": "Músculo Rasgado",
+      "description": "<p>-2 to Melee Attacks.</p>"
+    }
+  }
+}

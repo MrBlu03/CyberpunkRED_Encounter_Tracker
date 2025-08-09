@@ -1,0 +1,50 @@
+{
+  "label": "Heridas Críticas (Cuerpo)",
+  "mapping": {},
+  "entries": {
+    "Broken Arm": {
+      "name": "Brazo Roto",
+      "description": "<p>Brazo inutilizable. Suelta lo que estaba sujetando</p>"
+    },
+    "Broken Leg": {
+      "name": "Pierna Rota",
+      "description": "<p> -4 MOV (MOV mínimo de 1).</p>"
+    },
+    "Broken Ribs": {
+      "name": "Costillas Rotas",
+      "description": "<p>Sufre daño crítico al final del turno si te mueves más de 4m/yardas a pie.</p>"
+    },
+    "Collapsed Lung": {
+      "name": "Pulmón Colapsado",
+      "description": "<p> -2 MOV (MOV mínimo de 1).</p>"
+    },
+    "Crushed Fingers": {
+      "name": "Dedos Triturados",
+      "description": "<p>-4 a las acciones de la mano.</p>"
+    },
+    "Dismembered Arm": {
+      "name": "Brazo Desmembrado",
+      "description": "<p>Brazo removido, suelta cualquier cosa que estuviera sosteniendo.</p>"
+    },
+    "Dismembered Hand": {
+      "name": "Mano Desmembrada",
+      "description": "<p>Mano removida, suelta todo lo que estaba sosteniendo.</p>"
+    },
+    "Dismembered Leg": {
+      "name": "Pierna Desmembrada",
+      "description": "<p>Pierna desmembrada. No se puede esquivar. -6 MOV (MOV mínimo de 1).</p>"
+    },
+    "Foreign Object": {
+      "name": "Objeto Extraño",
+      "description": "<p>Sufre daño crítico al final del turno si te mueves más de 4m/yardas a pie.</p>"
+    },
+    "Spinal Injury": {
+      "name": "Lesión Espinal",
+      "description": "<p>Siguiente turno: Sin acción, solo movimiento.</p>"
+    },
+    "Torn Muscle": {
+      "name": "Músculo Desgarrado",
+      "description": "<p> -2 para Ataques Cuerpo a Cuerpo.</p>"
+    }
+  }
+}

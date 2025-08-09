@@ -1,0 +1,58 @@
+<form class="dialog-sheet">
+  <div class="dialog-header flexcol">
+    <div class="text-normal text-center">
+      {{header}}
+    </div>
+    {{#unless isAmmo}}
+      <div class="text-center text-semi">
+        {{!-- Display Available Slots --}}
+        {{localize "CPR.global.generic.size"}}:
+        {{size}}
+      </div>
+    {{/unless}}
+  </div>
+  <hr/>
+  <div class="dialog-grid flexcol">
+    <ol class="dialog-list">
+        <li class="dialog-item dialog-item-header flexrow">
+          <div class="dialog-item-name flex-width-75">
+            <span class="text-semi">
+              {{localize "CPR.global.generic.item"}}
+            </span>
+          </div>
+          {{#unless isAmmo}}
+            <div class="dialog-item-detail flex-width-10">
+              <span class="text-semi">
+                {{localize "CPR.global.generic.slots"}}
+              </span>
+            </div>
+          {{/unless}}
+          <div class="dialog-item-input flexrow flex-width-15">
+            <span class="text-semi">
+              {{localize "CPR.actorSheets.commonActions.uninstall"}}
+            </span>
+          </div>
+        </li>
+        {{#each containers as |container| }}
+          <li class="dialog-item flexrow">
+            <div class="dialog-item-name flex-width-75 text-nowrap">
+              {{container.name}}
+            </div>
+            {{#unless ../isAmmo}}
+              <div class="dialog-item-detail flex-width-10">
+                {{container.system.installedItems.usedSlots}} /
+                {{container.system.installedItems.slots}}
+              </div>
+            {{/unless}}
+            <div class="dialog-item-input flex-width-{{#unless ../isAmmo}}15{{else}}25{{/unless}}">
+              <input type="checkbox"
+                     name="selectedItems"
+                     value="{{container.id}}"
+                     {{checked (cprListContains ../selectedItems container.id) }}/>
+            </div>
+          </li>
+        {{/each}}
+    </ol>
+  </div>
+  {{> "systems/cyberpunk-red-core/templates/dialog/cpr-dialog-buttons.hbs"}}
+</form>

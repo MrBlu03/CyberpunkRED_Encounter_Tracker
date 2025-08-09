@@ -1,0 +1,214 @@
+{
+  "label": "Actualizaciones",
+  "mapping": {
+    "dvTable": "sistema.Tablavd"
+  },
+  "entries": {
+    "Armored Chassis": {
+      "name": "Chasis Blindado",
+      "description": "<p>Se puede aplicar a todos los vehículos. Armadura del vehículo a la CP13. No afecta al vidrio.</p>"
+    },
+    "AV-4 Engine Upgrade": {
+      "name": "Mejora de Motor AV-4",
+      "description": "<p>Se puede aplicar a todos los vehículos terrestres. Añade impulsores de Aerodyne al vehículo, permitiendo el vuelo. Mientras vuelan, el vehículo tiene una velocidad relativa de 200MPH / 322KPH, y una velocidad de combate de 40. El vehículo debe ser pilotado usando la habilidad de Pilotar Vehículo Aéreo mientras esté en el aire.</p>"
+    },
+    "Backup Drive": {
+      "name": "Copia de seguridad",
+      "description": "<p>\n  Saves Non-Black ICE programs when destroyed. These programs can be\n  re-installed by a Netrunner as a meat action.\n</p>\n"
+    },
+    "Bayonet": {
+      "name": "Bayoneta",
+      "description": "<p>Una vieja idea que funciona igual de bien; te permite usar tu pistola como arma cuerpo a cuerpo. Mientras esté conectado, el arma no puede ocultarse bajo la ropa.</p>"
+    },
+    "Bulletproof Glass": {
+      "name": "Cristal Antibalas",
+      "description": "<p>Se puede aplicar a todos los vehículos. Ahora todo el cristal del vehículo se considera cubierto con 15 PV. Se puede tomar una segunda vez para mejorar a 30 PV. Todas las ventanas reciben daño individualmente.</p>"
+    },
+    "Combat Plow": {
+      "name": "Arado de Combate",
+      "description": "<p>Se puede aplicar a todos los vehículos terrestres y marítimos, excepto bicicletas y motocicletas. Cuando chocas algo con la parte delantera de tu vehículo, tu vehículo no se daña y nadie sufre de la lesión crítica de Latigazo. Infliges 2d6 de daño adicional de Embestida si tu vehículo ha sido potenciado por NOS en el turno que embistes el objeto.</p>"
+    },
+    "Communications Center": {
+      "name": "Centro de Comunicaciones",
+      "description": "<p>Se puede aplicar a todos los vehículos. Consola de pantalla táctil que funciona como agente, junto con una unidad de almacenamiento que contiene 6 <strong>Comunicadores de radio</strong>, 6 <strong>Codificadores/Descodificadores</strong>, 1 <strong>Escáner de Radio / Reproductor de Música</strong>, 1 <strong>Sistema de Rastreo</strong> con 6 Dispositivos de Rastreo, y 1 <strong>Grabadora de Audio</strong>.</p>"
+    },
+    "Deployable Spike Strip": {
+      "name": "Tira de Pinchos Desplegable",
+      "description": "<p>Se puede aplicar a todos los coches en tierra. Como acción, el controlador puede desplegar una tira de pinchos. Mientras esté desplegado, cualquier vehículo que tenga neumáticos debe hacer un control de Conducir Vehículo Terrestre VD17. En caso de fallo, su vehículo recibe 4d6 daños como si golpeara un punto débil. Las tiras de pinchos de reemplazo cuestan 10ed.</p>\n<p>Puede instalar esta actualización varias veces. Cada actualización incrementa la cantidad de tiras de pinchos que se pueden desplegar antes de que el sistema necesite recargar, y no se puede recargar mientras el vehículo se mueve.</p>"
+    },
+    "DNA Lock": {
+      "name": "Bloqueo de ADN",
+      "description": "<p>Utiliza los biométricos para bloquear el Cyberterminal. Requiere verificación electrónica/técnica de seguridad DV17 para crackear.&nbsp;</p>"
+    },
+    "Drum Magazine (Assault Rifle)": {
+      "name": "Cargador de Tambor (Rifle de Asalto)",
+      "description": "<p>Aumenta el tamaño del Cargador a un total de 45 balas.</p>"
+    },
+    "Drum Magazine (Grenade Launcher)": {
+      "name": "Cargador de Tambor (Lanzagranadas)",
+      "description": "<p>Aumenta el tamaño del Cargador a un total de 6 granadas.</p>"
+    },
+    "Drum Magazine (Heavy Pistol)": {
+      "name": "Cargador de Tambor (Pistola Pesada)",
+      "description": "<p>Aumenta el tamaño del Cargador a un total de 28 balas.</p>"
+    },
+    "Drum Magazine (Heavy SMG)": {
+      "name": "Cargador de Tambor (SMG Pesado)",
+      "description": "<p>Aumenta el tamaño del Cargador a un total de 60 balas.</p>"
+    },
+    "Drum Magazine (Medium Pistol)": {
+      "name": "Cargador de Tambor (Pistola Mediana)",
+      "description": "<p>Aumenta el tamaño del Cargador a un total de 36 balas.</p>"
+    },
+    "Drum Magazine (Rocket Launcher)": {
+      "name": "Cargador de Tambor (Lanzacohetes)",
+      "description": "<p>Aumenta el tamaño del cargador a 3 cohetes. Eso es mucho BUM.</p>"
+    },
+    "Drum Magazine (Shotgun)": {
+      "name": "Cargador de Tambor (Escopeta)",
+      "description": "<p>Aumenta el tamaño del Cargador a un total de 16 cartuchos/postas.</p>"
+    },
+    "Drum Magazine (SMG)": {
+      "name": "Cargador de Tambor (SMG)",
+      "description": "<p>Aumenta el tamaño del Cargador a un total de 50 balas.</p>"
+    },
+    "Drum Magazine (Sniper Rifle)": {
+      "name": "Cargador de Tambor (Rifle de Francotirador)",
+      "description": "<p>Aumenta el tamaño del Cargador a un total de 12 balas.</p>"
+    },
+    "Drum Magazine (Very Heavy Pistol)": {
+      "name": "Cargador de Tambor (Pistola Muy Pesada)",
+      "description": "<p>Aumenta el tamaño del Cargador a un total de 28 balas.</p>"
+    },
+    "Enhanced Interface Plug Integration": {
+      "name": "Conector de Interfaz Integrado Mejorado",
+      "description": "<p>Se puede aplicar a todas las motocicletas. Al usar conector de Interface para conducir este vehículo, si tiene un REF 8 o superior y un pasajero, o tu motocicleta es el objetivo de un ataque, puedes intentar esquivar como si estuvieras a pie. Si esquivas para un pasajero, eso se convierte en su defensa.</p>"
+    },
+    "Extended Magazine (Assault Rifle)": {
+      "name": "Cargador Extendido (Rifle de Asalto)",
+      "description": "<p>Aumenta el tamaño del Cargador a un total de 35 balas.</p>"
+    },
+    "Extended Magazine (Grenade Launcher)": {
+      "name": "Cargador Extendido (Lanzagranadas)",
+      "description": "<p>Aumenta el tamaño del Cargador a un total de 4 granadas.</p>"
+    },
+    "Extended Magazine (Heavy Pistol)": {
+      "name": "Cargador Extendido (Pistola Pesada)",
+      "description": "<p>Aumenta el tamaño del Cargador a un total de 14 balas.</p>"
+    },
+    "Extended Magazine (Heavy SMG)": {
+      "name": "Cargador Extendido (SMG Pesado)",
+      "description": "<p>Aumenta el tamaño del Cargador a un total de 50 balas.</p>"
+    },
+    "Extended Magazine (Medium Pistol)": {
+      "name": "Cargador Extendido (Pistola Mediana)",
+      "description": "<p>Aumenta el tamaño del Cargador a un total de 18 balas.</p>"
+    },
+    "Extended Magazine (Rocket Launcher)": {
+      "name": "Cargador Extendido (Lanzacohetes)",
+      "description": "<p>Aumenta el tamaño del Cargador a un total de 2 cohetes.</p>"
+    },
+    "Extended Magazine (Shotgun)": {
+      "name": "Cargador Extendido (Escopeta)",
+      "description": "<p>Aumenta el tamaño del Cargador a un total de 8 cartuchos/postas.</p>"
+    },
+    "Extended Magazine (SMG)": {
+      "name": "Cargador Extendido (SMG)",
+      "description": "<p>Aumenta el tamaño del Cargador a un total de 40 balas.</p>"
+    },
+    "Extended Magazine (Sniper Rifle)": {
+      "name": "Cargador Extendido (Rifle de Francotirador)",
+      "description": "<p>Aumenta el tamaño del Cargador a un total de 8 balas.</p>"
+    },
+    "Extended Magazine (Very Heavy Pistol)": {
+      "name": "Cargador Extendido (Pistola Muy Pesada)",
+      "description": "<p>Aumenta el tamaño del Cargador a un total de 14 balas.</p>"
+    },
+    "Grenade Launcher Underbarrel": {
+      "name": "Lanzagranadas Sub Barril",
+      "description": "<p>Funciones como un lanzador de granadas estándar, pero con un tamaño de cargador de 1. Requiere 2 manos para usar, y toma 2 ranuras de opción. Mientras esté conectado, el arma no puede ocultarse bajo la ropa.</p>\n<p>Ten en cuenta que el arma hereda cualquier modificador de la pistola a la que está conectado, como otros adjuntos y calidad.</p>",
+      "dvTable": "VD Lanzagranadas"
+    },
+    "Hardened Circuitry": {
+      "name": "Circuitos Endurecidos",
+      "description": "<p>Los efectos EMP no pueden deshabilitar o destruir Cyberterminal.&nbsp;</p>"
+    },
+    "Heavy Chassis": {
+      "name": "Chasis Pesado",
+      "description": "<p>Se puede aplicar a todos los vehículos, excepto bicicletas, jetskis y girocopteros. Añade 20 PDE al vehículo. Esto no afecta al vidrio, y ahora el vehículo puede transportar hasta 10 toneladas.</p>"
+    },
+    "Housing Capacity": {
+      "name": "Capacidad de Hábitat",
+      "description": "<p>Se puede aplicar al Aerozep, AV-4, crucero de cabina, vehículos terrestres y yates. Cuando se instala en un vehículo terrestre o AV-4, añade una zona de sueño con una cama, un aseo, una ducha y una pequeña cocina para el vehículo. Cuando se instala en una cabina de crucero, yate o Aerozep, añade una habitación al vehículo.</p>\n<p><strong>Requiere un Chasis Pesado en un Vehículo Terrestre Compacto y de Alto Rendimiento</strong>.</p>"
+    },
+    "Hover Upgrade": {
+      "name": "Mejora de Aerodeslizador",
+      "description": "<p>Se puede aplicar a todos los vehículos terrestres. Añade ventiladores al vehículo que le permiten atravesar el agua a una velocidad nominal de 15 MPH/ 24KPH y una velocidad de combate de 10.</p>"
+    },
+    "Infrared Nightvision Scope": {
+      "name": "Mira de visión nocturna e infrarroja",
+      "description": "<p>Reduce las penalizaciones contra los objetivos en la oscuridad, humo/niebla a 0.</p>"
+    },
+    "Insulated Wiring": {
+      "name": "Cableado Aislante",
+      "description": "<p>La ropa de usuario y Cyberterminal no se pueden prender fuego.&nbsp;</p>"
+    },
+    "KRASH Barrier": {
+      "name": "Barrera KRASH",
+      "description": "<p>La Cyberterminal es inmune a los efectos que obligan al Netrunner a salir (de forma segura o insegura)</p>"
+    },
+    "NOS": {
+      "name": "NOS",
+      "description": "<p>Se puede aplicar a todos los vehículos. Añade un tanque de óxido nítrico al vehículo. Te permite usar tu Acción para usar una Acción de Movimiento adicional mientras conduces.</p>\n<p>Puede instalar esta actualización varias veces. Cada actualización añade un tanque adicional y cada tanque puede utilizarse una vez al día.</p>"
+    },
+    "Onboard Flamethrower": {
+      "name": "Lanzallamas a bordo",
+      "description": "<p>Se puede aplicar a todos los vehículos. Un <strong>Lanzallamas </strong>que se pueden montar mirando al frente, lateral o trasero del vehículo. El controlador puede dispararlo usando una Acción. No puede ser recargado mientras se maneja, y no puede aceptar adjuntos de armas.</p>\n<p>Puede instalar esta actualización varias veces</p>"
+    },
+    "Onboard Machine Gun": {
+      "name": "Ametralladora a bordo",
+      "description": "<p>Se puede aplicar a todos los vehículos. Un <strong>Rifle de Asalto </strong>con una capacidad de 30 disparos y solo capaz de autodisparar, que puede ser montada frente al vehículo. El conductor puede dispararlo usando una Acción, no se puede recargar mientras se conduce y no puede aceptar adjuntos de armas.</p>\n<p>Puede instalar esta actualización varias veces</p>"
+    },
+    "Onboard Melee Weapon": {
+      "name": "Arma cuerpo a cuerpo a bordo",
+      "description": "<p>Se puede aplicar a todos los vehículos terrestres y marítimos. Una <strong>Arma Cuerpo a Cuerpo Muy Pesada</strong> que puede ser montada mirando al frente, lateral o trasero del vehículo. El conductor puede atacar con él usando una acción. El arma no puede ser eliminada.</p>\n<p>Puede instalar esta actualización varias veces</p>"
+    },
+    "Onboard Rocket Pod": {
+      "name": "Cápsula de Cohetes a bordo",
+      "description": "<p>Se puede aplicar a todos los vehículos, excepto bicicletas, jetskis y girocopteros. Un <strong>Lanzador de Cohetes</strong> con un tambor de tres cohetes, que puede ser montado frente a la parte frontal del vehículo. El controlador puede dispararlo usando una Acción. No se puede recargar mientras se maneja, y no puede aceptar adjuntos de armas.</p>\n<p>Puede instalar esta actualización varias veces. <strong>Requiere Chasis Pesado</strong>.</p>"
+    },
+    "Range Upgrade": {
+      "name": "Mejora de distancia",
+      "description": "<p>La Cyberterminal puede conectarse a puntos de acceso hasta 8 m/yd (en lugar de 6 m/yds).</p>"
+    },
+    "Seating Upgrade": {
+      "name": "Mejora de Asientos",
+      "description": "<p>Se puede aplicar a todos los vehículos. Añade dos asientos al vehículo. Estos pueden ser instalados como un lateral externo, también pueden ser instalados como asientos eyector con paracaídas extraíbles.</p>\n<p>Se puede tomar varias veces con la excepción de Bicicletas, Jetskis y Gyrocopteros.</p>"
+    },
+    "Security Upgrade": {
+      "name": "Mejora de Seguridad",
+      "description": "<p>Se puede aplicar a todos los vehículos. Añade cerraduras de ADN al vehículo que solicita los biométricos correctos o una comprobación de VD 17 Electrónica/Seguridad para desbloquear. Si no se desbloquea el vehículo, se causará un daño como si fuera golpeado con un Bastón Aturdidor.</p>\n<p>Además, mientras permanece quieto, el vehículo está cubierto por un sistema de camuflaje y requiere un chequeo de Percepción VD17 para detectarlo. El vehículo debe permanecer inmóvil durante un minuto antes de que esto se active.</p>"
+    },
+    "Shotgun Underbarrel": {
+      "name": "Escopeta Sub Barril",
+      "description": "<p>Funciones como una escopeta estándar, pero con un tamaño de cargador de 2. Requiere 2 manos para usar, y toma 2 ranuras adjuntas. Mientras esté conectado, el arma no puede ocultarse bajo la ropa.</p>\n<p>Ten en cuenta que el arma hereda cualquier modificador de la pistola a la que está conectado, como otros adjuntos y calidad.</p>",
+      "dvTable": "VD Escopeta (Perdigones de escopeta)"
+    },
+    "Smartgun Link": {
+      "name": "Enlace de Smartgun",
+      "description": "<p>Convierte arma en un \"Smartgun\". Consulta todas las reglas especificadas en el pg. 344 antes de usar.&nbsp;</p>"
+    },
+    "Smuggling Upgrade": {
+      "name": "Mejora de Contrabando",
+      "description": "<p>Se puede aplicar a todos los vehículos. Añade dos <strong>porta-armas ocultos</strong> al vehículo y un gran compartimiento oculto para contrabando. Estos pueden ser descubiertos con una comprobación de Ocultar/Revelar Objetos VD17.<br><br>Se puede tomar varias veces con la excepción de Bicicletas, Jetskis y Girocopteros.</p>"
+    },
+    "Sniping Scope": {
+      "name": "Mira de Francotirador",
+      "description": "<p>Te permite ver detalles de hasta 800m/yds. +1 a Disparo Individual/Dirigido para objetivos a más de 51m/yds.</p>"
+    },
+    "Vehicle Heavy Weapon Mount": {
+      "name": "Montura de Armas Pesadas del Vehículo",
+      "description": "<p>Se puede aplicar a todos los vehículos, excepto bicicletas, jetskis y girocopteros. Uno de los asientos de los vehículos se convierte en una montura giratoria para cualquier arma a distancia de dos manos. Un pasajero puede disparar el arma usando una Acción. El pasajero puede recargar el arma. El arma puede ser removida o reinstalada usando una Acción.</p>\n<p>La primera vez que se obtiene esta actualización, viene con una <strong>Helix de Tsunami Arms</strong>, o <strong>Rhinemetall EMG-86 Railgun</strong>, o un<strong>Lanzagranadas Militech \"Cowboy\" U-56</strong>. Si el vehículo tiene la mejora del vidrio a prueba de balas, el artillero estará protegido por el mismo vidrio.</p>\n<p>Puede instalar esta actualización varias veces si el vehículo tiene la mejora de Capacidad de Hábitat. <strong>Requiere Chasis Pesado</strong>.</p>"
+    }
+  }
+}

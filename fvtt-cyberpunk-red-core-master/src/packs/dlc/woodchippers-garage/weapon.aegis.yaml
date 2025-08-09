@@ -1,0 +1,52 @@
+_id: Z8YmmVuwRRD2Xa4H
+_key: "!items!Z8YmmVuwRRD2Xa4H"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/weapons/Shotgun_poor.svg
+name: Aegis
+system:
+  ammoVariety:
+    - battery
+  attackmod: 0
+  brand: Militech
+  concealable:
+    concealable: false
+    isConcealed: false
+  critFailEffect: jammed
+  damage: 4d6
+  description:
+    value: |
+      <p>
+        This weapon can't cause Critical Injuries, can't ablate armor, and if it would
+        reduce a target to under 1 HP it instead leaves them Unconscious on 1 HP.
+      </p>
+  dvTable: ""
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 2
+  installedItems:
+    allowed: true
+    allowedTypes: []
+    list: []
+    slots: 0
+    usedSlots: 0
+  isRanged: true
+  magazine:
+    max: 4
+    value: 0
+  price:
+    market: 1000
+  quality: standard
+  revealed: true
+  rof: 1
+  source:
+    book: WG
+    page: 4
+  unarmedAutomaticCalculation: true
+  usage: equipped
+  usesType: magazine
+  weaponSkill: Heavy Weapons
+  weaponType: shotgun
+type: weapon

@@ -1,0 +1,21 @@
+<form class="dialog-sheet">
+  <div class="dialog-header flexcol">
+    <div class="text-normal text-center">
+      {{localize header}}
+    </div>
+  </div>
+  <hr/>
+  <div class="dialog-grid flexcol">
+    <ol class="dialog-list">
+      <li class="dialog-item flexrow">
+        <div class="dialog-item-name text-nowrap">
+          {{localize "CPR.dialog.purchasePart.amount"}}:
+        </div>
+        <div class="dialog-item-input text-nowrap">
+          <input name="purchaseAmount" type="number" value="{{purchaseAmount}}"/>
+        </div>
+      </li>
+    </ol>
+  </div>
+  {{> "systems/cyberpunk-red-core/templates/dialog/cpr-dialog-buttons.hbs"}}
+</form>

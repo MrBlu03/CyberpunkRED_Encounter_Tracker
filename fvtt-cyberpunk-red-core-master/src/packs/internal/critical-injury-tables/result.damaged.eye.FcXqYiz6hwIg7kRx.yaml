@@ -1,0 +1,12 @@
+_id: FcXqYiz6hwIg7kRx
+_key: "!tables.results!QiwaqQtocypL0FXG.FcXqYiz6hwIg7kRx"
+documentCollection: cyberpunk-red-core.core_critical-injuries-head
+documentId: qoegLCfpEOQifeZq
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/critical_injuries/damaged_eye.svg
+range:
+  - 4
+  - 4
+text: Damaged Eye
+type: 2
+weight: 1

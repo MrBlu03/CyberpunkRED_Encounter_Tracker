@@ -1,0 +1,58 @@
+_id: rUSdivkoD9THJXNy
+_key: "!items!rUSdivkoD9THJXNy"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/micro_chrome/smart_lens.svg
+name: Smart Lens
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  core: false
+  damage: 1d6
+  description:
+    value: >
+      <p>Gives a user a single Cybereye Option. Can use one Smart Lens per
+      eye.</p>
+  dvTable: ""
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  humanityLoss:
+    roll: "0"
+    static: 0
+  installLocation: mall
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+      - cyberware
+    list: []
+    slots: 1
+    usedSlots: 0
+  isElectronic: false
+  isFoundational: true
+  isRanged: false
+  isWeapon: false
+  magazine:
+    max: 0
+    value: 0
+  price:
+    market: 500
+  providesHardening: false
+  revealed: true
+  rof: 1
+  size: 1
+  source:
+    book: MC
+    page: 1
+  type: cyberEye
+  unarmedAutomaticCalculation: true
+  usage: toggled
+  usesType: magazine
+  weaponSkill: ""
+  weaponType: ""
+type: cyberware

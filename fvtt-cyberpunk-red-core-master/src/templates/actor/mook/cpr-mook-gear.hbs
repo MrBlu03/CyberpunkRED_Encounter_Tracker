@@ -1,0 +1,83 @@
+<div class="mook-special-header items-header flexrow">
+  <span class="item-name section-name text-nowrap text-padding-left-smallest text-semi">
+    {{localize "CPR.mookSheet.items.specialGear"}}
+  </span>
+</div>
+<div class="mook-special-content text-padding-left-smallest mook-special-list">
+  <!-- Cyberware -->
+  {{#each (cprGetMookCyberware actor) as |type t| }}
+    {{#if foundation.system.core }}
+      <!-- This messy mapping is because the names of internal cyberware are not concise enough.
+           Also hasOptionalSlots is false for core cyberware for an unknown reason. We have to
+           look at the length of optionals to know the truth about used slots. -->
+      {{#if (cprCompare optionals.length ">" 0) }}
+        {{#if (cprCompare foundation.name "===" "Internal (7 Option Slots)") }}
+        <span class="text-semi">{{localize "CPR.mookSheet.items.internalCyberware"~}}</span>
+        {{/if}}
+        {{#if (cprCompare foundation.name "===" "External (7 Option Slots)") }}
+          <span class="text-semi">{{localize "CPR.mookSheet.items.externalCyberware"~}}</span>
+        {{/if}}
+        {{#if (cprCompare foundation.name "===" "Fashionware (7 Option Slots)") }}
+        <span class="text-semi">{{localize "CPR.global.cyberwareType.fashionware"~}}</span>
+        {{/if}}
+      {{/if}}
+    {{else}}
+      <!-- If Foundational Cyberware is present and has options installed, show the foundational cyberware -->
+      <span class="text-semi">
+        <a class="name item installable changeable item-view"
+           tabindex="0"
+           data-tooltip="{{localize "CPR.mookSheet.items.clickToViewItem"}}
+                         <br/>
+                         {{localize "CPR.actorSheets.commonActions.ctrlClickToSendToChat"}}
+                         <br/>
+                         {{localize "CPR.mookSheet.items.shiftClickToInstallorUninstall"}}"
+           data-item-id="{{foundation._id}}">
+          {{~foundation.name~}}{{~#unless (cprCompare optionals.length ">" 0)~}}{{~#unless @last~}},{{~/unless~}}{{~/unless~}}
+        </a>
+      </span>
+    {{~/if}}
+    <!-- For each optional cyberware, display it in a selection -->
+    {{~#if (cprCompare optionals.length ">" 0)~}}({{/if~}}
+    {{~#each optionals as |optional o|~}}
+      {{> "systems/cyberpunk-red-core/templates/actor/mook/cpr-mook-cyberware-optional.hbs" (cprMergeForPartialArg "actor,cyberware" ../../actor optional)}}
+    {{~/each}}
+    {{~#if (cprCompare optionals.length ">" 0)~}}
+      ){{~#unless @last}},{{~/unless}}
+    {{~/if}}
+    {{~/each}}
+    {{~#if (cprCompare (cprCompare (cprGetMookCyberwareLength actor) ">" 0) "&&" (cprCompare (cprCompare actor.itemTypes.ammo.length ">" 0) "||" (cprCompare actor.itemTypes.gear.length ">" 0)))}},{{~/if}}
+    <!-- Display specific item types in the Gear section -->
+    {{~#each actor.itemTypes as |items itemType|}}
+      {{~#if (cprListContains "ammo,clothing,cyberdeck,drug,gear,itemUpgrade,netarch" itemType)}}
+        {{~#each (cprSort items "name") as |item i|}}
+          {{~#unless @first}},{{~/unless}}
+            <a class="name item deletable changeable item-edit"
+               tabindex="0"
+               data-tooltip="{{localize "CPR.mookSheet.items.clickToViewItem"}}
+                             <br/>
+                             {{localize "CPR.actorSheets.commonActions.ctrlClickToSendToChat"}}
+                             <br/>
+                             {{localize "CPR.mookSheet.items.pressDeleteToDelete"}}"
+               data-item-id="{{item.id}}">
+              {{~item.name~}}
+            </a>
+          {{~#if (cprCompare item.type "===" "drug")}}
+            <a class="item-action"
+               data-item-id="{{item.id}}"
+               data-action-type="snort">
+              <i class="fas fa-pills" data-tooltip="{{localize "CPR.global.generic.snort"}}"></i>
+            </a>
+          {{~/if}}
+          {{#if (cprHasTemplate item.type "stackable") }}
+            (x{{item.system.amount}})
+          {{~/if}}
+          {{~#if (cprCompare item.type "===" "itemUpgrade")}}
+            {{~> "systems/cyberpunk-red-core/templates/actor/mixin/actions/cpr-install-item-glyph.hbs"}}
+          {{~/if}}
+        {{~/each}}
+        {{~#if (cprCompare items.length ">" 0)}}
+          {{~#unless (cprCompare itemType "===" "itemUpgrade")}},{{~/unless}}
+        {{~/if}}
+      {{~/if}}
+    {{~/each}}
+  </div>

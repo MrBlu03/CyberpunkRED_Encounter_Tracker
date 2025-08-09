@@ -1,0 +1,52 @@
+_id: PRLDaeBVeMuBBIeO
+_key: "!items!PRLDaeBVeMuBBIeO"
+effects:
+  - v688v2AQZUpGXV7t
+  - R7hdY2qZux5j9oVJ
+img: systems/cyberpunk-red-core/icons/compendium/drugs/smash.svg
+name: Smash
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  consumed: Smash Primary
+  description:
+    value: |
+      <p><strong>Primary Effect</strong></p>
+      <p>Dose lasts 4 hours.</p>
+      <p>
+        The user feels happy and satisfied, receiving a temporary modifier of +2 to
+        the following skills
+      </p>
+      <ul>
+        <li>Dance</li>
+        <li>Contortionist</li>
+        <li>Conversation</li>
+        <li>Human Perception</li>
+        <li>Persuasion</li>
+        <li>Acting</li>
+      </ul>
+      <p><strong>Secondary Effect (DV15)</strong></p>
+      <p>User is addicted to Smash.</p>
+      <p>While addicted, user suffers a -2 modifier to the following skills</p>
+      <ul>
+        <li>Dance</li>
+        <li>Contortionist</li>
+        <li>Conversation</li>
+        <li>Human Perception</li>
+        <li>Persuasion</li>
+        <li>Acting</li>
+      </ul>
+      <p>GM will tell your when you crave more Smash. Roleplay accordingly.</p>
+  equipped: owned
+  favorite: false
+  price:
+    market: 10
+  revealed: true
+  source:
+    book: Core
+    page: 357
+  usage: snorted
+type: drug

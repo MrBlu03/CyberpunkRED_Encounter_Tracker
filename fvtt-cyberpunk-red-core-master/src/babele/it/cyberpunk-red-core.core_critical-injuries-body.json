@@ -1,0 +1,50 @@
+{
+  "label": "Ferite Critiche (Corpo)",
+  "mapping": {},
+  "entries": {
+    "Broken Arm": {
+      "name": "Braccio Rotto",
+      "description": "<p>Braccio inutilizzabile. Rilascia quello che stava tenendo in mano</p>"
+    },
+    "Broken Leg": {
+      "name": "Gamba Rotta",
+      "description": "<p>-4 VEL (Minimo 1).</p>"
+    },
+    "Broken Ribs": {
+      "name": "Costole Rotte",
+      "description": "<p>Subisci danni critici alla fine del turno se ti muovi per più di 4 m a piedi.</p>"
+    },
+    "Collapsed Lung": {
+      "name": "Polmone Collassato",
+      "description": "<p>-2 VEL (minimo 1). La Penalità Base al Tiro della Morte aumenta di 1.</p>"
+    },
+    "Crushed Fingers": {
+      "name": "Dita Schiacciate",
+      "description": "<p>-4 a tutte le azioni che la mano richiede.</p>"
+    },
+    "Dismembered Arm": {
+      "name": "Braccio Smembrato",
+      "description": "<p>Braccio distrutto, rilascia tutto quello che teneva. Penalità Base al TS Morte: +1</p>"
+    },
+    "Dismembered Hand": {
+      "name": "Mano Smembrata",
+      "description": "<p>Mano distrutta, lascia cadere tutto quello che teneva. Penalità Base al TS Morte: +1</p>"
+    },
+    "Dismembered Leg": {
+      "name": "Gamba Smembrata",
+      "description": "<p>La gamba è distrutta. -6 VEL (minimo 1). Non si può schivare.\nLa Penalità Base al Tiro della Morte aumenta di 1. </p>"
+    },
+    "Foreign Object": {
+      "name": "Corpo Estraneo",
+      "description": "<p>Subisci Danno Bonus alla fine del turno se ti muovi per più di 4 m a piedi.</p>"
+    },
+    "Spinal Injury": {
+      "name": "Lesione Spinale",
+      "description": "<p>Prossimo turno: nessuna azione, solo movimento. Penalità Base al TS Morte: +1</p>"
+    },
+    "Torn Muscle": {
+      "name": "Strappo Muscolare",
+      "description": "<p>-2 agli Attacchi in Mischia. </p>"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "label": "Ciberimplantes (Nucleo)",
+  "mapping": {},
+  "entries": {
+    "External (7 Option Slots)": {
+      "name": "Externo (7 Espacios de Opción)",
+      "description": ""
+    },
+    "Fashionware (7 Option Slots)": {
+      "name": "Fashionware (7 Espacios de Opción)",
+      "description": ""
+    },
+    "Internal (7 Option Slots)": {
+      "name": "Interno (7 Espacios de Opción)",
+      "description": ""
+    }
+  }
+}

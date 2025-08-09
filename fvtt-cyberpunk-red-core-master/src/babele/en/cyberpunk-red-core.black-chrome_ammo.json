@@ -1,0 +1,42 @@
+{
+  "label": "Ammo",
+  "mapping": {},
+  "entries": {
+    "Arasaka Acid": {
+      "name": "Arasaka Acid",
+      "description": "<p>Coating for Arasaka Weeping Reaver Katana only. Improves ablation effect.</p>\n"
+    },
+    "Arasaka Fire": {
+      "name": "Arasaka Fire",
+      "description": "<p>\n  Coating for Arasaka Weeping Reaver Katana only. Ignites target. Multiple\n  effects do not stack.\n</p>\n"
+    },
+    "Arasaka Wound Salt": {
+      "name": "Arasaka Wound Salt",
+      "description": "<p>\n  Coating for Arasaka Weeping Reaver Katana only. Adds a second critical injury.\n  No additional damage.\n</p>\n"
+    },
+    "Doberman 500 Marking Scent": {
+      "name": "Doberman 500 Marking Scent",
+      "description": "<p>\n  Unique form of ammunition for the Air Pistol. Provides specialized scent\n  marking on target.\n</p>\n"
+    },
+    "Grenade (Arachnid)": {
+      "name": "Grenade (Arachnid)",
+      "description": "<p>\n  A very sticky grenade. Creates a sticky web that entangles target. Must be\n  destroyed or be torn by anyone in melee range making a\n  <strong>DV 15 Brawling Check</strong>.\n</p>\n"
+    },
+    "Grenade (KTech Security)": {
+      "name": "Grenade (KTech Security)",
+      "description": "<p>Armor piercing Grenade. Deals damage to targets but not to cover.</p>\n"
+    },
+    "Grenade (Shuriken Tornado)": {
+      "name": "Grenade (Shuriken Tornado)",
+      "description": "<p>\n  A literal explosion of shurikens. Armor Piercing grenade. Each shuriken from\n  explosion deals individual damage.\n</p>\n"
+    },
+    "Net": {
+      "name": "Net",
+      "description": "<p>Net for the net launcher that grapples the target on hit.</p>\n<p>\n  On hit, grapples target. Target can escape with a\n  <strong>DV13 Contortionist Check</strong> (net victim only) or a\n  <strong>DV13 Brawling Check</strong> which can be attempted by anyone. Net can\n  also be destroyed.\n</p>\n"
+    },
+    "Rocks": {
+      "name": "Rocks",
+      "description": "<p>\n  Ammunition that can be used with the Nomad Rocker if of small enough size.\n  Ammunition is considered free and available if small rocks are able to be\n  collected in the area the user is in.\n</p>\n"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+_id: 4kibUUAHR3AIsfNo
+_key: "!tables.results!bOtq937SNIahmbeK.4kibUUAHR3AIsfNo"
+documentCollection: cyberpunk-red-core.core_ammo
+documentId: IJhN5QHmu4hAJxLo
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/ammo/grenade_incendiary.png
+range:
+  - 2
+  - 2
+text: Grenade (Incendiary)
+type: 2
+weight: 1

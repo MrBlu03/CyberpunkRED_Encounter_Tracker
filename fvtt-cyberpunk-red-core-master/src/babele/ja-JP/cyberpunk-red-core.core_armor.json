@@ -1,0 +1,78 @@
+{
+  "label": "アーマー",
+  "mapping": {},
+  "entries": {
+    "Bodyweight Suit": {
+      "name": "ボディウェイトスーツ",
+      "description": "<p>インターフェイス・プラグをサポートしている。 必ず頭部と身体がセットである。 接続したサイバーデッキにハードウェアのみのオプションスロットを1つ追加する。 防具ペナルティなし</p>\n"
+    },
+    "Bullet Proof Shield": {
+      "name": "防弾シールド",
+      "description": "<p>腕を1本常時占有する。ダメージによりHPが減少する。</p>\n"
+    },
+    "Flak (Body)": {
+      "name": "フラック (身体)",
+      "description": "<p>【反応】【敏捷】【移動】-2</p>\n"
+    },
+    "Flak (Head)": {
+      "name": "フラック (頭)",
+      "description": "<p>【反応】【敏捷】【移動】-2</p>\n"
+    },
+    "Heavy Armorjack (Body)": {
+      "name": "重装アーマージャック(身体)",
+      "description": "<p>【反応】【敏捷】【移動】-2</p>\n"
+    },
+    "Heavy Armorjack (Head)": {
+      "name": "重装アーマージャック(頭)",
+      "description": "<p>【反応】【敏捷】【移動】-2</p>\n"
+    },
+    "Kevlar® (Body)": {
+      "name": "ケブラー®️ (身体)",
+      "description": "<p>防具ペナルティなし</p>\n"
+    },
+    "Kevlar® (Head)": {
+      "name": "ケブラー®️ (頭)",
+      "description": "<p>防具ペナルティなし</p>\n"
+    },
+    "Leathers (Body)": {
+      "name": "レザー(身体)",
+      "description": "<p>防具ペナルティなし</p>\n"
+    },
+    "Leathers (Head)": {
+      "name": "レザー (頭)",
+      "description": "<p>防具ペナルティなし</p>\n"
+    },
+    "Light Armorjack (Body)": {
+      "name": "軽装アーマージャック (身体)",
+      "description": "<p>防具ペナルティなし</p>\n"
+    },
+    "Light Armorjack (Head)": {
+      "name": "軽装アーマージャック (頭)",
+      "description": "<p>防具ペナルティなし</p>\n"
+    },
+    "Medium Armorjack (Body)": {
+      "name": "中装アーマージャック (身体)",
+      "description": "<p>【反応】【敏捷】【移動】-2</p>\n"
+    },
+    "Medium Armorjack (Head)": {
+      "name": "中装アーマージャック (頭)",
+      "description": "<p>【反応】【敏捷】【移動】-2</p>\n"
+    },
+    "Metalgear® (Body)": {
+      "name": "メタルギア®️ (身体)",
+      "description": "<p>\n  最も重く、最も強力なアーマー。【反応】【敏捷】【移動】-4\n</p>\n"
+    },
+    "Metalgear® (Head)": {
+      "name": "メタルギア®️ (頭)",
+      "description": "<p>\n  最も重く、最も強力なアーマー。【反応】【敏捷】【移動】-4\n</p>\n"
+    },
+    "Skin Weave": {
+      "name": "皮膚編繊",
+      "description": "<p>身体と頭部はSP7の防具に覆われる。自然治癒が1日進む度、身体および頭部のSPを1回復する。</p>\n"
+    },
+    "Subdermal Armor": {
+      "name": "皮下アーマー",
+      "description": "<p>身体と頭部はSP11の防具に覆われる。自然治癒が1日進む度、身体および頭部のSPを1回復する。</p>\n"
+    }
+  }
+}

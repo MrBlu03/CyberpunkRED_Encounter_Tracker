@@ -1,0 +1,33 @@
+_id: pcQ6FsBuHHIWNDlP
+_key: "!items!pcQ6FsBuHHIWNDlP"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/black-chrome/streetcase.svg
+name: Streetcase by SecSystems
+system:
+  amount: 1
+  brand: SecSystems
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>Can carry many easily accessible items that YOU need to stay safe.</p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 0
+    usedSlots: 0
+  isElectronic: false
+  price:
+    market: 500
+  providesHardening: false
+  revealed: true
+  source:
+    book: BC
+    page: 47
+  usage: toggled
+type: gear

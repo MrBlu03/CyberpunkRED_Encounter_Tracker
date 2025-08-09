@@ -1,0 +1,281 @@
+#cpr-migration {
+  &::backdrop {
+    background-color: var(--cpr-background-migration-modal-backdrop);
+  }
+
+  --link-icon-padding: 0.25rem;
+
+  &.application {
+    ol {
+      padding-left: 0;
+      margin: unset;
+
+      li {
+        margin-bottom: unset;
+      }
+    }
+  }
+
+  .migration-grid {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto minmax(0, 1fr);
+    grid-auto-flow: row;
+    grid-template-areas:
+      "header"
+      "status"
+      "progress"
+      "messages";
+  }
+
+  hr {
+    margin: 0.4rem 0;
+  }
+
+  .header {
+    grid-area: header;
+
+    .title {
+      font-size: var(--cpr-font-large);
+    }
+
+    .wiki-link i {
+      padding-left: var(--link-icon-padding);
+    }
+  }
+
+  .status {
+    grid-area: status;
+    text-align: center;
+    font-size: var(--cpr-font-normal);
+  }
+
+  .toggle {
+    --cpr-toggle-width: 1.875rem;
+    --cpr-toggle-height: calc(var(--cpr-toggle-width) / 2);
+    --cpr-toggle-padding: 0.063rem;
+    --cpr-dot-height: calc(
+      var(--cpr-toggle-height) - (var(--cpr-toggle-padding) * 2)
+    );
+
+    input {
+      display: none; // Hide the default checkbox
+    }
+
+    & {
+      display: inline-block;
+      vertical-align: middle;
+      position: relative;
+      width: var(--cpr-toggle-width);
+      height: var(--cpr-toggle-height);
+      border-radius: var(--cpr-toggle-height);
+      background-color: var(
+        --cpr-background-toggle-unchecked
+      ); // Initial background color when unchecked
+      transition: background-color 0.3s;
+
+      &:before {
+        content: "";
+        display: block;
+        width: var(--cpr-dot-height);
+        height: var(--cpr-dot-height);
+        border-radius: 50%; // Round border for the dot
+        background-color: var(--cpr-color-white); // Dot color
+        transition: transform 0.3s;
+        position: absolute;
+        top: var(--cpr-toggle-padding);
+        left: var(--cpr-toggle-padding);
+      }
+
+      &:checked:before {
+        content: "";
+        transform: translateX(calc(var(--cpr-toggle-height)));
+      }
+
+      &:checked:after {
+        content: "";
+      }
+
+      &:checked {
+        background-color: var(
+          --cpr-background-toggle-checked
+        ); // Change background color when checked
+      }
+    }
+  }
+
+  form.compendia-selection {
+    .module-choices {
+      padding: 0.25rem 0;
+
+      label {
+        cursor: pointer;
+
+        border-style: solid;
+        border-width: 0.063rem;
+        border-radius: 0.313rem;
+        margin-right: unset;
+        margin-left: 0.25rem;
+        padding: 0 0.25rem;
+      }
+
+      label:hover,
+      label:focus {
+        text-shadow: 0 0 0.5rem var(--cpr-background-foundry-hover);
+      }
+    }
+  }
+
+  .progress {
+    grid-area: progress;
+
+    /* The width/height/line-height get set in `migration-app.js`
+     because we don't yet know the height of the dialog list */
+    .alert-overlay {
+      position: absolute;
+      z-index: 100;
+      width: 0;
+      height: 0;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+
+      // Keep text to one line.
+      white-space: nowrap;
+      overflow: hidden;
+
+      border-radius: 0.313rem;
+      background-color: var(--cpr-migration-overlay-error);
+      backdrop-filter: blur(0.063rem);
+
+      opacity: 1;
+      transition: opacity 0.3s;
+
+      &:hover {
+        opacity: 0.4;
+      }
+
+      &.warning {
+        background-color: var(--cpr-migration-overlay-warning);
+      }
+
+      &.success {
+        background-color: var(--cpr-migration-overlay-success);
+      }
+
+      .text-rotate {
+        height: inherit;
+        width: inherit;
+        transform: rotate(-10deg);
+      }
+
+      .alert-text {
+        font-size: 4.5rem;
+        padding-left: 1rem;
+        letter-spacing: 1rem;
+      }
+    }
+
+    .dialog-item {
+      position: relative;
+    }
+
+    .progress-container {
+      position: relative;
+
+      .progress-bar {
+        position: absolute;
+
+        top: 75%;
+        width: 0%;
+        height: 25%;
+        background-color: var(--cpr-background-migration-progress);
+        opacity: 0.4;
+      }
+
+      .progress-percent-container {
+        text-align: right;
+
+        > span {
+          padding-right: 0.5rem;
+        }
+      }
+    }
+
+    .progress-container.sub-category .progress-label-container > span {
+      padding-left: 0.5rem;
+    }
+  }
+
+  .messages {
+    grid-area: messages;
+
+    ol {
+      flex: 3;
+
+      li {
+        flex: 1;
+
+        &.dialog-item-header {
+          flex: 0;
+          position: sticky;
+          top: 0;
+
+          a {
+            color: unset;
+          }
+        }
+
+        &.message {
+          padding: 0.5rem;
+        }
+
+        p {
+          margin-top: unset;
+        }
+
+        a i {
+          padding-left: 0.25rem;
+        }
+      }
+
+      .notification-icon {
+        color: var(--color-warm-1);
+      }
+    }
+
+    .buttons {
+      flex: 0;
+      align-items: flex-end;
+      padding-top: 0.4rem;
+
+      .icon-post {
+        margin-left: 0.25rem;
+        margin-right: unset;
+      }
+
+      // The div that grows in size when the confirm button is held.
+      .hold-meter {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0%;
+        height: 100%;
+        z-index: 1000;
+        transition: width 0.2s linear;
+
+        background-color: var(--cpr-background-migration-progress);
+        opacity: 0.4;
+      }
+
+      .hold-meter.mouse-down {
+        width: 100%;
+        transition: width 0.8s cubic-bezier(0.25, 0.66, 0.45, 0.94);
+      }
+    }
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "label": "The 12 Days of Cybermas",
+  "mapping": {},
+  "entries": {
+    "MagnaSlot BatteryBrick": {
+      "name": "MagnaSlot BatteryBrick",
+      "description": "<p>\n  Battery pack that only fits the Radline Blitzkrieg Arc-Thrower Cyberarm. Can\n  be recharged in 1 hour.\n</p>\n"
+    },
+    "FleshWeave (Armor)": {
+      "name": "FleshWeave (Armor)",
+      "description": "<p>Armor Item for Sycust FleshWeave Cyberware.</p>\n"
+    },
+    "Blitzkrieg Arc-Thrower Cyberarm": {
+      "name": "Blitzkrieg Arc-Thrower Cyberarm",
+      "description": "<p>\n  An \"arm\" in name only, the Arc-Thrower is a massive electricity cannon. 0\n  option slots.\n</p>\n<p>\n  The Arc-Thrower is One-Handed Exotic Poor Quality Shotgun that uses Heavy\n  Weapons Skill. Fires \"Shotgun Shell\" electricity blast with 4d6 damage.\n  Critical Injuries are not possible. Armor is not ablated. If target goes under\n  1HP from the blast, target has 1HP and is Unconscious.\n</p>\n<p>\n  Firing the Arc-Thrower consumes a charge from the included Radline MagnaSlot\n  BatteryBrick (100eb). BatteryBrick has a 32 shot capacity and can be recharged\n  in 1 hour. Use an Action to swap in a fresh battery pack even if user has no\n  free hands available. Arc-Thrower does not have a hand attachment.\n</p>\n"
+    },
+    "Bug Eye": {
+      "name": "Bug Eye",
+      "description": "<p>Large insectoid Cybereye packed with option slots. Borgware.</p>\n"
+    },
+    "ChainRipp": {
+      "name": "ChainRipp",
+      "description": "<p>\n  A popout Cyberarm chainsaw with integreated exhaust port. Can be deployed and\n  retracted without an Action. User can not use the hand on the ChainRipp's\n  Cyberarm when blade is drawn.\n</p>\n<p>\n  When deployed, ChainRipp can be revved as an Action and qualifies as an\n  Excellent Quality One-Handed Exotic Very Heavy Melee Weapon. ChainRipp remains\n  revved until deactivated as an Action.\n</p>\n<p>\n  In the deployed but un-revved state, the ChainRipp is a One-Handed Very Heavy\n  Melee Weapon.\n</p>\n"
+    },
+    "DeathTrance": {
+      "name": "DeathTrance",
+      "description": "<p>\n  Activate as an action to impede signs of life such as heart rate and\n  breathing. To the casual observer, the user appears to be dead. -4 to all\n  Actions in this lethargic state. Can be disabled with an Action. User may\n  experience bluish or pale skin from multiple uses.\n</p>\n<p>\n  <strong>DV17 Medical Tech</strong> or\n  <strong>DV21 (Criminology, Deduction, Perception)</strong> Check to discover\n  user is not actually dead.\n</p>\n"
+    },
+    "FleshWeave": {
+      "name": "FleshWeave",
+      "description": "<p>\n  External Body Cyberware*. 7 SP for head and body.<br />Skinweave armor with\n  advanced self-healing functionality. Billions of nanobots repair all damage to\n  FleshWeave(body and head) armor after 10 minutes of rest. Armor does not\n  stack.\n</p>\n<p>\n  <em\n    >* Cyberware Armor does not function as armor in the system, please add the\n    \"Sycust FleshWeave (Armor)\" item to the character/mook to track</em\n  >\n</p>\n"
+    },
+    "Gang Jazzler": {
+      "name": "Gang Jazzler",
+      "description": "<p>\n  Use a Choke Action to stab a grappled target with a popout electrified needle.\n  The target takes no damage but must make a\n  <strong>DV13 Resist Torture/Drugs</strong> Check. On failed check, target\n  falls Unconscious for 1 minute.\n</p>\n<p>\n  Powered by a rechargeable battery pack (50eb). Battery pack must be recharged\n  for 1 hour after each use. No check is necessary to conceal Gang Jazzler and\n  battery pack. Can be installed in meat arm if it's the only piece of cyberware\n  in that arm.\n</p>\n"
+    },
+    "MicroWaldo": {
+      "name": "MicroWaldo",
+      "description": "<p>\n  A wrist-mounted collection of instruments and probes to facilitate surgery.<br />+1\n  to Medtech Surgery Checks.\n</p>\n<p>Takes up 1 Cyberarm Option slot and 1 Neural Link Option slot.</p>\n"
+    },
+    "MonoVision": {
+      "name": "MonoVision",
+      "description": "<p>\n  Single-optic Cybereye visor that takes the place of two meat eyes. Too large\n  for a MultiOptic Mount.\n</p>\n<p>\n  Cybereye Options are always \"paired\" even if there is only one of each type.\n  Penalties from Lost Eye Critical Injury are doubled if the target solely\n  relies on the Monovision for sight.\n</p>\n<p>Borgware.</p>\n"
+    },
+    "OptiShield": {
+      "name": "OptiShield",
+      "description": "<p>\n  Embedded retractable Mirrorshades. When activated as an Action, user is immune\n  to negative effects of bright light, such as from flashbangs.\n</p>\n"
+    },
+    "Poser Chip": {
+      "name": "Poser Chip",
+      "description": "<p>\n  Chipware. Allows User to effortlessly mimic speech patterns and mannerisms of\n  a pre-programmed personality. Standard-issue Cyberware for Poser Gangs.\n</p>\n<ul>\n  <li>+4 to Acting Checks when imitating that specific personality.</li>\n  <li>+5 to Acting Checks with convincing Roleplay.</li>\n</ul>\n<p>\n  Poser Chips programmed with countless hours of celebrity footage cost 500eb.\n  More personalized Poser Chips programmed with 10+ hours of footage of a\n  private individual cost 1000eb.\n</p>\n"
+    },
+    "Romanova Cyberlegs": {
+      "name": "Romanova Cyberlegs",
+      "description": "<p>\n  High fashion Cyberlegs with integrated Talon Foot blades in each heel. Blades\n  can not be removed.\n</p>\n<p>\n  Paired Cyberlegs, 1000eb for both legs. Each leg has 3 slots for Cyberleg or\n  Cyberlimb Options. Roll Humanity Loss once for the pair of legs. Each leg can\n  suffer separate Critical Injuries and must be repaired individually.\n</p>\n"
+    },
+    "Watch-Man": {
+      "name": "Watch-Man",
+      "description": "<p>\n  Internal Agent with retractable screen on the user's forearm. Requires a\n  Cyberarm.\n</p>\n"
+    }
+  }
+}

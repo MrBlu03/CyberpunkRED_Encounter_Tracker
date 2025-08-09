@@ -1,0 +1,20 @@
+_id: cwwOn3YucT9CqJBN
+_key: "!items!cwwOn3YucT9CqJBN"
+effects: []
+img: icons/svg/item-bag.svg
+name: Persuasion
+system:
+  basic: true
+  category: socialSkills
+  core: true
+  description:
+    value: ""
+  difficulty: typical
+  favorite: false
+  level: 2
+  skillType: generic
+  source:
+    book: Core
+    page: 139
+  stat: cool
+type: skill

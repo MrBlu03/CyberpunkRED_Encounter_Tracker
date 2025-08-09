@@ -52,32 +52,8 @@ class Participant {
         // Note: Shield only applies to body armor, not head armor
         if (this.shieldActive && location !== 'head') {
             return baseArmor + this.shield;
-        } else {
-            return baseArmor;
         }
-    }
-
-    takeCover(coverType) {
-        if (!COVER_TYPES[coverType]) return false;
-        const cover = COVER_TYPES[coverType];
-        this.cover = {
-            type: coverType,
-            hp: cover.hp,
-            maxHp: cover.hp
-        };
-        return true;
-    }
-
-    leaveCover() {
-        this.cover = null;
-    }
-
-    damageCurrentCover(damage) {
-        if (!this.cover) return;
-        this.cover.hp = Math.max(0, this.cover.hp - damage);
-        if (this.cover.hp === 0) {
-            this.cover = null;
-        }
+        return baseArmor;
     }
 
     takeHumanShield(target) {
@@ -369,9 +345,7 @@ class Encounter {
             </div>
             <label>Add NPC Preset</label>
             <div class="npc-controls">
-                <select id="npc-type-${this.id}">
-                    ${Object.keys(NPC_PRESETS).map(type => `<option value="${type}">${type}</option>`).join('')}
-                </select>
+                <select id="npc-type-${this.id}"></select>
                 <input type="number" id="npc-count-${this.id}" min="1" value="1" placeholder="Count">
                 <button onclick="addNPCsToEncounter(${this.id})">Add NPCs</button>
             </div>
@@ -462,9 +436,12 @@ class Encounter {
                             ` : `
                                 <select id="cover-type-${this.id}-${p.name}">
                                     <option value="">Select Cover</option>
-                                    ${Object.keys(COVER_TYPES).map(type => 
-                                        `<option value="${type}">${type} (${COVER_TYPES[type].hp} HP)</option>`
-                                    ).join('')}
+                                    ${(() => {
+                                        const covers = window.COVERS_CACHE || {};
+                                        return Object.keys(covers).map(type => 
+                                            `<option value="${type}">${type} (${covers[type].hp} HP)</option>`
+                                        ).join('');
+                                    })()}
                                 </select>
                                 <button onclick="takeCover(${this.id}, '${p.name}')">Take Cover</button>
                             `}
@@ -544,26 +521,20 @@ class Encounter {
                             <div>
                                 <select id="critical-injury-select-${this.id}-${p.name}">
                                     ${(() => {
-                                        const criticalSystem = localStorage.getItem('criticalInjurySystem') || 'default';
-                                        if (criticalSystem === 'tarot') {
-                                            return `
-                                                <optgroup label="Tarot Cards">
-                                                    ${Object.keys(TAROT_CARDS).map(card => `
-                                                        <option value="${card}">${card}</option>
-                                                    `).join('')}
-                                                </optgroup>
-                                            `;
-                                        } else {
-                                            return `
-                                                ${Object.keys(CRITICAL_INJURIES).map(location => `
-                                                    <optgroup label="${location}">
-                                                        ${CRITICAL_INJURIES[location].map(injury => `
-                                                            <option value="${injury.name}">${injury.name}</option>
-                                                        `).join('')}
-                                                    </optgroup>
+                                        const crits = window.CRITS_CACHE;
+                                        if (!crits) return '';
+                                        return `
+                                            <optgroup label="Head">
+                                                ${crits.head.map(injury => `
+                                                    <option value="head::${injury.name}">${injury.name}</option>
                                                 `).join('')}
-                                            `;
-                                        }
+                                            </optgroup>
+                                            <optgroup label="Body">
+                                                ${crits.body.map(injury => `
+                                                    <option value="body::${injury.name}">${injury.name}</option>
+                                                `).join('')}
+                                            </optgroup>
+                                        `;
                                     })()}
                                 </select>
                                 <button onclick="applyCriticalInjury(${this.id}, '${p.name}')">Apply Critical Injury</button>
@@ -617,9 +588,25 @@ class Encounter {
 let encounters = [];
 let encounterCounter = 1;
 let playerCharacters = [];
+// Caches derived from packs catalog
+window.COVERS_CACHE = null; // { [name]: { hp } }
+window.CRITS_CACHE = null;  // { body: [{name, description}], head: [{name, description}] }
+
+// Populate NPC type selects from catalog archetypes after DOM is ready for a given encounter
+async function populateNPCTypeSelect(encounterId) {
+    try {
+        const catalog = await Catalog.loadCatalog();
+        const archetypes = CatalogAdapters.getArchetypesFromCatalog(catalog);
+        const sel = document.getElementById(`npc-type-${encounterId}`);
+        if (!sel) return;
+        sel.innerHTML = archetypes.map(a => `<option value="${a.id}">${a.name}</option>`).join('');
+    } catch (e) {
+        console.error('Failed to populate NPC types', e);
+    }
+}
 
 class PlayerCharacter {
-    constructor(name, base, maxHealth, bodyArmor, headArmor, shield, weapons = [], criticalInjuries = []) {
+    constructor(name, base, maxHealth, bodyArmor, headArmor, shield, weapons = [], criticalInjuries = [], role = '', skills = []) {
         this.name = name;
         this.base = parseInt(base) || 0;
         this.maxHealth = parseInt(maxHealth) || 0;
@@ -645,6 +632,8 @@ class PlayerCharacter {
         this.criticalInjuries = Array.isArray(criticalInjuries) ? criticalInjuries : []; 
         this.notes = '';
         this.interface = 0; // Add interface skill with default 0
+    this.role = role || '';
+    this.skills = Array.isArray(skills) ? skills : [];
         
         console.log(`Created PlayerCharacter ${name} with weapons:`, this.weapons);
     }
@@ -662,7 +651,9 @@ class PlayerCharacter {
             weapons: this.weapons,
             criticalInjuries: this.criticalInjuries,
             notes: this.notes,
-            interface: this.interface // Include interface skill in JSON
+            interface: this.interface, // Include interface skill in JSON
+            role: this.role,
+            skills: this.skills
         };
     }
 }
@@ -677,6 +668,11 @@ function savePlayerCharacter() {
     const shield = parseInt(document.getElementById('pc-shield').value) || 0;
     const interfaceSkill = parseInt(document.getElementById('pc-interface').value) || 0; // Get interface skill value
     const notes = document.getElementById('pc-notes').value;
+    const role = document.getElementById('pc-role')?.value || '';
+    const skills = Array.from(document.querySelectorAll('#pc-skill-list .skill-item')).map(el => ({
+        name: el.querySelector('.skill-name')?.textContent || '',
+        level: parseInt(el.querySelector('.skill-level')?.textContent) || 0
+    }));
     
     // Get weapons from weapon fields
     const weapons = [];
@@ -708,31 +704,23 @@ function savePlayerCharacter() {
         bodyArmor,
         headArmor,
         shield,
-        weapons,    // Pass weapons array here
-        []         // Empty array for critical injuries
+        weapons,
+        [],
+        role,
+        skills
     );
-    
-    // Set the interface skill
     character.interface = interfaceSkill;
-    character.notes = notes; // Make sure notes are saved
-
-    // Load existing characters
-    let characters = JSON.parse(localStorage.getItem('playerCharacters') || '[]');
+    character.notes = notes;
     
-    // Update if character exists, otherwise add new
-    const existingIndex = characters.findIndex(c => c.name === character.name);
-    if (existingIndex >= 0) {
-        // Preserve existing critical injuries and notes when updating
-        character.criticalInjuries = characters[existingIndex].criticalInjuries || [];
-        character.health = characters[existingIndex].health;
+    // Save back to localStorage
+    const characters = JSON.parse(localStorage.getItem('playerCharacters') || '[]');
+    // Replace existing by name or push new
+    const existingIndex = characters.findIndex(pc => pc.name === character.name);
+    if (existingIndex !== -1) {
         characters[existingIndex] = character;
     } else {
         characters.push(character);
     }
-    
-    console.log("Saving character:", character);
-    
-    // Save back to localStorage
     localStorage.setItem('playerCharacters', JSON.stringify(characters));
     
     // Refresh the display
@@ -844,6 +832,8 @@ function editCharacter(index) {
     document.getElementById('pc-headArmor').value = character.headArmor;
     document.getElementById('pc-shield').value = character.shield || 0;
     document.getElementById('pc-interface').value = character.interface || 0;
+    const roleSel = document.getElementById('pc-role');
+    if (roleSel) roleSel.value = character.role || '';
     document.getElementById('pc-notes').value = character.notes || '';
     
     // Clear existing weapon fields
@@ -862,6 +852,18 @@ function editCharacter(index) {
         // Add one empty weapon field if no weapons
         console.log("No weapons found, adding empty field");
         addWeaponFields('pc-weapon-fields');
+    }
+    // Skills
+    const skillList = document.getElementById('pc-skill-list');
+    if (skillList) {
+        skillList.innerHTML = '';
+        (character.skills || []).forEach(s => {
+            const div = document.createElement('div');
+            div.className = 'skill-item';
+            div.innerHTML = `<span class="skill-name">${s.name}</span><span class="skill-level">${s.level}</span><button type="button" class="remove-skill-btn">×</button>`;
+            div.querySelector('.remove-skill-btn').addEventListener('click', () => div.remove());
+            skillList.appendChild(div);
+        });
     }
 }
 
@@ -900,7 +902,9 @@ function loadPlayerCharacters() {
                 charData.headArmor || 0,
                 charData.shield || 0,
                 weapons,  // Pass the processed weapons array
-                charData.criticalInjuries || []
+                charData.criticalInjuries || [],
+                charData.role || '',
+                Array.isArray(charData.skills) ? charData.skills : []
             );
             
             if (charData.health !== undefined) {
@@ -914,6 +918,8 @@ function loadPlayerCharacters() {
             }
             if (charData.interface !== undefined) pc.interface = charData.interface;
             else pc.interface = 0; // Default to 0 if not present in data
+            if (charData.role) pc.role = charData.role;
+            if (Array.isArray(charData.skills)) pc.skills = charData.skills;
             
             playerCharacters.push(pc);
         });
@@ -931,6 +937,7 @@ function loadPlayerCharacters() {
                         <div>Head Armor: ${pc.headArmor}</div>
                         ${pc.shield ? `<div>Shield: ${pc.shield}</div>` : ''}
                         ${pc.interface > 0 ? `<div>Interface: ${pc.interface}</div>` : ''} <!-- Show Interface if > 0 -->
+                                                ${pc.role ? `<div>Role: ${pc.role}</div>` : ''}
                     </div>
                     <div class="weapons-section">
                         <h4>Weapons</h4>
@@ -943,6 +950,12 @@ function loadPlayerCharacters() {
                                 `).join('')}
                             </div>
                         ` : '<div class="weapon-entry-readonly">No weapons</div>'}
+                                                ${(pc.skills && pc.skills.length) ? `
+                                                    <div class="skills-list">
+                                                        <h5>Skills</h5>
+                                                        ${pc.skills.map(s => `<div>${s.name}: ${s.level}</div>`).join('')}
+                                                    </div>
+                                                ` : ''}
                     </div>
                     ${pc.notes ? `
                         <div class="notes-section">
@@ -1960,46 +1973,14 @@ function applyCriticalInjury(encounterId, participantName) {
     const encounter = encounters.find(e => e.id === encounterId);
     if (encounter) {
         const participant = encounter.participants.find(p => p.name === participantName);
-        const injurySelect = document.getElementById(`critical-injury-select-${encounterId}-${participantName}`);
-        const injuryName = injurySelect.value;
-        const criticalSystem = localStorage.getItem('criticalInjurySystem') || 'default';
+    const injurySelect = document.getElementById(`critical-injury-select-${encounterId}-${participantName}`);
+    const selection = injurySelect.value; // format: head::Name or body::Name
 
         if (participant) {
-            if (criticalSystem === 'tarot') {
-                let injuryToAdd = null; // Initialize injury object to null
-                const card = TAROT_CARDS[injuryName]; // injuryName is the card name here
-                
-                if (card) {
-                    // Tarot card found - create the informational injury object
-                    injuryToAdd = { 
-                        name: injuryName, // Use the card's name as the injury name
-                        description: card.description || 'No description available.', // Use the card's main description
-                        isTarot: true,
-                        tarotCard: injuryName // Store the card name 
-                    };
-                } else {
-                     showNotification(`Tarot card definition not found for '${injuryName}'.`, 'error');
-                }
-
-                // Add the injury if one was created and it's not a duplicate
-                // Check duplicate based on the Tarot card name itself
-                if (injuryToAdd && !participant.criticalInjuries.some(inj => 
-                    inj.isTarot && inj.tarotCard === injuryName
-                )) {
-                    participant.criticalInjuries.push(injuryToAdd);
-                    showNotification(`Applied Tarot Card: ${injuryName}`, 'warning');
-                } else if (injuryToAdd) { // Injury object created, but it's a duplicate
-                    showNotification(`Tarot Card '${injuryName}' is already applied.`, 'info');
-                }
-                // If injuryToAdd remained null (card not found), notification was already shown.
-            } else {
-                // Handle default system (existing logic)
-                let selectedInjury = null;
-                for (const location in CRITICAL_INJURIES) {
-                    selectedInjury = CRITICAL_INJURIES[location].find(injury => injury.name === injuryName);
-                    if (selectedInjury) break;
-                }
-
+            if (selection) {
+                const [loc, name] = selection.split('::');
+                const pool = loc === 'head' ? (window.CRITS_CACHE?.head || []) : (window.CRITS_CACHE?.body || []);
+                const selectedInjury = pool.find(i => i.name === name);
                 if (selectedInjury && !participant.criticalInjuries.some(injury => injury.name === selectedInjury.name)) {
                     participant.criticalInjuries.push(selectedInjury);
                 }
@@ -2054,6 +2035,16 @@ window.onload = async function() {
     document.body.offsetHeight; // Force reflow
     document.documentElement.style.removeProperty('--theme-transition');
     
+    // Initialize catalog-driven caches (covers and critical injuries) first
+    try {
+        const catalog = await Catalog.loadCatalog();
+        const covers = CatalogAdapters.getCoversFromCatalog(catalog);
+        window.COVERS_CACHE = covers.reduce((acc, c) => { acc[c.name] = { hp: c.hp }; return acc; }, {});
+        window.CRITS_CACHE = CatalogAdapters.getCriticalInjuriesFromCatalog(catalog);
+    } catch (e) {
+        console.error('Failed to initialize catalog caches', e);
+    }
+
     // Then load the data
     await loadEncounters();
     await loadPlayerCharacters();
@@ -2067,12 +2058,15 @@ window.onload = async function() {
     renderPlayerCharacterList();
     renderCompactPCList();
     
+    // Populate NPC selectors for existing encounters
+    encounters.forEach(e => populateNPCTypeSelect(e.id));
+    
     // Initial update of player character buttons
     updatePlayerCharacterButtons();
 };
 
 function rollCriticalInjury(location) {
-    const table = CRITICAL_INJURIES[location];
+    const table = (location === 'Head' ? window.CRITS_CACHE?.head : window.CRITS_CACHE?.body) || [];
     if (!table) {
         console.error(`No critical injuries found for location: ${location}`);
         return null;
@@ -2173,11 +2167,11 @@ function updatePlayerCharacterButtons() {
     });
 }
 
-function generateEncounter() {
+async function generateEncounter() {
     const difficulty = document.getElementById('encounter-difficulty').value;
     const enemyCount = parseInt(document.getElementById('enemy-count').value) || 4;
     
-    const encounterData = generateRandomEncounter(difficulty, enemyCount);
+    const encounterData = await generateRandomEncounter(difficulty, enemyCount);
     if (!encounterData) return;
 
     // Create new encounter with generated data
@@ -3040,36 +3034,28 @@ function addParticipantToEncounter(encounterId) {
 }
 
 // Also add a function to handle NPC presets
-function addNPCsToEncounter(encounterId) {
+async function addNPCsToEncounter(encounterId) {
     const encounter = encounters.find(e => e.id === encounterId);
     if (!encounter) return;
 
     const npcType = document.getElementById(`npc-type-${encounterId}`).value;
     const npcCount = parseInt(document.getElementById(`npc-count-${encounterId}`).value) || 1;
 
-    if (!npcType || !NPC_PRESETS[npcType]) {
-        alert('Invalid NPC type selected');
-        return;
-    }
+    const catalog = await Catalog.loadCatalog();
+    const archetypes = CatalogAdapters.getArchetypesFromCatalog(catalog);
+    const archetype = archetypes.find(a => a.id === npcType || a.name === npcType);
+    if (!archetype) { alert('Invalid NPC type selected'); return; }
 
-    // Add specified number of NPCs
     for (let i = 0; i < npcCount; i++) {
-        const preset = NPC_PRESETS[npcType];
-        const nameIndex = i + 1;
-        const name = `${npcType} ${nameIndex}`;
-        
-        // Use baseInitiative if available, otherwise use base
-        const baseInitiative = preset.base !== undefined ? preset.base : preset.baseInitiative;
-        
-        // Add the participant using the preset data
+        const npc = CatalogAdapters.generateNPCFromArchetype(catalog, archetype, i + 1);
         encounter.addParticipant(
-            name, 
-            baseInitiative, 
-            preset.maxHealth, 
-            preset.bodyArmor || 0, 
-            preset.headArmor || 0, 
-            preset.shield || 0, 
-            preset.weapons || []
+            npc.name,
+            npc.base,
+            npc.maxHealth,
+            npc.bodyArmor || 0,
+            npc.headArmor || 0,
+            npc.shield || 0,
+            npc.weapons || []
         );
     }
 
@@ -3119,8 +3105,8 @@ function handleCriticalInjury(participant, diceRolls, isHeadshot = false) {
             case 'injury':
                 if (effect.injury) {
                     // Single injury
-                    const injury = CRITICAL_INJURIES[isHeadshot ? 'Head' : 'Body']
-                        .find(i => i.name === effect.injury);
+                    const pool = (window.CRITS_CACHE && (isHeadshot ? window.CRITS_CACHE.head : window.CRITS_CACHE.body)) || [];
+                    const injury = pool.find(i => i.name === effect.injury);
                     if (injury && !participant.criticalInjuries.some(ci => ci.name === injury.name)) {
                         participant.criticalInjuries.push({
                             ...injury,
@@ -3131,8 +3117,8 @@ function handleCriticalInjury(participant, diceRolls, isHeadshot = false) {
                 } else if (effect.injuries) {
                     // Multiple injuries
                     effect.injuries.forEach(injuryName => {
-                        const injury = CRITICAL_INJURIES[isHeadshot ? 'Head' : 'Body']
-                            .find(i => i.name === injuryName);
+                        const pool = (window.CRITS_CACHE && (isHeadshot ? window.CRITS_CACHE.head : window.CRITS_CACHE.body)) || [];
+                        const injury = pool.find(i => i.name === injuryName);
                         if (injury && !participant.criticalInjuries.some(ci => ci.name === injury.name)) {
                             participant.criticalInjuries.push({
                                 ...injury,

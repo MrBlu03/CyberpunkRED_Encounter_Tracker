@@ -1,0 +1,46 @@
+{
+  "label": "Droghe",
+  "mapping": {},
+  "entries": {
+    "Antibiotic": {
+      "name": "Antibiotico",
+      "description": "<p>Se un bersaglio ha iniziato il processo di guarigione naturale iniettandole l'Antibiotico, li farà guarire altri 2 Punti Ferita al giorno per una settimana. Questo effetto non si accumula.</p>"
+    },
+    "Black Lace": {
+      "name": "Black Lace",
+      "description": "<p><strong>Effetto Primario</strong></p>\n<p>La Dose dura 24 Ore.</p>\n<ul>\n<li>Il Personaggio perde 2d6 Umanità quando la assume, che recupera se resiste all’Ef- fetto Secondario.</li>\n<li>Per la durata dell’Effetto Primario, il Personaggio ignora le conseguenze della Soglia Ferito Gravemente.</li>\n</ul>\n<p><br><strong>Effetto Secondario (VD 17)</strong></p>\n<p>Quando la dose svanisce, il personaggio tira VOL + Resistere a Torture/Droghe + 1d10 contro il VD dell'effetto secondario.</p>\n<ul>\n<li>L’umanitàpersaacausadell’EffettoPrimario non viene recuperata.</li>\n<li>A meno che non si verifichi l'effetto primario, RIF -2</li>\n</ul>"
+    },
+    "Blue Glass": {
+      "name": "Blue Glass",
+      "description": "<p><strong>Effetto Primario</strong></p>\n<p>La Dose dura 4 Ore.</p>\n<ul>\n<li>Per la durata dell’Effetto Primario, il GM comunicherà al Personaggio quando sta “fla- shando”, ossia sperimentando brevi ma potenti allucinazioni dai colori vorticosi e vibranti. Quando ciò accade si perde la capacità di effettuare un’Azione nel proprio Turno.</li>\n</ul>\n<p><strong>Effetto Secondario (VD 15)</strong></p>\n<ul>\n<li>Finché resta dipendente, il GM comunicherà al Personaggio quando sta “flashando”, ossia sperimentando brevi ma potenti allucinazioni dai colori vorticosi e vibranti. Quando ciò accade si perde la capacità di effettuare un’Azione nel proprio Turno.</li>\n</ul>"
+    },
+    "Boost": {
+      "name": "Boost",
+      "description": "<p><strong>Effetto Primario</strong></p>\n<p>Dura 24 ore.</p>\n<ul>\n<li>Il personaggio ottiene INT + 2 per la durata dell'effetto</li>\n</ul>\n<p><strong>Effetto Secondario (VD 17)</strong></p>\n<ul>\n<li>INT -2</li>\n</ul>"
+    },
+    "Rapidetox": {
+      "name": "Rapidetox",
+      "description": "<p>Iniettando un paziente con Rapidetox eliminerà tutti gli effetti di qualsiasi droga, veleni o intossicanti attualmente in corso.</p>"
+    },
+    "Smash": {
+      "name": "Smash",
+      "description": "<p><strong>Effetto Primario</strong></p>\n<p>Dura 4 ore.</p>\n<ul>\n<li>Il personaggio si sente felice e soddisfatto</li>\n<li>+2 a Danzare / Contorsionismo / Conversazione / Persuasione / Recitare / Sensibilità</li>\n</ul>\n<p><strong>Effetto Secondario (VD 15)</strong></p>\n<ul>\n<li>-2 a Danzare / Contorsionismo / Conversazione / Persuasione / Recitare / Sensibilità</li>\n<li>Ognitanto, ilGMcomunicheràalGiocatore che ha voglia di altro Smash e questi dovrebbe fare del proprio meglio per inter- pretare tale desiderio.</li>\n</ul>"
+    },
+    "Speedheal": {
+      "name": "Speedheal",
+      "description": "<p>Un paziente che non sia Morente recupera subito un numero di Punti Ferita pari alla somma di FIS+VOL. Si può\nricevere una sola dose al giorno.</p>"
+    },
+    "Stim": {
+      "name": "Stim",
+      "description": "<p>Per un’ora, il paziente ignora le penalità dello Soglia Ferito Gravemente. Si può riceve una sola dose al giorno.</p>"
+    },
+    "Surge": {
+      "name": "Surge",
+      "description": "<p>Il paziente può agire senza penalità per la mancanza di sonno per un giorno. Si può riceverne una sola dose\na settimana.</p>"
+    },
+    "Synthcoke": {
+      "name": "Synthcoke",
+      "description": "<p><strong>Effetto Primario</strong></p>\n<p>Dura 4 ore.</p>\n<ul>\n<li>+1 RIF per la durata.</li>\n<li>Il personaggio può avere attacchi di paranoia.</li>\n</ul>\n<p><strong>Effetto Secondario (VD 17)</strong></p>\n<ul>\n<li>-2 RIF a meno che non sia sotto l'effetto primario.</li>\n<li>Ognitanto, ilGMcomunicheràalGiocatore che ha voglia di altra Synthcoke e questi dovrebbe fare del proprio meglio per inter- pretare tale desiderio.</li>\n</ul>"
+    }
+  }
+}

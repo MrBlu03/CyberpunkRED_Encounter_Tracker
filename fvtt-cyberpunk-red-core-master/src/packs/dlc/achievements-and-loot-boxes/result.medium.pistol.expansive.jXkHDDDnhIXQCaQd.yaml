@@ -1,0 +1,12 @@
+_id: jXkHDDDnhIXQCaQd
+_key: "!tables.results!4S3emhUCIIDNoTAg.jXkHDDDnhIXQCaQd"
+documentCollection: cyberpunk-red-core.core_ammo
+documentId: yEZOd9wbzrw30wKz
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/ammo/pistolmedium_expansive.png
+range:
+  - 3
+  - 3
+text: Medium Pistol (Expansive)
+type: 2
+weight: 1

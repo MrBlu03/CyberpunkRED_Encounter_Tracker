@@ -1,0 +1,58 @@
+{
+  "label": "Must Have Cyberware Deals",
+  "mapping": {},
+  "entries": {
+    "Appetite Controller": {
+      "name": "Appetite Controller",
+      "description": "<p>\n  Suppresses hunger response. User ignores Humanity Loss penalties from\n  starvation trauma but User can still starve. Roll a Death Save at start of 7th\n  consecutive day without eating. +1 to successive Death Saves each day\n  afterwards.\n</p>\n<p>Requires Biomonitor.</p>\n"
+    },
+    "Cyberpillow": {
+      "name": "Cyberpillow",
+      "description": "<p>A comfortable Cyberarm popout pillow for naps on the go.</p>\n"
+    },
+    "External Vidscreen": {
+      "name": "External Vidscreen",
+      "description": "<p>\n  Implanted flexible video screen. Use a socketed Memory Chip or linked Agent to\n  stream video to Vidscreen.\n</p>\n"
+    },
+    "Holo Projector Palm": {
+      "name": "Holo Projector Palm",
+      "description": "<p>\n  Projects a small hologram from the User&rsquo;s palm. User can interact with\n  hologram to control a linked Agent&rsquo;s functions. Can be installed in meat\n  arm if it&rsquo;s the only piece of cyberware in that arm.\n</p>\n"
+    },
+    "Kill Display": {
+      "name": "Kill Display",
+      "description": "<p>\n  Subdermal Alphanumeric display that shines clearly through the skin. Use a\n  linked Agent to customize the output. Commonly used as &ldquo;kill\n  counter.&rdquo;<br />Qualifies as a Light Tattoo. +2 Wardrobe and Style when\n  the user has 3 or more Light Tattoos.\n</p>\n"
+    },
+    "Lead's Turn-On-Show-Off Nails": {
+      "name": "Lead's Turn-On-Show-Off Nails",
+      "description": "<p>\n  Customizable illuminated nail for each fingertip. Includes pen tools for\n  creating custom patterns. Nail patterns can be downloaded from the CitiNet and\n  synced with a linked Agent.<br />Qualifies as a Light Tattoo. +2 Wardrobe and\n  Style when the user has 3 or more Light Tattoos.\n</p>\n"
+    },
+    "Mood Eye": {
+      "name": "Mood Eye",
+      "description": "<p>\n  Color-shifting eye lenses. Color is dependent on Neural Link \"mood\" scans.\n  <strong>DV 21 Acting</strong> check to fake a mood scan and change color\n  accordingly. Lenses can be deactivated without an action.\n</p>\n<ul>\n  <li>Red: Rage</li>\n  <li>Blue: Sorrow</li>\n  <li>Yellow: Terror</li>\n  <li>Pink: Horny</li>\n  <li>Green: Envy</li>\n  <li>Gray: Flatlined</li>\n</ul>\n<p>Fashionware. Requires Neural Link.</p>\n"
+    },
+    "NeuTongue": {
+      "name": "NeuTongue",
+      "description": "<p>\n  Simulates flavor sensations. Use a linked Agent to customize flavor profiles.\n  Can be deactivated without an Action. No sense of taste when deactivated.\n</p>\n<p>Replaces Meat tongue.</p>\n"
+    },
+    "PerfectFit Cyberfoot": {
+      "name": "PerfectFit Cyberfoot",
+      "description": "<p>\n  Adjust foot size to perfectly fit any footwear. User can ignore penalties for\n  wearing footwear that would otherwise be uncomfortable or impracticable.<br />Can\n  be installed in meat leg if it&rsquo;s the only piece of cyberware in that\n  leg.\n</p>\n"
+    },
+    "PersonalPak KibbleWarmer": {
+      "name": "PersonalPak KibbleWarmer",
+      "description": "<p>\n  Internal compartment with a high-powered heating element, ideal for warming up\n  pre-packaged meals.\n</p>\n"
+    },
+    "Pursuit Security Inc. Personal Shredder": {
+      "name": "Pursuit Security Inc. Personal Shredder",
+      "description": "<p>\n  Heavy duty paper shredder, can be concealed. Features an internal storage for\n  paper shreds.\n</p>\n"
+    },
+    "Sponsored Covering (Cyberarm)": {
+      "name": "Sponsored Covering (Cyberarm)",
+      "description": "<p>\n  Earn 20eb monthly by sporting a light-up advertisement on your Cyberarm. User\n  may be responsible for paying the installation fee. Corporate sponsorship may\n  be revoked if the terms are violated, such as obscuring the advertisement with\n  clothing or engaging in &ldquo;off-brand&rdquo; activities.\n</p>\n<p>Can not be installed in Meat arm.</p>\n"
+    },
+    "Sponsored Covering (Cyberleg)": {
+      "name": "Sponsored Covering (Cyberleg)",
+      "description": "<p>\n  Earn 20eb monthly by sporting a light-up advertisement on your Cyberleg. User\n  may be responsible for paying the installation fee. Corporate sponsorship may\n  be revoked if the terms are violated, such as obscuring the advertisement with\n  clothing or engaging in &ldquo;off-brand&rdquo; activities.\n</p>\n<p>Can not be installed in Meat leg.</p>\n"
+    }
+  }
+}

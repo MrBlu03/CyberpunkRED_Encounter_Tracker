@@ -1,0 +1,4 @@
+{
+  "description": "The attackMod of a weapon",
+  "type": "integer"
+}

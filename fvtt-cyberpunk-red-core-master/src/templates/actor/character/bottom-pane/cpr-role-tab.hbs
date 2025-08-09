@@ -1,0 +1,140 @@
+<div class="role-tab-content">
+  <div class="role-section">
+    {{#if (cprCompare actor.itemTypes.role.length "===" 0) }}
+      {{localize "CPR.characterSheet.bottomPane.role.noRolesWarning"}}
+    {{else}}
+      {{#each (cprSort actor.itemTypes.role "name") as |role| }}
+        <div class="role-item">
+          <ol class="items-list role-list">
+            <div class="collapsible">
+              <li class="item items-header flexrow" data-item-id="{{role._id}}">
+                <span class="item-name role-name text-nowrap text-padding-left-smallest"
+                      id="roleTab-{{role}}">
+                  <a class="item-edit">
+                    {{localize (cprGetLocalizedlNameKey role)}} {{localize "CPR.characterSheet.bottomPane.role.abilities"}}
+                  </a>
+                  <a class="item-action" data-action-type="delete">
+                    <i class="fas fa-trash-can"
+                       data-tooltip="{{localize "CPR.actorSheets.commonActions.deleteItem"}}"></i>
+                  </a>
+                </span>
+                <span class="item-detail role-rank text-nowrap">
+                  {{localize "CPR.characterSheet.rightPane.skills.skillMod"}}
+                </span>
+                <span class="item-detail role-rank text-nowrap text-right">{{localize "CPR.characterSheet.bottomPane.role.rank"}}
+                </span>
+              </li>
+              <ol class="items-list">
+                <li class="item flexrow" draggable="true" data-item-id="{{role._id}}">
+                  <div class="item-name role-name flexrow  text-nowrap">
+                    {{#if role.system.hasRoll }}
+                      <a class="rollable ability-name text-semi"
+                         data-roll-type="roleAbility"
+                         data-roll-subtype="mainRoleAbility"
+                         data-roll-title="{{role.system.mainRoleAbility}}">
+                        <i class="fa-solid fa-diamond"></i>
+                      {{/if}}
+                      <span class="text-semi ability-name">
+                        {{localize (cprGetLocalizedlNameKey role.system.mainRoleAbility "roleAbility")}}:
+                      </span>
+                      {{#if role.system.hasRoll }}
+                      </a>
+                    {{/if}}
+                  </div>
+                  <div class="item-detail ability-rank text-nowrap
+                        {{#if (cprCompare (cprGetSkillModInfo role.system.mainRoleAbility ../actor "modTotal") "===" 0) }}
+                          {{#unless (cprGetSkillModInfo role.system.mainRoleAbility ../actor "hasSituational")}}
+                            zero-not-visible
+                          {{/unless}}
+                        {{/if }}">
+                  <span
+                    {{#if (cprGetSkillModInfo role.system.mainRoleAbility ../actor "hasSituational") }}
+                      class="text-italic"
+                    {{/if }}
+                    {{#if (cprGetSkillModInfo role.system.mainRoleAbility ../actor "modList" keepSituational=true) }}
+                      data-tooltip="
+                        {{#each (cprGetSkillModInfo role.system.mainRoleAbility ../actor "modList" keepSituational=true) as |mod| }}
+                          {{mod.source }} ({{cprGetChangeNameByKey false mod.category mod.key }}): {{cprEffectModMode mod.changeMode mod.value }} {{~#if mod.isSituational }}*{{/if}}
+                          {{#unless @last }}
+                            <br/>
+                          {{/unless}}
+                        {{/each}}
+                        {{#if (cprGetSkillModInfo role.system.mainRoleAbility ../actor "hasSituational") }}
+                          <hr/>
+                          *{{localize "CPR.characterSheet.rightPane.skills.situationalModWarning"}}
+                        {{/if}}"
+                    {{/if}}>
+                    {{cprGetSkillModInfo role.system.mainRoleAbility ../actor "modTotal"}}
+                  </span>
+                  </div>
+                  <div class="item-detail ability-rank text-nowrap">
+                    <input class="number ability-input"
+                           value="{{role.system.rank}}"
+                           data-role-name="{{role.name}}"
+                           data-ability-name="{{role.system.mainRoleAbility}}"
+                           type="number"/>
+                  </div>
+                </li>
+                {{#each (cprSort role.system.abilities "name") as |ability| }}
+                  <li class="item flexrow" draggable="true" data-item-id="{{role._id}}">
+                    <div class="item-name role-name flexrow  text-nowrap">
+                      {{#if ability.hasRoll }}
+                        <a class="rollable ability-name subskill"
+                           data-roll-type="roleAbility"
+                           data-roll-subtype="subRoleAbility"
+                           data-roll-title="{{ability.name}}">
+                          <i class="fa-solid fa-diamond"></i>
+                      {{else}}
+                        <span class="ability-name text-padding-left-massive">
+                      {{/if}}
+                      {{localize (cprGetLocalizedlNameKey ability.name "roleAbility")}}:
+                      {{#if ability.hasRoll }}
+                        </a>
+                      {{else}}
+                        </span>
+                      {{/if}}
+                    </div>
+                        <div class="item-detail ability-rank text-nowrap
+                              {{#if (cprCompare (cprGetSkillModInfo ability.name ../actor "modTotal") "===" 0) }}
+                                {{#unless (cprGetSkillModInfo ability.name ../actor "hasSituational")}}
+                                  zero-not-visible
+                                {{/unless}}
+                              {{/if }}">
+                          <span
+                            {{#if (cprGetSkillModInfo ability.name ../actor "hasSituational") }}
+                              class="text-italic"
+                            {{/if }}
+                            {{#if (cprGetSkillModInfo ability.name ../actor "modList" keepSituational=true) }}
+                              data-tooltip="
+                                {{#each (cprGetSkillModInfo ability.name ../actor "modList" keepSituational=true) as |mod| }}
+                                  {{mod.source }} ({{cprGetChangeNameByKey false mod.category mod.key }}): {{cprEffectModMode mod.changeMode mod.value }} {{~#if mod.isSituational }}*{{/if}}
+                                  {{#unless @last }}
+                                    <br/>
+                                  {{/unless}}
+                                {{/each}}
+                                {{#if (cprGetSkillModInfo ability.name ../actor "hasSituational") }}
+                                  <hr/>
+                                  *{{localize "CPR.characterSheet.rightPane.skills.situationalModWarning"}}
+                                {{/if}}"
+                            {{/if}}>
+                            {{cprGetSkillModInfo ability.name ../actor "modTotal"}}
+                          </span>
+                        </div>
+                        <div class="item-detail ability-rank text-nowrap">
+                          <input class="number ability-input"
+                                 value="{{ability.rank}}"
+                                 data-role-name="{{role}}"
+                                 data-ability-name="{{role.system.mainRoleAbility}}"
+                                 data-subskill-name="{{ability.name}}"
+                                 type="number"/>
+                        </div>
+                      </li>
+                    {{/each}}
+                  </ol>
+                </div>
+              </ol>
+            </div>
+          {{/each}}
+        {{/if}}
+      </div>
+    </div>

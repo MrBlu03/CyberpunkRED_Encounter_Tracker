@@ -1,0 +1,54 @@
+_id: tthUaY2iqrpUlO44
+_key: "!items!tthUaY2iqrpUlO44"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/weapons/veryHeavyPistol.svg
+name: Sanroo Hello Cutie Ultra-K8 Assault Pistol
+system:
+  ammoVariety:
+    - vHeavyPistol
+  attackmod: 1
+  brand: Sanroo
+  concealable:
+    concealable: false
+    isConcealed: false
+  critFailEffect: jammed
+  damage: 4d6
+  description:
+    value: |
+      <p>
+        The Sanroo Hello Cutie Ultra-K8 Assault Pistol is an Excellent Quality Exotic
+        Very Heavy Pistol with an Excellent Quality Heavy SMG mode.
+      </p>
+  dvTable: DV Pistol
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 1
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+      - ammo
+    list: []
+    slots: 2
+    usedSlots: 0
+  isRanged: true
+  magazine:
+    max: 30
+    value: 0
+  price:
+    market: 5000
+  quality: excellent
+  revealed: true
+  rof: 1
+  source:
+    book: BC
+    page: 118
+  unarmedAutomaticCalculation: true
+  usage: equipped
+  usesType: magazine
+  weaponSkill: Handgun
+  weaponType: vHeavyPistol
+type: weapon

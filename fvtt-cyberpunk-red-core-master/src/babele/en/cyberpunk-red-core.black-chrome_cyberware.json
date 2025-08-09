@@ -1,0 +1,176 @@
+{
+  "label": "Cyberware",
+  "mapping": {
+    "dvTable": "system.dvTable"
+  },
+  "entries": {
+    "Airhypo Cyberfinger": {
+      "name": "Airhypo Cyberfinger",
+      "description": "<p>\n  Cyberfinger that holds an Airhypo. Can only be installed on a modular finger\n  cyberhand.\n</p>\n"
+    },
+    "Ballpoint Cyberfinger": {
+      "name": "Ballpoint Cyberfinger",
+      "description": "<p>\n  Cyberfinger with a ballpoint pen inside. Can only be installed on a modular\n  finger cyberhand.\n</p>\n"
+    },
+    "Budget Chipware Socket": {
+      "name": "Budget Chipware Socket",
+      "description": "<p>\n  A cheap socket for a single installation of chipware. Damage to the head sends\n  the installed chipware 30 m/yds away, potentially breaking it.\n</p>\n"
+    },
+    "Bullet Storage Cyberfinger": {
+      "name": "Bullet Storage Cyberfinger",
+      "description": "<p>\n  Cyberfinger that can be used to conceal two rounds of ammunition of any type.\n  Can only be installed on a modular finger cyberhand.\n</p>\n"
+    },
+    "Dartgun Cyberfinger": {
+      "name": "Dartgun Cyberfinger",
+      "description": "<p>\n  Cyberfinger that holds a concealed Dartgun. Can only be installed on a modular\n  finger cyberhand.\n</p>\n",
+      "dvTable": "DV Pistol"
+    },
+    "Discount Cyberaudio Suite": {
+      "name": "Discount Cyberaudio Suite",
+      "description": "<p>A cheap and bulky interface for an audio enhancement.</p>\n"
+    },
+    "Dynalar Modular Finger Enthusiast Cyberhand": {
+      "name": "Dynalar Modular Finger Enthusiast Cyberhand",
+      "description": "<p>Borgware. Requires cyberarm. Comes with 8 cyberfingers*.</p>\n<p>*Fingers must be added after installation</p>\n"
+    },
+    "Explicit Memory Stimulator": {
+      "name": "Explicit Memory Stimulator",
+      "description": "<p>Chipware.</p>\n<p>Enhances memorization. +2 Concentration while installed.</p>\n"
+    },
+    "Extra-Jointed Cyberarm Upgrade": {
+      "name": "Extra-Jointed Cyberarm Upgrade",
+      "description": "<p>Enchances cyberarm articulation. +2 Contortionist.</p>\n"
+    },
+    "Extra-Jointed Cyberleg Upgrade": {
+      "name": "Extra-Jointed Cyberleg Upgrade",
+      "description": "<p>Enchances cyberleg articulation. +2 Contortionist.</p>\n"
+    },
+    "Flashbulb": {
+      "name": "Flashbulb",
+      "description": "<p>Requires cyberarm. User can attempt to blind anyone within 25m/yds.</p>\n"
+    },
+    "Flashlight Cyberfinger": {
+      "name": "Flashlight Cyberfinger",
+      "description": "<p>\n  Cyberfinger that holds a concealed Flashlight. Can only be installed on a\n  modular finger cyberhand.\n</p>\n"
+    },
+    "Hardened Shielding (Borgware)": {
+      "name": "Hardened Shielding (Borgware)",
+      "description": "<p>Borgware.</p>\n<p>This is installed to is not affected by EMP effects.</p>\n"
+    },
+    "Hardened Shielding (Cybereye)": {
+      "name": "Hardened Shielding (Cybereye)",
+      "description": "<p>The eye and installed options are not affected by EMP effects.</p>\n"
+    },
+    "Hardened Shielding (Internal)": {
+      "name": "Hardened Shielding (Internal)",
+      "description": "<p>Internal Cyberware.</p>\n<p>All internal cyberware is not affected by EMP effects.</p>\n"
+    },
+    "Heuristic Health Monitor": {
+      "name": "Heuristic Health Monitor",
+      "description": "<p>Requires biomonitor. Can know HP at a glance.</p>\n"
+    },
+    "Homing Tracer Cyberfinger": {
+      "name": "Homing Tracer Cyberfinger",
+      "description": "<p>\n  Cyberfinger that functions like a Homing Tracer. Can only be installed on a\n  modular finger cyberhand.\n</p>\n"
+    },
+    "Implanted Fūma Kotarō Linear Frame": {
+      "name": "Implanted Fūma Kotarō Linear Frame",
+      "description": "<ul>\n  <li>Requires BODY 8, 2 Grafted Muscle and Bone Lace</li>\n  <li>\n    Increases BODY stat to 12 (adjusting your HP, Wound Threshold, and Death\n    Save)\n  </li>\n  <li>Increase Stealth +2</li>\n  <li>Drawing and sheathing the frame's weapons does not require an Action</li>\n  <li>\n    A Conceal check is not required for the weapons concealed in the frame.\n  </li>\n  <li>\n    <p>Frame has one of two weapon options*:</p>\n    <ul>\n      <li>Two excellent quality exotic heavy melee weapons</li>\n      <li>\n        One excellent quality light melee weapon and one excellent quality\n        exotic very heavy melee weapon\n      </li>\n    </ul>\n  </li>\n</ul>\n<p><em>* Must be manually added.</em></p>\n"
+    },
+    "Implanted LF-001 SWAT Linear Frame": {
+      "name": "Implanted LF-001 SWAT Linear Frame",
+      "description": "<ul>\n  <li>Requires BODY 8, 2 Grafted Muscle and Bone Lace</li>\n  <li>\n    Increases BODY stat to 12 (adjusting your HP, Wound Threshold, and Death\n    Save)\n  </li>\n  <li>Ignores the normal movement penalty for climbing and swimming</li>\n</ul>\n"
+    },
+    "Implanted Vermilion Linear Frame": {
+      "name": "Implanted Vermilion Linear Frame",
+      "description": "<ul>\n  <li>Requires BODY 8, 2 Grafted Muscle and Bone Lace</li>\n  <li>\n    Increases BODY stat to 12 (adjusting your HP, Wound Threshold, and Death\n    Save)\n  </li>\n  <li>No movement penalty for jumping</li>\n  <li>Operates as if paired Skate Feet are installed</li>\n</ul>\n"
+    },
+    "Integrated Cyberdeck Upgrade": {
+      "name": "Integrated Cyberdeck Upgrade",
+      "description": "<p>Requires Cyberdeck (Hardwired), adds an extra slot to the cyberdeck.</p>\n"
+    },
+    "Laser Pointer Cyberfinger": {
+      "name": "Laser Pointer Cyberfinger",
+      "description": "<p>\n  Cyberfinger holding a concealed Laser Pointer. Can only be installed on a\n  modular finger cyberhand.\n</p>\n"
+    },
+    "Lighter Cyberfinger": {
+      "name": "Lighter Cyberfinger",
+      "description": "<p>\n  Cyberfinger holding a concealed lighter. Can only be installed on a modular\n  finger cyberhand.\n</p>\n"
+    },
+    "Lockpick Cyberfinger": {
+      "name": "Lockpick Cyberfinger",
+      "description": "<p>\n  Cyberfinger holding a concealed Lock Picking Set. Can only be installed on a\n  modular finger cyberhand.\n</p>\n"
+    },
+    "Microphone Cyberfinger": {
+      "name": "Microphone Cyberfinger",
+      "description": "<p>\n  Cyberfinger holding a concealed recording device. Can only be installed on a\n  modular finger cyberhand.\n</p>\n"
+    },
+    "Mini Air Supply Cyberfinger": {
+      "name": "Mini Air Supply Cyberfinger",
+      "description": "<p>\n  Cyberfinger with an integrated air tank. Can only be installed on a modular\n  finger cyberhand.\n</p>\n"
+    },
+    "Modular Finger Cyberhand": {
+      "name": "Modular Finger Cyberhand",
+      "description": "<p>Requires cyberarm. Comes with 5 cyberfingers*.</p>\n<p>*Fingers must be added after installation</p>\n"
+    },
+    "Neo-Soviet Cyberarm": {
+      "name": "Neo-Soviet Cyberarm",
+      "description": "<p>\n  A soviet cybernetical replacement arm. Comes with a free hand pre-installed.\n  -1 to rolls requiring arm without BODY 8+.\n</p>\n"
+    },
+    "One Shot Special Cyberfinger": {
+      "name": "One Shot Special Cyberfinger",
+      "description": "<p>\n  Cyberfinger that holds a concealed Exotic Heavy Pistol. Can only be installed\n  on a modular finger cyberhand.\n</p>\n",
+      "dvTable": "DV Pistol"
+    },
+    "Popup Net Launcher": {
+      "name": "Popup Net Launcher",
+      "description": "<p>\n  A concealable exotic net launcher. Can't hold anything with this hand while\n  activated.\n</p>\n",
+      "dvTable": "DV Shotgun (Slug)"
+    },
+    "Popup Shotgun": {
+      "name": "Popup Shotgun",
+      "description": "<p>\n  A concealable shotgun. Comes with a smartgun link pre-installed*. Can't hold\n  anything with this hand while activated.\n</p>\n<p><em>* Smart Link must be manually added.</em></p>\n",
+      "dvTable": "DV Shotgun (Slug)"
+    },
+    "RacerBracer": {
+      "name": "RacerBracer",
+      "description": "<p>Internal cyberware. Grants immunity to whiplash.</p>\n"
+    },
+    "Reflex Co-Processor": {
+      "name": "Reflex Co-Processor",
+      "description": "<p>Neuralware.</p>\n<p>Negates REF requirement to dodge bullets.</p>\n"
+    },
+    "Reinforced Cyberarm Upgrade": {
+      "name": "Reinforced Cyberarm Upgrade",
+      "description": "<p>Requires cyberarm. The cyberarm this is installed on cannot be broken.</p>\n"
+    },
+    "Reinforced Cyberleg Upgrade": {
+      "name": "Reinforced Cyberleg Upgrade",
+      "description": "<p>Requires cyberleg. The cyberleg this is installed on cannot be broken.</p>\n"
+    },
+    "Sponsored Cybereye": {
+      "name": "Sponsored Cybereye",
+      "description": "<p>\n  A replacement eye. Chyron comes pre-installed*. User randomly experiences\n  random ads.\n</p>\n<p><em>*Chyron must be added after installation</em></p>\n"
+    },
+    "Spray Paint Cyberfinger": {
+      "name": "Spray Paint Cyberfinger",
+      "description": "<p>\n  Cyberfinger functioning as a spray can. Can only be installed on a modular\n  finger cyberhand.\n</p>\n"
+    },
+    "Squirt Cyberfinger": {
+      "name": "Squirt Cyberfinger",
+      "description": "<p>\n  Cyberfinger that can hold and spray various liquids. Can only be installed on\n  a modular finger cyberhand.\n</p>\n"
+    },
+    "Standard Cyberfinger": {
+      "name": "Standard Cyberfinger",
+      "description": "<p>Cyberfinger. Can only be installed on a modular finger cyberhand.</p>\n"
+    },
+    "Trauma Response Nanomatrix": {
+      "name": "Trauma Response Nanomatrix",
+      "description": "<p>Can fully repair skinweave or subdermal armor once a day.</p>\n"
+    },
+    "Wirecutter/Scissors Cyberfingers": {
+      "name": "Wirecutter/Scissors Cyberfingers",
+      "description": "<p>\n  Cyberfinger pair that can serve as scissors or wirecutters. Can only be\n  installed on a modular finger cyberhand.\n</p>\n"
+    }
+  }
+}

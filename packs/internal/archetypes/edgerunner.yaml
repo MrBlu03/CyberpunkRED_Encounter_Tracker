@@ -1,0 +1,16 @@
+name: Edgerunners
+system:
+  baseInitiative: 7
+  maxHealth: 40
+  armor:
+    body: 10
+    head: 7
+  shield: 0
+  weapons:
+  - id: core/weapons/weapon.smg
+  - id: core/weapons/weapon.very.heavy.pistol
+  - id: core/weapons/weapon.combat.knife
+  tags: [edgerunner]
+source:
+  book: Internal
+  page: 0

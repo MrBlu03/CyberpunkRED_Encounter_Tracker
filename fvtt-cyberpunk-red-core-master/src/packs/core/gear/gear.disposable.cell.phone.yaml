@@ -1,0 +1,33 @@
+_id: OjMJ2SyoMr4VWmnm
+_key: "!items!OjMJ2SyoMr4VWmnm"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/gear/disposable_cellphone.svg
+name: Disposable Cell Phone
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>Voice calls only.</p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 0
+    usedSlots: 0
+  isElectronic: true
+  price:
+    market: 50
+  providesHardening: false
+  revealed: true
+  source:
+    book: Core
+    page: 353
+  usage: toggled
+type: gear

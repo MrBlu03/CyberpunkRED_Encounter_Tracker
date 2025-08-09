@@ -1,0 +1,51 @@
+_id: FdWzIROFGFrpvFMj
+_key: "!items!FdWzIROFGFrpvFMj"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/weapons/SMG.svg
+name: SMG
+system:
+  ammoVariety:
+    - medPistol
+  attackmod: 0
+  brand: ""
+  concealable:
+    concealable: true
+    isConcealed: false
+  critFailEffect: jammed
+  damage: 2d6
+  description:
+    value: |
+      <p>A concealable SMG.</p>
+  dvTable: DV SMG
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 3
+    suppressiveFire: true
+  handsReq: 1
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+      - ammo
+    list: []
+    slots: 3
+    usedSlots: 0
+  isRanged: true
+  magazine:
+    max: 30
+    value: 0
+  price:
+    market: 100
+  quality: standard
+  revealed: true
+  rof: 1
+  source:
+    book: Core
+    page: 341
+  unarmedAutomaticCalculation: true
+  usage: equipped
+  usesType: magazine
+  weaponSkill: Handgun
+  weaponType: smg
+type: weapon

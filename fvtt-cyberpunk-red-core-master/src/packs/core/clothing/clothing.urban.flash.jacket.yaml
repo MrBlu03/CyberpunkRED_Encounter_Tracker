@@ -1,0 +1,38 @@
+_id: y3Ij43Eg3b0tq16F
+_key: "!items!y3Ij43Eg3b0tq16F"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/clothing/generic_jacket.svg
+name: Urban Flash Jacket
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        The most technological and flashy clothing you can find in the Time of the
+        Red.
+      </p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: false
+  price:
+    market: 100
+  providesHardening: false
+  revealed: true
+  source:
+    book: Core
+    page: 356
+  style: urbanFlash
+  type: jacket
+  usage: equipped
+type: clothing

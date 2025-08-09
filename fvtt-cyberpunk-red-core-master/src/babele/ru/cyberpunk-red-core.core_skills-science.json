@@ -1,0 +1,38 @@
+{
+  "label": "Навыки (Наука)",
+  "mapping": {},
+  "entries": {
+    "Science (Anthropology)": {
+      "name": "Наука (Антропология)",
+      "description": ""
+    },
+    "Science (Biology)": {
+      "name": "Наука (Биология)",
+      "description": ""
+    },
+    "Science (Chemistry)": {
+      "name": "Наука (Химия)",
+      "description": ""
+    },
+    "Science (Geology)": {
+      "name": "Наука (Геология)",
+      "description": ""
+    },
+    "Science (History)": {
+      "name": "Наука (История)",
+      "description": ""
+    },
+    "Science (Mathematics)": {
+      "name": "Наука (Математика)",
+      "description": ""
+    },
+    "Science (Physics)": {
+      "name": "Наука (Физика)",
+      "description": ""
+    },
+    "Science (Zoology)": {
+      "name": "Наука (Зоология)",
+      "description": ""
+    }
+  }
+}

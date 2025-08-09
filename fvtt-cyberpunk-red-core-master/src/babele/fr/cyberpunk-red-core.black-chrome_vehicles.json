@@ -1,0 +1,130 @@
+{
+  "label": "Véhicules",
+  "mapping": {},
+  "entries": {
+    "AmeriCar EconoCompact": {
+      "name": "ÉconoCompact AmeriCar",
+      "description": "<p>Voiture terrestre compacte, petite et pas chère.</p>\n"
+    },
+    "AmeriCar Family Star Van": {
+      "name": "Van Family Star AmeriCar",
+      "description": "<p>Une voiture terrestre familiale compacte confortable.</p>\n"
+    },
+    "Dayton TDT 004": {
+      "name": "Dayton TDT 004",
+      "description": "<p>Hélicoptère de transport de troupes.</p>\n"
+    },
+    "Diego Motors Chupacabra": {
+      "name": "Chupacabra Diego Motors",
+      "description": "<p>\n  Véhicule terrestre compact construit à partir de pièces recyclées de véhicules plus anciens.\n  Simple et puissant.\n</p>\n"
+    },
+    "Diego Motors Range Trike": {
+      "name": "Vélomobile des grands espaces Diego Motors",
+      "description": "<p>Moto de route à trois roues.</p>\n"
+    },
+    "Grundy": {
+      "name": "Grundy",
+      "description": "<p>Voiture terrestre compacte blindée au look industriel, avec un puissant pare-chocs de combat.</p>\n"
+    },
+    "Harriet 100": {
+      "name": "Harriet 100",
+      "description": "<p>Une moto de route classique avec un look plus féminin.</p>\n"
+    },
+    "Harvey 100": {
+      "name": "Harvey 100",
+      "description": "<p>Une moto de route classique.</p>\n"
+    },
+    "Harvey Merc": {
+      "name": "Harvey Merc",
+      "description": "<p>Une moto de route classique, mais avec des armes montées.</p>\n"
+    },
+    "Highway Master Artemis": {
+      "name": "Maîtresse du bitume Artémis",
+      "description": "<p>Une moto de route basse avec habitacle en verre rétractable. A un mode surcharge qui n'est pas fourni avec une garantie de sécurité.</p>\n"
+    },
+    "Kaukaz Volkhov": {
+      "name": "Volkhov Kaukaz",
+      "description": "<p>Un pick-up compact blindé avec mitrailleuse. Livré avec une bouteille de vodka.</p>\n"
+    },
+    "Makigai Ebi": {
+      "name": "Ebi Makigai",
+      "description": "<p>Voiture terrestre compacte, petite mais bien pensée .</p>\n"
+    },
+    "Militech Gorgon Security Van": {
+      "name": "Fourgon blindé Gorgone Militech",
+      "description": "<p>Un fourgon blindé titanesque.</p>\n"
+    },
+    "Paladin 500": {
+      "name": "Paladin 500",
+      "description": "<p>Une voiture terrestre à haute performance. Maintenant vous pouvez être MadMax. En ville. Avec deux mitrailleuses montées.</p>\n"
+    },
+    "Quadra Thunder-X": {
+      "name": "Thunder-X Quadra",
+      "description": "<p>Une voiture terrestre à haute performance haut de gamme.</p>\n"
+    },
+    "SH-45 Patroller Law": {
+      "name": "Patrouilleur de police SH-45",
+      "description": "<p>Gyrocoptère une place. Version police, avec mitrailleuse montée.</p>\n"
+    },
+    "SH-45 Patroller": {
+      "name": "Patrouilleur SH-45",
+      "description": "<p>Gyrocoptère civil une place.</p>\n"
+    },
+    "Street King Combat Vehicle": {
+      "name": "Véhicule de combat Street King",
+      "description": "<p>Une voiture terrestre à haute performance, massive, blindée et à l'aspect militaire.</p>\n"
+    },
+    "Tanson Bellhop": {
+      "name": "Bellhop Tanson",
+      "description": "<p>\n  Un Gyrocoptère une place qui peut être plié à la taille d'une grande valise.\n</p>\n"
+    },
+    "Tanson JetBoy Hoverboard": {
+      "name": "Hoverboard JetBoy Tanson",
+      "description": "<p>Un hoverboard piloté avec la compétence Athlétisme. Ne peut pas être amélioré.</p>\n"
+    },
+    "TetraCorp America Badger Corporate Bus": {
+      "name": "Corpo Bus Furet TetraCorp America",
+      "description": "<p>\n  Un bus luxueux pour les voyages corpo. Également équipé pour les réunions \n  de travail et les pots d'afterwork.\n</p>\n"
+    },
+    "TetraCorp America MegaHauler": {
+      "name": "Mégacamion TetraCorp America",
+      "description": "<p>Camion de transport blindé. Ressemble plus à un train qu'à une voiture.</p>\n"
+    },
+    "Yang's Wheels Rickshaw": {
+      "name": "Cyclo-pousse Yang's Wheels",
+      "description": "<p>Moto de route avec remorque pour passagers.</p>\n"
+    },
+    "Zacatzontli Pickup Truck": {
+      "name": "Pick-up Zacatzontli",
+      "description": "<p>Une voiture terrestre compacte équipée pour les voyages hors route.</p>\n"
+    },
+    "Zetatech AeroCop": {
+      "name": "AeroCop Zetatech",
+      "description": "<p>Aérodyne AV4. Version police.</p>\n"
+    },
+    "Zetatech AeroVox": {
+      "name": "AéroVox Zetatech",
+      "description": "<p>Aérodyne AV4. Verson civile.</p>\n"
+    },
+    "Zetatech Destination": {
+      "name": "Destination Zetatech",
+      "description": "<p>Aérodyne AV4, modèle grand public.</p>\n"
+    },
+    "Zetatech Herakles": {
+      "name": "Héraclès Zetatech",
+      "description": "<p>Transport de troupes de type AV4, blindé et armé.</p>\n"
+    },
+    "Zonda Molly 1K": {
+      "name": "Molly 1000 Zonda",
+      "description": "<p>Voiture terrestre compacte tout-terrain.</p>\n"
+    },
+    "Zonda Parallax Cybercycle": {
+      "name": "Cybermoto Parallax Zonda",
+      "description": "<p>Supermoto haut de gamme.</p>\n"
+    },
+    "Zonda Sliver": {
+      "name": "Sliver Zonda",
+      "description": "<p>Une moto de route avec tous les gadgets que vous avez toujours voulu avoir.</p>\n"
+    }
+  }
+}

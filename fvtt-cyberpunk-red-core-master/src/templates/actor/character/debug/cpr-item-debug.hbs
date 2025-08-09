@@ -1,0 +1,6 @@
+{{!-- Show owned items at bottom of sheet for easy debugging --}}
+<div class="tab-block">
+  {{#each this.items as |item| }}
+    {{item.id}} | [{{item.name}}] - {{item.type}} - {{item.system.stat}} - {{item.system.level}} - {{item.system.category}}
+  {{/each}}
+</div>

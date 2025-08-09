@@ -1,0 +1,38 @@
+_id: qwQVhWkGL2hJ2H1q
+_key: "!items!qwQVhWkGL2hJ2H1q"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/clothing/generic_footwear.svg
+name: Urban Flash Footwear
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        The most technological and flashy clothing you can find in the Time of the
+        Red.
+      </p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: false
+  price:
+    market: 100
+  providesHardening: false
+  revealed: true
+  source:
+    book: Core
+    page: 356
+  style: urbanFlash
+  type: footwear
+  usage: equipped
+type: clothing

@@ -1,0 +1,26 @@
+{
+  "label": "Umiejętność (Granie na instrumencie)",
+  "mapping": {},
+  "entries": {
+    "Play Instrument (Drums)": {
+      "name": "Gra na instrumencie (Perkusja)",
+      "description": ""
+    },
+    "Play Instrument (Guitar)": {
+      "name": "Gra na instrumencie (Gitara)",
+      "description": ""
+    },
+    "Play Instrument (Piano)": {
+      "name": "Gra na instrumencie (Pianino)",
+      "description": ""
+    },
+    "Play Instrument (Singing)": {
+      "name": "Gra na instrumencie (Struny głosowe)",
+      "description": ""
+    },
+    "Play Instrument (Violin)": {
+      "name": "Granie na instrumencie (Skrzypce)",
+      "description": ""
+    }
+  }
+}

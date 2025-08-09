@@ -1,0 +1,234 @@
+<form>
+  <div class="container-sheet">
+    <div class="left-pane">
+      {{!-- Image --}}
+      <div class="image-block">
+        <img src="{{actor.img}}" data-edit="img" data-tooltip="{{actor.name}}"/>
+      </div>
+      {{!-- Name --}}
+      <div class="name-section text-hero text-semi text-large">
+        {{#if isGM }}
+          <input name="name"
+                 type="text"
+                 value="{{actor.name}}"
+                 placeholder="Handle"/>
+        {{else}}
+          {{actor.name}}
+        {{/if}}
+      </div>
+      {{!-- General Settings --}}
+      <div class="settings-section">
+        <li class="item flexrow">
+          <div class="item-name text-nowrap trade-with-label text-semi">
+            {{localize "CPR.containerSheet.action.tradeWith"}}:
+          </div>
+          <div class="item-end trade-with-dropdown">
+            <select name="trade-with-dropdown" class="item-end trade-with-dropdown">
+              {{selectOptions userOwnedActors selected=tradePartnerId labelAttr="name" valueAttr="id"}}
+            </select>
+          </div>
+        </li>
+      </div>
+      {{!-- Eurobucks --}}
+      <div class="eurobucks-section">
+        <li class="item text-align-last-end flexrow">
+          <div class="item-name text-nowrap eurobucks-label text-semi">
+            {{localize "CPR.containerSheet.settings.eurobucks.label"}}:
+          </div>
+          <div class="item-end eurobucks-value">
+            {{#if (cprCompare actor.flags.cyberpunk-red-core.container-type "!==" "loot")}}
+              {{cprNumberFormat actor.system.wealth.value}}
+            {{else}}
+              <span data-tooltip="Eurobucks not supported for 'loot' containers">
+                N/A
+              </span>
+            {{/if}}
+          </div>
+          {{#if isGM }}
+            {{#if (cprCompare actor.flags.cyberpunk-red-core.container-type "!==" "loot")}}
+              <a class="eurobucks-open-ledger"
+                 data-tooltip="{{localize "CPR.ledger.ledgerOpen"}}">
+                <i class="fas fa-note-sticky"></i>
+              </a>
+            {{/if}}
+          {{/if}}
+        </li>
+      </div>
+      {{!-- GM Settings --}}
+      {{#if isGM }}
+        <div class="settings-gm-section">
+          <li class="item flexrow">
+            <div class="text-center text-semi text-normal">
+              {{localize "CPR.containerSheet.settings.title"}}
+            </div>
+          </li>
+          <li class="item flexrow">
+            <div class="item-name text-nowrap container-type-label text-semi">
+              {{localize "CPR.containerSheet.containerType.title"}}:
+            </div>
+            <div class="item-end">
+              <select class="container-type-dropdown">
+                {{selectOptions (cprFindConfigObj "containerType") selected=actor.flags.cyberpunk-red-core.container-type localize=true}}
+              </select>
+            </div>
+          </li>
+        {{#if (cprCompare actor.flags.cyberpunk-red-core.container-type "===" "custom") }}
+          <li class="item flexrow container-type-settings">
+            <div class="item-name">
+              <a class="checkbox-toggle" data-flag-name="items-free">
+                {{#if actor.flags.cyberpunk-red-core.items-free }}
+                  <i class="far fa-circle-check"></i>
+                {{else}}
+                  <i class="far fa-circle"></i>
+                {{/if}}
+              </a>
+              {{localize "CPR.containerSheet.settings.freeItems"}}
+            </div>
+          </li>
+        {{/if}}
+        {{#if (cprCompare actor.flags.cyberpunk-red-core.container-type "===" "shop") }}
+          <li class="item flexrow container-shop-settings">
+            <div class="item-name text-semi text-center">
+              <a class="vendor-configure-sell-to">
+                {{localize "CPR.containerSheet.settings.configureShop"}}
+              </a>
+            </div>
+          </li>
+        {{/if}}
+        {{#if (cprCompare (cprCompare (cprCompare actor.flags.cyberpunk-red-core.container-type "===" "custom") "||" (cprCompare actor.flags.cyberpunk-red-core.container-type "===" "shop")) "||" (cprCompare actor.flags.cyberpunk-red-core.container-type "===" undefined)) }}
+          <li class="item flexrow">
+            <div class="item-name container-shop-settings">
+              <a class="checkbox-toggle" data-flag-name="infinite-stock">
+                {{#if actor.flags.cyberpunk-red-core.infinite-stock }}
+                  <i class="far fa-circle-check"></i>
+                {{else}}
+                  <i class="far fa-circle"></i>
+                {{/if}}
+              </a>
+              {{localize "CPR.containerSheet.settings.infiniteStock"}}
+            </div>
+          </li>
+        {{/if}}
+        {{#if (cprCompare actor.flags.cyberpunk-red-core.container-type "===" "custom") }}
+          <li class="item flexrow container-shop-settings">
+            <div class="item-name text-semi">
+              {{localize "CPR.containerSheet.settings.playersCan"}}:
+            </div>
+          </li>
+          <li class="item flexrow container-shop-settings">
+            <div class="item-name">
+              <a class="checkbox-toggle" data-flag-name="players-create">
+                {{#if actor.flags.cyberpunk-red-core.players-create }}
+                  <i class="far fa-circle-check"></i>
+                {{else}}
+                  <i class="far fa-circle"></i>
+                {{/if}}
+              </a>
+              {{localize "CPR.containerSheet.settings.playersCreate"}}
+            </div>
+          </li>
+          <li class="item flexrow container-shop-settings">
+            <div class="item-name">
+              <a class="checkbox-toggle" data-flag-name="players-delete">
+                {{#if actor.flags.cyberpunk-red-core.players-delete }}
+                  <i class="far fa-circle-check"></i>
+                {{else}}
+                  <i class="far fa-circle"></i>
+                {{/if}}
+              </a>
+              {{localize "CPR.containerSheet.settings.playersDelete"}}
+            </div>
+          </li>
+          <li class="item flexrow container-shop-settings">
+            <div class="item-name">
+              <a class="checkbox-toggle" data-flag-name="players-modify">
+                {{#if actor.flags.cyberpunk-red-core.players-modify }}
+                  <i class="far fa-circle-check"></i>
+                {{else}}
+                  <i class="far fa-circle"></i>
+                {{/if}}
+              </a>
+              {{localize "CPR.containerSheet.settings.playersModify"}}
+            </div>
+          </li>
+          <li class="item flexrow container-shop-settings">
+            <div class="item-name">
+              <a class="checkbox-toggle" data-flag-name="players-sell">
+                {{#if actor.flags.cyberpunk-red-core.players-sell }}
+                  <i class="far fa-circle-check"></i>
+                {{else}}
+                  <i class="far fa-circle"></i>
+                {{/if}}
+              </a>
+              {{localize "CPR.containerSheet.settings.playersSell"}}
+              {{#if actor.flags.cyberpunk-red-core.players-sell }}
+                <a class="vendor-configure-sell-to"><i class="text-small text-super fas fa-wrench"></i></a>
+              {{/if}}
+            </div>
+          </li>
+          <li class="item flexrow container-shop-settings">
+            <div class="item-name">
+              <a class="checkbox-toggle" data-flag-name="players-move">
+                {{#if actor.flags.cyberpunk-red-core.players-move }}
+                  <i class="far fa-circle-check"></i>
+                {{else}}
+                  <i class="far fa-circle"></i>
+                {{/if}}
+              </a>
+              {{localize "CPR.containerSheet.settings.playersMove"}}
+            </div>
+          </li>
+        {{/if}}
+      </div>
+    {{/if}}
+  </div>
+  <div class="right-pane">
+    {{!-- Items inside container --}}
+    <div class="right-content">
+      <ol class="items-list">
+        {{#each (cprFindConfigObj "inventoryCategories") as |category c| }}
+          <div class="collapsible">
+            <li class="items-header flexrow collapsible">
+              <span class="item-name text-nowrap expand-button"
+                    id="gearTab-{{c}}"
+                    data-tooltip="{{localize "CPR.actorSheets.commonActions.toggleCategoryPinned"}}">
+                {{localize category}}
+                {{#if (cprListContains ../this.options.collapsedSections (cprGeneratePartial "gearTab-VAR" c)) }}
+                  <i class="fas fa-plus collapse-icon"></i>
+                  <i class="fas fa-minus expand-icon hide"></i>
+                {{else}}
+                  <i class="fas fa-plus collapse-icon hide"></i>
+                  <i class="fas fa-minus expand-icon"></i>
+                {{/if}}
+              </span>
+              <span class="item-detail text-nowrap text-center">
+                {{#if (cprHasTemplate c "stackable") }}
+                  {{localize "CPR.global.generic.amount"}}
+                {{/if}}
+              </span>
+              <span class="item-name text-nowrap">
+                {{localize "CPR.global.generic.price"}}
+              </span>
+              <span class="item-end text-nowrap">
+                {{#if (cprCompare ../isGM "||" ../actor.flags.cyberpunk-red-core.players-create) }}
+                  <a class="item-create"
+                     data-tooltip="{{localize "CPR.actorSheets.commonActions.createNewItem"}}"
+                     data-item-type="{{c}}">
+                    <i class="fas fa-circle-plus text-padding-right-smallest"></i>
+                  </a>
+                {{/if}}
+              </span>
+            </li>
+            <ol class="items-list">
+              {{#each (cprSort (cprGetProp ../actor.itemTypes c) "name") as |item i| }}
+                {{!-- Row for individual item --}}
+                {{> "systems/cyberpunk-red-core/templates/actor/container/cpr-item-content.hbs" (cprMergeForPartialArg "item,actor,isGM,collapsed" item ../../actor ../../isGM ../../this.options.collapsedSections)}}
+              {{/each}}
+            </ol>
+          </div>
+        {{/each}}
+      </ol>
+    </div>
+  </div>
+  </div>
+</form>

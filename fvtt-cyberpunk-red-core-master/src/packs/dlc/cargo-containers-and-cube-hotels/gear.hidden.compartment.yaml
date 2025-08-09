@@ -1,0 +1,40 @@
+_id: IsoP0QOpFiQtwIV3
+_key: "!items!IsoP0QOpFiQtwIV3"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/cargo-containers-and-cube-hotels/hidden-compartment.svg
+name: Hidden Compartment
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>A small hidden compartment inside the Cargo Container.</p>
+      <ul>
+        <li>15.25x30x7.5cm / 6x12x3in</li>
+        <li>
+          Can be found with a <strong>DV15 Conceal/Reveal Object</strong> Skill Check
+        </li>
+      </ul>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 0
+    usedSlots: 0
+  isElectronic: false
+  price:
+    market: 100
+  providesHardening: false
+  revealed: true
+  source:
+    book: CCaCH
+    page: 6
+  usage: toggled
+type: gear

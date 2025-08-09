@@ -1,0 +1,25 @@
+{
+  "label": "Micro Chrome",
+  "mapping": {
+    "dvTable": "system.tableSD"
+  },
+  "entries": {
+    "Superflash Jacket": {
+      "name": "Veste Superflash",
+      "description": "<p>Une belle veste portant une surprise ; en utilisant une action, toute personne portant cette veste peut consommer une batterie pour émettre une lumière aveuglante.</p>\n"
+    },
+    "Chipware Compartment": {
+      "name": "Compartiment de Puces",
+      "description": "<p>Vous permet de cacher jusqu'à puces, sans jet de compétence.</p>\n"
+    },
+    "Smart Lens": {
+      "name": "Lentille intelligente",
+      "description": "<p>Donne à un utilisateur une seule option de Cyberœil. Peut utiliser une lentille intelligente par œil.</p>\n"
+    },
+    "MicroCutie by HelloCutie": {
+      "name": "MicroCutie de HelloCutie",
+      "description": "<p>\n  Un pistolet d'excellente qualité avec un mode de feu unique Hypurrburst™*. Le pistolet ronronne lorsqu'il est utilisé. Le mode de tir Hypurrburst™ est désactivé s'il y a moins de 4 balles dans le chargeur.\n</p>\n<p>En mode Hypurrburst™ ce qui suit s'applique au pistolet :</p>\n<ul>\n  <li>1 attaque/round</li>\n  <li>Ronronnement audible</li>\n  <li>Tire une fois, vide le chargeur, et fait 4d6 points de dégâts</li>\n  <li>Ne peut pas être utilisé pour faire des tirs visés</li>\n</ul>\n<p>\n <em>*Mode de tir spécial non pris en charge actuellement ; devra être manuellement appliqué.</em>\n</p>\n",
+      "dvTable": "SD Pistolet"
+    }
+  }
+}

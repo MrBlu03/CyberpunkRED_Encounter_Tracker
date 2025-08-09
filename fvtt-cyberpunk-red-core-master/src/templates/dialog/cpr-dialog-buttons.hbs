@@ -1,0 +1,7 @@
+<div class="dialog-footer flexrow">
+  {{#each options.buttons as |button b|}}
+    <button class="cpr-dialog-button" name="{{b}}" {{#if (cprCompare ../options.buttonDefault "===" b)}}autofocus{{/if}}>
+      <i class="{{button.icon}}"></i> {{button.label}}
+    </button>
+  {{/each}}
+</div>

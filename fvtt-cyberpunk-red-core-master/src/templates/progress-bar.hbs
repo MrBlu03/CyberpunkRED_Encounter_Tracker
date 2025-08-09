@@ -1,0 +1,12 @@
+<div id="{{id}}" class="progress-container {{classes}} flexrow">
+  <div class="progress-bar" style="width: {{percent}}%"></div>
+  <label class="progress-label-container">
+    <span class="progress-label">{{localize label}}</span>
+  </label>
+  <label class="progress-count">
+    (<span class="current-count">{{value}}</span>/<span class="max-count">{{cprCompare max "||" "???"}}</span>)
+  </label>
+  <label class="progress-percent-container">
+    <span class="progress-percent">{{cprCompare percent "||" 0}}%</span>
+  </label>
+</div>

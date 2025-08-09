@@ -1,0 +1,25 @@
+{
+  "label": "Micro Chrome",
+  "mapping": {
+    "dvTable": "system.dvTable"
+  },
+  "entries": {
+    "Superflash Jacket": {
+      "name": "Superflash Jacket",
+      "description": "<p>A nice jacket carrying a surprise; using an action anyone wearing this jacket can consume a battery to let off a blinding light. Full rules can be found in Micro Chrome on Page 1.</p>"
+    },
+    "Chipware Compartment": {
+      "name": "Chipware Compartment",
+      "description": "<p>Lets you conceal up to four pieces of chipware, no Check required. Full rules can be found in Micro Chrome on Page 1.</p>"
+    },
+    "Smart Lens": {
+      "name": "Smart Lens",
+      "description": "<p>Gives a user a single Cybereye Option. Can use one Smart Lens per eye.</p>"
+    },
+    "MicroCutie by HelloCutie": {
+      "name": "MicroCutie by HelloCutie",
+      "description": "<p>\n  An excellent quality pistol with a unique Hypurrburst™ mode fire mode*. The\n  weapon purrs when used. Hypurrburst™ is disabled if less than 4 bullets are in\n  the clip.\n</p>\n<p>When in Hypurrburst™ mode, the following applies</p>\n<ul>\n  <li>MicroCutie is ROF 1</li>\n  <li>Purrs audibly</li>\n  <li>Fires a single shot, drains clip, and does 4d6 damage</li>\n  <li>Cannot be used to make aimed shots</li>\n</ul>\n<p>\n  <em\n    >*Special fire mode not currently supported; will need to be manually\n    applied</em\n  >\n</p>\n",
+      "dvTable": "DV Pistol"
+    }
+  }
+}

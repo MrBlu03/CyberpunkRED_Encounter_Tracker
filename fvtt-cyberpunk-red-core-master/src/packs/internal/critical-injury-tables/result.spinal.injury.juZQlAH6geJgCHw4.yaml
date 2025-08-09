@@ -1,0 +1,13 @@
+_id: juZQlAH6geJgCHw4
+_key: "!tables.results!n7IlIvMfg7yW1OoE.juZQlAH6geJgCHw4"
+documentCollection: cyberpunk-red-core.core_critical-injuries-body
+documentId: pQ2F7FsQvZJyZGXe
+drawn: false
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/critical_injuries/spinal_injury.svg
+range:
+  - 10
+  - 10
+text: Spinal Injury
+type: 2
+weight: 1

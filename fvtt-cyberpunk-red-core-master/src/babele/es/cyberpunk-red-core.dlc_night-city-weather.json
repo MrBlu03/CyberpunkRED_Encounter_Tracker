@@ -1,0 +1,29 @@
+{
+  "label": "Clima de Night City",
+  "mapping": {
+    "dvTable": "sistema.Tablavd"
+  },
+  "entries": {
+    "Umbrella": {
+      "name": "Paraguas",
+      "description": "<p>Protege contra la lluvia ácida. Por cada minuto expuesta a la lluvia ácida, todas las armaduras sufren ablación por 1 CP (NCW pg 4).</p>\n<p>+2 para Resistir Tortuga/Droga por la exposición a la Lluvia de Sangre. Lluvia de Sangre Severa aplica los efectos de un Vial de Biotoxina si falla al resistir (NCW pg 4).</p>"
+    },
+    "Cold-Weather Jacket Lining": {
+      "name": "Forro de chaqueta para clima frío",
+      "description": "<p>Mejora para cualquier tipo de Chaqueta. El usuario dejará de sufrir penalizaciones de tipo Exposición provenientes del frío (CP:R p. 181).</p>"
+    },
+    "Hot-Weather Jacket Lining": {
+      "name": "Forro de chaqueta para clima cálido",
+      "description": "<p>Mejora para cualquier artículo de moda de tipo Chaqueta. El usuario no sufrirá penalizaciones por exposición debido a las altas temperaturas (CP:R pg 181).&nbsp;</p>\n<p>Las olas de calor duplican todas las penalizaciones de armaduras más pesadas (NCW pág. 5). &nbsp;Por ejemplo, un usuario con Chaqueta Blindada Media recibe una penalización de -4 a MOV, DES y REF durante una ola de calor. El forro de la chaqueta para clima cálido reduce cada una de estas penalizaciones en 1.</p>"
+    },
+    "Waterproof Jacket Lining": {
+      "name": "Forro de chaqueta impermeable",
+      "description": "<p dir=\"ltr\">Actualización para cualquier artículo de moda de tipo Chaqueta. Mecánicamente similar a un paraguas, no sirve como traje de buceo.</p>\n<p>Protege contra la lluvia ácida. Por cada minuto expuesto a la lluvia ácida, toda la armadura sufre ablación de 1 CP (NCW pág. 4).</p>\n<p dir=\"ltr\">+2 a Resistir Tortura/Drogas por exposición a Lluvia de Sangre. Lluvia de Sangre Severa aplica los efectos de un Vial de Biotoxina si falla al resistir (NCW pág. 4).</p>\n<p>&nbsp;</p>"
+    },
+    "Tactical Umbrella": {
+      "name": "Paraguas Táctico",
+      "description": "<p>Un paraguas elegante con armas pop-out. Contiene una Pistola Exótica de Calidad Pesada (Carga máxima de 2 balas).</p>\n<p>Múltiples modos de arma: el Paraguas Táctico también contiene una arma cuerpo a cuerpo pesada exótica de calidad excelente.</p>\n<p>Proporciona la protección de un paraguas normal (NCW pg 6)</p>",
+      "dvTable": "VD Pistola"
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "label": "Rany Krytyczne (Ciało)",
+  "mapping": {},
+  "entries": {
+    "Broken Arm": {
+      "name": "Złamana ręka",
+      "description": "<p>Ręka nie do użytku. Upuszczasz wszystko co w niej trzymano.</p>"
+    },
+    "Broken Leg": {
+      "name": "Złamana noga",
+      "description": "<p>-4 MOVE (minimum MOVE of 1).</p>"
+    },
+    "Broken Ribs": {
+      "name": "Złamane żebra",
+      "description": "<p>Otrzymujesz obrażenia krytyczne tej rany na koniec tury jeśli ruszysz się więcej niż 4m/jardy pieszo. Pancerz nie redukuje tych obrażeń.</p>"
+    },
+    "Collapsed Lung": {
+      "name": "Zapadnięte płuca",
+      "description": "<p>-2 MOVE (minimum MOVE of 1).</p>"
+    },
+    "Crushed Fingers": {
+      "name": "Strzaskane palce",
+      "description": "<p>-4 do akcji wymagających dłoni.</p>"
+    },
+    "Dismembered Arm": {
+      "name": "Odcięta ręka",
+      "description": "<p>Ręka odseparowana od ciała. Upuść wszystko co trzymała. +1 PT do Testu Przeżywalności.</p>"
+    },
+    "Dismembered Hand": {
+      "name": "Odcięta dłoń",
+      "description": "<p>Dłoń odseparowana. Upuść wszystko co trzymała. +1 PT do Testu Przeżywalności.</p>"
+    },
+    "Dismembered Leg": {
+      "name": "Odcięta noga",
+      "description": "<p>Leg is removed. Cannot Dodge. -6 MOVE (minimum MOVE of 1).</p>"
+    },
+    "Foreign Object": {
+      "name": "Ciało obce",
+      "description": "<p>Otrzymujesz obrażenia krytyczne tej rany na koniec tury jeśli ruszysz się więcej niż 4m/jardy pieszo. Pancerz nie redukuje tych obrażeń.</p>"
+    },
+    "Spinal Injury": {
+      "name": "Uraz kręgosłupa",
+      "description": "<p>Następna tura: Brak akcji, tylko ruch. +1 PT do Testu Przeżywalności.</p>"
+    },
+    "Torn Muscle": {
+      "name": "Naderwany mięsień",
+      "description": "<p>-2 to Melee Attacks.</p>"
+    }
+  }
+}

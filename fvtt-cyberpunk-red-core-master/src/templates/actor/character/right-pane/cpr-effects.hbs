@@ -1,0 +1,98 @@
+<ol class="effects-list">
+  {{!-- derived from DND5E's active-effects.html --}}
+  {{#each filteredEffects as |section sid| }}
+    <li class="effects-category flexrow item-header" data-effect-type="{{section.type}}">
+      <span class="effect-name">
+        {{localize section.label}}
+      </span>
+      <span class="effect-source text-semi">
+        {{localize "CPR.characterSheet.rightPane.effects.source"}}
+      </span>
+      <span class="effect-actions text-semi text-padding-right-smallest">
+        {{localize "CPR.characterSheet.rightPane.effects.actions"}}
+      </span>
+    </li>
+    {{#each section.effects as |effect| }}
+      <li class="item effect flexrow" data-effect-id="{{effect.uuid}}">
+        <div class="effect-name flexrow">
+          <img class="effect-image" src="{{effect.img}}"/>
+          <div class="effect-item">
+            <span class="text-semi">{{effect.name}}</span>
+            <br/>
+            {{#if effect.changes.length }}
+              {{#each effect.changes as |change| }}
+                <span class="text-pill">
+                  {{!-- "this" is now an individual mod for the AE object --}}
+                  {{cprGetChangeNameByKey ../this change.category change.key}}
+                  {{#if change.value }}
+                    {{#unless (cprCompare change.key "===" "bonuses.hasPainSuppression")}}
+                      {{cprEffectModMode change.changeMode change.value}}
+                    {{/unless}}
+                  {{~else}}
+                    0
+                  {{~/if}}
+                  {{#if change.isSituational }}
+                    {{#if change.onByDefault }}
+                      <i data-tooltip="{{localize "CPR.characterSheet.rightPane.effects.situationalOnByDefault"}}"
+                         class="fas fa-circle-question
+                                text-padding-left-smaller
+                                text-vert-center"></i>
+                    {{else}}
+                      <i data-tooltip="{{localize "CPR.characterSheet.rightPane.effects.situationalOffByDefault"}}"
+                         class="far fa-circle-question
+                                text-padding-left-smaller
+                                text-vert-center"></i>
+                    {{~/if}}
+                  {{~/if}}
+                </span>
+              {{/each}}
+            {{else}}
+              ({{localize "CPR.characterSheet.rightPane.effects.noBonusesConfigured"}})
+            {{/if}}
+          </div>
+        </div>
+        <div class="effect-source">
+          {{effect.parentName}}
+          <br/>
+          {{#if (cprCompare effect.sourceName "!==" ../../actor.name) }}
+            ({{localize (cprFindConfigValue "effectUses" effect.usage)}})
+          {{/if}}
+        </div>
+        <div class="effect-actions text-padding-right-smallest">
+          {{#if (cprShowEffectToggle effect ../../actor.name) }}
+            <a class="effect-control"
+               data-action="toggle"
+               data-tooltip="{{localize 'CPR.characterSheet.rightPane.effects.toggle'}}">
+              <i class="far {{#if effect.disabled }}fa-circle{{else }}fa-circle-check{{/if }}"></i>
+            </a>
+          {{/if}}
+            <a class="effect-control"
+               data-action="edit"
+               data-tooltip="{{localize 'CPR.characterSheet.rightPane.effects.edit'}}">
+              <i class="fas fa-pen-to-square"></i>
+            </a>
+          {{#if (cprCompare effect.sourceName "===" ../../actor.name) }}
+            <a class="effect-control"
+               data-action="copy"
+               data-tooltip="{{localize 'CPR.characterSheet.rightPane.effects.duplicate'}}">
+               <i class="fa-regular fa-copy"></i>
+             </a>
+             <a class="effect-control"
+                data-action="delete"
+                data-tooltip="{{localize 'CPR.characterSheet.rightPane.effects.delete'}}">
+               <i class="fas fa-trash-can"></i>
+             </a>
+           {{/if}}
+         </div>
+       </li>
+    {{/each}}
+  {{/each}}
+  <br/>
+  <div class="item-controls effect-controls">
+    <a class="effect-control"
+       data-action="create"
+       data-tooltip="{{localize 'CPR.itemSheet.effects.createEffectDesc'}}">
+      <i class="fas fa-plus"></i> {{localize "CPR.itemSheet.effects.createEffect"}}
+    </a>
+  </div>
+</ol>

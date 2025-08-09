@@ -1,0 +1,20 @@
+_id: hCZpo57MoOlMYfrL
+_key: "!items!hCZpo57MoOlMYfrL"
+effects: []
+img: icons/svg/item-bag.svg
+name: Demolitions
+system:
+  basic: false
+  category: techniqueSkills
+  core: true
+  description:
+    value: ""
+  difficulty: difficult
+  favorite: false
+  level: 0
+  skillType: generic
+  source:
+    book: Core
+    page: 140
+  stat: tech
+type: skill

@@ -1,0 +1,46 @@
+{
+  "label": "Papéis",
+  "mapping": {},
+  "entries": {
+    "Exec": {
+      "name": "Sec",
+      "description": "<p>Executivos empresariais e defensores de fat-cat prontos para arriscar tudo para elevar a escada corporativa e realizar o novo sonho americano.</p>"
+    },
+    "Fixer": {
+      "name": "Reparador",
+      "description": "<p>Eles podem obter qualquer coisa, desde que o preço esteja certo. Usando seu charme e suas habilidades de comércio, eles fazem os negócios que mantêm a economia do futuro das Trevas fluindo.</p>"
+    },
+    "Lawman": {
+      "name": "Advogado",
+      "description": "<p>Embaixadores Renegados, equipes de ataque corporativo, ou os últimos vestígios de uma força policial do governo, patrulham as ruas para impor alguma ordem num mundo sem lei de outra forma.</p>"
+    },
+    "Media": {
+      "name": "Multimídia",
+      "description": "<p>Newspeople, influentes e fenômenos culturais, eles estão prontos para expor a verdade de qualquer forma necessário.</p>"
+    },
+    "Medtech": {
+      "name": "Medtech",
+      "description": "<p>Médicos cobertos e mecânicas de ciberware, usando suas habilidades para manter os colegas edgeruneiros em boa forma e cilindrados, muitas vezes com um preço.</p>"
+    },
+    "Netrunner": {
+      "name": "Trilha Rede",
+      "description": "<p>Hackers habilidosos que se colocam em risco se ligando diretamente com o ciberespaço, invadindo redes e roubando dados.</p>"
+    },
+    "Nomad": {
+      "name": "Nomad",
+      "description": "<p>Rostos, caminhões, transportadores afficionados, air-pirates, São as únicas transportadoras de produtos de todo o mundo, mantendo os transportes e as cadeias de abastecimento no tempo do Reno.</p>"
+    },
+    "Rockerboy": {
+      "name": "Rockerboy",
+      "description": "<p>Artistas de desempenho rebeldes que usam seu artesanato para influenciar fãs/multidões e retorno</p>"
+    },
+    "Solo": {
+      "name": "Solo",
+      "description": "<p>Especialistas em combate que usam sua capacidade de luta para dominar em tempos sem lei do Red.</p>"
+    },
+    "Tech": {
+      "name": "Tecnologia",
+      "description": "<p>Compreensão superior de tudo o que é tecnologia permite que eles inventem, melhorem e reparem para manter o Dark Future functioning.</p>"
+    }
+  }
+}

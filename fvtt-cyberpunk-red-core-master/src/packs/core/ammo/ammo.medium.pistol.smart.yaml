@@ -1,0 +1,37 @@
+_id: 6dwSiAhYho02ZtgL
+_key: "!items!6dwSiAhYho02ZtgL"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/ammo/pistolmedium_smart.png
+name: Medium Pistol (Smart)
+system:
+  ablationValue: 1
+  amount: 10
+  brand: ""
+  concealable:
+    concealable: true
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        Req Targeting Scope Cyberware, otherwise won't fire. If miss single attack by
+        4 or less, roll second attack at same DV 1d10+10 (not normal stat). Can add
+        luck. Target can dodge the second roll as normal if able to do so.
+      </p>
+  favorite: false
+  overrides:
+    autofire:
+      minimum: 3
+      mode: none
+      value: -1
+    damage:
+      minimum: 1d6
+      mode: none
+      value: 3d6
+  price:
+    market: 500
+  source:
+    book: Core
+    page: 346
+  type: smart
+  variety: medPistol
+type: ammo

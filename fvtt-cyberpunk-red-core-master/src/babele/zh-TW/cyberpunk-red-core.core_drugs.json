@@ -1,0 +1,46 @@
+{
+  "label": "Drugs",
+  "mapping": {},
+  "entries": {
+    "Antibiotic": {
+      "name": "Antibiotic",
+      "description": "<p>If a target has started the natural healing process injecting them with Antibiotic will cause them to heal an additional 2 Hit Points per day for a week. This effect does not stack.</p>"
+    },
+    "Black Lace": {
+      "name": "Black Lace",
+      "description": "<p><strong>Primary Effect</strong></p>\n<p>Dose lasts 24 hours.</p>\n<ul>\n<li>The user rolls 2d6 Humanity Loss which is returned if they pass the Secondary Effect save</li>\n<li>The user ignores Seriously Wounded wound states for the duration</li>\n</ul>\n<p><br><strong>Secondary Effect (DV17)</strong></p>\n<p>When the dose wears off, the user rolls WILL + Resist Torture/Drugs + 1d10 against Secondary DV.</p>\n<ul>\n<li>On Fail Humanity loss is not returned</li>\n<li>Unless experiencing the primary effect, REF -2</li>\n</ul>"
+    },
+    "Blue Glass": {
+      "name": "Blue Glass",
+      "description": "<p><strong>Primary Effect</strong></p>\n<p>Dose lasts 4 hours.</p>\n<ul>\n<li>The GM may occasionally tell the user that they are seeing swirls of colours. When this happens the user loses their action on a single turn</li>\n</ul>\n<p><strong>Secondary Effect (DV15)</strong></p>\n<ul>\n<li>The GM may occasionally tell the user that they are seeing swirls of colours. When this happens the user loses their action on a single turn</li>\n</ul>"
+    },
+    "Boost": {
+      "name": "Boost",
+      "description": "<p><strong>Primary Effect</strong></p>\n<p>Dose lasts 24 hours.</p>\n<ul>\n<li>The user has INT +2 for the duration</li>\n</ul>\n<p><strong>Secondary Effect (DV17)</strong></p>\n<ul>\n<li>INT -2</li>\n</ul>"
+    },
+    "Rapidetox": {
+      "name": "Rapidetox",
+      "description": "<p>Injecting a target with Rapidetox will eliminate the effects of any drugs, poisons, or intoxicants they are currently affected by.</p>"
+    },
+    "Smash": {
+      "name": "Smash",
+      "description": "<p><strong>Primary Effect</strong></p>\n<p>Dose lasts 4 hours.</p>\n<ul>\n<li>The user feels happy and satisfied</li>\n<li>+2 to Dance / Contortionist / Conversation / Human Perception / Persuasion / Acting</li>\n</ul>\n<p><strong>Secondary Effect (DV15)</strong></p>\n<ul>\n<li>-2 to Dance / Contortionist / Conversation / Human Perception / Persuasion / Acting</li>\n<li>GM will tell your when you crave more Smash. Roleplay accordingly.</li>\n</ul>"
+    },
+    "Speedheal": {
+      "name": "Speedheal",
+      "description": "<p>Injecting a target with Speedheal immediately causes them to heal HP equal to their BODY plus their WILL. This effect does not work on Mortally Wounded targets, and can only be used on a target once per day.</p>"
+    },
+    "Stim": {
+      "name": "Stim",
+      "description": "<p>Injecting a target with Stim causes them to ignore all penalties from being Seriously Wounded for one hour. It can only be used on a target once per day.</p>"
+    },
+    "Surge": {
+      "name": "Surge",
+      "description": "<p>Injecting a target with Surge causes them to be immune to sleep deprivation for 24 hours. It can only be used on a target once per week.</p>"
+    },
+    "Synthcoke": {
+      "name": "Synthcoke",
+      "description": "<p><strong>Primary Effect</strong></p>\n<p>Dose lasts 4 hours.</p>\n<ul>\n<li>+1 REF by 1 point for the duration</li>\n<li>The user feels paranoid occasionally</li>\n</ul>\n<p><strong>Secondary Effect (DV15)</strong></p>\n<ul>\n<li>-2 REF unless under ther Primary Effect</li>\n<li>GM will tell you when when you crave mor Synthcoke. Roleplay Acordingly</li>\n</ul>"
+    }
+  }
+}

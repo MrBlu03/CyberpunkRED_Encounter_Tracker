@@ -1,0 +1,45 @@
+_id: iaDD8BqMah0gQAkE
+_key: "!items!iaDD8BqMah0gQAkE"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/black-chrome/corporate-island.svg
+name: Corporate Island
+system:
+  bodyLocation:
+    ablation: 0
+    sp: 11
+  brand: Nu-Tek
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>Light Armorjack that looks like businesswear.</p>
+  equipped: owned
+  favorite: false
+  headLocation:
+    ablation: 0
+    sp: 0
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isBodyLocation: true
+  isElectronic: false
+  isHeadLocation: false
+  isShield: false
+  penalty: 0
+  price:
+    market: 500
+  providesHardening: false
+  revealed: true
+  shieldHitPoints:
+    max: 0
+    value: 0
+  source:
+    book: BC
+    page: 35
+  usage: toggled
+type: armor

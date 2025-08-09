@@ -1,0 +1,62 @@
+{
+  "label": "Fahrzeuge",
+  "mapping": {},
+  "entries": {
+    "Aerozep": {
+      "name": "K151 AeroZep",
+      "description": "<p>Ein modernes Frachtluftschiff. Erfordert mindestens zwei Zimmer. Der Preis gilt für jeden Raum unter Deck.</p>"
+    },
+    "AV-4 Multipurpose Aerodyne": {
+      "name": "AV-4 Mehrzweck-Aerodynes",
+      "description": "<p>Ein Mehrzweckflugzeug, das dank vertikaler Triebwerke schnell eingesetzt werden kann. Wird häufig von Trauma-Teams eingesetzt.</p>"
+    },
+    "AV-9 Super Aerodyne": {
+      "name": "AV-9 Super Aerodynes",
+      "description": "<p>Ein hochmodernes AV mit begrenzten Sitzplätzen. Er kann bis zu 300 Meilen pro Stunde fliegen.</p>"
+    },
+    "Cabin Cruiser": {
+      "name": "Kajütboot",
+      "description": "<p>Ein sehr schnelles Schnellboot. Erfordert mindestens zwei Zimmer. Der Preis gilt für jeden Raum unter Deck.</p>"
+    },
+    "Compact Groundcar": {
+      "name": "Bodenfahrzeug",
+      "description": "<p>Ein CHOOH2-betriebenes Bodenfahrzeug. Sehr verbreitet, einige Dutzend Hersteller produzieren ähnliche Modelle.</p>"
+    },
+    "Gyrocopter": {
+      "name": "Gyrokopter",
+      "description": "<p>Ein kleines zweisitziges Drehflügelflugzeug.</p>"
+    },
+    "Helicopter": {
+      "name": "Helikopter",
+      "description": "<p>Ein viersitziger Hubschrauber, der für hohe Geschwindigkeiten und lange Flüge geeignet ist.</p>"
+    },
+    "High Performance Groundcar": {
+      "name": "Sportwagen",
+      "description": "<p>Ein spezielles Bodenfahrzeug, das für sportliche Leistungen entwickelt wurde.</p>"
+    },
+    "Jetski": {
+      "name": "Jetski",
+      "description": "<p>Ein gewöhnlicher Jetski mit CHOOH2-Antrieb, der Platz für zwei Personen bietet.</p>"
+    },
+    "Roadbike": {
+      "name": "Motorrad",
+      "description": "<p>Ein übliches CHOOH2-Motorad</p>."
+    },
+    "Speedboat": {
+      "name": "Schnellboot",
+      "description": "<p>Ein Schnellboot mit CHOOH2-Antrieb.</p>"
+    },
+    "Super Groundcar": {
+      "name": "Luxus Sportwagen",
+      "description": "<p>Ein teurer, exotischer Sportwagen mit CHOOH2-Antrieb. Er ist zu sehr hohen Geschwindigkeiten fähig.</p>"
+    },
+    "Superbike": {
+      "name": "Sportmotorrad",
+      "description": "<p>Eine verstärkte Version eines Motorrads, die sehr hohe Geschwindigkeiten erreichen kann.</p>"
+    },
+    "Yacht": {
+      "name": "Yacht",
+      "description": "<p>Ein luxuriöses Schnellboot. Erfordert mindestens zwei Zimmer. Der Preis gilt für jedes Zimmer unter oder über Deck.</p>"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "label": "技能 (科学)",
+  "mapping": {},
+  "entries": {
+    "Science (Anthropology)": {
+      "name": "科学 (人類学)",
+      "description": ""
+    },
+    "Science (Biology)": {
+      "name": "科学 (生物学)",
+      "description": ""
+    },
+    "Science (Chemistry)": {
+      "name": "科学 (化学)",
+      "description": ""
+    },
+    "Science (Geology)": {
+      "name": "科学 (地質学)",
+      "description": ""
+    },
+    "Science (History)": {
+      "name": "科学 (歴史)",
+      "description": ""
+    },
+    "Science (Mathematics)": {
+      "name": "科学 (数学)",
+      "description": ""
+    },
+    "Science (Physics)": {
+      "name": "科学 (物理学)",
+      "description": ""
+    },
+    "Science (Zoology)": {
+      "name": "Science (Zoology)",
+      "description": ""
+    }
+  }
+}

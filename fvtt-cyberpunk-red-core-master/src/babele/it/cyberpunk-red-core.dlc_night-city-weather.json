@@ -1,0 +1,29 @@
+{
+  "label": "Night City Weather",
+  "mapping": {
+    "dvTable": "system.dvTable"
+  },
+  "entries": {
+    "Umbrella": {
+      "name": "Umbrella",
+      "description": "<p>Protects against Acid Rain. For every minute exposed to Acid Rain, all armor ablates by 1 SP (NCW pg 4).</p>\n<p>+2 to Resist Torture/Drugs Checks from Blood Rain exposure. Severe Blood Rain applies the effects of a Vial of Biotoxin on failed check (NCW pg 4).</p>"
+    },
+    "Cold-Weather Jacket Lining": {
+      "name": "Cold-Weather Jacket Lining",
+      "description": "<p>Upgrade for any Jacket fashion item. User will not suffer Exposure penalties from cold temperatures (CP:R pg 181).</p>"
+    },
+    "Hot-Weather Jacket Lining": {
+      "name": "Hot-Weather Jacket Lining",
+      "description": "<p>Upgrade for any Jacket fashion item. User will not suffer Exposure penalties from hot temperatures (CP:R pg 181).&nbsp;</p>\n<p>Heatwaves double all penalties from heavier armor (NCW pg 5). &nbsp;For example, a user with Medium Armorjack takes a -4 penalty to MOVE, DEX, and REF during a Heatwave. Hot-Weather Jacket Lining decreases each of these penalties by 1.</p>"
+    },
+    "Waterproof Jacket Lining": {
+      "name": "Waterproof Jacket Lining",
+      "description": "<p dir=\"ltr\">Upgrade for any Jacket fashion item. Mechanically similar to an umbrella, does not serve as a wetsuit.&nbsp;</p>\n<p>Protects against Acid Rain. For every minute exposed to Acid Rain, all armor ablates by 1 SP (NCW pg 4).</p>\n<p dir=\"ltr\">+2 to Resist Torture/Drugs Checks from Blood Rain exposure. Severe Blood Rain applies the effects of a Vial of Biotoxin on failed check (NCW pg 4).</p>\n<p>&nbsp;</p>"
+    },
+    "Tactical Umbrella": {
+      "name": "Tactical Umbrella",
+      "description": "<p>A stylish umbrella with pop-out weapons. Contains a Poor Quality Exotic Heavy Pistol (2 bullet capacity).</p>\n<p>Multiple Weapon Modes: Tactical Umbrella also contains an Excellent Quality Exotic Heavy Melee Weapon.</p>\n<p>Provides the protection of a normal umbrella (NCW pg 6)</p>",
+      "dvTable": "VD Pistola"
+    }
+  }
+}

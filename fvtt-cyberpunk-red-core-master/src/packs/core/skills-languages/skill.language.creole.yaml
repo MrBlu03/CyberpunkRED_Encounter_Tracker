@@ -1,0 +1,20 @@
+_id: YG7eH0L93rQLaebg
+_key: "!items!YG7eH0L93rQLaebg"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/default/Default_Skill.svg
+name: Language (Creole)
+system:
+  basic: false
+  category: educationSkills
+  core: false
+  description:
+    value: ""
+  difficulty: typical
+  favorite: false
+  level: 4
+  skillType: language
+  source:
+    book: Core
+    page: 45
+  stat: int
+type: skill

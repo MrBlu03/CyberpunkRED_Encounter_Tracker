@@ -1,0 +1,42 @@
+<li class="item flexrow">
+  <div class="item flexrow setting-name text-nowrap">
+    {{localize "CPR.itemSheet.physical.concealable"}}
+  </div>
+  <div class="item flexrow setting-value text-nowrap item-end">
+    {{#if this.editable }}
+      <a class="item-checkbox" data-target="system.concealable.concealable"><i class="far fa{{#if item.system.concealable.concealable }}-check{{/if }}-circle"></i></a>
+    {{else}}
+      <span><i class="far fa{{#if item.system.concealable.concealable }}-check{{/if }}-circle"></i></span>
+    {{/if}}
+  </div>
+</li>
+<li class="item flexrow">
+  <div class="item flexrow setting-name text-nowrap">
+    {{localize "CPR.global.generic.brand"}}
+  </div>
+  <div class="item flexrow setting-value text-nowrap item-end">
+    {{#if this.editable }}
+      <input name="system.brand"
+             type="text"
+             value="{{item.system.brand}}"/>
+    {{else}}
+      <span class="text-flex-end">{{item.system.brand}}</span>
+    {{/if}}
+  </div>
+</li>
+{{#if item.isOwned }}
+  {{#if item.system.concealable.concealable }}
+    <li class="item flexrow">
+      <div class="item flexrow setting-name text-nowrap">
+        {{localize "CPR.itemSheet.physical.concealed"}}
+      </div>
+      <div class="item flexrow setting-value text-nowrap item-end">
+        {{#if this.editable }}
+          <a class="item-checkbox" data-target="system.concealable.isConcealed"><i class="far fa{{#if item.system.concealable.isConcealed }}-check{{/if }}-circle"></i></a>
+        {{else}}
+          <span><i class="far fa{{#if item.system.concealable.isConcealed }}-check{{/if }}-circle"></i></span>
+        {{/if}}
+      </div>
+    </li>
+  {{/if}}
+{{/if}}

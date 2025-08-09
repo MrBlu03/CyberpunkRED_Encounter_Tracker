@@ -1,0 +1,62 @@
+{
+  "label": "Veículos",
+  "mapping": {},
+  "entries": {
+    "Aerozep": {
+      "name": "Aerozep",
+      "description": "<p>Um relâmpago de carga de dias modernos. Requer um mínimo de duas salas. O preço é para cada quarto abaixo do deck. </p>"
+    },
+    "AV-4 Multipurpose Aerodyne": {
+      "name": "AV-4 Multipurpose Aerodyne",
+      "description": "<p>Uma aeronave multiuso capaz de inserção rápida graças aos propulsores verticais. Usada comumente por equipes de Trauma. </p>"
+    },
+    "AV-9 Super Aerodyne": {
+      "name": "AV-9 Super Aerodyne",
+      "description": "<p>Um AV altamente avançado com assentos limitados. Pode viajar até 300 milhas por hora. </p>"
+    },
+    "Cabin Cruiser": {
+      "name": "Cruzador de Cabana",
+      "description": "<p>Um barco de velocidade muito rápido. Requer um mínimo de dois quartos. O preço é para cada quarto abaixo do deck. </p>"
+    },
+    "Compact Groundcar": {
+      "name": "Compactar o Chão",
+      "description": "<p>Um carro de terra movido a CHOOH2. Muito comum com algumas dezenas de fabricantes produzindo modelos semelhantes. </p>"
+    },
+    "Gyrocopter": {
+      "name": "Gyrocopter",
+      "description": "<p>Um pequeno rotorcraft de dois lugares. </p>"
+    },
+    "Helicopter": {
+      "name": "Helicóptero",
+      "description": "<p>Um helicóptero de quatro lugares capaz de altas velocidades e voos longos. </p>"
+    },
+    "High Performance Groundcar": {
+      "name": "Ciclo de Alta Performance",
+      "description": "<p>Um groundcar especializado projetado para desempenho esportivo. </p>"
+    },
+    "Jetski": {
+      "name": "Jetski",
+      "description": "<p>Um jetski comum baseado em CHOOOH que pode posicionar dois jogadores. </p>"
+    },
+    "Roadbike": {
+      "name": "Estrada",
+      "description": "<p>Uma bicicleta voltada a CHOOH2 comum vista durante o tempo do renderizador.</p>"
+    },
+    "Speedboat": {
+      "name": "Barco Veloz",
+      "description": "<p>Um barco rápido de velocidade baseado em CHOH2. </p>"
+    },
+    "Super Groundcar": {
+      "name": "Super Chão",
+      "description": "<p>Um esporte fortalecido de CHOOH2, caro e exótico. Ele é capaz de alta velocidade. </p>"
+    },
+    "Superbike": {
+      "name": "Superbicicleta",
+      "description": "<p>Uma versão efetiva de uma bicicleta rodoviária, capaz de velocidades muito altas. </p>"
+    },
+    "Yacht": {
+      "name": "Yaques",
+      "description": "<p>Um barco de velocidade de luxo. Requer um mínimo de dois quartos. O preço é para cada quarto abaixo ou acima do deck. </p>"
+    }
+  }
+}

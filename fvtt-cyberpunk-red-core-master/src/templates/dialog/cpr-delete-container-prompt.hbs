@@ -1,0 +1,24 @@
+<form class="dialog-sheet">
+  <div class="dialog-header flexcol">
+    <div class="text-normal text-center">
+      {{localize "CPR.dialog.deleteContainer.header"}}
+    </div>
+    <div class="text-center">
+      {{localize "CPR.dialog.deleteContainer.subHeader"}}
+    </div>
+  </div>
+  <hr/>
+  <div class="dialog-grid flexcol">
+    <ol class="dialog-list">
+      <li class="dialog-item flexrow">
+        <div class="dialog-item-name">
+          {{localize "CPR.dialog.deleteContainer.deleteInstalled"}}
+        </div>
+        <div class="dialog-item-input">
+          <input type="checkbox" name="deleteInstalled" {{checked deleteInstalled}}/>
+        </div>
+      </li>
+    </ol>
+  </div>
+  {{> "systems/cyberpunk-red-core/templates/dialog/cpr-dialog-buttons.hbs"}}
+</form>

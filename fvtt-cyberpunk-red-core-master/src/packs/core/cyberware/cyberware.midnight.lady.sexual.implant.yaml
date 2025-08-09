@@ -1,0 +1,56 @@
+_id: l0rpyL5qxjIBOYZJ
+_key: "!items!l0rpyL5qxjIBOYZJ"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/cyberware/midnight_lady.svg
+name: Midnight Lady Sexual Implant
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  core: false
+  damage: 1d6
+  description:
+    value: |
+      <p>Machine washable.</p>
+  dvTable: ""
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  humanityLoss:
+    roll: 2d6
+    static: 7
+  installLocation: clinic
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: true
+  isFoundational: false
+  isRanged: false
+  isWeapon: false
+  magazine:
+    max: 0
+    value: 0
+  price:
+    market: 100
+  providesHardening: false
+  revealed: true
+  rof: 1
+  size: 1
+  source:
+    book: Core
+    page: 363
+  type: cyberwareInternal
+  unarmedAutomaticCalculation: true
+  usage: toggled
+  usesType: magazine
+  weaponSkill: Archery
+  weaponType: assaultRifle
+type: cyberware

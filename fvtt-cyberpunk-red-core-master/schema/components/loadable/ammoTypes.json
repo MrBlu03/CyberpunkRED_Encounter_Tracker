@@ -1,0 +1,21 @@
+{
+  "description": "The ammo type",
+  "type": "string",
+  "enum": [
+    "acid",
+    "armorPiercing",
+    "basic",
+    "biotoxin",
+    "emp",
+    "expansive",
+    "flashbang",
+    "incendiary",
+    "poison",
+    "rubber",
+    "sleep",
+    "smart",
+    "smoke",
+    "special",
+    "teargas"
+  ]
+}

@@ -1,0 +1,51 @@
+<div class="mook-skills-header flexrow">
+  <span class="text-nowrap text-padding-left-smallest text-semi">
+    {{localize "CPR.mookSheet.skills.title"}}
+    <a class="mod-mook-skill">
+      <i class="fas fa-pen-to-square"></i>
+    </a>
+  </span>
+  <span class="text-right text-semi">
+    <a class="rollable"
+       data-tooltip="{{localize "CPR.global.generic.facedown"}}"
+       data-roll-type="facedown"
+       data-roll-title="{{localize "CPR.global.generic.facedown"}}">
+      {{localize "CPR.characterSheet.bottomPane.reputation"}}: {{actor.system.reputation.value}}
+    </a>
+    <a class="reputation-open-ledger"
+       data-tooltip="{{localize "CPR.ledger.ledgerOpen"}}">
+      <i class="fas fa-note-sticky"></i>
+    </a>
+  </span>
+</div>
+<div class="mook-skills-content text-padding-left-smallest">
+  {{#each (cprGetMookSkills actor.itemTypes.skill) as |skill s| }}
+    <span class="item deletable changeable"
+          data-item-id="{{skill.id}}"
+          tabindex="0">
+      <a class="rollable"
+         data-roll-type="skill"
+         data-roll-title="{{skill.name}}"
+         data-tooltip="{{localize "CPR.mookSheet.skills.clickToRollThisSkill"}}, {{localize "CPR.mookSheet.skills.pressDeleteToReset"}}">
+        {{#if skill.system.core }}
+          {{localize (cprGetLocalizedlNameKey skill)}}
+        {{else}}
+          {{skill.name}}
+        {{/if}}
+        {{#if (cprCompare (cprSystemConfig "mookSheetSkillDisplay") "===" "level") }}
+          ({{~cprEffectModMode 2 skill.system.level}})
+        {{~/if}}
+        {{~#if (cprCompare (cprSystemConfig "mookSheetSkillDisplay") "===" "base") }}
+          ({{~cprEffectModMode 2 (cprMath "sum" skill.system.level (cprGetSkillStat skill ../actor))}})
+        {{~/if}}
+        {{~#if (cprCompare (cprSystemConfig "mookSheetSkillDisplay") "===" "total") }}
+          ({{~cprEffectModMode 2 (cprMath "sum" skill.system.level (cprGetSkillStat skill ../actor) (cprGetSkillModInfo skill.name ../actor "modTotal"))}})
+        {{~/if~}}
+      </a>
+      {{~#unless skill.system.core}}
+        <a class="item-edit skill-custom" data-tooltip="{{localize "CPR.actorSheets.commonActions.editCustomSkill"}}"><i class="fas fa-pen-to-square"></i></a>
+      {{~/unless}}
+      {{~#unless @last}},{{/unless}}
+    </span>
+    {{/each}}
+  </div>

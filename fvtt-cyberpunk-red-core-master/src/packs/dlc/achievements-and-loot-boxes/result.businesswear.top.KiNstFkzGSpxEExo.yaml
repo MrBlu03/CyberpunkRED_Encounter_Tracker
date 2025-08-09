@@ -1,0 +1,12 @@
+_id: KiNstFkzGSpxEExo
+_key: "!tables.results!McQc33tLYAp7djIV.KiNstFkzGSpxEExo"
+documentCollection: cyberpunk-red-core.core_clothing
+documentId: 0NrP4N71Kcvywx31
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/clothing/generic_top.svg
+range:
+  - 5
+  - 5
+text: Businesswear Top
+type: 2
+weight: 1

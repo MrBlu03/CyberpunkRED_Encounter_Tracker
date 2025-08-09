@@ -1,0 +1,62 @@
+{
+  "label": "Les 12 Jours de CyberNoël",
+  "mapping": {},
+  "entries": {
+    "MagnaSlot BatteryBrick": {
+      "name": "Batterie MagnaSlot",
+      "description": "<p>Batterie spécifique au cyberbras Radline Blitzkrieg Lanceur d'Arc. Peut être rechargé en 1 heure.</p>"
+    },
+    "FleshWeave (Armor)": {
+      "name": "Chair tissée (Armure)",
+      "description": "<p>Armure pour le cyberimplant Chair tissée (Armure) de Sycust.</p>\n"
+    },
+    "Blitzkrieg Arc-Thrower Cyberarm": {
+      "name": "Cyberbras Blitzkrieg Lanceur d'Arc",
+      "description": "<p>Un \"bras\" qui n'en a que le nom, le Lanceur d'Arc est un canon à électricité massif. 0 emplacement d'option.</p>\n<p> Le Lanceur d'Arc est un fusil à pompe exotique à une main de qualité médiocre, qui utilise la compétence d'arme lourde. Tire des \"chevrotines\" électrifiées faisant 4d6 points de dégâts.\n  N'inflige pas de blessure critique. Ne réduit pas l'armure. Si le tir met la cible sous les 1 Ps, elle reste à 1 Ps et est inconsciente.\n</p>\n<p>Tirer avec le Lanceur d'Arc consomme une charge de la batterie Radline Magna Slot incluse (100eb). La batterie a une capacité de 32 tirs et peut être rechargée en 1 heure. Changer la batterie nécessite une action, même si l'utilisateur n'a aucune main libre. Le Lanceur d'Arc ne possède pas de fixation pour main.\n</p>\n"
+    },
+    "Bug Eye": {
+      "name": "Oeil Insectoïde",
+      "description": "<p>Grand cyberoptique insectoïde livré avec des emplacements d'options. Cyborgimplant.</p>"
+    },
+    "ChainRipp": {
+      "name": "ScieRipp",
+      "description": "<p>Une tronçonneuse cyberbras rétractable avec pot d'échappement intégré. Peut être déployée et rétractée sans action. L'utilisateur ne peut pas utiliser la main sur le cyberbras de la ScieRipp lorsque la lame est sortie.</p>\n<p>Une fois déployée, la ScieRipp peut être mise en marche avec une action et est considéré comme une arme de mêlée très lourde à une main d'excellente qualité. La ScieRipp reste allumée jusqu'à ce qu'une action serve à la désactiver.</p>\n<p>Dans l'état déployé mais non allumé, la ScieRipp est une arme de mêlée très lourde à une main.</p>\n"
+    },
+    "DeathTrance": {
+      "name": "Transe de Mort",
+      "description": "<p>Activé avec une action pour empêcher les signes de vie tels que la fréquence cardiaque et la respiration. Pour un observateur lambda, l'utilisateur semble être mort. -4 à toutes les actions dans cet état léthargique. Peut être désactivé avec une action. L'utilisateur peut avoir la peau bleuâtre ou pâle à force de multiples usages.</p>\n<p><strong>SD17 Techniques médicales</strong> ou <strong>SD21 (Criminologie, Déduction, Perception)</strong> pour découvrir que l'utilisateur n'est pas réellement mort.</p>\n"
+    },
+    "FleshWeave": {
+      "name": "Chair Tissée",
+      "description": "<p>Cyberimplant externe*. 7 PA pour la tête et le corps.<br />Armure de peau tissée avec des fonctionnalités avancées d'auto-guérison. Des milliards de nanobots réparent tous les dégâts de l'armure Chair Tissée (corps et tête) après 10 minutes de repos. L'armure ne se cumule pas.</p>\n<p><em>* L'armure cyberimplant ne fonctionne pas comme armure dans le système, veuillez ajouter l'élément \"Sycust Chair Tissée (Armure)\" au personnage/sbire pour le tracer</em></p>\n"
+    },
+    "Gang Jazzler": {
+      "name": "Gang Jazzler",
+      "description": "<p>Utilisez une action d'Étranglement pour toucher avec une aiguille électrifiée une cible aggripée. La cible ne subit pas de dégâts, mais doit effectuer un test de <strong>Résistance à la torture/aux drogues SD13</strong>. En cas d'échec, la cible tombe inconsciente pendant 1 minute.</p>\n<p>Alimenté par une batterie rechargeable (50eb). La batterie doit être rechargée pendant 1 heure après chaque utilisation. Aucun jet n'est nécessaire pour dissimuler le Gang Jazzler et sa batterie. Peut être installé dans un bras de viande s'il est le seul élément cybernétique dans ce bras.</p>\n"
+    },
+    "MicroWaldo": {
+      "name": "MicroWaldo",
+      "description": "<p>Une collection d'instruments et de sondes montés sur bracelet pour faciliter la chirurgie.<br />+1 aux tests de chirurgie de Medtech.</p>\n<p>Prend 1 emplacement d'option de cyberbras et 1 emplacement d'option de lien neural.</p>\n"
+    },
+    "MonoVision": {
+      "name": "MonoVision",
+      "description": "<p>\n  Monovisière à une seule cyberoptique prenant la place de deux yeux de chair. trop large pour une Monture MultiOptique.</p>\n<p>Les options de cyberoptique sont toujours installées par paire même s'il n'y en a qu'un de chaque type. Les pénalités de blessure critique Oeil crevé sont doublées si la cible se repose uniquement sur la Monovision pour voir.</p>\n<p>Cyborgimplant.</p>\n"
+    },
+    "OptiShield": {
+      "name": "Optishield",
+      "description": "<p>Écran miroir rétractable implanté. Lorsqu'il est activé avec une action, l'utilisateur est immunisé contre les effets négatifs de la lumière forte, tels que par des grenades étourdissantes.</p>"
+    },
+    "Poser Chip": {
+      "name": "Puce Poseur",
+      "description": "<p>Puce de données. Permet à l'utilisateur d'imiter facilement les schémas de parole et les manières d'une personnalité préprogrammée. Cyberimplant standard pour Poser Gangs.</p>\n<ul>\n<li>+4 aux jets Jeu d'acteur lors de l'imitation de cette personnalité spécifique.</li>\n<li>+ 5 au jet Jeu d'acteur avec un jeu de rôle convaincant.</li>\n</ul>\n<p>Les Puces Poseurs programmées avec d'innombrables heures de vidéo de célébrités coûtent 500eb. Une Puce Poseur personnalisée programmée avec plus de 10 heures de vidéo à un coût individuel de 1000eb.</p>"
+    },
+    "Romanova Cyberlegs": {
+      "name": "Cyberjambes Romanova",
+      "description": "<p>Des cyberjambes haut de gamme avec des Ergots intégrés dans chaque talon. Les lames ne peuvent pas être enlevées.</p>\n<p>Cyberjambes appairées, 1000eb pour les deux jambes. Chaque jambe a 3 emplacements pour options de cyberjambe ou cybermembre. Lancez une perte d'humanité une fois pour la paire de jambes. Chaque jambe peut subir des blessures critiques distinctes et doit être réparée individuellement.</p>\n"
+    },
+    "Watch-Man": {
+      "name": "Watch-Man",
+      "description": "<p>\n  Agent interne avec écran rétractable dans l'avant-bras de l'utilisateur. Requiert un Cyberbras.</p>\n"
+    }
+  }
+}

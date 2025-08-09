@@ -1,0 +1,13 @@
+_id: H9esuRsYtSHCwxKy
+_key: "!tables.results!QiwaqQtocypL0FXG.H9esuRsYtSHCwxKy"
+documentCollection: cyberpunk-red-core.core_critical-injuries-head
+documentId: jcOCxBFrKo5oBmOy
+drawn: false
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/critical_injuries/cracked_skull.svg
+range:
+  - 9
+  - 9
+text: Cracked Skull
+type: 2
+weight: 1

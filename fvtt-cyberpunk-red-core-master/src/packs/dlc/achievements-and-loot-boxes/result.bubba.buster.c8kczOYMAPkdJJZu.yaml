@@ -1,0 +1,12 @@
+_id: c8kczOYMAPkdJJZu
+_key: "!tables.results!EVPuZ21eNOpEycGQ.c8kczOYMAPkdJJZu"
+documentCollection: cyberpunk-red-core.black-chrome_weapons
+documentId: IxXIb9gFdbjUCPZW
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/weapons/Shotgun_poor.svg
+range:
+  - 1
+  - 1
+text: Bubba Buster
+type: 2
+weight: 1

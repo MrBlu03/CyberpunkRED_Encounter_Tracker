@@ -1,0 +1,59 @@
+<div class="item-settings-tab">
+  <div class="item-settings-section">
+    <div class="tab item-settings-grid"
+         data-group="primary"
+         data-tab="item-settings">
+      <ol class="items-list">
+        {{!-- Item Name --}}
+        {{> "systems/cyberpunk-red-core/templates/item/cpr-item-name.hbs" this}}
+        {{!-- Settings common to all items --}}
+        <li class="item flexrow">
+          <div class="item flexrow setting-name text-nowrap">
+            {{localize "CPR.itemSheet.common.source.book"}}
+          </div>
+          <div class="item flexrow setting-value text-nowrap item-end">
+            {{#if this.editable }}
+              <input name="system.source.book"
+                     type="text"
+                     value="{{item.system.source.book}}"
+                     placeholder="MwtU"/>
+            {{else}}
+              {{item.system.source.book}}
+            {{/if}}
+          </div>
+        </li>
+        <li class="item flexrow">
+          <div class="item flexrow setting-name text-nowrap">
+            {{localize "CPR.itemSheet.common.source.page"}}
+          </div>
+          <div class="item flexrow setting-value text-nowrap item-end">
+            {{#if this.editable }}
+              <input name="system.source.page"
+                     type="number"
+                     value="{{item.system.source.page}}"
+                     placeholder="123"/>
+            {{else}}
+              {{item.system.source.page}}
+            {{/if}}
+          </div>
+        </li>
+        {{#if item.system.quality}}
+          {{> "systems/cyberpunk-red-core/templates/item/settings/mixin/cpr-quality.hbs" this}}
+        {{/if}}
+        <hr/>
+        {{!-- Settings from mixins --}}
+        {{#each (cprGetTemplates item.type) as |mixin| }}
+          {{#if (and (cprCompare mixin "!==" "effects") (cprCompare mixin "!==" "quality"))}}
+            {{!-- If it is the attackable mixin and this is either an itemUpgrade or cyberware, let those item types handle if
+            the mixin should be displayed or not since they may or may not be attackable --}}
+            {{#unless (cprCompare (cprCompare mixin "===" "attackable") "&&" (cprCompare (cprCompare ../item.type "===" "itemUpgrade") "||" (cprCompare ../item.type "===" "cyberware")))}}
+              {{> (cprGeneratePartial "systems/cyberpunk-red-core/templates/item/settings/mixin/cpr-VAR.hbs" mixin) ../this}}
+            {{/unless}}
+          {{/if}}
+        {{/each}}
+        {{!-- Settings specific to the item type --}}
+        {{> (cprGeneratePartial "systems/cyberpunk-red-core/templates/item/settings/cpr-VAR.hbs" item.type) this}}
+      </ol>
+    </div>
+  </div>
+</div>

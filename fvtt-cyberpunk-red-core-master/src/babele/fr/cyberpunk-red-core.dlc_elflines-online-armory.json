@@ -1,0 +1,81 @@
+{
+  "label": "Armurerie d'Elflines Online",
+  "mapping": {
+    "dvTable": "system.tableSD"
+  },
+  "entries": {
+    "Arrow": {
+      "name": "Flèche",
+      "description": "<p>Munition standard, rien de spécial.</p>"
+    },
+    "Poison Arrow": {
+      "name": "Flèche empoisonnée",
+      "description": "<p>L'attaque n'inflige aucun dégât immédiat. Quiconque est touché par l'attaque doit à la place effectuer un jet de <strong>Résistance à la torture/aux drogues SD 13.</strong> En cas d'échec 2d6 points de dégâts aux PS. L'armure de la cible n'est pas perforée.</p>\n"
+    },
+    "Chainmail Armor (Body)": {
+      "name": "Cotte de mailles (Corps)",
+      "description": "<p>Armure faite d'innombrables anneaux en métal. -2 en REF, DEX et MOUV.</p>"
+    },
+    "Chainmail Armor (Head)": {
+      "name": "Cotte de mailles (Tête)",
+      "description": "<p>Armure faite d'innombrables anneaux en métal pour votre tête. -2 en REF, DEX et MOUV.</p>"
+    },
+    "Full Plate Armor (Body)": {
+      "name": "Armure de plate (Corps)",
+      "description": "<p>Armure de plaques métalliques pour résister aux coups les plus puissants. -4 en REF, DEX et MOUV.</p>"
+    },
+    "Full Plate Armor (Head)": {
+      "name": "Armure de plate (Tête)",
+      "description": "<p>Casque de plaques métalliques pour résister aux coups les plus puissants. -4 en REF, DEX et MOUV.</p>"
+    },
+    "Leather Armor (Body)": {
+      "name": "Armure de cuir (Corps)",
+      "description": "<p>Une simple armure de cuir. Pas de pénalité d'armure.</p>"
+    },
+    "Leather Armor (Head)": {
+      "name": "Armure de cuir (Tête)",
+      "description": "<p>Simple armure de cuir pour la tête. Pas de pénalité d'armure.</p>"
+    },
+    "Shield": {
+      "name": "Bouclier",
+      "description": "<p>Nécessite un bras et possède des PV réduits par des dégâts.</p>"
+    },
+    "Studded Leather Armor (Body)": {
+      "name": "Armure de cuir clouté (Corps)",
+      "description": "<p>Une simple armure de cuir clouté. Pas de pénalité d'armure.</p>"
+    },
+    "Studded Leather Armor (Head)": {
+      "name": "Armure de cuir clouté (Tête)",
+      "description": "<p>Une simple armure de cuir clouté pour votre tête. Pas de pénalité d'armure.</p>"
+    },
+    "Sacred Herbs": {
+      "name": "Herbes sacrées",
+      "description": "<p>Ingérer des Herbes sacrées soigne immédiatement les PS pour un total de COR+VOL de l'utilisateur.</p>"
+    },
+    "Vial of Poison": {
+      "name": "Fiole de poison",
+      "description": "<p>Inflige 2d6 dégâts qui ne sont pas réduits par l'armure. Pour contrer son effet, on utilise Résistance à la torture/aux drogues.</p>"
+    },
+    "Bow": {
+      "name": "Arc",
+      "description": "<p>Un arc revitalisé, rechargement compris dans l'action d'attaque.</p>",
+      "dvTable": "SD Arcs et arbalètes"
+    },
+    "Dagger": {
+      "name": "Dague",
+      "description": "<p>Un couteau adapté à un chasseur.</p>"
+    },
+    "Greataxe": {
+      "name": "Hache de guerre",
+      "description": "<p>Un bâton de bois avec une lame incurvée à chaque extrémité. Apprécié par les groupes de raid pour des engagements rapprochés. Nécessite 2 mains pour le manier même par un porteur avec COR 8 ou plus.</p>"
+    },
+    "Longsword": {
+      "name": "Épée longue",
+      "description": "<p>Épée longue. Spécifiquement conçue pour découper et transpercer. 2 Att/round si vous portez deux épées longues.</p>"
+    },
+    "Shortsword": {
+      "name": "Épée courte",
+      "description": "<p>Une épée courte. Conçue pour couper et transpercer.</p>"
+    }
+  }
+}

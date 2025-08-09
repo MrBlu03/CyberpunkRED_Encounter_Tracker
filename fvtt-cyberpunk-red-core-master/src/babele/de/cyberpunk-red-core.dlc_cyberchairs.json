@@ -1,0 +1,14 @@
+{
+  "label": "Cyberstühle",
+  "mapping": {},
+  "entries": {
+    "Mercurius Cyberchair": {
+      "name": "Mercurius-Cyberstuhl",
+      "description": "<p>Ein erschwinglicher Cyberstuhl mit für den Preis beeindruckenden Funktionen. Während der Nutzung beträgt die Basis-BEW des Nutzers 5, wobei alle regulären Bewegungsoptionen nutzbar bleiben.</p>\n<p>Die Steuerung des Cyberstuhls benötigt entweder eine freie Hand oder Interface-Buchsen.</p>\n<p>Wenn der Nutzer eine Kritische Verletzung erleidet, die die BEW verringert, betrifft dies stattdessen die BEW des Cyberstuhls.</p>\n<p>Der Cyberstuhl kann nicht spezifisch anvisiert werden und nicht durch EMP-Effekte ausgeschaltet werden.</p>"
+    },
+    "Spider Cyberchair": {
+      "name": "Spinnen-Cyberstuhl",
+      "description": "<p>Der Spitzen-Cyberstuhl mit Unmengen Optionen für den versierten Nutzer. Während der Nutzung beträgt die Basis-BEW des Nutzers 5, wobei alle regulären Bewegungsoptionen nutzbar bleiben.</p>\n<p>Zusätzlich verfügt dieser Cyberstuhl über Platz für 4 Cybergliedmaßen-Optionen*. Alle installierten Optionen gelten immer als paarweise.</p>\n<p>Die Steuerung des Cyberstuhls benötigt entweder eine freie Hand oder Interface-Buchsen.</p>\n<p>Wenn der Nutzer eine Kritische Verletzung erleidet, die die BEW verringert, betrifft dies stattdessen die BEW des Cyberstuhls.</p>\n<p>Der Cyberstuhl kann nicht spezifisch anvisiert werden und nicht durch EMP-Effekte ausgeschaltet werden.</p>\n<p><em>*Installation von Cybergliedmaßen-Optionen aktuell nicht unterstützt</em></p>"
+    }
+  }
+}

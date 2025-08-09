@@ -1,0 +1,33 @@
+_id: 1K1dtvrm7rjoraAJ
+_key: "!items!1K1dtvrm7rjoraAJ"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/gear/computer.svg
+name: Computer
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>Desktop or laptop.</p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: true
+  price:
+    market: 50
+  providesHardening: false
+  revealed: true
+  source:
+    book: Core
+    page: 352
+  usage: toggled
+type: gear

@@ -1,0 +1,761 @@
+{
+  "label": "Black Chrome",
+  "entries": {
+    "Arachnid Grenade": {
+      "name": "Grenade arachnide",
+      "description": "<p>Une grenade très collante, dont les détails peuvent être trouvés à la page 86.</p>"
+    },
+    "Arasaka Acid": {
+      "name": "Acide Arasaka",
+      "description": "<p>Revêtement seulement pour le katana Ravageur Suintant d'Arasaka.</p>"
+    },
+    "Arasaka Fire": {
+      "name": "Feu Arasaka",
+      "description": "<p>Revêtement seulement pour le katana Ravageur Suintant d'Arasaka.</p>\n<p>Peut rendre une cible en feu, les détails peuvent être trouvés à la page 91.</p>"
+    },
+    "Arasaka Wound Salt": {
+      "name": "Sel de blessure Arasaka",
+      "description": "<p>Revêtement seulement pour le katana Ravageur Suintant d'Arasaka.</p>\n<p>Peut appliquer une seconde Blessure critique, les détails peuvent être trouvés à la page 91.</p>"
+    },
+    "Doberman 500 Marking Scent": {
+      "name": "Doberman 500 odeur de marquage",
+      "description": "<p>Type de munitions spéciales pour pistolet à air comprimé. Pour plus d'informations, voir la page 44 de Black Chrome.</p>"
+    },
+    "Net": {
+      "name": "Filet",
+      "description": "<p>Filet pour le lanceur escamotable de filet, capture la cible. (Voir Black Chrome p. 20-21 pour plus de détails)</p>"
+    },
+    "Rocks": {
+      "name": "Cailloux",
+      "description": "<p>Munitions pour le Nomad Rocker.</p>"
+    },
+    "Security Grenade": {
+      "name": "Grenade de sécurité",
+      "description": "<p>Grenade perforante qui n'endommage pas les couverts. Des règles complètes peuvent être trouvées à la page 89.</p>"
+    },
+    "Shuriken Tornado Grenade": {
+      "name": "Grenade Shuriken Tornado",
+      "description": "<p>Littéralement une explosion de shurikens. Peut appliquer une seconde blessure critique, dont les détails peuvent être trouvés à la page 87.</p>"
+    },
+    "AirRider": {
+      "name": "AirRider",
+      "description": "<p>Armure de corps en kevlar qui ignore la blessure critique Coup du lapin due à un accident de voiture tant que le réservoir de CO2 de l'armure est plein*. Référez-vous à la description complète de l'article sur BC p. 33.</p>\n<p><em>*Doit être ajouté manuellement après l'acquisition de l'armure.</em></p>"
+    },
+    "Bunker Gear": {
+      "name": "Tenue de feu",
+      "description": "<p>Armure type Flak, ignifugée avec un masque à gaz intégré et 30 minutes d'oxygène dans une bouteille qui se recharge en une heure. -4 en REF, DEX et MOUV. Reportez-vous à la description complète de l'élément sur BC p. 29.</p>"
+    },
+    "Corporate Island": {
+      "name": "Corporate Island",
+      "description": "<p>Armure pare-balles légère qui ressemble à des vêtements Cadre sup. Reportez-vous à la description complète de l'objet sur BC p. 35.</p>"
+    },
+    "Dirk Combat Jacket": {
+      "name": "Veste de combat Dirk",
+      "description": "<p>Armure pare-balle légère de style Décontracté avec la possibilité de cacher deux chargeurs standards sans jet de compétence. Reportez-vous à la description complète de l'objet sur BC p. 28.</p>"
+    },
+    "Executive Armor": {
+      "name": "Armure Corporatiste",
+      "description": "<p>Armure pare-balle légère qui ressemble à un vêtement Cadre sup. Restaure 1PA par jour où l'armure ne perd pas de PA. Reportez-vous à la description complète de l'élément sur BC p. 34.</p>"
+    },
+    "Laser Light Street Jacket": {
+      "name": "Veste de rue Laser Light",
+      "description": "<p>Armure pare-balles légère de style Urbain Flash, qui compte comme un tatouage lumineux quand elle est portée. Reportez-vous à la description complète de l'objet sur BC p. 31.</p>"
+    },
+    "Lotos Netsuit": {
+      "name": "Combinaison connectée Lotos",
+      "description": "<p>Une combinaison connectée offrant un emplacement matériel supplémentaire de cyberdeck installé directement à l'intérieur. Désinstallé si la combinaison est retirée. Livrée avec une cyberconsole de qualité excellente*. -2 au REF, DEX et MOUV. Reportez-vous à la description complète de l'article sur BC p. 31. </p>\n<p><em>*Doit être ajouté manuellement après l'acquisition de l'armure</em></p>"
+    },
+    "MechaMan Motorcycle Helmet": {
+      "name": "Casque de moto MechaMan",
+      "description": "<p>Un casque de moto en kevlar avec lunettes connectées intégrées fournies avec Bandeau et Faible luminosité / IR / UV préinstallé*. Reportez-vous à la description complète de l'article sur BC p. 37.</p>\n<p><em>*Les lunettes connectées et les options associées doivent être ajoutées manuellement et installées après avoir acquis l'armure.</em></p>"
+    },
+    "Mimic Clothing (Asia Pop)": {
+      "name": "Vêtement Mimic (Pop asiatique)",
+      "description": "<p>Armure pare-balles légère faite à partir d'un Kit de vêtements Mimic et de vêtements \"Pop asiatique\". Reportez-vous à la description complète de l'objet sur BC p. 33.</p>"
+    },
+    "Mimic Clothing (Bag Lady Chic)": {
+      "name": "Vêtement Mimic (Vagabond)",
+      "description": "<p>Armure pare-balles légère faite à partir d'un Kit de vêtements Mimic et de vêtements \"Vagabond\". Reportez-vous à la description complète de l'objet sur BC p. 33.</p>"
+    },
+    "Mimic Clothing (Bohemian)": {
+      "name": "Vêtement Mimic (Bohème)",
+      "description": "<p>Armure pare-balles légère faite à partir d'un Kit de vêtements Mimic et de vêtements \"Bohème\". Reportez-vous à la description complète de l'objet sur BC p. 33.</p>"
+    },
+    "Mimic Clothing (Businesswear)": {
+      "name": "Vêtement Mimic (Cadre sup)",
+      "description": "<p>Armure pare-balles légère faite à partir d'un Kit de vêtements Mimic et de vêtements \"Cadre sup\". Reportez-vous à la description complète de l'objet sur BC p. 33.</p>"
+    },
+    "Mimic Clothing (Gang Colors)": {
+      "name": "Vêtement Mimic (Couleurs du gang)",
+      "description": "<p>Armure pare-balles légère faite à partir d'un Kit de vêtements Mimic et de vêtements \"Couleurs du gang\". Reportez-vous à la description complète de l'objet sur BC p. 33.</p>"
+    },
+    "Mimic Clothing (Generic Chic)": {
+      "name": "Vêtement Mimic (Générique)",
+      "description": "<p>Armure pare-balles légère faite à partir d'un Kit de vêtements Mimic et de vêtements \"Générique\". Reportez-vous à la description complète de l'objet sur BC p. 33.</p>"
+    },
+    "Mimic Clothing (High Fashion)": {
+      "name": "Vêtement Mimic (Haute couture)",
+      "description": "<p>Armure pare-balles légère faite à partir d'un Kit de vêtements Mimic et de vêtements \"Haute couture\". Reportez-vous à la description complète de l'objet sur BC p. 33.</p>"
+    },
+    "Mimic Clothing (Leisurewear)": {
+      "name": "Vêtement Mimic (Décontracté)",
+      "description": "<p>Armure pare-balles légère faite à partir d'un Kit de vêtements Mimic et de vêtements \"Décontracté\". Reportez-vous à la description complète de l'objet sur BC p. 33.</p>"
+    },
+    "Mimic Clothing (Nomad Leathers)": {
+      "name": "Vêtement Mimic (Âme nomade)",
+      "description": "<p>Armure pare-balles légère faite à partir d'un Kit de vêtements Mimic et de vêtements \"Âme nomade\". Reportez-vous à la description complète de l'objet sur BC p. 33.</p>"
+    },
+    "Mimic Clothing (Urban Flash)": {
+      "name": "Vêtement Mimic (Urbain flash)",
+      "description": "<p>Armure pare-balles légère faite à partir d'un Kit de vêtements Mimic et de vêtements \"Urbain flash\". Reportez-vous à la description complète de l'objet sur BC p. 33.</p>"
+    },
+    "Montage Variable Clothing Line": {
+      "name": "Ligne de Vêtement Montage Variable",
+      "description": "<p>Armure pare-balles légère qui peut changer entre les styles \"Générique\" et \"Couleurs du gang\" en une action avec une palette achetée (20eb par couleur/modèle) et installée sur un Agent. Fournit avec une couleur ou un modèle au choix. Reportez-vous à la description complète de l'élément sur BC p. 32</p>"
+    },
+    "Shock Armor": {
+      "name": "Armure Foudre",
+      "description": "<p>Une armure de Kevlar qui foudroie toute personne qui vous saisit. Référez-vous à la description complète de l'objet sur BC pg. 29.</p>"
+    },
+    "Skid Row Trench": {
+      "name": "Manteau SkidRow",
+      "description": "<p>Armure de corps type Flak qui ressemble à un trench-coat en échange d'une protection réduite. -4 en REF, DEX et MOUV. Reportez-vous à la description complète de l'élément sur BC p. 33.</p>"
+    },
+    "Street Viper Riding Suit": {
+      "name": "Combinaison Street Viper",
+      "description": "<p>Armure de corps en kevlar qui est livrée avec deux armes de mêlée intermédiaires préinstallées* toujours considérées comme sorties tant que l'armure est portée. Reportez-vous à la description complète de l'article sur BC p. 36. </p>\n<p><em>*Doit être ajouté manuellement après l'acquisition de l'armure.</em></p>"
+    },
+    "Tactical Smart Armor": {
+      "name": "Armure tactique connectée",
+      "description": "<p>Une tenue complète d'armure pare-balles moyenne avec des lunettes connectées intégrées*. -2 au REF, DEX et MOUV. Reportez-vous à la description complète de l'article sur BC p. 30</p>\n<p><em>*Les lunettes connectées doivent être ajoutées manuellement après l'acquisition de l'armure.</em></p>"
+    },
+    "Holo-Wear": {
+      "name": "Holo-Wear",
+      "description": "<p>Vêtements holographiques qui peuvent être désactivés par des dispositifs IEM pendant une minute. Permet de changer de style en une action avec une option achetée. Reportez-vous à la description complète de l'élément sur BC p. 35.</p>"
+    },
+    "Airhypo Cyberfinger": {
+      "name": "Cyberdoigt hypodair",
+      "description": "<p>Cyberdoigts qui contient un @UUID[Compendium.cyberpunk-red-core.gear.Th74cfC87RqEJKAb]{Airhypo}Ne peut être installé que sur une cybermain à doigts modulables (voir Black Chrome p. 24 pour plus de détails)</p>"
+    },
+    "Ballpoint Cyberfinger": {
+      "name": "Cyberdoigts stylo à bille",
+      "description": "<p>Cyberdoigt avec un stylo à bille à l'intérieur. Ne peut être installé que sur une cybermain à doigts modulables. (Voir Black Chrome page 24 pour plus de détails)</p>"
+    },
+    "Budget Chipware Socket": {
+      "name": "Support de puce économique",
+      "description": "<p>Une prise bon marché pour une seule installation de puce. Les dommages à la tête envoient la puce installée à 30 m de distance, la cassant potentiellement (voir Black Chrome p. 17 pour plus de détails).</p>"
+    },
+    "Bullet Storage Cyberfinger": {
+      "name": "Cyberdoigt Stockage de balles",
+      "description": "<p>Cyberdoigt pouvant être utilisé pour dissimuler deux balles de n'importe quel type. Ne peut être installé que sur une cybermain à doigts modulaires. (Voir Black Chrome page 24 pour plus de détails)</p>"
+    },
+    "Dartgun Cyberfinger": {
+      "name": "Cyberdoigt pistolet à fléchettes",
+      "description": "<p>Cyberdoigt contenant un @UUID[Compendium.cyberpunk-red-core.weapons.fSvkIl83Rsqd7O16]{Dartgun} dissimulé. Ne peut être installé que sur une cybermain à doigts modulaires. (Voir Black Chrome page 24 pour plus de détails)</p>"
+    },
+    "Discount Cyberaudio Suite": {
+      "name": "Kit cyberaudio économique",
+      "description": "<p>Une interface bon marché et encombrante pour une amélioration audio. (voir Black Chrome p. 17 pour plus de détails)</p>"
+    },
+    "Explicit Memory Stimulator": {
+      "name": "Stimulateur de mémoire précise",
+      "description": "<p>Puce. Améliore la mémorisation. +2 Concentration quand installée. (Voir Black Chrome p. 18 pour plus de détails)</p>"
+    },
+    "Extra-Jointed Cyberarm Upgrade": {
+      "name": "Amélioration de cyberbras Extra-articulation",
+      "description": "<p>Améliore les articulations de cyberbras. Contorsion +2. (Voir Black Chrome p. 18 pour plus de détails)</p>"
+    },
+    "Extra-Jointed Cyberleg Upgrade": {
+      "name": "Amélioration de cyberjambe Extra-articulation",
+      "description": "<p>Améliore les articulations de cyberjambe. Contorsion +2. (Voir Black Chrome p. 18 pour plus de détails)</p>"
+    },
+    "Flashbulb": {
+      "name": "Lampe flash",
+      "description": "<p>Nécessite un cyberbras. L'utilisateur peut essayer d'aveugler quiconque dans un rayon de 25 m. (Voir Black Chrome p. 18 pour plus de détails)</p>"
+    },
+    "Flashlight Cyberfinger": {
+      "name": "Cyberdoigt lampe de poche",
+      "description": "<p>Cyberdoigt contenant un @UUID[Compendium.cyberpunk-red-core.gear.spgehgLv94vrH4Zo]{Flashlight} dissimulé. Ne peut être installé que sur une cybermain à doigts modulaires. (Voir Black Chrome page 24 pour plus de détails)</p>"
+    },
+    "Hardened Shielding (Borgware)": {
+      "name": "Bouclier renforcé (cyborgimplant)",
+      "description": "<p>Les cyborgimplants installés ne sont pas affectés par les effets IEM (voir Black Chrome p. 17 pour plus de détails.)</p>"
+    },
+    "Hardened Shielding (Cybereye)": {
+      "name": "Bouclier renforcé (cyberoptique)",
+      "description": "<p>L'œil et les options installés ne sont pas affectés par les effets IEM. (Voir Black Chrome p. 19 pour plus de détails)</p>"
+    },
+    "Hardened Shielding (Internal)": {
+      "name": "Bouclier renforcé (interne)",
+      "description": "<p>Cyberimplant interne. Tous les cyberimplants internes ne sont pas affectés par les effets IEM (voir Black Chrome p. 20 pour plus de détails.)</p>"
+    },
+    "Heuristic Health Monitor": {
+      "name": "Moniteur Heuristique de Santé",
+      "description": "<p>Nécessite un biomoniteur. Pour voir les PS en un coup d'œil. (Voir Black Chrome p. 19 pour plus de détails)</p>"
+    },
+    "Homing Tracer Cyberfinger": {
+      "name": "Cyberdoigt traceur",
+      "description": "<p>Cyberdoigts qui contient un @UUID[Compendium.cyberpunk-red-core.gear.QIHx5oQOirtTlAaD]{Homing Tracer}Ne peut être installé que sur une cybermain à doigts modulables (voir Black Chrome p. 25 pour plus de détails)</p>"
+    },
+    "Implanted Fūma Kotarō Linear Frame": {
+      "name": "Charpente linéaire interne Fūma Kotarō",
+      "description": "<ul>\n<li>Nécessite 2 prises d'interface</li>\n<li>Augmente COR à 12</li>\n<li>N'affecte pas les PS ou la sauvegarde contre la mort</li>\n<li>Discrétion +2</li>\n</ul>\n<p>Livré avec deux armes de mêlée lourdes exotique d'excellente qualité et une arme de mêlée légère exotique de qualité excellente*.</p>\n<p>Voir Black Chrome p. 52 pour plus de détails.</p>\n<p><em>* Doit être ajouté manuellement.</em></p>"
+    },
+    "Implanted LF-001 SWAT Linear Frame": {
+      "name": "Charpente linéaire implantée LF-001 SWAT",
+      "description": "<p>Augmente COR à 12 (ajustant vos PS et Seuil de blessure et sauvegarde contre la mort). Supprime la pénalité de mouvement pour l'escalade et la natation. (Voir Black Chrome p. 53 pour plus de détails.)</p>"
+    },
+    "Implanted Vermilion Linear Frame": {
+      "name": "Charpente linéaire implantée Vermilion",
+      "description": "<p>Augmente COR à 12 (ajustant vos PS et Seuil de blessure et Sauvegarde contre la Mort). Pas de malus de déplacement pour sauter. Lors de l'exécution de votre mouvement, votre mouvement est augmenté de 6m. (Voir Black Chrome p. 54 pour plus de détails.)</p>"
+    },
+    "Integrated Cyberdeck Upgrade": {
+      "name": "Amélioration cyberconsole intégrée",
+      "description": "<p>Nécessite cyberconsole dans cyberbras, ajoute un emplacement supplémentaire à la cybeconsole. (Voir Black Chrome p. 19 pour plus de détails)</p>"
+    },
+    "Laser Pointer Cyberfinger": {
+      "name": "Cyberdoigt pointeur laser",
+      "description": "<p>Cyberdoigt contenant un pointeur laser caché. Ne peut être installé que sur une cybermain à doigts modulaires. (Voir Black Chrome page 25 pour plus de détails)</p>"
+    },
+    "Lighter Cyberfinger": {
+      "name": "Cyberdoigt briquet",
+      "description": "<p>Cyberdoigt contenant un briquet caché. Ne peut être installé que sur une cybermain à doigts modulaires. (Voir Black Chrome page 25 pour plus de détails)</p>"
+    },
+    "Lockpick Cyberfinger": {
+      "name": "Cyberdoigt crochetage",
+      "description": "<p>Cyberdoigt contenant un @UUID[Compendium.cyberpunk-red-core.gear.vlhGpguIMioeA8fe]{Lock Picking Set} dissimulé. Ne peut être installé que sur une cybermain à doigts modulaires. (Voir Black Chrome page 25 pour plus de détails)</p>"
+    },
+    "MechaMan Smart Glove": {
+      "name": "Gant SmartLink MechaMan",
+      "description": "<p>Un gant de moto livré avec une poignée subdermique préinstallée*, nécessite un cablage neural. A 1 emplacement d'option de cyberbras. Reportez-vous à la description complète de l'objet sur BC p. 37.<br><em>*La poignée subdermique doit être ajoutée et installée manuellement après l'acquisition du gant</em></p>"
+    },
+    "Microphone Cyberfinger": {
+      "name": "Cyberdoigt microphone",
+      "description": "<p>Cyberdoigt contenant un enregistreur caché. Ne peut être installé que sur une cybermain à doigts modulaires. (Voir Black Chrome page 25 pour plus de détails)</p>"
+    },
+    "Mini Air Supply Cyberfinger": {
+      "name": "Cyberdoigt mini réserve d'air",
+      "description": "<p>Cyberdoigt contenant une réserve d'air. Ne peut être installé que sur une cybermain à doigts modulaires. (Voir Black Chrome page 26 pour plus de détails)</p>"
+    },
+    "Modular Finger Cyberhand": {
+      "name": "Doigts modulaires cybermain",
+      "description": "<p>Nécessite un cyberbras. Livrée avec 5 cyberdoigts*. (voir Black Chrome p. 20 pour plus de détails)</p>\n<p>*Les doigts doivent être ajoutés après l'installation</p>"
+    },
+    "Modular Finger Enthusiast Cyberhand": {
+      "name": "Cybermain pour fanatique de doigts modulaires",
+      "description": "<p>Cyborgimplant. Nécessite un cyberbras. Livré avec 8 cyberdoigts*. (voir Black Chrome p. 18 pour plus de détails)</p>\n<p>*Les doigts doivent être ajoutés après l'installation</p>"
+    },
+    "Neo-Soviet Cyberarm": {
+      "name": "Cyberbras neo-soviet",
+      "description": "<p>Un bras de remplacement cybernétique soviétique. Fournit avec une main gratuite préinstallée. -1 aux jets nécessitant le bras sans COR 8+. (Voir Black Chrome p. 20 pour plus de détails)</p>"
+    },
+    "One Shot Special Cyberfinger": {
+      "name": "Cyberdoigt spécial à usage unique",
+      "description": "<p>Cyberdoigt contenant un @UUID[Compendium.cyberpunk-red-core.weapons.Y433cjlB1uVHPysk]{Heavy Pistol} dissimulé. Ne peut être installé que sur une cybermain à doigts modulaires. (Voir Black Chrome page 26 pour plus de détails)</p>"
+    },
+    "Popup Net Launcher": {
+      "name": "Lanceur de filet escamotable",
+      "description": "<p>Un lanceur de filet exotique dissimulable. Ne peut rien tenir avec cette main lors de l'activation. (Voir Black Chrome p. 20-21 pour plus de détails)</p>"
+    },
+    "Popup Shotgun": {
+      "name": "Fusil à pompe escamotable",
+      "description": "<p>Un fusil à pompe dissimulable. Il est fourni avec un lien Smartgun préinstallé. Impossible de tenir quoi que ce soit avec cette main pendant l'activation. (Voir Black Chrome p. 21 pour plus de détails)</p>"
+    },
+    "RacerBracer": {
+      "name": "Collier cervical",
+      "description": "<p>cyberimplant interne. Donne l'immunité au Coup du lapin. (Voir Black Chrome p. 22 pour plus de détails)</p>"
+    },
+    "Reflex Co-Processor": {
+      "name": "Coprocesseur de Réflexe",
+      "description": "<p>Neuromatériel. Permet l'esquive des balles indépendamment des REF . (Voir Black Chrome pg. 21 pour plus de détails)</p>"
+    },
+    "Reinforced Cyberarm Upgrade": {
+      "name": "Amélioration cyberbras renforcé",
+      "description": "<p>Nécessite un cyberbras. Le cyberbras sur lequel il est installé ne peut pas être cassé. (Voir Black Chrome p. 21-22 pour plus de détails)</p>"
+    },
+    "Reinforced Cyberleg Upgrade": {
+      "name": "Amélioration cyberjambe renforcée",
+      "description": "<p>Nécessite une cyberjambe. La cyberjambe sur laquelle elle est installée ne peut pas être cassée. (Voir Black Chrome p. 21-22 pour plus de détails)</p>"
+    },
+    "Sponsored Cybereye": {
+      "name": "Cyberoptique sponsorisé",
+      "description": "<p>Un œil de remplacement. Bandeau est préinstallé*. L'utilisateur expérimente aléatoirement des publicités aléatoires. (Voir Black Chrome p. 22 pour plus de détails)</p>\n<p>*Bandeau doit être ajouté après l'installation</p>"
+    },
+    "Spray Paint Cyberfinger": {
+      "name": "Cyberdoigt bombe de peinture",
+      "description": "<p>Cyberdoigt contenant une bombe de peinture. Ne peut être installé que sur une cybermain à doigts modulaires. (Voir Black Chrome page 26 pour plus de détails)</p>"
+    },
+    "Squirt Cyberfinger": {
+      "name": "Cyberdoigt pulvérisateur",
+      "description": "<p>Cyberdoigt qui peut contenir et vaporiser différents liquides dissimulés. Ne peut être installé que sur une cybermain à doigts modulaires. (Voir Black Chrome page 26 pour plus de détails)</p>"
+    },
+    "Standard Cyberfinger": {
+      "name": "Cyberdoigt standard",
+      "description": "<p>Les cyberdoigts ne peuvent être installés que sur un des cybermains à doigts modulables (voir Black Chrome p. 26 pour plus de détails)</p>"
+    },
+    "Trauma Response Nanomatrix": {
+      "name": "Trauma Response Nanomatrix",
+      "description": "<p>Vous pouvez réparer entièrement une fois par jour le treillissage dermique ou l'armure subdermique (voir Black Chrome p. 22 pour plus de détails.)</p>"
+    },
+    "Wirecutter/Scissors Cyberfingers": {
+      "name": "Cyberdoigts coupe-fils/ciseaux",
+      "description": "<p>Cyberdoigt qui peut servir de ciseau dissimulé. Ne peut être installé que sur une cybermain à doigts modulaires. (Voir Black Chrome page 26 pour plus de détails)</p>"
+    },
+    "AirWell 50": {
+      "name": "AirWell 50",
+      "description": "<p>Produit assez d'eau pour une personne. Pour plus d'informations, voir Black Chrome page 48.</p>"
+    },
+    "Banshee Microphone": {
+      "name": "Microphone Banshee",
+      "description": "<p>Casque micro sans fil. Donne à l'utilisateur un bonus de +2 aux jets de compétence Instrument (Chant). Ne se cumule pas avec d'autres bonus pour Instrument. Pour plus d'informations, voir Black Chrome page 40.</p>"
+    },
+    "ChipVault": {
+      "name": "Coffre à puces",
+      "description": "<p>Peut contenir jusqu'à 8 puces. Les puces stockées à l'intérieur sont immunisés contre les effets IEM. Pour plus d'informations, voir Black Chrome page 44.</p>"
+    },
+    "CO2 Tank": {
+      "name": "Réservoir de CO2",
+      "description": "<p>Un réservoir de CO2 conçu pour être utilisé avec l'armure Masetto AirRider. Doit être remplacé après chaque utilisation. Reportez-vous à la description complète de l'objet dans Black Chrome p. 33.</p>"
+    },
+    "Doberman 500": {
+      "name": "Doberman 500",
+      "description": "<p>Drone canin personnel qui peut être lié à un Agent.&nbsp;<br>Se référer à ses règles sur la page 46 de Black Chrome.</p>"
+    },
+    "Drink Master 3000": {
+      "name": "Drink Master 3000",
+      "description": "<p>Permet de faire 10 boissons d'une bibliothèque de 3000 boissons avant de devoir être rempli de 100ed de matériaux. Peut également faire du Smash. Pour plus d'informations, voir Black Chrome page 42.</p>"
+    },
+    "EL-F4-NT Linear Frame": {
+      "name": "Charpente linéaire EL-F4-NT",
+      "description": "<p>Exosquelette. Augmente le COR à 12 tant qu'il est équipé. Aucun changement à vos PS ou à votre sauvegarde contre la mort. A des outils technologiques pré-installés. (Voir Black Chrome p. 55 pour plus de détails.)</p>"
+    },
+    "Fūma Kotarō Linear Frame": {
+      "name": "Charpente linéaire Fūma Kotarō",
+      "description": "<p>Exosquelette.</p>\n<ul>\n<li>Nécessite 2 prises d'interface</li>\n<li>Augmente COR à 12 lorsque vous y êtes branché</li>\n<li>N'affecte pas les PS ou la sauvegarde contre la mort</li>\n<li>Discrétion +2</li>\n</ul>\n<p>Livré avec deux armes de mêlée lourdes exotique d'excellente qualité et une arme de mêlée légère exotique de qualité excellente*.</p>\n<p>Voir Black Chrome p. 52 pour plus de détails.</p>\n<p><em>* Doit être ajouté manuellement.</em></p>"
+    },
+    "Jeeves Executive Garment Bag": {
+      "name": "Sac à vêtements corpos Jeeves",
+      "description": "<p>Sac qui peut réparer un vêtement ou une armure à la fois. Pour plus d'informations, voir Black Chrome page 43.</p>"
+    },
+    "Laser Light Electric Guitar": {
+      "name": "Guitare électrique Laser Light",
+      "description": "<p>Guitare électrique qui donne à l'utilisateur +1 au jet de compétence Instrument (Guitare). Cette guitare compte également comme une installation de tatouage lumineux lorsqu'elle est portée. Pour plus d'informations, voir Black Chrome page 41.</p>"
+    },
+    "LF-001 SWAT Linear Frame": {
+      "name": "Charpente linéaire LF-001 SWAT",
+      "description": "<p>Exosquelette. Nécessite 2 prises d'interface. Augmente COR à 12 lorsque vous y êtes branché. Aucun changement de vos PS ou de la sauvegarde contre la mort. Ignore la pénalité de mouvement normale pour l'escalade et la natation. (Voir Black Chrome p. 53 pour plus de détails.)</p>"
+    },
+    "Mr. Biscuit Multi-Food Processor": {
+      "name": "Robot multialiment Mr. Biscuit",
+      "description": "<p>Peut nourrir un groupe de 10 personnes maximum à l'extérieur de la ville. Pour plus d'informations, voir Black Chrome Page 49.</p>"
+    },
+    "Nitro Ultra9": {
+      "name": "Nitro Ultra9",
+      "description": "<p>Peut être versé dans le réservoir des véhicules pour le remplir en une action. Donne des bonus à la mobilité au détriment de la sécurité. Pour plus d'informations, voir Black Chrome page 49.</p>"
+    },
+    "One Touch Habitat": {
+      "name": "Habitat Un-Clic",
+      "description": "<p>Offre une protection contre les éléments. Considéré comme Dormir dans la nature ou comme Dormir dans les rues. Pour plus d'informations, voir Black Chrome page 48.</p>"
+    },
+    "Porta-Printer": {
+      "name": "Porta-Printer",
+      "description": "<p>Atelier miniature. Permet à un Techie d'utiliser les capacités Expert en amélioration et Expert en fabrication n'importe où tant qu'il a des outils technologiques. Pour plus d'informations, voir Black Chrome page 43.</p>"
+    },
+    "RapiDeploy Sheath": {
+      "name": "Fourreau RapiDeploy",
+      "description": "<p>Donne à l'utilisateur un bonus de +2 à son jet de compétence Dissimulation/Révélation d'objet s'il est utilisé pour dissimuler une arme qui peut être dissimulée. Pour plus d'informations, voir Black Chrome page 47.</p>"
+    },
+    "Shower•in•a•Can": {
+      "name": "Douche•en•Cannette",
+      "description": "<p>Déodorant en Spray. Désinfecte et désodorise. Une utilisation par cannette. Pour plus d'informations, voir Black Chrome page 38.</p>"
+    },
+    "Sonic Boom Amp": {
+      "name": "Ampli Sonic Boom",
+      "description": "<p>Quand lié à un instrument, l'utilisateur peut effectuer une action pour faire en sorte que tout le monde à proximité fasse un test de Résistance à la torture/aux drogues. Pour plus d'informations, voir Black Chrome page 40.</p>"
+    },
+    "SovOil Industrial Lubricant": {
+      "name": "Lubrifiant industriel SovOil",
+      "description": "<p>Lubrifiant dans un petit tube pratique. Pour plus d'informations, voir Black Chrome page 56.</p>"
+    },
+    "SovOil Medical Lubricant": {
+      "name": "Lubrifiant médical SovOil",
+      "description": "<p>Lubrifiant dans un petit tube pratique. Pour plus d'informations, voir Black Chrome page 56.</p>"
+    },
+    "SovOil Personal Lubricant": {
+      "name": "Lubrifiant personnel SovOil",
+      "description": "<p>Lubrifiant dans un petit tube pratique. Pour plus d'informations, voir Black Chrome page 56.</p>"
+    },
+    "Streetcase": {
+      "name": "Streetcase",
+      "description": "<p>Peut transporter beaucoup d'éléments facilement accessibles dont vous avez besoin pour rester en sécurité. Pour plus d'informations, consultez Black Chrome page 47.</p>"
+    },
+    "Triti-Fizz": {
+      "name": "Triti-Fizz",
+      "description": "<p>Boisson sans alcool préférée en Amérique du Nord. Pour plus d'informations, consultez Black Chrome page 124.</p>"
+    },
+    "Typhoid Speaker": {
+      "name": "Haut-parleur Typhoid",
+      "description": "<p>Lorsqu'il est lié à un ampli Sonic Boom de KillStrom, augmente le SD du test de Résistance à la torture/aux drogues. Pour plus d'informations, voir Black Chrome page 41.</p>"
+    },
+    "Universal Aqualung": {
+      "name": "Branchie Universal",
+      "description": "<p>Lorsqu'il est porté, l'utilisateur peut respirer sous l'eau tant qu'il se trouve à moins de 10 m de la surface. Pour plus d'informations, voir Black Chrome Page 42.</p>"
+    },
+    "Vermilion Linear Frame": {
+      "name": "Charpente linéaire Vermilion",
+      "description": "<p>Exosquelette. Nécessite 2 ports d'interface. Augmente le COR à 12 lorsque vous y êtes branché. Aucun changement de vos PS ou de la sauvegarde contre la mort. &nbsp;Aucune pénalité de mouvement pour le saut. En course votre mouvement est augmentée de 6m. (Voir Black Chrome p. 54 pour plus de détails.)</p>"
+    },
+    "WorldSat Aerial Sphere": {
+      "name": "Sphère aérienne WorldSat",
+      "description": "<p>Une fois configuré, fournit un accès à un Citinet lorsque vous êtes à moins de 50 miles de la ville ou d'un autre dispositif Sphère aérienne WorldSat connectée au Citinet. Pour plus d'informations, voir Black Chrome page 50.</p>"
+    },
+    "4Tify": {
+      "name": "4Tify",
+      "description": "<p>Une application pour votre Agent. Peut révéler des points faibles en scannant votre maison. Ou une section de couverture.</p>\n<p>Les règles complètes peuvent être trouvées dans Black Chrome à la page 13.</p>"
+    },
+    "City Database": {
+      "name": "Base de données de Ville",
+      "description": "<p>Une application pour votre Agent. Trouvez les meilleures adresses en ville avec ce guide de ville. Règles complètes dans Black Chrome à la page 14.</p>"
+    },
+    "Digital Gladiator": {
+      "name": "Digital Gladiator",
+      "description": "<p>Une application pour votre Agent. Créez un Solo virtuel et menez vos combats dans le royaume numérique !</p>\n<p>Les règles pour les combats se trouvent dans Black Chrome à la page 12.</p>"
+    },
+    "MedScan": {
+      "name": "MedScan",
+      "description": "<p>Une application pour votre Agent. Vidéoconférence médicale, vous aide à faire des premiers secours, contre un prix. Les règles complètes peuvent être trouvées dans Black Chrome à la page 14.</p>"
+    },
+    "NCPD Crime Database": {
+      "name": "Base de données NCPD Crime",
+      "description": "<p>Une application pour votre Agent. Permet à l'utilisateur de rechercher des informations criminelles publiques. Les règles complètes d'utilisation peuvent être trouvées dans Black Chrome à la page 13.</p>\n<p>&nbsp;</p>"
+    },
+    "AeroCop": {
+      "name": "AeroCop",
+      "description": "<p> Aérodyne type AV4. Version police.</p>\n<p>On peut trouver les statistiques complètes dans Black Chrome à la page 61.</p>"
+    },
+    "AeroVox": {
+      "name": "AeroVox",
+      "description": "<p>Aérodyne type AV4. Version civile.</p>\n<p>On peut trouver les statistiques complètes dans Black Chrome à la page 61.</p>"
+    },
+    "Badger Corporate Bus": {
+      "name": "Badger Corporate Bus",
+      "description": "<p>Un bus luxueux pour les déplacements routiers corpos. Également équipé pour les réunions de travail et pour des boissons d'après travail .</p>\n<p>On peut trouver tous les détails dans Black Chrome à la page 80.</p>"
+    },
+    "Bellhop": {
+      "name": "Bellhop",
+      "description": "<p>Un Gyrocoptère une place qui peut être plié à la taille d'une grande valise.</p>\n<p>Les statistiques complètes peuvent être trouvées dans Black Chrome à la page 60.</p>"
+    },
+    "Chupacabra": {
+      "name": "Chupacabra",
+      "description": "<p>Véhicule terrestre compact construit à partir de pièces recyclées de véhicules plus anciens. Faible technologie et haute puissance.</p>\n<p>On peut trouver des détails complets dans Black Chrome à la page 66.</p>"
+    },
+    "Destination": {
+      "name": "Destination",
+      "description": "<p>Aérodyne type AV4. Version civile.</p>\n<p>On peut trouver les statistiques complètes dans Black Chrome à la page 62.</p>"
+    },
+    "Ebi": {
+      "name": "Ebi",
+      "description": "<p>Voiture terrestre compacte, petite mais bien pensée .</p>\n<p>On peut trouver tous les détails dans Black Chrome à la page 72.</p>"
+    },
+    "EconoCompact": {
+      "name": "EconoCompact",
+      "description": "<p>Voiture terrestre compacte, petite mais bien pensée .</p>\n<p>On peut trouver tous les détails dans Black Chrome à la page 64.</p>"
+    },
+    "Family Star Van": {
+      "name": "Family Star Van",
+      "description": "<p>Une voiture terrestre familiale compacte et confortable.</p>\n<p>On peut trouver des détails complets dans Black Chrome à la page 65.</p>"
+    },
+    "Gorgon Security Van": {
+      "name": "Gorgon van de sécurité",
+      "description": "<p>Une camionnette monstrueuse blindée.</p>\n<p>On peut trouver tous les détails dans Black Chrome à la page 73.</p>"
+    },
+    "Grundy": {
+      "name": "Grundy",
+      "description": "<p>Voiture terrestre compacte blindée, look industriel.</p>\n<p>On peut trouver tous les détails dans Black Chrome à la page 68.</p>"
+    },
+    "Harriet 100": {
+      "name": "Harriet 100",
+      "description": "<p>Une moto de route classique avec un look plus féminin.</p>\n<p>On peut trouver tous les détails dans Black Chrome à la page 69.</p>"
+    },
+    "Harvey 100": {
+      "name": "Harvey 100",
+      "description": "<p>Une moto de route classique.</p>\n<p>Vous trouverez tous les détails dans Black Chrome à la page 69.</p>"
+    },
+    "Harvey Merc": {
+      "name": "Harvey Merc",
+      "description": "<p>Une moto de route classique, mais avec des armes montées.</p>\n<p>On peut trouver tous les détails dans Black Chrome à la page 69.</p>"
+    },
+    "Herakles": {
+      "name": "Herakles",
+      "description": "<p>Transport de troupes de type AV4, blindé et armé.</p>\n<p>On peut trouver les statistiques complètes dans Black Chrome à la page 63.</p>"
+    },
+    "Highway Master Artemis": {
+      "name": "Highway Master Artemis",
+      "description": "<p>Une moto de route basse avec habitacle en verre rétractable. A un mode surcharge qui n'est pas fourni avec une garantie de sécurité.</p>\n<p>On peut trouver tous les détails dans Black Chrome à la page 70.</p>"
+    },
+    "JetBoy Hoverboard": {
+      "name": "Hoverboard JetBoy",
+      "description": "<p>Un hoverboard piloté avec la compétence Athlétisme. Ne peut pas être amélioré.</p>\n<p>Vous trouverez tous les détails dans Black Chrome à la page 78.</p>"
+    },
+    "MegaHauler": {
+      "name": "MegaHauler",
+      "description": "<p>Camion de transport blindé. Ressemble plus à un train qu'à une voiture.</p>\n<p>On peut trouver tous les détails dans Black Chrome à la page 79.</p>"
+    },
+    "Molly 1K": {
+      "name": "Molly 1K",
+      "description": "<p>Voiture terrestre compacte tout-terrains.</p>\n<p>On peut trouver tous les détails dans Black Chrome à la page 82.</p>"
+    },
+    "Paladin 500": {
+      "name": "Paladin 500",
+      "description": "<p>Une voiture terrestre haute performance. Maintenant vous pouvez être MadMax. En ville. Avec deux mitrailleuses montées.</p>\n<p>On peut trouver tous les détails dans Black Chrome à la page 75.</p>"
+    },
+    "Parallax Cybercycle": {
+      "name": "Cybercycle Parallax",
+      "description": "<p>Haut de gamme des superbikes.</p>\n<p>Vous trouverez tous les détails dans Black Chrome à la page 83.</p>"
+    },
+    "Range Trike": {
+      "name": "Range Trike",
+      "description": "<p>Moto de route à trois roues.</p>\n<p>On peut trouver tous les détails dans Black Chrome à la page 67.</p>"
+    },
+    "SH-45 Patroller Law": {
+      "name": "SH-45 Patroller Law",
+      "description": "<p>Gyrocoptère une place . Version police, avec mitrailleuse montée.</p>\n<p>Des stats complètes peuvent être trouvées dans Black Chrome à la page 58.</p>"
+    },
+    "SH-45 Patroller": {
+      "name": "SH-45 Patroller",
+      "description": "<p>Gyrocoptère une place . Version civile.</p>\n<p>Des statistiques complètes peuvent être trouvées dans Black Chrome à la page 58.</p>"
+    },
+    "Sliver": {
+      "name": "Sliver",
+      "description": "<p>Une moto de route avec tous les gadgets dont vous avez besoin.</p>\n<p>Vous trouverez tous les détails dans Black Chrome à la page 84.</p>"
+    },
+    "Street King Combat Vehicle": {
+      "name": "Véhicule de combat Street King",
+      "description": "<p>Une grosse voiture terrestre haute performance, blindée et à l'aspect militaire.</p>\n<p>On peut trouver tous les détails dans Black Chrome à la page 77.</p>"
+    },
+    "TDT 004": {
+      "name": "TDT 004",
+      "description": "<p>Hélicoptère de transport de troupes.</p>\n<p>Vous trouverez tous les détails dans Black Chrome à la page 59.</p>"
+    },
+    "The Zacatzontli Pickup Truck": {
+      "name": "Pickup Le Zacatzontli",
+      "description": "<p>Une voiture terrestre compacte équipée pour les voyages hors route.</p>\n<p>On peut trouver tous les détails dans Black Chrome à la page 74.</p>"
+    },
+    "Thunder-X": {
+      "name": "Thunder-X",
+      "description": "<p>Haut de gamme des voitures terrestres.</p>\n<p>On peut trouver des détails complets dans Black Chrome à la page 76.</p>"
+    },
+    "Volkhov": {
+      "name": "Volkhov",
+      "description": "<p>Un pickup terrestre compact blindé avec mitrailleuse montée. Livré avec une bouteille de vodka.</p>\n<p>On peut trouver tous les détails dans Black Chrome à la page 71.</p>"
+    },
+    "Yang's Wheels Rickshaw": {
+      "name": "Rickshaw Yang's Wheels",
+      "description": "<p>Moto de route avec remorque pour des passagers.</p>\n<p>Vous trouverez tous les détails dans Black Chrome à la page 81.</p>"
+    },
+    "Arasaka Prototype Variable Assault Rifle": {
+      "name": "Fusil d'assaut prototype Variable Arasaka",
+      "description": "<p>Fusil d'assaut exotique de qualité excellente. En supposant que vous avez toutes les pièces, il peut utiliser un autre mode de mitrailleuse unique. Les règles complètes peuvent être trouvées dans Black Chrome à la page 102.</p>"
+    },
+    "Beast Shotgun": {
+      "name": "Fusil à pompe Beast",
+      "description": "<p>Fusil à pompe exotique. Chargeur de 40 coups. Nécessite COR 10 ou plus (sauf s'il est monté) au moment du tir ou l'utilisateur en subira les conséquences. Les règles complètes peuvent être trouvées dans Black Chrome à la page 111.</p>"
+    },
+    "BMG-500": {
+      "name": "BMG-500",
+      "description": "<p>Fusil d'assaut exotique avec un chargeur de 500 balles et un bipied. Nécessite COR 11 ou supérieur (sauf s'il est monté). Les règles complètes peuvent être trouvées dans Black Chrome à la page 122.<br><br></p>"
+    },
+    "Bubba Buster": {
+      "name": "Bubba Buster",
+      "description": "<p>Fusil à pompe exotique de mauvaise qualité. Il se détruit s'il est tiré plus de 3 fois en une minute. Les règles complètes peuvent être trouvées dans Black Chrome à la page 106.</p>"
+    },
+    "Crowd Buster": {
+      "name": "Chasseur de foule",
+      "description": "<p>Fusil d'assaut exotique avec un mode de tir alternatif unique. Livré avec un casque anti-bruit automatique*. Les règles complètes peuvent être trouvées dans Black Chrome à la page 116. </p>\n<p><em>*Doit être appliqué manuellement après l'achat</em></p>"
+    },
+    "Door Cracker": {
+      "name": "Craqueur de porte",
+      "description": "<p>Objet explosif bon marché, petite zone d'effet. On peut trouver des règles complètes dans Black Chrome à la page 87.</p>"
+    },
+    "E-TACK Public Defender": {
+      "name": "E-TACK Public Defender",
+      "description": "<p>Livré avec une liaison Smartgun*. L'utilisateur a besoin d'une poignée subdermique pour l'utiliser. Il a un mode létal et un non létal.</p>\n<p>Les règles complètes peuvent être trouvées dans Black Chrome à la page 115.</p>\n<p><em>* Cette mise à jour doit être ajoutée manuellement.</em></p>"
+    },
+    "Engage Rocket Launcher": {
+      "name": "Lance-roquettes Engage",
+      "description": "<p>Lance-roquettes exotique de qualité médiocre. Il explose sur un échec critique ou lors du déchargement de l'arme. Des règles complètes peuvent être trouvées dans Black Chrome à la page 107.</p>"
+    },
+    "Faisal's Dead or Alive": {
+      "name": "Mort ou Vif de Faisal",
+      "description": "<p>Fusil à pompe exotique de mauvaise qualité avec un lanceur de filet de mauvaise qualité intégré. Les règles complètes peuvent être trouvées dans Black Chrome à la page 104.</p>"
+    },
+    "FangFist": {
+      "name": "FangFist",
+      "description": "<p>Arme de mêlée intermédiaire à une main d'excellente qualité.</p>\n<p>Un gant avec une lame rétractable courte.</p>\n<p>On peut trouver tous les détails dans Black Chrome à la page 98.</p>"
+    },
+    "Fox Dual Ammo Pistol": {
+      "name": "Pistolet à doubles munitions Fox",
+      "description": "<p>Pistolet lourd exotique. On peut trouver des règles complètes dans Black Chrome à la page 113.</p>"
+    },
+    "GunMart Smart Special": {
+      "name": "GunMart Smart Special",
+      "description": "<p>Pistolet lourd exotique de mauvaise qualité avec une liaison Smartgun intégré. Les règles complètes peuvent être trouvées dans Black Chrome à la page 108.</p>"
+    },
+    "GunMart Special": {
+      "name": "GunMart Special",
+      "description": "<p>Pistolet lourd exotique de mauvaise qualité. Des règles complètes peuvent être trouvées dans Black Chrome à la page 108.</p>"
+    },
+    "Hades Multipurpose Assault Shotgun": {
+      "name": "Fusil à pompe d'assaut polyvalent Hades",
+      "description": "<p>Fusil à pompe exotique. Le chargeur contient 16 coups. Les règles complètes peuvent être trouvées dans Black Chrome à la page 109.</p>"
+    },
+    "Hello Cutie Ultra-K8 Assault Pistol": {
+      "name": "Pistolet d'assaut Hello Cutie Ultra-K8",
+      "description": "<p>Le pistolet d'assaut Sanroo Hello Cutie Ultra-K8 est un pistolet très lourd exotique d'excellente qualité, avec un mode pistolet-mitrailleur lourd d'excellente qualité. Les règles complètes peuvent être trouvées dans Black Chrome à la page 118.</p>"
+    },
+    "KillChip 100 Micro-Bomb": {
+      "name": "Micro-Bombe KillChip 100",
+      "description": "<p>Puce mémoire, mais explosive lorsqu'elle est branchée dans un neuromatériel. On peut trouver des règles complètes dans Black Chrome à la page 88.</p>"
+    },
+    "M-04 Variable Assault": {
+      "name": "M-04 Assaut Variable",
+      "description": "<p>Le M-04 est un fusil d'assaut exotique de mauvaise qualité avec un lance-grenades monté personnalisé. Les règles complètes peuvent être trouvées dans Black Chrome à la page 119.</p>"
+    },
+    "Magna Knuckles": {
+      "name": "Magna Knuckles",
+      "description": "<p>Une arme de mêlée intermédiaire exotique. Un effet IEM alimenté par batterie peut désactiver les cyberimplants, on peut trouver tous les détails dans Black Chrome à la page 96.</p>"
+    },
+    "Mastiff SMG": {
+      "name": "Pistolet-mitrailleur Mastiff",
+      "description": "<p>Le Mastiff est un pistolet-mitrailleur exotique à deux mains et un fusil à pompe. Des règles complètes peuvent être trouvées dans Black Chrome à la page 113.</p>"
+    },
+    "Matchmaker": {
+      "name": "Matchmaker",
+      "description": "<p>Le Georgie Arms Matchmaker est un fusil à pompe exotique de mauvaise qualité avec un seul coup dans le chargeur. Les règles complètes peuvent être trouvées dans Black Chrome à la page 105.</p>"
+    },
+    "Micro Hydrogen Combustor": {
+      "name": "Micro catalyseur à hydrogène",
+      "description": "<p> A small explosive that detonates after being immersed in a liquid. Is both armor piercing and creates a large cloud of smoke. </p> <p> Full rules can be found on page 88. </p>"
+    },
+    "ModFire 10X (Pistol)": {
+      "name": "ModFire 10X (Pistolet)",
+      "description": "<p>Le ModFire 10X est un pistolet lourd exotique. Peut également être transformé en pistolet-mitrailleur exotique ou en fusil d'assaut exotique, en supposant que l'utilisateur dispose de toutes les pièces nécessaires. Les règles complètes peuvent être trouvées dans Black Chrome à la page 114.</p>"
+    },
+    "ModFire 10X (Rifle)": {
+      "name": "ModFire 10X (Pistolet)",
+      "description": "<p>Le ModFire 10X est un pistolet lourd exotique. Peut également être transformé en pistolet-mitrailleur exotique ou en fusil d'assaut exotique, en supposant que l'utilisateur dispose de toutes les pièces nécessaires. Les règles complètes peuvent être trouvées dans Black Chrome à la page 114.</p>"
+    },
+    "ModFire 10X (SMG)": {
+      "name": "ModFire 10X (Pistolet-mitrailleur)",
+      "description": "<p>Le ModFire 10X est un pistolet lourd exotique. Peut également être transformé en pistolet-mitrailleur exotique ou en fusil d'assaut exotique, en supposant que l'utilisateur dispose de toutes les pièces nécessaires. Les règles complètes peuvent être trouvées dans Black Chrome à la page 114.</p>"
+    },
+    "Mono-Guard": {
+      "name": "Mono-Guard",
+      "description": "<p>Monofilament, arme de mêlée lourde à une main.</p>\n<p>Peut appliquer de multiples blessures critiques, dont des détails peuvent être trouvés dans Black Chrome à la page 96.</p>"
+    },
+    "Mono-Katana Solo Wolf and Bot": {
+      "name": "Mono-Katana Solo Wolf and Bot",
+      "description": "<p>Arme de mêlée très lourde exotique de mauvaise qualité à deux mains.</p>\n<p>Copie bon marché d'un Mono-Katana. Les règles pour les distinguer peuvent être trouvées dans Black Chrome à la page 92.</p>"
+    },
+    "Mono-Katana": {
+      "name": "Mono-Katana",
+      "description": "<p>Arme de mêlée exotique très lourde à deux mains. Lorsqu'elle est maniée par le bon utilisateur, l'arme ignore les armures de moins de 7 PA, les détails complets dans Black Chrome à la page 92.</p>"
+    },
+    "Mono-Star": {
+      "name": "Mono-Star",
+      "description": "<p>Mono-Shuriken vibrant et tournant sur lui-même.</p>\n<p>Peut être utilisé comme une arme de mêlée et à distance, dont les règles peuvent être trouvées dans Black Chrome à la page 101.</p>"
+    },
+    "Mono-Wakizashi": {
+      "name": "Mono-Wakizashi",
+      "description": "<p>Arme de mêlée lourde à une main. Lorsqu'elle est maniée par le bon utilisateur, l'arme ignore les armures de moins de 7 PA, tous les détails dans Black Chrome à la page 93.</p>"
+    },
+    "Nomad Rocker": {
+      "name": "Nomad Rocker",
+      "description": "<p>Pistolet très lourd exotique de pauvre qualité qui tire des pierres. Munitions gratuites pour cette arme. Des règles complètes peuvent être trouvées dans Black Chrome à la page 115.</p>"
+    },
+    "OUTLet Explosive": {
+      "name": "Prise explosive",
+      "description": "<p>Explosif à l'apparence d'une prise électrique. Des règles complètes peuvent être trouvées dans Black Chrome à la page 89.</p>"
+    },
+    "Overlord Handcannon": {
+      "name": "Overlord Handcannon",
+      "description": "<p>Pistolet lourd exotique de mauvaise qualité avec une cadence de 1. Il peut donner un bonus de +1 aux Bastons de regard dans certaines situations. Les règles complètes peuvent être trouvées dans Black Chrome à la page 106.</p>"
+    },
+    "Pepper Shaker": {
+      "name": "Moulin à poivre",
+      "description": "<p>Pistolet-mitrailleur exotique incapable de tirer au coup par coup ou de viser. Le tir automatique n'utilise que 6 balles pour cette arme. Des règles complètes peuvent être trouvées dans Black Chrome à la page 105.</p>"
+    },
+    "Perseus": {
+      "name": "Perseus",
+      "description": "<p>Pistolet exotique très lourd de qualité excellente. Des règles complètes peuvent être trouvées dans Black Chrome à la page 112.</p>"
+    },
+    "Pursuit Security Bouncer": {
+      "name": "Pursuit Security Bouncer",
+      "description": "<p>Gant alimenté par une batterie.</p>\n<p>Une matraque étourdissante à une main et un microonde.</p>\n<p>On peut trouver des détails complets dans Black Chrome à la page 97.</p>"
+    },
+    "Ranger Combat Boomerang": {
+      "name": "Boomerang Ranger Combat",
+      "description": "<p>Agit comme une arme de mêlée lourde exotique à une main, ignore la moitié des PA.</p>\n<p>Contient un système de guidage intégré, dont les détails peuvent être trouvés dans Black Chrome à la page 100.</p>"
+    },
+    "Rhinocefist": {
+      "name": "Rhinocefist",
+      "description": "<p>Large gant blindé, couvrant de la main à épaule. Nécessite des prises d'interface. Peut être utilisé à la fois pour la démolition et la bagarre, dont les détails peuvent être trouvés dans Black Chrome à la page 95.</p>"
+    },
+    "Rostović Kleaver": {
+      "name": "Rostović Kleaver",
+      "description": "<p>Arme de mêlée exotique très lourde à deux mains. Vous pouvez utiliser une batterie pour augmenter les dégâts, dont les détails peuvent être trouvés à la page 94.</p>\n<p>Nécessite COR 11 ou plus pour l'utiliser.</p>"
+    },
+    "Superchrome® Glam Rifle": {
+      "name": "Fusil d'assaut Glam Superchrome®️",
+      "description": "<p>Fusil d'assaut exotique. Donne à l'utilisateur un bonus de +2 en Habillement et style lorsqu'il est équipé. Les règles complètes peuvent être trouvées dans Black Chrome à la page 120.</p>"
+    },
+    "Superchrome® Javelin": {
+      "name": "Javelin Superchrome®️",
+      "description": "<p>Fusil de précision exotique. Donne à l'utilisateur un bonus de +2 en Habillement et style lorsqu'il est équipé. Des règles complètes peuvent être trouvées dans Black Chrome à la page 120.</p>"
+    },
+    "Superchrome® Sidearm": {
+      "name": "Sidearm Superchrome®",
+      "description": "<p>Pistolet exotique très lourd. Donne à l'utilisateur un bonus de +2 en Habillement et style lorsqu'il est équipé. Des règles complètes peuvent être trouvées dans Black Chrome à la page 121.</p>"
+    },
+    "Survivalist": {
+      "name": "Survivaliste",
+      "description": "<p>Arbalète et fusil d'assaut 2 en 1. Il est incapable de tir automatique. Il est livré avec une lunette de précision intégrée*. Les règles complètes peuvent être trouvées dans Black Chrome à la page 103. </p>\n<p><em>*Doit être appliqué manuellement après l'achat</em></p>"
+    },
+    "Tasmanskiy Klô": {
+      "name": "Tasmanskiy Klô",
+      "description": "<p>Grandes lames rétractables dans un Gant de Combat.&nbsp;</p>\n<p>Arme de mêlée très lourde exotique d'excellente qualité.</p>\n<p>Tous les détails dans Black Chrome à la page 99.</p>"
+    },
+    "TechHammer": {
+      "name": "TechHammer",
+      "description": "<p>Fusil à pompe/lance-roquettes exotique. Règles complètes dans Black Chrome à la page 110.</p>"
+    },
+    "Tommyknocker": {
+      "name": "Tommyknocker",
+      "description": "<p>Combo pistolet très lourd exotique et fusil à pompe de mauvaise qualité. Nécessite COR 10 ou d'être tenu dans deux mains lors du tir, sinon l'utilisateur lâche l'arme au sol. Les règles complètes peuvent être trouvées dans Black Chrome à la page 123.</p>"
+    },
+    "TR-4 Detonator Fluid": {
+      "name": "Fluide détonateur TR-4",
+      "description": "<p>Doit être versé dans un réservoir de carburant pour exploser. Des règles complètes peuvent être trouvées dans Black Chrome à la page 90.</p>"
+    },
+    "Ulični Uništitelj (Street Destroyer)": {
+      "name": "Ulični Uništitelj (Street Destroyer)",
+      "description": "<p>Fusil à pompe exotique de mauvaise qualité. Le chargeur ne peut contenir que 3 coups. Il ne peut tirer que des chevrotines. Des règles complètes peuvent être trouvées dans Black Chrome à la page 117.</p>"
+    },
+    "Utility Tomahawk": {
+      "name": "Tomahawk utilitaire",
+      "description": "<p>Pique et coupe , ce piolet en acier composite peut vous aider à grimper sur les parois de glace tout en causant de graves dégâts lors d'un combat.</p>\n<p>Peut être utilisé comme une arme de mêlée et à distance, dont les règles peuvent être trouvées dans Black Chrome à la page 101.</p>"
+    },
+    "Weeping Reaver Katana": {
+      "name": "Katana Ravageur Suintant",
+      "description": "<p>Arme de mêlée très lourde à deux mains d'excellente qualité. Contient trois doses de fluides spécifiques pour enrober la lame :</p>\n<ul>\n<li>Arasaka Fire (peut enflammer la cible)</li>\n<li>Arasaka Acide (permet de percer l'armure)</li>\n<li>Arasaka Sel Wound (inflige une seconde blessure critique)</li>\n</ul>\n<p>Les règles complètes se trouvent dans Black Chrome à la page 91.</p>"
+    },
+    "Westwood": {
+      "name": "Westwood",
+      "description": "<p>Pistolet très lourd. Barillet de 6 coups qui ne peut pas être amélioré avec des options de chargeur. Les règles complètes peuvent être trouvées dans Black Chrome à la page 121.</p>"
+    },
+    "White Hornet Tanto": {
+      "name": "Tanto White Hornet",
+      "description": "<p>Arme de mêlée intermédiaire à une main. Vous pouvez rendre la cible inconsciente plutôt que morte, avec des règles complètes trouvées dans Black Chrome à la page 93.</p>"
+    }
+  }
+}

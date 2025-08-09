@@ -1,0 +1,5 @@
+{
+  "description": "The damage a weapon does, matches Xd6 or 0",
+  "type": "string",
+  "pattern": "(^[0-9]{1,2}d6$)|^0$"
+}

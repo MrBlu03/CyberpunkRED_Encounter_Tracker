@@ -1,0 +1,21 @@
+base_path: .
+base_url: 'https://api.crowdin.com'
+pull_request_title: Localization update
+pull_request_labels:
+  - Localization
+commit_message: '[ci skip]'
+preserve_hierarchy: 1
+files:
+  - source: /src/lang/en.json
+    translation: /src/lang/%locale%.json
+    type: json
+    translation_replace:
+      _: '-'
+  - source: /src/babele/en/*.json
+    translation: /src/babele/%locale%/%original_file_name%
+    type: json
+  - source: /CHANGELOG.md
+    translation: /CHANGELOG.%locale%.md
+    type: md
+    translation_replace:
+      _: '-'

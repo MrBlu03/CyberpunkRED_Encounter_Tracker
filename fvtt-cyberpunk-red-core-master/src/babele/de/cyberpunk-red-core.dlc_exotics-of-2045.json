@@ -1,0 +1,42 @@
+{
+  "label": "Exotics of 2045",
+  "mapping": {},
+  "entries": {
+    "Appetite Controller": {
+      "name": "Appetite Controller",
+      "description": "<p>Suppresses hunger response. User ignores Humanity Loss penalties from starvation trauma but User can still starve. Roll a Death Save at start of 7th consecutive day without eating. +1 to successive Death Saves each day afterwards.</p>\n<p>Requires Biomonitor.</p>"
+    },
+    "Combat Jaw": {
+      "name": "Combat Jaw",
+      "description": "<p>Implanted Very Heavy Melee Weapon.</p>\n<p>Refer to the full description on page 72 of Interface Red vol. 2.</p>"
+    },
+    "Combat Tail": {
+      "name": "Combat Tail",
+      "description": "<p>Implanted Heavy Melee Weapon. Requires Neural Link.</p>\n<p>Refer to the full description on page 72 of Interface Red vol. 2.</p>"
+    },
+    "Extra-Jointed Cyberarm Upgrade": {
+      "name": "Extra-Jointed Cyberarm Upgrade",
+      "description": "<p>Enhances cyberarm articulation. +2 Contortionist.</p>\n"
+    },
+    "Extra-Jointed Cyberleg Upgrade": {
+      "name": "Extra-Jointed Cyberleg Upgrade",
+      "description": "<p>Enhances cyberleg articulation. +2 Contortionist.</p>\n"
+    },
+    "Firebreather": {
+      "name": "Firebreather",
+      "description": "<p>Implanted Exotic Shotgun. Can only hold one incendiary shotgun shell. </p>\n<p>Refer to the full description on page 73 of Interface Red vol. 2.</p>"
+    },
+    "Heuristic Health Monitor": {
+      "name": "Heuristic Health Monitor",
+      "description": "<p>Requires biomonitor. Can know HP at a glance. (See Black Chrome pg. 19 for more details)</p>"
+    },
+    "NeuTongue": {
+      "name": "NeuTongue",
+      "description": "<p>Simulates flavor sensations. Use a linked Agent to customize flavor profiles. Can be deactivated without an Action. No sense of taste when deactivated.</p>\n<p>Replaces Meat tongue.</p>"
+    },
+    "Reflex Co-Processor": {
+      "name": "Reflex Koprozessor",
+      "description": "<p>Neuralware. Negates REF requirement to dodge bullets. (See Black Chrome pg. 21 for more details)</p>"
+    }
+  }
+}

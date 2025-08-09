@@ -1,0 +1,12 @@
+_id: 0xKBKE6t5ATy3T6Y
+_key: "!tables.results!QiwaqQtocypL0FXG.0xKBKE6t5ATy3T6Y"
+documentCollection: cyberpunk-red-core.core_critical-injuries-head
+documentId: qRkCxq0KTuBnw2wj
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/critical_injuries/damaged_ear.svg
+range:
+  - 10
+  - 10
+text: Damaged Ear
+type: 2
+weight: 1

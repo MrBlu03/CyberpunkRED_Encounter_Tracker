@@ -1,0 +1,25 @@
+<div class="items-header flexrow">
+  <span class="item-name section-name text-nowrap text-padding-left-smallest">
+    {{localize "CPR.mookSheet.items.cyberdeckPrograms"}}
+  </span>
+</div>
+<div class="text-padding-left-smallest">
+  <!-- Program -->
+  {{#each actor.itemTypes.program as |item i| }}
+    {{#if item.system.isInstalled }}
+      <a class="name item-view" tabindex="0" data-tooltip="{{localize "CPR.mookSheet.items.InstalledClickToViewItemReadOnly"}}
+        <br/>
+        {{localize "CPR.actorSheets.commonActions.ctrlClickToSendToChat"}}" data-item-id="{{item.id}}">
+        <span class="text-italic">{{item.name}}</span>{{#unless @last}},{{/unless}}
+      </a>
+    {{else}}
+      <a class="name item deletable changeable item-edit" tabindex="0" data-tooltip="{{localize "CPR.mookSheet.items.clickToViewItem"}}
+        <br/>
+        {{localize "CPR.actorSheets.commonActions.ctrlClickToSendToChat"}}
+        <br/>
+        {{localize "CPR.mookSheet.items.pressDeleteToDelete"}}" data-item-id="{{item.id}}">
+        {{item.name}}{{#unless @last}},{{/unless}}
+      </a>
+    {{/if}}
+  {{/each}}
+</div>

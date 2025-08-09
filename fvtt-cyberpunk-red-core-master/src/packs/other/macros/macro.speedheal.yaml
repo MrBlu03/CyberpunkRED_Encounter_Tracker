@@ -1,0 +1,38 @@
+_id: UoK1EaiRmqtwDuXh
+_key: "!macros!UoK1EaiRmqtwDuXh"
+command: |-
+  // Get all selected tokens
+  const allTokens = canvas.tokens.controlled;
+  const validActors = ["character", "mook"];
+
+  if (allTokens.length === 0) {
+    return ui.notifications.warn(game.i18n.localize("CPR.macro.noTokenSelected"));
+  }
+
+  allTokens.forEach((token) => {
+    console.debug(`CPR MACRO | Speedheal | Token: ${token.name}`);
+    let actor = token.actor;
+
+    if (validActors.includes(actor.type)) {
+      // Actor data
+      const maxHp = actor.system.derivedStats.hp.max;
+      const currentHp = actor.system.derivedStats.hp.value;
+      const body = actor.system.stats.body.value;
+      const will = actor.system.stats.will.value;
+
+      // Calculate the speedheal value and cap if greater than the missing HP
+      const speedheal = body + will;
+      const missingHp = maxHp - currentHp;
+      const hpGain = speedheal > missingHp ? missingHp : speedheal;
+
+      // Apply to Actor
+      actor.update({"system.derivedStats.hp.value": currentHp + hpGain});
+
+      message = `<strong>${token.document.name}</strong><p>Used a Speedheal and regained <b>${hpGain}</b> HP.</p>`;
+      ChatMessage.create({ content: message });
+    }
+  });
+img: systems/cyberpunk-red-core/icons/macros/speedheal.svg
+name: Speedheal
+scope: global
+type: script

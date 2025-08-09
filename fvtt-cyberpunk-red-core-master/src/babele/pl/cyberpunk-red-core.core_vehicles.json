@@ -1,0 +1,62 @@
+{
+  "label": "Pojazdy",
+  "mapping": {},
+  "entries": {
+    "Aerozep": {
+      "name": "Aerozep",
+      "description": "<p>Nowoczesny sterowiec transportowy. Wymaga co najmniej 2 pomieszczeń. Cena jest za każde pomieszcze pod lub nad pokładem.</p>"
+    },
+    "AV-4 Multipurpose Aerodyne": {
+      "name": "Wielozadaniowa aerodyna AV-4",
+      "description": "<p>Wielozadaniowy samolot zdolny do szybkiego wzlotu dzięki silnikom pionowym. Powszechnie używany przez Trauma Team.</p>"
+    },
+    "AV-9 Super Aerodyne": {
+      "name": "Superaerodyna AV-9",
+      "description": "<p>Wysoce zaawansowana AV z limitowanymi miejscami siedzącymi. Maksymalna prędkość 300 mil/h.</p>"
+    },
+    "Cabin Cruiser": {
+      "name": "Łódź kabinowa",
+      "description": "<p>Bardzo szybka motorówka. Wymaga conamniej 2 pomieszczeń. Cena jest za każdy pomieszczenie pod pokładem.</p>"
+    },
+    "Compact Groundcar": {
+      "name": "Samochód kompaktowy",
+      "description": "<p>Napędzany na CHOOH2 samochód. Bardzo powszechny z kilkoma tuzinami marek produkującymi podobne modele.</p>"
+    },
+    "Gyrocopter": {
+      "name": "Żyrokopter",
+      "description": "<p>Mały dwuosobowy wiropłat.</p>"
+    },
+    "Helicopter": {
+      "name": "Helikopter",
+      "description": "<p>Cztero osobowy helikopter zdolny do szybkich i długich lotów.</p>"
+    },
+    "High Performance Groundcar": {
+      "name": "Samochód sportowy",
+      "description": "<p>Specjalistyczny samochód zaprojektowany do osiągów sportowych.</p>"
+    },
+    "Jetski": {
+      "name": "Skuter wodny",
+      "description": "<p>Powszechny skuter wodny napędzany na CHOOH2 dla dwóch osób.</p>"
+    },
+    "Roadbike": {
+      "name": "Motocykl",
+      "description": "<p>Powszechny motocykl napędzany na CHOOH2 widziany w czasach Czerwieni.</p>"
+    },
+    "Speedboat": {
+      "name": "Motorówka",
+      "description": "<p>Szybka motorówka napędzana na CHOOH2.</p>"
+    },
+    "Super Groundcar": {
+      "name": "Supersamochód",
+      "description": "<p>Kosztowny, egzotyczny samochód sportowy napędzany na CHOOH2. Zdolny do osiągnięcia zawrotnych prędkości.</p>"
+    },
+    "Superbike": {
+      "name": "Supermotocykl",
+      "description": "<p>Przypakowana wersja motocykla, zdolny do zawrotnych prędkości.</p>"
+    },
+    "Yacht": {
+      "name": "Jacht",
+      "description": "<p>Luksusowa motorówka. Wymaga co najmniej 2 pomieszczeń. Cena jest za każde pomieszczenie pod lub nad pokładem.</p>"
+    }
+  }
+}

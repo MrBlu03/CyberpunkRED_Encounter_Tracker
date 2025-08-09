@@ -1,0 +1,78 @@
+_id: KeZK6VNDIqcmUX0p
+_key: "!items!KeZK6VNDIqcmUX0p"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/spinning_your_wheels/security_system.svg
+name: Security System
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  damage: 1d6
+  description:
+    value: |
+      <p>
+        Linked with your Agent to electrify your bike. A thief must resist
+        <strong>DV13 Resist Torture/Drugs</strong> or unhand the bike.
+      </p>
+      <p>Bike is registered with a Nano-VIN.</p>
+  dvTable: ""
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 0
+  installLocation: mall
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: true
+  isRanged: false
+  magazine:
+    max: 0
+    value: 0
+  modifiers:
+    attackmod:
+      type: modifier
+      value: null
+    damage:
+      type: modifier
+      value: null
+    magazine:
+      type: modifier
+      value: null
+    rof:
+      type: modifier
+      value: null
+    sdp:
+      type: modifier
+      value: null
+    seats:
+      type: modifier
+      value: null
+    secondaryWeapon:
+      configured: false
+    speedCombat:
+      type: modifier
+      value: null
+  price:
+    market: 500
+  providesHardening: false
+  rof: 1
+  size: 1
+  source:
+    book: SYW
+    page: 5
+  type: vehicle
+  unarmedAutomaticCalculation: true
+  usesType: magazine
+  weaponSkill: ""
+  weaponType: ""
+type: itemUpgrade

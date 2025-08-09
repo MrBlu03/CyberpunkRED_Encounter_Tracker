@@ -1,0 +1,31 @@
+<form class="dialog-sheet">
+  <div class="dialog-header flexcol">
+    <div class="text-normal text-center">
+      {{header}}
+    </div>
+  </div>
+  <hr/>
+  <div class="dialog-grid flexcol">
+    <ol class="dialog-list">
+      <li class="dialog-item dialog-item-header flexrow">
+        <div class="dialog-item-name text-nowrap">
+          <span class="text-semi">{{localize "CPR.global.itemTypes.ammo"}}</span>
+        </div>
+        <div class="dialog-item-input text-nowrap">
+          <span class="text-semi">{{localize "CPR.dialog.common.select"}}</span>
+        </div>
+      </li>
+      {{#each (cprFindConfigObj "ammoVarieties") as |ammoVariety a| }}
+        <li class="dialog-item flexrow">
+          <div class="dialog-item-name text-nowrap">
+            {{localize ammoVariety}}
+          </div>
+          <div class="dialog-item-input text-nowrap">
+            <input type="checkbox" name="selectedAmmo" value="{{a}}" {{checked (cprListContains ../selectedAmmo a)}}/>
+          </div>
+        </li>
+      {{/each}}
+    </ol>
+  </div>
+  {{> "systems/cyberpunk-red-core/templates/dialog/cpr-dialog-buttons.hbs"}}
+</form>

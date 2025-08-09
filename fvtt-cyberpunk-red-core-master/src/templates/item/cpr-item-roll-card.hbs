@@ -1,0 +1,16 @@
+<div class="item-card-grid-container">
+  <div class="item-card-icon">
+    <img class="item-card-icon-img" src="{{img}}"/>
+  </div>
+  <div class="item-card-header">
+    <div class="item-card-name text-large text-semi text-left text-padding-left">
+      {{trimName}}
+    </div>
+    <div class="item-card-type text-left text-padding-left">
+      {{localize (cprFindConfigValue "objectTypes" type)}}
+    </div>
+  </div>
+  <div class="item-card-description text-small text-left text-padding-left">
+    {{{trimDesc}}}
+  </div>
+</div>

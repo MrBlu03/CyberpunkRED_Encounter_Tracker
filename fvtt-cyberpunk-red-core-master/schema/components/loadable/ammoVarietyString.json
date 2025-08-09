@@ -1,0 +1,18 @@
+{
+  "description": "Ammo type string",
+  "type": "string",
+  "enum": [
+    "arrow",
+    "battery",
+    "custom",
+    "grenade",
+    "heavyPistol",
+    "medPistol",
+    "paintball",
+    "rifle",
+    "rocket",
+    "shotgunShell",
+    "shotgunSlug",
+    "vHeavyPistol"
+  ]
+}

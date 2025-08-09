@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "description": "Is an object concelable?",
+  "properties": {
+    "concealable": {
+      "type": "boolean"
+    },
+    "isConcealed": {
+      "description": "This must always be false in compendia.",
+      "type": "boolean",
+      "const": false
+    }
+  },
+  "required": [
+    "concealable",
+    "isConcealed"
+  ]
+}

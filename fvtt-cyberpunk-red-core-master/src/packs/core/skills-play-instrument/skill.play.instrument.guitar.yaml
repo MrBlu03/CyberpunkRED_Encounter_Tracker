@@ -1,0 +1,20 @@
+_id: WS1dbopsk9h1uTSn
+_key: "!items!WS1dbopsk9h1uTSn"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/default/Default_Skill.svg
+name: Play Instrument (Guitar)
+system:
+  basic: false
+  category: performanceSkills
+  core: false
+  description:
+    value: ""
+  difficulty: typical
+  favorite: false
+  level: 0
+  skillType: playInstrument
+  source:
+    book: Core
+    page: 83
+  stat: tech
+type: skill

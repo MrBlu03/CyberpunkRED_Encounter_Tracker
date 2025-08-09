@@ -1,0 +1,16 @@
+_id: ZJIDu9P6j709sOts
+_key: "!tables.results!bEeDgE9CfongXFAR.ZJIDu9P6j709sOts"
+documentCollection: ""
+documentId: null
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/night_city_tarot/the_tower.svg
+range:
+  - 17
+  - 17
+text: >-
+  The Tower. The target is dealt the Cracked Skull, Crushed Windpipe and
+  Whiplash Critical Injuries but without taking their Bonus Damage. The target
+  cannot feel pain and ignores the Seriously Wounded Wound State for 1 hour.
+  (See Night City Tarot Page 5).
+type: 0
+weight: 1

@@ -1,0 +1,18 @@
+{
+  "label": "Киберимпланты (основа)",
+  "mapping": {},
+  "entries": {
+    "External (7 Option Slots)": {
+      "name": "Внешние (7 слотов расширений)",
+      "description": ""
+    },
+    "Fashionware (7 Option Slots)": {
+      "name": "Стилевые (7 слотов расширений)",
+      "description": ""
+    },
+    "Internal (7 Option Slots)": {
+      "name": "Внутренние (7 слотов расширений)",
+      "description": ""
+    }
+  }
+}

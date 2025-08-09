@@ -1,0 +1,226 @@
+{
+  "label": "Munizioni",
+  "mapping": {},
+  "entries": {
+    "Arrow (Armor-Piercing)": {
+      "name": "Frecce (Perforanti)",
+      "description": "<p>Queste Munizioni ablano le armature di 2 punti.</p>"
+    },
+    "Arrow (Basic)": {
+      "name": "Frecce (Base)",
+      "description": "<p>Normali Munizioni senza qualità speciali.</p>"
+    },
+    "Arrow (Biotoxin)": {
+      "name": "Frecce (a Biotossina)",
+      "description": "<p>Un attacco con queste Munizioni non causa danni. La vittima deve superare una Prova di Resistere a Tortura/ Droghe VD 15 per non subire 3d6 danni diretti ai PF. L’armatura non viene ablata.</p>"
+    },
+    "Arrow (Expansive)": {
+      "name": "Frecce (a Espansione)",
+      "description": "<p>Se un attacco con queste Munizioni causa la Ferita Critica Corpo Estraneo(vedere pag. 187), la vittima deve tirare per una seconda (diversa) Ferita Critica e subire gli effetti di entrambi. Questa Ferita Critica aggiuntiva non causa Danno Bonus.</p>"
+    },
+    "Arrow (Incendiary)": {
+      "name": "Frecce (Incendiarie)",
+      "description": "<p>Se queste Munizioni causano danni che superano l’armatura del bersaglio, questi prende fuoco. Finché non usa un’Azione per spegnere le fiamme subisce 2 danni diretti ai PF alla fine di ogni suo Turno. Questo effetto non è cumulativo. </p>"
+    },
+    "Arrow (Poison)": {
+      "name": "Frecce (Avvelenate)",
+      "description": "<p>Un attacco con queste Munizioni non causa danni. La vittima deve superare una Prova di Resistere a Tortura/ Droghe VD 13 per non subire 2d6 danni diretti ai PF. L’armatura non viene ablata. </p>"
+    },
+    "Arrow (Rubber)": {
+      "name": "Frecce (di Gomma)",
+      "description": "<p>Non causa Colpi Critici. Non abla l'armatura. Se ridotto a 0 lascia il bersaglio ad 1 PF. Conta come Munizione Base per le Armi Insolite</p>"
+    },
+    "Arrow (Sleep)": {
+      "name": "Frecce (Soporifere)",
+      "description": "<p>Un attacco con queste Munizioni non causa danni. La vittima deve superare una Prova di Resistere a Tortura/ Droghe VD 13 per non cadere Prona (vedere pag. 169) e Priva di Sensi per 1 Minuto. Si sveglia se subisce danni o se qualcuno usa un’Azione per scuoterla.</p>"
+    },
+    "Arrow (Smart)": {
+      "name": "Frecce (Smart)",
+      "description": "<p>Per usare queste Munizioni è necessario avere il Cyberware Mirino, altrimenti non sparerà. Quando si usano queste Munizioni, se si fallisce di 4 o meno la Prova d’Attacco in modalità Colpo Singolo, è possibile attaccare nuovamente contro lo stesso VD dell’attacco originale più 10 al risultato del d10, invece del normale valore. Si può in ogni caso spendere FOR. Chi può schivare i proiettili può farlo anche con questo attacco. </p>"
+    },
+    "Battery Pack": {
+      "name": "Pacchetto Batteria",
+      "description": "<p>Un pacco batteria ricaricabile (1 ora), comunemente usato per armi Esotiche. Contiene 8 colpi e può essere ricaricato.&nbsp;</p>"
+    },
+    "Grenade (Armor-Piercing)": {
+      "name": "Granata (Perforante)",
+      "description": "<p>Queste Munizioni ablano le armature di 2 punti. </p>"
+    },
+    "Grenade (Biotoxin)": {
+      "name": "Granata (a Biotossina)",
+      "description": "<p>Un attacco con queste Munizioni non causa danni. La vittima deve superare una Prova di Resistere a Tortura/ Droghe VD 15 per non subire 3d6 danni diretti ai PF. L’armatura non viene ablata. </p>"
+    },
+    "Grenade (EMP)": {
+      "name": "Granata (EMP)",
+      "description": "<p>Se colpisce, la vittima deve superare una Prova di Cybertecnologia VD 15. Se fallisce, due tra i suoi pezzi di cyberware o dispositivi elettronici (scelti dal GM) smettono di funzionare per 1 minuto. Un Cyberarto disattivato si comporta come un arto di carne che sia stato smembrato, pur rimanendo ancora attaccato (vedere Ferite Critiche a pag. 187).</p>"
+    },
+    "Grenade (Flashbang)": {
+      "name": "Granata (Flashbang)",
+      "description": "<p>Un attacco con queste Munizioni non causa danni, ma la vittima deve superare una Prova di Resistere a Tortura/Droghe VD 15. Se fallisce, subisce gli effetti delle Ferite Critiche Occhio Danneggiato e Orecchio Danneggiato (vedere pag. 188) per 1 minuto. Queste non causano Danni Bonus. </p>"
+    },
+    "Grenade (Incendiary)": {
+      "name": "Granata (Incendiaria)",
+      "description": "<p>Se queste Munizioni causano danni che superano l’armatura del bersaglio, questi prende fuoco. Finché non usa un’Azione per spegnere le fiamme subisce 2 danni diretti ai PF alla fine di ogni suo Turno. Questo effetto non è cumulativo. </p>"
+    },
+    "Grenade (Poison)": {
+      "name": "Granata (Velenosa)",
+      "description": "<p>Un attacco con queste Munizioni non causa danni. La vittima deve superare una Prova di Resistere a Tortura/ Droghe VD 13 per non subire 2d6 danni diretti ai PF. L’armatura non viene ablata. </p>"
+    },
+    "Grenade (Sleep)": {
+      "name": "Granata (Soporifera)",
+      "description": "<p>Un attacco con queste Munizioni non causa danni. La vittima deve superare una Prova di Resistere a Tortura/ Droghe VD 13 per non cadere Prona (vedere pag. 169) e Priva di Sensi per 1 Minuto. Si sveglia se subisce danni o se qualcuno usa un’Azione per scuoterla.</p>"
+    },
+    "Grenade (Smoke)": {
+      "name": "Granata (Fumogena)",
+      "description": "<p>Queste Munizioni non causano danni, ma ricoprono di fumo un’area di 10×10m attorno al punto d’impatto per 1 minuto. La normale penalità per agire nel fumo è -4.</p>"
+    },
+    "Grenade (Teargas)": {
+      "name": "Granata (Lacrimogena)",
+      "description": "<p>Un attacco con queste Munizioni non causa danni, ma la vittima deve superare una Prova di Resistere a Tortura/Droghe VD 13. Se fallisce, subisce gli effetti della Ferita Critica Occhio Danneggiato (vedere pag. 188) per 1 minuto. Questa non causa Danni Bonus.</p>"
+    },
+    "Heavy Pistol (Armor-Piercing)": {
+      "name": "Pistola Pesante (Perforante)",
+      "description": "<p>Queste Munizioni ablano le armature di 2 punti. </p>"
+    },
+    "Heavy Pistol (Basic)": {
+      "name": "Pistola Pesante (Base)",
+      "description": "<p>Normali Munizioni senza qualità speciali.</p>"
+    },
+    "Heavy Pistol (Expansive)": {
+      "name": "Pistola Pesante (a Espansione)",
+      "description": "<p>Se un attacco con queste Munizioni causa la Ferita Critica Corpo Estraneo(vedere pag. 187), la vittima deve tirare per una seconda (diversa) Ferita Critica e subire gli effetti di entrambi. Questa Ferita Critica aggiuntiva non causa Danno Bonus.</p>"
+    },
+    "Heavy Pistol (Incendiary)": {
+      "name": "Pistola Pesante (Incendiario)",
+      "description": "<p>Se queste Munizioni causano danni che superano l’armatura del bersaglio, questi prende fuoco. Finché non usa un’Azione per spegnere le fiamme subisce 2 danni diretti ai PF alla fine di ogni suo Turno. Questo effetto non è cumulativo. </p>"
+    },
+    "Heavy Pistol (Rubber)": {
+      "name": "Pistola Pesante (di Gomma)",
+      "description": "<p>Non causa Colpi Critici. Non abla l'armatura. Se ridotto a 0 lascia il bersaglio ad 1 PF. Conta come Munizione Base per le Armi Insolite</p>"
+    },
+    "Heavy Pistol (Smart)": {
+      "name": "Pistola Pesante (Smart)",
+      "description": "<p>Per usare queste Munizioni è necessario avere il Cyberware Mirino, altrimenti non sparerà. Quando si usano queste Munizioni, se si fallisce di 4 o meno la Prova d’Attacco in modalità Colpo Singolo, è possibile attaccare nuovamente contro lo stesso VD dell’attacco originale più 10 al risultato del d10, invece del normale valore. Si può in ogni caso spendere FOR. Chi può schivare i proiettili può farlo anche con questo attacco. </p>"
+    },
+    "Medium Pistol (Armor-Piercing)": {
+      "name": "Pistola Media (Perforante)",
+      "description": "<p>Queste Munizioni ablano le armature di 2 punti. </p>"
+    },
+    "Medium Pistol (Basic)": {
+      "name": "Pistola Media (Base)",
+      "description": "<p>Normali Munizioni senza qualità speciali.</p>"
+    },
+    "Medium Pistol (Expansive)": {
+      "name": "Pistola Media (a Espansione)",
+      "description": "<p>Se un attacco con queste Munizioni causa la Ferita Critica Corpo Estraneo(vedere pag. 187), la vittima deve tirare per una seconda (diversa) Ferita Critica e subire gli effetti di entrambi. Questa Ferita Critica aggiuntiva non causa Danno Bonus.</p>"
+    },
+    "Medium Pistol (Incendiary)": {
+      "name": "Pistola Media (Incendiario)",
+      "description": "<p>Se queste Munizioni causano danni che superano l’armatura del bersaglio, questi prende fuoco. Finché non usa un’Azione per spegnere le fiamme subisce 2 danni diretti ai PF alla fine di ogni suo Turno. Questo effetto non è cumulativo. </p>"
+    },
+    "Medium Pistol (Rubber)": {
+      "name": "Pistola Media (di Gomma)",
+      "description": "<p>Non causa Colpi Critici. Non abla l'armatura. Se ridotto a 0 lascia il bersaglio ad 1 PF. Conta come Munizione Base per le Armi Insolite.</p>"
+    },
+    "Medium Pistol (Smart)": {
+      "name": "Pistola Media (Smart)",
+      "description": "<p>Per usare queste Munizioni è necessario avere il Cyberware Mirino, altrimenti non sparerà. Quando si usano queste Munizioni, se si fallisce di 4 o meno la Prova d’Attacco in modalità Colpo Singolo, è possibile attaccare nuovamente contro lo stesso VD dell’attacco originale più 10 al risultato del d10, invece del normale valore. Si può in ogni caso spendere FOR. Chi può schivare i proiettili può farlo anche con questo attacco. </p>"
+    },
+    "Paintball (Acid)": {
+      "name": "Paintball (Acido)",
+      "description": "<p>Paintball pieni di acido. Non infligge danni ma abbatte l'armatura di 1 SP al colpo*.</p>\n<p><em>*Attualmente non supportato, quindi sarà necessario ridurre manualmente l'armatura al colpo.</em></p>"
+    },
+    "Paintball (Basic)": {
+      "name": "Paintball (Base)",
+      "description": "<p>Palle di vernice regolari che non causano alcun danno. Che noia.</p>"
+    },
+    "Rifle (Armor-Piercing)": {
+      "name": "Fucile (Perforante)",
+      "description": "<p>Queste Munizioni ablano le armature di 2 punti. </p>"
+    },
+    "Rifle (Basic)": {
+      "name": "Fucile (Base)",
+      "description": "<p>Normali Munizioni senza qualità speciali.</p>"
+    },
+    "Rifle (Expansive)": {
+      "name": "Fucile (a Espansione)",
+      "description": "<p>Se un attacco con queste Munizioni causa la Ferita Critica Corpo Estraneo(vedere pag. 187), la vittima deve tirare per una seconda (diversa) Ferita Critica e subire gli effetti di entrambi. Questa Ferita Critica aggiuntiva non causa Danno Bonus.</p>"
+    },
+    "Rifle (Incendiary)": {
+      "name": "Fucile (Incendiario)",
+      "description": "<p>Se queste Munizioni causano danni che superano l’armatura del bersaglio, questi prende fuoco. Finché non usa un’Azione per spegnere le fiamme subisce 2 danni diretti ai PF alla fine di ogni suo Turno. Questo effetto non è cumulativo.</p>"
+    },
+    "Rifle (Rubber)": {
+      "name": "Fucile (di Gomma)",
+      "description": "<p>Non causa Colpi Critici. Non abla l'armatura. Se ridotto a 0 lascia il bersaglio ad 1 PF. Conta come Munizione Base per le Armi Insolite.</p>"
+    },
+    "Rifle (Smart)": {
+      "name": "Fucile (Smart)",
+      "description": "<p>Per usare queste Munizioni è necessario avere il Cyberware Mirino, altrimenti non sparerà. Quando si usano queste Munizioni, se si fallisce di 4 o meno la Prova d’Attacco in modalità Colpo Singolo, è possibile attaccare nuovamente contro lo stesso VD dell’attacco originale più 10 al risultato del d10, invece del normale valore. Si può in ogni caso spendere FOR. Chi può schivare i proiettili può farlo anche con questo attacco. </p>"
+    },
+    "Rocket (Armor-Piercing)": {
+      "name": "Razzo (Perforante)",
+      "description": "<p>Queste Munizioni ablano le armature di 2 punti. </p>"
+    },
+    "Rocket (Smart)": {
+      "name": "Razzo (Smart)",
+      "description": "<p>Per usare queste Munizioni è necessario avere il Cyberware Mirino, altrimenti non sparerà. Quando si usano queste Munizioni, se si fallisce di 4 o meno la Prova d’Attacco in modalità Colpo Singolo, è possibile attaccare nuovamente contro lo stesso VD dell’attacco originale più 10 al risultato del d10, invece del normale valore. Si può in ogni caso spendere FOR. Chi può schivare i proiettili può farlo anche con questo attacco. </p>"
+    },
+    "Shotgun Shell (Basic)": {
+      "name": "Cartucce a Pallini (Base)",
+      "description": "<p>Normali Munizioni senza qualità speciali.</p>"
+    },
+    "Shotgun Shell (Incendiary)": {
+      "name": "Cartucce a Pallini (Incendiarie)",
+      "description": "<p>Se queste Munizioni causano danni che superano l’armatura del bersaglio, questi prende fuoco. Finché non usa un’Azione per spegnere le fiamme subisce 2 danni diretti ai PF alla fine di ogni suo Turno. Questo effetto non è cumulativo. </p>"
+    },
+    "Shotgun Slug (Armor-Piercing)": {
+      "name": "Cartucce a Pallettoni (Perforanti)",
+      "description": "<p>Queste Munizioni ablano le armature di 2 punti. </p>"
+    },
+    "Shotgun Slug (Basic)": {
+      "name": "Cartucce a Pallettoni (Base)",
+      "description": "<p>Normali Munizioni senza qualità speciali.</p>"
+    },
+    "Shotgun Slug (Expansive)": {
+      "name": "Cartucce a Pallettoni (a Espansione)",
+      "description": "<p>Se un attacco con queste Munizioni causa la Ferita Critica Corpo Estraneo(vedere pag. 187), la vittima deve tirare per una seconda (diversa) Ferita Critica e subire gli effetti di entrambi. Questa Ferita Critica aggiuntiva non causa Danno Bonus.</p>"
+    },
+    "Shotgun Slug (Incendiary)": {
+      "name": "Cartucce a Pallettoni (Incendiarie)",
+      "description": "<p>Se queste Munizioni causano danni che superano l’armatura del bersaglio, questi prende fuoco. Finché non usa un’Azione per spegnere le fiamme subisce 2 danni diretti ai PF alla fine di ogni suo Turno. Questo effetto non è cumulativo. </p>"
+    },
+    "Shotgun Slug (Rubber)": {
+      "name": "Cartucce a Pallettoni (di Gomma)",
+      "description": "<p>Non causa Colpi Critici. Non abla l'armatura. Se ridotto a 0 lascia il bersaglio ad 1 PF. Conta come Munizione Base per le Armi Insolite.</p>"
+    },
+    "Shotgun Slug (Smart)": {
+      "name": "Cartucce a Pallettoni (Smart)",
+      "description": "<p>Per usare queste Munizioni è necessario avere il Cyberware Mirino, altrimenti non sparerà. Quando si usano queste Munizioni, se si fallisce di 4 o meno la Prova d’Attacco in modalità Colpo Singolo, è possibile attaccare nuovamente contro lo stesso VD dell’attacco originale più 10 al risultato del d10, invece del normale valore. Si può in ogni caso spendere FOR. Chi può schivare i proiettili può farlo anche con questo attacco. </p>"
+    },
+    "Very Heavy Pistol (Armor-Piercing)": {
+      "name": "Pistola Molto Pesante (Perforante)",
+      "description": "<p>Queste Munizioni ablano le armature di 2 punti. </p>"
+    },
+    "Very Heavy Pistol (Basic)": {
+      "name": "Pistola Molto Pesante (Base)",
+      "description": "<p>Normali Munizioni senza qualità speciali.</p>"
+    },
+    "Very Heavy Pistol (Expansive)": {
+      "name": "Pistola Molto Pesante (a Espansione)",
+      "description": "<p>Se un attacco con queste Munizioni causa la Ferita Critica Corpo Estraneo(vedere pag. 187), la vittima deve tirare per una seconda (diversa) Ferita Critica e subire gli effetti di entrambi. Questa Ferita Critica aggiuntiva non causa Danno Bonus.</p>"
+    },
+    "Very Heavy Pistol (Incendiary)": {
+      "name": "Pistola Molto Pesante (Incendiario)",
+      "description": "<p>Se queste Munizioni causano danni che superano l’armatura del bersaglio, questi prende fuoco. Finché non usa un’Azione per spegnere le fiamme subisce 2 danni diretti ai PF alla fine di ogni suo Turno. Questo effetto non è cumulativo. </p>"
+    },
+    "Very Heavy Pistol (Rubber)": {
+      "name": "Pistola Molto Pesante (di Gomma)",
+      "description": "<p>Non causa Colpi Critici. Non abla l'armatura. Se ridotto a 0 lascia il bersaglio ad 1 PF. Conta come Munizione Base per le Armi Insolite.</p>"
+    },
+    "Very Heavy Pistol (Smart)": {
+      "name": "Pistola Molto Pesante (Smart)",
+      "description": "<p>Per usare queste Munizioni è necessario avere il Cyberware Mirino, altrimenti non sparerà. Quando si usano queste Munizioni, se si fallisce di 4 o meno la Prova d’Attacco in modalità Colpo Singolo, è possibile attaccare nuovamente contro lo stesso VD dell’attacco originale più 10 al risultato del d10, invece del normale valore. Si può in ogni caso spendere FOR. Chi può schivare i proiettili può farlo anche con questo attacco. </p>"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+_id: cgR7m1zqY6p8iAHf
+_key: "!tables.results!bEeDgE9CfongXFAR.cgR7m1zqY6p8iAHf"
+documentCollection: ""
+documentId: null
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/night_city_tarot/the_hermit.svg
+range:
+  - 10
+  - 10
+text: >-
+  The Hermit. The target is dealt the Lost Eye Critical Injury twice while only
+  taking the penalty once. Their Checks gain the "Obscured by Darkness" modifier
+  if it would leave them with no way to sense an enemy. (See Night City Tarot
+  Page 4).
+type: 0
+weight: 1

@@ -1,0 +1,135 @@
+<div class="rollcard">
+  <div class="rollcard-top">
+    <div class="cpr-block chat-rollTitle-stat">
+      <div class="text-center text-padding-top text-normal text-semi">
+        {{rollTitle}}
+      </div>
+      <div class="rollcard-subtitle">
+        <div class="rollcard-subtitle-center text-small">
+          {{#if autofire }}
+            {{localize "CPR.global.itemType.skill.autofire"}} {{/if}}{{localize "CPR.global.generic.damage"}}
+          </div>
+          <div class="rollcard-subtitle-right">
+          <a class="clickable"
+             data-action="applyDamage"
+             data-scope="global"
+             data-total-damage="{{resultTotal}}"
+             data-bonus-damage="{{#if criticalCard }}{{bonusDamage }}{{else }}0{{/if }}"
+             data-damage-location="{{#if isAimed }}{{location }}{{else }}body{{/if }}"
+             data-damage-lethal="{{#if (cprCompare rollCardExtraArgs.ammoType "===" "rubber") }}false{{else }}true{{/if }}"
+             data-ablation="{{rollCardExtraArgs.ablationValue}}"
+             data-ammo-variety="{{rollCardExtraArgs.ammoVariety}}"
+             data-ignore-armor-percent="{{rollCardExtraArgs.ignoreArmorPercent}}"
+             data-ignore-below-sp="{{rollCardExtraArgs.ignoreBelowSP}}">
+            <i class="fas fa-bolt"
+               data-tooltip="{{localize "CPR.chat.damageApplication.applyDamageSelected"}}"></i>
+          </a>
+        </div>
+        {{#if rollCardExtraArgs.ammoType }}
+          <div class="rollcard-subtitle-2-center text-small">
+            {{localize (cprFindConfigValue "ammoTypes" rollCardExtraArgs.ammoType)}}
+          </div>
+          {{else if rollCardExtraArgs.rollDescription}}
+          <div class="rollcard-subtitle-2-center text-small">
+            {{rollCardExtraArgs.rollDescription}}
+          </div>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+  <div class="rollcard-bottom">
+    <div class="cpr-block">
+      <div class="d6-rollcard-data">
+        <div class="d6-dice-div">
+          {{!-- die image for initialRoll --}}
+          {{#each faces as |dieFace| }}
+            {{#if (cprCompare dieFace "===" 6) }}
+              {{#if ../criticalCard }}
+                <img class="{{cprDiceSizeImageClass ../formula}}"
+                     src="systems/cyberpunk-red-core/icons/dice/red/d6_{{dieFace}}_preem.svg"/>
+              {{else}}
+                <img class="{{cprDiceSizeImageClass ../formula}}"
+                     src="systems/cyberpunk-red-core/icons/dice/black/d6_{{dieFace}}.svg"/>
+              {{/if}}
+            {{else}}
+              <img class="{{cprDiceSizeImageClass ../formula}}"
+                   src="systems/cyberpunk-red-core/icons/dice/black/d6_{{dieFace}}.svg"/>
+            {{/if}}
+          {{/each}}
+        </div>
+        <div class="d6-number-div">
+          {{#if (cprCompare mods.length "||" additionalMods.length) }}
+            <a>
+            {{/if}}
+            <span class="clickable{{#if criticalCard }} text-semi{{/if }}"
+                  data-action="toggleVisibility"
+                  data-visible-element="d6-data-details">{{resultTotal}}</span>
+            {{#if (cprCompare mods.length "||" additionalMods.length) }}
+            </a>
+          {{/if}}
+        </div>
+        <div class="d6-data-div">
+          {{#if isAutofire }}
+            <div class="text-normal text-semi">
+              {{localize "CPR.global.itemType.skill.autofire"}}! (x{{autofireMultiplier}})
+            </div>
+          {{/if}}
+          {{#if isAimed }}
+            <div class="text-normal text-semi">
+              {{localize "CPR.rolls.location"}}: {{localize (cprFindConfigValue
+              "aimedLocation" location)}}
+            </div>
+          {{/if}}
+          {{#if criticalCard }}
+            <div class="text-normal text-semi">
+              {{localize "CPR.rolls.criticalDamage"}}:
+              {{bonusDamage}}
+            </div>
+          {{/if}}
+          <div class="d6-data-details hide">
+            {{#if (cprCompare mods.length "||" additionalMods.length) }}
+              {{> "systems/cyberpunk-red-core/templates/chat/cpr-rollcard-modifiers.hbs" this}}
+            {{/if}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{#if (cprCompare entityData.tokens.length ">" 0) }}
+    <br/>
+    <div class="rollcard-top">
+      <div class="cpr-block chat-rollTitle-stat">
+        <div class="text-center text-padding-top text-normal">
+          {{localize "CPR.chat.damageApplication.applyDamageToFollowing"}}
+        </div>
+        <div class="rollcard-subtitle"></div>
+      </div>
+    </div>
+    <div class="rollcard-bottom">
+      <div class="cpr-block">
+        {{#each entityData.tokens as |token t| }}
+          <br/>
+          <div class="text-left text-small">
+            {{cprMath "sum" t "1"}}.  {{token.name}}
+          <a class="clickable"
+             data-action="applyDamage"
+             data-scope="local"
+             data-actor-id="{{token.actor.id}}"
+             data-token-id="{{token.id}}"
+             data-total-damage="{{../resultTotal}}"
+             data-bonus-damage="{{#if ../criticalCard }}{{../bonusDamage }}{{else }}0{{/if }}"
+             data-damage-location="{{#if ../isAimed }}{{../location }}{{else }}body{{/if }}"
+             data-damage-lethal="{{#if (cprCompare ../rollCardExtraArgs.ammoType "===" "rubber") }}false{{else }}true{{/if }}"
+             data-ablation="{{../rollCardExtraArgs.ablationValue}}"
+             data-ammo-variety="{{../rollCardExtraArgs.ammoVariety}}"
+             data-ignore-armor-percent="{{../rollCardExtraArgs.ignoreArmorPercent}}"
+             data-ignore-below-sp="{{../rollCardExtraArgs.ignoreBelowSP}}">
+            <i class="fas fa-bolt"
+               data-tooltip="{{localize "CPR.chat.damageApplication.applyDamage"}}"></i>
+          </a>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+{{/if}}
+</div>

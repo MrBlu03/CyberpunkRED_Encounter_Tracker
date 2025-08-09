@@ -1,0 +1,55 @@
+_id: tk2g10vp4EdMXLPK
+_key: "!items!tk2g10vp4EdMXLPK"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/weapons/RocketLauncher.svg
+name: SDF-45
+system:
+  ammoVariety:
+    - rocket
+  attackmod: 0
+  brand: Midnight Arms
+  concealable:
+    concealable: false
+    isConcealed: false
+  critFailEffect: jammed
+  damage: 8d6
+  description:
+    value: |
+      <p>
+        This rocket launcher can only load Armor-Piercing rockets, and has a maximum
+        range of 400 m/yds. When fired one rocket at a time, the GM chooses where they
+        rockets land. When fired two rockets at a time, the GM chooses where the
+        rockets land but this time up to 50 m/yds away from the target, and with each
+        rocket more than 10 m/yds from each other.
+      </p>
+  dvTable: DV Rocket Launcher
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 2
+  installedItems:
+    allowed: true
+    allowedTypes: []
+    list: []
+    slots: 0
+    usedSlots: 0
+  isRanged: true
+  magazine:
+    max: 4
+    value: 0
+  price:
+    market: 1000
+  quality: standard
+  revealed: true
+  rof: 2
+  source:
+    book: WG
+    page: 3
+  unarmedAutomaticCalculation: true
+  usage: equipped
+  usesType: magazine
+  weaponSkill: Heavy Weapons
+  weaponType: rocketLauncher
+type: weapon

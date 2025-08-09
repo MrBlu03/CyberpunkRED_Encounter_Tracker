@@ -1,0 +1,60 @@
+_id: YRR8D6hUfq55KnoR
+_key: "!items!YRR8D6hUfq55KnoR"
+effects:
+  - tWHTQ0n84oq6mENt
+img: systems/cyberpunk-red-core/icons/compendium/cyberware/image_enhance.svg
+name: Image Enhance
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  core: false
+  damage: 1d6
+  description:
+    value: |
+      <p>
+        Must be paired. +2 Perception and Lip Reading and Conceal/Reveal Object when
+        using sight.
+      </p>
+  dvTable: ""
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  humanityLoss:
+    roll: 1d6
+    static: 3
+  installLocation: mall
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: true
+  isFoundational: false
+  isRanged: false
+  isWeapon: false
+  magazine:
+    max: 0
+    value: 0
+  price:
+    market: 500
+  providesHardening: false
+  revealed: true
+  rof: 1
+  size: 1
+  source:
+    book: Core
+    page: 360
+  type: cyberEye
+  unarmedAutomaticCalculation: true
+  usage: toggled
+  usesType: magazine
+  weaponSkill: Archery
+  weaponType: assaultRifle
+type: cyberware

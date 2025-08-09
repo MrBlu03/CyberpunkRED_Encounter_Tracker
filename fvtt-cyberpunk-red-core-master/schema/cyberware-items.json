@@ -1,0 +1,205 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/CPRC-Cyberware-Items",
+  "definitions": {
+    "CPRC-Cyberware-Items": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "_id": {
+          "$ref": "./components/id.json"
+        },
+        "_key": {
+          "$ref": "./components/key.json"
+        },
+        "effects": {
+          "$ref": "./components/effects.json"
+        },
+        "flags": {
+          "$ref": "./components/flags.json"
+        },
+        "img": {
+          "$ref": "./components/img.json"
+        },
+        "name": {
+          "$ref": "./components/name.json"
+        },
+        "type": {
+          "type": "string",
+          "const": "cyberware"
+        },
+        "system": {
+          "$ref": "#/definitions/System"
+        }
+      },
+      "required": ["_id", "_key", "effects", "img", "name", "system", "type"]
+    },
+    "System": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ammoVariety": {
+          "$ref": "./components/loadable/ammoVarietyArray.json"
+        },
+        "attackmod": {
+          "$ref": "./components/attackable/attackMod.json"
+        },
+        "brand": {
+          "$ref": "./components/physical/brand.json"
+        },
+        "concealable": {
+          "$ref": "./components/physical/concealable.json"
+        },
+        "critFailEffect": {
+          "$ref": "./components/attackable/critFailEffect.json"
+        },
+        "ignoreArmorPercent": {
+          "$ref": "./components/attackable/ignoreArmorPercent.json"
+        },
+        "canIgnoreArmor": {
+          "$ref": "./components/attackable/canIgnoreArmor.json"
+        },
+        "ignoreBelowSP": {
+          "$ref": "./components/attackable/ignoreBelowSP.json"
+        },
+        "core": {
+          "description": "Is it core cyberware?",
+          "type": "boolean"
+        },
+        "critFailEffect": {
+          "$ref": "./components/attackable/critFailEffect.json"
+        },
+        "damage": {
+          "$ref": "./components/attackable/damage.json"
+        },
+        "description": {
+          "$ref": "./components/common/description.json"
+        },
+        "dvTable": {
+          "$ref": "./components/attackable/dvTable.json"
+        },
+        "favorite": {
+          "$ref": "./components/common/favorite.json"
+        },
+        "fireModes": {
+          "$ref": "./components/attackable/fireModes.json"
+        },
+        "humanityLoss": {
+          "$ref": "#/definitions/HumanityLoss"
+        },
+        "installLocation": {
+          "$ref": "./components/installable/installLocation.json"
+        },
+        "installedItems": {
+          "$ref": "./components/container/installedItems.json"
+        },
+        "isElectronic": {
+          "$ref": "./components/electronic/isElectronic.json"
+        },
+        "isFoundational": {
+          "type": "boolean"
+        },
+        "isRanged": {
+          "$ref": "./components/attackable/isRanged.json"
+        },
+        "isWeapon": {
+          "$ref": "./components/attackable/isWeapon.json"
+        },
+        "magazine": {
+          "$ref": "./components/attackable/magazine.json"
+        },
+        "price": {
+          "$ref": "./components/valuable/price.json"
+        },
+        "providesHardening": {
+          "$ref": "./components/electronic/providesHardening.json"
+        },
+        "revealed": {
+          "$ref": "./components/effects/revealed.json"
+        },
+        "rof": {
+          "$ref": "./components/attackable/rof.json"
+        },
+        "size": {
+          "$ref": "./components/installable/size.json"
+        },
+        "source": {
+          "$ref": "./components/common/source.json"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "borgware",
+            "cyberArm",
+            "cyberAudioSuite",
+            "cyberEye",
+            "cyberLeg",
+            "cyberwareExternal",
+            "cyberwareInternal",
+            "fashionware",
+            "neuralWare"
+          ]
+        },
+        "unarmedAutomaticCalculation": {
+          "$ref": "./components/attackable/unarmedAutomaticCalculation.json"
+        },
+        "usage": {
+          "$ref": "./components/effects/usage.json"
+        },
+        "usesType": {
+          "$ref": "./components/loadable/usesType.json"
+        },
+        "weaponSkill": {
+          "$ref": "./components/attackable/weaponSkill.json"
+        },
+        "weaponType": {
+          "$ref": "./components/attackable/weaponType.json"
+        }
+      },
+      "required": [
+        "ammoVariety",
+        "attackmod",
+        "brand",
+        "concealable",
+        "core",
+        "damage",
+        "description",
+        "dvTable",
+        "favorite",
+        "fireModes",
+        "humanityLoss",
+        "installLocation",
+        "installedItems",
+        "isFoundational",
+        "isRanged",
+        "isWeapon",
+        "magazine",
+        "price",
+        "rof",
+        "size",
+        "source",
+        "type",
+        "unarmedAutomaticCalculation",
+        "usage",
+        "usesType",
+        "weaponSkill",
+        "weaponType"
+      ]
+    },
+    "HumanityLoss": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "roll": {
+          "description": "HL per roll. Matches Xd3, Xd6, or 0",
+          "type": "string",
+          "pattern": "^([0-9]d[36]|0)$"
+        },
+        "static": {
+          "type": "integer"
+        }
+      },
+      "required": ["roll", "static"]
+    }
+  }
+}

@@ -1,0 +1,12 @@
+_id: csBVQiIWZ7TzP3ni
+_key: "!tables.results!xWZowpQzG7fpmoP7.csBVQiIWZ7TzP3ni"
+documentCollection: cyberpunk-red-core.core_gear
+documentId: EUZBOSRdQWOqKVUg
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/gear/roadflare.svg
+range:
+  - 4
+  - 4
+text: Road Flare
+type: 2
+weight: 1

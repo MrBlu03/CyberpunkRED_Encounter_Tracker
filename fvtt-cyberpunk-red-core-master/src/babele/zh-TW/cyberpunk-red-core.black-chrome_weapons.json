@@ -1,0 +1,246 @@
+{
+  "label": "Weapons",
+  "mapping": {
+    "dvTable": "system.dvTable"
+  },
+  "entries": {
+    "Arasaka Prototype Variable Assault Rifle": {
+      "name": "Arasaka Prototype Variable Assault Rifle",
+      "description": "<p>The Arasaka Prototype Variable Assault Rifle is an Excellent Quality Exotic Assault Rifle. Assuming you have all the parts, it can use an alternate unique railgun mode. Full rules can be found in Black Chrome on Page 102.</p>",
+      "dvTable": "DV Assault Rifle"
+    },
+    "Arasaka Weeping Reaver Katana": {
+      "name": "Arasaka Weeping Reaver Katana",
+      "description": "<p>Excellent Quality Two Handed Exotic Very Heavy Melee Weapon.</p>\n<p>Contains three doses of specific fluids for blade coating:</p>\n<ul>\n  <li>Arasaka Fire (can ignite target)</li>\n  <li>Arasaka Acid (ablates armor)</li>\n  <li>Arasaka Wound Salt (applies a second critical injury)</li>\n</ul>\n"
+    },
+    "E-TACK Public Defender": {
+      "name": "E-TACK Public Defender",
+      "description": "<p>Comes with a Smartgun Link attachment*. The User needs a Subdermal Grip to operate it. It has a Lethal and Non-lethal mode.</p>\n<p>Full rules can be found in Black Chrome on Page 115.</p>\n<p><em>* This Upgrade needs to be added manually.</em></p>",
+      "dvTable": "DV Pistol"
+    },
+    "Eagletech Survivalist": {
+      "name": "Eagletech Survivalist",
+      "description": "<p>\n  The Eagletech Survivalist is a 2-in-1 Crossbow and Assault RIfle. It is\n  incapable of Autofire. It comes with an integrated Sniping Scope*.\n</p>\n<p><em>*Must be manually applied after purchase</em></p>\n",
+      "dvTable": "DV Bows & Crossbows"
+    },
+    "Faisal's Dead or Alive": {
+      "name": "Faisal's Dead or Alive",
+      "description": "<p>The Faisal's Dead Or Alive is a Poor Quality Exotic Shotgun with an integrated Poor Quality Net Launcher. Full rules can be found in Black Chrome on Page 104.</p>",
+      "dvTable": "DV Shotgun (Slug)"
+    },
+    "Faisal's Magna Knuckles": {
+      "name": "Faisal's Magna Knuckles",
+      "description": "<p>\n  One Handed Exotic Medium Melee Weapon. Battery powered EMP effect which can\n  deactivate cyberware.\n</p>\n"
+    },
+    "Federated Arms Pepper Shaker": {
+      "name": "Federated Arms Pepper Shaker",
+      "description": "<p>\n  The Federated Arms Pepper Shaker is an Exotic SMG incapable of single shot or\n  aimed shots. Autofire only use 6 bullets for this weapon.\n</p>\n",
+      "dvTable": "DV SMG (Autofire)"
+    },
+    "Georgia Arms Matchmaker": {
+      "name": "Georgia Arms Matchmaker",
+      "description": "<p>\n  The Georgia Arms Matchmaker is a Poor Quality Exotic Shotgun that only holds\n  one shot in the magazine.\n</p>\n",
+      "dvTable": "DV Shotgun (Slug)"
+    },
+    "GunMart Bubba Buster": {
+      "name": "GunMart Bubba Buster",
+      "description": "<p>\n  The GunMart Bubba Buster is a Poor Quality Exotic Shotgun. It destroys itself\n  if fired more than 3 times in a minute.\n</p>\n",
+      "dvTable": "DV Shotgun (Slug)"
+    },
+    "GunMart Door Cracker": {
+      "name": "GunMart Door Cracker",
+      "description": "<p>Cheap explosive item, small area of effect.</p>\n"
+    },
+    "GunMart Engage Rocket Launcher": {
+      "name": "GunMart Engage Rocket Launcher",
+      "description": "<p>\n  The GunMart Engage Rocket Launcher is a Poor Quality Exotic Rocket Launcher.\n  It explodes on a Critical Failure or when unloading the weapon.\n</p>\n",
+      "dvTable": "DV Rocket Launcher"
+    },
+    "GunMart Smart Special": {
+      "name": "GunMart Smart Special",
+      "description": "<p>The GunMart Smart Special is a Poor Quality Exotic Heavy Pistol with an integrated Smartgun Link. Full rules can be found in Black Chrome on Page 108.</p>",
+      "dvTable": "DV Pistol"
+    },
+    "GunMart Special": {
+      "name": "GunMart Special",
+      "description": "<p>The GunMart Special is a Poor Quality Exotic Heavy Pistol. Full rules can be found in Black Chrome on Page 108.</p>",
+      "dvTable": "DV Pistol"
+    },
+    "Hades Multipurpose Assault Shotgun": {
+      "name": "Hades Multipurpose Assault Shotgun",
+      "description": "<p>The Hades Multipurpose Assault Shotgun is an Exotic Shotgun. The magazine holds 16 shots. Full rules can be found in Black Chrome on Page 109.</p>",
+      "dvTable": "DV Shotgun (Slug)"
+    },
+    "Kendachi Mono-Guard": {
+      "name": "Kendachi Mono-Guard",
+      "description": "<p>Monowire, One Handed Exotic Heavy Melee Weapon.</p>\n<p>Can apply multiple Critical Injuries.</p>\n"
+    },
+    "Kendachi Mono-Katana": {
+      "name": "Kendachi Mono-Katana",
+      "description": "<p>\n  Two Handed Exotic Very Heavy Melee Weapon. When wielded by the correct user\n  the weapon ignores armor less than 7 SP.\n</p>\n"
+    },
+    "Kendachi Mono-Star": {
+      "name": "Kendachi Mono-Star",
+      "description": "<p>\n  Mono-Shuriken whose orb center contains a kinetic and solar motor allowing the\n  star to spin on itself and vibrate.\n</p>\n<p>Can be used as both a melee and ranged weapon.</p>\n",
+      "dvTable": "DV Thrown Weapon"
+    },
+    "Kendachi Mono-Wakizashi": {
+      "name": "Kendachi Mono-Wakizashi",
+      "description": "<p>\n  One Handed Exotic Heavy Melee Weapon. When wielded by the correct user the\n  weapon ignores armor less than 7 SP.\n</p>\n"
+    },
+    "KillChip 100 Micro-Bomb": {
+      "name": "KillChip 100 Micro-Bomb",
+      "description": "<p>Memory chip, but explosive when plugged into Neuralware. Full rules can be found on page 88.</p>"
+    },
+    "KTech TechHammer": {
+      "name": "KTech TechHammer",
+      "description": "<p>The KTech TechHammer is an Exotic Shotgun/Rocket Launcher.</p>\n",
+      "dvTable": "DV Shotgun (Slug)"
+    },
+    "Micro Hydrogen Combustor": {
+      "name": "Micro Hydrogen Combustor",
+      "description": "<p> A small explosive that detonates after being immersed in a liquid. Is both armor piercing and creates a large cloud of smoke. </p> <p> Full rules can be found on page 88. </p>"
+    },
+    "Midnight Arms Beast Shotgun": {
+      "name": "Midnight Arms Beast Shotgun",
+      "description": "<p>\n  The Midnight Arms Beast Shotgun is an Exotic Shotgun. Its magazine holds 40\n  rounds. Requires BODY 10 or higher (unless mounted) when fired or the User\n  will suffer the consequences.\n</p>\n",
+      "dvTable": "DV Shotgun (Slug)"
+    },
+    "Militech Fox Dual Ammo Pistol": {
+      "name": "Militech Fox Dual Ammo Pistol",
+      "description": "<p>The Militech Fox Dual Ammo Pistol is an Exotic Heavy Pistol.</p>\n",
+      "dvTable": "DV Pistol"
+    },
+    "Militech Mastiff SMG": {
+      "name": "Militech Mastiff SMG",
+      "description": "<p>The Militech Mastiff SMG is an Exotic Two-Handed SMG and Shotgun*.</p>\n<p>\n  <em\n    >*Treat this as an SMG with an Underbarrel Shotgun, the upgrade must be\n    added manually.</em\n  >\n</p>\n",
+      "dvTable": "DV SMG"
+    },
+    "Militech Perseus": {
+      "name": "Militech Perseus",
+      "description": "<p>The Militech Perseus is an Excellent Quality Exotic Very Heavy Pistol.</p>\n",
+      "dvTable": "DV Pistol"
+    },
+    "ModFire 10X (Pistol)": {
+      "name": "ModFire 10X (Pistol)",
+      "description": "<p>The ModFire 10X is an Exotic Heavy Pistol. Can also be transformed into an Exotic SMG or an Exotic Assault Rifle, assuming the user has all the needed parts. Full rules can be found in Black Chrome on Page 114.</p>",
+      "dvTable": "DV Pistol"
+    },
+    "ModFire 10X (Rifle)": {
+      "name": "ModFire 10X (Rifle)",
+      "description": "<p>The ModFire 10X is an Exotic Heavy Pistol. Can also be transformed into an Exotic SMG or an Exotic Assault Rifle, assuming the user has all the needed parts. Full rules can be found in Black Chrome on Page 114.</p>",
+      "dvTable": "DV Assault Rifle"
+    },
+    "ModFire 10X (SMG)": {
+      "name": "ModFire 10X (SMG)",
+      "description": "<p>The ModFire 10X is an Exotic Heavy Pistol. Can also be transformed into an Exotic SMG or an Exotic Assault Rifle, assuming the user has all the needed parts. Full rules can be found in Black Chrome on Page 114.</p>",
+      "dvTable": "DV Pistol"
+    },
+    "Nomad Rocker": {
+      "name": "Nomad Rocker",
+      "description": "<p>The Nomad Rocker is a Poor Quality Exotic Very Heavy Pistol that fires rocks. Ammo is free for this weapon. Full rules can be found in Black Chrome on Page 115.</p>",
+      "dvTable": "DV Pistol"
+    },
+    "OUTLet Explosive": {
+      "name": "OUTLet Explosive",
+      "description": "<p>Explosive look-alike of an electrical plug adapter. Full rules can be found on page 89.</p>"
+    },
+    "Overlord Handcannon": {
+      "name": "Overlord Handcannon",
+      "description": "<p>The Overlord Handcannon is a Poor Quality Exotic Heavy Pistol with a ROF of 1. It may give a +1 bonus to Facedowns in certain situations. Full rules can be found in Black Chrome on Page 106.</p>",
+      "dvTable": "DV Pistol"
+    },
+    "Pursuit Security Bouncer": {
+      "name": "Pursuit Security Bouncer",
+      "description": "<p>Battery powered glove.</p>\n<p>One Handed Exotic Combination Stun Baton and Microwaver.</p>\n<p>Full details can be found on page 97.</p>"
+    },
+    "Pursuit Security Incorporated Crowd Buster": {
+      "name": "Pursuit Security Incorporated Crowd Buster",
+      "description": "<p>\n  The Pursuit Security Inc. Crowd Buster is an Exotic Assault Rifle with a\n  unique alternate firing mode. It comes with a pair of Auto Level Dampening Ear\n  Protectors*.\n</p>\n<p><em>*Must be manually applied after purchase</em></p>\n",
+      "dvTable": "DV Assault Rifle"
+    },
+    "Ranger Combat Boomerang": {
+      "name": "Ranger Combat Boomerang",
+      "description": "<p>Acts like a one Handed Exotic Heavy Melee, though halves SP despite being thrown.</p>\n<p>Contains a built in guidance system, details of which can be found on page 100.</p>",
+      "dvTable": "DV Thrown Weapon"
+    },
+    "Rostović Kleaver": {
+      "name": "Rostović Kleaver",
+      "description": "<p>Two Handed Exotic Very Heavy Melee Weapon. Can use a battery pack to increase damage, details of which can be found on page 94.</p>\n<p>Need BODY 11 or more to use it.</p>"
+    },
+    "Rostović Ulični Uništitelj (aka the Street Destroyer)": {
+      "name": "Rostović Ulični Uništitelj (aka the Street Destroyer)",
+      "description": "<p>\n  The Rostović Ulični Uništitelj (Street Destroyer) is a Poor Quality Exotic\n  Shotgun. The magazine only holds 3 shots. It can only shoot Shotgun Shells.\n</p>\n",
+      "dvTable": "DV Shotgun (Slug)"
+    },
+    "Sanroo Hello Cutie Ultra-K8 Assault Pistol": {
+      "name": "Sanroo Hello Cutie Ultra-K8 Assault Pistol",
+      "description": "<p>\n  The Sanroo Hello Cutie Ultra-K8 Assault Pistol is an Excellent Quality Exotic\n  Very Heavy Pistol with an Excellent Quality Heavy SMG mode.\n</p>\n",
+      "dvTable": "DV Pistol"
+    },
+    "SlamDance FangFist": {
+      "name": "SlamDance FangFist",
+      "description": "<p>Excellent Quality One Handed Exotic Medium Melee Weapon.</p>\n<p>A glove with a short retractable blade.</p>\n"
+    },
+    "SlamDance Tasmanskiy Klô": {
+      "name": "SlamDance Tasmanskiy Klô",
+      "description": "<p>Excellent Quality Exotic Very Heavy Melee Weapon.</p>\n<p>Big retractable blades in a Combat Glove.</p>\n"
+    },
+    "Solo Wolf and Bot Mono-Katana": {
+      "name": "Solo Wolf and Bot Mono-Katana",
+      "description": "<p>Poor Quality Two Handed Exotic Very Heavy Melee Weapon.</p>\n<p>Mono-Katana cheap look-alike.</p>\n"
+    },
+    "Sternmeyer M-04 Variable Assault": {
+      "name": "Sternmeyer M-04 Variable Assault",
+      "description": "<p>\n  The Sternmeyer M-04 Variable Assault is a Poor Quality Exotic Assault Rifle\n  with a custom Grenade Launcher underbarrel*.\n</p>\n<p><em>*Grenade Launcher must be manually added.</em></p>\n",
+      "dvTable": "DV Assault Rifle"
+    },
+    "Superchrome® Glam Rifle": {
+      "name": "Superchrome® Glam Rifle",
+      "description": "<p>The Superchrome&reg; Glam Rifle is an Exotic Assault Rifle. It gives the user a +2 bonus to Wardrobe and Style when equipped. Full rules can be found in Black Chrome on Page 120.</p>",
+      "dvTable": "DV Assault Rifle"
+    },
+    "Superchrome® Javelin": {
+      "name": "Superchrome® Javelin",
+      "description": "<p>The Superchrome&reg; Javelin is an Exotic Sniper Rifle. Gives the user a +2 bonus to Wardrobe and Style when equipped. Full rules can be found in Black Chrome on Page 120.</p>",
+      "dvTable": "DV Sniper Rifle"
+    },
+    "Superchrome® Sidearm": {
+      "name": "Superchrome® Sidearm",
+      "description": "<p>The Superchrome&reg; Sidearm is an Exotic Very Heavy Pistol. Gives the user a +2 bonus to Wardrobe and Style when equipped. Full rules can be found in Black Chrome on Page 121.</p>",
+      "dvTable": "DV Pistol"
+    },
+    "Techtronika Russia BMG-500": {
+      "name": "Techtronika Russia BMG-500",
+      "description": "<p>\n  The Techtronika Russia BMG-500 is an Exotic Assault Rifle with a magazine of\n  500 rounds and a bipod. Requires BODY 11 or higher (unless mounted).\n</p>\n",
+      "dvTable": "DV Assault Rifle"
+    },
+    "Tommyknocker": {
+      "name": "Tommyknocker",
+      "description": "<p>The Tommyknocker is a combo Exotic Very Heavy Pistol and Poor Quality Shotgun. Requires BODY 10 or to be held in two hands when firing, otherwise the user drops the weapon to the ground. Full rules can be found in Black Chrome on Page 123.</p>",
+      "dvTable": "DV Pistol"
+    },
+    "TR-4 Detonator Fluid": {
+      "name": "TR-4 Detonator Fluid",
+      "description": "<p>Must be poured into a fuel tank vehicle to explode. Full rules can be found on page 90.</p>"
+    },
+    "Utility Tomahawk": {
+      "name": "Utility Tomahawk",
+      "description": "<p>Blade and pike, this steel and composite ice axe can help you climb ice walls while also doing serious damage in a fight.</p>\n<p>Can be used as both a melee and ranged weapon, rules for which can be found on page 101.</p>",
+      "dvTable": "DV Thrown Weapon"
+    },
+    "Westwood": {
+      "name": "Westwood",
+      "description": "<p>The Westwood is a Very Heavy Pistol. 6 shot capacity that can't be upgraded with magazine attachments. Full rules can be found in Black Chrome on Page 121.</p>",
+      "dvTable": "DV Pistol"
+    },
+    "White Hornet Tanto": {
+      "name": "White Hornet Tanto",
+      "description": "<p>One Handed Exotic Medium Melee Weapon. Can render target unconscious rather than dead, with full rules found on page 93.</p>"
+    },
+    "Zhirafa Rhinocefist": {
+      "name": "Zhirafa Rhinocefist",
+      "description": "<p>\n  Armored large stone chisel glove, covering from hand to shoulder. Requires\n  interface plugs. Can be used both for demolition and brawling.\n</p>\n"
+    }
+  }
+}

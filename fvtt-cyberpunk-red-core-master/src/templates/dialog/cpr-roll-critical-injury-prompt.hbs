@@ -1,0 +1,25 @@
+<form class="dialog-sheet">
+  <div class="dialog-header flexcol">
+    <div class="text-normal text-center">
+      {{localize "CPR.dialog.rollCriticalInjury.criticalInjurySelect"}}
+    </div>
+  </div>
+  <hr/>
+  <div class="dialog-grid flexcol">
+    <ol class="dialog-list">
+      <li class="dialog-item flexrow">
+        {{#if tableNames }}
+          <div class="dialog-item-name text-nowrap">
+            {{localize "CPR.global.generic.table"}}:
+          </div>
+          <select name="currentTable">
+            {{selectOptions tableNames selected=currentTable}}
+          </select>
+        {{else}}
+          {{localize "CPR.dialog.rollCriticalInjury.criticalInjuryNoneWarning"}}
+        {{/if}}
+      </li>
+    </ol>
+  </div>
+  {{> "systems/cyberpunk-red-core/templates/dialog/cpr-dialog-buttons.hbs"}}
+</form>

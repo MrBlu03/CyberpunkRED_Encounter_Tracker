@@ -1,0 +1,48 @@
+
+<div class="interface-abilities-section">
+  <li class="items-header item flexrow"
+      data-item-id="{{fightData.cyberdeck.id}}">
+    <span class="item-name section-name text-nowrap text-padding-left-smallest">
+      <a class="name item-view">{{fightData.cyberdeck.name}}</a>
+      <select class="select-net-role"
+              name="system.roleInfo.activeNetRole"
+              data-tooltip="{{localize "CPR.characterSheet.bottomPane.fight.netRoleTooltip"}}"
+              data-tooltip-direction="UP">
+        {{selectOptions netRoleSelectOptions selected=actor.system.roleInfo.activeNetRole}}
+      </select>
+    </span>
+  </li>
+  <div class="net-actions-content">
+    {{#each (cprFindConfigObj "interfaceAbilities") as |intAbility ia| }}
+      <li class="items-header text-padding-left-smallest flexrow">
+        <a class="rollable"
+           data-roll-type="interfaceAbility"
+           data-interface-ability="{{ia}}"
+           data-cyberdeck-id="{{../fightData.cyberdeck.id}}"
+           data-tooltip="{{localize "CPR.characterSheet.bottomPane.fight.clickToPerformAction"}}">
+          {{localize intAbility}}
+        </a>
+      </li>
+    {{/each}}
+    <hr/>
+    <li class="items-header text-padding-left-smallest flexrow">
+      <a class="rollable"
+         data-roll-type="interfaceAbility"
+         data-interface-ability="defense"
+         data-cyberdeck-id="{{fightData.cyberdeck.id}}"
+         data-tooltip="{{localize "CPR.characterSheet.bottomPane.fight.clickToPerformAction"}}">
+        {{localize "CPR.global.generic.defense"}}
+      </a>
+    </li>
+    <li class="items-header text-padding-left-smallest flexrow">
+      <a class="rollable"
+         data-roll-type="interfaceAbility"
+         data-interface-ability="speed"
+         data-cyberdeck-id="{{fightData.cyberdeck.id}}"
+         data-tooltip="{{localize "CPR.characterSheet.bottomPane.fight.clickToPerformAction"}}">
+        {{localize "CPR.global.generic.speed"}}
+      </a>
+    </li>
+  </div>
+</div>
+

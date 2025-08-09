@@ -1,0 +1,42 @@
+{
+  "label": "Exotics of 2045",
+  "mapping": {},
+  "entries": {
+    "Appetite Controller": {
+      "name": "Appetite Controller",
+      "description": "<p>\n  Suppresses hunger response. User ignores Humanity Loss penalties from\n  starvation trauma but User can still starve. Roll a Death Save at start of 7th\n  consecutive day without eating. +1 to successive Death Saves each day\n  afterwards.\n</p>\n<p>Requires Biomonitor.</p>\n"
+    },
+    "Combat Jaw": {
+      "name": "Combat Jaw",
+      "description": "<p>Implanted Very Heavy Melee Weapon.</p>\n"
+    },
+    "Combat Tail": {
+      "name": "Combat Tail",
+      "description": "<p>Implanted Heavy Melee Weapon. Requires Neural Link.</p>\n"
+    },
+    "Extra-Jointed Cyberarm Upgrade": {
+      "name": "Extra-Jointed Cyberarm Upgrade",
+      "description": "<p>Enhances cyberarm articulation. +2 Contortionist.</p>\n"
+    },
+    "Extra-Jointed Cyberleg Upgrade": {
+      "name": "Extra-Jointed Cyberleg Upgrade",
+      "description": "<p>Enhances cyberleg articulation. +2 Contortionist.</p>\n"
+    },
+    "Firebreather": {
+      "name": "Firebreather",
+      "description": "<p>Implanted Exotic Shotgun. Can only hold one incendiary shotgun shell.</p>\n"
+    },
+    "Heuristic Health Monitor": {
+      "name": "Heuristic Health Monitor",
+      "description": "<p>Requires biomonitor. Can know HP at a glance.</p>\n"
+    },
+    "NeuTongue": {
+      "name": "NeuTongue",
+      "description": "<p>\n  Simulates flavor sensations. Use a linked Agent to customize flavor profiles.\n  Can be deactivated without an Action. No sense of taste when deactivated.\n</p>\n<p>Replaces Meat tongue.</p>\n"
+    },
+    "Reflex Co-Processor": {
+      "name": "Reflex Co-Processor",
+      "description": "<p>Neuralware. Negates REF requirement to dodge bullets.</p>\n"
+    }
+  }
+}

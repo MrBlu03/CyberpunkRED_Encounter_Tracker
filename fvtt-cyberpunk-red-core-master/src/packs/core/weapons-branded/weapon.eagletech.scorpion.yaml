@@ -1,0 +1,55 @@
+_id: rbKh5MentkUWO134
+_key: "!items!rbKh5MentkUWO134"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/weapons/Crossbow_excellent.svg
+name: Eagletech Scorpion
+system:
+  ammoVariety:
+    - arrow
+  attackmod: 1
+  brand: Eagletech
+  concealable:
+    concealable: false
+    isConcealed: false
+  critFailEffect: jammed
+  damage: 4d6
+  description:
+    value: |
+      <p>
+        A sleek crossbow branded with the Eagletech logo, reloaded as part of an
+        Attack action.
+      </p>
+      <p>+1 to Attack check.</p>
+  dvTable: DV Bows & Crossbows
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 2
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+      - ammo
+    list: []
+    slots: 3
+    usedSlots: 0
+  isRanged: true
+  magazine:
+    max: 1
+    value: 0
+  price:
+    market: 500
+  quality: standard
+  revealed: true
+  rof: 1
+  source:
+    book: Core
+    page: 341
+  unarmedAutomaticCalculation: true
+  usage: equipped
+  usesType: magazine
+  weaponSkill: Archery
+  weaponType: bow
+type: weapon

@@ -1,0 +1,25 @@
+{
+  "label": "MicroCromo",
+  "mapping": {
+    "dvTable": "sistema.Tablavd"
+  },
+  "entries": {
+    "Superflash Jacket": {
+      "name": "Chaqueta Superflash",
+      "description": "<p>Una bonita chaqueta que contiene una sorpresa; con una acción, cualquier persona que use esta chaqueta puede consumir una batería para encender una luz cegadora. Trata como una granada de Flashbang sin la lesión de oído crítica, centrada en el portador.</p>"
+    },
+    "Chipware Compartment": {
+      "name": "Compartimiento de Chipware",
+      "description": "<p>Te permite ocultar hasta cuatro piezas de chipware, no se requiere Chequeo. La recuperación se hace gastando una acción para girar el ojo en su ranura</p>"
+    },
+    "Smart Lens": {
+      "name": "Lente Inteligente",
+      "description": "<p>Da a un usuario una única opción de ciberóptico. Puede usar una lente inteligente por ojo.</p>"
+    },
+    "MicroCutie by HelloCutie": {
+      "name": "MicroCutie by HelloCutie",
+      "description": "<p>\n  An excellent quality pistol with a unique Hypurrburst™ mode fire mode*. The\n  weapon purrs when used. Hypurrburst™ is disabled if less than 4 bullets are in\n  the clip.\n</p>\n<p>When in Hypurrburst™ mode, the following applies</p>\n<ul>\n  <li>MicroCutie is ROF 1</li>\n  <li>Purrs audibly</li>\n  <li>Fires a single shot, drains clip, and does 4d6 damage</li>\n  <li>Cannot be used to make aimed shots</li>\n</ul>\n<p>\n  <em\n    >*Special fire mode not currently supported; will need to be manually\n    applied</em\n  >\n</p>\n",
+      "dvTable": "DV Pistol"
+    }
+  }
+}

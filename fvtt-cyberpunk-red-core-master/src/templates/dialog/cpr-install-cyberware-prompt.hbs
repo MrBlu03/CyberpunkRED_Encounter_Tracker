@@ -1,0 +1,41 @@
+<form class="dialog-sheet" id="installCyberware">
+  {{!-- Select HL --}}
+  <div class="dialog-header flexcol text-semi text-center">
+    {{localize "CPR.dialog.installCyberware.cyberwareHumanityLoss"}}
+  </div>
+  <hr/>
+  <div class="dialog-grid flexcol">
+    <ol class="dialog-list">
+      <li class="dialog-item flexrow">
+        <div class="dialog-item-name text-nowrap">
+          {{localize "CPR.dialog.installCyberware.humanityLoss"}}:
+        </div>
+        <div class="dialog-item-input item-end">
+          <select name="humanityLossType">
+            {{selectOptions humanityLossSelectOptions selected=humanityLossType}}
+          </select>
+        </div>
+      </li>
+      {{#unless item.system.isFoundational}}
+        {{#if (cprListContains "fashionware,cyberwareInternal,cyberwareExternal" item.type) }}
+          {{#each foundationalCyberware as |cyberware c| }}
+            <input type="hidden" name="foundationalId" value="{{cyberware._id}}"/>
+          {{/each}}
+        {{else}}
+          <li class="dialog-item flexrow">
+            <div class="dialog-item-name text-nowrap">
+              {{localize "CPR.global.generic.foundational"}} {{localize "CPR.global.itemTypes.cyberware"}}:
+            </div>
+            <div class="dialog-item-input text-nowrap">
+              <select name="foundationalId">
+                {{!-- ONLY DISPLAY CYBERWARE OF SAME TYPE AS OPTIONAL --}}
+                {{selectOptions foundationalCyberware selected=foundationalId valueAttr="_id" labelAttr="name"}}
+              </select>
+            </div>
+          </li>
+        {{/if}}
+      {{/unless}}
+    </ol>
+  </div>
+  {{> "systems/cyberpunk-red-core/templates/dialog/cpr-dialog-buttons.hbs"}}
+</form>

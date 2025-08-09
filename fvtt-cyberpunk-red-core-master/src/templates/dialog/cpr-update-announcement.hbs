@@ -1,0 +1,11 @@
+<div class="releasenotes">
+  {{!-- Show title --}}
+  <h1>{{updateBanner}}</h1>
+  {{!-- Show Release notes --}}
+  {{{releaseNotes}}}
+  {{!-- Show Feature Video --}}
+  {{#if (cprCompare featureVideoLink "!==" "") }}
+    <h2>{{featureVideoTitle}}</h2>
+    {{featureVideoInformation}} <a href="{{featureVideoLink}}" target="_blank">{{HERE}}</a>
+  {{/if}}
+</div>

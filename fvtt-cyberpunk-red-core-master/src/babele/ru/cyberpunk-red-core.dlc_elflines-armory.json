@@ -1,0 +1,77 @@
+{
+  "label": "Elflines Online Armory",
+  "entries": {
+    "Arrow": {
+      "name": "Arrow",
+      "description": "<p>Basic ammo, nothing special.</p>"
+    },
+    "Poison Arrow": {
+      "name": "Ядовитая стрела",
+      "description": "<p>Нет мгновенного урона. При попадании цель должна пройти проверку сопротивления пыткам/препаратам СЛ13. При неудаче, цель получает 2d6 урона по ПЗ. Не повреждает броню.</p>"
+    },
+    "Chainmail Armor (Body)": {
+      "name": "Chainmail Armor (Body)",
+      "description": "<p>Medium version of an Armorjack. -2 to REF, DEX, and MOVE.</p>"
+    },
+    "Chainmail Armor (Head)": {
+      "name": "Chainmail Armor (Head)",
+      "description": "<p>Medium version of an Armorjack for your head. -2 to REF, DEX, and MOVE.</p>"
+    },
+    "Full Plate Armor (Body)": {
+      "name": "Full Plate Armor (Body)",
+      "description": "<p>Metal plated armor to resist the most powerful hits. -4 to REF, DEX, and MOVE.</p>"
+    },
+    "Full Plate Armor (Head)": {
+      "name": "Full Plate Armor (Head)",
+      "description": "<p>Metal plated armor to resist the most powerful hits to your head. -4 to REF, DEX, and MOVE.</p>"
+    },
+    "Leather Armor (Body)": {
+      "name": "Leather Armor (Body)",
+      "description": "<p>Simple Leather armor. No armor penalty.</p>"
+    },
+    "Leather Armor (Head)": {
+      "name": "Leather Armor (Head)",
+      "description": "<p>Simple Leather armor for your head. No armor penalty.</p>"
+    },
+    "Shield": {
+      "name": "Щит",
+      "description": "<p>Requires an arm and has HP that is reduced by damage.</p>"
+    },
+    "Studded Leather Armor (Body)": {
+      "name": "Studded Leather Armor (Body)",
+      "description": "<p>Standard Kevlar clothing. No armor penalty.</p>"
+    },
+    "Studded Leather Armor (Head)": {
+      "name": "Studded Leather Armor (Head)",
+      "description": "<p>Standard Kevlar for your head. No armor penalty.</p>"
+    },
+    "Sacred Herbs": {
+      "name": "Sacred Herbs",
+      "description": ""
+    },
+    "Vial of Poison": {
+      "name": "Ампула с ядом",
+      "description": "<p>2d6 урона при провале проверки сопротивления пыткам/препаратам. Броня не учитывается.</p>"
+    },
+    "Bow": {
+      "name": "Лук",
+      "description": "<p>A revitalized bow, reloaded as part of an Attack Action.</p>"
+    },
+    "Dagger": {
+      "name": "Dagger",
+      "description": "<p>A knife fit for the streets.</p>"
+    },
+    "Greataxe": {
+      "name": "Greataxe",
+      "description": "<p>A japanese wooden pole with a curved blade on one side. Favoured by Arasaka tactical teams for close engagements. </p>"
+    },
+    "Longsword": {
+      "name": "Longsword",
+      "description": "<p>A hollow cylinder, typically made of metal or fiberglass. It may have conveyed fluids once. </p>"
+    },
+    "Shortsword": {
+      "name": "Shortsword",
+      "description": "<p>Useful as both a tool and a weapon. A rod of iron with split wedges on the ends. </p>"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+_id: cZufX1qgLNnpGyrm
+_key: "!tables.results!X85PAwW7OhzmiZ8X.cZufX1qgLNnpGyrm"
+documentCollection: ""
+documentId: null
+drawn: false
+img: icons/svg/d20-black.svg
+range:
+  - 7
+  - 7
+text: Add an additional Mook of a different type to the encounter.
+type: 0
+weight: 1

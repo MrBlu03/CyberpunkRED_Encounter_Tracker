@@ -1,0 +1,20 @@
+_id: bkDDCt1Gb3xWXEEw
+_key: "!items!bkDDCt1Gb3xWXEEw"
+effects: []
+img: icons/svg/item-bag.svg
+name: Tracking
+system:
+  basic: false
+  category: awarenessSkills
+  core: true
+  description:
+    value: ""
+  difficulty: typical
+  favorite: false
+  level: 0
+  skillType: generic
+  source:
+    book: Core
+    page: 131
+  stat: int
+type: skill

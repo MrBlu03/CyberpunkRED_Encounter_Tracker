@@ -1,0 +1,60 @@
+_id: jM0d8EgkRSHrIccX
+_key: "!items!jM0d8EgkRSHrIccX"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/must_have_cyberware_deals/pursuit_security_inc_personal_shredder.svg
+name: Pursuit Security Inc. Personal Shredder
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: Pursuit Security Inc.
+  concealable:
+    concealable: true
+    isConcealed: false
+  core: false
+  damage: 1d6
+  description:
+    value: |
+      <p>
+        Heavy duty paper shredder, can be concealed. Features an internal storage for
+        paper shreds.
+      </p>
+  dvTable: ""
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  humanityLoss:
+    roll: 1d6
+    static: 3
+  installLocation: clinic
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 0
+    usedSlots: 0
+  isElectronic: true
+  isFoundational: false
+  isRanged: false
+  isWeapon: false
+  magazine:
+    max: 0
+    value: 0
+  price:
+    market: 100
+  providesHardening: false
+  revealed: true
+  rof: 1
+  size: 1
+  source:
+    book: MHCD
+    page: 4
+  type: cyberArm
+  unarmedAutomaticCalculation: true
+  usage: toggled
+  usesType: magazine
+  weaponSkill: ""
+  weaponType: ""
+type: cyberware

@@ -1,0 +1,155 @@
+// For stats that have 2 values (HP, Humanity, Luck, Emp)
+.min-of-max-container {
+  display: flex;
+
+  input[type="number"] {
+    min-width: 0;
+    flex: 1 0;
+    background-color: var(--cpr-background-box);
+    border: 0;
+    outline: 0;
+    border-radius: unset;
+
+    // Workaround for suspected webkit bug
+    &:hover {
+      backface-visibility: visible;
+    }
+  }
+
+  .of-stat {
+    flex: 0 1;
+    font-size: 75%;
+    align-self: center;
+    padding: 0 0.125rem 0.063rem 0.125rem;
+  }
+
+  .of {
+    flex: 0 1;
+    font-size: 75%;
+    align-self: center;
+    padding: 0 0.125rem 0 0.125rem;
+  }
+}
+
+.side-banner {
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+  // align-self: center;
+  min-height: -webkit-fill-available;
+  text-align: center;
+}
+
+// Used to spread space between fields
+.flex-space-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.width- {
+  display: flex;
+  justify-content: space-around;
+  flex: 1 0 auto;
+
+  &sixteenth {
+    width: 6.25%;
+  }
+
+  &eighth {
+    width: 12.5%;
+  }
+
+  &sixth {
+    width: calc(100% / 6);
+  }
+
+  &quarter {
+    width: 25%;
+  }
+
+  &third {
+    width: calc(100% / 3);
+  }
+
+  &half {
+    width: 50%;
+  }
+
+  &full {
+    width: 100%;
+  }
+
+  &grow {
+    flex-grow: 1;
+  }
+
+  &no-grow {
+    flex-grow: 0;
+  }
+
+  &shrink {
+    flex-shrink: 1;
+  }
+
+  &no-shrink {
+    flex-shrink: 0;
+  }
+
+  &auto-basis {
+    flex-basis: auto;
+  }
+
+  &long {
+    flex-basis: 5%;
+  }
+
+  &longer {
+    flex-basis: 70%;
+  }
+
+  &fit {
+    width: fit-content;
+    padding: 0 0.125rem;
+  }
+
+  &max-half {
+    max-width: 50%;
+  }
+
+  &max-quarter {
+    max-width: 25%;
+  }
+
+  &max-eighth {
+    max-width: 12.5%;
+  }
+
+  &max-three-quarters {
+    max-width: 75%;
+  }
+
+  &max-third {
+    max-width: calc(100% / 3);
+  }
+
+  &max-two-thirds {
+    max-width: calc((100% / 3) * 2);
+  }
+}
+
+.pad- {
+  &thinner {
+    padding: 0.125rem;
+  }
+
+  &thin {
+    padding: 0.313rem;
+  }
+
+  &thick {
+    padding: 0.5rem;
+  }
+
+  &thicker {
+    padding: 0.625rem;
+  }
+}

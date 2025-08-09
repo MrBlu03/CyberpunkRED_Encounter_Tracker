@@ -1,0 +1,27 @@
+_id: qoegLCfpEOQifeZq
+_key: "!items!qoegLCfpEOQifeZq"
+effects:
+  - exv56SDpa0UW3rxp
+img: systems/cyberpunk-red-core/icons/compendium/critical_injuries/damaged_eye.svg
+name: Damaged Eye
+system:
+  deathSaveIncrease: false
+  description:
+    value: |
+      <p>-2 to Ranged and Perception (Sight).</p>
+  favorite: false
+  location: head
+  quickFix:
+    dvFirstAid: 0
+    dvParamedic: 15
+    type: paramedic
+  revealed: true
+  source:
+    book: Core
+    page: 188
+  treatment:
+    dvParamedic: 0
+    dvSurgery: 13
+    type: surgery
+  usage: toggled
+type: criticalInjury

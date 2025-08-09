@@ -1,0 +1,118 @@
+.weapon-list {
+  height: 100%;
+}
+
+.weapon-grid {
+  display: grid;
+  grid-template-columns: 3.5rem 1fr 5.5rem 1.1rem 2rem 2rem;
+  grid-template-rows: 1.1rem 1.1rem 1.1rem;
+  grid-auto-rows: 1fr;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "weapon-image weapon-name weapon-mode weapon-actions weapon-attack weapon-damage"
+    "weapon-image weapon-ammo weapon-mode weapon-actions weapon-attack weapon-damage"
+    "weapon-image weapon-info weapon-mode weapon-actions weapon-attack weapon-damage";
+  height: 3.5rem;
+  margin: 0.15rem;
+  padding-top: 0.188rem;
+}
+
+.weapon-image {
+  grid-area: weapon-image;
+  margin: auto;
+  height: 3.5rem;
+  width: 3.5rem;
+  padding-right: 0.2rem;
+  position: relative;
+  i {
+    position: absolute;
+    top: 0.25rem;
+    right: 0.5rem;
+    color: white;
+  }
+}
+
+.weapon-name {
+  grid-area: weapon-name;
+  display: flex;
+  align-items: center;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.weapon-ammo {
+  grid-area: weapon-ammo;
+  display: flex;
+  align-items: center;
+}
+
+.weapon-info {
+  grid-area: weapon-info;
+  display: flex;
+  align-items: center;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  height: 1.1rem;
+}
+
+.weapon-mode {
+  grid-area: weapon-mode;
+  display: grid;
+  justify-content: flex-end;
+  align-content: flex-start;
+  white-space: nowrap;
+
+  ul {
+    line-height: 1.2em;
+    margin: 0.3em 0 0 0;
+    padding: 0;
+  }
+
+  li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    scrollbar-width: none;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+.weapon-actions {
+  grid-area: weapon-actions;
+  display: grid;
+  justify-content: center;
+  align-content: baseline;
+
+  ul {
+    line-height: 1.2em;
+    margin: 0.3em 0 0 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+.weapon-attack {
+  grid-area: weapon-attack;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+.weapon-damage {
+  grid-area: weapon-damage;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}

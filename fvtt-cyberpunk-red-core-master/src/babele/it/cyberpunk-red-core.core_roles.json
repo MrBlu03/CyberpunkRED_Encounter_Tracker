@@ -1,0 +1,46 @@
+{
+  "label": "Ruoli",
+  "mapping": {},
+  "entries": {
+    "Exec": {
+      "name": "Corporativo",
+      "description": "<p>Dirigenti d'affari e avvoltoi finanziari pronti a rischiare tutto per alzare il rango corporativo e realizzare il Nuovo Sogno Americano.</p>"
+    },
+    "Fixer": {
+      "name": "Fixer",
+      "description": "<p>Possono ricettare qualsiasi cosa, purché il prezzo sia giusto. Utilizzando il loro carisma e le loro capacità di commercio, fanno gli affari che mantengono viva l'economia del Futuro Oscuro.</p>"
+    },
+    "Lawman": {
+      "name": "Tutore dell'Ordine",
+      "description": "<p>Rinnega i difensori, le squadre di sciopero corporative, o gli ultimi resti di una polizia governativa, pattugliano le strade per imporre un certo ordine in un mondo altrimenti senza legge.</p>"
+    },
+    "Media": {
+      "name": "Media",
+      "description": "<p>Notiziari, influencer e fenomeni culturali, sono pronti a esporre la verità con qualsiasi mezzo necessario.</p>"
+    },
+    "Medtech": {
+      "name": "Meditech",
+      "description": "<p>Medici dietro le quinte e meccanici del cyberware, utilizzano le loro abilità per mantenere gli altri edgerunners in buona cyberforma, spesso ad un prezzo da pagare.</p>"
+    },
+    "Netrunner": {
+      "name": "Netrunner",
+      "description": "<p>Maestri hacker che si mettono a rischio mentre si infilano nel cyberspazio per scaricare segreti e infiltrarsi nelle reti.</p>"
+    },
+    "Nomad": {
+      "name": "Nomade",
+      "description": "<p>Fanatici di automobili, camionisti, trasporto di contrabbando, pirati dei cieli, sono gli unici vettori di prodotti in tutto il mondo, mantenendo le catene di trasporto e di fornitura al tempo del Rosso.</p>"
+    },
+    "Rockerboy": {
+      "name": "Rocker",
+      "description": "<p>Artisti ribelli esibizionisti che usano il loro mestiere per influenzare fan/folla per contrapporsi e reagire.</p>"
+    },
+    "Solo": {
+      "name": "Solitario",
+      "description": "<p>Esperti in combattimento che usano la loro abilità di combattimento per dominare nella legge senza tempo del Rosso.</p>"
+    },
+    "Tech": {
+      "name": "Tecnico",
+      "description": "<p>La comprensione superiore della tecnologia di tutte le cose permette loro di inventare, aggiornare e riparare per mantenere il funzionamento del Futuro Oscuro.</p>"
+    }
+  }
+}

@@ -1,0 +1,114 @@
+_id: 7KjoeHsFOue8Dl42
+_key: "!items!7KjoeHsFOue8Dl42"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/upgrades/av_4_engine_upgrade.svg
+name: AV-4 Engine Upgrade
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  damage: 1d6
+  description:
+    value: |
+      <p>
+        Can be applied to all land vehicles. Adds Aerodyne thrusters to the vehicle,
+        allowing flight. While flying the vehicle has a narrative speed of 200MPH /
+        322KPH, and a combat speed of 40. The vehicle must be piloted using the Pilot
+        Air Vehicle skill while mid-air.
+      </p>
+  dvTable: ""
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 0
+  installLocation: mall
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: false
+  isRanged: false
+  magazine:
+    max: 0
+    value: 0
+  modifiers:
+    Wardrobe & Style:
+      isSituational: false
+      onByDefault: false
+      value: null
+    attackmod:
+      isSituational: false
+      onByDefault: false
+      type: modifier
+      value: null
+    bodySp:
+      isSituational: false
+      onByDefault: false
+      value: null
+    cool:
+      isSituational: false
+      onByDefault: false
+      value: null
+    damage:
+      isSituational: false
+      onByDefault: false
+      type: modifier
+      value: null
+    headSp:
+      isSituational: false
+      onByDefault: false
+      value: null
+    magazine:
+      isSituational: false
+      onByDefault: false
+      type: modifier
+      value: null
+    rof:
+      isSituational: false
+      onByDefault: false
+      type: modifier
+      value: null
+    sdp:
+      isSituational: false
+      onByDefault: false
+      type: modifier
+      value: null
+    seats:
+      isSituational: false
+      onByDefault: false
+      type: modifier
+      value: null
+    secondaryWeapon:
+      configured: false
+    shieldHp:
+      isSituational: false
+      onByDefault: false
+      value: null
+    slots:
+      isSituational: false
+      onByDefault: false
+      value: null
+    speedCombat:
+      type: modifier
+      value: null
+  price:
+    market: 5000
+  providesHardening: false
+  rof: 1
+  size: 0
+  source:
+    book: Core
+    page: 164
+  type: vehicle
+  unarmedAutomaticCalculation: true
+  usesType: magazine
+  weaponSkill: ""
+  weaponType: ""
+type: itemUpgrade

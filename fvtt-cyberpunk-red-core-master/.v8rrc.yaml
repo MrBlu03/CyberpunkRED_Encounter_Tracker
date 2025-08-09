@@ -1,0 +1,85 @@
+patterns:
+  - "*.json"
+  - "*.yaml"
+  - "*.yml"
+
+format: json
+
+customCatalog:
+  schemas:
+    - name: "Ammo"
+      description: "Schema for validating Ammo YAML fragments"
+      fileMatch: ["src/packs/**/**/ammo.*.yaml"]
+      location: "schema/ammo.json"
+    - name: "Armor"
+      description: "Schema for validating Armor YAML fragments"
+      fileMatch: ["src/packs/**/**/armor.*.yaml"]
+      location: "schema/armor.json"
+    - name: "Clothing"
+      description: "Schema for validating Clothing YAML fragments"
+      fileMatch: ["src/packs/**/**/clothing.*.yaml"]
+      location: "schema/clothing.json"
+    - name: "Critical Injuries"
+      description: "Schema for validating Critical Injury YAML fragments"
+      fileMatch: ["src/packs/**/**/criticalinjury.*.yaml"]
+      location: "schema/criticalInjury.json"
+    - name: "Cyberdeck"
+      description: "Schema for validating Cyberdeck YAML fragments"
+      fileMatch: ["src/packs/**/**/cyberdeck*.yaml"]
+      location: "schema/cyberdeck.json"
+    - name: "Cyberware"
+      description: "Schema for validating Cyberware-Items YAML fragments"
+      fileMatch: ["src/packs/**/**/cyberware.*.yaml"]
+      location: "schema/cyberware-items.json"
+    - name: "Drugs"
+      description: "Schema for validating Drug YAML fragments"
+      fileMatch: ["src/packs/**/**/drug.*.yaml"]
+      location: "schema/drugs.json"
+    - name: "Effects"
+      description: "Schema for validating Effect YAML fragments"
+      fileMatch: ["src/packs/**/**/effect.*.yaml"]
+      location: "schema/activeEffects.json"
+    - name: "Gear"
+      description: "Schema for validating Gear YAML fragments"
+      fileMatch: ["src/packs/**/**/gear.*.yaml"]
+      location: "schema/gear.json"
+    - name: "Macros"
+      description: "Schema for validating Macro YAML fragments"
+      fileMatch: ["src/packs/**/**/macro.*.yaml"]
+      location: "schema/macro.json"
+    - name: "Item Upgrade"
+      description: "Schema for validating Item Upgrade YAML fragments"
+      fileMatch: ["src/packs/**/**/itemupgrade.*.yaml"]
+      location: "schema/itemUpgrade.json"
+    - name: "Programs"
+      description: "Schema for validating Program YAML fragments"
+      fileMatch: ["src/packs/**/**/program.*.yaml"]
+      location: "schema/program.json"
+    - name: "Results"
+      description: "Schema for validating Result YAML fragments"
+      fileMatch: ["src/packs/**/**/result.*.yaml"]
+      location: "schema/result.json"
+    - name: "Roles"
+      description: "Schema for validating Role YAML fragments"
+      fileMatch: ["src/packs/**/**/role.*.yaml"]
+      location: "schema/role.json"
+    - name: "Scenes"
+      description: "Schema for validating Scenes YAML fragments"
+      fileMatch: ["src/packs/**/**/scene.*.yaml"]
+      location: "schema/scene.json"
+    - name: "Skills"
+      description: "Schema for validating Skill YAML fragments"
+      fileMatch: ["src/packs/**/**/skill.*.yaml"]
+      location: "schema/skill.json"
+    - name: "Tables"
+      description: "Schema for validating Table YAML fragments"
+      fileMatch: ["src/packs/**/**/table.*.yaml"]
+      location: "schema/table.json"
+    - name: "Vehicles"
+      description: "Schema for validating Vehicle YAML fragments"
+      fileMatch: ["src/packs/**/**/vehicle.*.yaml"]
+      location: "schema/vehicle.json"
+    - name: "Weapons"
+      description: "Schema for validating Weapon YAML fragments"
+      fileMatch: ["src/packs/**/**/weapon.*.yaml"]
+      location: "schema/weapon.json"

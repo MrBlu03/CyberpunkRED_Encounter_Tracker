@@ -1,0 +1,54 @@
+_id: GiU3T4aczKpAP91x
+_key: "!items!GiU3T4aczKpAP91x"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/weapons/AssaultRifle.svg
+name: Techtronika Russia BMG-500
+system:
+  ammoVariety:
+    - rifle
+  attackmod: 0
+  brand: Techtronika Russia
+  concealable:
+    concealable: false
+    isConcealed: false
+  critFailEffect: jammed
+  damage: 5d6
+  description:
+    value: |
+      <p>
+        The Techtronika Russia BMG-500 is an Exotic Assault Rifle with a magazine of
+        500 rounds and a bipod. Requires BODY 11 or higher (unless mounted).
+      </p>
+  dvTable: DV Assault Rifle
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 4
+    suppressiveFire: true
+  handsReq: 1
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+      - ammo
+    list: []
+    slots: 0
+    usedSlots: 0
+  isRanged: true
+  magazine:
+    max: 500
+    value: 0
+  price:
+    market: 5000
+  quality: standard
+  revealed: true
+  rof: 1
+  source:
+    book: BC
+    page: 122
+  unarmedAutomaticCalculation: true
+  usage: toggled
+  usesType: magazine
+  weaponSkill: Heavy Weapons
+  weaponType: assaultRifle
+type: weapon

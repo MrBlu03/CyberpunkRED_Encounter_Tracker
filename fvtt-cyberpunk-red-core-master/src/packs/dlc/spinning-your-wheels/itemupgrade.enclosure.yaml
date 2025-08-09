@@ -1,0 +1,76 @@
+_id: X3QvlINFBZtTGISU
+_key: "!items!X3QvlINFBZtTGISU"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/spinning_your_wheels/enclosure.svg
+name: Enclosure
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  damage: 1d6
+  description:
+    value: >
+      <p>The bike becomes a trike with a covering body of fiberglass and
+      plastic.</p>
+
+      <p>Can't install this Upgrade with the Folding Frame upgrade.</p>
+  dvTable: ""
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 0
+  installLocation: mall
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: false
+  isRanged: false
+  magazine:
+    max: 0
+    value: 0
+  modifiers:
+    attackmod:
+      type: modifier
+      value: null
+    damage:
+      type: modifier
+      value: null
+    magazine:
+      type: modifier
+      value: null
+    rof:
+      type: modifier
+      value: null
+    sdp:
+      type: modifier
+      value: null
+    seats:
+      type: modifier
+      value: null
+    secondaryWeapon:
+      configured: false
+    speedCombat:
+      type: modifier
+      value: null
+  price:
+    market: 100
+  providesHardening: false
+  rof: 1
+  size: 1
+  source:
+    book: SYW
+    page: 4
+  type: vehicle
+  unarmedAutomaticCalculation: true
+  usesType: magazine
+  weaponSkill: ""
+  weaponType: ""
+type: itemUpgrade

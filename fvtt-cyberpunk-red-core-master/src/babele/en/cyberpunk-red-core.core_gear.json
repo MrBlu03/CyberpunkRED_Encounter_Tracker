@@ -1,0 +1,230 @@
+{
+  "label": "Gear",
+  "mapping": {},
+  "entries": {
+    "Cyberdeck (Excellent)": {
+      "name": "Cyberdeck (Excellent)",
+      "description": "<p>Netrunner deck. 9 slots.</p>\n"
+    },
+    "Cyberdeck (Poor)": {
+      "name": "Cyberdeck (Poor)",
+      "description": "<p>Netrunner deck. 5 slots.</p>\n"
+    },
+    "Cyberdeck": {
+      "name": "Cyberdeck",
+      "description": "<p>Netrunner deck. 7 slots.</p>\n"
+    },
+    "Battleglove": {
+      "name": "Battleglove",
+      "description": "<p>\n  An exotic heavy gauntlet, that covers your hand and forearm. Provides three\n  option slots.\n</p>\n"
+    },
+    "Smart Glasses": {
+      "name": "Smart Glasses",
+      "description": "<p>Eyewear with two options slots for cybereye options.</p>\n"
+    },
+    "Agent": {
+      "name": "Agent",
+      "description": "<p>\n  AI Smartphone. +2 Library Search, +2 Wardrobe & Style depending on\n  circumstance.\n</p>\n"
+    },
+    "Airhypo": {
+      "name": "Airhypo",
+      "description": "<p>Hypodermic syringe.</p>\n"
+    },
+    "Anti-Smog Breathing Mask": {
+      "name": "Anti-Smog Breathing Mask",
+      "description": "<p>Airborne toxin filter.</p>\n"
+    },
+    "Audio Recorder": {
+      "name": "Audio Recorder",
+      "description": "<p>Record 24h of audio on a memory Chip.</p>\n"
+    },
+    "Auto Level Dampening Ear Protectors": {
+      "name": "Auto Level Dampening Ear Protectors",
+      "description": "<p>Wearer is immune to loud sounds.</p>\n"
+    },
+    "Binoculars": {
+      "name": "Binoculars",
+      "description": "<p>Magnification: x2 or x3.</p>\n"
+    },
+    "Braindance Viewer": {
+      "name": "Braindance Viewer",
+      "description": "<p>Braindance viewing device.</p>\n"
+    },
+    "Bug Detector": {
+      "name": "Bug Detector",
+      "description": "<p>Detect listening devices. Range 2m/yds.</p>\n"
+    },
+    "Carryall": {
+      "name": "Carryall",
+      "description": "<p>Bag.</p>\n"
+    },
+    "Chemical Analyzer": {
+      "name": "Chemical Analyzer",
+      "description": "<p>Determine chemical composition using sample database.</p>\n"
+    },
+    "Computer": {
+      "name": "Computer",
+      "description": "<p>Desktop or laptop.</p>\n"
+    },
+    "Cryopump": {
+      "name": "Cryopump",
+      "description": "<p>\n  Briefcase-sized tool used for hooking up a wounded person. Places them in\n  stasis.\n</p>\n"
+    },
+    "Cryotank": {
+      "name": "Cryotank",
+      "description": "<p>Holds a fully-sized human, heals injuries faster than normal.</p>\n"
+    },
+    "Disposable Cell Phone": {
+      "name": "Disposable Cell Phone",
+      "description": "<p>Voice calls only.</p>\n"
+    },
+    "Drum Synthesizer": {
+      "name": "Drum Synthesizer",
+      "description": "<p>Makes drum sounds when connected to amplifier.</p>\n"
+    },
+    "Duct Tape": {
+      "name": "Duct Tape",
+      "description": "<p>Use it to tape stuff.</p>\n"
+    },
+    "Electric Guitar/Other Instrument": {
+      "name": "Electric Guitar/Other Instrument",
+      "description": "<p>Musical instrument. Electric instruments requires an amplifier.</p>\n"
+    },
+    "Flashlight": {
+      "name": "Flashlight",
+      "description": "<p>10h of light on a single charge. 100m/yd range.</p>\n"
+    },
+    "Food Stick": {
+      "name": "Food Stick",
+      "description": "<p>Meal replacement bar.</p>\n"
+    },
+    "Glow Paint": {
+      "name": "Glow Paint",
+      "description": "<p>Spraypaint with glow-in-the-dark effect.</p>\n"
+    },
+    "Glow Stick": {
+      "name": "Glow Stick",
+      "description": "<p>Duration: 10h. Range: 4m/yds.</p>\n"
+    },
+    "Grapple Gun": {
+      "name": "Grapple Gun",
+      "description": "<p>Range: 30m/yds. Not usable as weapon.</p>\n"
+    },
+    "Handcuffs": {
+      "name": "Handcuffs",
+      "description": "<p>BODY>10 can break.</p>\n"
+    },
+    "Homing Tracer": {
+      "name": "Homing Tracer",
+      "description": "<p>Range: 1 mile.</p>\n"
+    },
+    "Inflatable Bed & Sleep-bag": {
+      "name": "Inflatable Bed & Sleep-bag",
+      "description": "<p>Portable sleeping set.</p>\n"
+    },
+    "Kibble Pack": {
+      "name": "Kibble Pack",
+      "description": "<p>One meal.</p>\n"
+    },
+    "Linear Frame β (Beta)": {
+      "name": "Linear Frame β (Beta)",
+      "description": "<p>Exoskeleton.</p>\n<ul>\n  <li>Requires 2 Interface Plugs</li>\n  <li>Increases BODY to 14 while plugged in</li>\n  <li>Does not affect HP or Deathsave due to BODY increase</li>\n</ul>\n"
+    },
+    "Linear Frame ∑ (Sigma)": {
+      "name": "Linear Frame ∑ (Sigma)",
+      "description": "<p>Exoskeleton.</p>\n<ul>\n  <li>Requires 1 Interface Plug</li>\n  <li>Increases BODY to 12 while plugged in</li>\n  <li>Does not affect HP or Deathsave due to BODY increase</li>\n</ul>\n"
+    },
+    "Lock Picking Set": {
+      "name": "Lock Picking Set",
+      "description": "<p>Needed to pick mechanical locks.</p>\n"
+    },
+    "Medscanner": {
+      "name": "Medscanner",
+      "description": "<p>+2 First Aid or Paramedic checks.</p>\n"
+    },
+    "Medtech Bag": {
+      "name": "Medtech Bag",
+      "description": "<p>Medical equipment.</p>\n"
+    },
+    "Memory Chip": {
+      "name": "Memory Chip",
+      "description": "<p>Data storage.</p>\n"
+    },
+    "MRE": {
+      "name": "MRE",
+      "description": "<p>Portable meal. Self-heating.</p>\n"
+    },
+    "Personal CarePak": {
+      "name": "Personal CarePak",
+      "description": "<p>Toothbrush etc.</p>\n"
+    },
+    "Pocket Amplifier": {
+      "name": "Pocket Amplifier",
+      "description": "<p>Duration: 6h. Supports two instruments.</p>\n"
+    },
+    "Radar Detector": {
+      "name": "Radar Detector",
+      "description": "<p>Detect radar beam. Range: 100m/yd</p>\n"
+    },
+    "Radiation Suit": {
+      "name": "Radiation Suit",
+      "description": "<p>Protects the wearer from radiation.</p>\n"
+    },
+    "Radio Communicator": {
+      "name": "Radio Communicator",
+      "description": "<p>Range: 1 mile. In-ear.</p>\n"
+    },
+    "Radio Scanner/Music Player": {
+      "name": "Radio Scanner/Music Player",
+      "description": "<p>Receive radio transmissions. Range: 1 mile.</p>\n"
+    },
+    "Road Flare": {
+      "name": "Road Flare",
+      "description": "<p>Range: 100m/yd. Duration: 1h.</p>\n"
+    },
+    "Rope (60m/yd)": {
+      "name": "Rope (60m/yd)",
+      "description": "<p>Nylon.</p>\n"
+    },
+    "Scrambler/Descrambler": {
+      "name": "Scrambler/Descrambler",
+      "description": "<p>Comm scrambler/receiver.</p>\n"
+    },
+    "Tech Bag": {
+      "name": "Tech Bag",
+      "description": "<p>Tool bag.</p>\n"
+    },
+    "Techscanner": {
+      "name": "Techscanner",
+      "description": "<p>+2 to multiple TECH-based skills.</p>\n"
+    },
+    "Techtool": {
+      "name": "Techtool",
+      "description": "<p>Multi-purpose tool.</p>\n"
+    },
+    "Tent and Camping Equipment": {
+      "name": "Tent and Camping Equipment",
+      "description": "<p>For one person.</p>\n"
+    },
+    "Tracer Button": {
+      "name": "Tracer Button",
+      "description": "<p>Can be tracked from up to a mile away with a homing tracer.</p>\n"
+    },
+    "Vial of Biotoxin": {
+      "name": "Vial of Biotoxin",
+      "description": "<p>3d6 damage unless Resist Torture/Drugs. Armor does not apply.</p>\n"
+    },
+    "Vial of Poison": {
+      "name": "Vial of Poison",
+      "description": "<p>2d6 damage unless Resist Torture/Drugs. Armor does not apply.</p>\n"
+    },
+    "Video Camera": {
+      "name": "Video Camera",
+      "description": "<p>12hr per memory chip.</p>\n"
+    },
+    "Virtuality Goggles": {
+      "name": "Virtuality Goggles",
+      "description": "<p>Overlay cyberspace imagery onto vision.</p>\n"
+    }
+  }
+}

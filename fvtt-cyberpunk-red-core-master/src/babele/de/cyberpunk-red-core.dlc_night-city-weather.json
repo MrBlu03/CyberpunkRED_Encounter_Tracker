@@ -1,0 +1,29 @@
+{
+  "label": "Night City Wetter",
+  "mapping": {
+    "dvTable": "system.dvTable"
+  },
+  "entries": {
+    "Umbrella": {
+      "name": "Regenschirm",
+      "description": "<p>Schützt vor Säureregen. Säureregen trägt pro Minute 1 SW von aller Rüstung ab (NCW S. 4).</p>\n<p>+2 auf Folter/Drogen widerstehen gegen Blutregen. Schwerer Blutregen hat bei Misserfolg die Wirkung einer Flasche mit Biotoxin. (NCW S. 4).</p>"
+    },
+    "Cold-Weather Jacket Lining": {
+      "name": "Kaltwetter-Jackenfutter",
+      "description": "<p>Verbesserung für alle Jacken-Modegegenstände. Schützt den Träger vor Umwelteinflüssen durch kalte Temperaturen (CP:R S. 180).</p>"
+    },
+    "Hot-Weather Jacket Lining": {
+      "name": "Hitzewetter-Jackenfutter",
+      "description": "<p>Verbesserung für jeden Jacken-Modegegenstand. Schützt den Träger vor Umwelteinflüssen durch heiße Temperaturen (CP:R S. 180).</p>\n<p>Hitzewellen verdoppelt alle Abzüge durch schwere Rüstung (NCW S. 5). Beispielsweise erhält ein Träger von einem Mittelschwerem Panzeranzug während einer Hitzewelle -4 auf BEW, GES und REF. Hitzewetter-Jackenfutter senkt jeden dieser Abzüge um 1.</p>"
+    },
+    "Waterproof Jacket Lining": {
+      "name": "Wasserdichtes Jackenfutter",
+      "description": "<p dir=\"ltr\">Verbesserung für jeden Jacken-Modegegenstand. Ähnelt mechanisch einem Regenschirm und taugt nicht als Taucheranzug.</p>\n<p>Schützt vor Säureregen. Säureregen trägt pro Minute 1 SW von aller Rüstung ab (NCW S. 4).</p>\n<p>+2 auf Folter/Drogen widerstehen gegen Blutregen. Schwerer Blutregen hat bei Misserfolg die Wirkung einer Flasche mit Biotoxin. (NCW S. 4).</p>"
+    },
+    "Tactical Umbrella": {
+      "name": "Taktischer Regenschirm",
+      "description": "<p>Stylischer Regenschirm mit Pop-Up-Waffen. Enthält eine Exotische Schwere Pistole von Schlechter Qualität. (2 Schuss Kapazität).</p>\n<p>Multiple Waffenmodi: Der Taktische Regenschirm enthält außerdem eine Exotische Schwere Nahkampfwaffe von Hervorragender Qualität.</p>\n<p>Bietet den selben Schutz eines normalen Regenschirms. (NCW S. 6)</p>",
+      "dvTable": "SG Pistole"
+    }
+  }
+}

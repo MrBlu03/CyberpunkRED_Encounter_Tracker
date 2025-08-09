@@ -1,0 +1,111 @@
+{
+  "label": "Tabelle Architettura di Rete",
+  "mapping": {},
+  "entries": {
+    "All Other Floors (Advanced)": {
+      "name": "Tutti Gli Altri Piani (Avanzate)",
+      "results": [
+        {
+          "3-3": "Cerbero",
+          "4-4": "Cobra x2",
+          "5-5": "Cerbero, Killer",
+          "6-6": "Cerbero",
+          "7-7": "Cerbero, Sabertooth",
+          "8-8": "Cerbero",
+          "9-9": "Password VD10",
+          "10-10": "File VD10",
+          "11-11": "Nodo di Controllo VD10",
+          "12-12": "Password VD10",
+          "13-13": "Cobra",
+          "14-14": "Cobra",
+          "15-15": "Dragon",
+          "16-16": "Cobra",
+          "17-17": "Dragon, Sprite",
+          "18-18": "Dragon x2"
+        }
+      ]
+    },
+    "All Other Floors (Basic)": {
+      "name": "Tutti Gli Altri Piani (Base)",
+      "results": [
+        {
+          "3-3": "Cerbero",
+          "4-4": "Cobra x2",
+          "5-5": "Cerbero, Killer",
+          "6-6": "Cerbero",
+          "7-7": "Cerbero, Sabertooth",
+          "8-8": "Cerbero",
+          "9-9": "Password VD10",
+          "10-10": "File VD10",
+          "11-11": "Nodo di Controllo VD10",
+          "12-12": "Password VD10",
+          "13-13": "Cobra",
+          "14-14": "Cobra",
+          "15-15": "Dragon",
+          "16-16": "Cobra",
+          "17-17": "Dragon, Sprite",
+          "18-18": "Dragon x2"
+        }
+      ]
+    },
+    "All Other Floors (Standard)": {
+      "name": "Tutti gli altri Piani (Standard)",
+      "results": [
+        {
+          "3-3": "Cerbero",
+          "4-4": "Cobra x2",
+          "5-5": "Cerbero, Killer",
+          "6-6": "Cerbero",
+          "7-7": "Cerbero, Sabertooth",
+          "8-8": "Cerbero",
+          "9-9": "Password VD10",
+          "10-10": "File VD10",
+          "11-11": "Nodo di Controllo VD10",
+          "12-12": "Password VD10",
+          "13-13": "Cobra",
+          "14-14": "Cobra",
+          "15-15": "Dragon",
+          "16-16": "Cobra",
+          "17-17": "Dragon, Sprite",
+          "18-18": "Dragon x2"
+        }
+      ]
+    },
+    "All Other Floors (Uncommon)": {
+      "name": "Tutti gli altri Piani (Non Comune)",
+      "results": [
+        {
+          "3-3": "Cerbero",
+          "4-4": "Cobra x2",
+          "5-5": "Cerbero, Killer",
+          "6-6": "Cerbero",
+          "7-7": "Cerbero, Sabertooth",
+          "8-8": "Cerbero",
+          "9-9": "Password VD10",
+          "10-10": "File VD10",
+          "11-11": "Nodo di Controllo VD10",
+          "12-12": "Password VD10",
+          "13-13": "Cobra",
+          "14-14": "Cobra",
+          "15-15": "Dragon",
+          "16-16": "Cobra",
+          "17-17": "Dragon, Sprite",
+          "18-18": "Dragon x2"
+        }
+      ]
+    },
+    "First Two Floors (The Lobby)": {
+      "name": "Primi Due Piani (La Lobby)",
+      "results": [
+        {
+          "1-1": "File VD6",
+          "2-2": "Password VD6",
+          "3-3": "Password VD8",
+          "4-4": "Skunk",
+          "5-5": "Sprite",
+          "6-6": "Killer"
+        }
+      ]
+    }
+  }
+}

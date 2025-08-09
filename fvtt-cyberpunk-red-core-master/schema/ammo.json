@@ -1,0 +1,141 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$ref": "#/definitions/CPRC-Ammo",
+  "definitions": {
+    "CPRC-Ammo": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Definition of an Ammo Compendium Item for FVTT system Cyberpunk RED - Core",
+      "properties": {
+        "_id": {
+          "$ref": "./components/id.json"
+        },
+        "_key": {
+          "$ref": "./components/key.json"
+        },
+        "effects": {
+          "$ref": "./components/effects.json"
+        },
+        "flags": {
+          "$ref": "./components/flags.json"
+        },
+        "img": {
+          "$ref": "./components/img.json"
+        },
+        "name": {
+          "$ref": "./components/name.json"
+        },
+        "system": {
+          "$ref": "#/definitions/System"
+        },
+        "type": {
+          "description": "The Foundry/System Item type",
+          "type": "string",
+          "const": "ammo"
+        }
+      },
+      "required": ["_id", "_key", "effects", "img", "name", "system", "type"]
+    },
+    "System": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "CPRC Ammo Item definition",
+      "properties": {
+        "ablationValue": {
+          "description": "Ablation Value of Ammo",
+          "type": "integer"
+        },
+        "amount": {
+          "$ref": "./components/stackable/amount.json"
+        },
+        "brand": {
+          "$ref": "./components/physical/brand.json"
+        },
+        "concealable": {
+          "$ref": "./components/physical/concealable.json"
+        },
+        "overrides": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "Ammo damage may override or modify weapon damage. Autofire may be modified by ammo.",
+          "properties": {
+            "damage": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "mode": {
+                  "type": "string",
+                  "enum": ["none", "set", "modify"]
+                },
+                "value": {
+                  "type": "string",
+                  "pattern": "^-?[0-9]{1,2}d6$|^0$"
+                },
+                "minimum": {
+                  "type": "string",
+                  "pattern": "^[0-9]{1,2}d6$|^0$"
+                }
+              },
+              "required": ["mode", "value", "minimum"]
+            },
+            "autofire": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "mode": {
+                  "type": "string",
+                  "enum": ["none", "set", "modify"]
+                },
+                "value": {
+                  "type": "integer"
+                },
+                "minimum": {
+                  "type": "integer"
+                }
+              },
+              "required": ["mode", "value", "minimum"]
+            }
+          },
+          "required": ["damage", "autofire"]
+        },
+        "description": {
+          "$ref": "./components/common/description.json"
+        },
+        "favorite": {
+          "$ref": "./components/common/favorite.json"
+        },
+        "installLocation": {
+          "$ref": "./components/installable/installLocation.json"
+        },
+        "price": {
+          "$ref": "./components/valuable/price.json"
+        },
+        "size": {
+          "$ref": "./components/installable/size.json"
+        },
+        "source": {
+          "$ref": "./components/common/source.json"
+        },
+        "type": {
+          "$ref": "./components/loadable/ammoTypes.json"
+        },
+        "variety": {
+          "$ref": "./components/loadable/ammoVarietyString.json"
+        }
+      },
+      "required": [
+        "ablationValue",
+        "amount",
+        "brand",
+        "concealable",
+        "description",
+        "favorite",
+        "overrides",
+        "price",
+        "source",
+        "type",
+        "variety"
+      ]
+    }
+  }
+}

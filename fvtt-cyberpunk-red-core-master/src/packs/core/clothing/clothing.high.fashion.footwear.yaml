@@ -1,0 +1,39 @@
+_id: KrtzKNCfYvzuV4Vm
+_key: "!items!KrtzKNCfYvzuV4Vm"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/clothing/generic_footwear.svg
+name: High Fashion Footwear
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        Made from the most expensive quality materials and by the most exclusive
+        producers, this is what you wear when you've made it. The kind of fashion you
+        see supermodels wearing in videos on the Citinet.
+      </p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: false
+  price:
+    market: 5000
+  providesHardening: false
+  revealed: true
+  source:
+    book: Core
+    page: 356
+  style: highFashion
+  type: footwear
+  usage: equipped
+type: clothing

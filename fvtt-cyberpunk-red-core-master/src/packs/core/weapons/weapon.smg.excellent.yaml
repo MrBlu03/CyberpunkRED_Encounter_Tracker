@@ -1,0 +1,51 @@
+_id: MmFM7zOUJI6ik1AP
+_key: "!items!MmFM7zOUJI6ik1AP"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/weapons/SMG_excellent.svg
+name: SMG (Excellent)
+system:
+  ammoVariety:
+    - medPistol
+  attackmod: 1
+  brand: ""
+  concealable:
+    concealable: true
+    isConcealed: false
+  critFailEffect: jammed
+  damage: 2d6
+  description:
+    value: |
+      <p>A concealable SMG. +1 to Attack.</p>
+  dvTable: DV SMG
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 3
+    suppressiveFire: true
+  handsReq: 1
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+      - ammo
+    list: []
+    slots: 3
+    usedSlots: 0
+  isRanged: true
+  magazine:
+    max: 30
+    value: 0
+  price:
+    market: 500
+  quality: excellent
+  revealed: true
+  rof: 1
+  source:
+    book: Core
+    page: 341
+  unarmedAutomaticCalculation: true
+  usage: equipped
+  usesType: magazine
+  weaponSkill: Handgun
+  weaponType: smg
+type: weapon

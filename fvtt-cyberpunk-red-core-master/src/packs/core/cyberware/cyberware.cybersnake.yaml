@@ -1,0 +1,56 @@
+_id: YPujgoyVf2ZBR1hK
+_key: "!items!YPujgoyVf2ZBR1hK"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/cyberware/cybersnake.svg
+name: Cybersnake
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  core: false
+  damage: 4d6
+  description:
+    value: |
+      <p>A throat snake which is a Very Heavy Melee weapon.</p>
+  dvTable: ""
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  humanityLoss:
+    roll: 4d6
+    static: 14
+  installLocation: hospital
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: true
+  isFoundational: false
+  isRanged: false
+  isWeapon: true
+  magazine:
+    max: 0
+    value: 0
+  price:
+    market: 1000
+  providesHardening: false
+  revealed: true
+  rof: 1
+  size: 1
+  source:
+    book: Core
+    page: 363
+  type: cyberwareInternal
+  unarmedAutomaticCalculation: true
+  usage: toggled
+  usesType: magazine
+  weaponSkill: Melee Weapon
+  weaponType: vHeavyMelee
+type: cyberware

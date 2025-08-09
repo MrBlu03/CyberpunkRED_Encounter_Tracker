@@ -1,0 +1,20 @@
+_id: TM1yunkgm8iUAsFZ
+_key: "!items!TM1yunkgm8iUAsFZ"
+effects: []
+img: icons/svg/item-bag.svg
+name: Pilot Sea Vehicle
+system:
+  basic: false
+  category: controlSkills
+  core: true
+  description:
+    value: ""
+  difficulty: typical
+  favorite: false
+  level: 0
+  skillType: generic
+  source:
+    book: Core
+    page: 132
+  stat: ref
+type: skill

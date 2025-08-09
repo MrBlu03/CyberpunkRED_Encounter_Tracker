@@ -1,0 +1,118 @@
+{
+  "label": "Gear",
+  "mapping": {},
+  "entries": {
+    "MechaMan Smart Glove": {
+      "name": "MechaMan Smart Glove",
+      "description": "<p>\n  A biking glove that comes with a subdermal grip pre-installed* which requires\n  a neural link to use. Has 1 additional cyberarm option slot. Any options\n  stored in the Cyberhand or meat hand are inaccessible while the Smart Glove is\n  being worn.<br /><em\n    >*Subdermal Grip must be added and installed manually after acquiring the\n    glove, this effectively consumes one of the option slots.</em\n  >\n</p>\n"
+    },
+    "ChipVault by SecSystems": {
+      "name": "ChipVault by SecSystems",
+      "description": "<p>\n  Can hold up to 8 pieces of Chipware. Chipware stored inside are immune to EMP\n  effects.\n</p>\n"
+    },
+    "CO2 Tank": {
+      "name": "CO2 Tank",
+      "description": "<p>\n  A CO<sub>2</sub> tank designed for usage with the Masetto AirRider armor. Must\n  be replaced after every usage.\n</p>\n"
+    },
+    "Drink Master 3000": {
+      "name": "Drink Master 3000",
+      "description": "<p>\n  Can make 10 beverages out of a 3000 beverages library before needing to be\n  refilled. Can also make Smash.\n</p>\n"
+    },
+    "EL-F4-NT Linear Frame": {
+      "name": "EL-F4-NT Linear Frame",
+      "description": "<p>Exoskeleton.</p>\n<ul>\n  <li>Increases BODY to 12 while equipped</li>\n  <li>Does not affect HP or Deathsave</li>\n  <li>Has pre-installed pair of Techtools</li>\n</ul>\n"
+    },
+    "Everest VentureWare AirWell 50": {
+      "name": "Everest VentureWare AirWell 50",
+      "description": "<p>Produces enough water to sustain a person.</p>\n"
+    },
+    "Everest VentureWare One Touch Habitat": {
+      "name": "Everest VentureWare One Touch Habitat",
+      "description": "<p>\n  Provides protection from Exposure. Counts as Sleeping in the Wilderness or as\n  Sleeping on the Streets.\n</p>\n"
+    },
+    "Fūma Kotarō Linear Frame": {
+      "name": "Fūma Kotarō Linear Frame",
+      "description": "<p>Exoskeleton.</p>\n<ul>\n  <li>Requires 2 Interface Plugs</li>\n  <li>Increases BODY to 12 while plugged in</li>\n  <li>Does not affect HP or Deathsave</li>\n  <li>Stealth +2</li>\n  <li>Drawing and sheathing the frame's weapons does not require an Action</li>\n  <li>\n    A Conceal check is not required for the weapons concealed in the frame.\n  </li>\n  <li>\n    <p>Frame has one of two weapon options*:</p>\n    <ul>\n      <li>Two excellent quality exotic heavy melee weapons</li>\n      <li>\n        One excellent quality light melee weapon and one excellent quality\n        exotic very heavy melee weapon\n      </li>\n    </ul>\n  </li>\n</ul>\n<p><em>* Must be manually added.</em></p>\n"
+    },
+    "Hydrosubsidium Universal Aqualung": {
+      "name": "Hydrosubsidium Universal Aqualung",
+      "description": "<p>\n  When worn, User can breathe underwater as long as within 10 m/yards of the\n  surface.\n</p>\n"
+    },
+    "Jeeves Executive Garment Bag": {
+      "name": "Jeeves Executive Garment Bag",
+      "description": "<p>Bag that can repair one piece of fashion or armor at a time.</p>\n"
+    },
+    "KillStrom Banshee Microphone": {
+      "name": "KillStrom Banshee Microphone",
+      "description": "<p>\n  Wireless Microphone Headset. Gives the User a +2 bonus to Play Instrument\n  (Singing) Skill Checks while worn. Doesn't stack with other bonuses to Play\n  Instrument.\n</p>\n"
+    },
+    "KillStrom Sonic Boom Amp": {
+      "name": "KillStrom Sonic Boom Amp",
+      "description": "<p>\n  While linked to an instrument, the User can take an Action to make everyone\n  nearby make a Resist Torture/Drugs Check.\n</p>\n"
+    },
+    "KillStrom Typhoid Speaker": {
+      "name": "KillStrom Typhoid Speaker",
+      "description": "<p>\n  When linked to a KillStrom Sonic Boom Amp, increases the DV of the Resist\n  Torture/Drugs Check.\n</p>\n"
+    },
+    "KTech Doberman 500": {
+      "name": "KTech Doberman 500",
+      "description": "<p>Canine Personal Drone that can be linked to an Agent.</p>\n"
+    },
+    "Laser Light Electric Guitar": {
+      "name": "Laser Light Electric Guitar",
+      "description": "<p>\n  Electric Guitar that gives the User a +1 to their Play Instrument (Guitar)\n  Skill Check. This guitar also counts as one installation of Light Tattoo\n  Fashionware while worn.\n</p>\n"
+    },
+    "LF-001 SWAT Linear Frame": {
+      "name": "LF-001 SWAT Linear Frame",
+      "description": "<p>Exoskeleton.</p>\n<ul>\n  <li>Requires 2 Interface Plugs</li>\n  <li>Increases BODY to 12 while plugged in</li>\n  <li>Does not affect HP or Deathsave</li>\n  <li>Ignores the normal movement penalty for climbing and swimming</li>\n</ul>\n"
+    },
+    "Mr. Biscuit Multi-Food Processor": {
+      "name": "Mr. Biscuit Multi-Food Processor",
+      "description": "<p>Can sustain a group of up to 10 people when in the Outskirts.</p>\n"
+    },
+    "Petrochem Nitro Ultra9": {
+      "name": "Petrochem Nitro Ultra9",
+      "description": "<p>\n  Can be poured into a Vehicle's tank to refill it as an Action. Gives bonuses\n  to movement at the expense of safety.\n</p>\n"
+    },
+    "RapiDeploy Sheath": {
+      "name": "RapiDeploy Sheath",
+      "description": "<p>\n  Gives the User a +2 bonus to their Conceal/Reveal Skill Check if used to\n  conceal a weapon already capable of concealment.\n</p>\n"
+    },
+    "Shower•in•a•Can": {
+      "name": "Shower•in•a•Can",
+      "description": "<p>Spray Deodorant. Desinfects and deodorize. One use per can.</p>\n"
+    },
+    "SovOil Industrial Lubricant": {
+      "name": "SovOil Industrial Lubricant",
+      "description": "<p>Lubricant in a helpfully sized can.</p>\n"
+    },
+    "SovOil Medical Lubricant": {
+      "name": "SovOil Medical Lubricant",
+      "description": "<p>Lubricant in a helpfully sized can.</p>\n"
+    },
+    "SovOil Personal Lubricant": {
+      "name": "SovOil Personal Lubricant",
+      "description": "<p>Lubricant in a helpfully sized can.</p>\n"
+    },
+    "Streetcase by SecSystems": {
+      "name": "Streetcase by SecSystems",
+      "description": "<p>Can carry many easily accessible items that YOU need to stay safe.</p>\n"
+    },
+    "Triti-Fizz": {
+      "name": "Triti-Fizz",
+      "description": "<p>North America's favorite soft drink.</p>\n"
+    },
+    "Vermilion Linear Frame": {
+      "name": "Vermilion Linear Frame",
+      "description": "<p>Exoskeleton.</p>\n<ul>\n  <li>Requires 2 Interface Plugs</li>\n  <li>Increases BODY to 12 while plugged in</li>\n  <li>No changes to your HP or Deathsave</li>\n  <li>No movement penalty for jumping</li>\n  <li>Operates as if paired Skate Feet are installed</li>\n</ul>\n"
+    },
+    "WorldSat Aerial Sphere": {
+      "name": "WorldSat Aerial Sphere",
+      "description": "<p>\n  When set up, provides access to a Citinet when within 50 miles of the city or\n  of another set up WorldSat Aerial Sphere that is connected to the Citinet.\n</p>\n"
+    },
+    "Zetatech Porta-Printer": {
+      "name": "Zetatech Porta-Printer",
+      "description": "<p>\n  Miniature Workshop. Allows a Tech to use Upgrade and Fabrication Expertise\n  anywhere as long as they have techtools.\n</p>\n"
+    }
+  }
+}

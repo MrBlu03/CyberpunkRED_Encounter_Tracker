@@ -1,0 +1,188 @@
+{
+  "label": "Armes (de Marques)",
+  "mapping": {
+    "dvTable": "system.tableSD"
+  },
+  "entries": {
+    "Arasaka Minami 10": {
+      "name": "Minami 10 d'Arasaka",
+      "description": "<p>Un pistolet-mitrailleur. Dissimulable. +1 au jet d'attaque.</p>\n",
+      "dvTable": "SD Pistolet-mitrailleur"
+    },
+    "Arasaka Rapid Assault": {
+      "name": "Rapid Assault d'Arasaka",
+      "description": "<p>Un fusil à pompe polyvalent. </p>\n",
+      "dvTable": "SD Fusil à pompe (Slug)"
+    },
+    "Arasaka WSSA Sniper System": {
+      "name": "WSSA Sniper System d’Arasaka",
+      "description": "<p>Un fusil de précision longue portée. Chargeur de 4 balles. +1 à l'attaque.</p>\n",
+      "dvTable": "SD Fusil de précision"
+    },
+    "Chadran Arms City Reaper": {
+      "name": "City Reaper de Chadran Arms",
+      "description": "<p>Pistolet-mitrailleur lourd. Non dissimulable. Si vous faites 1 sur un jet d'attaque (Échec critique) l'arme est enrayée et cela nécessite une action pour la désenrayer.</p>\n",
+      "dvTable": "SD Pistolet-mitrailleur"
+    },
+    "Chadran Arms Jungle Reaper": {
+      "name": "Jungle Reaper de Chadran Arms",
+      "description": "<p>Un fusil d'assaut. Si vous faites 1 sur un jet d'attaque (Échec critique) l'arme est enrayée et cela nécessite une action pour la désenrayer.</p>\n",
+      "dvTable": "SD Fusil d'assaut"
+    },
+    "Dai Lung Magnum": {
+      "name": "Magnum de Dai Lung",
+      "description": "<p>Un pistolet lourd. Dissimulable. Si vous faites 1 sur un jet d'attaque (Échec critique) l'arme est enrayée et cela nécessite une action pour la désenrayer.</p>\n",
+      "dvTable": "SD Pistolet"
+    },
+    "Dai Lung Streetmaster": {
+      "name": "Streetmaster de Dai Lung",
+      "description": "<p>\n  Un pistolet moyen. Dissimulable. Si vous faites 1 sur un jet d'attaque (Échec critique)\n  l'arme est enrayée et cela nécessite une action pour la désenrayer.\n</p>\n",
+      "dvTable": "SD Pistolet"
+    },
+    "Eagletech Bearcat": {
+      "name": "Bearcat d’Eagletech",
+      "description": "<p>\n  Un arc repliable marqué du logo Eagletech, rechargement compris dans \n  l'action d'attaque.\n</p>\n<p>+1 au jet d'attaque.</p>\n",
+      "dvTable": "SD Arcs et arbalètes"
+    },
+    "Eagletech Scorpion": {
+      "name": "Scorpion d’Eagletech",
+      "description": "<p>\n  Une arbalète élégante marquée du logo Eagletech, rechargement compris dans \n  l'action d'attaque.\n</p>\n<p>+1 au jet d'attaque.</p>\n",
+      "dvTable": "SD Arcs et arbalètes"
+    },
+    "Eagletech Striker": {
+      "name": "Striker d’Eagletech",
+      "description": "<p>\n  Une arbalète marquée du logo Eagletech, rechargement compris dans \n  l'action d'attaque.\n</p>\n",
+      "dvTable": "SD Arcs et arbalètes"
+    },
+    "Eagletech Tomcat": {
+      "name": "Tomcat d’Eagletech",
+      "description": "<p>\n  Un arc moderne marqué du logo Eagletech, rechargement compris dans \n  l'action d'attaque.\n</p>\n",
+      "dvTable": "SD Arcs et arbalètes"
+    },
+    "Federated Arms Super Chief": {
+      "name": "Super Chef de Federated Arms",
+      "description": "<p>\n  Un pistolet très lourd. Non dissimulable. Si vous faites 1 sur un jet d'attaque \n  (Échec critique) l'arme est enrayée et cela nécessite une action pour la désenrayer.\n</p>\n",
+      "dvTable": "SD Pistolet"
+    },
+    "Federated Arms Tech-Assault III": {
+      "name": "Tech-Assault III de Federated Arms",
+      "description": "<p>\n  Pistolet-mitrailleur. Dissimulable. Si vous faites 1 sur un jet d'attaque \n  (Échec critique) l'arme est enrayée et cela nécessite une action pour la désenrayer.\n</p>\n",
+      "dvTable": "SD Pistolet-mitrailleur"
+    },
+    "Federated Arms X-9mm": {
+      "name": "Federated Arms X-9mm",
+      "description": "<p>Un pistolet moyen. Dissimulable. </p>\n",
+      "dvTable": "SD Pistolet"
+    },
+    "GunMart Home Defender": {
+      "name": "Home Defender de GunMart",
+      "description": "<p>\n  Un fusil à pompe polyvalent. Si vous faites 1 sur un jet d'attaque (Échec critique) \n  l'arme est enrayée et cela nécessite une action pour le désenrayer.\n</p>\n",
+      "dvTable": "SD Fusil à pompe (Slug)"
+    },
+    "GunMart Hunter": {
+      "name": "Hunter de GunMart",
+      "description": "<p>\n  Une arbalète de mauvaise qualité marquée du logo GunMart, rechargement \n  compris dans l'action d'attaque.\n</p>\n<p>\n  Si vous faites 1 sur un jet d'attaque (Échec critique) l'arme est enrayée et cela \n  nécessite une action pour la désenrayer.\n</p>\n",
+      "dvTable": "SD Arcs et arbalètes"
+    },
+    "GunMart Sherwood": {
+      "name": "Sherwood de GunMart",
+      "description": "<p>\n  Un arc de mauvaise qualité marqué du logo GunMart, rechargement \n  compris dans l'action d'attaque.\n</p>\n<p>\n  Si vous faites 1 sur un jet d'attaque (Échec critique) l'arme est enrayée et cela \n  nécessite une action pour la désenrayer.\n</p>\n",
+      "dvTable": "SD Arcs et arbalètes"
+    },
+    "GunMart Snipe-Star": {
+      "name": "Snipe-Star de GunMart",
+      "description": "<p>\n  Un fusil de précision longue portée. Chargeur de 4 balles. Si vous faites 1 sur un jet d'attaque\n  (Échec critique) l'arme est enrayée et cela nécessite une action pour la désenrayer.\n</p>\n",
+      "dvTable": "SD Fusil de précision"
+    },
+    "Militech Avenger": {
+      "name": "Avenger de Militech",
+      "description": "<p>Un pistolet moyen. Dissimulable. +1 au jet d'attaque.</p>\n",
+      "dvTable": "SD Pistolet"
+    },
+    "Militech Boomer Buster": {
+      "name": "Boomer Buster de Militech",
+      "description": "<p>Un pistolet très lourd. Non dissimulable. +1 au jet d'attaque.</p>\n",
+      "dvTable": "SD Pistolet"
+    },
+    "Militech Bulldog": {
+      "name": "Bulldog de Militech",
+      "description": "<p>Fusil à pompe polyvalent. +1 au jet d'attaque.</p>\n",
+      "dvTable": "SD Fusil à pompe (Slug)"
+    },
+    "Militech Dragon": {
+      "name": "Dragon de Militech",
+      "description": "<p>Un fusil d'assaut. +1 au jet d'attaque.</p>\n",
+      "dvTable": "SD Fusil d'assaut"
+    },
+    "Militech Hotshot": {
+      "name": "Hotshot de Militech",
+      "description": "<p>\n  Sortez l'artillerie lourde. Ce lance-roquettes va faire des dégâts. +1 au \n  jet d'attaque.\n</p>\n",
+      "dvTable": "SD Lance-roquettes"
+    },
+    "Militech Mini-Gat": {
+      "name": "Mini-Gat de Militech",
+      "description": "<p>Un pistolet-mitrailleur. Dissimulable.</p>\n",
+      "dvTable": "SD Pistolet-Mitrailleur"
+    },
+    "Militech Mini-Grenade": {
+      "name": "Mini-Grenade de Militech",
+      "description": "<p>Un lance-grenades avec lequel vous pouvez utiliser une grande variété de grenades.</p>\n",
+      "dvTable": "SD Lance-grenades"
+    },
+    "Militech Ronin": {
+      "name": "Ronin Militech",
+      "description": "<p>Un fusil d'assaut.</p>\n",
+      "dvTable": "SD Fusil d'assaut"
+    },
+    "Militech Urban": {
+      "name": "Urban de Militech",
+      "description": "<p> Sortez l'artillerie lourde. Ce lance-roquettes va faire des dégâts.</p>\n",
+      "dvTable": "SD Lance-roquettes"
+    },
+    "Militech Viper": {
+      "name": "Viper de Militech",
+      "description": "<p>Un pistolet-mitrailleur lourd. Non dissimulable. +1 au jet d'attaque.</p>\n",
+      "dvTable": "SD Pistolet-mitrailleur"
+    },
+    "Mustang Arms Mark III": {
+      "name": "Mark III de Mustang Arms",
+      "description": "<p>Un pistolet lourd. Dissimulable.</p>\n",
+      "dvTable": "SD Pistolet"
+    },
+    "Nomad Long Rifle": {
+      "name": "Long Rifle de Nomad",
+      "description": "<p>\n  Un fusil de précision longue distance, fréquemment utilisé par les nomades. \n  Chargeur de 4 balles.\n</p>\n",
+      "dvTable": "SD Fusil de précision"
+    },
+    "Nova Cityhunter": {
+      "name": "Cityhunter de Nova",
+      "description": "<p>Un pistolet lourd. Dissimulable. +1 au jet d'attaque.</p>\n",
+      "dvTable": "SD Pistolet"
+    },
+    "Sternmeyer P-35": {
+      "name": "Sternmeyer P-35",
+      "description": "<p>Un pistolet très lourd. Non dissimulable </p>\n",
+      "dvTable": "SD Pistolet"
+    },
+    "Sternmeyer SMG-21": {
+      "name": "Sternmeyer SMG-21",
+      "description": "<p>Un pistolet-mitrailleur lourd. Non dissimulable.</p>\n",
+      "dvTable": "SD Pistolet-mitrailleur"
+    },
+    "Towa Manufacturing Type-G": {
+      "name": "Type-G de Towa Manufacturing",
+      "description": "<p>\n  Lance-grenades avec lequel vous pouvez utiliser une grande variété de grenades. \n  Si vous faites 1 sur un jet d'attaque (Échec critique) l'arme est enrayée et cela \n  nécessite une action pour la désenrayer.\n</p>\n",
+      "dvTable": "SD Lance-grenades"
+    },
+    "Towa Manufacturing Type-R": {
+      "name": "Type-R de Towa Manufacturing",
+      "description": "<p>\n  Sortez l'artillerie lourde. Ce lance-roquettes va faire des dégâts. Si vous faites 1 \n  sur un jet d'attaque (Échec critique) l'arme est enrayée et cela nécessite \n  une action pour la désenrayer.\n</p>\n",
+      "dvTable": "SD Lance-roquettes"
+    },
+    "Tsunami Arms Type-18": {
+      "name": "Type-18 de Tsunami Arms",
+      "description": "<p>\n  Lance-grenades avec lesquels vous pouvez utiliser une grande variété de \n  grenades. +1 au jet d'attaque.\n</p>\n",
+      "dvTable": "SD Lance-grenades"
+    }
+  }
+}

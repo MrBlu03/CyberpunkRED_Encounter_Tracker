@@ -1,0 +1,33 @@
+_id: XrmjWt5BvX6meuUs
+_key: "!items!XrmjWt5BvX6meuUs"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/ammo/paintball_basic.png
+name: Paintball (Basic)
+system:
+  ablationValue: 0
+  amount: 10
+  brand: ""
+  concealable:
+    concealable: true
+    isConcealed: false
+  description:
+    value: |
+      <p>Regular paintballs that don't do any damage. Annoying though.</p>
+  favorite: false
+  overrides:
+    autofire:
+      minimum: 3
+      mode: none
+      value: -1
+    damage:
+      minimum: 1d6
+      mode: set
+      value: "0"
+  price:
+    market: 10
+  source:
+    book: Core
+    page: 347
+  type: basic
+  variety: paintball
+type: ammo

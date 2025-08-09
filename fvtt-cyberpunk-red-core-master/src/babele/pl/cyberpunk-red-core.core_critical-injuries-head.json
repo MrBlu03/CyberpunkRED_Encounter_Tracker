@@ -1,0 +1,50 @@
+{
+  "label": "Rany Krytyczne (Głowa)",
+  "mapping": {},
+  "entries": {
+    "Brain Injury": {
+      "name": "Uraz mózgu",
+      "description": "<p>-2 do wszystkich akcji. +1 PT do Testu Przeżywalności.</p>"
+    },
+    "Broken Jaw": {
+      "name": "Złamana szczęka",
+      "description": "<p>-4 do akcji mowy.</p>"
+    },
+    "Concussion": {
+      "name": "Wstrząśnienie mózgu",
+      "description": "<p>-2 to every action.</p>"
+    },
+    "Cracked Skull": {
+      "name": "Pęknięta czaszka",
+      "description": "<p>Triples damage to HP on aimed headshots (rather than the normal double damage).</p>"
+    },
+    "Crushed Windpipe": {
+      "name": "Zmiażdżona krtań",
+      "description": "<p>Nie możesz mówić. +1 PT do Testu Przeżywalności.</p>"
+    },
+    "Damaged Ear": {
+      "name": "Uraz ucha",
+      "description": "<p>If move more than 4m/yds in a Turn, cannot move next turn. -2 to hearing based Perception.</p>"
+    },
+    "Damaged Eye": {
+      "name": "Uraz oka",
+      "description": "<p>-2 to Ranged and Perception (Sight).</p>"
+    },
+    "Foreign Object (H)": {
+      "name": "Ciało obce (G)",
+      "description": "<p>Otrzymujesz obrażenia krytyczne tej rany na koniec tury jeśli ruszysz się więcej niż 4m/jardy pieszo. Pancerz nie redukuje tych obrażeń.</p>"
+    },
+    "Lost Ear": {
+      "name": "Urwane ucho",
+      "description": "<p>Ear is removed. If move more than 4m/yds in a Turn, cannot move next turn. -4 to hearing based Perception.</p>"
+    },
+    "Lost Eye": {
+      "name": "Utrata oka",
+      "description": "<p>Eye is removed. -4 to Ranged Attacks and vision based Perception.</p>"
+    },
+    "Whiplash": {
+      "name": "Odgięciowy uraz kręgosłupa szyjnego",
+      "description": "<p>No other effects beyond increasing the base Death Save Penalty by 1.</p>"
+    }
+  }
+}

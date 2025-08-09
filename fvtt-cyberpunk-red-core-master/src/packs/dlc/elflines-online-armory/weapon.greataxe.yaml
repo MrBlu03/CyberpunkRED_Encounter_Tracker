@@ -1,0 +1,55 @@
+_id: syV8GagEmOsAOMkj
+_key: "!items!syV8GagEmOsAOMkj"
+effects: []
+img: icons/weapons/axes/axe-double-black.webp
+name: Greataxe
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: ""
+  canIgnoreArmor: true
+  concealable:
+    concealable: false
+    isConcealed: false
+  critFailEffect: jammed
+  damage: 4d6
+  description:
+    value: |
+      <p>
+        A wooden pole with a curved blade on each side. Favoured by raid parties for
+        close engagements. Requires 2 hands to wield even by a wielder with Body 8 or
+        higher.
+      </p>
+  dvTable: ""
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 2
+  ignoreArmorPercent: 50
+  ignoreBelowSP: 0
+  installedItems:
+    allowed: true
+    allowedTypes: []
+    list: []
+    slots: 0
+    usedSlots: 0
+  isRanged: false
+  magazine:
+    max: 0
+    value: 0
+  price:
+    market: 500
+  quality: standard
+  revealed: true
+  rof: 1
+  source:
+    book: ELO
+    page: 3
+  unarmedAutomaticCalculation: true
+  usage: equipped
+  usesType: magazine
+  weaponSkill: Melee Weapon
+  weaponType: vHeavyMelee
+type: weapon

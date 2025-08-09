@@ -1,0 +1,136 @@
+{
+  "label": "Achievements and Loot Boxes",
+  "mapping": {},
+  "entries": {
+    "A Box Bound Tightly in Rope": {
+      "name": "A Box Bound Tightly in Rope",
+      "results": [
+        {
+          "1-1": "Corda (60m/aa)",
+          "2-2": "Óculos de Virtualidade",
+          "3-3": "Arma de Agarramento",
+          "4-4": "Ampola de Veneno",
+          "5-5": "Joias Urbanas em Flash",
+          "6-6": "Pacote de Bateria"
+        }
+      ]
+    },
+    "A Box Covered in Chipped Paint": {
+      "name": "A Box Covered in Chipped Paint",
+      "results": [
+        {
+          "1-1": "Grenade (Teargas)",
+          "2-2": "Heavy Pistol (Basic)",
+          "3-3": "Bicycle",
+          "4-4": "Sinalizador de Estrada",
+          "5-5": "Escudo à prova de bala",
+          "6-6": "Shotgun Shell (Basic)"
+        }
+      ]
+    },
+    "A Box Dripping Wet With Fluid": {
+      "name": "A Box Dripping Wet With Fluid",
+      "results": [
+        {
+          "1-1": "Esmagar",
+          "2-2": "Laço Negro",
+          "3-3": "Bodyweight AutoInjector",
+          "4-4": "AirWell 50",
+          "5-5": "Grenade (Poison)",
+          "6-6": "TR-4 Detonator Fluid"
+        }
+      ]
+    },
+    "A Box Freezing Cold To The Touch": {
+      "name": "A Box Freezing Cold To The Touch",
+      "results": [
+        {
+          "1-1": "Espelhos Boêmios",
+          "2-2": "Street Viper Riding Suit",
+          "3-3": "Sponsored Cybereye",
+          "4-4": "Skid Row Trench",
+          "5-5": "Prime Time",
+          "6-6": "Laser Light Street Jacket"
+        }
+      ]
+    },
+    "A Box Handsomely Gift Wrapped": {
+      "name": "A Box Handsomely Gift Wrapped",
+      "results": [
+        {
+          "1-1": "Binoculars",
+          "2-2": "Colete Leve",
+          "3-3": "Medium Pistol (Smart)",
+          "4-4": "Câmera de Vídeo",
+          "5-5": "NeuTongue",
+          "6-6": "Reflex Co-Processor"
+        }
+      ]
+    },
+    "A Box Marked With A Lime Green X": {
+      "name": "A Box Marked With A Lime Green X",
+      "results": [
+        {
+          "1-1": "Elflines Online Macros",
+          "2-2": "Telefone celular descartável",
+          "3-3": "Modular Finger Cyberhand",
+          "4-4": "Joias de lazer",
+          "5-5": "Representante",
+          "6-6": "Óculos Inteligentes"
+        }
+      ]
+    },
+    "A Box Melted Out Of Shape": {
+      "name": "A Box Melted Out Of Shape",
+      "results": [
+        {
+          "1-1": "Scavenged Armor",
+          "2-2": "Grenade (Incendiary)",
+          "3-3": "Neo-Soviet Cyberarm",
+          "4-4": "Rifle (Basic)",
+          "5-5": "Rifle (Basic)",
+          "6-6": "Shotgun Shell (Incendiary)"
+        }
+      ]
+    },
+    "A Box Reeking Of Oil": {
+      "name": "A Box Reeking Of Oil",
+      "results": [
+        {
+          "1-1": "Shotgun Shell (Basic)",
+          "2-2": "Heavy Pistol (Basic)",
+          "3-3": "Calçado de couro nômade",
+          "4-4": "Rifle (Smart)",
+          "5-5": "Escopo Sniping",
+          "6-6": "Link Smartgun"
+        }
+      ]
+    },
+    "A Box Sealed With A Lipstick Kiss": {
+      "name": "A Box Sealed With A Lipstick Kiss",
+      "results": [
+        {
+          "1-1": "Faca de Combate",
+          "3-3": "Shuriken Tornado Grenade",
+          "4-4": "Calçado pop asiático",
+          "5-5": "Top de negócios",
+          "6-6": "White Hornet Tanto",
+          "2-2": "Senhor Durão"
+        }
+      ]
+    },
+    "A Box Showing Signs Of Repair": {
+      "name": "A Box Showing Signs Of Repair",
+      "results": [
+        {
+          "1-1": "Utility Tomahawk",
+          "2-2": "Holo Projector Palm",
+          "3-3": "Techtool",
+          "4-4": "Gravador de Áudio",
+          "5-5": "Grenade (Armor-Piercing)",
+          "6-6": "Techscanner"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,97 @@
+<form class="item-sheet">
+  <div class="item-top-pane">
+
+    <div class="item-image">
+      <img src="{{item.img}}" class="item-image-block-img" data-edit="img" />
+        {{#if item.system.isUpgraded }}
+          <i class="fa-solid fa-square-caret-up fa-xs" data-tooltip="{{localize "CPR.global.generic.upgraded"}}"></i>
+        {{/if}}
+        {{#if item.system.isInstalled }}
+          <i class="fa-solid fa-circle-info fa-xs" data-tooltip="{{localize "CPR.global.generic.installed"}}"></i>
+        {{/if}}
+    </div>
+
+    <div class="item-details">
+      <div class="item-details-name text-large text-hero">
+        {{localize (cprGetLocalizedlNameKey item)}}
+      </div>
+
+      <div class="item-details-info">
+        {{#if (cprCompare item.system.brand "!==" "")}}
+          <span class="text-pill">
+            {{item.system.brand}}
+          </span>
+        {{/if}}
+      </div>
+
+      <div class="item-details-help">
+        {{localize (cprFindConfigValue "objectTypes" item.type)}}
+        <a class="help-article text-padding-left-smallest"
+           href="{{cprWikiLink item.type}}"
+           data-tooltip="{{localize "CPR.global.generic.helparticle"}}">
+          <i class="fas fa-circle-question"></i>
+        </a>
+      </div>
+
+      <div class="item-details-source">
+        {{item.system.source.book}}
+        {{#if (cprCompare item.system.source.page "!==" null)}}
+          {{localize "CPR.global.generic.pageShort"}}
+          {{item.system.source.page}}
+        {{/if}}
+      </div>
+
+      <div class="item-details-other">
+        {{#if (cprIsDebug) }}
+          ({{item.id}})
+        {{/if}}
+      </div>
+    </div>
+  </div>
+
+  <div class="item-bottom-pane">
+    <div class="item-bottom-tabs-section">
+      <nav class="navtabs-item cpr-tabs nav text-semi" data-group="primary">
+        <div class="tab-pink-underlay">
+          <a class="tab-label text-small tab-indent" data-tab="item-description">
+            {{localize "CPR.global.generic.description"}}
+          </a>
+        </div>
+        <div class="tab-pink-underlay">
+          <a class="tab-label text-small tab-indent" data-tab="item-settings">
+            {{localize "CPR.settings.title"}}
+          </a>
+        </div>
+        {{#if (cprHasTemplate item.type "effects") }}
+          <div class="tab-pink-underlay">
+            <a class="tab-label text-small tab-indent" data-tab="item-effects">
+              {{localize "CPR.itemSheet.effects.effects"}}
+            </a>
+          </div>
+        {{/if}}
+      </nav>
+    </div>
+    <div class="item-bottom-content-section">
+      <div class="tab item-description-grid"
+           data-group="primary"
+           data-tab="item-description">
+        {{> "systems/cyberpunk-red-core/templates/item/cpr-item-description.hbs" this}}
+      </div>
+      <form>
+        <div class="tab item-settings-grid"
+             data-group="primary"
+             data-tab="item-settings">
+          {{> "systems/cyberpunk-red-core/templates/item/cpr-item-settings.hbs" this}}
+        </div>
+        {{#if (cprHasTemplate item.type "effects") }}
+          <div class="tab item-effects-grid"
+               data-group="primary"
+               data-tab="item-effects">
+            {{> "systems/cyberpunk-red-core/templates/item/cpr-item-effects.hbs" this}}
+          </div>
+        {{/if}}
+      </form>
+    </div>
+  </div>
+
+</form>

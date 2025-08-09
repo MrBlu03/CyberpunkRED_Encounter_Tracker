@@ -1,0 +1,110 @@
+{
+  "label": "Minuit Avec l'Upload",
+  "mapping": {},
+  "entries": {
+    "Hummingbird": {
+      "name": "Colibri",
+      "description": "<p>Pas de fioritures, seulement de la puissance de traitement brute.</p>\n<p>2 emplacements uniquement pour les extensions matérielles.</p>\n<p>+1 aux Actions NET à chaque tour.</p>"
+    },
+    "Kaliya": {
+      "name": "Kaliya",
+      "description": "<p>Une option fantastique pour démanteler les Netrunners hostiles. Espérons juste qu'ils n'aient aucun GLACE.</p>\n<p>6 emplacements pour les programmes ou le matériel, 3 emplacements supplémentaires seulement pour des programmes Tir de barrage.</p>\n<p>Restrictions pour les programmes Défensifs et GLACE : seuls Tir de Barrage et Cobra peuvent être installés dans n'importe quel emplacement.</p>\n"
+    },
+    "Kerberos": {
+      "name": "Cerbère",
+      "description": "<p>Libérez les flammes de l'enfer sur vos rivaux.</p>\n<p>6 emplacements pour les programmes, 5 emplacements pour le matériel.</p>\n<p>Les emplacements de programme n'acceptent que les GLACE Cerbère.</p>\n"
+    },
+    "Kestrel 2": {
+      "name": "Kestrel 2",
+      "description": "<p>Les GLACE ne peuvent pas toucher ce qu'elles ne peuvent pas attraper.</p>\n<p>7 emplacements seulement pour les programmes.</p>\n<p>Juste après la connexion, le Netrunner peut activer un maximum de 2 programmes Speedy Gonzalvez installés sans action NET.</p>\n"
+    },
+    "Kirama Advanced Deck": {
+      "name": "Console avancée Kirama",
+      "description": "<p>Bien que ce ne soit pas le choix le plus fou, la meilleure cyberconsole de Kirama est parfaitement équilibrée et offre des fonctionnalités de sécurité très pratiques.</p>\n<p>5 emplacements pour les programmes ou les extensions.</p>\n<p>Le Netrunner ne subit aucun effet négatif d'une déconnexion non sécurisée.</p>"
+    },
+    "Kirama Entry Deck": {
+      "name": "Console d'entrée de gamme Kirama",
+      "description": "<p>Une cyberconsole abordable et équilibrée pour les Netrunners novices. Bien qu'elle soit limitée par ses modestes spécifications, elle conserve les caractéristiques de sécurité avancées de Kirama.</p>\n<p>5 emplacements seulement pour les programmes.</p>\n<p>Une seule catégorie de programme peut être installée à la fois (Offensif, Défensif, Soutien, ou GLACE). Le Netrunner ne subit aucun effet négatif lors d'une déconnexion non sécurisée.</p>"
+    },
+    "Kirama Training Deck": {
+      "name": "Console d'entraînement Kirama",
+      "description": "<p>La cyberconsole de démarrage. Bon rapport qualité-prix avec spécifications matérielles minimum.</p>\n<p>5 emplacements uniquement pour les programmes.</p>\n<p>Le netrunner doit être à 2m ou plus proche du point d'accès à connecter. Tous les dégâts cérébraux causés en combat Net sont doublés.</p>"
+    },
+    "MicroMate": {
+      "name": "MicroPote",
+      "description": "<p>Parfait pour les Netrunners qui n'ont qu'une seule allure : l'attaque, sans réserve.</p>\n<p>9 emplacements pour les programmes ou le matériel.</p>\n<p>Les emplacements n'acceptent pas les programmes Défensifs. Tous les dommages au cerveau en combat NET sont doublés.</p>\n"
+    },
+    "Microtech Assault": {
+      "name": "Microtech Assaut",
+      "description": "<p>Détendez-vous et laissez votre GLACE faire le plus gros du boulot.</p>\n<p>4 emplacements pour les programmes, 5 emplacements pour le matériel.</p>\n<p>Les emplacements de programme n'acceptent que les GLACES.</p>"
+    },
+    "Microtech Scout": {
+      "name": "Microtech Scout",
+      "description": "<p>5 emplacements pour des programmes ou du matériel.</p>\n<p>Le Netrunner peut lancer Cartographie sans action NET juste après s'être connecté.</p>"
+    },
+    "Microtech Warrior": {
+      "name": "Guerrier Microtech",
+      "description": "<p>7 emplacements uniquement pour les programmes.</p>\n<p>Le Netrunner peut activer un programme d'Armure sans action NET juste après connexion.</p>"
+    },
+    "Parraline 6000": {
+      "name": "Parraline 6000",
+      "description": "<p>Toutes les options matérielles sans aucune restriction.</p>\n<p>3 emplacements de programme, 6 emplacements de matériel.</p>"
+    },
+    "Phoenix": {
+      "name": "Phénix",
+      "description": "<p>Ne perdez plus jamais un programme.</p>\n<p>6 emplacements pour des programmes ou des extensions.</p>\n<p>Tout programme détruit dans une session netrunning est restauré sur une déconnexion sécurisée.</p>"
+    },
+    "Verdant Knight": {
+      "name": "Chevalier Verdoyant",
+      "description": "<p>Le classique épée-et-bouclier sur cyberconsole est très efficace contre les GLACE. Ne planifiez cependant pas de rencontrer un Netrunner hostile.</p>\n<p>9 emplacements uniquement pour les programmes.</p>\n<p>Les emplacements n'acceptent que les programmes Sabre et Bouclier.</p>"
+    },
+    "Warlock's Book": {
+      "name": "Grimoire Du Sorcier",
+      "description": "<p> Si vous préférez glisser à travers les architectures NET, vous n'avez besoin de rien d'autre.</p>\n<p>9 emplacements programmes ou extensions matérielles.</p>\n<p><em>Aucun programme Offensif ni de GLACE installables.</em></p>\n"
+    },
+    "Aerie": {
+      "name": "Aerie",
+      "description": "<p>Chaque GLACE Corbeau installé détruit les programmes défensifs au lieu de dérezzer.</p>"
+    },
+    "Bushido Accelerator": {
+      "name": "Accélérateur Bushido",
+      "description": "<p>Vitesse +3 à toutes les GLACE Noirs tueurs installés.</p>\n"
+    },
+    "Combat Recorder": {
+      "name": "Enregistreur de Combat",
+      "description": "<p>Les données de combat sont inestimables dans le monde réel pour le développement de GLACE.</p>\n<p>Si un autre Netrunner dans la même architecture NET échoue à une sauvegarde contre la mort, les 5 dernières minutes des données de combat de Netrun non incriminantes sont enregistrées dans la console. Les enregistrements peuvent être vendus pour 50eb.</p>\n"
+    },
+    "Defense Sequencer": {
+      "name": "Séquenceur de défense",
+      "description": "<p>Si un programme d'Armure actif est dérezzé ou détruit, Le Séquenceur de Défense active un autre programme d'Armure installé qui n'a pas encore été utilisé au début du tour du Netrunner.</p>\n"
+    },
+    "Feline Instinct": {
+      "name": "Instinct Félin",
+      "description": "<p>Si un GLACE Tigre à dents de sabre installé détruit un programme, les dégâts qu'inflige ce Tigre à dents de sabre sont augmentés de 1d6 à chaque attaque subséquente pendant la durée du Netrun.</p>"
+    },
+    "Hangry Hangry Dragon": {
+      "name": "Dragon Morfal Morfal",
+      "description": "<p>Chaque fois qu'un GLACE Dragon installé détruit un programme, il regagne son REZ maximum.</p>"
+    },
+    "Perfume Shoppe": {
+      "name": "Parfumerie",
+      "description": "<p>Le GLACE Putois ne prend que 1 emplacement de programme.</p>"
+    },
+    "Smithy": {
+      "name": "Forgeur",
+      "description": "<p>Soyez prêt à tout. Entrez dans une architecture NET pleine de GLACE et vous n'avez pas de programme Sabre à portée de main? Échangez votre programme Bannissement inutile en appuyant sur un bouton.</p>\n<p>Utilisez l'action monde réel pour changer tout les programmes Sabre installés en programmes Bannissement ou vice versa.</p>\n"
+    },
+    "Snaketrap": {
+      "name": "Piège à Serpent",
+      "description": "<p>Protège contre la première attaque de GLACE (Cobra, Corbeau, ou les effets de Laser corrosif) qui détruirait aléatoirement un programme installé. Cet effet de protection ne peut être utilisé qu'une seule fois par Netrun, même si plusieurs copies de Piège à Serpent sont installées.</p>\n"
+    },
+    "Swamp Mist": {
+      "name": "Brume Marécageuse",
+      "description": "<p>La GLACE Feu Follet inflige 2d6 points de dégâts au lieu de 1d6.</p>\n<p>Restrictions de programme GLACE : seul Feu Follet peut être installé.</p>\n"
+    },
+    "Swifty Clean": {
+      "name": "Nettoyage Rapide",
+      "description": "<p>Le Netrunner peut lancer Camouflage deux fois en une seule action NET et garder le meilleur résultat. Camouflage ne peut être utilisé qu'une seule fois par Netrun lorsque Nettoyage Rapide est installé.</p>"
+    }
+  }
+}

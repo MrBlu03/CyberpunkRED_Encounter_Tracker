@@ -1,0 +1,54 @@
+{
+  "label": "Hornet's Pharmacy",
+  "mapping": {},
+  "entries": {
+    "Bodyweight AutoInjector": {
+      "name": "Bodyweight AutoInjector",
+      "description": "<p>Internal Body Cyberware.</p>\n<p>Use an Action to load one dose of Street Drug into a subdermal storage pod. Optionally, one can configure a Biomonitor to automatically dose the user upon entering combat, suffering a critical injury, or reaching a predetermined Wound State threshold.</p>"
+    },
+    "Gas Jet": {
+      "name": "Gas Jet",
+      "description": "<p>Cyberarm Option. Takes 2 option slots.</p>\n<p>Gas Jet sprays a burst of 3 doses of a Street Drug or 3 Vials of Poison/Biotoxin into a 3x3 square directly in front of the shooter (similar to Shotgun Shell attack). Can be used one-handed and is virtually undetectable even without a Conceal check.</p>\n<p>All susceptible targets in range suffer the effects of the drug or poison. Targets equipped with gear that neutralizes gas attacks (Nasal Filters &amp; Anti-Smog Breathing Mask) are not affected. Gas Jet must be loaded with 3 more doses after each shot before firing again.</p>"
+    },
+    "Berserker": {
+      "name": "Berserker",
+      "description": "<p><strong>Primary Effect</strong></p>\n<p>Dose lasts for 10 Minutes.</p>\n<ul>\n<li>Induces a state of frenzy and increased aggression.</li>\n<li>User takes no Bonus Damage for any Critical Injury.</li>\n<li dir=\"ltr\">Wound State/Facedown penalties to Skill or Stat checks are halved.</li>\n</ul>\n<p><strong>Secondary Effect (DV17)</strong></p>\n<p>When the dose wears off, the user rolls WILL + Resist Torture/Drugs + 1d10 against Secondary DV.</p>\n<ul>\n<li>-2 Humanity Loss.</li>\n<li>User is now addicted to Berserker if not already addicted. +1 to Base Death Save Penalty while addicted.</li>\n</ul>"
+    },
+    "Prime Time": {
+      "name": "Prime Time",
+      "description": "<p><strong>Primary Effect</strong></p>\n<p>Dose last 4 Hours.</p>\n<ul>\n<li>Sharpens focus and willpower at the cost of dampened emotions</li>\n<li>-4d6 Humanity until dose wears off*</li>\n<li>+2 to COOL and WILL stats. User&rsquo;s max HP not affected by the +2 WILL</li>\n</ul>\n<p><em>* Humanity can not fall under 0 from taking Prime Time</em></p>\n<p><strong>Secondary (DV17)</strong></p>\n<p>When the dose wears off, the user rolls WILL + Resist Torture/Drugs + 1d10 against Secondary DV.</p>\n<ul>\n<li>-1 Humanity Loss</li>\n<li>-2 to COOL while addicted and not currently dosed with Prime Time.</li>\n</ul>"
+    },
+    "Sedative": {
+      "name": "Sedative",
+      "description": "<p>MedTech pharmaceutical.</p>\n<p>Applies the Unconscious condition for 4 hours on a willing target. +2 bonus to MechTech Surgery checks on targets dosed with Sedative.</p>\n<p>Unwilling target must make a DV15 Resist Torture/Drugs check. On failed check, target is unconscious for 1 minute or 20 rounds in combat. Target wakes upon taking damage. Others can use an Action to awaken target.</p>"
+    },
+    "Sixgun": {
+      "name": "Sixgun",
+      "description": "<p>Leave meatspace behind and supercharge your synapses.</p>\n<p><strong>Primary Effect</strong></p>\n<p>Dose lasts 4 hours.</p>\n<ul>\n<li>+2 to Speed while Netrunning</li>\n<li>-2 To MOVE (Minimum 1)</li>\n<li>-2 To REF to a (Minimum 1)</li>\n<li>User does not suffer the penalties of an Unsafe Jack Out unless forced to Jack Out by a program.</li>\n<li>User can burn 1 Humanity for 1 additional NET Action once per turn.</li>\n</ul>\n<p><strong>Secondary (DV17)</strong></p>\n<p>Unless under Primary Effect</p>\n<ul>\n<li>-2 to Speed while Netrunning</li>\n</ul>"
+    },
+    "Timewarp": {
+      "name": "Timewarp",
+      "description": "<p><strong>Primary Effect</strong></p>\n<p>Dose lasts 1 minute.</p>\n<ul>\n<li>+3 to any Initiative Rolls. If already in combat, +3 to current Initiative.</li>\n</ul>\n<p><strong>Secondary (DV17)</strong></p>\n<p>When the dose wears off, the user rolls WILL + Resist Torture/Drugs + 1d10 against Secondary DV.</p>\n<ul>\n<li>-2 to Initiative Rolls while addicted if not currently dosed with TimeWarp.</li>\n</ul>"
+    },
+    "Veritas": {
+      "name": "Veritas",
+      "description": "<p>Dose lasts 10 minutes.</p>\n<p>MedTech pharmaceutical.</p>\n<p>Target must make a DV17 Resist Torture/Drugs check. On failed check, target suffers -5 to Acting, Concentration, Conversation, Deduction, Human Perception, and Persuasion Checks</p>"
+    },
+    "Delaying Compound": {
+      "name": "Delaying Compound",
+      "description": "<p>This additive delays the effects of a Poison or Biotoxin Vial by a minute or an hour. Mixing multiple Delaying Compounds does not increase delay period.</p>"
+    },
+    "Distilling Compound": {
+      "name": "Distilling Compound",
+      "description": "<p>This additive increases the Resist Torture/Drugs DV of Poison or Biotoxin Vials by 2. Mixing multiple Distilling Compounds does not increase Resist Torture/Drugs DV beyond the initial +2.</p>"
+    },
+    "Osmosis Compound": {
+      "name": "Osmosis Compound",
+      "description": "<p>This additive allows a Vial of Poison or Biotoxin to be absorbed through skin contact. One vial can cover 2 square feet when applied to a surface and lasts for one hour. Can be neutralized by rinsing with water.&nbsp;</p>\n<p>The first meat target to touch the affected area with a meat body part is dosed with the poison. A DV17 Perception check reveals the poison. More than one dose in the same 2 square foot area has no added effect.</p>"
+    },
+    "Suzumebachi Assassin Drone": {
+      "name": "Suzumebachi Assassin Drone",
+      "description": "<p>A small wasp-shaped drone designed for silent assassinations.</p>\n<p>Stats: 6 MOVE - 7SP - 10HP.</p>\n<p>Can be neutralized in 5 min with a DV17 Electronic/Security Tech check.</p>\n<p>Default Programming:</p>\n<ol>\n<li>Locate target using onboard camera.</li>\n<li>Attack target with dartgun until ammo is depleted or target's infrared&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;signature no longer detected</li>\n<li>Exfiltrate and return to operator</li>\n</ol>\n<p>Drone is commonly controlled with a NET Architecture.</p>\n<p>Range:</p>\n<p>Perimeter of a NET Architecture-equipped building or 50m/yds away from a portable NET Architecture.</p>\n<p>Loadout:</p>\n<ul>\n<li>Camera with low Light, UV, Infrared modes</li>\n<li>Dartgun with 8 Biotoxin Arrows</li>\n<li>Airhypo</li>\n</ul>"
+    }
+  }
+}

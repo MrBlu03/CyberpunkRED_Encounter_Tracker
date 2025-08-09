@@ -1,0 +1,67 @@
+<form class="dialog-sheet">
+  <div class="dialog-header flexcol">
+    <div class="text-normal text-center">
+      {{localize "CPR.dialog.netArchitectureNewFloor.header"}}
+    </div>
+  </div>
+  <hr/>
+  <div class="dialog-grid flexcol">
+    <ol class="dialog-list">
+      <li class="dialog-item flexrow">
+        <div class="dialog-item-name text-nowrap">
+          <span class="text-semi">{{localize "CPR.dialog.netArchitectureNewFloor.floor"}}</span>
+        </div>
+        <div class="dialog-item-input text-nowrap">
+          <select name="floor">
+            {{selectOptions floornumbers selected=floor localize=true}}
+          </select>
+
+          <select name="branch">
+            {{selectOptions branchlabels selected=branch localize=true}}
+          </select>
+        </div>
+      </li>
+      <li class="dialog-item flexrow">
+        <div class="dialog-item-name text-nowrap">
+          <span class="text-semi">{{localize "CPR.dialog.netArchitectureNewFloor.contentType"}}</span>
+        </div>
+        <div class="dialog-item-input text-nowrap">
+          <select class="force-submit" name="content">
+            {{selectOptions contentoptions selected=content localize=true}}
+          </select>
+        </div>
+      </li>
+      {{#unless (cprCompare content "===" "CPR.global.programClass.blackice")}}
+        <li class="dialog-item flexrow">
+          <div class="dialog-item-name text-nowrap">
+            <span class="text-semi">{{localize "CPR.netArchitecture.floor.dv"}}</span>
+          </div>
+          <div class="dialog-item-input text-nowrap">
+            <select name="dv">
+              {{selectOptions dvoptions selected=dv localize=true}}
+            </select>
+          </div>
+        </li>
+      {{/unless}}
+      {{#if (cprCompare content "===" "CPR.global.programClass.blackice")}}
+        <li class="dialog-item flexrow">
+          <div class="dialog-item-name text-nowrap">
+            <span class="text-semi text-nowrap">{{localize "CPR.dialog.netArchitectureNewFloor.blackIceType"}}</span>
+          </div>
+          <div class="dialog-item-input text-nowrap">
+            <select name="blackice">
+              {{selectOptions blackiceoptions selected=blackice localize=true}}
+            </select>
+          </div>
+        </li>
+      {{/if}}
+    </ol>
+  </div>
+  <hr>
+  <div class="dialog-item text-padding-sides-small">
+    <div class="text-semi">{{localize "CPR.global.generic.description"}}</div>
+    <textarea name="description">{{description}}</textarea>
+  </div>
+  {{> "systems/cyberpunk-red-core/templates/dialog/cpr-dialog-buttons.hbs"}}
+</form>
+

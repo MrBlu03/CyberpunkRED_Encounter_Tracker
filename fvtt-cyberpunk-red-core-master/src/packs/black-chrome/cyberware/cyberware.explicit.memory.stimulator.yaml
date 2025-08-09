@@ -1,0 +1,60 @@
+_id: VSw96UuPdlXfu7Hy
+_key: "!items!VSw96UuPdlXfu7Hy"
+effects:
+  - 7nCq8wHHINN9Rmt7
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/black-chrome/explicit-memory-stimulator.svg
+name: Explicit Memory Stimulator
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  core: false
+  damage: 1d6
+  description:
+    value: |
+      <p>Chipware.</p>
+      <p>Enhances memorization. +2 Concentration while installed.</p>
+  dvTable: ""
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  humanityLoss:
+    roll: 1d6
+    static: 3
+  installLocation: notApplicable
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+      - ammo
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: true
+  isFoundational: false
+  isRanged: false
+  isWeapon: false
+  magazine:
+    max: 0
+    value: 0
+  price:
+    market: 100
+  providesHardening: false
+  revealed: true
+  rof: 1
+  size: 1
+  source:
+    book: BC
+    page: 18
+  type: neuralWare
+  unarmedAutomaticCalculation: true
+  usage: installed
+  usesType: magazine
+  weaponSkill: Archery
+  weaponType: assaultRifle
+type: cyberware

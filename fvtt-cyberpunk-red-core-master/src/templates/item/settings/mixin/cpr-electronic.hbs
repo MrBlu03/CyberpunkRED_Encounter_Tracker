@@ -1,0 +1,41 @@
+
+{{!-- Set isElectronic --}}
+<li class="item flexrow">
+  <div class="item flexrow setting-name text-nowrap">
+    {{localize "CPR.itemSheet.electronic"}}
+  </div>
+  <div class="item flexrow setting-value text-nowrap item-end">
+    {{#if this.editable}}
+      <a class="item-checkbox" data-target="system.isElectronic">
+        <i class="far fa{{#if item.system.isElectronic}}-check{{/if}}-circle">
+        </i>
+      </a>
+    {{else}}
+      <span>
+        <i class="far fa{{#if item.system.isElectronic}}-check{{/if}}-circle">
+        </i>
+      </span>
+    {{/if}}
+  </div>
+</li>
+
+{{!-- Set isElectronic --}}
+<li class="item flexrow">
+  <div class="item flexrow setting-name text-nowrap">
+    {{localize "CPR.itemSheet.providesHardening"}}
+  </div>
+  <div class="item flexrow setting-value text-nowrap item-end">
+    {{#if this.editable}}
+      <a class="item-checkbox" data-target="system.providesHardening">
+        <i class="far fa{{#if item.system.providesHardening}}-check{{/if}}-circle">
+        </i>
+      </a>
+    {{else}}
+      <span>
+        <i class="far fa{{#if item.system.providesHardening}}-check{{/if}}-circle">
+        </i>
+      </span>
+    {{/if}}
+  </div>
+</li>
+<hr/>

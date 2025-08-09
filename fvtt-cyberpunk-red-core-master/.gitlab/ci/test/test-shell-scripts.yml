@@ -1,0 +1,24 @@
+# Tests all shellscripts in the repo conform to our standards
+# This is mostly checking the CI test scripts
+
+test-shell-scripts:
+  stage: test
+  image: mvdan/shfmt:latest-alpine
+  before_script:
+    - apk update
+    - apk add bash shellcheck
+  script:
+    - ./.gitlab/pipeline_tests/test-shell-scripts.sh
+  needs:
+    - job: init
+      artifacts: true
+  rules:
+    # Don't run if we're in the cleanup-dev schedule
+    - if: $CPR_SCHEDULE == "cleanup-dev"
+      when: never
+    # Run on MRs
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+    # Run on merge to 'master'
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+    # Run on git tag
+    - if: $CI_COMMIT_TAG

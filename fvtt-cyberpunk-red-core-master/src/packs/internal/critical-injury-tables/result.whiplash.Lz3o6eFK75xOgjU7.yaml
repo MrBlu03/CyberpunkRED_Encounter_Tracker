@@ -1,0 +1,12 @@
+_id: Lz3o6eFK75xOgjU7
+_key: "!tables.results!QiwaqQtocypL0FXG.Lz3o6eFK75xOgjU7"
+documentCollection: cyberpunk-red-core.core_critical-injuries-head
+documentId: e5wyX6r4Tem6bNwQ
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/critical_injuries/whiplash.svg
+range:
+  - 8
+  - 8
+text: Whiplash
+type: 2
+weight: 1

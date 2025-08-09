@@ -1,0 +1,72 @@
+<form class="dialog-sheet">
+   <div class="dialog-header flexcol">
+    <div class="text-normal text-center">
+      {{localize "CPR.dialog.createEditRoleAbility.header"}}
+    </div>
+  </div>
+  <hr/>
+  <div class="dialog-grid flexcol">
+    <ol class="dialog-list">
+      <li class="dialog-item flexrow">
+        <div class="dialog-item-name text-nowrap"
+            data-tooltip="{{localize "CPR.tooltip.nameChangeWarning"}}">
+          <span class="text-semi">{{localize "CPR.dialog.createEditRoleAbility.roleAbilityName"}}
+            <i class="text-smallest text-super fa-solid fa-triangle-exclamation"></i>
+          </span>
+        </div>
+        <div class="dialog-item-input text-nowrap">
+          <input class="text-right" name="name" type="text" value="{{name}}" />
+        </div>
+      </li>
+      <li class="dialog-item flexrow">
+        <div class="dialog-item-name text-nowrap">
+          <span class="text-semi">{{localize "CPR.dialog.createEditRoleAbility.roleAbilityRank"}}</span>
+        </div>
+        <div class="dialog-item-input text-nowrap">
+          <input class="text-right" name="rank" type="number" value="{{rank}}" />
+        </div>
+      </li>
+      <li class="dialog-item flexrow">
+        <div class="dialog-item-name text-nowrap">
+          <span class="text-semi">{{localize "CPR.dialog.createEditRoleAbility.hasRoll"}}</span>
+        </div>
+        <div class="dialog-item-input text-nowrap">
+          <input class="item-checkbox text-right" name="hasRoll" data-target="hasRoll" type="checkbox" value="{{hasRoll}}" {{checked hasRoll}}/>
+        </div>
+      </li>
+      {{#if hasRoll }}
+      <li class="dialog-item flexrow">
+        <div class="dialog-item-name text-nowrap">
+          <span class="text-semi">{{localize "CPR.dialog.createEditRoleAbility.multiplier"}}</span>
+        </div>
+        <div class="dialog-item-input text-nowrap">
+        <select name="multiplier">
+          {{selectOptions multiplierOptions selected=multiplier}}
+        </select>
+      </div>
+    </li>
+      <li class="dialog-item flexrow">
+        <div class="dialog-item-name text-nowrap">
+          <span class="text-semi">{{localize "CPR.global.generic.stat"}}</span>
+        </div>
+        <div class="dialog-item-input text-nowrap">
+          <select name="stat">
+            {{selectOptions statOptions selected=stat}}
+          </select>
+        </div>
+      </li>
+      <li class="dialog-item flexrow">
+        <div class="dialog-item-name text-nowrap">
+          <span class="text-semi">{{localize "CPR.dialog.createEditRoleAbility.skill"}}</span>
+        </div>
+        <div class="dialog-item-input text-nowrap">
+          <select name="skill">
+            {{selectOptions skillOptions selected=skill sort=true}}
+        </select>
+      </div>
+      </li>
+      {{/if}}
+    </ol>
+  </div>
+  {{> "systems/cyberpunk-red-core/templates/dialog/cpr-dialog-buttons.hbs"}}
+</form>

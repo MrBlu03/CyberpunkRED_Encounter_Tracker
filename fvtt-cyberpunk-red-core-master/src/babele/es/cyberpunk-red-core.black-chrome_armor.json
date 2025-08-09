@@ -1,0 +1,98 @@
+{
+  "label": "Blindaje",
+  "mapping": {},
+  "entries": {
+    "Corporate Island": {
+      "name": "Isla Corporativa",
+      "description": "<p>Armadura ligera que parece una Ropa de Negocios. Consulte la descripción completa del artículo en pg. 35.</p>"
+    },
+    "Dirk Combat Jacket": {
+      "name": "Chaqueta de Combate Dirk",
+      "description": "<p>Armadura corporal ligera con Estilo Informal y la capacidad de ocultar dos cargadores estándar sin un chequeo. Consulte la descripción completa del artículo en el pg. 28.</p>"
+    },
+    "Executive Armor": {
+      "name": "Armadura Ejecutiva",
+      "description": "<p>Armadura ligera que parece una Ropa de Negocios. Restaura 1CP cada día que no se pierda CP en la armadura. Consulte la descripción completa del artículo en BC pg. 34.</p>"
+    },
+    "Fire Brand Bunker Gear": {
+      "name": "Fire Brand Bunker Gear",
+      "description": "<p>\n  Fireproof flak armor with a built in gas mask and 30 minutes of oxygen in a\n  tank that refills itself after an hour. -4 to REF, DEX, and MOVE.\n</p>\n"
+    },
+    "Laser Light Street Jacket": {
+      "name": "Chaqueta callejera ligera Laser",
+      "description": "<p>Armadura ligera de Estilo Urbano que cuenta con un tatuaje luminoso mientras se usa. Consulte la descripción completa del objeto en el pg. 31.</p>"
+    },
+    "Lotos Netsuit": {
+      "name": "Traje de Red Lotos",
+      "description": "<p>Un traje de red que permite una ranura de hardware adicional de ciberterminal que está instalada directamente en el traje y que se desinstala si se quita el traje. Viene estándar con una Ciberterminal de Calidad Excelente*. -2 a REF, DES, y MOV. Consulte la descripción completa del artículo en BC pg. 31.</p>\n<p><em>*Debe ser añadido manualmente después de adquirir la armadura</em></p>"
+    },
+    "Masetto AirRider": {
+      "name": "Masetto AirRider",
+      "description": "<p>\n  Kevlar Body Armor that ignores the Whiplash critical injury from car crashes\n  as long as the armor's CO<sub>2</sub> tank is full*.\n</p>\n<p><em>*Must be manually added after acquiring the armor.</em></p>\n"
+    },
+    "MechaMan Motorcycle Helmet": {
+      "name": "Casco de Motocicleta MechaMan",
+      "description": "<p>Un casco para motocicletas de Kevlar con vidrios inteligentes integrados que vienen con Chyron y Vision Nocturna / IR / UV preinstalado*. Consulte la descripción completa del artículo en BC pg. 37.</p>\n<p><em>*Los vidrios inteligentes y el ciberware asociado deben ser añadidos e instalados manualmente después de adquirir la armadura.</em></p>"
+    },
+    "Mimic Clothing (Asia Pop)": {
+      "name": "Ropa Mímica (Estilo Asia Pop)",
+      "description": "<p>Armadura Ligera fabricada con un Kit de Ropa Mímica y \"Estilo Asia Pop\". Consulte la descripción completa del objeto en la página 33.</p>"
+    },
+    "Mimic Clothing (Bag Lady Chic)": {
+      "name": "Ropa Mímica (Estilo Dama Chic)",
+      "description": "<p>Armadura ligera fabricada con un Kit de Ropa Mímica y Ropa \"Estilo Dama Chic\". Consulte la descripción completa del artículo en la página 33.</p>"
+    },
+    "Mimic Clothing (Bohemian)": {
+      "name": "Ropa Mímica (Estilo Bohemio)",
+      "description": "<p>Armadura Ligera hecha de un Kit de Ropa Mímica y Ropa \"Estilo Bohemio\". Consulte la descripción completa del objeto en la página 33.</p>"
+    },
+    "Mimic Clothing (Businesswear)": {
+      "name": "Ropa Mímica (Estilo Ropa de Negocios)",
+      "description": "<p>Armadura Ligera hecha de un Kit de Ropa Mímica y Ropa \"Estilo Ropa de Negocios\". Consulte la descripción completa del objeto en la página 33.</p>"
+    },
+    "Mimic Clothing (Gang Colors)": {
+      "name": "Ropa Mímica (Estilo Colores de Pandillas)",
+      "description": "<p>Armadura Ligera fabricada con un Kit de Ropa Mímica y \"Estilo Colores de Pandillas\". Consulte la descripción completa del objeto en la página 33.</p>"
+    },
+    "Mimic Clothing (Generic Chic)": {
+      "name": "Ropa Mímica (Estilo Chic Genérico)",
+      "description": "<p>Armadura ligera fabricada con un Kit de Ropa Mímica y Ropa \"Estilo Chic Genérico\". Consulte la descripción completa del artículo en la página 33.</p>"
+    },
+    "Mimic Clothing (High Fashion)": {
+      "name": "Ropa Mímica (Estilo Alta Moda)",
+      "description": "<p>Armadura Ligera hecha de un Kit de Ropa Mímica y Ropa \"Estilo Alta Moda\". Consulte la descripción completa del objeto en la página 33.</p>"
+    },
+    "Mimic Clothing (Leisurewear)": {
+      "name": "Ropa Mímica (Estilo Ropa Informal)",
+      "description": "<p>Armadura Ligera hecha de un Kit de Ropa Mímica y Ropa \"Estilo Ropa Informal\". Consulte la descripción completa del objeto en la página 33.</p>"
+    },
+    "Mimic Clothing (Nomad Leathers)": {
+      "name": "Ropa Mímica (Cueros Nomadas)",
+      "description": "<p>Armadura Ligera hecha de un Kit de Ropa Mímica y Ropa \"Cueros Nomadas\". Consulte la descripción completa del objeto en la página 33.</p>"
+    },
+    "Mimic Clothing (Urban Flash)": {
+      "name": "Ropa Mímica (Flash Urbano)",
+      "description": "<p>Armadura Ligera hecha de un Kit de Ropa Mímica y Ropa \"Flash Urbano\". Consulte la descripción completa del objeto en la página 33.</p>"
+    },
+    "Montage Variable Clothing Line": {
+      "name": "Línea de Ropa Variable de Montage",
+      "description": "<p>Armadura Ligera que puede cambiar entre los estilos \"Genérico Chic\" y \"Colores de Pandilla\" con una acción de una paleta comprada (20eb por color/patrón) e instalada en un agente. Viene con un color o patrón de elección. Consulte la descripción completa del artículo en pg. 32</p>"
+    },
+    "Shock Armor": {
+      "name": "Armadura Shock",
+      "description": "<p>Armadura de Kevlar que electrocuta a cualquiera que te esté agarrando. Consulta la descripción completa del objeto en la página 29.</p>"
+    },
+    "Skid Row Trench": {
+      "name": "Abrigo de Barrio Bajo",
+      "description": "<p>Armadura Corporal que parece un Abrigo de los Barrios Bajos a cambio de menos protección. -4 a REF, DES y MOV. Consulte la descripción completa del artículo en BC pg. 33.</p>"
+    },
+    "Street Viper Riding Suit": {
+      "name": "Traje de motociclista de Serpiente Callejera",
+      "description": "<p>Armadura Corporal de Kevlar que viene con dos armas medias preinstaladas* siempre consideradas equipadas mientras que la armadura esté equipada. Consulte la descripción completa del artículo en BC pg. 36.</p>\n<p><em>*Debe añadirse manualmente después de adquirir la armadura.</em></p>"
+    },
+    "Tactical Smart Armor": {
+      "name": "Armadura Táctica Inteligente",
+      "description": "<p>Un conjunto completo de armaduras medianas con gafas inteligentes integradas*. -2 a REF, DES, y MOV. Consulte la descripción completa del artículo en BC pg. 30.</p>\n<p><em>*Las Gafas Inteligentes deben ser añadidos manualmente después de adquirir la armadura.</em></p>"
+    }
+  }
+}

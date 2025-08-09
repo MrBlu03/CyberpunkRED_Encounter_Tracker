@@ -1,0 +1,147 @@
+.ledger-grid {
+  font-family: "Jost";
+  display: grid;
+  grid-template-columns: auto 20.7rem;
+  grid-template-rows: 5rem auto;
+  grid-auto-columns: 1fr;
+  grid-auto-rows: 1fr;
+  gap: 0.313rem;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "ledger-info    ledger-edit"
+    "ledger-history ledger-history";
+  width: 100%;
+  height: 100%;
+  padding: 0.313rem;
+  background-color: var(--cpr-background-border);
+}
+
+.ledger-info {
+  grid-area: ledger-info;
+  display: grid;
+  padding: 0.313rem;
+  align-content: center;
+  background-color: var(--cpr-background-box);
+}
+
+.ledger-edit {
+  display: grid;
+  grid-template-columns: auto 12.5rem 3.5rem;
+  grid-template-rows: 1.8fr 1.8fr;
+  gap: 0rem 0rem;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "ledger-edit-modify ledger-edit-modify-input ledger-edit-actions"
+    "ledger-edit-reason ledger-edit-reason-input ledger-edit-reason-input";
+  grid-area: ledger-edit;
+  height: auto;
+  align-content: center;
+  justify-content: right;
+  padding: 0.313rem;
+  background-color: var(--cpr-background-box);
+}
+
+.ledger-edit-reason {
+  grid-area: ledger-edit-reason;
+  display: grid;
+  align-items: center;
+}
+
+.ledger-edit-modify-input {
+  grid-area: ledger-edit-modify-input;
+  display: grid;
+  align-items: center;
+
+  input {
+    width: 100%;
+  }
+}
+
+.ledger-edit-modify {
+  grid-area: ledger-edit-modify;
+  display: grid;
+  align-items: center;
+}
+
+.ledger-edit-actions {
+  grid-area: ledger-edit-actions;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  i {
+    padding-left: 0.25rem;
+  }
+}
+
+.ledger-edit-reason-input {
+  grid-area: ledger-edit-reason-input;
+  display: grid;
+  align-items: center;
+}
+
+.ledger-history {
+  grid-area: ledger-history;
+  display: grid;
+  align-content: flex-start;
+  background-color: var(--cpr-background-box);
+  li:nth-child(even) {
+    background-color: var(--cpr-background-row-even);
+  }
+
+  li:nth-child(odd) {
+    background-color: var(--cpr-background-row-odd);
+  }
+}
+
+.ledger-history-list {
+  display: grid;
+  grid-template-columns: 3rem 4fr 6fr;
+  grid-template-areas: "ledger-number ledger-transaction ledger-reason ledger-delete";
+  height: 1.3rem;
+  white-space: nowrap;
+
+  .fa-trash-can {
+    color: var(--cpr-text-icon-highlight);
+  }
+
+  .ledger-number {
+    display: grid;
+    grid-area: ledger-number;
+    align-content: center;
+    justify-content: center;
+    width: 3rem;
+    overflow: clip;
+  }
+
+  .ledger-transaction {
+    display: grid;
+    grid-area: ledger-transaction;
+    align-content: center;
+    padding: 0 0.2rem 0 0.2rem;
+    overflow: clip;
+  }
+
+  .ledger-reason {
+    display: grid;
+    grid-area: ledger-reason;
+    align-content: center;
+    width: auto;
+    padding: 0 0.2rem 0 0.2rem;
+    overflow: clip;
+  }
+
+  .ledger-delete {
+    display: grid;
+    grid-area: ledger-delete;
+    align-content: center;
+    justify-content: center;
+    width: 1rem;
+    padding: 0 0.2rem 0 0.2rem;
+  }
+
+  .ledger-content-scroll {
+    height: 15.625rem;
+    overflow-y: scroll;
+  }
+}

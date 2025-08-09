@@ -1,0 +1,12 @@
+_id: kz89JnQ3RCyhFbVY
+_key: "!tables.results!EVPuZ21eNOpEycGQ.kz89JnQ3RCyhFbVY"
+documentCollection: cyberpunk-red-core.core_clothing
+documentId: CcIZ23rub5QtcOHJ
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/clothing/generic_footwear.svg
+range:
+  - 3
+  - 3
+text: Nomad Leathers Footwear
+type: 2
+weight: 1

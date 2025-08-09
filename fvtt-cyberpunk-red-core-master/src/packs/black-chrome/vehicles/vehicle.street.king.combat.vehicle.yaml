@@ -1,0 +1,33 @@
+_id: eOYoIDcKCerXeoyb
+_key: "!items!eOYoIDcKCerXeoyb"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/black-chrome/street-king.svg
+name: Street King Combat Vehicle
+system:
+  brand: Turbo Neon Motors
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        A High Performance Groundcar which is large, armored and has a military look.
+      </p>
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  price:
+    market: 63000
+  sdp: 70
+  seats: 6
+  source:
+    book: BC
+    page: 77
+  speedCombat: 40
+  speedNarrative: 200 MPH / 322 KPH
+type: vehicle

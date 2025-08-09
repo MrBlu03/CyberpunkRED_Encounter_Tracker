@@ -1,0 +1,111 @@
+{
+  "label": "NET architecture Rolltables",
+  "mapping": {},
+  "entries": {
+    "All Other Floors (Advanced)": {
+      "name": "Pozostałe piętra (Zaawansowana trudność)",
+      "results": [
+        {
+          "3-3": "Piekielny Ogar",
+          "4-4": "Żmija x2",
+          "5-5": "Piekielny ogar, Zabójca",
+          "6-6": "Piekielny Ogar",
+          "7-7": "Piekielny ogar, Szabloząb",
+          "8-8": "Piekielny Ogar",
+          "9-9": "Hasło PT10",
+          "10-10": "Plik PT10",
+          "11-11": "Węzeł kontrolny PT10",
+          "12-12": "Hasło PT10",
+          "13-13": "Żmija",
+          "14-14": "Żmija",
+          "15-15": "Smok",
+          "16-16": "Żmija",
+          "17-17": "Smok, Błędny ognik",
+          "18-18": "Smok x2"
+        }
+      ]
+    },
+    "All Other Floors (Basic)": {
+      "name": "Pozostałe piętra (Podstawowa trudność)",
+      "results": [
+        {
+          "3-3": "Piekielny Ogar",
+          "4-4": "Żmija x2",
+          "5-5": "Piekielny ogar, Zabójca",
+          "6-6": "Piekielny Ogar",
+          "7-7": "Piekielny ogar, Szabloząb",
+          "8-8": "Piekielny Ogar",
+          "9-9": "Hasło PT10",
+          "10-10": "Plik PT10",
+          "11-11": "Węzeł kontrolny PT10",
+          "12-12": "Hasło PT10",
+          "13-13": "Żmija",
+          "14-14": "Żmija",
+          "15-15": "Smok",
+          "16-16": "Żmija",
+          "17-17": "Smok, Błędny ognik",
+          "18-18": "Smok x2"
+        }
+      ]
+    },
+    "All Other Floors (Standard)": {
+      "name": "Pozostałe piętra (Standardowa trudność)",
+      "results": [
+        {
+          "3-3": "Piekielny Ogar",
+          "4-4": "Żmija x2",
+          "5-5": "Piekielny ogar, Zabójca",
+          "6-6": "Piekielny Ogar",
+          "7-7": "Piekielny ogar, Szabloząb",
+          "8-8": "Piekielny Ogar",
+          "9-9": "Hasło PT10",
+          "10-10": "Plik PT10",
+          "11-11": "Węzeł kontrolny PT10",
+          "12-12": "Hasło PT10",
+          "13-13": "Żmija",
+          "14-14": "Żmija",
+          "15-15": "Smok",
+          "16-16": "Żmija",
+          "17-17": "Smok, Błędny ognik",
+          "18-18": "Smok x2"
+        }
+      ]
+    },
+    "All Other Floors (Uncommon)": {
+      "name": "Pozostałe piętra (Wysoka trudność)",
+      "results": [
+        {
+          "3-3": "Piekielny Ogar",
+          "4-4": "Żmija x2",
+          "5-5": "Piekielny ogar, Zabójca",
+          "6-6": "Piekielny Ogar",
+          "7-7": "Piekielny ogar, Szabloząb",
+          "8-8": "Piekielny Ogar",
+          "9-9": "Hasło PT10",
+          "10-10": "Plik PT10",
+          "11-11": "Węzeł kontrolny PT10",
+          "12-12": "Hasło PT10",
+          "13-13": "Żmija",
+          "14-14": "Żmija",
+          "15-15": "Smok",
+          "16-16": "Żmija",
+          "17-17": "Smok, Błędny ognik",
+          "18-18": "Smok x2"
+        }
+      ]
+    },
+    "First Two Floors (The Lobby)": {
+      "name": "Pierwsze dwa piętra (Lobby)",
+      "results": [
+        {
+          "1-1": "Plik PT6",
+          "2-2": "Hasło PT6",
+          "3-3": "Hasło PT8",
+          "4-4": "Skunks",
+          "5-5": "Błędny Ognik",
+          "6-6": "Zabójca"
+        }
+      ]
+    }
+  }
+}

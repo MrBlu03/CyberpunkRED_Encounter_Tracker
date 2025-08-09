@@ -1,0 +1,41 @@
+<li class="item flexrow"
+    data-item-id="{{cyberware._id}}"
+    data-installation-id="{{cyberware.system.installedIn.[0]}}"
+    draggable="false">
+  <div class="item-name cyberware-name flexrow text-nowrap">
+    <span>
+      <a class="name item-view" {{cprIndentCyberware depth}}>
+        <span class="name">
+          {{ cyberware.name }}
+        </span>
+        {{#if cyberware.system.isUpgraded }}
+          <i class="text-super fa-solid fa-square-caret-up"></i>
+        {{/if}}
+      </a>
+      {{#if cyberware.system.installedItems.allowed }}
+        ({{cyberware.system.installedItems.usedSlots}}/{{cprApplyUpgrade cyberware cyberware.system.installedItems.slots "slots"}}
+        {{localize "CPR.itemSheet.cyberware.optionalSlots"}})
+      {{/if}}
+    </span>
+  </div>
+  <div class="item-detail cyberware-data text-nowrap">
+    {{localize (cprFindConfigValue "cyberwareTypes" cyberware.system.type)}}
+  </div>
+  <div class="item-detail cyberware-actions text-nowrap">
+    {{!-- INSTALL ACTION --}}
+    {{> "systems/cyberpunk-red-core/templates/actor/mixin/actions/cpr-uninstall-glyph.hbs" cyberware}}
+    {{!-- ITEM MANAGEMENT --}}
+    {{#if isUpgraded }}
+      {{> "systems/cyberpunk-red-core/templates/actor/mixin/actions/cpr-upgrade-glyph.hbs"}}
+    {{else}}
+      {{#unless (cprIsEmpty (cprFilter (cprFilter actor.itemTypes.itemUpgrade "type" "cyberware") "system.isInstalled" false))}}
+        {{> "systems/cyberpunk-red-core/templates/actor/mixin/actions/cpr-upgrade-glyph.hbs"}}
+      {{/unless}}
+    {{/if}}
+  </div>
+</li>
+{{#if (cprCompare cyberware.type "===" "cyberware") }}
+  {{#each cyberware.system.installedItems.list as |id| }}
+    {{> "systems/cyberpunk-red-core/templates/actor/character/right-pane/tabs/cyberware/cpr-cyberware-optional-content.hbs" (cprMergeForPartialArg "actor,cyberware,depth" ../actor (cprGetOwnedItem ../actor id) (cprMath "sum" ../depth 1))}}
+  {{/each}}
+{{/if}}

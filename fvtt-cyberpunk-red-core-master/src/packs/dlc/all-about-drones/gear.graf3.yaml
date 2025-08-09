@@ -1,0 +1,33 @@
+_id: mmckNZZHbEtSoyA1
+_key: "!items!mmckNZZHbEtSoyA1"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/all-about-drones/graf3.svg
+name: GRAF3
+system:
+  amount: 1
+  brand: Zhirafa
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>Quadruped construction drone.</p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 0
+    usedSlots: 0
+  isElectronic: true
+  price:
+    market: 5000
+  providesHardening: false
+  revealed: true
+  source:
+    book: IRv1
+    page: 59
+  usage: toggled
+type: gear

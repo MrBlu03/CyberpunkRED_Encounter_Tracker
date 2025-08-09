@@ -1,0 +1,27 @@
+<form class="dialog-sheet">
+  <div class="dialog-grid flexcol">
+    <ol class="dialog-list">
+      <li class="dialog-item dialog-item-header flexrow">
+        <div class="dialog-item-name text-nowrap">
+          {{localize "CPR.settings.moduleMigrationMenu.moduleTitle"}}
+        </div>
+        <div class="dialog-item-input text-nowrap text-padding-right">
+          {{localize "CPR.dialog.common.select"}}
+        </div>
+      </li>
+      {{#each modules as |modTitle modId|}}
+        <li class="dialog-item flexrow">
+          <div class="dialog-item-name text-nowrap">
+            {{modTitle}}
+          </div>
+          <div class="dialog-item-input text-nowrap text-semi text-space-around">
+            <input type="checkbox" name="modIds" value="{{modId}}" {{checked (cprListContains ../selectedMods modId)}}/>
+          </div>
+        </li>
+      {{/each}}
+    </ol>
+  </div>
+  <button type="submit">
+    <i class="fas fa-floppy-disk"></i> {{localize "CPR.settings.saveSettings"}}
+  </button>
+</form>

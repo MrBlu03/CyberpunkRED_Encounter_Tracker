@@ -1,0 +1,23 @@
+# Manages issues when we open a Merge Request
+#
+# Automates updating any Issues when a Merge Request is opened:
+#   * Updated any Issues with a notice that a MR has been opened
+#   * Adds Labels
+
+manage-issues-on-mr:
+  stage: init
+  image: mvdan/shfmt:latest-alpine
+  before_script:
+    - apk update
+    - apk add bash jq curl
+  script:
+    - ./.gitlab/pipeline_utils/manage-issues-on-mr.sh
+  needs:
+    - job: init
+      artifacts: true
+  rules:
+    # Don't run if we're in the cleanup-dev schedule
+    - if: $CPR_SCHEDULE == "cleanup-dev"
+      when: never
+    # Run on MRs
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"

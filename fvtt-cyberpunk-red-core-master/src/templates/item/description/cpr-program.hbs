@@ -1,0 +1,42 @@
+{{#if (cprCompare item.system.class "===" "blackice") }}
+  <div class="item-summary-line">
+    <span class="summary-name text-semi">
+      {{localize "CPR.global.blackIce.stats.per"}}:
+    </span>
+    <span class="summary-value">
+      {{item.system.per}}
+    </span>
+  </div>
+  <div class="item-summary-line">
+    <span class="summary-name text-semi">
+      {{localize "CPR.global.blackIce.stats.spd"}}:
+    </span>
+    <span class="summary-value">
+      {{item.system.spd}}
+    </span>
+  </div>
+{{/if}}
+<div class="item-summary-line">
+  <span class="summary-name text-semi">
+    {{localize "CPR.global.blackIce.stats.atk"}}:
+  </span>
+  <span class="summary-value text-semi">
+    {{item.system.atk}}
+  </span>
+</div>
+<div class="item-summary-line">
+  <span class="summary-name text-semi">
+    {{localize "CPR.global.blackIce.stats.def"}}:
+  </span>
+  <span class="summary-value text-semi">
+    {{item.system.def}}
+  </span>
+</div>
+<div class="item-summary-line">
+  <span class="summary-name text-semi">
+    {{localize "CPR.global.generic.rez"}}:
+  </span>
+  <span class="summary-value">
+    {{item.system.rez.max}}
+  </span>
+</div>

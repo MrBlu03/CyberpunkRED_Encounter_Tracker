@@ -1,0 +1,30 @@
+{
+  "label": "Alles über Drohnen",
+  "mapping": {},
+  "entries": {
+    "GRAF3": {
+      "name": "GRAF3",
+      "description": "<p>Vierbeinige Konstruktionsdrohne.</p>\n<p>Siehe volle Beschreibung auf Seite 59 von Interface Red vol. 1.</p>"
+    },
+    "My First GRAF3": {
+      "name": "Meine erste GRAF3",
+      "description": "<p>Persönliche Drohne. Winzige GRAF3, die mit einem Agenten verbunden werden kann.</p>\n<p>Siehe volle Beschreibung auf Seite 61 von Interface Red vol. 1.</p>"
+    },
+    "Savannah Eagle": {
+      "name": "Savannah Eagle",
+      "description": "<p>Aktive luftgestützte Verteidigungsdrohne.</p>\n<p>Siehe volle Beschreibung auf Seite 60 von Interface Red vol. 1.</p>"
+    },
+    "Savannah Panther": {
+      "name": "Savannah Panther",
+      "description": "<p>Aktive Verteidigungsdrohne.</p>\n<p>Siehe volle Beschreibung auf Seite 61 von Interface Red vol. 1.</p>"
+    },
+    "The Observer": {
+      "name": "The Observer (Beobachter)",
+      "description": "<p>Persönliche Drohne. Fliegende Kamera, die mit einem Agenten verbunden werden kann.</p>\n<p>Siehe volle Beschreibung auf Seite 62 von Interface Red vol. 1.</p>"
+    },
+    "The Transporter": {
+      "name": "The Transporter",
+      "description": "<p>Persönliche Drohne. Transportdrohne, die mit einem Agenten verbunden werden kann.</p>\n<p>Siehe volle Beschreibung auf Seite 63 von Interface Red vol. 1.</p>"
+    }
+  }
+}

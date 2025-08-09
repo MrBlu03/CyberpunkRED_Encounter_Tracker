@@ -1,0 +1,61 @@
+{{#unless (cprCompare item.system.isInstalled "&&" (cprCompare item.type "!==" "ammo"))}}
+  <li class="item flexrow {{#if (cprListContains collapsed (cprGeneratePartial "gearTab-VAR" item.type)) }} hide{{/if }}"
+      data-item-id="{{item.id}}"
+      data-item-category="{{item.type}}"
+      draggable="true">
+    <div class="item-name text-nowrap flexrow">
+      <a class="name item-edit flex-center" data-tooltip="{{item.system.description.value}}">
+        <div class="item-thumb">
+          <img src="{{item.img}}"/>
+          {{#if item.system.isUpgraded }}
+            <i class="fa-solid fa-square-caret-up fa-xs" data-tooltip="{{localize "CPR.global.generic.upgraded"}}"></i>
+          {{/if}}
+        </div>
+        {{ item.name }}
+      </a>
+      {{#if item.system.installedItems.list }}
+        <a class="toggle-installed-visibility">
+          <i class="fa-solid fa-chevron-up fa-sm {{#unless (cprGetProp actor.flags.cyberpunk-red-core.showInstalled item.id) }}fa-flip-vertical{{/unless}}"></i>
+        </a>
+      {{/if}}
+    </div>
+    <div class="item-detail text-center text-nowrap">
+      {{#if (cprHasTemplate item.type "stackable") }}
+        {{cprNumberFormat item.system.amount}}
+      {{/if}}
+    </div>
+    <div class="item-name gear-data text-nowrap">
+      {{#if (cprCompare item.system.amount ">" "1") }}
+        {{#if (cprCompare (cprCompare item.type "===" "ammo") "&&" (cprCompare (cprCompare item.system.variety "!==" "grenade") "&&" (cprCompare item.system.variety "!==" "rocket"))) }}
+          {{localize "CPR.containerSheet.items.priceListingSingleAll"
+            price=(cprMath "product" item.system.price.market "0.1")
+            category=(localize (cprGetProp (cprFindConfigObj "itemPriceCategory") (cprGetPriceCategory item.system.price.market)))
+            priceAll=(cprNumberFormat (cprMath "product" item.system.price.market item.system.amount "0.1"))
+          }}
+        {{else}}
+          {{localize "CPR.containerSheet.items.priceListingSingleAll"
+            price=item.system.price.market
+            category=(localize (cprGetProp (cprFindConfigObj "itemPriceCategory") (cprGetPriceCategory item.system.price.market)))
+            priceAll=(cprMath "product" item.system.price.market item.system.amount)
+          }}
+        {{/if}}
+      {{else}}
+        {{#if (cprCompare (cprCompare item.type "===" "ammo") "&&" (cprCompare (cprCompare item.system.variety "!==" "grenade") "&&" (cprCompare item.system.variety "!==" "rocket"))) }}
+          {{localize "CPR.containerSheet.items.priceListingSingle"
+            price=(cprMath "product" item.system.price.market "0.1")
+            category=(localize (cprGetProp (cprFindConfigObj "itemPriceCategory") (cprGetPriceCategory item.system.price.market)))
+          }}
+        {{else}}
+          {{localize "CPR.containerSheet.items.priceListingSingle"
+            price=item.system.price.market
+            category=(localize (cprGetProp (cprFindConfigObj "itemPriceCategory") (cprGetPriceCategory item.system.price.market)))
+          }}
+        {{/if}}
+      {{/if}}
+    </div>
+    <div class="item-end text-nowrap">
+      {{> "systems/cyberpunk-red-core/templates/actor/container/cpr-container-actions.hbs" (cprMergeForPartialArg "item,actor,isGM" item actor isGM)}}
+    </div>
+  {{cprNestedInstalledGearTab item}}
+  </li>
+{{/unless}}

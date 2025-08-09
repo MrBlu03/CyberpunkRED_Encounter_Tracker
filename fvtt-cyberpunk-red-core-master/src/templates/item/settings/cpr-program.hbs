@@ -1,0 +1,179 @@
+{{!-- Program Item Settings--}}
+{{!-- Program Size--}}
+<li class="item flexrow">
+  <div class="item flexrow setting-name text-nowrap">
+    {{localize "CPR.itemSheet.program.programSize"}}
+  </div>
+  <div class="item flexrow setting-value text-nowrap item-end">
+    {{#if this.editable }}
+      <input name="system.size"
+             type="number"
+             value="{{item.system.size}}"
+             placeholder="1"/>
+    {{else}}
+      <span class="text-flex-end">{{item.system.size}}</span>
+    {{/if}}
+  </div>
+</li>
+{{!-- Program Class--}}
+<li class="item flexrow">
+  <div class="item flexrow setting-name text-nowrap">
+    {{localize "CPR.global.generic.class"}}
+  </div>
+  <div class="item flexrow setting-value text-nowrap item-end">
+    <select name="system.class" data-dtype="{{item.system.class}}">
+      {{selectOptions (cprFindConfigObj "programClassList") selected=item.system.class localize=true}}
+    </select>
+  </div>
+</li>
+{{#if (cprCompare item.system.class "!==" "defender") }}
+  <hr/>
+{{/if}}
+{{!-- Black ICE Configuration--}}
+{{#if (cprCompare item.system.class "===" "blackice") }}
+  <li class="item flexrow">
+    <div class="item flexrow setting-name text-nowrap">
+      {{localize "CPR.global.programClass.blackice"}} {{localize "CPR.global.generic.type"}}
+    </div>
+    <div class="item flexrow setting-value text-nowrap item-end">
+      <select name="system.blackIceType" data-dtype="{{item.system.blackIceType}}">
+        {{selectOptions (cprFindConfigObj "blackIceType") selected=item.system.blackIceType localize=true}}
+      </select>
+    </div>
+  </li>
+{{/if}}
+{{!-- Program Damage Rolls--}}
+{{#if (cprCompare (cprCompare (cprCompare item.system.class "===" "antiprogramattacker") "||" (cprCompare item.system.class "===" "antipersonnelattacker")) "||" (cprCompare item.system.class "===" "blackice")) }}
+  {{!-- Anti-Personnel Damage Rolls--}}
+  {{#if (cprCompare (cprCompare item.system.class "!==" "blackice") "||" (cprCompare item.system.blackIceType "===" "antipersonnel")) }}
+    <li class="item flexrow">
+      <div class="item flexrow setting-name text-nowrap">
+        {{#if (cprCompare item.system.class "===" "antipersonnelattacker") }}
+          {{localize "CPR.global.generic.damage"}}
+        {{else}}
+          {{localize "CPR.itemSheet.program.damageTo"}}
+          {{#if (cprCompare item.system.class "===" "blackice") }}
+          {{localize "CPR.global.role.netrunner.name"}}{{else}}{{localize "CPR.itemSheet.program.nonBlackIce"}}{{/if}}
+          {{/if}}
+        </div>
+        <div class="item flexrow setting-value text-nowrap item-end">
+          {{#if this.editable }}
+            <input name="system.damage.standard"
+                   type="text"
+                   value="{{item.system.damage.standard}}"/>
+          {{else}}
+            <span class="text-flex-end">{{item.system.damage.standard}}</span>
+          {{/if}}
+        </div>
+      </li>
+    {{/if}}
+    {{!-- Anti-Program Damage Rolls--}}
+    {{#if (cprCompare (cprCompare item.system.class "===" "antiprogramattacker") "||" (cprCompare (cprCompare item.system.class "===" "blackice") "&&" (cprCompare item.system.blackIceType "===" "antiprogram"))) }}
+      <li class="item flexrow">
+        <div class="item flexrow setting-name text-nowrap">
+          {{localize "CPR.itemSheet.program.damageTo"}}
+          {{#if (cprCompare item.system.class "===" "blackice") }}
+          {{localize "CPR.dialog.selectInstallPrograms.programs"}}{{else}}{{localize "CPR.global.programClass.blackice"}}{{/if}}
+          </div>
+          <div class="item flexrow setting-value text-nowrap item-end">
+            {{#if this.editable }}
+              <input name="system.damage.blackIce"
+                     type="text"
+                     value="{{item.system.damage.blackIce}}"/>
+            {{else}}
+              <span class="text-flex-end">{{item.system.damage.blackIce}}</span>
+            {{/if}}
+          </div>
+        </li>
+      {{/if}}
+      <hr/>
+    {{/if}}
+    {{#if (cprCompare item.system.class "===" "blackice") }}
+      {{!-- Program PER--}}
+      <li class="item flexrow">
+        <div class="item flexrow setting-name text-nowrap">
+          {{localize "CPR.global.blackIce.stats.per"}}
+        </div>
+        <div class="item flexrow setting-value text-nowrap item-end">
+          {{#if this.editable }}
+            <input name="system.per"
+                   type="number"
+                   value="{{item.system.per}}"
+                   placeholder="5"/>
+          {{else}}
+            <span class="text-flex-end">{{item.system.per}}</span>
+          {{/if}}
+        </div>
+      </li>
+      {{!-- Program SPD--}}
+      <li class="item flexrow">
+        <div class="item flexrow setting-name text-nowrap">
+          {{localize "CPR.global.blackIce.stats.spd"}}
+        </div>
+        <div class="item flexrow setting-value text-nowrap item-end">
+          {{#if this.editable }}
+            <input name="system.spd"
+                   type="number"
+                   value="{{item.system.spd}}"
+                   placeholder="5"/>
+          {{else}}
+            <span class="text-flex-end">{{item.system.spd}}</span>
+          {{/if}}
+        </div>
+      </li>
+    {{/if}}
+    {{!-- Program ATK--}}
+    <li class="item flexrow">
+      <div class="item flexrow setting-name text-nowrap">
+        {{localize "CPR.global.blackIce.stats.atk"}}
+      </div>
+      <div class="item flexrow setting-value text-nowrap item-end">
+        {{#if this.editable }}
+          <input name="system.atk"
+                 type="number"
+                 value="{{item.system.atk}}"
+                 placeholder="5"/>
+        {{else}}
+          <span class="text-flex-end">{{item.system.atk}}</span>
+        {{/if}}
+      </div>
+    </li>
+    {{!-- Program DEF--}}
+    <li class="item flexrow">
+      <div class="item flexrow setting-name text-nowrap">
+        {{localize "CPR.global.blackIce.stats.def"}}
+      </div>
+      <div class="item flexrow setting-value text-nowrap item-end">
+        {{#if this.editable }}
+          <input name="system.def"
+                 type="number"
+                 value="{{item.system.def}}"
+                 placeholder="5"/>
+        {{else}}
+          <span class="text-flex-end">{{item.system.def}}</span>
+        {{/if}}
+      </div>
+    </li>
+    {{!-- Program REZ--}}
+    <li class="item flexrow">
+      <div class="item flexrow setting-name text-nowrap">
+        {{localize "CPR.global.generic.rez"}} Max
+      </div>
+      <div class="item flexrow setting-value text-nowrap item-end">
+          <input name="system.rez.max"
+                 type="number"
+                 value="{{item.system.rez.max}}"
+                 placeholder="5"/>
+      </div>
+    </li>
+    <li class="item flexrow">
+      <div class="item flexrow setting-name text-nowrap">
+        {{localize "CPR.global.generic.rez"}} Current
+      </div>
+      <div class="item flexrow setting-value text-nowrap item-end">
+          <input name="system.rez.value"
+                 type="number"
+                 value="{{item.system.rez.value}}"
+                 placeholder="5"/>
+      </div>
+    </li>

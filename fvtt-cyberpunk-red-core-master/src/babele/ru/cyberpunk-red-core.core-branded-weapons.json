@@ -1,0 +1,149 @@
+{
+  "label": "Core Branded Weapons",
+  "entries": {
+    "Avenger": {
+      "name": "Avenger",
+      "description": "<p>A concealable, medium-sized pistol. +1 to Attack.</p>"
+    },
+    "Bearcat": {
+      "name": "Bearcat",
+      "description": "<p>A revitalized bow, reloaded as part of an Attack Action.</p>\n<p>+1 to Attack.</p>"
+    },
+    "Boomer Buster": {
+      "name": "Boomer Buster",
+      "description": "<p>A very heavy pistol. It can't be concealed. +1 to Attack.</p>"
+    },
+    "Bulldog": {
+      "name": "Bulldog",
+      "description": "<p>An all-purpose shotgun. +1 to Attack.</p>"
+    },
+    "City Reaper": {
+      "name": "City Reaper",
+      "description": "<p>A heavy SMG. Due to its size it can't be concealed.  If you roll 1 on Attack (Crit fail) the gun jams and requires using an action to clear. </p>"
+    },
+    "Cityhunter": {
+      "name": "Cityhunter",
+      "description": "<p>A concealable, heavy pistol. +1 to Attack.</p>"
+    },
+    "Dragon": {
+      "name": "Dragon",
+      "description": "<p>A standard-issue assault rifle. +1 to Attack.</p>"
+    },
+    "Home Defender": {
+      "name": "Home Defender",
+      "description": "<p>An all-purpose shotgun.  If you roll 1 on Attack (Crit fail) the gun jams and requires using an action to clear. </p>"
+    },
+    "Hotshot": {
+      "name": "Hotshot",
+      "description": "<p>Bring out the big guns. This rocket launcher will do some damage. +1 to Attack.</p>"
+    },
+    "Hunter": {
+      "name": "Hunter",
+      "description": "<p>A crossbow which must be reloaded after every attack.  If you roll 1 on Attack (Crit fail) the gun jams and requires using an action to clear. </p>"
+    },
+    "Jungle Reaper": {
+      "name": "Jungle Reaper",
+      "description": "<p>A standard-issue assault rifle.  If you roll 1 on Attack (Crit fail) the gun jams and requires using an action to clear. </p>"
+    },
+    "Long Rifle": {
+      "name": "Long Rifle",
+      "description": "<p>A long-distance sniper rifle. Holds 4 bullets in a magazine. </p>"
+    },
+    "Magnum": {
+      "name": "Magnum",
+      "description": "<p>A concealable, heavy pistol.  If you roll 1 on Attack (Crit fail) the gun jams and requires using an action to clear. </p>"
+    },
+    "Mark III": {
+      "name": "Mark III",
+      "description": "<p>A concealable, heavy pistol. </p>"
+    },
+    "Minami 10": {
+      "name": "Minami 10",
+      "description": "<p>A concealable SMG. +1 to Attack.</p>"
+    },
+    "Mini-Gat": {
+      "name": "Mini-Gat",
+      "description": "<p>A concealable SMG. </p>"
+    },
+    "Mini-Grenade": {
+      "name": "Mini-Grenade",
+      "description": "<p>A high-impact grenade launcher. You can use a variety of grenades with this. </p>"
+    },
+    "P-35": {
+      "name": "P-35",
+      "description": "<p>A very heavy pistol. It can't be concealed. </p>"
+    },
+    "Rapid Assault": {
+      "name": "Rapid Assault",
+      "description": "<p>An all-purpose shotgun. </p>"
+    },
+    "Ronin": {
+      "name": "Ronin",
+      "description": "<p>A standard-issue assault rifle. </p>"
+    },
+    "Scorpion": {
+      "name": "Scorpion",
+      "description": "<p>A crossbow, reloaded as part of an Attack Action.</p>\n<p>+1 to Attack.</p>"
+    },
+    "Sherwood": {
+      "name": "Sherwood",
+      "description": "<p>A revitalized bow that must be reloaded after every attack.  If you roll 1 on Attack (Crit fail) the gun jams and requires using an action to clear. </p>"
+    },
+    "SMG-21": {
+      "name": "SMG-21",
+      "description": "<p>A heavy SMG. Due to its size it can't be concealed. </p>"
+    },
+    "Snipe-Star": {
+      "name": "Snipe-Star",
+      "description": "<p>A long-distance sniper rifle. Holds 4 bullets in a magazine.  If you roll 1 on Attack (Crit fail) the gun jams and requires using an action to clear. </p>"
+    },
+    "Streetmaster": {
+      "name": "Streetmaster",
+      "description": "<p>A concealable, medium-sized pistol. If you roll 1 on Attack (Crit fail) the gun jams and requires using an action to clear. </p>"
+    },
+    "Striker": {
+      "name": "Striker",
+      "description": "<p>A crossbow, reloaded as part of an Attack Action.</p>"
+    },
+    "Super Chief": {
+      "name": "Super Chief",
+      "description": "<p>A very heavy pistol. It can't be concealed.  If you roll 1 on Attack (Crit fail) the gun jams and requires using an action to clear. </p>"
+    },
+    "Tech-Assault III": {
+      "name": "Tech-Assault III",
+      "description": "<p>A concealable SMG.  If you roll 1 on Attack (Crit fail) the gun jams and requires using an action to clear. </p>"
+    },
+    "Tomcat": {
+      "name": "Tomcat",
+      "description": "<p>A revitalized bow, reloaded as part of an Attack Action.</p>"
+    },
+    "Type-18": {
+      "name": "Type-18",
+      "description": "<p>A high-impact grenade launcher. You can use a variety of grenades with this. +1 to Attack.</p>"
+    },
+    "Type-G": {
+      "name": "Type-G",
+      "description": "<p>A high-impact grenade launcher. You can use a variety of grenades with this.  If you roll 1 on Attack (Crit fail) the gun jams and requires using an action to clear. </p>"
+    },
+    "Type-R": {
+      "name": "Type-R",
+      "description": "<p>Bring out the big guns. This rocket launcher will do some damage.  If you roll 1 on Attack (Crit fail) the gun jams and requires using an action to clear. </p>"
+    },
+    "Urban": {
+      "name": "Urban",
+      "description": "<p>Bring out the big guns. This rocket launcher will do some damage. </p>"
+    },
+    "Viper": {
+      "name": "Viper",
+      "description": "<p>A heavy SMG. Due to its size it can't be concealed. +1 to Attack.</p>"
+    },
+    "WSSA Sniper System": {
+      "name": "WSSA Sniper System",
+      "description": "<p>A long-distance sniper rifle. Holds 4 bullets in a magazine. +1 to Attack.</p>"
+    },
+    "X-9mm": {
+      "name": "X-9mm",
+      "description": "<p>A concealable, medium-sized pistol. </p>"
+    }
+  }
+}

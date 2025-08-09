@@ -1,0 +1,16 @@
+{{#if item.isOwned }}
+  <div class="item-summary-line">
+    <span class="summary-namei text-semi">
+      {{localize "CPR.itemSheet.physical.location"}}:
+    </span>
+    <span class="summary-value">
+      {{#if (cprCompare item.system.equipped '===' "carried")}}
+        {{localize "CPR.global.equipState.carried"}}
+      {{else if (cprCompare item.system.equipped '===' "equipped")}}
+        {{localize "CPR.global.equipState.equipped"}}
+      {{else if (cprCompare item.system.equipped '===' "owned")}}
+        {{localize "CPR.global.equipState.owned"}}
+      {{/if}}
+    </span>
+  </div>
+{{/if}}

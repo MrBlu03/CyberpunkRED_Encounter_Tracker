@@ -1,0 +1,22 @@
+{
+  "label": "Umiejętność (Sztuki Walki)",
+  "mapping": {},
+  "entries": {
+    "Martial Arts (Aikido)": {
+      "name": "Sztuki Walki (Aikido)",
+      "description": ""
+    },
+    "Martial Arts (Judo)": {
+      "name": "Sztuki Walki (Judo)",
+      "description": ""
+    },
+    "Martial Arts (Karate)": {
+      "name": "Sztuki Walki (Karate)",
+      "description": ""
+    },
+    "Martial Arts (Taekwondo)": {
+      "name": "Sztuki Walki (Taekwondo)",
+      "description": ""
+    }
+  }
+}

@@ -1,0 +1,11 @@
+_id: 2W5pgeHM4VmWP1FR
+_key: "!tables.results!O9sHkNja0lU0lMaW.2W5pgeHM4VmWP1FR"
+documentId: null
+drawn: false
+img: icons/svg/d20-black.svg
+range:
+  - 13
+  - 25
+text: "14"
+type: 0
+weight: 1

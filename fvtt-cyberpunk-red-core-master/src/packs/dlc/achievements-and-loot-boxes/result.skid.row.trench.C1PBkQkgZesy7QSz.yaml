@@ -1,0 +1,12 @@
+_id: C1PBkQkgZesy7QSz
+_key: "!tables.results!VszxZ4TJjQ8FGuoc.C1PBkQkgZesy7QSz"
+documentCollection: cyberpunk-red-core.black-chrome_armor
+documentId: xVE36X9aE4m3mRza
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/black-chrome/skidrow-trench.svg
+range:
+  - 4
+  - 4
+text: Skid Row Trench
+type: 2
+weight: 1

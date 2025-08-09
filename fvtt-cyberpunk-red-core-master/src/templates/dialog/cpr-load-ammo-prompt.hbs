@@ -1,0 +1,23 @@
+<form class="dialog-sheet">
+  <div class="dialog-header flexcol">
+    <div class="text-normal text-center">
+      {{localize "CPR.dialog.loadAmmo.selectAmmoToLoadInto"}} {{this.weapon.name}}:
+    </div>
+  </div>
+  <hr/>
+  <div class="dialog-grid flexcol">
+    <ol class="dialog-list">
+      <li class="dialog-item flexrow">
+        <div class="dialog-item-name text-nowrap">
+          {{localize "CPR.actorSheets.commonActions.changeAmmo"}}:
+        </div>
+        <div class="dialog-item-input item-end">
+          <select name="selectedAmmo">
+            {{selectOptions this.ammoList selected=selectedAmmo}}
+          </select>
+        </div>
+      </li>
+    </ol>
+  </div>
+  {{> "systems/cyberpunk-red-core/templates/dialog/cpr-dialog-buttons.hbs"}}
+</form>

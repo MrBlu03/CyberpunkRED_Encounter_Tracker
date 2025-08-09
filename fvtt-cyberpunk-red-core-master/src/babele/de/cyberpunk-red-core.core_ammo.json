@@ -1,0 +1,226 @@
+{
+  "label": "Munition",
+  "mapping": {},
+  "entries": {
+    "Arrow (Armor-Piercing)": {
+      "name": "Pfeil (Panzerbrechend)",
+      "description": "<p>Doppelte Abtragung der Rüstung.</p>"
+    },
+    "Arrow (Basic)": {
+      "name": "Pfeil (Basis)",
+      "description": "<p>Standardmunition, keine Besonderheiten.</p>"
+    },
+    "Arrow (Biotoxin)": {
+      "name": "Pfeil (Biotoxin)",
+      "description": "<p>Der Angriff richtet keinen Schaden an. Das Ziel muss eine Probe auf Folter/Drogen widerstehen, mit SG 15 abzulegen. Scheitert die Probe, erleidet das Ziel 3W6 direkten Schaden an seinen TP. Panzerung wird nicht abgetragen.</p>"
+    },
+    "Arrow (Expansive)": {
+      "name": "Pfeil (Expansion)",
+      "description": "<p>Wenn du die Kritische Verletzung Fremdkörper anrichtest, würfel solange auf die Tabelle „Kritische Verletzungen“ (ab Seite 187), bis es eine Kritische Verletzung erzielt, die nicht Fremdkörper ist. Das Opfer erleidet dann zusätzlich diese Kritische Verletzung. Die zweite Verletzung richtet keinen Bonusschaden an.</p>"
+    },
+    "Arrow (Incendiary)": {
+      "name": "Pfeil (Brand)",
+      "description": "<p>Wenn du durch die Panzerung eines Ziels hindurch Schaden anrichtest, steckst du das Ziel in Brand. Wenn das Ziel keine Aktion aufwendet, um sich selbst zu löschen, werden am Ende jedes seiner Züge 2 Schadenspunkte direkt von seinen TP abgezogen. Wenn der Effekt mehrfach auftritt, ist er nicht kumulativ.</p>"
+    },
+    "Arrow (Poison)": {
+      "name": "Pfeil (Gift)",
+      "description": "<p>Der Angriff richtet keinen Schaden an. Das Ziel muss eine Probe auf Folter/Drogen widerstehen, mit SG 13 abzulegen. Scheitert die Probe, erleidet das Ziel 2W6 direkten Schaden an seinen TP. Panzerung wird nicht abgetragen.</p>"
+    },
+    "Arrow (Rubber)": {
+      "name": "Pfeil (Gummi)",
+      "description": "<p>Schaden führt nicht zu kritischen Verletzungen. Kann keine Panzerung abtragen. Diese Munition kann die TP eines Ziels nicht von 1 auf 0 senken. Bei Exotischen Waffen gilt Gummimunition als Basismunition.</p>"
+    },
+    "Arrow (Sleep)": {
+      "name": "Pfeil (Schlaf)",
+      "description": "<p>Der Angriff richtet keinen Schaden an. Das Ziel muss eine Probe auf Folter/Drogen widerstehen, mit SG 13 abzulegen. Scheitert die Probe, erleidet das Ziel die Zustände Liegend (siehe Seite 169) und Bewusstlos, die 1 Minute lang anhalten, es sei denn, das Ziel wird durch Schaden oder dadurch geweckt, dass jemand eine Aktion aufwendet, um es zu berühren.</p>"
+    },
+    "Arrow (Smart)": {
+      "name": "Pfeil (Smart)",
+      "description": "<p>Die Cyberware Zielerfassung wird benötigt, ohne wird die Smart-Munition aufgrund einer Sicherheitsfunktion nicht abgeschossen. Wenn du diese Munition verwendest und dir der Schuss im Einzelschussmodus der Waffe um 4 oder weniger misslingt, erhält dein Schuss sofort eine zweite Chance, dein Ziel zu treffen. Du nutzt den gleichen SG, allerdings addierst du 10 zu dem Ergebnis statt allem anderen, was du hinzufügen würdest, mit Ausnahme von GLÜ. Ein Ziel, dass Geschossen ausweichen kann, kann sich entscheiden, diesem Angriff wie üblich auszuweichen.</p>"
+    },
+    "Battery Pack": {
+      "name": "Batteriepack",
+      "description": "<p>Die Munition ist gratis, da sie leicht wieder aufladbare Batteriepacks (Ladezeit 1 Stunde) erfordert, die nach 8 Schüssen ersetzt werden müssen.&nbsp;</p>"
+    },
+    "Grenade (Armor-Piercing)": {
+      "name": "Granate (Panzerbrechend)",
+      "description": "<p>Doppelte Abtragung der Rüstung.</p>"
+    },
+    "Grenade (Biotoxin)": {
+      "name": "Granate (Biotoxin)",
+      "description": "<p>Der Angriff richtet keinen Schaden an. Das Ziel muss eine Probe auf Folter/Drogen widerstehen mit SG 15 ablegen. Scheitert die Probe, erleidet das Ziel 3W6 direkten Schaden an seinen TP. Panzerung wird nicht abgetragen.</p>"
+    },
+    "Grenade (EMP)": {
+      "name": "Granate (EMP)",
+      "description": "<p>Richtet keinen Schaden an. Stattdessen müssen alle eine Probe auf Cybertech mit SG 15 ablegen. Wenn sie scheitern, dann wählt der SL 2 Teile an Cyberware oder getragener Elektronik aus, die 1 Minute lang außer Betrieb gesetzt werden. Cybergliedmaßen, die außer Betrieb gesetzt werden reagieren wie ihre fleischlichen Pendants, wenn diese abgetrennt werden, hängen allerdings nur lose herunter. Siehe Kritische Verletzungen ab Seite 187.</p>"
+    },
+    "Grenade (Flashbang)": {
+      "name": "Granate (Blendgranate)",
+      "description": "<p>Der Angriff richtet keinen Schaden an. Stattdessen müssen alle eine Probe auf Folter/Drogen widerstehen mit SG 15 ablegen. Wer scheitert, erleidet für die nächste Minute die Kritischen Verletzungen Augenschaden und Ohrenschaden (siehe Seite 188). Diese Kritischen Verletzungen richten keinen Bonusschaden an.</p>"
+    },
+    "Grenade (Incendiary)": {
+      "name": "Granate (Brand)",
+      "description": "<p>Wenn du durch die Panzerung eines Ziels hindurch Schaden anrichtest, steckst du das Ziel in Brand. Wenn das Ziel keine Aktion aufwendet, um sich selbst zu löschen, werden am Ende jedes seiner Züge 2 Schadenspunkte direkt von seinen TP abgezogen. Wenn der Effekt mehrfach auftritt, ist er nicht kumulativ.</p>"
+    },
+    "Grenade (Poison)": {
+      "name": "Granate (Gift)",
+      "description": "<p>Der Angriff richtet keinen Schaden an. Das Ziel muss eine Probe auf Folter/Drogen widerstehen, mit SG 13 abzulegen. Scheitert die Probe, erleidet das Ziel 2W6 direkten Schaden an seinen TP. Panzerung wird nicht abgetragen.</p>"
+    },
+    "Grenade (Sleep)": {
+      "name": "Granate (Schlaf)",
+      "description": "<p>Der Angriff richtet keinen Schaden an. Das Ziel muss eine Probe auf Folter/Drogen widerstehen, mit SG 13 abzulegen. Scheitert die Probe, erleidet das Ziel die Zustände Liegend (siehe Seite 169) und Bewusstlos, die 1 Minute lang anhalten, es sei denn, das Ziel wird durch Schaden oder dadurch geweckt, dass jemand eine Aktion aufwendet, um es zu berühren.</p>"
+    },
+    "Grenade (Smoke)": {
+      "name": "Granate (Rauch)",
+      "description": "<p>Der Angriff richtet keinen Schaden an. Füllt für eine Minute ein Gebiet von 10 x 10 Metern mit Rauch. Der normale Malus für den Versuch, eine Aufgabe im Rauch zu erfüllen liegt bei –4.</p>"
+    },
+    "Grenade (Teargas)": {
+      "name": "Granate (Tränengas)",
+      "description": "<p>Der Angriff richtet keinen Schaden an. Stattdessen muss jeder mit Fleischaugen eine Probe auf Folter/Drogen widerstehen mit SG 13 ablegen. Wer scheitert, erleidet in der nächsten Minute die Kritische Verletzung Augenschaden (siehe Seite 188). Diese Kritische Verletzung richtet keinen Bonusschaden an.</p>"
+    },
+    "Heavy Pistol (Armor-Piercing)": {
+      "name": "Schwere Pistole (Panzerbrechend)",
+      "description": "<p>Doppelte Abtragung der Rüstung.</p>"
+    },
+    "Heavy Pistol (Basic)": {
+      "name": "Schwere Pistole (Basis)",
+      "description": "<p>Standardmunition, keine Besonderheiten.</p>"
+    },
+    "Heavy Pistol (Expansive)": {
+      "name": "Schwere Pistole (Expansion)",
+      "description": "<p>Wenn du die Kritische Verletzung Fremdkörper anrichtest, würfel solange auf die Tabelle „Kritische Verletzungen“ (ab Seite 187), bis es eine Kritische Verletzung erzielt, die nicht Fremdkörper ist. Das Opfer erleidet dann zusätzlich diese Kritische Verletzung. Die zweite Verletzung richtet keinen Bonusschaden an.</p>"
+    },
+    "Heavy Pistol (Incendiary)": {
+      "name": "Schwere Pistole (Brand)",
+      "description": "<p>Wenn du durch die Panzerung eines Ziels hindurch Schaden anrichtest, steckst du das Ziel in Brand. Wenn das Ziel keine Aktion aufwendet, um sich selbst zu löschen, werden am Ende jedes seiner Züge 2 Schadenspunkte direkt von seinen TP abgezogen. Wenn der Effekt mehrfach auftritt, ist er nicht kumulativ.</p>"
+    },
+    "Heavy Pistol (Rubber)": {
+      "name": "Schwere Pistole (Gummi)",
+      "description": "<p>Schaden führt nicht zu kritischen Verletzungen. Kann keine Panzerung abtragen. Diese Munition kann die TP eines Ziels nicht von 1 auf 0 senken. Bei Exotischen Waffen gilt Gummimunition als Basismunition.</p>"
+    },
+    "Heavy Pistol (Smart)": {
+      "name": "Schwere Pistole (Smart)",
+      "description": "<p>Die Cyberware Zielerfassung wird benötigt, ohne wird die Smart-Munition aufgrund einer Sicherheitsfunktion nicht abgeschossen. Wenn du diese Munition verwendest und dir der Schuss im Einzelschussmodus der Waffe um 4 oder weniger misslingt, erhält dein Schuss sofort eine zweite Chance, dein Ziel zu treffen. Du nutzt den gleichen SG, allerdings addierst du 10 zu dem Ergebnis statt allem anderen, was du hinzufügen würdest, mit Ausnahme von GLÜ. Ein Ziel, dass Geschossen ausweichen kann, kann sich entscheiden, diesem Angriff wie üblich auszuweichen.</p>"
+    },
+    "Medium Pistol (Armor-Piercing)": {
+      "name": "Mittelschwere Pistole (Panzerbrechend)",
+      "description": "<p>Doppelte Abtragung der Rüstung.</p>"
+    },
+    "Medium Pistol (Basic)": {
+      "name": "Mittelschwere Pistole (Basis)",
+      "description": "<p>Standardmunition, keine Besonderheiten.</p>"
+    },
+    "Medium Pistol (Expansive)": {
+      "name": "Mittelschwere Pistole (Expansion)",
+      "description": "<p>Wenn du die Kritische Verletzung Fremdkörper anrichtest, würfel solange auf die Tabelle „Kritische Verletzungen“ (ab Seite 187), bis es eine Kritische Verletzung erzielt, die nicht Fremdkörper ist. Das Opfer erleidet dann zusätzlich diese Kritische Verletzung. Die zweite Verletzung richtet keinen Bonusschaden an.</p>"
+    },
+    "Medium Pistol (Incendiary)": {
+      "name": "Mittelschwere Pistole (Brand)",
+      "description": "<p>Wenn du durch die Panzerung eines Ziels hindurch Schaden anrichtest, steckst du das Ziel in Brand. Wenn das Ziel keine Aktion aufwendet, um sich selbst zu löschen, werden am Ende jedes seiner Züge 2 Schadenspunkte direkt von seinen TP abgezogen. Wenn der Effekt mehrfach auftritt, ist er nicht kumulativ.</p>"
+    },
+    "Medium Pistol (Rubber)": {
+      "name": "Mittelschwere Pistole (Gummi)",
+      "description": "<p>Schaden führt nicht zu kritischen Verletzungen. Kann keine Panzerung abtragen. Diese Munition kann die TP eines Ziels nicht von 1 auf 0 senken. Bei Exotischen Waffen gilt Gummimunition als Basismunition.</p>"
+    },
+    "Medium Pistol (Smart)": {
+      "name": "Mittelschwere Pistole (Smart)",
+      "description": "<p>Die Cyberware Zielerfassung wird benötigt, ohne wird die Smart-Munition aufgrund einer Sicherheitsfunktion nicht abgeschossen. Wenn du diese Munition verwendest und dir der Schuss im Einzelschussmodus der Waffe um 4 oder weniger misslingt, erhält dein Schuss sofort eine zweite Chance, dein Ziel zu treffen. Du nutzt den gleichen SG, allerdings addierst du 10 zu dem Ergebnis statt allem anderen, was du hinzufügen würdest, mit Ausnahme von GLÜ. Ein Ziel, dass Geschossen ausweichen kann, kann sich entscheiden, diesem Angriff wie üblich auszuweichen.</p>"
+    },
+    "Paintball (Acid)": {
+      "name": "Paintball (Säure)",
+      "description": "<p>Paintbälle mit Säure gefüllt. Verursacht keinen Schaden, aber bei Treffer wird die Rüstung um 1 SP abgetragen*.</p>\n<p><em>*Derzeit nicht unterstützt wird und die Rüstung beim Treffer manuell reduziert werden</em></p>"
+    },
+    "Paintball (Basic)": {
+      "name": "Paintball (Basis)",
+      "description": "<p>Standard Paintbälle, die keinen Schaden anrichten. Dennoch ärgerlich.</p>"
+    },
+    "Rifle (Armor-Piercing)": {
+      "name": "Gewehr (Panzerbrechend)",
+      "description": "<p>Doppelte Abtragung der Rüstung.</p>"
+    },
+    "Rifle (Basic)": {
+      "name": "Gewehr (Basis)",
+      "description": "<p>Standardmunition, keine Besonderheiten.</p>"
+    },
+    "Rifle (Expansive)": {
+      "name": "Gewehr (Expansion)",
+      "description": "<p>Wenn du die Kritische Verletzung Fremdkörper anrichtest, würfel solange auf die Tabelle „Kritische Verletzungen“ (ab Seite 187), bis es eine Kritische Verletzung erzielt, die nicht Fremdkörper ist. Das Opfer erleidet dann zusätzlich diese Kritische Verletzung. Die zweite Verletzung richtet keinen Bonusschaden an.</p>"
+    },
+    "Rifle (Incendiary)": {
+      "name": "Gewehr (Brand)",
+      "description": "<p>Wenn du durch die Panzerung eines Ziels hindurch Schaden anrichtest, steckst du das Ziel in Brand. Wenn das Ziel keine Aktion aufwendet, um sich selbst zu löschen, werden am Ende jedes seiner Züge 2 Schadenspunkte direkt von seinen TP abgezogen. Wenn der Effekt mehrfach auftritt, ist er nicht kumulativ.</p>"
+    },
+    "Rifle (Rubber)": {
+      "name": "Gewehr (Gummi)",
+      "description": "<p>Schaden führt nicht zu kritischen Verletzungen. Kann keine Panzerung abtragen. Diese Munition kann die TP eines Ziels nicht von 1 auf 0 senken. Bei Exotischen Waffen gilt Gummimunition als Basismunition.</p>"
+    },
+    "Rifle (Smart)": {
+      "name": "Gewehr (Smart)",
+      "description": "<p>Die Cyberware Zielerfassung wird benötigt, ohne wird die Smart-Munition aufgrund einer Sicherheitsfunktion nicht abgeschossen. Wenn du diese Munition verwendest und dir der Schuss im Einzelschussmodus der Waffe um 4 oder weniger misslingt, erhält dein Schuss sofort eine zweite Chance, dein Ziel zu treffen. Du nutzt den gleichen SG, allerdings addierst du 10 zu dem Ergebnis statt allem anderen, was du hinzufügen würdest, mit Ausnahme von GLÜ. Ein Ziel, dass Geschossen ausweichen kann, kann sich entscheiden, diesem Angriff wie üblich auszuweichen.</p>"
+    },
+    "Rocket (Armor-Piercing)": {
+      "name": "Rakete (Panzerbrechend)",
+      "description": "<p>Doppelte Abtragung der Rüstung.</p>"
+    },
+    "Rocket (Smart)": {
+      "name": "Rakete (Smart)",
+      "description": "<p>Die Cyberware Zielerfassung wird benötigt, ohne wird die Smart-Munition aufgrund einer Sicherheitsfunktion nicht abgeschossen. Wenn du diese Munition verwendest und dir der Schuss im Einzelschussmodus der Waffe um 4 oder weniger misslingt, erhält dein Schuss sofort eine zweite Chance, dein Ziel zu treffen. Du nutzt den gleichen SG, allerdings addierst du 10 zu dem Ergebnis statt allem anderen, was du hinzufügen würdest, mit Ausnahme von GLÜ. Ein Ziel, dass Geschossen ausweichen kann, kann sich entscheiden, diesem Angriff wie üblich auszuweichen.</p>"
+    },
+    "Shotgun Shell (Basic)": {
+      "name": "Schrotpatrone (Basis)",
+      "description": "<p>Standardmunition, keine Besonderheiten.</p>"
+    },
+    "Shotgun Shell (Incendiary)": {
+      "name": "Schrotpatrone (Brand)",
+      "description": "<p>Wenn du durch die Panzerung eines Ziels hindurch Schaden anrichtest, steckst du das Ziel in Brand. Wenn das Ziel keine Aktion aufwendet, um sich selbst zu löschen, werden am Ende jedes seiner Züge 2 Schadenspunkte direkt von seinen TP abgezogen. Wenn der Effekt mehrfach auftritt, ist er nicht kumulativ.</p>"
+    },
+    "Shotgun Slug (Armor-Piercing)": {
+      "name": "Flintenpatrone (Panzerbrechend)",
+      "description": "<p>Doppelte Abtragung der Rüstung.</p>"
+    },
+    "Shotgun Slug (Basic)": {
+      "name": "Flintenpatrone (Basis)",
+      "description": "<p>Standardmunition, keine Besonderheiten.</p>"
+    },
+    "Shotgun Slug (Expansive)": {
+      "name": "Flintenpatrone (Expansion)",
+      "description": "<p>Wenn du die Kritische Verletzung Fremdkörper anrichtest, würfel solange auf die Tabelle „Kritische Verletzungen“ (ab Seite 187), bis es eine Kritische Verletzung erzielt, die nicht Fremdkörper ist. Das Opfer erleidet dann zusätzlich diese Kritische Verletzung. Die zweite Verletzung richtet keinen Bonusschaden an.</p>"
+    },
+    "Shotgun Slug (Incendiary)": {
+      "name": "Flintenpatrone (Brand)",
+      "description": "<p>Wenn du durch die Panzerung eines Ziels hindurch Schaden anrichtest, steckst du das Ziel in Brand. Wenn das Ziel keine Aktion aufwendet, um sich selbst zu löschen, werden am Ende jedes seiner Züge 2 Schadenspunkte direkt von seinen TP abgezogen. Wenn der Effekt mehrfach auftritt, ist er nicht kumulativ.</p>"
+    },
+    "Shotgun Slug (Rubber)": {
+      "name": "Flintenpatrone (Gummi)",
+      "description": "<p>Schaden führt nicht zu kritischen Verletzungen. Kann keine Panzerung abtragen. Diese Munition kann die TP eines Ziels nicht von 1 auf 0 senken. Bei Exotischen Waffen gilt Gummimunition als Basismunition.</p>"
+    },
+    "Shotgun Slug (Smart)": {
+      "name": "Flintenpatrone (Smart)",
+      "description": "<p>Die Cyberware Zielerfassung wird benötigt, ohne wird die Smart-Munition aufgrund einer Sicherheitsfunktion nicht abgeschossen. Wenn du diese Munition verwendest und dir der Schuss im Einzelschussmodus der Waffe um 4 oder weniger misslingt, erhält dein Schuss sofort eine zweite Chance, dein Ziel zu treffen. Du nutzt den gleichen SG, allerdings addierst du 10 zu dem Ergebnis statt allem anderen, was du hinzufügen würdest, mit Ausnahme von GLÜ. Ein Ziel, dass Geschossen ausweichen kann, kann sich entscheiden, diesem Angriff wie üblich auszuweichen.</p>"
+    },
+    "Very Heavy Pistol (Armor-Piercing)": {
+      "name": "Sehr Schwere Pistole (Panzerbrechend)",
+      "description": "<p>Doppelte Abtragung der Rüstung.</p>"
+    },
+    "Very Heavy Pistol (Basic)": {
+      "name": "Sehr Schwere Pistole (Basis)",
+      "description": "<p>Standardmunition, keine Besonderheiten.</p>"
+    },
+    "Very Heavy Pistol (Expansive)": {
+      "name": "Sehr Schwere Pistole (Expansion)",
+      "description": "<p>Wenn du die Kritische Verletzung Fremdkörper anrichtest, würfel solange auf die Tabelle „Kritische Verletzungen“ (ab Seite 187), bis es eine Kritische Verletzung erzielt, die nicht Fremdkörper ist. Das Opfer erleidet dann zusätzlich diese Kritische Verletzung. Die zweite Verletzung richtet keinen Bonusschaden an.</p>"
+    },
+    "Very Heavy Pistol (Incendiary)": {
+      "name": "Sehr Schwere Pistole (Brand)",
+      "description": "<p>Wenn du durch die Panzerung eines Ziels hindurch Schaden anrichtest, steckst du das Ziel in Brand. Wenn das Ziel keine Aktion aufwendet, um sich selbst zu löschen, werden am Ende jedes seiner Züge 2 Schadenspunkte direkt von seinen TP abgezogen. Wenn der Effekt mehrfach auftritt, ist er nicht kumulativ.</p>"
+    },
+    "Very Heavy Pistol (Rubber)": {
+      "name": "Sehr Schwere Pistole (Gummi)",
+      "description": "<p>Schaden führt nicht zu kritischen Verletzungen. Kann keine Panzerung abtragen. Diese Munition kann die TP eines Ziels nicht von 1 auf 0 senken. Bei Exotischen Waffen gilt Gummimunition als Basismunition.</p>"
+    },
+    "Very Heavy Pistol (Smart)": {
+      "name": "Sehr Schwere Pistole (Smart)",
+      "description": "<p>Die Cyberware Zielerfassung wird benötigt, ohne wird die Smart-Munition aufgrund einer Sicherheitsfunktion nicht abgeschossen. Wenn du diese Munition verwendest und dir der Schuss im Einzelschussmodus der Waffe um 4 oder weniger misslingt, erhält dein Schuss sofort eine zweite Chance, dein Ziel zu treffen. Du nutzt den gleichen SG, allerdings addierst du 10 zu dem Ergebnis statt allem anderen, was du hinzufügen würdest, mit Ausnahme von GLÜ. Ein Ziel, dass Geschossen ausweichen kann, kann sich entscheiden, diesem Angriff wie üblich auszuweichen.</p>"
+    }
+  }
+}

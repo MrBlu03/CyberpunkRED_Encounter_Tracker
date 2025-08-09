@@ -1,0 +1,66 @@
+{
+  "label": "Programy",
+  "mapping": {},
+  "entries": {
+    "Armor": {
+      "name": "Pancerz",
+      "description": "<p>Zmniejsza obrażenia mózgowi o 4 kiedy jest zrezowany. Tylko 1 kopia moża być zrezowana na raz. Każda kopia posiada jedno użycie na netrun.</p>"
+    },
+    "Banhammer": {
+      "name": "Młot na wroga",
+      "description": "<p>Zadaje 3k6 REZ programom niebędącym Czarnym LODem lub 2k6 REZ Czarnemu LODowi.</p>"
+    },
+    "DeckKRASH": {
+      "name": "DekKRASH",
+      "description": "<p>Zmusza netrunnera do awaryjnego wypięcia.</p>"
+    },
+    "Eraser": {
+      "name": "Gumka",
+      "description": "<p>+2 do wszystkich testów Maskowania dopóki jest zrezowany.</p>"
+    },
+    "Flak": {
+      "name": "Powłoka",
+      "description": "<p>Ataki niebędące Czarnym LODem zostają zredukowane do 0 gdy Powłoka jest zrezowana. Tylko 1 kopia może być zrezowana na raz. Każda kopia posiada 1 użycie na netrun.</p>"
+    },
+    "Hellbolt": {
+      "name": "Piekielny pocisk",
+      "description": "<p>2k6 obrażeń bezpośrednio mózgowi Netrunnera. Jego sprzęt zajmuje się ogniem jeśli nie został odizolowany.</p>"
+    },
+    "Nervescrub": {
+      "name": "Nerwosol",
+      "description": "<p>Zmniejsza INT, REF i ZW Netrunnera o 1k6 (min. 1) na 1 godzinę.</p>"
+    },
+    "Poison Flatline": {
+      "name": "Trujący zgon",
+      "description": "<p>Niszczy losowy program niebędący Czarnym LODem na cyberdeku wroga.</p>"
+    },
+    "See Ya": {
+      "name": "Mam cię!",
+      "description": "<p>+2 do wszystkich testów Zwiadu dopóki jest zrezowany.</p>"
+    },
+    "Shield": {
+      "name": "Tarcza",
+      "description": "<p>Pierwszy udany atak na mózg netrunnera od programu niebędącym Czarnym LODem zostaje zatrzymany. Tylko 1 kopia może być zrezowana na raz. Każda kopia posiada 1 użycie na netrun.</p>"
+    },
+    "Speedy Gonzalvez": {
+      "name": "Szybki Bil",
+      "description": "<p>+2 do Prędkości dopóki jest zrezowany.</p>"
+    },
+    "Superglue": {
+      "name": "Superklej",
+      "description": "<p>Netrunner nie może przejść dalej wgłąb lokalnej sieci lub bezpiecznie się wypiąć przez 1k6 rund. 1 użycie na netrun.</p>"
+    },
+    "Sword": {
+      "name": "Miecz",
+      "description": "<p>Zadaje 3k6 REZ Czarnemu LODowi lub 2k6 REZ programom niebędącym Czarnym LODem.</p>"
+    },
+    "Vrizzbolt": {
+      "name": "Mózgoklep",
+      "description": "<p>Zadaje 1k6 obrażeń bezpośrednio mózgowi netrunnera. Zmniejsza maksymalna ilość akcji w sieci jakie może wykonać o 1 (min. 2) podczas jego następnej tury.</p>"
+    },
+    "Worm": {
+      "name": "Robak",
+      "description": "<p>+2 do wszystkich testów Backdooru dopóki jest zrezowany.</p>"
+    }
+  }
+}

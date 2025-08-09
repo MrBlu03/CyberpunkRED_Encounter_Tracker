@@ -1,0 +1,137 @@
+.dialog-sheet {
+  background-color: var(--cpr-background-box);
+  min-width: 20.625rem;
+
+  .dialog-header {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    padding-top: 0.313rem;
+  }
+
+  .dialog-footer {
+    position: sticky;
+    bottom: 0;
+    padding: 0.313rem;
+  }
+
+  hr {
+    border: 0;
+    height: 0.063rem;
+    background-image: linear-gradient(
+      to right,
+      var(--cpr-background-dialog-hr-gradient-start),
+      var(--cpr-background-dialog-hr-gradient-middle),
+      var(--cpr-background-dialog-hr-gradient-end)
+    );
+  }
+}
+
+.dialog-grid {
+  display: flex;
+  width: inherit;
+  height: inherit;
+  flex: 1 1 auto;
+  padding: 0.313rem;
+}
+
+.situational-mod-list,
+.dialog-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+.dialog-list {
+  border-style: outset;
+  border-color: var(--cpr-background-dialog-border);
+  border-width: 0.125rem;
+  border-radius: 0.313rem;
+
+  // These are swapped due to the lack of header rows on dialogues.
+  // Normally the order is: header > even (white) > odd (pink)
+  // this makes the order: odd (white) > even (pink) so it matches
+  // the same alternating order as the rest of the sheets.
+
+  li:nth-child(even) {
+    background-color: var(--cpr-background-row-odd);
+  }
+
+  li:nth-child(odd) {
+    background-color: var(--cpr-background-row-even);
+  }
+
+  .dialog-item.dialog-item-header {
+    background-color: var(--cpr-background-header) !important;
+    color: var(--cpr-text-header);
+  }
+
+  .dialog-item.dialog-item-footer {
+    border-style: outset;
+    border-color: var(--cpr-background-dialog-border);
+    border-width: 0.125rem 0rem 0rem 0rem;
+  }
+}
+
+.lifepath-list {
+  li:nth-child(even) {
+    background-color: var(--cpr-background-row-even) !important;
+  }
+
+  li:nth-child(odd) {
+    background-color: var(--cpr-background-row-even) !important;
+  }
+}
+
+.total-mods {
+  background-color: var(--cpr-background-row-even) !important;
+}
+
+.situational-mod-item,
+.dialog-item {
+  padding: 0.063rem 0.125rem 0.063rem 0.125rem;
+
+  .situational-mod-name,
+  .dialog-item-name {
+    flex-grow: 3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .dialog-item-detail,
+  .situational-mod-value {
+    text-align: center;
+  }
+
+  .situational-mod-input,
+  .dialog-item-input {
+    text-align: end;
+
+    input[type="checkbox"],
+    select {
+      height: unset;
+      max-width: fit-content;
+    }
+  }
+}
+
+.situational-mods {
+  padding: 0.313rem;
+  li {
+    border-style: outset;
+    border-color: var(--cpr-background-dialog-border);
+    border-width: 0.125rem;
+    border-radius: 0.313rem;
+    margin: 0.125rem 0rem 0.125rem 0rem;
+  }
+}
+
+.mod-selected {
+  background-color: var(--cpr-background-dialog-selected);
+}
+
+.total-mods .total-mod-value {
+  padding: 0.063rem 0.188rem;
+}

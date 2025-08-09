@@ -1,0 +1,8 @@
+{{#if (cprCompare this.system.magazine.value "<" (cprApplyUpgrade this this.system.magazine.max "magazine"))}}
+  <a class="item-action"
+     data-item-id="{{this.id}}"
+     data-action="reload-ammo">
+    <i class="fas fa-rotate-right"
+       data-tooltip="{{localize "CPR.actorSheets.commonActions.reload"}}"></i>
+  </a>
+{{/if}}

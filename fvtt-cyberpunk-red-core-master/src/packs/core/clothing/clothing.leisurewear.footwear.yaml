@@ -1,0 +1,38 @@
+_id: 4XMXfUzsDo3y14nw
+_key: "!items!4XMXfUzsDo3y14nw"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/clothing/generic_footwear.svg
+name: Leisurewear Footwear
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        Your run-of-the-mill athletic clothing. Perfect to go for a jog or to relax at
+        home.
+      </p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: false
+  price:
+    market: 50
+  providesHardening: false
+  revealed: true
+  source:
+    book: Core
+    page: 356
+  style: leisurewear
+  type: footwear
+  usage: equipped
+type: clothing

@@ -1,0 +1,104 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/CPRC-Skill",
+  "definitions": {
+    "CPRC-Skill": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "_id": {
+          "$ref": "./components/id.json"
+        },
+        "_key": {
+          "$ref": "./components/key.json"
+        },
+        "effects": {
+          "$ref": "./components/effects.json"
+        },
+        "flags": {
+          "$ref": "./components/flags.json"
+        },
+        "img": {
+          "$ref": "./components/img.json"
+        },
+        "name": {
+          "$ref": "./components/name.json"
+        },
+        "type": {
+          "type": "string",
+          "const": "skill"
+        },
+        "system": {
+          "$ref": "#/definitions/System"
+        }
+      },
+      "required": ["_id", "_key", "effects", "img", "name", "system", "type"]
+    },
+    "System": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "basic": {
+          "type": "boolean"
+        },
+        "category": {
+          "type": "string",
+          "enum": [
+            "awarenessSkills",
+            "bodySkills",
+            "controlSkills",
+            "educationSkills",
+            "fightingSkills",
+            "performanceSkills",
+            "rangedweaponSkills",
+            "socialSkills",
+            "techniqueSkills"
+          ]
+        },
+        "core": {
+          "type": "boolean"
+        },
+        "description": {
+          "$ref": "./components/common/description.json"
+        },
+        "difficulty": {
+          "type": "string"
+        },
+        "favorite": {
+          "$ref": "./components/common/favorite.json"
+        },
+        "level": {
+          "type": "integer"
+        },
+        "skillType": {
+          "enum": [
+            "generic",
+            "language",
+            "localExpert",
+            "martialArt",
+            "playInstrument",
+            "science"
+          ]
+        },
+        "source": {
+          "$ref": "./components/common/source.json"
+        },
+        "stat": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "basic",
+        "category",
+        "core",
+        "description",
+        "difficulty",
+        "favorite",
+        "level",
+        "skillType",
+        "source",
+        "stat"
+      ]
+    }
+  }
+}

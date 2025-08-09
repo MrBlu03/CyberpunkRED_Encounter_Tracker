@@ -1,0 +1,31 @@
+_id: wNTiJOENNGnDLTgt
+_key: "!items!wNTiJOENNGnDLTgt"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/black-chrome/harvey.svg
+name: Harvey 100
+system:
+  brand: AmeriCar
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>A classic Roadbike.</p>
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  price:
+    market: 20000
+  sdp: 35
+  seats: 2
+  source:
+    book: BC
+    page: 69
+  speedCombat: 20
+  speedNarrative: 100 MPH / 161 KPH
+type: vehicle

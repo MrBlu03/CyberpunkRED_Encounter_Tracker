@@ -1,0 +1,25 @@
+{{#if item.system.isFoundational }}
+  <div class="item-summary-line">
+    <span class="summary-name">
+      {{localize "CPR.global.generic.foundational"}}
+    </span>
+  </div>
+{{/if}}
+<div class="item-summary-line">
+  <span class="summary-name text-semi">
+    {{localize "CPR.global.generic.install"}}:
+  </span>
+  <span class="summary-value">
+    {{localize (cprFindConfigValue "cyberwareInstallList" item.system.installLocation)}}
+  </span>
+</div>
+{{#if (cprCompare item.system.installedItems.allowed "&&" (cprListContains item.system.installedItems.list "cyberware")) }}
+  <div class="item-summary-line">
+    <span class="summary-name text-semi">
+      {{localize "CPR.itemSheet.cyberware.optionalSlots"}}:
+    </span>
+    <span class="summary-value">
+      {{item.system.installedItems.slots}}
+    </span>
+  </div>
+{{/if}}

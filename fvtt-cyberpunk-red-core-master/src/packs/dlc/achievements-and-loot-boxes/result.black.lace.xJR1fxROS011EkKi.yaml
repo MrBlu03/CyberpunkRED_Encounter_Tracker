@@ -1,0 +1,12 @@
+_id: xJR1fxROS011EkKi
+_key: "!tables.results!zRHyYnlEqNlTA4l5.xJR1fxROS011EkKi"
+documentCollection: cyberpunk-red-core.core_drugs
+documentId: 6BM5WFyCyIM8lZib
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/drugs/black_lace.svg
+range:
+  - 2
+  - 2
+text: Black Lace
+type: 2
+weight: 1

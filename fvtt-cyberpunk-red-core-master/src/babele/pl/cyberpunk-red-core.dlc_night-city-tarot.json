@@ -1,0 +1,35 @@
+{
+  "label": "Night City Tarot",
+  "mapping": {},
+  "entries": {
+    "Tarot Cards": {
+      "name": "Tarot Cards",
+      "results": [
+        {
+          "1-1": "The Fool. All of the target's cyberware is inoperable for 1 hour. Their Checks gain the \"Obscured by Darkness\" modifier if it would leave them with no way to sense an enemy. Cyberlimbs affected will act as their dismembered meat counterpart, but are still attached to the target's body. If the target doesn't have any cyberware, they are dealt the Foreign Object Critical Injury and take 3d6 Humanity Loss instead. (See Night City Tarot Page 3).",
+          "2-2": "The Magician. The GM must select one of the target's cyberware. It is then Destroyed. The target is now also Deadly On Fire (CP:R Page 180). (See Night City Tarot Page 3).",
+          "3-3": "The High Priestess. The target is dealt the Foreign Object Critical Injury. When moving more than 4 m/yards, instead of taking the Critical Injury Bonus Damage, they must beat a DV 15 Resist Torture/Drugs Skill Check or take 3d6 Damage directly to their HP. (See Night City Tarot Page 3).",
+          "4-4": "The Empress. The next 3 Attack Checks that hit the target of this card automatically deal a Critical Injury, no matter the Damage Roll results. This doesn't work with weapons incapable of causing a Critical Injury, with exception of Light Melee Weapons. (See Night City Tarot Page 3).",
+          "5-5": "The Emperor. The GM must select a Player. This Player then selects one Critical Injury from the Head Critical Injury Rolltable (CPR: Page 188) and from the Body Critical Injury Rolltable (CP:R Page 187). The target is dealt both Critical Injuries. (See Night City Tarot Page 3).",
+          "6-6": "The Hierophant. Double the damage the Attack would've dealt after armor and modifiers. (Just like how you would double the damage on an Aimed Shot to the Head). If the Attack was made with a weapon, that weapon is now Destroyed Beyond Repair. (See Night City Tarot Page 3).",
+          "7-7": "The Lovers. The Attack is now treated as an Aimed Shot to the Head. If the Attack was a Melee Attack, the target is now grappled by the Attacker. (See Night City Tarot Page 3).",
+          "8-8": "The Chariot. The target's armor location is ablated by another 5 points, even if the Damage Roll didn't beat the target's armor SP. (See Night City Tarot Page 4).",
+          "9-9": "Strength. The Attack deals 25 more points of damage. That damage is added before any armor or multipliers. (See Night City Tarot Page 4).",
+          "10-10": "The Hermit. The target is dealt the Lost Eye Critical Injury twice while only taking the penalty once. Their Checks gain the \"Obscured by Darkness\" modifier if it would leave them with no way to sense an enemy. (See Night City Tarot Page 4).",
+          "11-11": "Wheel of Fortune. It the Attack was a Ranged Attack, the GM randomly selects a new target. If it was a Melee Attack, the Attacker falls prone and the Attack misses. The weapon used for the Attack malfunctions and requires an Action to be used to reverse the malfunction before being used again. (See Night City Tarot Page 4).",
+          "12-12": "Justice. For the next 5 minutes, the target suffers a -5 penalty to Evasion Skill Checks and they cannot dodge Ranged Attacks. (See Night City Tarot Page 4).",
+          "13-13": "The Hanged Man. The target is knocked prone and is dealt the Spinal Injury and Whiplash Critical Injuries. (See Night City Tarot Page 4).",
+          "14-14": "Death. The target must roll a Death Save regardless of their HP. Failure means they are reduced to 0 HP and are considered unconscious for one minute. When they regain consciousness, they regain 3d6 Humanity Points up to their Max Humanity. (See Night City Tarot Page 4).",
+          "15-15": "Temperance. The target chooses one of their limbs to be dealt the Dismembered Limb Critical Injury and another one to be dealt the Broken Limb Critical Injury. (See Night City Tarot Page 5).",
+          "16-16": "The Devil. The Attack is now considered an Aimed Shot to the Head. The target is dealt the Brain Injury and the Lost Ear Critical Injuries. (See Night City Tarot Page 5).",
+          "17-17": "The Tower. The target is dealt the Cracked Skull, Crushed Windpipe and Whiplash Critical Injuries but without taking their Bonus Damage. The target cannot feel pain and ignores the Seriously Wounded Wound State for 1 hour. (See Night City Tarot Page 5).",
+          "18-18": "The Star. If the Attack was a Ranged Attack, it hits the target and hits a second target within 20 m/yards that is chosen by the GM. If there is no valid second target, it hits the first target another time. The second hit hits the body. You roll a new Damage Roll for the second hit. If the Attack was a Melee Attack, the target is dealt the Broken Ribs and Collapsed Lung Critical Injuries. (See Night City Tarot Page 5).",
+          "19-19": "The Moon. The target is dealt the Foreign Object Critical Injury twice, once in the Body and once in the Head locations. If the Attack was a Melee Attack with a melee weapon, the weapon is stuck in the target's body and the Attacker is disarmed. (See Night City Tarot Page 5).",
+          "20-20": "The Sun. If the target carries any explosives, the GM must choose one. It explodes. If the target wasn't carrying any, the GM must choose one non-weapon equipment on the target. It is Destroyed Beyond Repair. (See Night City Tarot Page 5).",
+          "21-21": "Judgement. The target is dealt the Crushed Fingers Critical Injury on one hand. The other hand is dealt the Dismembered Hand Critical Injury. (See Night City Tarot Page 5).",
+          "22-22": "The World. The Attacker takes an additional Turn right after this one. They gain a +5 Bonus to any of their Skill Checks, ignore their Wound State effects and do not make a Death Save if they are Mortally wounded during that next turn. (See Night City Tarot Page 5)."
+        }
+      ]
+    }
+  }
+}

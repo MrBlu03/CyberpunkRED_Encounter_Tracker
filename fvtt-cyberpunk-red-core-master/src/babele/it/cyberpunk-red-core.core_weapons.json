@@ -1,0 +1,456 @@
+{
+  "label": "Armi",
+  "mapping": {
+    "dvTable": "system.dvTable"
+  },
+  "entries": {
+    "Air Pistol": {
+      "name": "Pistola Pneumatica",
+      "description": "<p>Una pistola media esotica. Spara pallini di plastica, di solito pieni di vernice innocua. Se caricato con acido è in grado di abilitare l'armatura di uno ad ogni colpo. Fare riferimento alla descrizione completa dell'articolo su pg. 348.</p>",
+      "dvTable": "VD Pistola"
+    },
+    "Assault Rifle (Excellent)": {
+      "name": "Fucile D'Assalto (Eccellente)",
+      "description": "<p>Un fucile d'assalto standard. +1 all'Attacco.</p>",
+      "dvTable": "VD Fucile d' Assalto"
+    },
+    "Assault Rifle (Poor)": {
+      "name": "Fucile D'Assalto (Scarso)",
+      "description": "<p>Un fucile d'assalto standard. Se fai 1 sul tiro per colpire (Fallimento Critico) l'arma si inceppa e richiede di usare un'azione per sbloccarla. </p>",
+      "dvTable": "VD Fucile d' Assalto"
+    },
+    "Assault Rifle": {
+      "name": "Fucile d'Assalto",
+      "description": "<p>Un fucile di assalto di tipo standard. </p>",
+      "dvTable": "VD Fucile d' Assalto"
+    },
+    "Baseball Bat (Excellent)": {
+      "name": "Mazza da Baseball (Eccellente)",
+      "description": "<p>Una mazza estremamente bilanciata. Un'arma preferita dei fans del Baseball. +1 all'Attacco.</p>"
+    },
+    "Baseball Bat (Poor)": {
+      "name": "Mazza da Baseball (Scarso)",
+      "description": "<p>Una mazza ben bilanciata. Arma preferita per gli ultras del Baseball. Se fai 1 all'Attacco (Fallimento Critico) l'arma fallisce in qualche modo e richiede un'azione per utilizzarla nuovamente.</p>"
+    },
+    "Baseball Bat": {
+      "name": "Mazza da Baseball",
+      "description": "<p>Una mazza ben bilanciata. Arma preferita per i fans del Baseball. </p>"
+    },
+    "Bow (Excellent)": {
+      "name": "Arco (Eccellente)",
+      "description": "<p>An excellent quality bow, reloaded as part of an Attack action.</p>\n<p>+1 to Attack check.</p>",
+      "dvTable": "VD Arco e Balestro"
+    },
+    "Bow (Poor)": {
+      "name": "Arco (Scarso)",
+      "description": "<p>A poor quality bow, reloaded as part of an Attack action.</p> <p>If you roll 1 on Attack (Crit fail) the weapon jams and requires using an action to clear.</p>",
+      "dvTable": "VD Arco e Balestro"
+    },
+    "Bow": {
+      "name": "Arco",
+      "description": "<p>A revitalized bow, reloaded as part of an Attack action.</p>",
+      "dvTable": "VD Arco e Balestro"
+    },
+    "Chainsaw (Excellent)": {
+      "name": "Motosega (Eccellente)",
+      "description": "<p>Una motosega portatile e ricaricabile a CHOOH2. Dura circa 2-3 ore con un pieno. +1 all'Attacco.</p>"
+    },
+    "Chainsaw (Poor)": {
+      "name": "Motosega (Scarso)",
+      "description": "<p>Una motosega a CHOOH2 portatile e ricaricabile. Dura circa 2-3 ore con un pieno. Se fai 1 all'Attacco (Fallimento Critico) l'arma fallisce in qualche modo e richiede un'azione per utilizzarla nuovamente.</p>"
+    },
+    "Chainsaw": {
+      "name": "Motosega",
+      "description": "<p>Una sega portatile ricaricabile a CHOOH2. Dura circa 2-3 ore con un serbatoio. </p>"
+    },
+    "Combat Knife (Excellent)": {
+      "name": "Coltello da Combattimento (Eccellente)",
+      "description": "<p>Un coltello adatto per la strada. +1 all'Attacco.</p>"
+    },
+    "Combat Knife (Poor)": {
+      "name": "Coltello da Combattimento (Scarso)",
+      "description": "<p>Un coltello da strada. Se fai 1 all'Attacco (Fallimento Critico) l'arma fallisce in qualche modo e richiede un'azione per utilizzarla nuovamente.</p>"
+    },
+    "Combat Knife": {
+      "name": "Coltello da Combattimento",
+      "description": "<p>Un coltello adatto per le strade.</p>"
+    },
+    "Constitutional Arms Hurricane Assault Weapon": {
+      "name": "Constitutional Arms Hurricane Assault Weapon",
+      "description": "<p>\n  An Exotic Shotgun with 2 ROF. Cannot make aimed shots and needs BODY 11 or\n  higher (unless mounted).\n</p>\n",
+      "dvTable": "DV Shotgun (Slug)"
+    },
+    "Crossbow (Excellent)": {
+      "name": "Balestra (Eccellente)",
+      "description": "<p>An excellent quality crossbow, reloaded as part of an Attack action.</p>\n<p>+1 to Attack check.</p>",
+      "dvTable": "VD Arco e Balestro"
+    },
+    "Crossbow (Poor)": {
+      "name": "Balestra (Scarso)",
+      "description": "<p>A poor quality crossbow, reloaded as part of an Attack action.</p> <p>If you roll 1 on Attack (Crit fail) the weapon jams and requires using an action to clear.</p>",
+      "dvTable": "VD Arco e Balestro"
+    },
+    "Crossbow": {
+      "name": "Balestra",
+      "description": "<p>A standard crossbow, reloaded as part of an Attack action.</p>",
+      "dvTable": "VD Arco e Balestro"
+    },
+    "Crowbar (Excellent)": {
+      "name": "Piede di Porco (Eccellente)",
+      "description": "<p>Utile sia come strumento che come arma. Una barra di ferro con cunei divisi alle estremità. +1 all'Attacco.</p>"
+    },
+    "Crowbar (Poor)": {
+      "name": "Piede di Porco (Scarso)",
+      "description": "<p>Utile sia come strumento che come arma. Una barra di ferro con cunei divisi alle estremità. Se fai 1 all'Attacco (Fallimento Critico) l'arma fallisce in qualche modo e richiede un'azione per utilizzarla nuovamente.</p>"
+    },
+    "Crowbar": {
+      "name": "Piede di Porco",
+      "description": "<p>Utile sia come strumento che come arma. Una barra di ferro con cunei divisi alle estremità. </p>"
+    },
+    "Dartgun": {
+      "name": "Lanciadardi",
+      "description": "<p>Una Pistola Insolita molto pesante. Fare riferimento alla descrizione completa dell'articolo su pg. 348.</p>",
+      "dvTable": "VD Pistola"
+    },
+    "Flamethrower": {
+      "name": "Lanciafiamme",
+      "description": "<p>Uno Shotgun insolito che utilizza l'Abilità per le Armi Pesanti. Fare riferimento alla descrizione completa dell'oggetto su pg. 347.</p>",
+      "dvTable": "VD Fucile (Slug)"
+    },
+    "Grenade Launcher (Excellent)": {
+      "name": "Lanciagranate (Eccellente)",
+      "description": "<p>Un lanciagranate ad alto impatto. Con esso puoi usare una varietà di granate. +1 all'Attacco.</p>",
+      "dvTable": "VD Lanciagranate"
+    },
+    "Grenade Launcher (Poor)": {
+      "name": "Lanciagranate (Scarso)",
+      "description": "<p>Un lanciagranate ad alto impatto. È possibile utilizzare una varietà di granate. Se fai 1 all'Attacco (Fallimento Critico) l'arma si inceppa e richiede l'utilizzo di un'azione per sbloccarla. </p>",
+      "dvTable": "VD Lanciagranate"
+    },
+    "Grenade Launcher": {
+      "name": "Lanciagranate",
+      "description": "<p>Un lanciagranate ad alto impatto. È possibile utilizzare una varietà di granate. </p>",
+      "dvTable": "VD Lanciagranate"
+    },
+    "Heavy Melee (Excellent)": {
+      "name": "Arma da Mischia Pesante (Eccellente)",
+      "description": "<p>Arma Generica da Mischia Pesante di qualità eccellente.</p>\n<p>Attacco +1.</p>"
+    },
+    "Heavy Melee (Poor)": {
+      "name": "Arma da Mischia Pesante (Scarsa)",
+      "description": "<p>Arma da mischia pesante generica di bassa qualità.</p>\n<p>In caso di Fallimento Critico (1 sulla Prova d’Attacco) l'arma subisce un malfunzionamento ed è necessaria un' Azione per sbloccarla.</p>\n<p>&nbsp;</p>"
+    },
+    "Heavy Melee": {
+      "name": "Arma da Mischia Pesante",
+      "description": "<p>Arma da Mischia Pesante Generica.</p>"
+    },
+    "Heavy Pistol (Excellent)": {
+      "name": "Pistola Pesante (Eccellente)",
+      "description": "<p>Una pistola pesante occultabile. +1 all'Attacco.</p>",
+      "dvTable": "VD Pistola"
+    },
+    "Heavy Pistol (Poor)": {
+      "name": "Pistola Pesante (Scarso)",
+      "description": "<p>Una Pistola Pesante occultabile. Se fai 1 all'Attacco (Fallimento Critico) l'arma si inceppa e richiede di usare un'azione per sbloccarla. </p>",
+      "dvTable": "VD Pistola"
+    },
+    "Heavy Pistol": {
+      "name": "Pistola Pesante",
+      "description": "<p>Una pistola pesante occultabile. </p>",
+      "dvTable": "VD Pistola"
+    },
+    "Heavy SMG (Excellent)": {
+      "name": "Mitra Pesante (Eccellente)",
+      "description": "<p>Un Mitra Pesante. A causa della sua dimensione non può essere nascosto. +1 all'Attacco.</p>",
+      "dvTable": "VD Mitra"
+    },
+    "Heavy SMG (Poor)": {
+      "name": "Mitra Pesante (Scarso)",
+      "description": "<p>Un Mitra Pesante. A causa delle sue dimensioni non può essere occultato. Se fai 1 all'Attacco (Fallimento Critico) l'arma si inceppa e richiede l'utilizzo di un'azione per sbloccarla. </p>",
+      "dvTable": "VD Mitra"
+    },
+    "Heavy SMG": {
+      "name": "Mitra Pesante",
+      "description": "<p>Un Mitra Pesante. A causa delle sue dimensioni non può essere occultato. </p>",
+      "dvTable": "VD Mitra"
+    },
+    "Helicopter Blades (Excellent)": {
+      "name": "Pala di Elicottero (Eccellente)",
+      "description": "<p>Preso dal derelitto di un elicottero, queste lame sono in grado di affettare facilmente la maggior parte delle cose. +1 all'Attacco.</p>"
+    },
+    "Helicopter Blades (Poor)": {
+      "name": "Pala di Elicottero (Scarso)",
+      "description": "<p>Preso dal derelitto di un elicottero, queste lame sono in grado di affettare la maggior parte delle cose molto facilmente. Se fai 1 su all'Attacco (Fallimento Critico) l'arma fallisce in qualche modo e richiede un'azione per utilizzarla nuovamente.</p>"
+    },
+    "Helicopter Blades": {
+      "name": "Pala di Elicottero",
+      "description": "<p>Preso da un derelitto, queste lame sono in grado di affettare cose molto facilmente. </p>"
+    },
+    "Kendachi Mono-Three": {
+      "name": "Kendachi Mono-Three",
+      "description": "<p>\n  An Exotic, Excellent Quality, Two-Handed Very Heavy Melee Weapon. It appears\n  as a high-tech katana, able to ignore any armor below SP11.\n</p>\n"
+    },
+    "Lead Pipe (Excellent)": {
+      "name": "Tubo di Piombo (Eccellente)",
+      "description": "<p>Un tubo, tipicamente in metallo o vetroresina. Può aver trasportato fluidi in passato. +1 all'Attacco.</p>"
+    },
+    "Lead Pipe (Poor)": {
+      "name": "Tubo di Piombo (Scarso)",
+      "description": "<p>Un tubo tipicamente in metallo o vetroresina. Può aver trasportato fluidi. Se fai 1 all'Attacco (Fallimento Critico) l'arma fallisce in qualche modo e richiede un' azione per utilizzarla nuovamente.</p>"
+    },
+    "Lead Pipe": {
+      "name": "Tubo di Piombo",
+      "description": "<p>Un tubo, tipicamente in metallo o vetroresina. Può aver trasportato fluidi in passato. </p>"
+    },
+    "Light Melee (Excellent)": {
+      "name": "Arma da Mischia Leggera (Eccellente)",
+      "description": "<p>Arma Generica da Mischia Leggera di qualità eccellente.</p>\n<p>Attacco +1.</p>"
+    },
+    "Light Melee (Poor)": {
+      "name": "Arma da Mischia Leggera (Scarsa)",
+      "description": "<p>Un'Arma da Mischia Leggera di Bassa Qualità.</p> \n<p>Se fai 1 all'Attacco (Fallimento Critico) l'arma fallisce in qualche modo e richiede un'azione per utilizzarla nuovamente.</p>"
+    },
+    "Light Melee": {
+      "name": "Arma da Mischia Leggera",
+      "description": "<p>Arma da Mischia Leggera Generica</p>"
+    },
+    "Machete (Excellent)": {
+      "name": "Machete (Eccellente)",
+      "description": "<p>Un coltello a lama lunga con una varietà di usi. Conosciuto per essere molto usato da alcune bande di Night City. +1 all'Attacco.</p>"
+    },
+    "Machete (Poor)": {
+      "name": "Machete (Scarso)",
+      "description": "<p>Un coltello a lama lunga per una varietà di usi, preferito da alcune bande di Night City. Se fai 1 all'Attacco (Fallimento Critico) l'arma fallisce in qualche modo e richiede un'azione per utilizzarla nuovamente.</p>"
+    },
+    "Machete": {
+      "name": "Machete",
+      "description": "<p>Un coltello a lama lunga per una varietà di usi. Preferito da alcune bande di Night City. </p>"
+    },
+    "Malorian Arms 3516": {
+      "name": "Malorian Arms 3516",
+      "description": "<p>Una pistola molto pesante insolita, di ottima qualità. Viene fornita con un collegamento Smartgun* che deve essere utilizzato. Consultare la descrizione completa dell'articolo su pg. 348.</p>\n<p><em>*Deve essere aggiunto manualmente dopo l'acquisizione dell'arma</em></p>",
+      "dvTable": "VD Pistola"
+    },
+    "Martial Arts": {
+      "name": "Arti Marziali",
+      "description": "<p>Combattere a mani nude, ignora metà armatura.</p>"
+    },
+    "Medium Melee (Excellent)": {
+      "name": "Arma da Mischia Media (Eccellente)",
+      "description": "<p>Arma Generica da Mischia media di qualità eccellente.</p>\n<p>Attacco +1.</p>"
+    },
+    "Medium Melee (Poor)": {
+      "name": "Arma da Mischia Media (Scarsa)",
+      "description": "<p>Arma da Mischia Media Generica di Bassa Qualità.</p>\n<p>Se fai 1 sul tiro per colpire (Fallimento Critico) l'arma fallisce in qualche modo e richiede un'azione per utilizzarla nuovamente</p>"
+    },
+    "Medium Melee": {
+      "name": "Arma da Mischia Media",
+      "description": "<p>Arma da Mischia Media Generica</p>"
+    },
+    "Medium Pistol (Excellent)": {
+      "name": "Pistola Media (Eccellente)",
+      "description": "<p>Una pistola di medie dimensioni, occultabile. +1 all'Attacco.</p>",
+      "dvTable": "VD Pistola"
+    },
+    "Medium Pistol (Poor)": {
+      "name": "Pistola Media (Scarso)",
+      "description": "<p>Una Pistola Media occultabile. Se fai 1 all'Attacco (Fallimento Critico) l'arma si inceppa e richiede l'utilizzo di un'azione per sbloccarla. </p>",
+      "dvTable": "VD Pistola"
+    },
+    "Medium Pistol": {
+      "name": "Pistola Media",
+      "description": "<p>Una pistola di medie dimensioni occultabile. </p>",
+      "dvTable": "VD Pistola"
+    },
+    "Microwaver": {
+      "name": "Microwaver",
+      "description": "<p>Una Pistola Insolita molto pesante. Può rendere i cyberware o i componenti elettrici inutilizzabili per un minuto a meno che il bersaglio non superi una prova di Cybertecnologia VD 15. Fare riferimento alla descrizione completa dell'articolo su pg. 348.</p>",
+      "dvTable": "VD Pistola"
+    },
+    "Militech \"Cowboy\" U-56 Grenade Launcher": {
+      "name": "Militech \"Cowboy\" U-56 Grenade Launcher",
+      "description": "<p>\n  An Exotic Grenade Launcher with 2 ROF. Holds four grenades. Requires BODY 11\n  or higher (unless mounted).\n</p>\n",
+      "dvTable": "DV Grenade Launcher"
+    },
+    "Naginata (Excellent)": {
+      "name": "Naginata (Eccellente)",
+      "description": "<p>Un bastone di legno giapponese con una lama curva alla sua estremità. Preferito dalle squadre tattiche di Arasaka per scontri ravvicinati. +1 all'Attacco.</p>"
+    },
+    "Naginata (Poor)": {
+      "name": "Naginata (Scarso)",
+      "description": "<p>Un bastone di legno giapponese con una lama curva all'estremità. Favorito da squadre tattiche Arasaka per scontri ravvicinati. Se fai 1 all'Attacco (Fallimento Critico) l'arma fallisce in qualche modo e richiede un'azione per utilizzarla nuovamente.</p>"
+    },
+    "Naginata": {
+      "name": "Naginata",
+      "description": "<p>Un bastone di legno giapponese con una lama curva alla sua estremità. Preferito dalle squadre tattiche di Arasaka per scontri ravvicinati. + all'Attacco.</p>"
+    },
+    "Rhinemetall EMG-86 Railgun": {
+      "name": "Rhinemetall EMG-86 Railgun",
+      "description": "<p>\n  An Exotic Assault Rifle. It cannot make Aimed or Autofire Shots. Requires BODY\n  11 or higher (unless mounted). Ignores any armor below SP11*.\n</p>\n<p>\n  <em\n    >*Not currently supported to will need to manually apply damage to armoured\n    targets</em\n  >\n</p>\n",
+      "dvTable": "DV Assault Rifle"
+    },
+    "Rocket Launcher (Excellent)": {
+      "name": "Lanciagranate (Eccellente)",
+      "description": "<p>Tira fuori l'arsenale. Questo lanciarazzi causerà qualche danno. +1 all'Attacco.</p>",
+      "dvTable": "VD Lanciarazzi"
+    },
+    "Rocket Launcher (Poor)": {
+      "name": "Lanciarazzi (Scarso)",
+      "description": "<p>Tira fuori l'arsenale. Questo lanciarazzi causerà qualche danno. Se fai 1 all'Attacco (Fallimento Critico) l'arma si inceppa e richiede l'utilizzo di un'azione per sbloccarla. </p>",
+      "dvTable": "VD Lanciarazzi"
+    },
+    "Rocket Launcher": {
+      "name": "Lanciarazzi",
+      "description": "<p>Tira fuori l'arsenale. Questo lanciarazzi causerà qualche danno. </p>",
+      "dvTable": "VD Lanciarazzi"
+    },
+    "Shotgun (Excellent)": {
+      "name": "Fucile (Eccellente)",
+      "description": "<p>Un fucile multiuso. +1 all'Attacco.</p>",
+      "dvTable": "VD Fucile (Slug)"
+    },
+    "Shotgun (Poor)": {
+      "name": "Fucile (Scarso)",
+      "description": "<p>Un fucile multiuso. Se fai 1 all'Attacco (Fallimento Criticoe) l'arma si inceppa e richiede l'utilizzo di un'azione per sbloccarla. </p>",
+      "dvTable": "VD Fucile (Slug)"
+    },
+    "Shotgun": {
+      "name": "Fucile",
+      "description": "<p>Un fucile multiuso. </p>",
+      "dvTable": "VD Fucile (Slug)"
+    },
+    "Shrieker": {
+      "name": "Urlatore",
+      "description": "<p>Una Pistola Insolita Molto Pesante. Richiede protezione dell'orecchio per prevenire Ferita Critica: Orecchio Danneggiato. Il bersaglio deve superare una Prova Resistere a Torture/Droghe VD15 o subire la ferita critica. Fare riferimento alla descrizione completa dell'articolo su pg. 349.</p>",
+      "dvTable": "VD Pistola"
+    },
+    "Sledgehammer (Excellent)": {
+      "name": "Martello da Demolizione (Eccellente)",
+      "description": "<p>Un grande martello con la testa di metallo piatto che distribuisce la forza colpita su una vasta area. +1 all'Attacco.</p>"
+    },
+    "Sledgehammer (Poor)": {
+      "name": "Martello da Demolizione (Scarso)",
+      "description": "<p>Un grande martello con la testa di metallo piatto che distribuisce la forza colpita su una vasta area. Se fai 1 all'Attacco (Fallimento Critico) l'arma fallisce in qualche modo e richiede un'azione per utilizzarla nuovamente.</p>"
+    },
+    "Sledgehammer": {
+      "name": "Martello da Demolizione",
+      "description": "<p>Un grande martello con la testa di metallo piatto che distribuisce la forza colpita su una vasta area. </p>"
+    },
+    "SMG (Excellent)": {
+      "name": "Mitra (Eccellente)",
+      "description": "<p>Un Mitra occultabile. +1 all'Attacco.</p>",
+      "dvTable": "VD Mitra"
+    },
+    "SMG (Poor)": {
+      "name": "Mitra (Scarso)",
+      "description": "<p>Un Mitra occultabile. Se fai 1 all'Attacco (Fallimento Criticoe) l'arma si inceppa e richiede l'utilizzo di un'azione per sbloccarla. </p>",
+      "dvTable": "VD Mitra"
+    },
+    "SMG": {
+      "name": "Mitra",
+      "description": "<p>Un mitra occultabile. </p>",
+      "dvTable": "VD Mitra"
+    },
+    "Sniper Rifle (Excellent)": {
+      "name": "Fucile da Cecchino (Eccellente)",
+      "description": "<p>Un fucile da cecchino a lunga distanza. Contiene 4 proiettili nel caricatore. +1 all'Attacco.</p>",
+      "dvTable": "VD Fucile da Cecchino"
+    },
+    "Sniper Rifle (Poor)": {
+      "name": "Fucile da Cecchino (Scarso)",
+      "description": "<p>Un fucile da cecchino a lunga distanza. Contiene 4 proiettili nel caricatore. Se fai 1 all'Attacco (Fallimento Critico) l'arma si inceppa e richiede l'utilizzo di un'azione per sbloccarla. </p>",
+      "dvTable": "VD Fucile da Cecchino"
+    },
+    "Sniper Rifle": {
+      "name": "Fucile da Cecchino",
+      "description": "<p>Un fucile da cecchino a lunga distanza. Contiene 4 proiettili nel caricatore. </p>",
+      "dvTable": "VD Fucile da Cecchino"
+    },
+    "Spiked Bat (Excellent)": {
+      "name": "Randello Chiodato (Eccellente)",
+      "description": "<p>Una mazza regolare chiodata. +1 all'Attacco.</p>"
+    },
+    "Spiked Bat (Poor)": {
+      "name": "Randello Chiodato (Scarso)",
+      "description": "<p>Una mazza regolare chiodata. Se fai 1 all'Attacco (Fallimento Critico) l'arma fallisce in qualche modo e richiede un'azione per utilizzarla nuovamente.</p>"
+    },
+    "Spiked Bat": {
+      "name": "Randello Chiodato",
+      "description": "<p>Un progresso da una mazza regolare. Una manciata di chiodi sono stati martellati dalla punta. </p>"
+    },
+    "Stun Baton": {
+      "name": "Storditore",
+      "description": "<p>Un’Arma da Mischia Media Insolita a Una Mano che, se riduce il bersaglio a meno di 1PF, lo lascia con 1PF\ne Privo di Sensi. Non può causare Colpi Critici né ablare l’armatura. Fare riferimento alla descrizione dell'elemento completo su pg. 349.</p>"
+    },
+    "Stun Gun": {
+      "name": "Taser",
+      "description": "<p>Una Pistola Pesante Insolita che, se riduce il bersaglio a meno di 1PF, lo lascia con 1PF e Privo di Sensi. Non può causare Colpi Critici né ablare l’ armatura. Non ha bisogno di Munizioni, dato che usa batterie ricaricabili (1 ora), che vanno sostituite dopo 8 colpi. Fare riferimento alla descrizione completa a pag. 349.</p>",
+      "dvTable": "VD Pistola"
+    },
+    "Sword (Excellent)": {
+      "name": "Spada (Eccellente)",
+      "description": "<p>Un'arma con elsa e lama, volutamente progettata per tagliare o perforare. +1 all'Attacco</p>"
+    },
+    "Sword (Poor)": {
+      "name": "Spada (Scarso)",
+      "description": "<p>Un'arma con elsa e lama. Volutamente progettata per tagliare o perforare. Se fai 1 all'Attacco (Fallimento Critico) l'arma fallisce in qualche modo e richiede un'azione per utilizzarla nuovamente.</p>"
+    },
+    "Sword": {
+      "name": "Spada",
+      "description": "<p>Un'arma lamata ed elsata. Volutamente progettata per tagliare o perforare. </p>"
+    },
+    "Thrown Weapon": {
+      "name": "Lanciare",
+      "description": "<p>Un tiro base o parabolico di un oggetto. Usa un'azione per fare un attacco a distanza fino a 25m. I bersagli possono scegliere di Schivare il tuo tiro se possono Schivare proiettili. Le armi da mischia infliggono i loro danni base, ma non dimezzano la PA.</p>",
+      "dvTable": "VD Arma da Lancio"
+    },
+    "Tomahawk (Excellent)": {
+      "name": "Tomahawk (Eccellente)",
+      "description": "<p>Un'ascia leggera che può essere lanciata. +1 all'Attacco.</p>"
+    },
+    "Tomahawk (Poor)": {
+      "name": "Tomahawk (Scarso)",
+      "description": "<p>Un'ascia leggera che può essere lanciata. Se fai 1 all'Attacco (Fallimento Critico) l'arma fallisce in qualche modo e richiede un'azione utilizzarla nuovamente.</p>"
+    },
+    "Tomahawk": {
+      "name": "Tomahawk",
+      "description": "<p>Un'ascia leggera che può essere lanciata. </p>"
+    },
+    "Tsunami Arms Helix": {
+      "name": "Tsunami Arms Helix",
+      "description": "<p>\n  An Exotic Assault Rifle that uses only Autofire. Holds 40 bullets, using 20\n  bullets with each attack. Uses Autofire rules with a multiplication up to a\n  maximum of 5. Requires BODY 11 or higher (unless mounted).\n</p>\n",
+      "dvTable": "DV Assault Rifle"
+    },
+    "Unarmed": {
+      "name": "Disarmato",
+      "description": "<p>Combattere a mani nude, non ignora metà armatura.</p>"
+    },
+    "Very Heavy Melee (Excellent)": {
+      "name": "Arma da Mischia Molto Pesante (Eccellente)",
+      "description": "<p>Arma Generica da Mischia Molto Pesante di qualità eccellente.</p>\n<p>Attacco +1.</p>"
+    },
+    "Very Heavy Melee (Poor)": {
+      "name": "Arma da Mischia Molto Pesante (Scarsa)",
+      "description": "<p>Arma da Mischia Molto Pesante Generica di Bassa Qualità.</p>\n<p>Se fai 1 sul tiro per colpire (Fallimento Critico) l'arma fallisce in qualche modo e richiede un'azione per utilizzarla nuovamente</p>"
+    },
+    "Very Heavy Melee": {
+      "name": "Arma da Mischia Molto Pesante",
+      "description": "<p>Arma da Mischia Molto Pesante Generica</p>"
+    },
+    "Very Heavy Pistol (Excellent)": {
+      "name": "Pistola Molto Pesante (Eccellente)",
+      "description": "<p>Una pistola molto pesante. Non può essere occultata. +1 all'Attacco.</p>",
+      "dvTable": "VD Pistola"
+    },
+    "Very Heavy Pistol (Poor)": {
+      "name": "Pistola Molto Pesante (Scarso)",
+      "description": "<p>Una pistola molto pesante. Non può essere occultata. Se fai 1 all'Attacco (Fallimento Critico) l'arma si inceppa e richiede l'utilizzo di un'azione per sbloccarla. </p>",
+      "dvTable": "VD Pistola"
+    },
+    "Very Heavy Pistol": {
+      "name": "Pistola Molto Pesante",
+      "description": "<p>Una Pistola Molto Pesante. Non può essere nascosta. </p>",
+      "dvTable": "VD Pistola"
+    }
+  }
+}

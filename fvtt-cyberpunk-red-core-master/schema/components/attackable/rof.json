@@ -1,0 +1,4 @@
+{
+  "description": "Rate of Fire of a weapon",
+  "type": "integer"
+}

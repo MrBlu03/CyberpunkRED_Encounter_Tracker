@@ -1,0 +1,116 @@
+_id: LlcUvcVoCD6SeKOk
+_key: "!items!LlcUvcVoCD6SeKOk"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/upgrades/nos.svg
+name: NOS
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  damage: 1d6
+  description:
+    value: |
+      <p>
+        Can be applied to all vehicles. Adds a tank of nitrous oxide to the vehicle.
+        Allows you to use your Action to use an additional Move Action while driving.
+      </p>
+      <p>
+        You may install this upgrade multiple times, each upgrade adds an additional
+        tank and each tank may be used once per day.
+      </p>
+  dvTable: ""
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 0
+  installLocation: mall
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: false
+  isRanged: false
+  magazine:
+    max: 0
+    value: 0
+  modifiers:
+    Wardrobe & Style:
+      isSituational: false
+      onByDefault: false
+      value: null
+    attackmod:
+      isSituational: false
+      onByDefault: false
+      type: modifier
+      value: null
+    bodySp:
+      isSituational: false
+      onByDefault: false
+      value: null
+    cool:
+      isSituational: false
+      onByDefault: false
+      value: null
+    damage:
+      isSituational: false
+      onByDefault: false
+      type: modifier
+      value: null
+    headSp:
+      isSituational: false
+      onByDefault: false
+      value: null
+    magazine:
+      isSituational: false
+      onByDefault: false
+      type: modifier
+      value: null
+    rof:
+      isSituational: false
+      onByDefault: false
+      type: modifier
+      value: null
+    sdp:
+      isSituational: false
+      onByDefault: false
+      type: modifier
+      value: null
+    seats:
+      isSituational: false
+      onByDefault: false
+      type: modifier
+      value: null
+    secondaryWeapon:
+      configured: false
+    shieldHp:
+      isSituational: false
+      onByDefault: false
+      value: null
+    slots:
+      isSituational: false
+      onByDefault: false
+      value: null
+    speedCombat:
+      type: modifier
+      value: null
+  price:
+    market: 1000
+  providesHardening: false
+  rof: 1
+  size: 0
+  source:
+    book: Core
+    page: 163
+  type: vehicle
+  unarmedAutomaticCalculation: true
+  usesType: magazine
+  weaponSkill: ""
+  weaponType: ""
+type: itemUpgrade

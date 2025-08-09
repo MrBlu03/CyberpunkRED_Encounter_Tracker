@@ -1,0 +1,23 @@
+<li class="item flexrow">
+  <div class="item flexrow setting-name text-nowrap">
+    {{localize "CPR.itemSheet.quality"}}
+  </div>
+  <div class="item flexrow setting-value text-nowrap item-end">
+    <select name="system.quality">
+      {{selectOptions (cprFindConfigObj "itemQuality")  selected=item.system.quality localize=true}}
+    </select>
+  </div>
+</li>
+{{!-- Crit Fail Effect --}}
+{{#if (and (cprCompare item.type "===" "weapon") (cprCompare item.system.quality "===" "poor"))}}
+  <li class="item flexrow">
+    <div class="item flexrow setting-name text-nowrap">
+      {{localize "CPR.itemSheet.critFailEffect.text"}}
+    </div>
+    <div class="item flexrow setting-value text-nowrap item-end">
+      <select name="system.critFailEffect" data-dtype="{{item.system.critFailEffect}}">
+        {{selectOptions (cprFindConfigObj "attackableCritFailEffects") selected=item.system.critFailEffect localize=true}}
+      </select>
+    </div>
+  </li>
+{{/if}}

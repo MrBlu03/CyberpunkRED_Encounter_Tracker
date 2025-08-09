@@ -1,0 +1,70 @@
+<div class="rollcard">
+  <div class="rollcard-top">
+    <div class="cpr-block chat-rollTitle-stat">
+      <div class="text-center text-padding-top text-normal text-semi">
+        {{rollTitle}}
+      </div>
+    </div>
+  </div>
+  <div class="rollcard-bottom">
+    <div class="cpr-block">
+      <div class="
+             text-massive
+             text-center
+             {{#if (cprCompare saveResult '===' (localize 'CPR.rolls.success'))}}
+               roll-success
+             {{else}}
+               roll-failure
+             {{/if}}">
+        {{saveResult}}
+      </div>
+      <div class="d10-rollcard-data">
+        <div class="d10-dice-div">
+          {{!-- die image for initialRoll --}}
+          {{#if (cprCompare saveResult "===" (localize "CPR.rolls.success")) }}
+            {{#if (cprCompare initialRoll "===" 1) }}
+              <img class="d10"
+                   src="systems/cyberpunk-red-core/icons/dice/red/d10_{{initialRoll}}_preem.svg"/>
+            {{else}}
+              <img class="d10"
+                   src="systems/cyberpunk-red-core/icons/dice/red/d10_{{initialRoll}}.svg"/>
+            {{/if}}
+          {{else}}
+            <img class="d10"
+                 src="systems/cyberpunk-red-core/icons/dice/red/d10_{{initialRoll}}.svg"/>
+          {{/if}}
+        </div>
+        <div class="d10-number-div">
+          <a>
+            <span class="clickable text-semi"
+                  data-action="toggleVisibility"
+                  data-visible-element="d10-data-details">
+              {{resultTotal}}
+            </span>
+          </a>
+        </div>
+        <div class="d10-data-div">
+          <div class="d10-data-details hide">
+            <div class="text-normal text-semi">
+              {{localize "CPR.global.stats.body"}}: {{bodyStat}}
+            </div>
+            {{#if (cprCompare penalty "!==" 0) }}
+              <span class="text-normal text-nowrap text-semi">
+                {{localize "CPR.global.generic.deathPenalty"}}: {{penalty}}
+              </span>
+            {{/if}}
+            {{#if (cprCompare basePenalty "!==" 0) }}
+              <span class="text-normal text-nowrap text-semi">
+                {{localize "CPR.characterSheet.rightPanke.skills.base"}}
+                {{localize "CPR.global.generic.deathPenalty"}}: {{basePenalty}}
+              </span>
+            {{/if}}
+            {{#if (cprCompare mods.length "||" additionalMods.length) }}
+              {{> "systems/cyberpunk-red-core/templates/chat/cpr-rollcard-modifiers.hbs" this}}
+            {{/if}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

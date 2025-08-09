@@ -1,0 +1,39 @@
+<li class="item flexrow{{#if item.system.favorite }} favorite{{else }}{{#if (cprListContains sheet.options.collapsedSections "gearTab-gear") }} hide{{/if }}{{/if }}"
+    data-item-id="{{item._id}}"
+    data-item-category="{{item.type}}"
+    draggable="true">
+  <div class="item-name gear-name text-nowrap flexrow">
+    <a class="name item-edit flex-center">
+      <div class="item-thumb">
+        <img src="{{item.img}}"/>
+        {{#if item.system.isUpgraded }}
+          <i class="fa-solid fa-square-caret-up fa-xs" data-tooltip="{{localize "CPR.global.generic.upgraded"}}"></i>
+        {{/if}}
+      </div>
+      {{ item.name }}
+    </a>
+    {{#if item.system.installedItems.list }}
+      <a class="toggle-installed-visibility">
+        <i class="fa-solid fa-chevron-up fa-sm {{#unless (cprGetProp actor.flags.cyberpunk-red-core.showInstalled item.id) }}fa-flip-vertical{{/unless}}"></i>
+      </a>
+    {{/if}}
+  </div>
+  <div class="gear-amount">
+    <div class="gear-amount-value">
+      x
+      <input name="item.system.amount"
+             class="gear-amount-input"
+             type="number"
+             data-item-prop="item.system.amount"
+             value="{{cprNumberFormat item.system.amount}}"/>
+    </div>
+  </div>
+  <div class="item-detail gear-data text-nowrap"
+       data-tooltip="{{cprSanitizeText item.system.description.value}}">
+    {{cprSanitizeText item.system.description.value}}
+  </div>
+  <div class="item-detail gear-actions text-nowrap">
+    {{> "systems/cyberpunk-red-core/templates/actor/mixin/actions/cpr-actions.hbs" item}}
+  </div>
+  {{cprNestedInstalledGearTab item}}
+</li>

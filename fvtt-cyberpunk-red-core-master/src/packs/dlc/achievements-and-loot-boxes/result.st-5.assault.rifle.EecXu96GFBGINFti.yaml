@@ -1,0 +1,12 @@
+_id: EecXu96GFBGINFti
+_key: "!tables.results!bOtq937SNIahmbeK.EecXu96GFBGINFti"
+documentCollection: cyberpunk-red-core.dlc_the-12-days-of-gunmas
+documentId: poMp4coxB8SORzvi
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/weapons/AssaultRifle_poor.svg
+range:
+  - 4
+  - 4
+text: ST-5 Assault Rifle
+type: 2
+weight: 1

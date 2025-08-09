@@ -1,0 +1,33 @@
+_id: LTxStSIeRegbtZpd
+_key: "!items!LTxStSIeRegbtZpd"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/gear/antismog_breathing_mask.svg
+name: Anti-Smog Breathing Mask
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>Airborne toxin filter.</p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: false
+  price:
+    market: 20
+  providesHardening: false
+  revealed: true
+  source:
+    book: Core
+    page: 352
+  usage: toggled
+type: gear

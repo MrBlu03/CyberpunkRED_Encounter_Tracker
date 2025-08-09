@@ -1,0 +1,56 @@
+_id: KVn4A1c6svXPovI4
+_key: "!items!KVn4A1c6svXPovI4"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/cyberware/radar_detector.svg
+name: Radar Detector
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  core: false
+  damage: 1d6
+  description:
+    value: |
+      <p>Notifies of detected active radar within a 1 mile radius.</p>
+  dvTable: ""
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  humanityLoss:
+    roll: 1d3
+    static: 2
+  installLocation: clinic
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: true
+  isFoundational: false
+  isRanged: false
+  isWeapon: false
+  magazine:
+    max: 0
+    value: 0
+  price:
+    market: 500
+  providesHardening: false
+  revealed: true
+  rof: 1
+  size: 1
+  source:
+    book: Core
+    page: 362
+  type: cyberAudioSuite
+  unarmedAutomaticCalculation: true
+  usage: toggled
+  usesType: magazine
+  weaponSkill: ""
+  weaponType: ""
+type: cyberware

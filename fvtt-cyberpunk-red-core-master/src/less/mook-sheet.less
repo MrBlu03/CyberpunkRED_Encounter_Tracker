@@ -1,0 +1,305 @@
+// Cyberpunk Red Core Mook Sheet Styling
+// Overall Sheet Layout
+*:focus {
+  outline: none;
+}
+
+.mook-sheet {
+  font-family: "Jost";
+  display: grid;
+  grid-template-columns: 0.05fr 1fr;
+  grid-template-areas: "mook-name mook-details";
+  background-color: var(--cpr-background-border);
+
+  .mook-name {
+    color: var(--cpr-text-header);
+    grid-area: mook-name;
+  }
+
+  .mook-details {
+    display: grid;
+    grid-template-rows: auto;
+    grid-area: mook-details;
+    grid-template-areas:
+      "mook-img-and-stats"
+      "mook-gear"
+      "mook-skills"
+      "mook-special"
+      "mook-program"
+      "mook-crit"
+      "mook-notes";
+  }
+
+  .mook-img-and-stats {
+    display: grid;
+    grid-template-areas: "mook-image mook-stats-and-derived";
+  }
+
+  .mook-image {
+    grid-area: mook-image;
+    display: grid;
+    grid-template-areas: "mook-image-toggle mook-image-block";
+    width: 10.5rem;
+    height: 10rem;
+    overflow: hidden;
+    padding: 0.313rem;
+  }
+
+  .mook-image-small-toggle {
+    width: 1.063rem;
+  }
+
+  .mook-image-toggle {
+    grid-area: "mook-image-toggle";
+    &::after {
+      content: attr(data-text);
+    }
+  }
+
+  .mook-image-block {
+    grid-area: "mook-image-block";
+    clip-path: polygon(1.563rem 0, 100% 0, 100% 100%, 0 100%, 0 1.563rem);
+    height: 10.313rem;
+    width: 9.438rem;
+  }
+
+  .mook-image-block-img {
+    width: 9.438rem;
+    height: 155;
+    object-fit: contain;
+    border: 0;
+  }
+
+  .mook-stats-and-derived {
+    display: grid;
+    grid-template-rows: auto;
+    grid-area: mook-stats-and-derived;
+    grid-template-areas:
+      "mook-stats"
+      "mook-derived";
+    min-width: 26.25rem;
+  }
+
+  .mook-stats {
+    display: grid;
+    grid-area: mook-stats;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "mook-int-stat mook-ref-stat mook-dex-stat mook-tech-stat mook-cool-stat"
+      "mook-will-stat mook-luck-stat mook-move-stat mook-body-stat mook-emp-stat";
+    gap: 0.313rem;
+
+    color: var(--cpr-text-mook-header);
+
+    input {
+      color: var(--cpr-text-mook-normal);
+      background-color: var(--cpr-background-box);
+      border: 0;
+      outline: 0;
+      border-radius: unset;
+    }
+    .mook-int-stat {
+      grid-area: mook-int-stat;
+    }
+    .mook-ref-stat {
+      grid-area: mook-ref-stat;
+    }
+    .mook-dex-stat {
+      grid-area: mook-dex-stat;
+    }
+    .mook-tech-stat {
+      grid-area: mook-tech-stat;
+    }
+    .mook-cool-stat {
+      grid-area: mook-cool-stat;
+    }
+    .mook-will-stat {
+      grid-area: mook-will-stat;
+    }
+    .mook-luck-stat {
+      grid-area: mook-luck-stat;
+    }
+    .mook-move-stat {
+      grid-area: mook-move-stat;
+    }
+    .mook-body-stat {
+      grid-area: mook-body-stat;
+    }
+    .mook-emp-stat {
+      grid-area: mook-emp-stat;
+    }
+  }
+
+  .mook-derived-stats {
+    gap: 0.313rem;
+    display: grid;
+    grid-area: mook-derived;
+    grid-template-columns: 1fr 1fr 0.5fr;
+    grid-template-areas: "mook-hp mook-wounded mook-deathsave";
+
+    color: var(--cpr-text-mook-header);
+
+    .mook-hp {
+      grid-area: mook-hp;
+    }
+    .mook-wounded {
+      grid-area: mook-wounded;
+
+      .mook-wounded-stat {
+        background-color: var(--cpr-background-box);
+        color: var(--cpr-text-normal);
+        height: 1.625rem;
+        display: grid;
+        justify-content: center;
+        align-content: center;
+      }
+    }
+    .mook-deathsave {
+      grid-area: mook-deathsave;
+      .mook-deathsave-value {
+        background-color: var(--cpr-background-box);
+        color: var(--cpr-text-normal);
+        height: 1.625rem;
+      }
+    }
+  }
+
+  .mook-gear {
+    gap: 0.438rem;
+    display: grid;
+    grid-template-columns: 1fr 0.5fr;
+    grid-area: mook-gear;
+    grid-template-areas: "mook-weapon-list mook-armor";
+
+    .mook-weapon-list {
+      grid-area: mook-weapon-list;
+
+      .items-header {
+        color: var(--cpr-text-header);
+        background-color: var(--cpr-background-header);
+        font-weight: 500;
+      }
+
+      .mook-weapon-header {
+        color: var(--cpr-text-mook-header);
+      }
+
+      .weapon-content {
+        background-color: var(--cpr-background-box);
+      }
+    }
+    .mook-armor {
+      grid-area: mook-armor;
+
+      .mook-armor-header {
+        color: var(--cpr-text-mook-header);
+      }
+
+      .armor-content {
+        background-color: var(--cpr-background-box);
+      }
+    }
+  }
+
+  .mook-skills {
+    grid-area: mook-skills;
+
+    .mook-skills-header {
+      color: var(--cpr-text-mook-header);
+    }
+
+    .mook-skills-content {
+      background-color: var(--cpr-background-box);
+    }
+  }
+
+  .mook-special {
+    grid-area: mook-special;
+
+    .mook-special-header {
+      color: var(--cpr-text-mook-header);
+    }
+
+    .mook-special-content {
+      background-color: var(--cpr-background-box);
+    }
+  }
+
+  .mook-special-list {
+    min-height: 0.625rem;
+  }
+
+  .mook-crit {
+    grid-area: mook-crit;
+
+    .mook-crit-header {
+      color: var(--cpr-text-mook-header);
+    }
+
+    .mook-crit-content {
+      background-color: var(--cpr-background-box);
+    }
+  }
+
+  .mook-crit-list {
+    min-height: 0.625rem;
+  }
+
+  .mook-notes {
+    grid-area: mook-notes;
+    min-height: 3.75rem;
+    min-width: 26.875rem;
+
+    .mook-notes-header {
+      color: var(--cpr-text-mook-header);
+    }
+
+    .mook-notes-content {
+      background-color: var(--cpr-background-box);
+      min-height: 5rem;
+      min-width: 8.438rem;
+      display: flex;
+      flex: 1 0 auto;
+      flex-wrap: wrap;
+    }
+  }
+}
+
+.mook-sheet-limited {
+  font-family: "Jost";
+  display: grid;
+  grid-template-columns: 10.063rem 2rem 1fr;
+  grid-template-areas: "mook-image-limited mook-name-limited mook-notes-limited";
+
+  .mook-image-limited {
+    grid-area: mook-image-limited;
+    clip-path: polygon(1.875rem 0, 100% 0, 100% 100%, 0 100%, 0 1.875rem);
+    width: 9.438rem;
+    height: 9.438rem;
+    margin: 0.313rem;
+
+    .mook-image-block-img {
+      width: 9.438rem;
+      height: 9.438rem;
+      object-fit: contain;
+      border: 0;
+    }
+  }
+
+  .mook-name-limited {
+    grid-area: mook-name-limited;
+  }
+
+  .mook-notes-limited {
+    grid-area: mook-notes-limited;
+  }
+
+  .mook-edit-section-limited {
+    min-height: 8.438rem;
+    min-width: 8.438rem;
+    height: unset;
+    display: flex;
+    flex: 1 0 auto;
+    flex-wrap: wrap;
+  }
+}

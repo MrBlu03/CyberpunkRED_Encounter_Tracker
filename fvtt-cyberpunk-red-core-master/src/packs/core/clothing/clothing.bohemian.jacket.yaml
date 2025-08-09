@@ -1,0 +1,38 @@
+_id: N2mtHxxCi3GZOKlA
+_key: "!items!N2mtHxxCi3GZOKlA"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/clothing/generic_jacket.svg
+name: Bohemian Jacket
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        Channel your inner 70s hippy! Show everyone how much of a free spirit you are
+        with these clothes.
+      </p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: false
+  price:
+    market: 50
+  providesHardening: false
+  revealed: true
+  source:
+    book: Core
+    page: 356
+  style: bohemian
+  type: jacket
+  usage: equipped
+type: clothing

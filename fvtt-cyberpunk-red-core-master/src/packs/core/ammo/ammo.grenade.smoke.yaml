@@ -1,0 +1,36 @@
+_id: 7xhKxgwOELzaPyYr
+_key: "!items!7xhKxgwOELzaPyYr"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/ammo/grenade_smoke.png
+name: Grenade (Smoke)
+system:
+  ablationValue: 0
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: true
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        Deals no Damage. Fills a 10m/yd x 10m/yd with smoke for 1 minute. Tasks
+        obscured by smoke have a -4 penalty.
+      </p>
+  favorite: false
+  overrides:
+    autofire:
+      minimum: 3
+      mode: none
+      value: -1
+    damage:
+      minimum: 1d6
+      mode: set
+      value: "0"
+  price:
+    market: 50
+  source:
+    book: Core
+    page: 347
+  type: smoke
+  variety: grenade
+type: ammo

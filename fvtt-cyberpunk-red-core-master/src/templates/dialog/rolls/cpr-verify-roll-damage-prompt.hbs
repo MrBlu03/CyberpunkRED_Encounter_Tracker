@@ -1,0 +1,87 @@
+<form class="dialog-sheet">
+  <div class="dialog-header flexcol">
+    <div class="text-normal text-center">
+      {{localize "CPR.rolls.rollingForDamage" rollTitle=rollData.rollTitle}}
+    </div>
+    <div class="text-center">
+      <span class="text-semi">{{localize "CPR.global.generic.damage"}}:</span>
+        {{#if isAutofire}}
+          2d6 x{{autofireMultiplier}}
+        {{else}}
+          {{rollData.formula}}
+        {{/if}}
+    </div>
+  </div>
+  <hr/>
+  <div class="dialog-grid flexcol">
+    <ol class="dialog-list">
+      {{#if (cprCompare (cprListContains "assaultRifle,smg,heavySmg" rollData.weaponType) "||" rollData.isAutofire) }}
+        <li class="dialog-item flexrow">
+          <div class="dialog-item-name text-nowrap">
+            {{localize "CPR.global.itemType.skill.autofire"}}?
+          </div>
+          <div class="dialog-item-input text-nowrap">
+            <input type="checkbox" id="isAutofire" name="isAutofire" {{#if rollData.isAutofire }} checked{{/if }}/>
+          </div>
+        </li>
+        {{#if rollData.isAutofire }}
+          <li class="dialog-item flexrow">
+            <div class="dialog-item-name text-nowrap">
+              {{localize "CPR.global.generic.multiplier"}}
+              {{#if (cprCompare rollData.autofireMultiplierMax ">" 0) }}
+                (1-{{rollData.autofireMultiplierMax}}):
+              {{else}}
+                {{#if (cprListContains "assaultRifle,smg,heavySmg" rollData.weaponType) }}
+                  (1-
+                  {{#if (cprCompare rollData.weaponType "===" "assaultRifle") }}
+                  4{{else}}3{{/if}}):
+                  {{else}}
+                    ({{localize "CPR.rolls.noAutfireMaxConfig"}})
+                  {{/if}}
+                {{/if}}
+              </div>
+              <div class="dialog-item-input text-nowrap">
+                <input type="number"
+                       class="number"
+                       name="autofireMultiplier"
+                       data-dtype="Number"
+                       value="{{rollData.autofireMultiplier}}"
+                       max="{{#if (cprCompare rollData.weaponType "===" "assaultRifle") }}4{{else }}3{{/if }}"
+                       min="1"/>
+              </div>
+            </li>
+          {{/if}}
+        {{/if}}
+        <li class="dialog-item flexrow">
+          <div class="dialog-item-name text-nowrap">
+            {{localize "CPR.rolls.aimedShot"}}:
+          </div>
+          <div class="dialog-item-input text-nowrap">
+            <input name="isAimed" class="aimed-checkbox" type="checkbox" data-dtype="Checkbox"{{#if rollData.isAimed }} checked{{/if }}/>
+          </div>
+        </li>
+        {{#if rollData.isAimed }}
+          <li class="dialog-item flexrow">
+            <div class="dialog-item-name text-nowrap">
+              {{localize "CPR.rolls.aimFor"}}:
+            </div>
+            <div class="dialog-item-input text-nowrap">
+              <select name="location">
+                {{#each (cprFindConfigObj "aimedLocation") as |loc l| }}
+                  <option value="{{l}}" {{#if (cprCompare ../rollData.location "===" l) }}selected{{/if }}>{{localize loc }}
+                  </option>
+                {{/each}}
+              </select>
+            </div>
+          </li>
+        {{/if}}
+        {{!-- Additional user inputted modifiers --}}
+        {{> "systems/cyberpunk-red-core/templates/dialog/rolls/cpr-additional-modifiers.hbs" this}}
+        {{!-- All applied modifier list partial --}}
+        {{> "systems/cyberpunk-red-core/templates/dialog/rolls/cpr-all-modifiers.hbs" this}}
+      </ol>
+    </div>
+    {{!-- Situational modifier list partial --}}
+    {{> "systems/cyberpunk-red-core/templates/dialog/rolls/cpr-situational-modifiers.hbs" this}}
+    {{> "systems/cyberpunk-red-core/templates/dialog/cpr-dialog-buttons.hbs"}}
+  </form>

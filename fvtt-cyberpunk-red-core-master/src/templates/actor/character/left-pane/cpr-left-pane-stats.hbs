@@ -1,0 +1,46 @@
+<div class="actor-stats">
+  {{#each actor.system.stats as |stat s| }}
+    <div class="actor-stats-stat text-normal text-center">
+      <div class="actor-stats-title text-semi">
+        <a class="rollable" data-roll-type="stat" data-roll-title="{{s}}" data-tooltip="{{cprGetStatToolTip s}}">
+          {{localize (cprFindConfigValue "statList" s)}}
+        </a>
+      </div>
+      {{#unless (cprIsDefined this.max)}}
+        <div class="actor-stats-value">
+          <input name="system.stats.{{s}}.value" type="text" type="Number" value="{{this.value}}"/>
+        </div>
+      {{else}}
+        <div class="actor-stats-of flexrow">
+          <div class="actor-stats-of-min text-right">
+            <input name="system.stats.{{s}}.value"
+                  {{#if (cprCompare this.value ">" 99)}}
+                   data-tooltip="{{cprTextTransform s "upper"}}
+                     {{localize 'CPR.tooltip.valueOf'}}
+                     {{this.value}}
+                     {{localize 'CPR.tooltip.isTooLargeForThisField'}}"
+                  {{/if}}
+                   type="text"
+                   data-dtype="Number"
+                   value="{{this.value}}"/>
+          </div>
+          <div class="actor-stats-of-sep">
+            /
+          </div>
+          <div class="actor-stats-of-max text-left">
+            <input name="system.stats.{{s}}.max"
+                  {{#if (cprCompare this.max ">" 99)}}
+                   data-tooltip="{{cprTextTransform s "upper"}}
+                     {{localize 'CPR.tooltip.maxOf'}}
+                     {{this.max}}
+                     {{localize 'CPR.tooltip.isTooLargeForThisField'}}"
+                  {{/if}}
+                   type="text"
+                   data-dtype="Number"
+                   value="{{this.max}}"/>
+          </div>
+        </div>
+      {{/unless}}
+    </div>
+  {{/each}}
+</div>

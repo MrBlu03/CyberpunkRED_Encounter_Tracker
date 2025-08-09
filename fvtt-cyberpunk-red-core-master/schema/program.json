@@ -1,0 +1,144 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/CPRC-Program",
+  "definitions": {
+    "CPRC-Program": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "_id": {
+          "$ref": "./components/id.json"
+        },
+        "_key": {
+          "$ref": "./components/key.json"
+        },
+        "effects": {
+          "$ref": "./components/effects.json"
+        },
+        "flags": {
+          "$ref": "./components/flags.json"
+        },
+        "img": {
+          "$ref": "./components/img.json"
+        },
+        "name": {
+          "$ref": "./components/name.json"
+        },
+        "type": {
+          "type": "string",
+          "const": "program"
+        },
+        "system": {
+          "$ref": "#/definitions/System"
+        }
+      },
+      "required": ["_id", "_key", "effects", "img", "name", "system", "type"]
+    },
+    "System": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "atk": {
+          "type": "integer"
+        },
+        "blackIceType": {
+          "type": "string",
+          "enum": ["antipersonnel", "antiprogram", "demon"]
+        },
+        "class": {
+          "type": "string",
+          "enum": [
+            "antipersonnelattacker",
+            "antiprogramattacker",
+            "booster",
+            "defender"
+          ]
+        },
+        "damage": {
+          "$ref": "#/definitions/ProgramDamage"
+        },
+        "def": {
+          "type": "integer"
+        },
+        "description": {
+          "$ref": "./components/common/description.json"
+        },
+        "favorite": {
+          "$ref": "./components/common/favorite.json"
+        },
+        "installLocation": {
+          "$ref": "./components/installable/installLocation.json"
+        },
+        "interface": {
+          "type": "integer"
+        },
+        "isRezzed": {
+          "description": "We don't store rezzed programs, should always be false",
+          "type": "boolean",
+          "const": false
+        },
+        "per": {
+          "type": "integer"
+        },
+        "price": {
+          "$ref": "./components/valuable/price.json"
+        },
+        "prototypeActor": {
+          "type": "string"
+        },
+        "revealed": {
+          "$ref": "./components/effects/revealed.json"
+        },
+        "rez": {
+          "type": "integer"
+        },
+        "size": {
+          "$ref": "./components/installable/size.json"
+        },
+        "source": {
+          "$ref": "./components/common/source.json"
+        },
+        "spd": {
+          "type": "integer"
+        },
+        "usage": {
+          "$ref": "./components/effects/usage.json"
+        }
+      },
+      "required": [
+        "atk",
+        "blackIceType",
+        "class",
+        "damage",
+        "def",
+        "description",
+        "favorite",
+        "installLocation",
+        "interface",
+        "isRezzed",
+        "per",
+        "price",
+        "prototypeActor",
+        "revealed",
+        "rez",
+        "size",
+        "source",
+        "spd",
+        "usage"
+      ]
+    },
+    "ProgramDamage": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "blackIce": {
+          "$ref": "./components/attackable/damage.json"
+        },
+        "standard": {
+          "$ref": "./components/attackable/damage.json"
+        }
+      },
+      "required": ["blackIce", "standard"]
+    }
+  }
+}

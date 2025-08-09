@@ -1,0 +1,58 @@
+{
+  "label": "Cybersoldes à ne pas manquer",
+  "mapping": {},
+  "entries": {
+    "Appetite Controller": {
+      "name": "Contrôleur d'appétit",
+      "description": "<p>Supprime la sensation la faim. L'utilisateur ignore les pénalités de perte d'Humanité dues à un traumatisme de famine mais peut encore mourir de faim. Lancez un jet de sauvegarde contre la mort au début de la 7e journée consécutive sans manger. +1 aux jets de sauvegarde contre la Mort successifs par la suite.</p>\n<p>Nécessite un Biomoniteur.</p>\n"
+    },
+    "Cyberpillow": {
+      "name": "Cyberoreiller",
+      "description": "<p>Un oreiller confortable déployable pour cyberbras, pour les siestes en déplacement.</p>\n"
+    },
+    "External Vidscreen": {
+      "name": "Vidscreen externe",
+      "description": "<p>Écran vidéo flexible implanté. Utilisez une puce mémoire insérée ou un Agent lié pour diffuser la vidéo vers le Vidscreen.</p>\n"
+    },
+    "Holo Projector Palm": {
+      "name": "Holo projecteur de paume",
+      "description": "<p>Projette, de la paume de l'utilisateur, un petit hologramme. L'utilisateur peut interagir avec l'hologramme pour contrôler les fonctions d'un Agent lié. Peut être installé dans un bras de viande s'il est le seul élément cyber dans ce bras.</p>"
+    },
+    "Kill Display": {
+      "name": "Tableau de chasse",
+      "description": "<p>Affichage alphanumérique sous-cutané qui brille clairement sous la peau. Utilise un Agent lié pour personnaliser l'affichage. Généralement utilisé comme &ldquo;compteur de tués.&rdquo;<br />Compte comme tatouage lumineux. Habillement et Style +2 quand l'utilisateur a 3 tatouages lumineux ou plus.</p>\n"
+    },
+    "Lead's Turn-On-Show-Off Nails": {
+      "name": "Ongles de plomb Turn-On-Show-Off",
+      "description": "<p>Ongle illuminé personnalisable pour chaque doigt. Comprend des stylos-outils pour créer des motifs personnalisés. Des modèles d'ongles peuvent être téléchargés à partir du CitiNet et synchronisés avec un Agent lié.<br />Considéré comme tatouage lumineux. Habillement et Style +2 lorsque l'utilisateur a 3 tatouages lumineux ou plus.</p>\n"
+    },
+    "Mood Eye": {
+      "name": "Mood Eye",
+      "description": "<p>Lentilles oculaires changeant de couleur. La couleur dépend des analyse de l'humeur sur le câblage neural. <strong>Jet de Jeu d'acteur SD 21</strong> pour fausser une analyse d'humeur et changer de couleur en conséquence. Les lentilles peuvent être désactivées sans action.</p>\n<ul>\n<li>Rouge : Rage</li>\n<li>Bleu : Chagrin</li>\n<li>Jaune : Terreur</li>\n<li>Pink : Excitation</li>\n<li>Vert : Jalousie</li>\n<li>Gris : Trait plat</li>\n</ul>\n<p>Cyberfashion. Nécessite un Câblage neural.</p>\n"
+    },
+    "NeuTongue": {
+      "name": "NovLangue",
+      "description": "<p>Simule les sensations de saveur. Utilise un Agent lié pour personnaliser les profils de saveurs. Peut être désactivé sans Action. Aucun sens du goût lorsqu'il est désactivé.</p>\n<p>Remplace la langue de chair.</p>"
+    },
+    "PerfectFit Cyberfoot": {
+      "name": "Cyberpied PerfectFit",
+      "description": "<p>Ajuste la taille des pieds pour s'adapter parfaitement à n'importe quelle chaussure. L'utilisateur peut ignorer les pénalités pour porter des chaussures qui seraient autrement inconfortables ou impraticables.<br />Peut être installé dans une jambe de viande si c'est la seule pièce cyber dans cette jambe.</p>\n"
+    },
+    "PersonalPak KibbleWarmer": {
+      "name": "Réchauffeur de croquettes PersonnalPak",
+      "description": "<p>Compartiment interne avec un élément de chauffage puissant, idéal pour réchauffer les repas préemballés.</p>\n"
+    },
+    "Pursuit Security Inc. Personal Shredder": {
+      "name": "Déchiqueteuse personnelle Pursuit Security Inc.",
+      "description": "<p>Une déchiqueteuse de papier, peut être caché. Comprend un stockage interne pour les morceaux de papier.</p>\n"
+    },
+    "Sponsored Covering (Cyberarm)": {
+      "name": "Affichage sponsorisé (Cyberbras)",
+      "description": "<p>Gagnez 20ed mensuellement en affichant une publicité lumineuse sur votre cyberbras. L'utilisateur peut être facturé des frais d'installation. Le parrainage de l'entreprise peut être révoqué si les conditions sont violées, comme masquer la publicité avec des vêtements ou se livrer à des activités &ldquo;hors marque&rdquo; .</p>\n<p>Ne peut pas être installé sur un bras de chair.</p>\n"
+    },
+    "Sponsored Covering (Cyberleg)": {
+      "name": "Affichage sponsorisé (Cyberjambe)",
+      "description": "<p>Gagnez 20ed mensuellement en affichant une publicité lumineuse sur votre cyberjambe. L'utilisateur peut être facturé des frais d'installation. Le parrainage de l'entreprise peut être révoqué si les conditions sont violées, comme masquer la publicité avec des vêtements ou se livrer à des activités &ldquo;hors marque&rdquo; .</p>\n<p>Ne peut pas être installé sur une jambe de chair.</p>\n"
+    }
+  }
+}

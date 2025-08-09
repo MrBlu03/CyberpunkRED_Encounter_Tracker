@@ -1,0 +1,9 @@
+
+<div class="armor-content">
+  {{#each (cprSort actor.itemTypes.armor "name") as |armor| }}
+    {{#if (cprCompare armor.system.equipped "===" "equipped") }}
+      {{> "systems/cyberpunk-red-core/templates/actor/mixin/fight/mixin/cpr-armor.hbs" this}}
+    {{/if}}
+  {{/each}}
+</div>
+

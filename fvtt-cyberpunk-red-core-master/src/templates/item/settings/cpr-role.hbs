@@ -1,0 +1,161 @@
+{{!--Item Name Settings--}}
+{{!-- Role Item Settings--}}
+<li class="item flexrow">
+  <div class="item flexrow setting-name text-nowrap"{{#if (cprCompare item.type "===" "role") }} data-tooltip="{{localize "CPR.tooltip.nameChangeWarning" }}"{{/if }}>
+    {{localize "CPR.itemSheet.role.mainAbilityName"}}
+    {{#if (cprCompare item.type "===" "role") }}
+      <i class="text-smallest text-super fa-solid fa-triangle-exclamation"></i>
+    {{/if}}
+    </div>
+    <div class="item flexrow setting-value text-nowrap item-end">
+      <input name="system.mainRoleAbility"
+             data-dtype="{{item.system.mainRoleAbility}}"
+             value="{{item.system.mainRoleAbility}}"
+             type="text"/>
+    </div>
+  </li>
+  <li class="item flexrow">
+    <div class="item flexrow setting-name text-nowrap">
+      {{localize "CPR.itemSheet.role.abilityRank"}}
+    </div>
+    <div class="item flexrow setting-value text-nowrap item-end">
+      <input name="system.rank"
+             data-dtype="{{item.system.rank}}"
+             value="{{item.system.rank}}"
+             type="number"/>
+    </div>
+  </li>
+  <li class="item flexrow">
+    <div class="item flexrow setting-name text-nowrap">
+      {{localize "CPR.itemSheet.role.hasRoll"}}
+    </div>
+    <div class="item flexrow setting-value text-nowrap item-end">
+      {{#if item.system.hasRoll }}
+        <a class="item-checkbox" data-target="system.hasRoll"><i class="far fa-circle-check"></i></a>
+      {{else}}
+        <a class="item-checkbox" data-target="system.hasRoll"><i class="far fa-circle"></i></a>
+      {{/if}}
+    </div>
+  </li>
+  {{#if item.system.hasRoll }}
+    <li class="item flexrow">
+      <div class="item flexrow setting-name text-nowrap">
+        {{localize "CPR.itemSheet.role.addRoleAbilityRankQuestion"}}
+      </div>
+      <div class="item flexrow setting-value text-nowrap item-end">
+        {{#if item.system.addRoleAbilityRank }}
+          <a class="item-checkbox" data-target="system.addRoleAbilityRank"><i class="far fa-circle-check"></i></a>
+        {{else}}
+          <a class="item-checkbox" data-target="system.addRoleAbilityRank"><i class="far fa-circle"></i></a>
+        {{/if}}
+      </div>
+    </li>
+    <li class="item flexrow">
+      <div class="item flexrow setting-name text-nowrap">
+        {{localize "CPR.global.generic.stat"}}
+      </div>
+      <div class="item flexrow setting-value text-nowrap item-end">
+        <select name="system.stat" data-dtype="{{item.system.stat}}">
+          {{!-- The first `selectOptions` is a helper from foundry.  --}}
+          {{!-- The second is a variable that the template can access, prepared in CPRItemSheet.getData() --}}
+          {{selectOptions selectOptions.statOptions selected=item.system.stat}}
+      </select>
+    </div>
+  </li>
+  <li class="item flexrow">
+    <div class="item flexrow setting-name text-nowrap">
+      {{localize "CPR.itemSheet.role.skill"}}
+    </div>
+    <div class="item flexrow setting-value text-nowrap item-end">
+      <select name="system.skill" data-dtype="{{item.system.skill}}">
+        {{selectOptions selectOptions.skillOptions selected=item.system.skill}}
+    </select>
+  </div>
+</li>
+{{/if}}
+<div class="item flexrow setting-name text-nowrap">
+  <a class="select-role-bonuses text-semi" data-role-type="mainRole">{{localize "CPR.itemSheet.role.configureRollBonuses"}}
+    <i class="text-smallest text-super fas fa-wrench"></i>
+  </a>
+  {{#if (cprCompare item.system.bonusRatio "!==" 1) }}
+    {{localize "CPR.itemSheet.role.bonusRatio"}} - 1:{{item.system.bonusRatio}}{{/if}}
+  </div>
+  <div class="compatible-ammo">
+    {{#each item.system.universalBonuses as |bonus| }}
+      <li class="item flexrow">
+        <div class="item flexrow setting-name text-nowrap text-padding-left-smallest">
+          {{localize (cprFindConfigValue "universalBonuses" bonus)}}
+        </div>
+      </li>
+    {{/each}}
+    {{#each (cprSort item.system.bonuses "system.stat") as |bonus| }}
+      <li class="item flexrow">
+        <div class="item flexrow setting-name text-nowrap text-padding-left">
+          {{#if bonus.system.core }}
+          {{localize bonus.name}}{{else}}{{bonus.name}}{{/if}} ({{localize (cprFindConfigValue "statList" bonus.system.stat)}})
+          </div>
+        </li>
+      {{/each}}
+    </div>
+    <div class="item-role-section item-role-grid">
+      <li class="items-header flexrow">
+        <span class="item-name role-name text-nowrap text-padding-left">{{localize "CPR.global.generic.name"}}</span>
+        <span class="item-detail role-rank text-nowrap">{{localize "CPR.itemSheet.role.rank"}}</span>
+        <span class="item-detail role-rank text-nowrap">{{localize "CPR.itemSheet.role.multiplier"}}</span>
+        <span class="item-detail role-stat text-nowrap">{{localize "CPR.global.generic.stat"}}</span>
+        <span class="item-detail role-skill text-nowrap">{{localize "CPR.itemSheet.role.skill"}}</span>
+        <span class="item-detail role-bonuses text-nowrap">{{localize "CPR.itemSheet.role.bonuses"}}</span>
+        <span class="item-detail role-actions text-nowrap">
+          <a class="role-ability-action"
+             data-action-type="create"
+             data-action-target="-1"><i class="fas fa-circle-plus text-padding-right" data-tooltip="{{localize "CPR.itemSheet.role.newRoleAbility"}}"></i></a>
+        </span>
+      </li>
+      <div class="role-list-content">
+        <ol class="items-list">
+          {{#each item.system.abilities as |ability index| }}
+            <li class="item role-name flexrow" data-index="{{index}}">
+              <div class="item-name text-nowrap">
+                {{localize (cprGetLocalizedlNameKey ability.name "roleAbility")}}
+              </div>
+              <div class="item-detail role-rank text-nowrap">{{ability.rank}}</div>
+              <div class="item-detail role-multiplier text-nowrap">
+                {{#if (cprCompare ability.multiplier "!==" "--") }}
+                  x{{/if}}{{ability.multiplier}}
+                </div>
+                <div class="item-detail role-stat text-nowrap">
+                  {{#if (cprCompare ability.stat "===" "--") }}
+                    {{localize "CPR.global.generic.notApplicable"}}
+                  {{else}}
+                    {{localize (cprFindConfigValue "statList" ability.stat)}}
+                  {{/if}}
+                </div>
+                <div class="item-detail role-skill text-nowrap">
+                  {{#if ability.skill.system.core }}
+                    {{localize (cprGetLocalizedlNameKey ability.skill)}}
+                  {{else}}
+                    {{ability.skill.name}}
+                  {{/if}}
+                  {{#if (cprCompare (cprCompare ability.skill "===" "--") "||" (cprCompare ability.skill "===" "varying")) }}
+                    {{localize (cprFindConfigValue "roleSpecialOptions" ability.skill)}}
+                  {{/if}}
+                </div>
+                <div class="item-detail role-bonuses text-nowrap">
+                  <a class="select-role-bonuses"
+                     data-role-type="subRole"
+                     data-ability-name="{{ability.name}}"
+                     data-tooltip="{{localize "CPR.itemSheet.role.configureRollBonuses"}}"><i class="fas fa-wrench"></i></a>
+                </div>
+                <div class="item-detail role-actions text-nowrap">
+                  <a class="role-ability-action" data-action-type="edit">
+                    <i class="fas fa-pen-to-square" data-tooltip="{{localize "CPR.itemSheet.role.editRoleAbility"}}"></i>
+                  </a>
+                  <a class="role-ability-action" data-action-type="delete">
+                    <i class="fas fa-trash-can" data-tooltip="{{localize "CPR.itemSheet.role.deleteRoleAbility"}}"></i>
+                  </a>
+                </div>
+              </li>
+            {{/each}}
+          </ol>
+        </div>
+      </div>

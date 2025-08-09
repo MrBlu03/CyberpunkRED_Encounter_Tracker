@@ -1,0 +1,62 @@
+{
+  "label": "Vehicles",
+  "mapping": {},
+  "entries": {
+    "Aerozep": {
+      "name": "Aerozep",
+      "description": "<p>\n  A modern-day cargo blimp. Requires a minimum of two rooms. The price is for\n  each room below deck.\n</p>\n"
+    },
+    "AV-4 Multipurpose Aerodyne": {
+      "name": "AV-4 Multipurpose Aerodyne",
+      "description": "<p>\n  A multipurpose aircraft capable of quick insertion thanks to vertical\n  thrusters. Used commonly by Trauma Teams.\n</p>\n"
+    },
+    "AV-9 Super Aerodyne": {
+      "name": "AV-9 Super Aerodyne",
+      "description": "<p>\n  A highly advanced AV with limited seats. Can travel up to 300 miles per hour.\n</p>\n"
+    },
+    "Cabin Cruiser": {
+      "name": "Cabin Cruiser",
+      "description": "<p>\n  A very fast speedboat. Requires a minimum of two rooms. The price is for each\n  room below deck.\n</p>\n"
+    },
+    "Compact Groundcar": {
+      "name": "Compact Groundcar",
+      "description": "<p>\n  A CHOOH<sup>2</sup>-powered ground car. Very common with a few dozen\n  manufacturers producing similar models.\n</p>\n"
+    },
+    "Gyrocopter": {
+      "name": "Gyrocopter",
+      "description": "<p>A small two-seater rotorcraft.</p>\n"
+    },
+    "Helicopter": {
+      "name": "Helicopter",
+      "description": "<p>A four-seater helicopter capable of high speeds and long flights.</p>\n"
+    },
+    "High Performance Groundcar": {
+      "name": "High Performance Groundcar",
+      "description": "<p>A specialised groundcar designed for sports performance.</p>\n"
+    },
+    "Jetski": {
+      "name": "Jetski",
+      "description": "<p>A common CHOOH<sup>2</sup>-powered jetski that can seat two people.</p>\n"
+    },
+    "Roadbike": {
+      "name": "Roadbike",
+      "description": "<p>\n  A common CHOOH<sup>2</sup>-powered roadbike seen during the time of the Red.\n</p>\n"
+    },
+    "Speedboat": {
+      "name": "Speedboat",
+      "description": "<p>A fast CHOOH<sup>2</sup>-powered speedboat.</p>\n"
+    },
+    "Super Groundcar": {
+      "name": "Super Groundcar",
+      "description": "<p>\n  An expensive, exotic CHOOH<sup>2</sup>-powered sportscar. It is capable of\n  very high speeds.\n</p>\n"
+    },
+    "Superbike": {
+      "name": "Superbike",
+      "description": "<p>A beefed-up version of a roadbike, capable of very high speeds.</p>\n"
+    },
+    "Yacht": {
+      "name": "Yacht",
+      "description": "<p>\n  A luxury speedboat. Requires a minimum of two rooms. The price is for each\n  room below or above deck.\n</p>\n"
+    }
+  }
+}

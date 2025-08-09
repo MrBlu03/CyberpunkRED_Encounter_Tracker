@@ -1,0 +1,81 @@
+{
+  "label": "Arsenal de Elflines Online",
+  "mapping": {
+    "dvTable": "sistema.Tablavd"
+  },
+  "entries": {
+    "Arrow": {
+      "name": "Flecha",
+      "description": "<p>Munición básica, nada especial.</p>"
+    },
+    "Poison Arrow": {
+      "name": "Flecha Venenosa",
+      "description": "<p>Sin daño inmediato. Al golpear, tira Resistir Tortugas/Drogas contra VD13. Al fallar 2d6 de daño a PV sin ablación. </p>"
+    },
+    "Chainmail Armor (Body)": {
+      "name": "Armadura de cota de mallas (Cuerpo)",
+      "description": "<p>Armadura formada por innumerables anillos de metal. -2 a REF, DES y MOV.</p>"
+    },
+    "Chainmail Armor (Head)": {
+      "name": "Armadura de cota de mallas (Cabeza)",
+      "description": "<p>Armadura formada por innumerables anillos de metal para tu cabeza. -2 a REF, DES y MOV.</p>"
+    },
+    "Full Plate Armor (Body)": {
+      "name": "Armadura de placas completa (Cuerpo)",
+      "description": "<p>Armadura de metal para resistir los golpes más poderosos. -4 para REF, DES y MOV.</p>"
+    },
+    "Full Plate Armor (Head)": {
+      "name": "Armadura de placas completa (Cabeza)",
+      "description": "<p>Armadura de metal para resistir los golpes más poderosos a la cabeza. -4 a REF, DES y MOV.</p>"
+    },
+    "Leather Armor (Body)": {
+      "name": "Armadura de cuero (Cuerpo)",
+      "description": "<p>Armadura de cuero sencilla. Sin penalización de armadura.</p>"
+    },
+    "Leather Armor (Head)": {
+      "name": "Armadura de cuero (Cabeza)",
+      "description": "<p>Armadura de cuero sencilla para tu cabeza. Sin penalización de armadura.</p>"
+    },
+    "Shield": {
+      "name": "Escudo",
+      "description": "<p>Requiere un brazo y tiene vida reducida por daño.</p>"
+    },
+    "Studded Leather Armor (Body)": {
+      "name": "Armadura de cuero tachonado (Cuerpo)",
+      "description": "<p>Armadura Estándar de Cuero Tachonado. Sin penalización de armadura.</p>"
+    },
+    "Studded Leather Armor (Head)": {
+      "name": "Armadura de cuero tachonado (Cabeza)",
+      "description": "<p>Armadura Estándar de Cuero Tachonado para tu cabeza. Sin penalización de armadura.</p>"
+    },
+    "Sacred Herbs": {
+      "name": "Hierbas sagradas",
+      "description": "<p>Ingerir Hierbas Sagradas cura inmediatamente a PV igual al TCO del usuario más su VOL.</p>"
+    },
+    "Vial of Poison": {
+      "name": "Frasco de veneno",
+      "description": "<p>2d6 de daño a menos que resistan a la tortuga/drogas. La armadura no se aplica.</p>"
+    },
+    "Bow": {
+      "name": "Arco",
+      "description": "<p>Arco revitalizado, recargado como parte de una acción de Ataque.</p>",
+      "dvTable": "VD Arcos y Ballestas"
+    },
+    "Dagger": {
+      "name": "Daga",
+      "description": "<p>Un cuchillo apto para un cazador.</p>"
+    },
+    "Greataxe": {
+      "name": "Hacha Grande",
+      "description": "<p>Un poste de madera con una hoja curva en cada lado. Favorecido por grupos de incursión para enfrentamientos cercanos. Requiere 2 manos para manejar incluso por un portador con TCO 8 o superior.</p>"
+    },
+    "Longsword": {
+      "name": "Espada larga",
+      "description": "<p>Un arma afilada con empuñadura. Específicamente diseñado para cortar o empujar. 2 CdT si empuñan dos espadas largas.</p>"
+    },
+    "Shortsword": {
+      "name": "Espada corta",
+      "description": "<p>Arma de filo corta empuñada. Específicamente diseñada para cortar o pinchar. </p>"
+    }
+  }
+}

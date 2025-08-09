@@ -1,0 +1,114 @@
+<div class="collapsible">
+  {{!-- Skill List Headers --}}
+  <li class="items-header flexrow collapsible">
+    <span class="item-name text-padding-left-smallest expand-button"
+          id="skillTab-{{category}}"
+          data-tooltip="{{localize "CPR.actorSheets.commonActions.toggleCategoryPinned"}}">
+      {{localize (cprFindConfigValue "skillCategories" category)}}
+      {{#if (cprListContains sheet.options.collapsedSections (cprGeneratePartial "skillTab-VAR" category)) }}
+        <i class="fas fa-plus collapse-icon"></i>
+        <i class="fas fa-minus expand-icon hide"></i>
+      {{else}}
+        <i class="fas fa-plus collapse-icon hide"></i>
+        <i class="fas fa-minus expand-icon"></i>
+      {{/if}}
+    </span>
+    <span class="item-detail skill-mod-value text-center">
+      {{localize "CPR.characterSheet.rightPane.skills.skillMod"}}
+    </span>
+    <span class="item-detail skill-level text-center">
+      {{localize "CPR.characterSheet.rightPane.skills.lvl"}}
+    </span>
+    <span class="item-detail skill-base text-center">
+      {{localize "CPR.characterSheet.rightPanke.skills.base"}}
+    </span>
+    <span class="item-detail skill-favorite text-nowrap text-center toggle-section-visibility"
+          id="skillTab-{{category}}-showFavorites"
+          data-tooltip="{{localize "CPR.characterSheet.rightPane.skills.toggleCategoryAll"}}">
+      <i class="far fa-eye show-favorites"></i>
+      <i class="far fa-eye-slash hide-favorites hide"></i>
+    </span>
+  </li>
+  {{!-- Skill List --}}
+  <ol class="items-list">
+    {{#each (cprSortCoreSkills (cprFilter actor.itemTypes.skill "system.category" category) ) as |skill s| }}
+      {{#if (cprSheetContentFilter ../this.sheet.options.cprContentFilter (localize (cprGetLocalizedlNameKey skill.name "skill"))) }}
+      <li class="item flexrow{{#if skill.system.favorite }} favorite{{else }}{{#if (cprListContains ../sheet.options.collapsedSections (cprGeneratePartial "skillTab-VAR" ../category)) }} hide{{/if }}{{/if }}"
+          data-item-id="{{skill._id}}"
+          data-skill-category="{{skill.system.category}}"
+          draggable="true">
+        <div class="item-name text-nowrap flexrow">
+          <span class="text-pill text-semi text-smaller">
+            {{localize (cprFindConfigValue "statList" skill.system.stat)}}
+          </span>
+          <a class="rollable {{#if skill.system.basic }}text-semi{{/if }}"
+             data-roll-type="skill"
+             data-roll-title="{{skill.name}}"
+             data-tooltip="{{cprGetSkillToolTipKey skill}}">
+            {{localize (cprGetLocalizedlNameKey skill)}}
+            {{#if (cprCompare skill.system.difficulty "===" "difficult") }}
+              (x2)
+            {{/if}}
+          </a>
+          {{#unless skill.system.core }}
+            <a class="item-edit skill-custom"
+               data-tooltip="{{localize "CPR.actorSheets.commonActions.editCustomSkill"}}"><i class="fas fa-pen-to-square"></i></a>
+            <a class="item-action skill-custom"
+               data-tooltip="{{localize "CPR.characterSheet.rightPane.skills.editCustomSkill"}}"
+               data-action-type="delete"><i class="fas fa-trash-can"></i></a>
+          {{/unless}}
+        </div>
+        {{!-- MOD --}}
+        {{!-- Don't show MOD unless its non-zero or has situational modifiers --}}
+        <div class="item-detail skill-mod-value text-nowrap text-center
+              {{#unless (cprGetSkillModInfo skill.name ../actor "modTotal")}}
+                {{#unless (cprGetSkillModInfo skill.name ../actor "hasSituational")}}
+                  zero-not-visible
+                {{/unless}}
+              {{/unless}}">
+          <span
+            {{#if (cprGetSkillModInfo skill.name ../actor "hasSituational") }}
+              class="text-italic"
+            {{/if }}
+            {{#if (cprGetSkillModInfo skill.name ../actor "modList" keepSituational=true) }}
+              data-tooltip="
+                {{#each (cprGetSkillModInfo skill.name ../actor "modList" keepSituational=true) as |mod| }}
+                  {{mod.source }} ({{cprGetChangeNameByKey false mod.category mod.key }}): {{cprEffectModMode mod.changeMode mod.value }} {{~#if mod.isSituational }}*{{/if}}
+                  {{#unless @last }}
+                    <br/>
+                  {{/unless}}
+                {{/each}}
+                {{#if (cprGetSkillModInfo skill.name ../actor "hasSituational") }}
+                  <hr/>
+                  *{{localize "CPR.characterSheet.rightPane.skills.situationalModWarning"}}
+                {{/if}}"
+            {{/if}}>
+            {{cprGetSkillModInfo skill.name ../actor "modTotal"}}
+          </span>
+        </div>
+        <div class="item-detail skill-level text-nowrap text-center">
+          <input class="number skill-input"
+                 value="{{skill.system.level}}"
+                 type="text"
+                 data-item-prop="system.level"
+                 data-dtype="Number"/>
+        </div>
+        <div class="item-detail skill-base text-nowrap text-center">
+          {{cprMath "sum" skill.system.level (cprGetSkillModInfo skill.name ../actor "modTotal") (lookup (cprGetProp ../actor.system.stats skill.system.stat) 'value')}}
+        </div>
+        <div class="item-detail skill-favorite text-nowrap text-center">
+          <a class="item-action"
+             data-action-type="favorite"
+             data-tooltip="{{localize "CPR.actorSheets.commonActions.togglePin"}}">
+            {{#if skill.system.favorite }}
+              <i class="fas fa-thumbtack pinned"></i>
+            {{else}}
+              <i class="fas fa-thumbtack unpinned"></i>
+            {{/if}}
+          </a>
+        </div>
+      </li>
+    {{/if}}
+  {{/each}}
+  </ol>
+</div>

@@ -1,0 +1,46 @@
+.item-card-grid-container {
+  display: grid;
+  grid-template-columns: 0.2fr 1.8fr;
+  gap: 0.25rem 0.25rem;
+  grid-template-areas:
+    "item-card-icon item-card-header"
+    "item-card-description item-card-description";
+}
+
+.item-card-icon {
+  grid-area: item-card-icon;
+  width: 3.25rem;
+  height: 3.25rem;
+}
+.item-card-icon-img {
+  width: 3.25rem;
+  height: 3.25rem;
+  object-fit: contain;
+}
+
+.item-card-description {
+  grid-area: item-card-description;
+}
+
+.item-description-section {
+  overflow-wrap: break-word;
+}
+
+.item-card-header {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 0rem 0rem;
+  grid-template-areas:
+    "item-card-name"
+    "item-card-type";
+  grid-area: item-card-header;
+}
+
+.item-card-name {
+  grid-area: item-card-name;
+  flex-wrap: nowrap;
+}
+
+.item-card-type {
+  grid-area: item-card-type;
+}

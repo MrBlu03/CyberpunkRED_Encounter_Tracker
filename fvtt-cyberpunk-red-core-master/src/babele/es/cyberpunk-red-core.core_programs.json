@@ -1,0 +1,66 @@
+{
+  "label": "Programas",
+  "mapping": {},
+  "entries": {
+    "Armor": {
+      "name": "Armadura",
+      "description": "<p>Reduce el daño cerebral en 4 estando rezeado. Solo 1 copia rezeada a la vez. Cada copia tiene 1 uso por Netrun.</p>"
+    },
+    "Banhammer": {
+      "name": "Banhammer",
+      "description": "<p>Inflige 3d6 REZ a programas no-Hielo Negro o 2d6 de daño a Hielo Negro. </p>"
+    },
+    "DeckKRASH": {
+      "name": "DeckKRASH",
+      "description": "<p>Fuerza a Netrunner a Desconectarse de forma Insegura. </p>"
+    },
+    "Eraser": {
+      "name": "Borrador",
+      "description": "<p>+2 a tiradas de Camuflaje mientras está Rezeado.</p>"
+    },
+    "Flak": {
+      "name": "Flak",
+      "description": "<p>Los ataques de programas no-Hielo Negro contra ti se reducen a 0 mientras está rezeado. Solo 1 copia puede ser rezeada a la vez. Cada copia tiene 1 uso por Netrun.</p>"
+    },
+    "Hellbolt": {
+      "name": "Hellbolt",
+      "description": "<p>2d6 de daño directo al cerebro del Netrunner. Su equipo se prende fuego si no se aísla. </p>"
+    },
+    "Nervescrub": {
+      "name": "Nervescrub",
+      "description": "<p>Reduce el REF INT y DES de un Netrunner por 1d6 (min. 1) durante 1 hora.</p>"
+    },
+    "Poison Flatline": {
+      "name": "Latine Venenoso",
+      "description": "<p>Destruye un programa no-Hielo Negro en la Cyberterminal del enemigo al azar.</p>"
+    },
+    "See Ya": {
+      "name": "¡Nos vemos!",
+      "description": "<p>+2 a tiradas de Explorador mientras está Rezeado.</p>"
+    },
+    "Shield": {
+      "name": "Escudo",
+      "description": "<p>Se detiene el primer daño cerebral realizado por un programa no-Hielo Negro. Solo 1 copia puede ser rezeada a la vez. Cada copia tiene 1 uso por Netrun.</p>"
+    },
+    "Speedy Gonzalvez": {
+      "name": "Speedy Gonzalvez",
+      "description": "<p>+2 a la Velocidad mientras está Rezeado.</p>"
+    },
+    "Superglue": {
+      "name": "Superpegamento",
+      "description": "<p>El netrunner no puede seguir avanzando en la red local o desconectar de forma segura durante 1d6 rondas. 1 uso por netrun. </p>"
+    },
+    "Sword": {
+      "name": "Espada",
+      "description": "<p>Inflige 3d6 REZ a programas Hielo Negro o 2d6 de daño a no-Hielo Negro. </p>"
+    },
+    "Vrizzbolt": {
+      "name": "Vrizzbolt",
+      "description": "<p>1d6 de daño directo al cerebro del Netrunner. Reduce las acciones de red totales que pueden tomar en 1 (min. 2) en su siguiente turno. </p>"
+    },
+    "Worm": {
+      "name": "Gusano",
+      "description": "<p>+2 a tiradas de Puerta Trasera mientras está Rezeado.</p>"
+    }
+  }
+}

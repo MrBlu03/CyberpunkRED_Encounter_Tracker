@@ -1,0 +1,149 @@
+{
+  "label": "Armes de marques (Core)",
+  "entries": {
+    "Avenger": {
+      "name": "Avenger",
+      "description": "<p>Un pistolet de taille moyenne. Dissimulable. +1 au jet d'attaque.</p>"
+    },
+    "Bearcat": {
+      "name": "Bearcat",
+      "description": "<p>Un arc renouvelé, rechargement compris dans l'action d'attaque.</p>\n<p>+1 à l'attaque.</p>"
+    },
+    "Boomer Buster": {
+      "name": "Boomer Buster",
+      "description": "<p>Un pistolet très lourd. Non dissimulable. +1 au jet d'attaque.</p>"
+    },
+    "Bulldog": {
+      "name": "Bulldog",
+      "description": "<p>Fusil à pompe polyvalent. +1 au jet d'attaque.</p>"
+    },
+    "City Reaper": {
+      "name": "City Reaper",
+      "description": "<p>Pistolet-mitrailleur lourd. Non dissimulable. Si vous faites 1 sur un jet d'attaque (Échec critique) l'arme est enrayée et cela nécessite une action pour le désenrayer.</p>"
+    },
+    "Cityhunter": {
+      "name": "Cityhunter",
+      "description": "<p>Un pistolet lourd. Dissimulable. +1 au jet d'attaque.</p>"
+    },
+    "Dragon": {
+      "name": "Dragon",
+      "description": "<p>Un fusil d'assaut. +1 au jet d'attaque.</p>"
+    },
+    "Home Defender": {
+      "name": "Home Defender",
+      "description": "<p>Un fusil à pompe polyvalent. Si vous faites 1 sur un jet d'attaque (Échec critique) l'arme est enrayée et cela nécessite une action pour le désenrayer.</p>"
+    },
+    "Hotshot": {
+      "name": "Hotshot",
+      "description": "<p>Sortez l'artillerie lourde. Ce lance-roquettes fera quelques dégâts. +1 au jet d'attaque.</p>"
+    },
+    "Hunter": {
+      "name": "Hunter",
+      "description": "<p>Une arbalète qui doit être rechargée après chaque attaque. Si vous lancez un 1 sur une Attaque (Échec critique) l'arme s'enraye et nécessite une action pour désenrayer. </p>"
+    },
+    "Jungle Reaper": {
+      "name": "Jungle Reaper",
+      "description": "<p>Un fusil d'assaut. Si vous faites 1 sur un jet d'attaque (Échec critique) l'arme est enrayée et cela nécessite une action pour le désenrayer.</p>"
+    },
+    "Long Rifle": {
+      "name": "Long Rifle",
+      "description": "<p>Un fusil de précision longue distance. Chargeur de 4 balles. </p>"
+    },
+    "Magnum": {
+      "name": "Magnum",
+      "description": "<p>Un pistolet lourd. Dissimulable. Si vous faites 1 sur un jet d'attaque (Échec critique) le pistolet est enrayé et cela nécessite une action pour le désenrayer.</p>"
+    },
+    "Mark III": {
+      "name": "Mark III",
+      "description": "<p>Un pistolet lourd. Dissimulable </p>"
+    },
+    "Minami 10": {
+      "name": "Minami 10",
+      "description": "<p>Un pistolet-mitrailleur. Dissimulable. +1 au jet d'attaque.</p>"
+    },
+    "Mini-Gat": {
+      "name": "Mini-Gat",
+      "description": "<p>Un pistolet-mitrailleur. Dissimulable.</p>"
+    },
+    "Mini-Grenade": {
+      "name": "Mini-Grenade",
+      "description": "<p>Lance-grenades avec lesquels vous pouvez utiliser une grande variété de grenades.</p>"
+    },
+    "P-35": {
+      "name": "P-35",
+      "description": "<p>Un pistolet très lourd. Non dissimulable </p>"
+    },
+    "Rapid Assault": {
+      "name": "Rapid Assault",
+      "description": "<p>Un fusil à pompe polyvalent. </p>"
+    },
+    "Ronin": {
+      "name": "Ronin",
+      "description": "<p>Un fusil d'assaut ordinaire. </p>"
+    },
+    "Scorpion": {
+      "name": "Scorpion",
+      "description": "<p>Une arbalète, rechargement compris dans l'action d'attaque.</p>\n<p>+1 à l'attaque.</p>"
+    },
+    "Sherwood": {
+      "name": "Sherwood",
+      "description": "<p>Un arc moderne, doit être rechargé après chaque attaque. Si vous faites 1 sur un jet d'attaque (Échec critique) l'attaque échoue et cela nécessite une action afin que l'arme soit à nouveau utilisable.</p>"
+    },
+    "SMG-21": {
+      "name": "SMG-21",
+      "description": "<p>Un pistolet-mitrailleur lourd. Non dissimulable.</p>"
+    },
+    "Snipe-Star": {
+      "name": "Snipe-Star",
+      "description": "<p>Un fusil de précision longue distance. Chargeur de 4 balles. Si vous lancez 1 sur une Attaque (échec critique) l'arme s'enraye et nécessite une action pour désenrayer. </p>"
+    },
+    "Streetmaster": {
+      "name": "Streetmaster",
+      "description": "<p>Un pistolet moyen, dissimulable. Si vous lancez 1 sur une Attaque (échec critique) le pistolet s'enraye et nécessite une action pour désenrayer. </p>"
+    },
+    "Striker": {
+      "name": "Striker",
+      "description": "<p>Une arbalète, rechargement compris dans l'action d'attaque.</p>"
+    },
+    "Super Chief": {
+      "name": "Super Chief",
+      "description": "<p>Un pistolet très lourd. Non dissimulable. Si vous faites 1 sur un jet d'attaque (Échec critique) le pistolet est enrayé et cela nécessite une action pour le désenrayer.</p>"
+    },
+    "Tech-Assault III": {
+      "name": "Tech-Assault III",
+      "description": "<p>Pistolet-mitrailleur. Dissimulable. Si vous faites 1 sur un jet d'attaque (Échec critique) l'arme est enrayée et cela nécessite une action pour le désenrayer.</p>"
+    },
+    "Tomcat": {
+      "name": "Tomcat",
+      "description": "<p>Un arc moderne, rechargement compris dans l'action d'attaque.</p>"
+    },
+    "Type-18": {
+      "name": "Type-18",
+      "description": "<p>Lance-grenades avec lesquels vous pouvez utiliser une grande variété de grenades. +1 au jet d'attaque.</p>"
+    },
+    "Type-G": {
+      "name": "Type-G",
+      "description": "<p>Lance-grenades avec lesquels vous pouvez utiliser une grande variété de grenades. Si vous faites 1 sur un jet d'attaque (Échec critique) l'arme est enrayée et cela nécessite une action pour le désenrayer.</p>"
+    },
+    "Type-R": {
+      "name": "Type-R",
+      "description": "<p>Sortez l'artillerie lourde. Ce lance-roquettes fera quelques dégâts. Si vous faites 1 sur un jet d'attaque (Échec critique) l'arme est enrayée et cela nécessite une action pour le désenrayer.</p>"
+    },
+    "Urban": {
+      "name": "Urban",
+      "description": "<p>Sortez l'artillerie lourde. Ce lance-roquettes fera quelques dégâts.</p>"
+    },
+    "Viper": {
+      "name": "Viper",
+      "description": "<p>Un pistolet-mitrailleur lourd. Non dissimulable. +1 au jet d'attaque.</p>"
+    },
+    "WSSA Sniper System": {
+      "name": "WSSA Sniper System",
+      "description": "<p>Un fusil de précision longue distance. Chargeur de 4 balles. +1 à l'attaque.</p>"
+    },
+    "X-9mm": {
+      "name": "X-9mm",
+      "description": "<p>Un pistolet de taille moyenne. Dissimulable </p>"
+    }
+  }
+}

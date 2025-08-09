@@ -1,0 +1,32 @@
+_id: 3eNNo0rk2AzidtmS
+_key: "!items.effects!lqyjkgvm1kvILvuw.3eNNo0rk2AzidtmS"
+changes:
+  - key: bonuses.hands
+    mode: 2
+    priority: null
+    value: "2"
+description: ""
+disabled: false
+duration:
+  combat: null
+  rounds: null
+  seconds: null
+  startRound: null
+  startTime: null
+  startTurn: null
+  turns: null
+flags:
+  cyberpunk-red-core:
+    changes:
+      cats:
+        "0": combat
+      situational:
+        "0":
+          isSituational: false
+          onByDefault: false
+icon: >-
+  systems/cyberpunk-red-core/icons/compendium/cyberware/artificial_shoulder_mount.svg
+name: Artificial Shoulder Mount
+statuses: []
+tint: null
+transfer: true

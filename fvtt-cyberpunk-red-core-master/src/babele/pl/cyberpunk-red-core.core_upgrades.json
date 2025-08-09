@@ -1,0 +1,214 @@
+{
+  "label": "Ulepszenia",
+  "mapping": {
+    "dvTable": "system.dvTable"
+  },
+  "entries": {
+    "Armored Chassis": {
+      "name": "Opancerzenie kadłuba",
+      "description": "<p>Pojazd zyskuje OB 13. Nie obejmuje okien i innych elementów szklanych.</p>"
+    },
+    "AV-4 Engine Upgrade": {
+      "name": "Silniki AV-4",
+      "description": "<p>: Silnik turboodrzutowy dwuprzepływowy o wektorowanym ciągu pozwalający pojazdowi latać! Rozpatrując ruch pojazdu, dopóki znajduje się w powietrzu, traktuj go jak AV-4. Lecący pojazd kontroluje się za pomocą Umiejętności Pilotaż statków powietrznych, a nie Prowadzenie pojazdów lądowych.</p>"
+    },
+    "Backup Drive": {
+      "name": "Zapasowy dysk",
+      "description": "<p>\n  Saves Non-Black ICE programs when destroyed. These programs can be\n  re-installed by a Netrunner as a meat action.\n</p>\n"
+    },
+    "Bayonet": {
+      "name": "Bagnet",
+      "description": "<p>Po zamontowaniu dodatku tę broń można też wykorzystać jak lekką broń białą. Po zamontowaniu tego dodatku broni nie da się ukryć pod ubraniem.</p>"
+    },
+    "Bulletproof Glass": {
+      "name": "Szyby kuloodporne",
+      "description": "<p>Zamiast nie dawać żadnej ochrony, wszystkie szyby pojazdu stają się osłoną: Cienkie szyby kuloodporne (15 PW). Jeśli dla danego pojazdu ponownie wybierze się to ulepszenie, staje się ono Grubymi szybami kuloodpornymi (30 PW). Każde okno pojazdu otrzymuje obrażenia osobno.</p>"
+    },
+    "Combat Plow": {
+      "name": "Pług bojowy",
+      "description": "<p>Gdy uderzasz przodem pojazdu w osłonę, inny pojazd lub pechowego przechodnia, twój pojazd nie odnosi uszkodzeń i żadna osoba w tym pojeździe nie odnosi Rany Krytycznej Odgięciowy Uraz Kręgosłupa Szyjnego. Jeśli w Turze, w której doszło do zderzenia, twój pojazd był pod działaniem Nitro, uderzona osłona, pojazd lub pechowy przechodzień otrzymują dodatkowe 2k6 obrażeń;</p>"
+    },
+    "Communications Center": {
+      "name": "Centrum komunikacji",
+      "description": "<p>Łatwo dostępny panel z ekranem dotykowym i Agentem oraz miejscem na sprzęt ruchomy w postaci: 6 radiokomunikatorów, 6 koderów/dekoderów, 1 radio/odtwarzacza muzyki, 1 odbiornika lokalizatora z 6 nadajnikami wielkości guzika, 1 rejestratora dźwięku.</p>"
+    },
+    "Deployable Spike Strip": {
+      "name": "Wyrzutnia kolczatki drogowej",
+      "description": "<p>Kierowca może użyć tego ulepszenia w ramach Akcji. Inne pojazdy z oponami, jadące tuż za pojazdem kierowcy, muszą wykonać Test Prowadzenia pojazdów lądowych o PT 17, by ominąć wyrzuconą kolczatkę. Jeśli Test się nie uda, pojazdy otrzymują 4k6 obrażeń w słaby punkt (obrażenia przebijające OB pojazdu mnoży się x2). Dodatkowe kolczatki kosztują 10 ed (Tanie). Każde dodatkowe wykupienie tego ulepszenia zwiększa liczbę kolczatek możliwych do wyrzucenia, zanim urządzenie będzie wymagało uzupełnienia amunicji, czego nie można zrobić w czasie jazdy</p>"
+    },
+    "DNA Lock": {
+      "name": "Zamek DNA",
+      "description": "<p>Używa biometryki do zabezpieczenia cyberdeka. Wymaga testu PT17 Elektronika i zabezpieczenia aby złamać zabezpieczenie.&nbsp;</p>"
+    },
+    "Drum Magazine (Assault Rifle)": {
+      "name": "Magazynek Bębnowy (Karabin szturmowy)",
+      "description": "<p>Zwiększa rozmiar magazynku do 45 pocisków.</p>"
+    },
+    "Drum Magazine (Grenade Launcher)": {
+      "name": "Magazynek Bębnowy (Granatnik)",
+      "description": "<p>Zwiększa rozmiar magazynku do 6 granatów.</p>"
+    },
+    "Drum Magazine (Heavy Pistol)": {
+      "name": "Magazynek Bębnowy(Ciężki pistolet)",
+      "description": "<p>Zwiększa rozmiar magazynku do 26 pocisków.</p>"
+    },
+    "Drum Magazine (Heavy SMG)": {
+      "name": "Magazynek Bębnowy(Ciężki Pistolet Maszynowy)",
+      "description": "<p>Zwiększa rozmiar magazynku do 60 pocisków.</p>"
+    },
+    "Drum Magazine (Medium Pistol)": {
+      "name": "Magazynek Bębnowy(Średni Pistolet)",
+      "description": "<p>Zwiększa rozmiar magazynku do 36 pocisków.</p>"
+    },
+    "Drum Magazine (Rocket Launcher)": {
+      "name": "Magazynek Bębnowy(Wyrzutnia Rakiet)",
+      "description": "<p>Zwiększa rozmiar magazynku do 3 rakiet.</p>"
+    },
+    "Drum Magazine (Shotgun)": {
+      "name": "Magazynek Bębnowy(Strzelba)",
+      "description": "<p>Zwiększa rozmiar magazynku do 16 nabojów.</p>"
+    },
+    "Drum Magazine (SMG)": {
+      "name": "Magazynek Bębnowy(Pistolet maszynowy)",
+      "description": "<p>Zwiększa rozmiar magazynku do 50 pocisków.</p>"
+    },
+    "Drum Magazine (Sniper Rifle)": {
+      "name": "Magazynek Bębnowy(Krabin snajperski)",
+      "description": "<p>Zwiększa rozmiar magazynku do 12 pocisków.</p>"
+    },
+    "Drum Magazine (Very Heavy Pistol)": {
+      "name": "Magazynek Bębnowy(B. Ciężki Pistolet)",
+      "description": "<p>Zwiększa rozmiar magazynku do 28 pocisków.</p>"
+    },
+    "Enhanced Interface Plug Integration": {
+      "name": "Ulepszone zespolenie ze złączem interfejsu",
+      "description": "<p>Gdy kontrolujesz motocykl za pomocą złącza interfejsu, dzięki temu ulepszeniu możesz unikać kul (z REF 8 lub wyższym). Jeśli ty, twój pasażer lub twój motocykl są celem ataku, którego moglibyście spróbować uniknąć, będąc pieszo, możesz spróbować uniknąć tego ataku Testem Uniku, tak jak zwykle. Twój wybór sposobu obrony automatycznie obowiązuje też pasażera. W przypadku eksplozji lub innego ataku obszarowego, po udanym uniku twój motocykl przyspiesza i wyjeżdża z zagrożonego obszaru, analogicznie do tego, co dzieje się, gdy robisz unik pieszo.</p>"
+    },
+    "Extended Magazine (Assault Rifle)": {
+      "name": "Powiększony magazynek(Karabin szturmowy)",
+      "description": "<p>Zwiększa rozmiar magazynku do 35 pocisków.</p>"
+    },
+    "Extended Magazine (Grenade Launcher)": {
+      "name": "Powiększony magazynek(Granatnik)",
+      "description": "<p>Zwiększa rozmiar magazynku do 4 granatów.</p>"
+    },
+    "Extended Magazine (Heavy Pistol)": {
+      "name": "Powiększony magazynek(Ciężki Pistolet)",
+      "description": "<p>Zwiększa rozmiar magazynku do 14 pocisków.</p>"
+    },
+    "Extended Magazine (Heavy SMG)": {
+      "name": "Powiększony magazynek(Ciężki Pistolet Maszynowy)",
+      "description": "<p>Zwiększa rozmiar magazynku do 50 pocisków.</p>"
+    },
+    "Extended Magazine (Medium Pistol)": {
+      "name": "Powiększony magazynek(Średni Pistolet)",
+      "description": "<p>Zwiększa rozmiar magazynku do 18 pocisków.</p>"
+    },
+    "Extended Magazine (Rocket Launcher)": {
+      "name": "Powiększony magazynek(Wyrzutnia Rakiet)",
+      "description": "<p>Zwiększa rozmiar magazynku do 2 rakiet.</p>"
+    },
+    "Extended Magazine (Shotgun)": {
+      "name": "Powiększony magazynek (Strzelba)",
+      "description": "<p>Zwiększa rozmiar magazynku do 8 nabojów.</p>"
+    },
+    "Extended Magazine (SMG)": {
+      "name": "Powiększony magazynek (Pistolet Maszynowy)",
+      "description": "<p>Zwiększa rozmiar magazynku do 40 pocisków.</p>"
+    },
+    "Extended Magazine (Sniper Rifle)": {
+      "name": "Powiększony magazynek (Karabin snajperski)",
+      "description": "<p>Zwiększa rozmiar magazynku do 8 pocisków.</p>"
+    },
+    "Extended Magazine (Very Heavy Pistol)": {
+      "name": "Powiększony magazynek (B. Ciężki Pistolet)",
+      "description": "<p>Zwiększa rozmiar magazynku do 14 pocisków.</p>"
+    },
+    "Grenade Launcher Underbarrel": {
+      "name": "Granatnik Podwieszany do Granatnika",
+      "description": "<p>Trzymaną oburącz broń można wykorzystać jako granatnik z tylko jednym granatem w magazynku. Po zamontowaniu tego dodatku broni nie da się ukryć pod ubraniem. Wykorzystuje 2 gniazda na dodatki.</p>",
+      "dvTable": "PT Granatniki"
+    },
+    "Hardened Circuitry": {
+      "name": "Wzmocnione obwody",
+      "description": "<p>Cyberdek nie może zostać wyłączony ani zniszczony przez efekty EMP.&nbsp;</p>"
+    },
+    "Heavy Chassis": {
+      "name": "Wzmocniona konstrukcja",
+      "description": "<p>Dodaje 20 PUK. Nie wpływa na szklane elementy pojazdu. Pojazd z tym ulepszeniem może holować ciężar o wadze do 10 ton. Może nawet mieć gdzieś widoczną grubą linę holowniczą. To ulepszenie jest wymagane do instalacji różnych innych ulepszeń związanych z ciężkim sprzętem.</p>"
+    },
+    "Housing Capacity": {
+      "name": "Zakwaterowanie",
+      "description": "<p>Wyposaża samochód lub AV-4 w obszar do spania z 1 łóżkiem, toaletę, prysznic i małą kuchnię, zamieniając pojazd w kombiwóz. W łodzi kabinowej, jachcie lub aerozepie to ulepszenie dodaje dodatkowe pomieszczenie.</p>\n<p><strong>Dla samochodu kompaktowego lub sportowego wymaga wzmocnionej konstrukcji.</strong>.</p>"
+    },
+    "Hover Upgrade": {
+      "name": "Poduszkowiec",
+      "description": "<p>Kilka potężnych śmigieł montowanych w podwoziu pojazdu, dzięki czemu może on ślizgać się nad wodą z prędkością łodzi kabinowej.</p>"
+    },
+    "Infrared Nightvision Scope": {
+      "name": "Celownik Noktowizyjny (Podczerwień)",
+      "description": "<p>Zmniejsza kary przeciwko celom w ciemności, dymie lub mgle do 0.</p>"
+    },
+    "Insulated Wiring": {
+      "name": "Izolowane obwody",
+      "description": "<p>Cyberdek oraz odzienie użytkownika nie mogą zająć się ogniem.&nbsp;</p>"
+    },
+    "KRASH Barrier": {
+      "name": "Bariera przeciwKRASHowa",
+      "description": "<p>Cyberdek z tym ulepszeniem jest odporny na działanie Programów siłą wyrzucających Netrunnera z Sieci (w bezpieczny lub niebezpieczny sposób). Zajmuje 2 gniazda modyfikacji.</p>"
+    },
+    "NOS": {
+      "name": "Nitro",
+      "description": "<p>Przyspieszenie wtedy, gdy go potrzebujesz. Gdy prowadzisz pojazd, pozwala w ramach Akcji wykonać dodatkowy Ruch. Danego zbiornika nitro można użyć raz dziennie. Wybierając to ulepszenie ponownie, dodajesz nowy zbiornik. Zbiornik pobiera azot i tlen z powietrza, samodzielnie wytwarza podtlenek azotu i nie potrzebuje tankowania</p>"
+    },
+    "Onboard Flamethrower": {
+      "name": "Pokładowy miotacz ognia",
+      "description": "<p> <strong> Miotacz ognia </strong>zamontowany na zewnątrz pojazdu, z przodu, z boku lub z tyłu. Kierowca może go użyć, wykorzystując do tego Akcję. Nie da się załadować w czasie jazdy. Broni nie da się usunąć ani ulepszyć dodatkami do broni. Można zamontować kilka sztuk.</p>"
+    },
+    "Onboard Machine Gun": {
+      "name": "Pokładowy karabin maszynowy",
+      "description": "<p> <strong>Karabin szturmowy </strong> z 30 pociskami, może strzelać tylko Ogniem ciągłym; montowany na zewnątrz pojazdu, z przodu; razi cele przed pojazdem. Kierowca może go użyć, wykorzystując do tego Akcję. Nie da się załadować w czasie jazdy. Broni nie da się usunąć ani ulepszyć dodatkami do broni. Można zamontować kilka sztuk</p>"
+    },
+    "Onboard Melee Weapon": {
+      "name": "Pokładowa broń biała",
+      "description": "<p><strong>Bardzo duża broń biała</strong></p>, montowana na zewnątrz, z przodu, z boku lub z tyłu. Kierowca może jej użyć, \nwykorzystując do tego Akcję. Broni nie da się usunąć. Można zamontować kilka sztuk"
+    },
+    "Onboard Rocket Pod": {
+      "name": "Pokładowa wyrzutnia rakiet",
+      "description": "<p><strong>Zasobnik rakietowy z trzema rakietami</strong>, montowany na zewnątrz pojazdu, rażący cele przed pojazdem. Kierowca może go użyć, wykorzystując do tego Akcję. Nie da się załadować w czasie jazdy. Broni nie da się usunąć ani ulepszyć dodatkami do broni. Można zamontować kilka takich ulepszeń, ale jaka robota wymaga więcej niż trzech rakiet...? Wymaga wzmocnionej konstrukcji.</p>"
+    },
+    "Range Upgrade": {
+      "name": "Ulepszenie zasięgu",
+      "description": "<p>Cyberdeck może podpiąć się do punktów dostępu od 8m/jardów (zamiast 6m/jardów).</p>"
+    },
+    "Seating Upgrade": {
+      "name": "Ulepszenie foteli",
+      "description": "<p>Dodaje dwa fotele w pojeździe. Jeśli jest taka potrzeba, te dodatkowe miejsca mogą mieścić się w koszu motocyklowym, który może być w pełni zabezpieczony tym samym rodzajem szyb co reszta pojazdu, z opcjonalnymi bocznymi okienkami. Ponadto, każdy z foteli w pojeździe z tym ulepszeniem może być fotelem wyrzucanym, w razie potrzeby katapultującym zawartość fotela przez klapę w suficie, na 10 metrów w powietrze, ponad pojazd. Katapultowany pasażer śmigłowca zostaje uderzony łopatami wirnika, otrzymując obrażenia tak, jakby został trafiony bardzo dużą bronią białą. Zwykle w fotelach wyrzucanych montuje się spadochrony, ale przecież zawsze można je usunąć. To ulepszenie można wybrać kilkukrotnie dla większości pojazdów prócz motocykli, skuterów wodnych i żyrokopterów</p>"
+    },
+    "Security Upgrade": {
+      "name": "Systemy bezpieczeństwa",
+      "description": "<p> Wymienia wszystkie zamki pojazdu na zamki kodowane DNA, otwierane odciskiem kciuka, skanem tęczówki, próbką krwi lub inną metodą biometryczną. Zamki można otworzyć tylko za pomocą odpowiedniego klucza biometrycznego lub po udanym Teście Elektroniki i zabezpieczeń o PT 17. Jeśli Test wymagany do otworzenia któregoś zamka nie udał się albo osoba próbująca otworzyć zamek poda nieprawidłowy klucz biometryczny, system bezpieczeństwa wyzwala ładunek elektryczny, rażąc intruza tak, jakby otrzymał uderzenie Pałką ogłuszającą, o ile znajduje się w odległości do 2 m od pojazdu.\nPonadto to ulepszenie dodaje maskowanie, pozwalające ukryć pojazd, o ile pozostaje on w bezruchu. Pojazd można zauważyć po udanym Teście Percepcji o PT 17. System potrzebuje minuty na uruchomienie się i działa, wyświetlając na karoserii pojazdu w czasie rzeczywistym obraz z pokładowych kamer wideo, wspierany przez nanomaszyny operujące w trudno dostępnych miejscach.</p>"
+    },
+    "Shotgun Underbarrel": {
+      "name": "Podwieszany Granatnik do Strzelby",
+      "description": "<p>Trzymaną oburącz broń można wykorzystać jako Strzelbę z tylko dwoma pociskami w magazynku. Po zamontowaniu tego dodatku broni nie da się ukryć pod ubraniem. Zajmuje 2 gniazda na dodatki.</p>",
+      "dvTable": "PT Strzelba (Pocisk)"
+    },
+    "Smartgun Link": {
+      "name": "Złącze Smartguna",
+      "description": "<p>Zmienia broń w \"Smarguna\". Zapoznaj się ze wszystkimi zasadami na stronie 344 przed użyciem.&nbsp;</p>"
+    },
+    "Smuggling Upgrade": {
+      "name": "Skrytki przemytnicze",
+      "description": "<p>Dodaje do pojazdu dwie pokładowe Ukryte kabury (jeśli chodzi o zasady, działają one dokładnie tak samo, jak cyborgizacja o tej samej nazwie), które pozwalają kierowcy i jednemu pasażerowi na szybkie dobycie ukrytej broni. Ponadto, ulepszenie dodaje jedną dużą, ukrytą gdzieś w pojeździe przestrzeń, wykorzystywaną do przemytu. Skrytki można wykryć po udanym Teście Ukrycia/znalezienia przedmiotu o PT 17. To ulepszenie można wybrać kilkukrotnie dla wszystkich pojazdów prócz motocykli, skuterów wodnych i żyrokopterów.</p>\n"
+    },
+    "Sniping Scope": {
+      "name": "Snajperska luneta celownicza",
+      "description": "<p>Patrząc przez lunetę, widzisz szczegóły odległe do 800 m od ciebie. Strzelając do celu odległego o co najmniej 51 metrów z broni w trybie jednego strzału lub wykonując Celowanie, możesz dodać +1 do Testu. Nie kumuluje się z cyborgizacją Teleskop.</p>"
+    },
+    "Vehicle Heavy Weapon Mount": {
+      "name": "Stanowisko bardzo ciężkiej broni",
+      "description": "<p>Ulepszenie przerabia jeden z foteli pojazdu na obrotowe stanowisko strzeleckie dla dowolnej dwuręcznej broni dystansowej, której pasażer może użyć w ramach swojej Akcji. Pasażer może także przeładować tę broń, nawet jeśli pojazd jest w ruchu. Broń można usunąć lub ponownie zamontować za pomocą Akcji. Gdy Nomada po raz pierwszy dodaje to ulepszenie do któregoś ze swoich pojazdów, Rodzina podarowuje mu w prezencie <strong>Tsunami Arms Helix</strong> lub <strong>karabin elektromagnetyczny Rhinemetall EMG-86</strong>, lub <strong>granatnik Militech U-56 „Cowboy”</strong>. Kolejne bronie Nomada musi zdobyć samodzielnie. Jeśli pojazd wyposażono w Szyby kuloodporne, strzelca także chroni taka osłona. Ulepszenie można dodawać kilkukrotnie tylko na łodziach kabinowych, jachtach, aerozepach i w samochodach, pod warunkiem, że dany pojazd ma już Ulepszenie Zakwaterowanie. <strong>Wymaga wzmocnionej konstrukcji.</strong></p>"
+    }
+  }
+}

@@ -1,0 +1,295 @@
+{{!-- ROF Settings --}}
+<li class="item flexrow">
+  <div class="item flexrow setting-name text-nowrap">
+    {{localize "CPR.itemSheet.weapon.rof"}} {{cprShowUpgrade item "rof"}}
+  </div>
+  <div class="item flexrow setting-value text-nowrap item-end">
+    {{#if this.editable }}
+      <input name="system.rof" type="number" value="{{item.system.rof}}"/>
+    {{else}}
+      <span class="text-flex-end">{{item.system.rof}}</span>
+    {{/if}}
+  </div>
+</li>
+{{!-- Weapon Type Settings --}}
+<li class="item flexrow">
+  <div class="item flexrow setting-name text-nowrap">
+    {{localize "CPR.global.itemTypes.weapon"}} {{localize "CPR.global.generic.type"}}
+  </div>
+  <div class="item flexrow setting-value text-nowrap item-end">
+    <select name="system.weaponType" data-dtype="{{item.system.weaponType}}">
+      {{selectOptions (cprFindConfigObj "weaponTypes") selected=item.system.weaponType localize=true}}
+  </select>
+</div>
+</li>
+{{!-- Weapon Skill Settings --}}
+<li class="item flexrow">
+  <div class="item flexrow setting-name text-nowrap">
+    {{localize "CPR.global.itemTypes.weapon"}} {{localize "CPR.global.itemTypes.skill"}}
+  </div>
+  <div class="item flexrow setting-value text-nowrap item-end">
+    <select name="system.weaponSkill" data-dtype="{{item.system.weaponSkill}}">
+      {{selectOptions weaponSkillSelectOptions selected=item.system.weaponSkill localize=true sort=true}}
+  </select>
+</div>
+</li>
+{{!-- Attack Mod settings --}}
+<li class="item flexrow">
+  <div class="item flexrow setting-name text-nowrap">
+    {{localize "CPR.itemSheet.weapon.attackMod"}} {{cprShowUpgrade item "attackmod"}}
+  </div>
+  <div class="item flexrow setting-value text-nowrap item-end">
+    {{#if this.editable }}
+      <input name="system.attackmod"
+             type="number"
+             value="{{item.system.attackmod}}"/>
+    {{else}}
+      <span class="text-flex-end">{{item.system.attackmod}}</span>
+    {{/if}}
+  </div>
+</li>
+{{!-- Hands Required Settings --}}
+{{#unless (cprCompare (cprCompare item.type "===" "itemUpgrade") "||" (cprCompare item.type "===" "cyberware"))}}
+<li class="item flexrow">
+  <div class="item flexrow setting-name text-nowrap">
+    {{localize "CPR.itemSheet.weapon.handsRequired"}}
+  </div>
+  <div class="item flexrow setting-value text-nowrap item-end">
+    <input name="system.handsReq" type="number" value="{{item.system.handsReq}}"/>
+  </div>
+</li>
+{{/unless}}
+{{#if (cprCompare (cprCompare item.system.weaponType "===" "unarmed") "||" (cprCompare item.system.weaponType "===" "martialArts")) }}
+  {{!-- Automatic damage calculation Settings for unarmed--}}
+  <li class="item flexrow">
+    <div class="item flexrow setting-name text-nowrap">
+      {{#if (cprCompare item.system.weaponType "===" "unarmed") }}
+        {{localize "CPR.itemSheet.weapon.unarmedAutomaticallyCalculatedSetting"}}
+      {{else}}
+        {{localize "CPR.itemSheet.weapon.martialArtsAutomaticallyCalculatedSetting"}}
+      {{/if}}
+    </div>
+    <div class="item flexrow setting-value text-nowrap item-end">
+      {{#if item.system.unarmedAutomaticCalculation }}
+        <a class="item-checkbox"
+           data-target="system.unarmedAutomaticCalculation"><i class="far fa-circle-check"></i></a>
+      {{else}}
+        <a class="item-checkbox"
+           data-target="system.unarmedAutomaticCalculation"><i class="far fa-circle"></i></a>
+      {{/if}}
+    </div>
+  </li>
+{{/if}}
+{{!- Weapon Damage Settings --}}
+<li class="item flexrow">
+  <div class="item flexrow setting-name text-nowrap">
+    {{localize "CPR.global.generic.damage"}} {{cprShowUpgrade item "damage"}}
+  </div>
+  <div class="item flexrow setting-value text-nowrap item-end">
+    {{#if (cprCompare (cprCompare (cprCompare item.system.weaponType "===" "unarmed") "||" (cprCompare item.system.weaponType "===" "martialArts")) "&&" item.system.unarmedAutomaticCalculation) }}
+      <div class="item text-flex-end setting-value text-nowrap">
+        {{localize "CPR.itemSheet.weapon.unarmedAutomaticallyCalculated"}}
+      </div>
+    {{else}}
+      {{#if this.editable }}
+        <input name="system.damage"  type="text" value="{{item.system.damage}}"/>
+      {{else}}
+        <span class="text-flex-end">{{item.system.damage}}</span>
+      {{/if}}
+    {{/if}}
+  </div>
+</li>
+
+{{!- Ignore Armor Settings --}}
+<li class="item flexrow">
+  <div class="item flexrow setting-name text-nowrap">
+    {{localize "CPR.itemSheet.ignoreArmor.text"}}
+  </div>
+  <div class="item flexrow setting-value text-nowrap item-end">
+    {{#if this.editable }}
+      {{#if item.system.canIgnoreArmor }}
+        <a class="item-checkbox" data-target="system.canIgnoreArmor">
+          <i class="far fa-circle-check"></i
+        ></a>
+      {{else}}
+        <a class="item-checkbox" data-target="system.canIgnoreArmor">
+          <i class="far fa-circle"></i>
+        </a>
+      {{/if}}
+    {{else}}
+      {{#if item.system.canIgnoreArmor }}
+        <i class="far fa-circle-check"></i>
+      {{else}}
+        <i class="far fa-circle"></i>
+      {{/if}}
+    {{/if}}
+  </div>
+</li>
+{{#if item.system.canIgnoreArmor }}
+  {{!- Ignore Percentage of Armor Setting --}}
+  <li class="item flexrow">
+    <div class="item flexrow setting-name text-padding-left-largest text-nowrap">
+      {{localize "CPR.itemSheet.ignoreArmor.percent"}}
+    </div>
+    <div class="item flexrow setting-value text-nowrap item-end">
+      {{#if this.editable }}
+        <input name="system.ignoreArmorPercent"
+              type="number"
+              min="0"
+              max="100"
+              value="{{item.system.ignoreArmorPercent}}"/>
+      {{else}}
+        <span class="text-flex-end">{{item.system.ignoreArmorPercent}}</span>
+      {{/if}}
+      &percnt;
+    </div>
+  </li>
+  {{!- Ignore Below Armor SP Setting --}}
+  <li class="item flexrow">
+    <div class="item flexrow setting-name text-padding-left-largest text-nowrap">
+      {{localize "CPR.itemSheet.ignoreArmor.armorSP"}}
+    </div>
+    <div class="item flexrow setting-value text-nowrap item-end">
+      {{#if this.editable }}
+        <input name="system.ignoreBelowSP" type="number" min="0" value="{{item.system.ignoreBelowSP}}"/>
+      {{else}}
+        <span class="text-flex-end">{{item.system.ignoreBelowSP}}</span>
+      {{/if}}
+    </div>
+  </li>
+{{/if}}
+{{!- Ranged Weapon Settings --}}
+<li class="item flexrow">
+  <div class="item flexrow setting-name text-nowrap">
+    {{localize "CPR.itemSheet.weapon.rangedWeapon"}}
+  </div>
+  <div class="item flexrow setting-value text-nowrap item-end">
+    {{#if this.editable }}
+      {{#if item.system.isRanged }}
+        <a class="item-checkbox" data-target="system.isRanged"><i class="far fa-circle-check"></i></a>
+      {{else}}
+        <a class="item-checkbox" data-target="system.isRanged"><i class="far fa-circle"></i></a>
+      {{/if}}
+    {{else}}
+      {{#if item.system.isRanged }}
+        <i class="far fa-circle-check"></i>
+      {{else}}
+        <i class="far fa-circle"></i>
+      {{/if}}
+    {{/if}}
+  </div>
+</li>
+{{#if item.system.isRanged }}
+  {{!- DV Table Setting --}}
+  <li class="item flexrow">
+    <div class="item flexrow setting-name text-nowrap">
+      {{localize "CPR.itemSheet.weapon.dvTable"}}:
+    </div>
+    <div class="item flexrow setting-value text-nowrap item-end">
+      <select name="system.dvTable" data-dtype="{{item.system.dvTable}}">
+        {{selectOptions dvTableNames selected=item.system.dvTable}}
+    </select>
+  </div>
+</li>
+<hr/>
+{{!- Ranged Weapon - Alternate Fire Modes Settings --}}
+<li class="item flexrow">
+  <div class="item flexrow setting-name text-nowrap">
+    {{localize "CPR.global.itemType.skill.autofire"}} {{localize "CPR.itemSheet.common.maximum"}} {{localize "CPR.global.generic.multiplier"}}
+  </div>
+  <div class="item flexrow setting-value text-nowrap item-end">
+    {{#if this.editable }}
+      <input name="system.fireModes.autoFire"
+             type="number"
+             value="{{item.system.fireModes.autoFire}}"/>
+    {{else}}
+      <span class="text-flex-end">{{item.system.fireModes.autoFire}}</span>
+    {{/if}}
+  </div>
+</li>
+<li class="item flexrow">
+  <div class="item flexrow setting-name text-nowrap">
+    {{localize "CPR.itemSheet.weapon.hasSuppressiveFire"}}
+  </div>
+  <div class="item flexrow setting-value text-nowrap item-end">
+    {{#if item.system.fireModes.suppressiveFire }}
+      {{#if this.editable }}
+        <a class="item-checkbox" data-target="system.fireModes.suppressiveFire">
+        {{/if}}
+        <i class="far fa-circle-check"></i>
+        {{#if this.editable }}
+        </a>
+      {{/if}}
+    {{else}}
+      {{#if this.editable }}
+        <a class="item-checkbox" data-target="system.fireModes.suppressiveFire">
+        {{/if}}
+        <i class="far fa-circle"></i>
+        {{#if this.editable }}
+        </a>
+      {{/if}}
+    {{/if}}
+  </div>
+</li>
+{{!- Ranged Weapon - Magazine Size Settings --}}
+<li class="item flexrow">
+  <div class="item flexrow setting-name text-nowrap">
+    {{localize "CPR.itemSheet.weapon.magazine"}} {{localize "CPR.itemSheet.weapon.size"}} {{cprShowUpgrade item "magazine"}}
+  </div>
+  <div class="item flexrow setting-value text-nowrap item-end">
+    {{#if this.editable }}
+      <input name="system.magazine.max"
+             type="number"
+             value="{{item.system.magazine.max}}"/>
+    {{else}}
+      <span class="text-flex-end">{{item.system.magazine.max}}</span>
+    {{/if}}
+  </div>
+</li>
+{{#if item.system.hasAmmoLoaded}}
+  <li class="item flexrow">
+    <div class="item flexrow setting-name text-nowrap">
+      {{localize "CPR.itemSheet.weapon.loadedAmmoQuantity"}}
+    </div>
+    <div class="item flexrow setting-value text-nowrap item-end">
+      {{#if this.editable }}
+        <input name="system.magazine.value"
+               type="number"
+               value="{{item.system.magazine.value}}"/>
+      {{else}}
+        <span class="text-flex-end">{{item.system.magazine.value}}</span>
+      {{/if}}
+    </div>
+  </li>
+{{/if}}
+{{!- Ranged Weapon - Compatible Ammo Settings --}}
+<div class="item flexrow setting-name text-nowrap text-semi">
+  {{#if this.editable }}
+    <a class="select-compatible-ammo"
+       data-item-prop="select-compatible-ammo">
+    {{/if}}
+    {{localize "CPR.itemSheet.weapon.configureCompatibleAmmo"}}
+    {{#if this.editable }}
+      <i class="text-smallest text-super fas fa-wrench"></i>
+    </a>
+  {{/if}}
+</div>
+<div class="compatible-ammo">
+  {{#each (cprFindConfigObj "ammoVarieties") as |ammoVariety a| }}
+    {{#if (cprListContains (cprGetProp ../item.system "ammoVariety") a) }}
+      <li class="item flexrow">
+        <div class="item flexrow setting-name text-nowrap text-padding-left-largest">
+          {{localize ammoVariety}}
+          {{#if ../item.isOwned }}
+            {{#if (cprIsNumber (cprMath "sum" (cprGetProp (cprFilter ../relativeAmmo "system.variety" a) "system.amount"))) }}
+              <div class="text-right">
+                ({{localize "CPR.itemSheet.weapon.youOwn"}} {{cprMath "sum" (cprGetProp (cprFilter ../relativeAmmo "system.variety" a) "system.amount")}} {{localize "CPR.itemSheet.weapon.rounds"}})
+              </div>
+            {{/if}}
+          {{/if}}
+        </div>
+      </li>
+    {{/if}}
+  {{/each}}
+</div>
+{{/if}}

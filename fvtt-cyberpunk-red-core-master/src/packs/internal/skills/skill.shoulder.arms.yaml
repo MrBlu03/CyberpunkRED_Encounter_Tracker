@@ -1,0 +1,20 @@
+_id: VdvSW102ytvqRgfx
+_key: "!items!VdvSW102ytvqRgfx"
+effects: []
+img: icons/svg/item-bag.svg
+name: Shoulder Arms
+system:
+  basic: false
+  category: rangedweaponSkills
+  core: true
+  description:
+    value: ""
+  difficulty: typical
+  favorite: false
+  level: 0
+  skillType: generic
+  source:
+    book: Core
+    page: 138
+  stat: ref
+type: skill

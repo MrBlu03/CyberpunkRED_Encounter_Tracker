@@ -1,0 +1,57 @@
+_id: LN4eu5DJcmX18K16
+_key: "!items!LN4eu5DJcmX18K16"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/exotics-of-2045/heuristic-health-monitor.svg
+name: Heuristic Health Monitor
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  core: false
+  damage: 1d6
+  description:
+    value: |
+      <p>Requires biomonitor. Can know HP at a glance.</p>
+  dvTable: ""
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  humanityLoss:
+    roll: "0"
+    static: 0
+  installLocation: clinic
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 0
+    usedSlots: 0
+  isElectronic: true
+  isFoundational: false
+  isRanged: false
+  isWeapon: false
+  magazine:
+    max: 0
+    value: 0
+  price:
+    market: 500
+  providesHardening: false
+  revealed: true
+  rof: 1
+  size: 1
+  source:
+    book: IRv2
+    page: 73
+  type: fashionware
+  unarmedAutomaticCalculation: true
+  usage: toggled
+  usesType: magazine
+  weaponSkill: Archery
+  weaponType: assaultRifle
+type: cyberware

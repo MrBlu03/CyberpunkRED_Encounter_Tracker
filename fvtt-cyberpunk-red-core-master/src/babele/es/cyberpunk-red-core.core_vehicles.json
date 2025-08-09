@@ -1,0 +1,62 @@
+{
+  "label": "Vehículos",
+  "mapping": {},
+  "entries": {
+    "Aerozep": {
+      "name": "Aerozep",
+      "description": "<p>Un dirigible moderno. Requiere un mínimo de dos habitaciones. El precio es por cada habitación debajo de la cubierta. </p>"
+    },
+    "AV-4 Multipurpose Aerodyne": {
+      "name": "AV-4 Multipropósito Aerodyne",
+      "description": "<p>Una aeronave multifunción capaz de entrar y salir rápidamente gracias a los impulsores verticales. Utilizada comúnmente por equipos de TraumaTeam. </p>"
+    },
+    "AV-9 Super Aerodyne": {
+      "name": "AV-9 Super Aerodyne",
+      "description": "<p>Un AV muy avanzado con asientos limitados. Puede viajar hasta 300 millas por hora. </p>"
+    },
+    "Cabin Cruiser": {
+      "name": "Crucero de cabina",
+      "description": "<p>Una lancha veloz. Requiere un mínimo de dos habitaciones. El precio es por cada habitación debajo de la cubierta. </p>"
+    },
+    "Compact Groundcar": {
+      "name": "Coche de tierra compacto",
+      "description": "<p>Un coche de tierra propulsado por CHOOH2. Muy común con unas docenas de fabricantes que producen modelos similares. </p>"
+    },
+    "Gyrocopter": {
+      "name": "Girocóptero",
+      "description": "<p>Un pequeño rotorcraft de dos plazas. </p>"
+    },
+    "Helicopter": {
+      "name": "Helicóptero",
+      "description": "<p>Un helicóptero de cuatro plazas capaz de altas velocidades y vuelos largos. </p>"
+    },
+    "High Performance Groundcar": {
+      "name": "Coche de Alto Rendimiento",
+      "description": "<p>Un coche de tierra especializado diseñado para el rendimiento deportivo. </p>"
+    },
+    "Jetski": {
+      "name": "Moto acuática",
+      "description": "<p>Un jetski propulsado por CHOOH2 común, puede llevar a dos personas. </p>"
+    },
+    "Roadbike": {
+      "name": "Motocicleta",
+      "description": "<p>Un motocicleta común propulsada por CHOOH2 visto durante el tiempo de RED.</p>"
+    },
+    "Speedboat": {
+      "name": "Lancha rápida",
+      "description": "<p>Un lancdha veloz impuslada a CHOOH2. </p>"
+    },
+    "Super Groundcar": {
+      "name": "Super Coche",
+      "description": "<p>Un caro y exótico sportscar propulsado por CHOOH2. Es capaz de muy alta velocidad. </p>"
+    },
+    "Superbike": {
+      "name": "Supermoto",
+      "description": "<p>Una versión potenciada de una motocicleta, capaz de una velocidad muy alta. </p>"
+    },
+    "Yacht": {
+      "name": "Yate",
+      "description": "<p>Un velero de lujo. Requiere un mínimo de dos habitaciones. El precio es por cada habitación debajo o por encima de la cubierta. </p>"
+    }
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "label": "Spinning Your Wheels",
+  "mapping": {},
+  "entries": {
+    "Inline Skates": {
+      "name": "Inline Skates",
+      "description": "<p>\n  They're roller skates baby! Increases moment by 4 m/yds when using the Run\n  Action, though stopping the use of any options in the user's legs. May cause\n  physical tasks to be done at -2.\n</p>\n"
+    },
+    "Skateboard": {
+      "name": "Skateboard",
+      "description": "<p>\n  The coolest wheels around. Increases moment by 4 m/yds when using the Run\n  Action on level or downwards ground. May cause physical tasks to be done at\n  -2.\n</p>\n"
+    },
+    "Bottle Dynamo": {
+      "name": "Bottle Dynamo",
+      "description": "<p>\n  A dynamo on your bike's wheel for converting mechanical energy into\n  electricity. Charges a battery pack (such as for weapons) in one hour.\n</p>\n"
+    },
+    "Bulletproof Glass": {
+      "name": "Bulletproof Glass",
+      "description": "<p>\n  Enclosure glass is now considered thin cover with 7 HP. Refer to the cover\n  rules in CP:R, pg. 182.\n</p>\n<p>Bike first requires the Enclosure upgrade to install this upgrade.</p>\n"
+    },
+    "Cycle Armor": {
+      "name": "Cycle Armor",
+      "description": "<p>Bicycle Armored with 7 SP.</p>\n<p>Bike first requires the Reinforced Frame upgrade to install this upgrade.</p>\n"
+    },
+    "Electric Pedal Assist": {
+      "name": "Electric Pedal Assist",
+      "description": "<p>\n  Electric motorised system helping to pedal, increasing speed, lowering\n  tiredness.\n</p>\n<p>\n  Increases the bicycle's Speed (narrative) to the next BODY tier or adds\n  5MPH/8KPH to Speed (narrative) if already at the highest BODY tier.\n</p>\n<p>\n  Rider get +4 bonus to Endurance Checks to resisting exhaustion when riding.\n</p>\n"
+    },
+    "Enclosure": {
+      "name": "Enclosure",
+      "description": "<p>The bike becomes a trike with a covering body of fiberglass and plastic.</p>\n<p>Can't install this Upgrade with the Folding Frame upgrade.</p>\n"
+    },
+    "Extended Seat": {
+      "name": "Extended Seat",
+      "description": "<p>An elongated saddle, gaining a seat for a passenger.</p>\n"
+    },
+    "Folding Frame": {
+      "name": "Folding Frame",
+      "description": "<p>\n  You can now fold your bike to the size of a large suitcase for easier\n  transport and storage.\n</p>\n<p>\n  Can't install this Upgrade with Enclosure, Reinforced Frame, or Smuggling\n  Compartment upgrades.\n</p>\n"
+    },
+    "Gun Mount": {
+      "name": "Gun Mount",
+      "description": "<p>\n  A system to attach an Assault Rifle, a Heavy SMG or a Shotgun on the\n  handlebars, along with a firing button.\n</p>\n<p>Shoots only forwards.</p>\n<p>Mounting and detaching requires one Action.</p>\n"
+    },
+    "Neon Lightning": {
+      "name": "Neon Lightning",
+      "description": "<p>Fiber-optic lights on bike's frame and wheels.</p>\n<p>\n  Considered as a Light Tattoo when on or near the bike (gaining +2 Wardrobe\n  &amp; Style bonus)\n</p>\n"
+    },
+    "Reinforced Frame": {
+      "name": "Reinforced Frame",
+      "description": "<p>Bike is now more resistant: +5 SDP and rider can be BODY 11 or more.</p>\n<p>Can't install this Upgrade with Folding Frame Upgrade.</p>\n"
+    },
+    "Security System": {
+      "name": "Security System",
+      "description": "<p>\n  Linked with your Agent to electrify your bike. A thief must resist\n  <strong>DV13 Resist Torture/Drugs</strong> or unhand the bike.\n</p>\n<p>Bike is registered with a Nano-VIN.</p>\n"
+    },
+    "Smuggling Compartment": {
+      "name": "Smuggling Compartment",
+      "description": "<p>Adds a small hidden storage space in the frame.</p>\n<p>1 inch x 6 inches (2.54cm x 15.24cm)</p>\n<p><strong>DV17 Conceal/Reveal Object</strong> check to discover.</p>\n<p>Can't install this Upgrade with Folding Frame.</p>\n"
+    },
+    "Stunt Frame": {
+      "name": "Stunt Frame",
+      "description": "<p>The bike loses weight and gains maneuverability.</p>\n<p>\n  Rider obtain a +2 bonus to Athletics skill checks when riding and doing\n  maneuvers.\n</p>\n"
+    },
+    "Trailer": {
+      "name": "Trailer",
+      "description": "<p>Hook with a small cargo trailer.</p>\n<p>5 feet x 1.5 feet (1.5m x 0.46m).</p>\n<p>An action is needed to attach and detach the trailer.</p>\n"
+    },
+    "Bicycle": {
+      "name": "Bicycle",
+      "description": "<p>A simple bicycle. It's speed is based on the riders' BODY.</p>\n<table style=\"width: 100%; height: 76px\" border=\"1\">\n  <colgroup>\n    <col style=\"width: 14.0725%\" />\n    <col style=\"width: 42.4307%\" />\n    <col style=\"width: 43.4968%\" />\n  </colgroup>\n  <tbody>\n    <tr style=\"height: 19px\">\n      <td style=\"height: 19px\"><strong>Body</strong></td>\n      <td style=\"height: 19px\"><strong>Speed (Combat)</strong></td>\n      <td style=\"height: 19px\"><strong>Speed (Narative)</strong></td>\n    </tr>\n    <tr style=\"height: 19px\">\n      <td style=\"height: 19px\">&lt;4</td>\n      <td style=\"height: 19px\">8 MOVE</td>\n      <td style=\"height: 19px\">19 KPH / 12 MPH</td>\n    </tr>\n    <tr style=\"height: 19px\">\n      <td style=\"height: 19px\">4 - 7</td>\n      <td style=\"height: 19px\">10 MOVE</td>\n      <td style=\"height: 19px\">32 KPH / 20 MPH</td>\n    </tr>\n    <tr style=\"height: 19px\">\n      <td style=\"height: 19px\">8+</td>\n      <td style=\"height: 19px\">15 MOVE</td>\n      <td style=\"height: 19px\"><p>48 KPH / 30 MPH</p></td>\n    </tr>\n  </tbody>\n</table>\n<ul>\n  <li>Riders with a BODY &gt; 10 require a Reinforced Frame Upgrade</li>\n  <li>Bicycles use the Athletics Skill</li>\n  <li>Manual control only</li>\n  <li>\n    Getting on a bicycle does not move you to the top of the Initiative queue\n  </li>\n  <li>\n    Ramming damage is 3d6 with the rider being thrown from the bike and\n    suffering the Whiplash Critical Injury\n  </li>\n  <li>Defenders cannot land on the bike when dodging</li>\n</ul>\n"
+    }
+  }
+}

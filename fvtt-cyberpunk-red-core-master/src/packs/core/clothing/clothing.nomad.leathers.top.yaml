@@ -1,0 +1,36 @@
+_id: 7JZ0haq31YU8GUOr
+_key: "!items!7JZ0haq31YU8GUOr"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/clothing/generic_top.svg
+name: Nomad Leathers Top
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: >
+      <p>If you want to look like a chromed-up cowboy, this is perfect for
+      you.</p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: false
+  price:
+    market: 20
+  providesHardening: false
+  revealed: true
+  source:
+    book: Core
+    page: 356
+  style: nomadLeathers
+  type: top
+  usage: equipped
+type: clothing

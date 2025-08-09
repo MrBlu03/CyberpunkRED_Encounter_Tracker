@@ -1,0 +1,51 @@
+_id: 4L05qIZxsy0uDSHz
+_key: "!items!4L05qIZxsy0uDSHz"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/weapons/veryHeavyPistol.svg
+name: Very Heavy Pistol
+system:
+  ammoVariety:
+    - vHeavyPistol
+  attackmod: 0
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  critFailEffect: jammed
+  damage: 4d6
+  description:
+    value: |
+      <p>A very heavy pistol. It can't be concealed.</p>
+  dvTable: DV Pistol
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 1
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+      - ammo
+    list: []
+    slots: 3
+    usedSlots: 0
+  isRanged: true
+  magazine:
+    max: 8
+    value: 0
+  price:
+    market: 100
+  quality: standard
+  revealed: true
+  rof: 1
+  source:
+    book: Core
+    page: 341
+  unarmedAutomaticCalculation: true
+  usage: equipped
+  usesType: magazine
+  weaponSkill: Handgun
+  weaponType: vHeavyPistol
+type: weapon

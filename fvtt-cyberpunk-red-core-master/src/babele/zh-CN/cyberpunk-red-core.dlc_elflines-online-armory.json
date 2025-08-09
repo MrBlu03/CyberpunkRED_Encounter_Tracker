@@ -1,0 +1,81 @@
+{
+  "label": "Elflines Online Armory",
+  "mapping": {
+    "dvTable": "system.dvTable"
+  },
+  "entries": {
+    "Arrow": {
+      "name": "Arrow",
+      "description": "<p>Basic ammo, nothing special.</p>"
+    },
+    "Poison Arrow": {
+      "name": "Poison Arrow",
+      "description": "<p>No immediate damage. If meat target hit, DV13 Resist Torture/Drugs Check. On a fail 2d6 damage to HP. No Ablation. </p>"
+    },
+    "Chainmail Armor (Body)": {
+      "name": "Chainmail Armor (Body)",
+      "description": "<p>Armor made up of innumerable metal rings. -2 to REF, DEX, and MOVE.</p>"
+    },
+    "Chainmail Armor (Head)": {
+      "name": "Chainmail Armor (Head)",
+      "description": "<p>Armor made up of innumerable metal rings for your head. -2 to REF, DEX, and MOVE.</p>"
+    },
+    "Full Plate Armor (Body)": {
+      "name": "Full Plate Armor (Body)",
+      "description": "<p>Metal plated armor to resist the most powerful hits. -4 to REF, DEX, and MOVE.</p>"
+    },
+    "Full Plate Armor (Head)": {
+      "name": "Full Plate Armor (Head)",
+      "description": "<p>Metal plated armor to resist the most powerful hits to your head. -4 to REF, DEX, and MOVE.</p>"
+    },
+    "Leather Armor (Body)": {
+      "name": "Leather Armor (Body)",
+      "description": "<p>Simple Leather armor. No armor penalty.</p>"
+    },
+    "Leather Armor (Head)": {
+      "name": "Leather Armor (Head)",
+      "description": "<p>Simple Leather armor for your head. No armor penalty.</p>"
+    },
+    "Shield": {
+      "name": "Shield",
+      "description": "<p>Requires an arm and has HP that is reduced by damage.</p>"
+    },
+    "Studded Leather Armor (Body)": {
+      "name": "Studded Leather Armor (Body)",
+      "description": "<p>Standard Studded Leather Armor. No armor penalty.</p>"
+    },
+    "Studded Leather Armor (Head)": {
+      "name": "Studded Leather Armor (Head)",
+      "description": "<p>Standard Studded Leather Armor for your head. No armor penalty.</p>"
+    },
+    "Sacred Herbs": {
+      "name": "Sacred Herbs",
+      "description": "<p>Ingesting Sacred Herbs immediately heals HP equal to the user's BODY plus their WILL.</p>"
+    },
+    "Vial of Poison": {
+      "name": "Vial of Poison",
+      "description": "<p>2d6 damage unless Resist Torture/Drugs. Armor does not apply.</p>"
+    },
+    "Bow": {
+      "name": "Bow",
+      "description": "<p>A revitalized bow, reloaded as part of an Attack Action.</p>",
+      "dvTable": "DV Bows & Crossbows"
+    },
+    "Dagger": {
+      "name": "Dagger",
+      "description": "<p>A knife fit for a hunter.</p>"
+    },
+    "Greataxe": {
+      "name": "Greataxe",
+      "description": "<p>A wooden pole with a curved blade on each side. Favoured by raid parties for close engagements. Requires 2 hands to wield even by a wielder with Body 8 or higher.</p>"
+    },
+    "Longsword": {
+      "name": "Longsword",
+      "description": "<p>A bladed, hilted weapon. Specifically designed for cutting or thrusting. 2 ROF if wielding two longswords.</p>"
+    },
+    "Shortsword": {
+      "name": "Shortsword",
+      "description": "<p>A short bladed, hilted weapon. Specifically designed for cutting or thrusting.</p>"
+    }
+  }
+}

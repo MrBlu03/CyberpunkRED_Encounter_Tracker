@@ -1,0 +1,135 @@
+/*
+ *  DF Chat Enhancements
+ */
+
+// This colors the chat card for some reason, so overwrite it.
+
+.dfce-cm-top {
+  background-color: var(--cpr-background-chat-card) !important;
+}
+
+/*
+ *  Cautious Gamemaster's Pack
+ */
+
+#chat-log .message.cgmp-desc {
+  background: var(--cpr-background-chat-card) !important;
+}
+
+#chat-log .message.emote .message-content,
+#chat-log .message.cgmp-desc .message-content {
+  color: var(--cpr-text-chat-normal) !important;
+}
+
+/*
+ *  Item Piles
+ */
+
+.item-piles-even-color:nth-child(even) {
+  background-color: var(--cpr-background-row-even) !important;
+}
+
+.item-piles-even-color:nth-child(odd) {
+  background-color: var(--cpr-background-row-odd) !important;
+}
+
+.item-piles-child-even-color > * {
+  background-color: var(--cpr-background-row-even) !important;
+}
+
+.item-piles-child-odd-color > * {
+  background-color: var(--cpr-background-row-odd) !important;
+}
+
+.item.active.underscore {
+  border-bottom-color: var(--cpr-background-border) !important;
+}
+
+.item-piles-config-container p {
+  color: var(--cpr-text-normal) !important;
+}
+
+.item-piles-disabled {
+  background-color: var(--cpr-text-icon-dimmed) !important;
+}
+
+.item-piles-chat-card li:nth-child(odd) {
+  background-color: var(--cpr-background-foundry-input) !important;
+  border: 0.063rem solid var(--color-border-light-primary) !important;
+}
+
+.item-piles-item-take-button {
+  background-color: var(--cpr-background-foundry-button) !important;
+}
+
+/*
+ * Dice Tray
+ */
+
+.dice-tray {
+  button {
+    color: var(--cpr-text-content-link-icon) !important;
+    background: transparent !important;
+  }
+}
+
+/*
+ * Monk's Active Tile Triggers
+ */
+
+.monks-active-tiles {
+  div[data-tab="triggers"] {
+    .action-items {
+      .action-style {
+        color: var(--cpr-text-normal) !important;
+      }
+
+      .entity-style {
+        color: var(--cpr-text-icon-normal) !important;
+      }
+
+      .details-style {
+        color: var(--cpr-text-normal) !important;
+      }
+    }
+  }
+
+  .file-list {
+    .image-name {
+      color: var(--cpr-text-normal) !important;
+    }
+
+    li {
+      a {
+        color: var(--cpr-text-normal) !important;
+      }
+    }
+  }
+}
+
+.monks-active-tiles.sheet {
+  .items-list {
+    .item-name {
+      h4 {
+        color: var(--cpr-text-icon-normal) !important;
+      }
+    }
+
+    .item-header {
+      background: var(--cpr-background-editor-button) !important;
+      color: var(--cpr-text-normal) !important;
+    }
+
+    .item-controls {
+      a {
+        color: var(--cpr-text-normal) !important;
+      }
+    }
+  }
+}
+
+.action-sheet {
+  .display-value {
+    color: var(--cpr-text-normal) !important;
+  }
+}

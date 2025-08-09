@@ -1,0 +1,16 @@
+_id: JKo1C2JaQKA5ZgVm
+_key: "!tables.results!bEeDgE9CfongXFAR.JKo1C2JaQKA5ZgVm"
+documentCollection: ""
+documentId: null
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/night_city_tarot/death.svg
+range:
+  - 14
+  - 14
+text: >-
+  Death. The target must roll a Death Save regardless of their HP. Failure means
+  they are reduced to 0 HP and are considered unconscious for one minute. When
+  they regain consciousness, they regain 3d6 Humanity Points up to their Max
+  Humanity. (See Night City Tarot Page 4).
+type: 0
+weight: 1

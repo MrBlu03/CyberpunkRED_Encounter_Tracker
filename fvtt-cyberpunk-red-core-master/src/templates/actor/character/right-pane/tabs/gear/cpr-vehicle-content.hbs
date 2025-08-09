@@ -1,0 +1,31 @@
+<li class="item flexrow{{#if item.system.favorite }} favorite{{else }}{{#if (cprListContains sheet.options.collapsedSections "gearTab-vehicle") }} hide{{/if }}{{/if }}"
+    data-item-id="{{item._id}}"
+    data-item-category="{{item.type}}"
+    draggable="true">
+  <div class="item-name gear-name text-nowrap flexrow">
+    <a class="name item-edit flex-center">
+      <div class="item-thumb">
+        <img src="{{item.img}}"/>
+        {{#if item.system.isUpgraded }}
+          <i class="fa-solid fa-square-caret-up fa-xs" data-tooltip="{{localize "CPR.global.generic.upgraded"}}"></i>
+        {{/if}}
+      </div>
+      {{ item.name }}
+    </a>
+    {{#if item.system.installedItems.list }}
+      <a class="toggle-installed-visibility">
+        <i class="fa-solid fa-chevron-up fa-sm {{#unless (cprGetProp actor.flags.cyberpunk-red-core.showInstalled item.id) }}fa-flip-vertical{{/unless}}"></i>
+      </a>
+    {{/if}}
+  </div>
+  <div class="item-detail gear-data text-nowrap"
+       data-tooltip=" {{localize "CPR.characterSheet.rightPane.vehicle.seats"}}: {{cprApplyUpgrade item item.system.seats "seats"}} | {{localize "CPR.characterSheet.rightPane.vehicle.sdp"}}: {{cprApplyUpgrade item item.system.sdp "sdp"}} | {{localize "CPR.characterSheet.rightPane.vehicle.combatSpeed"}}: {{cprApplyUpgrade item item.system.speedCombat "speedCombat"}} ">
+    {{localize "CPR.characterSheet.rightPane.vehicle.seats"}}: {{cprApplyUpgrade item item.system.seats "seats"}}
+    | {{localize "CPR.characterSheet.rightPane.vehicle.sdp"}}: {{cprApplyUpgrade item item.system.sdp "sdp"}}
+    | {{localize "CPR.characterSheet.rightPane.vehicle.combatSpeed"}}: {{cprApplyUpgrade item item.system.speedCombat "speedCombat"}}
+  </div>
+  <div class="item-detail gear-actions text-nowrap">
+    {{> "systems/cyberpunk-red-core/templates/actor/mixin/actions/cpr-actions.hbs" item}}
+  </div>
+  {{cprNestedInstalledGearTab item}}
+</li>

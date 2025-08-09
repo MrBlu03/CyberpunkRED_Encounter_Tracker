@@ -1,0 +1,55 @@
+_id: 29p2bEfPcAWHpsTY
+_key: "!items!29p2bEfPcAWHpsTY"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/weapons/thrown_weapon.svg
+name: Thrown Weapon
+system:
+  ammoVariety:
+    - grenade
+  attackmod: 0
+  brand: ""
+  concealable:
+    concealable: true
+    isConcealed: false
+  critFailEffect: jammed
+  damage: 6d6
+  description:
+    value: |
+      <p>
+        A basic lob or pitch of an object. Use an Action to make a Ranged Attack at up
+        to 25m/yds. Targets can choose to Dodge your throw if they can Dodge bullets.
+        Melee weapons deal their base damage, but don't penetrate half SP.
+      </p>
+  dvTable: DV Thrown Weapon
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 1
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+      - ammo
+    list: []
+    slots: 3
+    usedSlots: 0
+  isRanged: true
+  magazine:
+    max: 1
+    value: 0
+  price:
+    market: 0
+  quality: standard
+  revealed: true
+  rof: 1
+  source:
+    book: Core
+    page: 177
+  unarmedAutomaticCalculation: true
+  usage: equipped
+  usesType: magazine
+  weaponSkill: Athletics
+  weaponType: thrownWeapon
+type: weapon

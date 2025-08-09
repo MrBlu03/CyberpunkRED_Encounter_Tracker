@@ -1,0 +1,230 @@
+{
+  "label": "Ausrüstung",
+  "mapping": {},
+  "entries": {
+    "Cyberdeck (Excellent)": {
+      "name": "Cyberdeck (Hervorragende Qualität)",
+      "description": "<p>Hervorragendes Deck fürs Netrunning. 9 Slots. Weitere Informationen auf Seite 353.</p>"
+    },
+    "Cyberdeck (Poor)": {
+      "name": "Cyberdeck (Schlechte Qualität)",
+      "description": "<p>Schlechtes Deck fürs Netrunning. 5 Slots. Weitere Informationen auf Seite 353.</p>"
+    },
+    "Cyberdeck": {
+      "name": "Cyberdeck",
+      "description": "<p>Einfaches Deck fürs Netrunning. 7 Slots. Weitere Informationen auf Seite 353.</p>"
+    },
+    "Battleglove": {
+      "name": "Kampfhandschuh",
+      "description": "<p>Ein exotischer schwerer Panzerhandschuh, der Hand und Unterarm bedeckt. Bietet drei Optionsslots für Cyberarm- oder Cyberbein-Optionen. Details auf Seite 347.</p>"
+    },
+    "Smart Glasses": {
+      "name": "Smart-Brille",
+      "description": "<p>Brille mit zwei Optionsslots für Cyberaugen-Optionen.</p>"
+    },
+    "Agent": {
+      "name": "Agent",
+      "description": "<p>Von selbstadaptiver KI betriebenes Smartphone. +2 für Datensuche. +2 für Garderobe und Stil unter bestimmten Umständen. Weitere Informationen auf Seite 352.</p>"
+    },
+    "Airhypo": {
+      "name": "Lufthypo",
+      "description": "<p>Für leichte Arzneimitteleinnahme.</p>"
+    },
+    "Anti-Smog Breathing Mask": {
+      "name": "Anti-Smog-Atemmaske",
+      "description": "<p>Nützlich zum Herausfiltern von aerogenen Toxinen.</p>"
+    },
+    "Audio Recorder": {
+      "name": "Audiorekorder",
+      "description": "<p>Speichert bis zu 24 Stunden Klangaufnahmen auf einen einzigen Speicherchip.</p>"
+    },
+    "Auto Level Dampening Ear Protectors": {
+      "name": "Automatische Lärmdämmung",
+      "description": "<p>Kompakter Hörschutz. Macht den Anwender immun gegenüber Effekten durch gefährlich laute Geräusche.</p>"
+    },
+    "Binoculars": {
+      "name": "Feldstecher",
+      "description": "<p>Gut fürs den Blick in die Ferne. Vergrößerung x2 oder x3.</p>"
+    },
+    "Braindance Viewer": {
+      "name": "Braindance-Viewer",
+      "description": "<p>Dient zum Ansehen von Braindance-Erfahrungen.</p>"
+    },
+    "Bug Detector": {
+      "name": "Wanzen­­finder",
+      "description": "<p>Piepst im 2m-Umkreis um ein Abhörgerät.</p>"
+    },
+    "Carryall": {
+      "name": "Reisetasche",
+      "description": "<p>Tasche zum Tragen von Zeug.</p>"
+    },
+    "Chemical Analyzer": {
+      "name": "Chemisches Analysegerät",
+      "description": "<p>Kann chemische Stoffzusammensetzungen mit einer Probendatenbank abgleichen.</p>"
+    },
+    "Computer": {
+      "name": "Computer",
+      "description": "<p>Laptop oder Desktop-Computer.</p>"
+    },
+    "Cryopump": {
+      "name": "Cryopumpe",
+      "description": "<p>Eine Cryopumpe ist ein aktenkoffergroßes Werkzeug, das einen mit einer leistungsstarken Pumpe verbundenen Leichensack enthält. Sobald ein freiwilliges/unfreiwilliges Ziel als Aktion in den Sack gepackt und mit der Pumpe verbunden worden ist, treibt die Pumpe eine hyperkalte chemische Flüssigkeit in den Sack, wobei das Ziel in Stasis versetzt wird.</p>"
+    },
+    "Cryotank": {
+      "name": "Cryotank",
+      "description": "<p>Ein Cryotank ist ein menschengroßer Behälter, der einen voll entwickelten Erwachsenen fassen kann. Während die Person im Cryotank liegt, heilt er mit der doppelten normalen Geschwindigkeit.</p>"
+    },
+    "Disposable Cell Phone": {
+      "name": "Wegwerfhandy",
+      "description": "<p>Für Anrufe. Kann man wegwerfen, wenn es sein muss.</p>"
+    },
+    "Drum Synthesizer": {
+      "name": "Synth-Schlagzeug",
+      "description": "<p>Kann fast jede Art von Schlagzeug simulieren. Benötigt Verstärker.</p>"
+    },
+    "Duct Tape": {
+      "name": "Klebeband",
+      "description": "<p>Erhältlich in vielen Farben, einschließlich der Nachtleuchtenden.</p>"
+    },
+    "Electric Guitar/Other Instrument": {
+      "name": "Elektrische Gitarre/Anderes Instrument",
+      "description": "<p>Musikinstrument. Elektrische Instrumente benötigen einen Verstärker.</p>"
+    },
+    "Flashlight": {
+      "name": "Taschenlampe",
+      "description": "<p>100 m weiter Lichtstrahl. Hält nach Aufladung 10 Stunden.</p>"
+    },
+    "Food Stick": {
+      "name": "Kaustange",
+      "description": "<p>Eine furchtbare Mahlzeit in Riegelform.</p>"
+    },
+    "Glow Paint": {
+      "name": "Leuchtfarbe",
+      "description": "<p>Sprühfarbe, die im Dunkeln leuchtet.</p>"
+    },
+    "Glow Stick": {
+      "name": "Leuchtstab",
+      "description": "<p>Beleuchtet bis zu 4 m. Hält 10 Stunden.</p>"
+    },
+    "Grapple Gun": {
+      "name": "Halteseilkanone",
+      "description": "<p>Verschießt ein Halteseil bis zu 30 m. Kann nicht als Waffe eingesetzt werden.</p>"
+    },
+    "Handcuffs": {
+      "name": "Handschellen",
+      "description": "<p>Fesseln. Benötigt KRA >10, um sie zu zerreißen.</p>"
+    },
+    "Homing Tracer": {
+      "name": "Peilsucher",
+      "description": "<p>Kann einer verbundenen Markierung auf 1,5 km folgen.</p>"
+    },
+    "Inflatable Bed & Sleep-bag": {
+      "name": "Luftbett und\nSchlafsack",
+      "description": "<p>Selbstaufblasbare Matratze mit Schlafsack.</p>"
+    },
+    "Kibble Pack": {
+      "name": "Kibble-Packung",
+      "description": "<p>Eine Portion Kibble.</p>"
+    },
+    "Linear Frame β (Beta)": {
+      "name": "Lineartragwerk β (Beta)",
+      "description": "<p>Motorisch betriebenes Exo­­skelett, das dem Anwender außergewöhnliche Stärke verleiht.<br/>\nWährend er ins Tragwerk eingeklinkt ist, erhöht sich die KRA des Anwenders auf 14. Diese erhöhte KRA erhöht nicht die TP des Anwenders und hat keinen Einfluss auf die Traumaprobe. Benötigt 1 Installation von Interface-Buchsen für die Anwendung.</p>"
+    },
+    "Linear Frame ∑ (Sigma)": {
+      "name": "Lineartragwerk (Sigma)",
+      "description": "<p>Motorisch betriebenes Exo­­skelett, das dem Anwender außergewöhnliche Stärke verleiht.<br/>\nWährend er ins Tragwerk eingeklinkt ist, erhöht sich die KRA des Anwenders auf 12. Diese erhöhte KRA erhöht nicht die TP des Anwenders und hat keinen Einfluss auf die Traumaprobe. Benötigt 1 Installation von Interface-Buchsen für die Anwendung.</p>"
+    },
+    "Lock Picking Set": {
+      "name": "Satz Dietriche",
+      "description": "<p>Zum Knacken mechanischer Schlösser.</p>"
+    },
+    "Medscanner": {
+      "name": "MediScanner",
+      "description": "<p>Der Anwender addiert +2 zur Fertigkeit Erste Hilfe und Notfallmedizin hinzu. Dieser Bonus ist nicht kumulativ mit sich selbst.</p>"
+    },
+    "Medtech Bag": {
+      "name": "MediTech-Tasche",
+      "description": "<p>Vollständiger medizinischer Werkzeugsatz in einer Tasche.</p>"
+    },
+    "Memory Chip": {
+      "name": "Speicherchip",
+      "description": "<p>Standarddatenspeicher.</p>"
+    },
+    "MRE": {
+      "name": "EPA",
+      "description": "<p>Selbsterwärmende Essensration in einem Plastikfolienbeutel.</p>"
+    },
+    "Personal CarePak": {
+      "name": "Persönliches CarePak",
+      "description": "<p>Alles, was du brauchst, um dich zu waschen.</p>"
+    },
+    "Pocket Amplifier": {
+      "name": "Taschenverstärker",
+      "description": "<p>Kann bis zu zwei Instrumente unterstützen. Hält 6 Stunden pro Aufladung.</p>"
+    },
+    "Radar Detector": {
+      "name": "Radar­ detektor",
+      "description": "<p>Piepst im 100m-Umkreis um einen Radarstrahl.</p>"
+    },
+    "Radiation Suit": {
+      "name": "Strahlenschutzanzug",
+      "description": "<p>Schützt vor Strahlung.</p>"
+    },
+    "Radio Communicator": {
+      "name": "Funk­kom­munikator",
+      "description": "<p>Ohrhörer. Reichweite: 1,5 km.</p>"
+    },
+    "Radio Scanner/Music Player": {
+      "name": "Sendersucher/Musik­wiedergabe",
+      "description": "<p>Spiele die heißeste Musik ab und schalte auf einen Radiosender im Umkreis von 1,5 km.</p>"
+    },
+    "Road Flare": {
+      "name": "Straßenleuchtfackel",
+      "description": "<p>Beleuchtet einen Bereich von 100 m für 1 Stunde.</p>"
+    },
+    "Rope (60m/yd)": {
+      "name": "Seil (60 m)",
+      "description": "<p>Nylonseil.</p>"
+    },
+    "Scrambler/Descrambler": {
+      "name": "Störer/Entstörer",
+      "description": "<p>Stört/entstört Kommunikationstechnik.</p>"
+    },
+    "Tech Bag": {
+      "name": "Tech-Tasche",
+      "description": "<p>Kleine Tasche mit Werkzeugen und einfachem Material zum Reparieren von Sachen.</p>"
+    },
+    "Techscanner": {
+      "name": "TechScanner",
+      "description": "<p>Hilft bei der Diagnose kaputter Technologie. +2 für mehrere TCH-basierte Fertigkeiten.</p>"
+    },
+    "Techtool": {
+      "name": "Techwerkzeug",
+      "description": "<p>Ein Multifunktionswerkzeug mit allem Drum und Dran.</p>"
+    },
+    "Tent and Camping Equipment": {
+      "name": "Zelt und Campingausrüstung",
+      "description": "<p>Ausrüstung für eine Person zum Zelten.</p>"
+    },
+    "Tracer Button": {
+      "name": "Peilsender",
+      "description": "<p>Kann mit einem Peilsucher aus bis zu 1,5 Kilometer Entfernung geortet werden.</p>"
+    },
+    "Vial of Biotoxin": {
+      "name": "Flasche mit Biotoxin",
+      "description": "<p>Richtet 3W6 Schaden an. Widerstand durch Folter/Drogen widerstehen. Nicht durch Panzerung beeinträchtigt.</p>"
+    },
+    "Vial of Poison": {
+      "name": "Flasche mit Gift",
+      "description": "<p>Richtet 2W6 Schaden an. Widerstand durch Folter/Drogen widerstehen. Nicht durch Panzerung beeinträchtigt.</p>"
+    },
+    "Video Camera": {
+      "name": "Videokamera",
+      "description": "<p>Speichert bis zu 12 Stunden Audio und Video auf einem einzigen Speicherchip.</p>"
+    },
+    "Virtuality Goggles": {
+      "name": "Virtuality-Brille",
+      "description": "<p>Projiziert Cyberspace-Bilder auf die Realansicht.</p>"
+    }
+  }
+}

@@ -1,0 +1,45 @@
+_id: M96Dfx18YqvhlIgb
+_key: "!items!M96Dfx18YqvhlIgb"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/cyberware/subdermal_armor.svg
+name: Subdermal Armor
+system:
+  bodyLocation:
+    ablation: 0
+    sp: 11
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>Armor Item for Subdermal Armor Cyberware.</p>
+  equipped: owned
+  favorite: false
+  headLocation:
+    ablation: 0
+    sp: 11
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 0
+    usedSlots: 0
+  isBodyLocation: true
+  isElectronic: false
+  isHeadLocation: true
+  isShield: false
+  penalty: 0
+  price:
+    market: 0
+  providesHardening: false
+  revealed: true
+  shieldHitPoints:
+    max: 0
+    value: 0
+  source:
+    book: Core
+    page: 364
+  usage: toggled
+type: armor

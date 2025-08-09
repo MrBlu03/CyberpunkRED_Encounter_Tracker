@@ -1,0 +1,4 @@
+{
+  "description": "The amount of the item stored, equivalent to the amount purchased or added to a character at once as a stack",
+  "type": "integer"
+}

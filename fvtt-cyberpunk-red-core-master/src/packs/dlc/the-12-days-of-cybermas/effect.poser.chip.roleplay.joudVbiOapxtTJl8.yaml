@@ -1,0 +1,31 @@
+_id: joudVbiOapxtTJl8
+_key: "!items.effects!P19OmJOcdgjhgjLm.joudVbiOapxtTJl8"
+changes:
+  - key: bonuses.acting
+    mode: 2
+    priority: null
+    value: "5"
+description: ""
+disabled: false
+duration:
+  combat: null
+  rounds: null
+  seconds: null
+  startRound: null
+  startTime: null
+  startTurn: null
+  turns: null
+flags:
+  cyberpunk-red-core:
+    changes:
+      cats:
+        "0": skill
+      situational:
+        "0":
+          isSituational: true
+          onByDefault: false
+icon: systems/cyberpunk-red-core/icons/compendium/status/poser_chip.svg
+name: Poser Chip (Roleplay)
+statuses: []
+tint: null
+transfer: true

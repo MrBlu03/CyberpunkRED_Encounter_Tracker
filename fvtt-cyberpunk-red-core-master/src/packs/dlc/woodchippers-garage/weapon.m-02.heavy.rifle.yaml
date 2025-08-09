@@ -1,0 +1,52 @@
+_id: qqNh3sElWPyVT4Qq
+_key: "!items!qqNh3sElWPyVT4Qq"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/weapons/AssaultRifle.svg
+name: M-02 Heavy Rifle
+system:
+  ammoVariety:
+    - custom
+  attackmod: 0
+  brand: Sternmeyer
+  concealable:
+    concealable: false
+    isConcealed: false
+  critFailEffect: jammed
+  damage: 5d6
+  description:
+    value: |
+      <p>
+        This weapon fires it's own custom ammunition, priced at 500eb (Expensive) for
+        80 rounds of Armor-Piercing ammo.
+      </p>
+  dvTable: DV Assault Rifle
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 4
+    suppressiveFire: true
+  handsReq: 2
+  installedItems:
+    allowed: true
+    allowedTypes: []
+    list: []
+    slots: 0
+    usedSlots: 0
+  isRanged: true
+  magazine:
+    max: 80
+    value: 0
+  price:
+    market: 1000
+  quality: standard
+  revealed: true
+  rof: 1
+  source:
+    book: WG
+    page: 5
+  unarmedAutomaticCalculation: true
+  usage: equipped
+  usesType: magazine
+  weaponSkill: Heavy Weapons
+  weaponType: assaultRifle
+type: weapon

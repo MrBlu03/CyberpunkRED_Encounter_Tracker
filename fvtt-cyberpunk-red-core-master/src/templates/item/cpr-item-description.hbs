@@ -1,0 +1,19 @@
+<div class="item-description-tab">
+  <div class="item-summary-section">
+    {{!-- Display stats by item type --}}
+    {{> (cprGeneratePartial "systems/cyberpunk-red-core/templates/item/description/cpr-VAR.hbs" item.type) this}}
+    {{!-- Display at-a-glance stats in the description tab by mixin --}}
+    {{#each (cprGetTemplates item.type) as |mixin| }}
+      {{> (cprGeneratePartial "systems/cyberpunk-red-core/templates/item/description/mixin/cpr-VAR.hbs" mixin) ../this}}
+    {{/each}}
+  </div>
+  <div class="item-description-section">
+    {{editor enrichedHTMLDescription
+             target="system.description.value"
+             button=true
+             owner=owner
+             editable=editable
+             engine="prosemirror"
+    }}
+  </div>
+</div>

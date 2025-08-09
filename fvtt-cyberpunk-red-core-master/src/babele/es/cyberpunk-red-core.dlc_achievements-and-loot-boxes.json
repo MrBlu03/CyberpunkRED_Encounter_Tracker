@@ -1,0 +1,136 @@
+{
+  "label": "Logros y Cajas de Botín",
+  "mapping": {},
+  "entries": {
+    "A Box Bound Tightly in Rope": {
+      "name": "Una caja enlazada correctamente en cuerda",
+      "results": [
+        {
+          "1-1": "Cuerda (60m/yd)",
+          "2-2": "Gafas de Virtualidad",
+          "3-3": "Pistola de Gancho",
+          "4-4": "Frasco de veneno",
+          "5-5": "Joyería de Flash Urbano",
+          "6-6": "Paquete de Baterías"
+        }
+      ]
+    },
+    "A Box Covered in Chipped Paint": {
+      "name": "Una caja cubierta en pintura astillada",
+      "results": [
+        {
+          "1-1": "Granada (Lacrimógena)",
+          "2-2": "Pistola Pesada (Básica)",
+          "3-3": "Bicicleta",
+          "4-4": "Bengala de carretera",
+          "5-5": "Escudo a prueba de balas",
+          "6-6": "Cartuchos de Escopeta (Básicos)"
+        }
+      ]
+    },
+    "A Box Dripping Wet With Fluid": {
+      "name": "Una caja mojada con fluido",
+      "results": [
+        {
+          "1-1": "Smash",
+          "2-2": "Lazo Negro",
+          "3-3": "AutoInyector Corporal",
+          "4-4": "AirWell 50",
+          "5-5": "Granada (Veneno)",
+          "6-6": "Fluido detonador TR-4"
+        }
+      ]
+    },
+    "A Box Freezing Cold To The Touch": {
+      "name": "Una caja congelada al tacto",
+      "results": [
+        {
+          "1-1": "Lentes Espejados de Bohemios",
+          "2-2": "Traje de motociclista de Serpiente callejera",
+          "3-3": "Ciberojo patrocinado",
+          "4-4": "Zanja de barrio bajo",
+          "5-5": "Tiempo de Primera",
+          "6-6": "Chaqueta callejera ligera Laser"
+        }
+      ]
+    },
+    "A Box Handsomely Gift Wrapped": {
+      "name": "Caja envuelta en papel de regalo",
+      "results": [
+        {
+          "1-1": "Binoculares",
+          "2-2": "Armorjack Ligero (Cuerpo)",
+          "3-3": "Pistola Media (Inteligente)",
+          "4-4": "Cámara de Video",
+          "5-5": "Lengua Neutónica",
+          "6-6": "Co-Procesador Reflex"
+        }
+      ]
+    },
+    "A Box Marked With A Lime Green X": {
+      "name": "Una caja marcada con una X verde lima",
+      "results": [
+        {
+          "1-1": "Elflines Online",
+          "2-2": "Teléfono móvil desechable",
+          "3-3": "Cibermanos con dedos modulares",
+          "4-4": "Joyería Informal",
+          "5-5": "Agente",
+          "6-6": "Gafas inteligentes"
+        }
+      ]
+    },
+    "A Box Melted Out Of Shape": {
+      "name": "Una caja derretida y deformada",
+      "results": [
+        {
+          "1-1": "Armadura de Carroñero",
+          "2-2": "Granada (Incendiaria)",
+          "3-3": "Ciberbrazo Neo-Soviet",
+          "4-4": "Rifle (Básico)",
+          "5-5": "Rifle (Básico)",
+          "6-6": "Cartuchos de Escopeta (Incendiario)"
+        }
+      ]
+    },
+    "A Box Reeking Of Oil": {
+      "name": "Una caja que chorrea aceite",
+      "results": [
+        {
+          "1-1": "Cartuchos de Escopeta (Básicos)",
+          "2-2": "Pistola Pesada (Básica)",
+          "3-3": "Calzado de Cuero Nómadas",
+          "4-4": "Rifle (Inteligente)",
+          "5-5": "Mira de Francotirador",
+          "6-6": "Enlace de Smartgun"
+        }
+      ]
+    },
+    "A Box Sealed With A Lipstick Kiss": {
+      "name": "Una caja sellada con un beso de labial",
+      "results": [
+        {
+          "1-1": "Cuchillo de Combate",
+          "3-3": "Granada de Tornado de Shuriken",
+          "4-4": "Calzado de Asia Pop",
+          "5-5": "Camisa de Vestir de Negocios",
+          "6-6": "Tanto de Avispón Blanco",
+          "2-2": "Implante Sexual Mr. Studd"
+        }
+      ]
+    },
+    "A Box Showing Signs Of Repair": {
+      "name": "Una caja con marcas de reparación",
+      "results": [
+        {
+          "1-1": "Tomahawk de utilidad",
+          "2-2": "Holo-Proyector de mano",
+          "3-3": "Herramienta Técnica",
+          "4-4": "Grabadora de Audio",
+          "5-5": "Granada (Perforación de Armadura)",
+          "6-6": "Escáner técnico"
+        }
+      ]
+    }
+  }
+}

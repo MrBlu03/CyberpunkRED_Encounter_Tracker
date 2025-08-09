@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "max": {
+      "type": "integer"
+    },
+    "value": {
+      "type": "integer"
+    }
+  },
+  "required": ["max", "value"]
+}

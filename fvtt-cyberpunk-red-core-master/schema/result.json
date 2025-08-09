@@ -1,0 +1,76 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/CPRC-Result",
+  "definitions": {
+    "CPRC-Result": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "_id": {
+          "$ref": "./components/id.json"
+        },
+        "_key": {
+          "$ref": "./components/key.json"
+        },
+        "documentCollection": {
+          "description": "matches `cyberpunk-red-core.(subdir_)*` or a blank string",
+          "oneOf": [
+            {
+              "type": "string",
+              "pattern": "^cyberpunk-red-core\\.(black-chrome|core|dlc|internal|other)_.*$"
+            },
+            {
+              "type": "string",
+              "pattern": "^$"
+            }
+          ]
+        },
+        "documentId": {
+          "description": "Either an ID or null",
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "./components/id.json"
+            }
+          ]
+        },
+        "drawn": {
+          "type": "boolean"
+        },
+        "img": {
+          "$ref": "./components/img.json"
+        },
+        "range": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          }
+        },
+        "text": {
+          "type": "string"
+        },
+        "type": {
+          "type": "number",
+          "enum": [0, 2]
+        },
+        "weight": {
+          "type": "number",
+          "const": 1
+        }
+      },
+      "required": [
+        "_id",
+        "_key",
+        "documentId",
+        "drawn",
+        "img",
+        "range",
+        "text",
+        "type",
+        "weight"
+      ]
+    }
+  }
+}

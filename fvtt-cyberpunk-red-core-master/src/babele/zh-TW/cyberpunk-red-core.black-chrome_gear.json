@@ -1,0 +1,118 @@
+{
+  "label": "Gear",
+  "mapping": {},
+  "entries": {
+    "MechaMan Smart Glove": {
+      "name": "MechaMan Smart Glove",
+      "description": "<p>\n  A biking glove that comes with a subdermal grip pre-installed* which requires\n  a neural link to use. Has 1 additional cyberarm option slot. Any options\n  stored in the Cyberhand or meat hand are inaccessible while the Smart Glove is\n  being worn.<br /><em\n    >*Subdermal Grip must be added and installed manually after acquiring the\n    glove, this effectively consumes one of the option slots.</em\n  >\n</p>\n"
+    },
+    "ChipVault by SecSystems": {
+      "name": "ChipVault by SecSystems",
+      "description": "<p>\n  Can hold up to 8 pieces of Chipware. Chipware stored inside are immune to EMP\n  effects.\n</p>\n"
+    },
+    "CO2 Tank": {
+      "name": "CO2 Tank",
+      "description": "<p>A CO2 tank designed for usage with the Masetto AirRider armor. Must be replaced after every usage. Refer to full item description on BC pg. 33.</p>"
+    },
+    "Drink Master 3000": {
+      "name": "Drink Master 3000",
+      "description": "<p>Can make 10 beverages out of a 3000 beverages library before needing to be refilled. Can also make Smash. For more information, see Black Chrome Page 42.</p>"
+    },
+    "EL-F4-NT Linear Frame": {
+      "name": "EL-F4-NT Linear Frame",
+      "description": "<p>Exoskeleton. Increases BODY to 12 while equipped. No changes to your HP or Deathsave. Has pre-installed techtools. (See Black Chrome pg. 55 for more details.)</p>"
+    },
+    "Everest VentureWare AirWell 50": {
+      "name": "Everest VentureWare AirWell 50",
+      "description": "<p>Produces enough water to sustain a person.</p>\n"
+    },
+    "Everest VentureWare One Touch Habitat": {
+      "name": "Everest VentureWare One Touch Habitat",
+      "description": "<p>\n  Provides protection from Exposure. Counts as Sleeping in the Wilderness or as\n  Sleeping on the Streets.\n</p>\n"
+    },
+    "Fūma Kotarō Linear Frame": {
+      "name": "Fūma Kotarō Linear Frame",
+      "description": "<p>Exoskeleton.</p>\n<ul>\n<li>Requires 2 Interface Plugs</li>\n<li>Increases BODY to 12 while plugged in</li>\n<li>Does not affect HP or Deathsave</li>\n<li>Stealth +2</li>\n</ul>\n<p>Comes with two Excellent Quality Exotic Heavy Melee Weapons and one Excellent Quality Exotic Light Melee Weapon pre-installed*.</p>\n<p>See Black Chrome pg. 52 for more details.</p>\n<p><em>* Must be manually added.</em></p>"
+    },
+    "Hydrosubsidium Universal Aqualung": {
+      "name": "Hydrosubsidium Universal Aqualung",
+      "description": "<p>\n  When worn, User can breathe underwater as long as within 10 m/yards of the\n  surface.\n</p>\n"
+    },
+    "Jeeves Executive Garment Bag": {
+      "name": "Jeeves Executive Garment Bag",
+      "description": "<p>Bag that can repair one piece of fashion or armor at a time. For more information, see Black Chrome Page 43.</p>"
+    },
+    "KillStrom Banshee Microphone": {
+      "name": "KillStrom Banshee Microphone",
+      "description": "<p>\n  Wireless Microphone Headset. Gives the User a +2 bonus to Play Instrument\n  (Singing) Skill Checks while worn. Doesn't stack with other bonuses to Play\n  Instrument.\n</p>\n"
+    },
+    "KillStrom Sonic Boom Amp": {
+      "name": "KillStrom Sonic Boom Amp",
+      "description": "<p>\n  While linked to an instrument, the User can take an Action to make everyone\n  nearby make a Resist Torture/Drugs Check.\n</p>\n"
+    },
+    "KillStrom Typhoid Speaker": {
+      "name": "KillStrom Typhoid Speaker",
+      "description": "<p>\n  When linked to a KillStrom Sonic Boom Amp, increases the DV of the Resist\n  Torture/Drugs Check.\n</p>\n"
+    },
+    "KTech Doberman 500": {
+      "name": "KTech Doberman 500",
+      "description": "<p>Canine Personal Drone that can be linked to an Agent.</p>\n"
+    },
+    "Laser Light Electric Guitar": {
+      "name": "Laser Light Electric Guitar",
+      "description": "<p>Electric Guitar that gives the User a +1 to their Play Instrument (Guitar) Skill Check. This guitar also counts as one installation of Light Tattoo Fashionware while worn. For more information, see Black Chrome Page 41.</p>"
+    },
+    "LF-001 SWAT Linear Frame": {
+      "name": "LF-001 SWAT Linear Frame",
+      "description": "<p>Exoskeleton. Requires 2 Interface Plugs. Increases BODY to 12 while plugged in. No changes to your HP or Deathsave. Ignores the normal movement penalty for climbing and swimming. (See Black Chrome pg. 53 for more details.)</p>"
+    },
+    "Mr. Biscuit Multi-Food Processor": {
+      "name": "Mr. Biscuit Multi-Food Processor",
+      "description": "<p>Can sustain a group of up to 10 people when in the Outskirts. For more information, see Black Chrome Page 49.</p>"
+    },
+    "Petrochem Nitro Ultra9": {
+      "name": "Petrochem Nitro Ultra9",
+      "description": "<p>\n  Can be poured into a Vehicle's tank to refill it as an Action. Gives bonuses\n  to movement at the expense of safety.\n</p>\n"
+    },
+    "RapiDeploy Sheath": {
+      "name": "RapiDeploy Sheath",
+      "description": "<p>Gives the User a +2 bonus to their Conceal/Reveal Skill Check if used to conceal a weapon already capable of concealement. For more information, see Black Chrome Page 47.</p>"
+    },
+    "Shower•in•a•Can": {
+      "name": "Shower•in•a•Can",
+      "description": "<p>Spray Deodorant. Desinfects and deodorize. One use per can. For more information, see Black Chrome Page 38.</p>"
+    },
+    "SovOil Industrial Lubricant": {
+      "name": "SovOil Industrial Lubricant",
+      "description": "<p>Lubricant in a helpfully sized can. For more information, see Black Chrome Page 56.</p>"
+    },
+    "SovOil Medical Lubricant": {
+      "name": "SovOil Medical Lubricant",
+      "description": "<p>Lubricant in a helpfully sized can. For more information, see Black Chrome Page 56.</p>"
+    },
+    "SovOil Personal Lubricant": {
+      "name": "SovOil Personal Lubricant",
+      "description": "<p>Lubricant in a helpfully sized can. For more information, see Black Chrome Page 56.</p>"
+    },
+    "Streetcase by SecSystems": {
+      "name": "Streetcase by SecSystems",
+      "description": "<p>Can carry many easily accessible items that YOU need to stay safe.</p>\n"
+    },
+    "Triti-Fizz": {
+      "name": "Triti-Fizz",
+      "description": "<p>North America's favorite soft drink. For more information, see Black Chrome Page 124.</p>"
+    },
+    "Vermilion Linear Frame": {
+      "name": "Vermilion Linear Frame",
+      "description": "<p>Exoskeleton. Requires 2 Interface Plugs. Increases BODY to 12 while plugged in. No changes to your HP or Deathsave. &nbsp;No movement penalty for jumping. While running your movement is increased by 6m/yds. (See Black Chrome pg. 54 for more details.)</p>"
+    },
+    "WorldSat Aerial Sphere": {
+      "name": "WorldSat Aerial Sphere",
+      "description": "<p>When set up, provides access to a Citinet when within 50 miles of the city or of another set up WorldSat Aerial Sphere that is connected to the Citinet. For more information, see Black Chrome Page 50.</p>"
+    },
+    "Zetatech Porta-Printer": {
+      "name": "Zetatech Porta-Printer",
+      "description": "<p>\n  Miniature Workshop. Allows a Tech to use Upgrade and Fabrication Expertise\n  anywhere as long as they have techtools.\n</p>\n"
+    }
+  }
+}

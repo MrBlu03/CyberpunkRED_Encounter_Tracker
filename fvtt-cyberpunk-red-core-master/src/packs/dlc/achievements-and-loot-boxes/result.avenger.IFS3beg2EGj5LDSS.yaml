@@ -1,0 +1,12 @@
+_id: IFS3beg2EGj5LDSS
+_key: "!tables.results!4S3emhUCIIDNoTAg.IFS3beg2EGj5LDSS"
+documentCollection: cyberpunk-red-core.core_weapons-branded
+documentId: luv1w6UcSC3xHg5j
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/weapons/mediumPistol_excellent.svg
+range:
+  - 3
+  - 3
+text: Avenger
+type: 2
+weight: 1

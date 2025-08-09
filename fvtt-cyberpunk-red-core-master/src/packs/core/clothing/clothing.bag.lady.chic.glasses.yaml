@@ -1,0 +1,38 @@
+_id: j7uqIHY7bGmEL0Ma
+_key: "!items!j7uqIHY7bGmEL0Ma"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/clothing/generic_glasses.svg
+name: Bag Lady Chic Glasses
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        Follow the latest dumpster diver fashion trends! Torn and worn out clothes,
+        perfect if you want that homeless look.
+      </p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: false
+  price:
+    market: 10
+  providesHardening: false
+  revealed: true
+  source:
+    book: Core
+    page: 356
+  style: bagLadyChic
+  type: glasses
+  usage: equipped
+type: clothing

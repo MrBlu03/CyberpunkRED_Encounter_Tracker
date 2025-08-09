@@ -1,0 +1,30 @@
+_id: 2UFkxrs6fI3cmpNz
+_key: "!items.effects!8nOTvNR4qZP54nKy.2UFkxrs6fI3cmpNz"
+changes:
+  - key: bonuses.initiative
+    mode: 2
+    value: "5"
+description: ""
+disabled: true
+duration:
+  combat: null
+  rounds: null
+  seconds: null
+  startRound: null
+  startTime: null
+  startTurn: null
+  turns: null
+flags:
+  cyberpunk-red-core:
+    changes:
+      cats:
+        "0": combat
+      situational:
+        "0":
+          isSituational: false
+          onByDefault: false
+icon: systems/cyberpunk-red-core/icons/compendium/status/timewarp_addiction.svg
+name: Timewarp Addiction Primary
+statuses: []
+tint: null
+transfer: true

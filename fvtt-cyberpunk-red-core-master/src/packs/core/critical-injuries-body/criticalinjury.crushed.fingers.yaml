@@ -1,0 +1,28 @@
+_id: IKKcCgHU1lBJ4wVd
+_key: "!items!IKKcCgHU1lBJ4wVd"
+effects:
+  - ioMOVsyk9FRbs9EI
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/critical_injuries/crushed_fingers.svg
+name: Crushed Fingers
+system:
+  deathSaveIncrease: false
+  description:
+    value: |
+      <p>-4 to hand actions.</p>
+  favorite: false
+  location: body
+  quickFix:
+    dvFirstAid: 0
+    dvParamedic: 13
+    type: paramedic
+  revealed: true
+  source:
+    book: Core
+    page: 187
+  treatment:
+    dvParamedic: 0
+    dvSurgery: 15
+    type: surgery
+  usage: toggled
+type: criticalInjury

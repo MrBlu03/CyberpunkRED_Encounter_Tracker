@@ -1,0 +1,39 @@
+_id: 80TODp6SDXS3ZnSi
+_key: "!items!80TODp6SDXS3ZnSi"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/black-chrome/grenade_tied.png
+name: Grenade (Arachnid)
+system:
+  ablationValue: 0
+  amount: 1
+  brand: Centurian Essentials
+  concealable:
+    concealable: true
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        A very sticky grenade. Creates a sticky web that entangles target. Must be
+        destroyed or be torn by anyone in melee range making a
+        <strong>DV 15 Brawling Check</strong>.
+      </p>
+  favorite: false
+  installLocation: mall
+  overrides:
+    autofire:
+      minimum: 3
+      mode: none
+      value: -1
+    damage:
+      minimum: 1d6
+      mode: none
+      value: 3d6
+  price:
+    market: 100
+  size: 0
+  source:
+    book: BC
+    page: 86
+  type: special
+  variety: grenade
+type: ammo

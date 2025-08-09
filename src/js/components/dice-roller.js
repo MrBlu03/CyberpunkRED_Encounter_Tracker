@@ -32,28 +32,20 @@ function rollDice(diceNotation) {
         const criticalSystem = localStorage.getItem('criticalInjurySystem') || 'default';
         const sixes = result.rolls.filter(roll => roll === 6).length;
         
-        if (criticalSystem === 'tarot') {
-            isCritical = (result.rolls.length >= 3 && sixes >= 3);
-            if (isCritical) {
-                resultText += ' - Tarot Critical!';
-                const card = drawTarotCard();
-                criticalInjuryText = `Tarot Card: ${card.name} - ${card.description}`;
-                criticalInjuryDiv.style.display = 'block';
-            }
-        } else {
-            isCritical = (result.rolls.length >= 2 && sixes >= 2);
-            if (isCritical) {
-                resultText += ' - Critical Injury! +5 Bonus Damage';
-                const table = CRITICAL_INJURIES[hitLocation.charAt(0).toUpperCase() + hitLocation.slice(1)];
-                if (table) {
-                    let roll1 = Math.floor(Math.random() * 6) + 1;
-                    let roll2 = Math.floor(Math.random() * 6) + 1;
-                    let index = roll1 + roll2 - 2;
-                    if (index >= 0 && index < table.length) {
-                        const injury = table[index];
-                        criticalInjuryText = `Critical Injury (${roll1}+${roll2}=${roll1+roll2}): ${injury.name} - ${injury.description}`;
-                        criticalInjuryDiv.style.display = 'block';
-                    }
+        // Default critical trigger (keep tarot toggle for trigger count only)
+        isCritical = criticalSystem === 'tarot' ? (result.rolls.length >= 3 && sixes >= 3)
+                                                : (result.rolls.length >= 2 && sixes >= 2);
+        if (isCritical) {
+            resultText += ' - Critical Injury! +5 Bonus Damage';
+            const table = (hitLocation === 'head' ? window.CRITS_CACHE?.head : window.CRITS_CACHE?.body) || [];
+            if (table.length > 0) {
+                let roll1 = Math.floor(Math.random() * 6) + 1;
+                let roll2 = Math.floor(Math.random() * 6) + 1;
+                let index = roll1 + roll2 - 2;
+                if (index >= 0 && index < table.length) {
+                    const injury = table[index];
+                    criticalInjuryText = `Critical Injury (${roll1}+${roll2}=${roll1+roll2}): ${injury.name} - ${injury.description}`;
+                    criticalInjuryDiv.style.display = 'block';
                 }
             }
         }

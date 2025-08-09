@@ -1,0 +1,20 @@
+_id: HbUTj5xqErBhyiN4
+_key: "!items!HbUTj5xqErBhyiN4"
+effects: []
+img: icons/svg/item-bag.svg
+name: Criminology
+system:
+  basic: false
+  category: educationSkills
+  core: true
+  description:
+    value: ""
+  difficulty: typical
+  favorite: false
+  level: 0
+  skillType: generic
+  source:
+    book: Core
+    page: 134
+  stat: int
+type: skill

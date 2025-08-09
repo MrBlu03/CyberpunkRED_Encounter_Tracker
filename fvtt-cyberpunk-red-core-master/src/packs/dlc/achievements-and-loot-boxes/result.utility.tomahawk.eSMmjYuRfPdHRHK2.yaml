@@ -1,0 +1,12 @@
+_id: eSMmjYuRfPdHRHK2
+_key: "!tables.results!WmWdGRlhzhA2ZcmV.eSMmjYuRfPdHRHK2"
+documentCollection: cyberpunk-red-core.black-chrome_weapons
+documentId: 1VndXRKaCuKQp49H
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/black-chrome/utility-tomahawk.svg
+range:
+  - 1
+  - 1
+text: Utility Tomahawk
+type: 2
+weight: 1

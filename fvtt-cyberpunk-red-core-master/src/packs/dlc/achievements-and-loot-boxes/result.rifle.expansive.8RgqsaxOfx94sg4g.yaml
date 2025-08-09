@@ -1,0 +1,12 @@
+_id: 8RgqsaxOfx94sg4g
+_key: "!tables.results!EVPuZ21eNOpEycGQ.8RgqsaxOfx94sg4g"
+documentCollection: cyberpunk-red-core.core_ammo
+documentId: mDk8gPTM1ENRcB0K
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/ammo/rifle_expansive.png
+range:
+  - 4
+  - 4
+text: Rifle (Expansive)
+type: 2
+weight: 1

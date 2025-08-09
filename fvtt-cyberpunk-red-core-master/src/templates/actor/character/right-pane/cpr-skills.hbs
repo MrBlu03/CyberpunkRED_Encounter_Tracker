@@ -1,0 +1,18 @@
+<div class="skills-tab">
+  <div class="skills-container">
+    <ol class="left-pane-skills items-list">
+      {{#each (cprFindConfigObj "skillCategories") as |category c| }}
+        {{#if (cprCompare c "<" "f") }}
+          {{> "systems/cyberpunk-red-core/templates/actor/character/right-pane/tabs/skills/cpr-skills-category.hbs"(cprMergeForPartialArg "category,actor,sheet" c ../this.actor ../this)}}
+        {{/if}}
+      {{/each}}
+    </ol>
+    <ol class="right-pane-skills items-list">
+      {{#each (cprFindConfigObj "skillCategories") as |category c| }}
+        {{#if (cprCompare c ">=" "f") }}
+          {{> "systems/cyberpunk-red-core/templates/actor/character/right-pane/tabs/skills/cpr-skills-category.hbs"(cprMergeForPartialArg "category,actor,sheet" c ../this.actor ../this)}}
+        {{/if}}
+      {{/each}}
+    </ol>
+  </div>
+</div>

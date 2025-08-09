@@ -1,0 +1,42 @@
+{
+  "label": "Munition",
+  "mapping": {},
+  "entries": {
+    "Arasaka Acid": {
+      "name": "Arasaka Säurefluid",
+      "description": "<p>Coating for Arasaka Weeping Reaver Katana only.</p>"
+    },
+    "Arasaka Fire": {
+      "name": "Arasaka Feuerfluid",
+      "description": "<p>Coating for Arasaka Weeping Reaver Katana only.</p>\n<p>Can set target on fire, details of which can be found on page 91.</p>"
+    },
+    "Arasaka Wound Salt": {
+      "name": "Arasaka Wundsalzfluid",
+      "description": "<p>Coating for Arasaka Weeping Reaver Katana only.</p>\n<p>Able to apply a second a seconde Critical Injury, details of which can be found on page 91.</p>"
+    },
+    "Doberman 500 Marking Scent": {
+      "name": "Doberman 500 Markierduft",
+      "description": "<p>Special Ammo Type for the Air Pistol. For more information, see Black Chrome Page 44.</p>"
+    },
+    "Grenade (Arachnid)": {
+      "name": "Granate (Arachnid)",
+      "description": "<p>A very sticky grenade, details of which can be found on page 86.</p>"
+    },
+    "Grenade (KTech Security)": {
+      "name": "Granate (KTech-Security)",
+      "description": "<p>Panzerbrechende Granate. Verursacht Schaden an einem Ziel, aber nicht an Deckungen.</p>\n"
+    },
+    "Grenade (Shuriken Tornado)": {
+      "name": "Granate (Shuriken Tornado)",
+      "description": "<p>A literal explosion of shurikens. Can apply second Critical Injury, details of which can be found on page 87.</p>"
+    },
+    "Net": {
+      "name": "Fangnetz",
+      "description": "<p>Net for the net launcher that grapples the target on hit. (See Black Chrome Pg. 20-21 for more details)</p>"
+    },
+    "Rocks": {
+      "name": "Steine",
+      "description": "<p>\n  Kleine Munition, die mit dem Nomad Rocker verwendet werden kann.\n  Kleine Felsen und Steine, welche sich in der Nähe befinden, können gesammelt\n  und als Munition benutzt werden.\n</p>\n"
+    }
+  }
+}

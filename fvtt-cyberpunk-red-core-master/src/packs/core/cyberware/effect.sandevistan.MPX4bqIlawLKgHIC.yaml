@@ -1,0 +1,31 @@
+_id: MPX4bqIlawLKgHIC
+_key: "!items.effects!UX79WfUt7Yungbx7.MPX4bqIlawLKgHIC"
+changes:
+  - key: bonuses.initiative
+    mode: 2
+    priority: null
+    value: "3"
+description: ""
+disabled: false
+duration:
+  combat: null
+  rounds: null
+  seconds: null
+  startRound: null
+  startTime: null
+  startTurn: null
+  turns: null
+flags:
+  cyberpunk-red-core:
+    changes:
+      cats:
+        "0": combat
+      situational:
+        "0":
+          isSituational: true
+          onByDefault: true
+icon: systems/cyberpunk-red-core/icons/compendium/cyberware/sandevistan.svg
+name: Sandevistan
+statuses: []
+tint: null
+transfer: true

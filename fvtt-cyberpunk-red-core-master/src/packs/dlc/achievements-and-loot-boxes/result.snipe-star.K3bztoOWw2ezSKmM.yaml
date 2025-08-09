@@ -1,0 +1,12 @@
+_id: K3bztoOWw2ezSKmM
+_key: "!tables.results!EVPuZ21eNOpEycGQ.K3bztoOWw2ezSKmM"
+documentCollection: cyberpunk-red-core.core_weapons-branded
+documentId: fUo0HrfEC83Wb7wj
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/weapons/SniperRifle_poor.svg
+range:
+  - 4
+  - 4
+text: Snipe-Star
+type: 2
+weight: 1

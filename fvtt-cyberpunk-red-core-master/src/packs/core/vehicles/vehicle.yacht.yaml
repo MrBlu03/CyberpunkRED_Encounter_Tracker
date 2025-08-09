@@ -1,0 +1,34 @@
+_id: Wo98wgEQA6B7FnMF
+_key: "!items!Wo98wgEQA6B7FnMF"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/vehicles/ship.svg
+name: Yacht
+system:
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        A luxury speedboat. Requires a minimum of two rooms. The price is for each
+        room below or above deck.
+      </p>
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  price:
+    market: 50000
+  sdp: 100
+  seats: 4
+  source:
+    book: Core
+    page: 190
+  speedCombat: 10
+  speedNarrative: 15 MPH / 24 KPH
+type: vehicle

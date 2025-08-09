@@ -1,0 +1,42 @@
+{
+  "label": "Munición",
+  "mapping": {},
+  "entries": {
+    "Arasaka Acid": {
+      "name": "Ácido de Arasaka",
+      "description": "<p>Recubrimiento para la Katana \"Atracador Llorón\" de Arasaka.</p>"
+    },
+    "Arasaka Fire": {
+      "name": "Fuego de Arasaka",
+      "description": "<p>Recubrimiento para la Katana \"Atracador Llorón\" de Arasaka.</p>\n<p>Puede poner el objetivo en llamas, detalles de los cuales se pueden encontrar en la página 91.</p>"
+    },
+    "Arasaka Wound Salt": {
+      "name": "Sal de Herida de Arasaka",
+      "description": "<p>Recubrimiento para la Katana \"Atracador Llorón\" de Arasaka.</p>\n<p>Capaz de aplicar un segundo una segunda lesión crítica, cuyos detalles se pueden encontrar en la página 91.</p>"
+    },
+    "Doberman 500 Marking Scent": {
+      "name": "Doberman 500 Perfume Marcador",
+      "description": "<p>Tipo de munición especial para la Pistola del Aire. Para obtener más información, consulte la página del Cromo Negro 44.</p>"
+    },
+    "Grenade (Arachnid)": {
+      "name": "Granada (Telaraña)",
+      "description": "<p>Una granada muy pegajosa, cuyos detalles se pueden encontrar en la página 86.</p>"
+    },
+    "Grenade (KTech Security)": {
+      "name": "Grenade (KTech Security)",
+      "description": "<p>Armor piercing Grenade. Deals damage to targets but not to cover.</p>\n"
+    },
+    "Grenade (Shuriken Tornado)": {
+      "name": "Granada (Tornado de Shuriken)",
+      "description": "<p>Una explosión literal de shurikens. Puede aplicar una segunda lesión crítica, detalles de los cuales se pueden encontrar en la página 87.</p>"
+    },
+    "Net": {
+      "name": "Red",
+      "description": "<p>Red para el lanzador de redes que atrapa al objetivo al golpear. (Ver Cromo Negro Pg. 20-21 para más detalles)</p>"
+    },
+    "Rocks": {
+      "name": "Rocas",
+      "description": "<p>Munición para el Lanza-Rocas Nómada.</p>"
+    }
+  }
+}

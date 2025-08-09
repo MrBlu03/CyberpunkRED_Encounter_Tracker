@@ -1,0 +1,42 @@
+{
+  "label": "Kritische Verletzungstabellen",
+  "mapping": {},
+  "entries": {
+    "Critical Injuries (Body)": {
+      "name": "Kritische Verletzungen (Körper)",
+      "results": [
+        {
+          "2-2": "Abgetrennter Arm",
+          "3-3": "Abgetrennte Hand",
+          "4-4": "Kollabierte Lunge",
+          "5-5": "Rippenbruch",
+          "6-6": "Armbruch",
+          "7-7": "Fremdobjekt",
+          "8-8": "Beinbruch",
+          "9-9": "Muskelriss",
+          "10-10": "Rückgratverletzung",
+          "11-11": "Fingerfraktur",
+          "12-12": "Abgetrenntes Bein"
+        }
+      ]
+    },
+    "Critical Injuries (Head)": {
+      "name": "Kritische Verletzungen (Kopf)",
+      "results": [
+        {
+          "2-2": "Verlorenes Auge",
+          "3-3": "Hirntrauma",
+          "4-4": "Augenschaden",
+          "5-5": "Gehirnerschütterung",
+          "6-6": "Kieferbruch",
+          "7-7": "Fremdkörper (Kopf)",
+          "8-8": "Schleudertrauma",
+          "9-9": "Schädeltrauma",
+          "10-10": "Ohrenschaden",
+          "11-11": "Zerquetschte Luftröhre",
+          "12-12": "Verlorenes Ohr"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "label": "Todo acerca de los Drones",
+  "mapping": {},
+  "entries": {
+    "GRAF3": {
+      "name": "GRAF3",
+      "description": "<p>Dron de construcción cuadrúpedo.</p>\n<p>Consulte la descripción completa de la página 59 de Interface Red vol. 1.</p>"
+    },
+    "My First GRAF3": {
+      "name": "Mi Primer GRAF3",
+      "description": "<p>Dron personal. Mini GRAF3 que puede ser vinculado a un agente.</p>\n<p>Consulte la descripción completa de la página 61 de Interface Red vol. 1.</p>"
+    },
+    "Savannah Eagle": {
+      "name": "Águila de la Sabana",
+      "description": "<p>Dron de defensa aéreo activo.</p>\n<p>Consulte la descripción del combustible en la página 60 de Interface Red vol. 1.</p>"
+    },
+    "Savannah Panther": {
+      "name": "Pantera de la Sabana",
+      "description": "<p>Dron Defensivo Activo.</p>\n<p>Consulte la descripción completa de la página 61 de Interface Red vol. 1.</p>"
+    },
+    "The Observer": {
+      "name": "El Observador",
+      "description": "<p>Dron personal. Cámara voladora que puede estar vinculada a un agente.</p>\n<p>Consulte la descripción completa de la página 62 de Interface Red vol. 1.</p>"
+    },
+    "The Transporter": {
+      "name": "El Transportador",
+      "description": "<p>Dron Personal. Dron transportador que puede ser vinculado a un agente.</p>\n<p>Consulte la descripción completa de la página 63 de Interface Red vol. 1.</p>"
+    }
+  }
+}

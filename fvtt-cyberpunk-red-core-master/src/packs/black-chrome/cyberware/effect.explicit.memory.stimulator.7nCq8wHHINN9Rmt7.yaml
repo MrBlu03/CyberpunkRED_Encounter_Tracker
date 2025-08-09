@@ -1,0 +1,32 @@
+_id: 7nCq8wHHINN9Rmt7
+_key: "!items.effects!VSw96UuPdlXfu7Hy.7nCq8wHHINN9Rmt7"
+changes:
+  - key: bonuses.concentration
+    mode: 2
+    priority: null
+    value: "2"
+description: ""
+disabled: false
+duration:
+  combat: null
+  rounds: null
+  seconds: null
+  startRound: null
+  startTime: null
+  startTurn: null
+  turns: null
+flags:
+  cyberpunk-red-core:
+    changes:
+      cats:
+        "0": skill
+      situational:
+        "0":
+          isSituational: false
+          onByDefault: false
+icon: >-
+  systems/cyberpunk-red-core/icons/compendium/black-chrome/explicit-memory-stimulator.svg
+name: Explicit Memory Stimulator
+statuses: []
+tint: null
+transfer: true

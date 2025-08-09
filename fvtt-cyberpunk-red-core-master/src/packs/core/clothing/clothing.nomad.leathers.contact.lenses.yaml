@@ -1,0 +1,37 @@
+_id: cmgqzHg3KxyJx7LP
+_key: "!items!cmgqzHg3KxyJx7LP"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/clothing/generic_contact_lenses.svg
+name: Nomad Leathers Contact Lenses
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: >
+      <p>If you want to look like a chromed-up cowboy, this is perfect for
+      you.</p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: false
+  price:
+    market: 20
+  providesHardening: false
+  revealed: true
+  source:
+    book: Core
+    page: 356
+  style: nomadLeathers
+  type: contactLenses
+  usage: equipped
+type: clothing

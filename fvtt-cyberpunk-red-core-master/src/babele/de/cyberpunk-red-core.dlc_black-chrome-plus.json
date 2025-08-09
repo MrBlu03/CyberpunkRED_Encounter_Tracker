@@ -1,0 +1,98 @@
+{
+  "label": "Black Chrome Plus",
+  "mapping": {
+    "dvTable": "system.dvTable"
+  },
+  "entries": {
+    "Arrow (Junk)": {
+      "name": "Pfeil (Schrott)",
+      "description": "<p>Junk ammo; cheap but deals 1d6 less damage against anyone with 1SP or more.</p>"
+    },
+    "Big Dreem Rounds": {
+      "name": "Big Dreem Munition",
+      "description": "<p>Spezielle Munition für die Teen Dreem.</p>"
+    },
+    "Heavy Pistol (Junk)": {
+      "name": "Schwere Pistole (Schrott)",
+      "description": "<p>Schrottmunition; billig, aber verursacht 1d6 weniger Schaden gegen jeden mit 1 SW Panzerung oder mehr.</p>"
+    },
+    "Heavy Pistol (Small Game)": {
+      "name": "Schwere Pistole (Kleinwild)",
+      "description": "<p>Kleinwildmunition; nicht gut gegen Leute. Verursacht 2d6 weniger Schaden.</p>"
+    },
+    "Medium Pistol (Junk)": {
+      "name": "Mittelschwere Pistole (Schrott)",
+      "description": "<p>Junk ammo; cheap but deals 1d6 less damage against anyone with 1SP or more.</p>"
+    },
+    "Medium Pistol (Small Game)": {
+      "name": "Mittelschwere Pistole (Kleinwild)",
+      "description": "<p>Kleinwildmunition; nicht gut gegen Leute. Verursacht 2d6 weniger Schaden.</p>"
+    },
+    "Rifle (Junk)": {
+      "name": "Gewehr (Schrott)",
+      "description": "<p>Junk ammo; cheap but deals 1d6 less damage against anyone with 1SP or more.</p>"
+    },
+    "Rifle (Small Game)": {
+      "name": "Gewehr (Kleinwild)",
+      "description": "<p>Kleinwildmunition; nicht gut gegen Leute. Verursacht 2d6 weniger Schaden.</p>"
+    },
+    "Shotgun Slug (Junk)": {
+      "name": "Flintenpatrone (Schrott)",
+      "description": "<p>Junk ammo; cheap but deals 1d6 less damage against anyone with 1SP or more.</p>"
+    },
+    "Very Heavy Pistol (Junk)": {
+      "name": "Sehr schwere Pistole (Schrott)",
+      "description": "<p>Junk ammo; cheap but deals 1d6 less damage against anyone with 1SP or more.</p>"
+    },
+    "Very Heavy Pistol (Small Game)": {
+      "name": "Sehr Schwere Pistole (Kleinwild)",
+      "description": "<p>Kleinwildmunition; nicht gut gegen Leute. Verursacht 2d6 weniger Schaden.</p>"
+    },
+    "Scavenged Armor": {
+      "name": "Geplünderte Panzerung",
+      "description": "<p>Ein geplünderter Leichter Panzeranzug für den Körper, der nicht repariert werden kann. Siehe BC+ S. 4.</p>"
+    },
+    "Piranha Smash": {
+      "name": "Piranha-Smash",
+      "description": "<p>Sieht aus wie Smash, dabei ist es Smash mit Limettengeschmack.</p>\n<p><strong>Hauptwirkung</strong></p>\n<p>Dosis hält 4 Stunden.</p>\n<p>Nutzer fühlt sich glücklich, euphorisch und zufrieden und erhält +2 auf folgende Fertigkeiten</p>\n<ul>\n<li>Schauspiel</li>\n<li>Tanzen</li>\n<li>Kontorsionist</li>\n<li>Konversation</li>\n<li>Menschenkenntnis</li>\n<li>Überreden</li>\n</ul>\n<p><strong>Nebenwirkung (SG9)</strong></p>\n<p>Wenn die Dosis zu wirken aufhört, wirft der Nutzer Folter/Drogen widerstehen + 1d10 gegen den SG für die Nebenwirkungen.</p>\n<p>Bei einem Fehlschlag erhält der Nutzer einen Malus von -2 auf folgende Fertigkeiten</p>\n<ul>\n<li>Schauspiel</li>\n<li>Tanzen</li>\n<li>Kontorsionist</li>\n<li>Konversation</li>\n<li>Menschenkenntnis</li>\n<li>Überreden</li>\n</ul>"
+    },
+    "Bullet To Slug Adapter Casings": {
+      "name": "Kugel-zu-Flintenpatrone-Adapterhülsen",
+      "description": "<p>Make any bullet able to be fired as a shotgun slug.</p>\n<p>A box of Bullet to Slug Adapter Casings comes with 10 casings.</p>\n<p>You can load 10 bullets into 10 adapters using the included jig in an Action. If loading by hand it takes an Action to load 1 bullet.</p>"
+    },
+    "Solo of Fortune Bodypillow": {
+      "name": "Solo of Fortune Bodypillow",
+      "description": "<p>Körperkissen mit dem Bild eines berühmten Solos der 2020er (wie Morgan Blackhand, BoaBoa Weyland oder Adam Smasher).</p>\n<p>20x 54 Zoll (50.8 cm x 137.16 cm), außer das für Adam Smasher, das ist bedeutend größer.</p>"
+    },
+    "Big Dreem": {
+      "name": "Big Dreem",
+      "description": "<p>Exotische MP. Nur Automatisches Feuer. Selbst wenn du die Waffe fallen lässt, schießt sie weiter Automatisches Feuer.</p>",
+      "dvTable": "SG MP (Automatisch)"
+    },
+    "Hello Cutie 1TruLuv": {
+      "name": "Hello Cutie 1TruLuv",
+      "description": "<p>Exotic Sniper Rifle. Can load non basic ammunition.</p>\n<p>Equipped with a Sniping Scope and Infrared Night Vision Scope*, and built-in Agent which includes a pseudo AI girlfriend who can recognize and talk to the owner.</p>\n<p>Take good care of it/her and use it/her regularly and the weapon improves. Neglect it/her and you'll have to apologize...</p>\n<p><em>* These upgrades need to be installed manually after adding to an actor<br></em></p>",
+      "dvTable": "SG Scharfschützengewehr"
+    },
+    "Molotov Cocktail": {
+      "name": "Molotowcocktail",
+      "description": "<p>Empfindliche Brandgranate. Ziel gilt als Tödlich Brennend. (Siehe CP:R S. 180)</p>",
+      "dvTable": "SG Wurfwaffe"
+    },
+    "SportMaster": {
+      "name": "SportMaster",
+      "description": "<p>Ein Sportgewehr, für Spaß, nicht für Leute. Kann nur Kleinwild-Munition laden und verfügt nicht über Automatisches Feuer oder Unterdrückungsfeuer.</p>",
+      "dvTable": "SG Sturmgewehr"
+    },
+    "SurvivalMaster": {
+      "name": "SurvivalMaster",
+      "description": "<p>Exotisches Sturmgewehr, kein Automatisches Feuer, kein Unterdrückungsfeuer.</p>",
+      "dvTable": "SG Sturmgewehr"
+    },
+    "Timeless WW1 Rifle to Pistol Conversion": {
+      "name": "Umwandlung Zeitloses WK1-Gewehr zur Pistole",
+      "description": "<p>Wandelt ein altes Gewehr in eine Sehr Schwere Pistole (Schlechte Qualität) um.</p>\n<p>Nach jedem Schuss muss die Waffe als Aktion nachgeladen werden.</p>",
+      "dvTable": "SG Pistole"
+    }
+  }
+}

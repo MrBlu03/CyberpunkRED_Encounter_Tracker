@@ -1,0 +1,28 @@
+# Manages issues when we merge into `master`
+#
+# Automates updating any Issues when merging a Merge Request:
+#   * Adds a text reply that a MR has been merged into `master`
+#   * Adds Labels
+#   * Closes Issue
+#
+# NOTE: This will run on all pushes to `master` (including manual ones),
+# however there is logic in the script to ensure it only runs if it's
+# related to a Merge Request. This is because GitLab CI doesn't expose any
+# MR variables when merging from an MR for some reason.
+
+manage-issues-on-merge:
+  stage: init
+  image: mvdan/shfmt:latest-alpine
+  before_script:
+    - apk update
+    - apk add bash jq curl
+  script:
+    - ./.gitlab/pipeline_utils/manage-issues-on-merge.sh
+  needs:
+    - job: init
+      artifacts: true
+  rules:
+    # Don't run if we're in the cleanup-dev schedule
+    - if: $CPR_SCHEDULE == "cleanup-dev"
+      when: never
+    - if: $CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH

@@ -1,0 +1,13 @@
+_id: TGVSxOE3pxFV34Sm
+_key: "!tables.results!n7IlIvMfg7yW1OoE.TGVSxOE3pxFV34Sm"
+documentCollection: cyberpunk-red-core.core_critical-injuries-body
+documentId: RAZcouFe0FS1VN1o
+drawn: false
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/critical_injuries/collapsed_lung.svg
+range:
+  - 4
+  - 4
+text: Collapsed Lung
+type: 2
+weight: 1

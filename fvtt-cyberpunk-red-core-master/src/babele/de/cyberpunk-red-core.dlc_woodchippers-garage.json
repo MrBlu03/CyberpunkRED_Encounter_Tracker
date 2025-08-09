@@ -1,0 +1,73 @@
+{
+  "label": "Woodchippers Garage",
+  "mapping": {
+    "dvTable": "system.dvTable"
+  },
+  "entries": {
+    "M-02 Rounds": {
+      "name": "M-02 Munition",
+      "description": "<p>Spezielle panzerbrechende Munition, nur für die Verwendung mit dem Schweren Sturmgewehr Sternmeyer M-02. Trommel von 80 Schuss.</p>"
+    },
+    "Paintball (Biotoxin)": {
+      "name": "Farbkugel (Biotoxin)",
+      "description": "<p>Aus 3 Flaschen Biotoxin zusammengebastelt. Verursacht bei Treffern keinen direkten Schaden.</p>"
+    },
+    "Paintball (Poison)": {
+      "name": "Farbkugel (Gift)",
+      "description": "<p>Aus 3 Flaschen Gift zusammengebastelt. Verursacht bei Treffern keinen direkten Schaden.</p>"
+    },
+    "Aegis": {
+      "name": "Aegis",
+      "description": "<p>Diese Waffe kann keine Kritischen Verletzungen zufügen, Panzerung nicht abtragen, und wenn sie ein Ziel unter 1 TP bringen würde, verbleibt es stattdessen auf 1 TP und wird bewusstlos.</p>"
+    },
+    "Archimedes": {
+      "name": "Archimedes",
+      "description": "<p>Nutzt die Fertigkeit Luftfahrzeug lenken statt Schwere Waffen zum Schießen. Nutzer benötigt Zielerfassung-Cyberware. Kann nur Smart-Raketen verschießen. Eine Smart-Rakete ist inklusive, wie nett.</p>",
+      "dvTable": "SG Raketenwerfer"
+    },
+    "Burst Flamethrower": {
+      "name": "Burst-Flammenwerfer",
+      "description": "<p>Kann nur Brand-Schrotpatronen schießen, aber Ziele die von dieser Waffe in Brand gesteckt haben brennen für 4 TP pro Zug.<br><br>Zusätzlich kann die Waffe alle verbleibende Munition verbrauchen um einen Feuerball zu verschießen, der ähnlich einer Brandgranate explodiert. Der Feuerball erfasst auch den Schützen und dieser gilt als Tödlich Brennend*.</p>\n<p><em>*Spezieller Feuermodus aktuell nicht unterstützt; muss manuell angewendet werden</em></p>",
+      "dvTable": "SG Flinte (Flintenpatrone)"
+    },
+    "Enviro-launcher": {
+      "name": "Enviro-Werfer",
+      "description": "<p>Dieser speziell konstruierte Raketenwerfer kann nur einmal abgeschossen werden. Dafür kann der Nutzer nach dem Abschuss eine Aktion nutzen, um eine an der Waffe angebrachte Flasche zu zerbrechen. Das freigesetzte Enzym zerstört die Waffe innerhalb von einer Stunde vollständig.</p>",
+      "dvTable": "SG Raketenwerfer"
+    },
+    "Flare Gun": {
+      "name": "Leuchtpistole",
+      "description": "<p>Neben gewöhnlicher Granatmunition kann diese Waffe Straßenleuchtfackeln verschießen. Die fügen keinen Schaden zu, aber können 3 Meilen weit gesehen werden, wenn sie in die Luft gefeuert werden. Diese Waffe kann nicht in Pop-Up-Cyberware installiert werden.</p>\n<p><em>*Momentan nicht unterstützt, Straßenleuchtfackeln müssen nach dem Abfeuern manuell aus dem Inventar gelöscht werden</em></p>",
+      "dvTable": "SG Granatwerfer"
+    },
+    "M-02 Heavy Rifle": {
+      "name": "M-02 Schweres Sturmgewehr",
+      "description": "<p>Diese Waffe verschießt spezielle Munition mit Kosten von 500eb (Kostspielig) für 80 Schuss panzerbrechende Munition.</p>",
+      "dvTable": "SG Sturmgewehr"
+    },
+    "Nomad Air Cannon": {
+      "name": "Nomaden-Luftkanone",
+      "description": "<p>Statt normaler Flintenmunition verschießt diese Waffe die in sie gefüllte Flüssigkeit. Säure kostet 10eb (Billig) und reduziert alle vom Ziel getragene Panzerung um 1 SW. Gift oder Biotoxin kann auch geladen werden und benötigt 3 Flaschen pro Schuss.</p>"
+    },
+    "Pocket Launcher": {
+      "name": "Taschenwerfer",
+      "description": "<p>Während sie nicht geladen ist, kann diese Waffe verborgen werden.</p>",
+      "dvTable": "SG Raketenwerfer"
+    },
+    "SDF-45": {
+      "name": "SDF-45",
+      "description": "<p>Dieser Raketenwerfer kann nur panzerbrechende Raketen laden und verfügt über eine maximale Reichweite von 400 m. Wenn Raketen einzeln abgeschossen werden, entscheidet die SL wo sie landen. Werden zwei Raketen auf einmal abgeschossen entscheidet die SL ebenfalls, aber die die Raketen schlagen mindestens 50 m abseits vom Ziel und 10 m voneinander entfernt ein.</p>",
+      "dvTable": "SG Raketenwerfer"
+    },
+    "TearJerker": {
+      "name": "TearJerker",
+      "description": "<p>Diese Waffe kann nur Rauch- oder Tränengas-Munition verschießen.</p>",
+      "dvTable": "SG Granatwerfer"
+    },
+    "Triple Treat": {
+      "name": "Triple Treat",
+      "description": "<p>\n  Comes with an Exotic Grenade Launcher Underbarrel* which - as the main gun is\n  poor quality - functions as a poor quality weapon. It can't be removed. Both\n  that and the main weapon can fire non-Basic Ammunition.\n</p>\n<p><em>*Must be manually added after acquiring the weapon</em></p>\n",
+      "dvTable": "SG Raketenwerfer"
+    }
+  }
+}

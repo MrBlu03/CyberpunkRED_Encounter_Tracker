@@ -1,0 +1,46 @@
+{
+  "label": "Role",
+  "mapping": {},
+  "entries": {
+    "Exec": {
+      "name": "Korpo",
+      "description": "<p>Dyrektorzy biznesowi i obrońcy grubych ryb gotowi wszystko zaryzykować, żeby tylko wspiąć się po drabinie korporacji i zrealizować Nowy Amerykański Sen.</p>"
+    },
+    "Fixer": {
+      "name": "Fixer",
+      "description": "<p>Potrafią dorwać cokolwiek i kogokolwiek, jeśli tylko kasa się zgadza. Używając swojego uroku i umiejętności w fachu, podtrzymują całą ekonomię Mroczej Przyszłości w ruchu poprzez swoje interesy.</p>"
+    },
+    "Lawman": {
+      "name": "Stróż Prawa",
+      "description": "<p>Renegaccy obrońcy, korporacyjne drużyny szturmowe, czy ostatnie resztki rządowej policji, patrolują ulice egzekwując jakikolwiek porządek w bezprawnym świecie.</p>"
+    },
+    "Media": {
+      "name": "Media",
+      "description": "<p>Dziennikarze, influencerzy, czy fenomeny kulturowe, są gotowi pokazać prawdę za pomocą wszelkich niezbędnych środków.</p>"
+    },
+    "Medtech": {
+      "name": "Medyk",
+      "description": "<p>Lekarze z bocznych uliczek i mechanicy cyborgizacji, używają swoich umiejętności, żeby podtrzymać kolegów krawędziarzy w dobrym stanie i z odpowiednimi cyborgizacjami, często za jakąś cenę.</p>"
+    },
+    "Netrunner": {
+      "name": "Netrunner",
+      "description": "<p>Mistrzowscy hackerzy, którzy narażają samych siebie na ryzyko za każdym razem gdy wpinają się do cyberprzestrzeni, żeby pobrać sekrety i zinfiltrować sieci.</p>"
+    },
+    "Nomad": {
+      "name": "Nomada",
+      "description": "<p>Goście od samochodów, tirowcy, miłośnicy transportu, piraci powietrzni, to właśnie oni głównie transportują wszelkie produkty po całym globie, podtrzymując transport i łańcuchy zaopatrzeniowe w czasach Czerwieni.</p>"
+    },
+    "Rockerboy": {
+      "name": "Rocker",
+      "description": "<p>Rebelianccy artyści używający swojej sztuki do wpływania na fanów, tłumy i do walki.</p>"
+    },
+    "Solo": {
+      "name": "Solo",
+      "description": "<p>Eksperci walki, któzy używają swojego doświadczenia w walce do dominacji w bezprawnych czasach Czerwieni.</p>"
+    },
+    "Tech": {
+      "name": "Technik",
+      "description": "<p>Wyśmienite zrozumienie technologii pozwala technikom wynajdywać, ulepszać i naprawiać w celu utrzymania funkcjonalnej Mrocznej Przyszłości.</p>"
+    }
+  }
+}

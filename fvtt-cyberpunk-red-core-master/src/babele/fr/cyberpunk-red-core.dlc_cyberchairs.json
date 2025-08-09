@@ -1,0 +1,14 @@
+{
+  "label": "Cybersièges",
+  "mapping": {},
+  "entries": {
+    "Mercurius Cyberchair": {
+      "name": "Cybersiège Mercurius",
+      "description": "<p>Un cybersiège incroyablement abordable, offrant d'excellentes fonctionnalités à ce prix. Lors de son utilisation, le MOUV de base de l'opérateur devient 5, et toutes les options de déplacement régulières restent disponibles.</p>\n<p>Le fonctionnement du cybersiège nécessite soit une main libre, soit une prise d'interface.</p>\n<p>Si l'opérateur subit une blessure critique qui réduit son MOUV, le MOUV de la chaise cybernétique est affecté à la place.</p>\n<p>Le cybersiège ne peut pas être ciblé spécifiquement, ni être désactivé par les effets IEM.</p>"
+    },
+    "Spider Cyberchair": {
+      "name": "Cybersiège Spider",
+      "description": "<p>Le haut de la ligne cybersiège, offrant de nombreuses options. Lors de son utilisation, le MOUV de base de l'opérateur devient 5, et toutes les options de déplacement régulières restent disponibles.</p>\n<p>De plus, ce cybersiège a de la place pour 4 options cybermembres*. Toutes les options installées comptent toujours comme étant par paires.</p>\n<p>Le fonctionnement du cybersiège nécessite soit une main libre, soit une prise d'interface.</p>\n<p>Si l'opérateur subit une blessure critique qui réduit son MOUV, le MOUV du cybersiège est affecté à la place.</p>\n<p>Le cybersiège ne peut pas être ciblé spécifiquement, ni être désactivé par des effets IEM.</p>\n<p><em>*Installation des options de cybermembres actuellement non prise en charge</em></p>"
+    }
+  }
+}

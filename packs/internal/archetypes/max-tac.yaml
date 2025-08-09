@@ -1,0 +1,16 @@
+name: Max-Tac
+system:
+  baseInitiative: 8
+  maxHealth: 60
+  armor:
+    body: 13
+    head: 12
+  shield: 0
+  weapons:
+  - id: core/weapons/weapon.assault.rifle
+  - id: core/weapons/weapon.very.heavy.pistol
+  - id: core/weapons/weapon.combat.knife
+  tags: [elite, corporate]
+source:
+  book: Internal
+  page: 0

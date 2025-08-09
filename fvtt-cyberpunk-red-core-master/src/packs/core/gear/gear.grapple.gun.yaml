@@ -1,0 +1,33 @@
+_id: VrwVUEHuMCGjp8Fi
+_key: "!items!VrwVUEHuMCGjp8Fi"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/gear/grapple_gun.svg
+name: Grapple Gun
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>Range: 30m/yds. Not usable as weapon.</p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: false
+  price:
+    market: 100
+  providesHardening: false
+  revealed: true
+  source:
+    book: Core
+    page: 353
+  usage: toggled
+type: gear

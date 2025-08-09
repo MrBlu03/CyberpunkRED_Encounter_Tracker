@@ -1,0 +1,39 @@
+_id: OdeOEmoocJix2BbC
+_key: "!items!OdeOEmoocJix2BbC"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/clothing/generic_contact_lenses.svg
+name: Bag Lady Chic Contact Lenses
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        Follow the latest dumpster diver fashion trends! Torn and worn out clothes,
+        perfect if you want that homeless look.
+      </p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: false
+  price:
+    market: 10
+  providesHardening: false
+  revealed: true
+  source:
+    book: Core
+    page: 356
+  style: bagLadyChic
+  type: contactLenses
+  usage: equipped
+type: clothing

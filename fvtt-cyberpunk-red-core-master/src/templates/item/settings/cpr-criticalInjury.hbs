@@ -1,0 +1,118 @@
+{{!-- Critical Injury Location Settings--}}
+<li class="item flexrow">
+  <div class="item flexrow setting-name text-nowrap">
+    {{localize "CPR.global.itemTypes.criticalInjury"}} {{localize "CPR.rolls.location"}}
+  </div>
+  <div class="item flexrow setting-value text-nowrap item-end">
+    <select name="system.location" data-dtype="{{item.system.location}}">
+      {{selectOptions (cprFindConfigObj "criticalInjuryLocation") selected=item.system.location localize=true}}
+    </select>
+  </div>
+</li>
+{{!-- Critical Injury Quick Fix Type Settings--}}
+<li class="item flexrow">
+  <div class="item flexrow setting-name text-nowrap">
+    {{localize "CPR.global.criticalInjury.quickfix"}} {{localize "CPR.global.generic.type"}}
+  </div>
+  <div class="item flexrow setting-value text-nowrap item-end">
+    <select name="system.quickFix.type" data-dtype="{{item.system.quickFix.type}}">
+      {{selectOptions (cprFindConfigObj "criticalInjuryQuickFix") selected=item.system.quickFix.type localize=true}}
+    </select>
+  </div>
+</li>
+{{!-- Critical Injury Quick Fix DV Settings--}}
+{{#if (cprCompare item.system.quickFix.type "===" "paramedic") }}
+  <li class="item flexrow">
+    <div class="item flexrow setting-name text-nowrap">
+      {{localize "CPR.global.criticalInjury.quickfix"}} {{localize "CPR.itemSheet.criticalInjury.dv"}}
+    </div>
+    <div class="item flexrow setting-value text-nowrap item-end">
+      <input name="system.quickFix.dvParamedic"
+             type="number"
+             value="{{item.system.quickFix.dvParamedic}}"/>
+    </div>
+  </li>
+{{/if}}
+{{#if (cprCompare item.system.quickFix.type "===" "firstAidParamedic") }}
+  <li class="item flexrow">
+    <div class="item flexrow setting-name text-nowrap">
+      {{localize "CPR.global.criticalInjury.quickfix"}} {{localize "CPR.itemSheet.criticalInjury.dv"}}
+      ({{localize "CPR.global.itemType.skill.firstAid"}})
+    </div>
+    <div class="item flexrow setting-value text-nowrap item-end">
+      <input name="system.quickFix.dvFirstAid"
+             type="number"
+             value="{{item.system.quickFix.dvFirstAid}}"/>
+    </div>
+  </li>
+  <li class="item flexrow">
+    <div class="item flexrow setting-name text-nowrap">
+      {{localize "CPR.global.criticalInjury.quickfix"}} {{localize "CPR.itemSheet.criticalInjury.dv"}}
+      ({{localize "CPR.global.itemType.skill.paramedic"}})
+    </div>
+    <div class="item flexrow setting-value text-nowrap item-end">
+      <input name="system.quickFix.dvParamedic"
+             type="number"
+             value="{{item.system.quickFix.dvParamedic}}"/>
+    </div>
+  </li>
+{{/if}}
+{{!-- Critical Injury Treatment Type Settings--}}
+<li class="item flexrow">
+  <div class="item flexrow setting-name text-nowrap">
+    {{localize "CPR.itemSheet.criticalInjury.treatment"}} {{localize "CPR.global.generic.type"}}
+  </div>
+  <div class="item flexrow setting-value text-nowrap item-end">
+    <select name="system.treatment.type" data-dtype="{{item.system.treatment.type}}">
+      {{selectOptions (cprFindConfigObj "criticalInjuryTreatment") selected=item.system.treatment.type localize=true}}
+    </select>
+  </div>
+</li>
+{{!-- Critical Injury Treatment DV Settings--}}
+{{#if (cprCompare item.system.treatment.type "===" "surgery") }}
+  <li class="item flexrow">
+    <div class="item flexrow setting-name text-nowrap">
+      {{localize "CPR.itemSheet.criticalInjury.treatment"}} {{localize "CPR.itemSheet.criticalInjury.dv"}}
+    </div>
+    <div class="item flexrow setting-value text-nowrap item-end">
+      <input name="system.treatment.dvSurgery"
+             type="number"
+             value="{{item.system.treatment.dvSurgery}}"/>
+    </div>
+  </li>
+{{/if}}
+{{#if (cprCompare item.system.treatment.type "===" "paramedicSurgery") }}
+  <li class="item flexrow">
+    <div class="item flexrow setting-name text-nowrap">
+      {{localize "CPR.itemSheet.criticalInjury.treatment"}} {{localize "CPR.itemSheet.criticalInjury.dv"}} ({{localize "CPR.global.itemType.skill.paramedic"}})
+    </div>
+    <div class="item flexrow setting-value text-nowrap item-end">
+      <input name="system.treatment.dvParamedic"
+             type="number"
+             value="{{item.system.treatment.dvParamedic}}"/>
+    </div>
+  </li>
+  <li class="item flexrow">
+    <div class="item flexrow setting-name text-nowrap">
+      {{localize "CPR.itemSheet.criticalInjury.treatment"}} {{localize "CPR.itemSheet.criticalInjury.dv"}} ({{localize "CPR.global.role.medtech.ability.surgery"}})
+    </div>
+    <div class="item flexrow setting-value text-nowrap item-end">
+      <input name="system.treatment.dvSurgery"
+             type="number"
+             value="{{item.system.treatment.dvSurgery}}"/>
+    </div>
+  </li>
+{{/if}}
+{{!-- Critical Injury Base Death Save Increase Settings--}}
+<li class="item flexrow">
+  <div class="item flexrow setting-name text-nowrap">
+    {{localize "CPR.itemSheet.criticalInjury.criticalInjuryDeathSave"}}
+  </div>
+  <div class="item flexrow setting-value text-nowrap item-end">
+    {{#if item.system.deathSaveIncrease }}
+      <a class="item-checkbox" data-target="system.deathSaveIncrease"><i class="far fa-circle-check"></i></a>
+    {{else}}
+      <a class="item-checkbox" data-target="system.deathSaveIncrease"><i class="far fa-circle"></i></a>
+    {{/if}}
+  </div>
+</li>

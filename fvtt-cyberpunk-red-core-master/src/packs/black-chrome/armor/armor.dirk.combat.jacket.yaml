@@ -1,0 +1,49 @@
+_id: O455ilkzLFqzgtYE
+_key: "!items!O455ilkzLFqzgtYE"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/black-chrome/dirk-combat-jacket.svg
+name: Dirk Combat Jacket
+system:
+  bodyLocation:
+    ablation: 0
+    sp: 11
+  brand: Zhukova International
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        Leisurewear-styled Light Armorjack and the ability to conceal two standard
+        magazines without a check.
+      </p>
+  equipped: owned
+  favorite: false
+  headLocation:
+    ablation: 0
+    sp: 0
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 0
+    usedSlots: 0
+  isBodyLocation: true
+  isElectronic: false
+  isHeadLocation: false
+  isShield: false
+  penalty: 0
+  price:
+    market: 500
+  providesHardening: false
+  revealed: true
+  shieldHitPoints:
+    max: 0
+    value: 0
+  source:
+    book: BC
+    page: 28
+  usage: toggled
+type: armor

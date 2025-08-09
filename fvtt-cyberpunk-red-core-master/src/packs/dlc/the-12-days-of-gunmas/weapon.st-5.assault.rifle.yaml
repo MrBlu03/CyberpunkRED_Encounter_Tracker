@@ -1,0 +1,53 @@
+_id: poMp4coxB8SORzvi
+_key: "!items!poMp4coxB8SORzvi"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/weapons/AssaultRifle_poor.svg
+name: ST-5 Assault Rifle
+system:
+  ammoVariety:
+    - rifle
+  attackmod: 0
+  brand: Stolbovoy
+  concealable:
+    concealable: false
+    isConcealed: false
+  critFailEffect: coinToss
+  damage: 5d6
+  description:
+    value: |
+      <p>
+        A - relatively - reliable gun. If you roll 1 on Attack (Crit fail) you must
+        then toss a coin; if you win the gun fires as normal, while if you lose the
+        gun jams and requires using an action to clear.
+      </p>
+  dvTable: DV Assault Rifle
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 4
+    suppressiveFire: true
+  handsReq: 2
+  installedItems:
+    allowed: true
+    allowedTypes: []
+    list: []
+    slots: 0
+    usedSlots: 0
+  isRanged: true
+  magazine:
+    max: 20
+    value: 0
+  price:
+    market: 100
+  quality: poor
+  revealed: true
+  rof: 1
+  source:
+    book: 12DoG
+    page: 6
+  unarmedAutomaticCalculation: true
+  usage: equipped
+  usesType: magazine
+  weaponSkill: Shoulder Arms
+  weaponType: assaultRifle
+type: weapon

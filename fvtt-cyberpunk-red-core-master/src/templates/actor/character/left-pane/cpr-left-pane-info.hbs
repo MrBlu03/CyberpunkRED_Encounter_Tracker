@@ -1,0 +1,246 @@
+<div class="actor-details text-normal text-center">
+  {{!-- Image --}}
+  <div class="actor-details-image">
+    <img class="profile-img"
+         src="{{actor.img}}"
+         data-edit="img"
+         data-tooltip="{{actor.name}}"/>
+    {{#if isHardened.value }}
+      <i class="fa-solid fa-shield overlay"
+         data-tooltip="
+          {{localize 'CPR.characterSheet.leftPane.hardened.reasons.isHardened'}}
+          <hr />
+          {{#each isHardened.reasons as |reason|}}
+            <p>
+              {{reason}}
+            </p>
+          {{/each}}
+         ">
+      </i>
+    {{/if}}
+  </div>
+  {{!-- Handle --}}
+  <div class="actor-details-handle text-hero text-large text-padding-sides-smallest">
+    <input name="name"
+           type="text"
+           value="{{actor.name}}"
+           placeholder="{{localize "CPR.characterSheet.leftPane.handle"}}"/>
+  </div>
+  {{!-- Role --}}
+  <div class="actor-details-role text-semi text-padding-sides-smallest">
+    <input name="system.roleInfo.activeRole"
+           type="text"
+           value="{{actor.system.roleInfo.activeRole}}"
+           placeholder="{{localize "CPR.global.generic.role"}}"/>
+  </div>
+  {{!-- Hit Points --}}
+  <div class="actor-details-hp">
+    <div class="actor-details-hp-title text-semi text-padding-sides-smallest">
+      <a class="calculate-hp"
+         data-tooltip="{{localize "CPR.characterSheet.leftPane.calculateMaxHp"}}">
+        {{localize "CPR.global.generic.hitpoints"}}
+      </a>
+    </div>
+    <div class="actor-details-hp-current text-right text-padding-left-smallest">
+      <input class="text-center"
+             name="system.derivedStats.hp.value"
+             type="number"
+             value="{{actor.system.derivedStats.hp.value}}"
+             data-dtype="Number"/>
+    </div>
+    <div class="actor-details-hp-of">
+      /
+    </div>
+    <div class="actor-details-hp-max text-left text-padding-left-smaller">
+      <input
+         class="text-center"
+         name="system.derivedStats.hp.max"
+         type="number"
+         value="{{actor.system.derivedStats.hp.max}}"
+         data-dtype="Number" />
+    </div>
+  </div>
+  {{!-- Humanity --}}
+  <div class="actor-details-humanity">
+    <div class="actor-details-humanity-title text-semi text-padding-sides-smallest">
+      <a class="calculate-humanity"
+         data-tooltip="{{localize "CPR.characterSheet.leftPane.calculateMaxHumanity"}}">
+        {{localize "CPR.characterSheet.leftPane.humanity"}}
+      </a>
+    </div>
+    <div class="actor-details-humanity-current text-right text-padding-left-smallest">
+      <input class="width-full"
+             name="system.derivedStats.humanity.value"
+             type="number"
+             value="{{actor.system.derivedStats.humanity.value}}"
+             data-dtype="Number"/>
+    </div>
+    <div class="actor-details-humanity-of">
+      /
+    </div>
+    <div class="actor-details-humanity-max text-left text-padding-left-smaller">
+      <input
+         class="width-full"
+         name="system.derivedStats.humanity.max"
+         type="number"
+         value="{{actor.system.derivedStats.humanity.max}}"
+         data-dtype="Number" />
+    </div>
+  </div>
+  {{!-- Death Save --}}
+  <div class="actor-details-death-save">
+    <div class="actor-details-death-save-title text-semi">
+      <a class="rollable"
+         data-roll-title="{{localize "CPR.characterSheet.leftPane.deathSave.title"}}"
+         data-tooltip="{{localize "CPR.characterSheet.leftPane.deathSave.roll"}}"
+         data-roll-type="deathsave">
+        {{localize "CPR.characterSheet.leftPane.deathSave.title"}}
+      </a>
+    </div>
+    <div class="actor-details-death-save-reset">
+      <a class="reset-deathsave-value"
+        data-tooltip="{{localize "CPR.characterSheet.leftPane.deathSave.reset"}}">
+        <i class="fa-solid fa-arrow-rotate-left"></i>
+      </a>
+    </div>
+    <div class="actor-details-death-save-value"
+         data-tooltip="{{localize "CPR.global.generic.deathPenalty"}}:
+           {{actor.system.derivedStats.deathSave.penalty}}
+           </br>
+           {{localize "CPR.characterSheet.leftPane.deathSave.hoverCriticalInjuryPenalty"}}:
+           {{actor.system.derivedStats.deathSave.basePenalty}}">
+      {{actor.system.derivedStats.deathSave.value}}
+    </div>
+    <div class="actor-details-death-save-actions">
+      <a class="increase-deathsave-value">
+        <i class="far fa-circle-up"
+           data-tooltip="{{localize "CPR.characterSheet.leftPane.deathSave.increase"}}">
+        </i>
+      </a>
+    </div>
+  </div>
+  {{!-- Wound State --}}
+  <div class="actor-details-wound-state">
+    <div class="actor-details-wound-state-title text-semi text-padding-sides-smallest">
+      {{localize "CPR.characterSheet.leftPane.woundState"}}
+    </div>
+    <div class="actor-details-wound-state-value">
+      {{#with actor.system.derivedStats.currentWoundState as |state| }}
+        {{#if (cprCompare state "===" "notWounded") }}
+          <img src="systems/cyberpunk-red-core/icons/hud/wounded_none.svg"
+               width="20"
+               height="20"
+               alt="{{localize "CPR.global.woundState.notWounded"}}"
+               data-tooltip="{{localize "CPR.global.woundState.notWounded"}}"/>
+        {{/if}}
+        {{#if (cprCompare state "===" "lightlyWounded") }}
+          <img src="systems/cyberpunk-red-core/icons/hud/wounded_lightly.svg"
+               width="20"
+               height="20"
+               alt="{{localize "CPR.global.woundState.lightlyWounded"}}"
+               data-tooltip="{{localize "CPR.global.woundState.lightlyWounded"}}"/>
+        {{/if}}
+        {{#if (cprCompare state "===" "seriouslyWounded") }}
+          <img src="systems/cyberpunk-red-core/icons/hud/wounded_seriously.svg"
+               width="20"
+               height="20"
+               alt="{{localize "CPR.global.woundState.seriouslyWounded"}}"
+               data-tooltip="{{localize "CPR.global.woundState.seriouslyWounded"}}"/>
+        {{/if}}
+        {{#if (cprCompare state "===" "mortallyWounded") }}
+          <img src="systems/cyberpunk-red-core/icons/hud/wounded_mortally.svg"
+               width="20"
+               height="20"
+               alt="{{localize "CPR.global.woundState.mortallyWounded"}}"
+               data-tooltip="{{localize "CPR.global.woundState.mortallyWounded"}}"/>
+        {{/if}}
+      {{/with}}
+    </div>
+  </div>
+  {{!-- Improvement Points --}}
+  <div class="actor-details-improvement-points">
+    <div class="actor-details-improvement-points-title text-semi text-padding-sides-smallest">
+      {{localize "CPR.characterSheet.leftPane.improvementPointsShort"}}
+    </div>
+    <div class="actor-details-improvement-points-value">
+      {{#if (cprCompare actor.type "===" "character")}}
+        {{cprNumberFormat actor.system.improvementPoints.value}}
+      {{else}}
+        {{localize "CPR.global.generic.notApplicable"}}
+      {{/if}}
+    </div>
+    <div class="actor-details-improvement-points-actions">
+      {{#if (cprCompare actor.type "===" "character")}}
+        <a class="improvement-points-open-ledger"
+           data-tooltip="{{localize "CPR.ledger.ledgerOpen"}}">
+          <i class="fas fa-note-sticky"></i>
+        </a>
+      {{/if}}
+    </div>
+    <div class="actor-details-wound-state-blank">
+    </div>
+  </div>
+  {{!-- Reputation --}}
+  <div class="actor-details-reputation">
+    <div class="actor-details-reputation-facedown text-padding-sides-smallest">
+      <a class="rollable text-padding-left-smaller"
+         data-tooltip="{{localize "CPR.characterSheet.bottomPane.fight.facedown"}}"
+         data-roll-type="facedown"
+         data-roll-title="{{localize "CPR.characterSheet.bottomPane.fight.facedown"}}">
+        <i class="far fa-face-angry"></i>
+      </a>
+    </div>
+    <div class="actor-details-reputation-title text-semi text-padding-sides-smallest">
+      {{localize "CPR.characterSheet.bottomPane.reputation"}}
+    </div>
+    <div class="actor-details-reputation-value">
+      {{actor.system.reputation.value}}
+    </div>
+    <div class="actor-details-reputation-actions">
+      <a class="reputation-open-ledger"
+         data-tooltip="{{localize "CPR.ledger.ledgerOpen"}}">
+        <i class="fas fa-note-sticky"></i>
+      </a>
+    </div>
+    <div class="actor-details-reputation-blank">
+    </div>
+  </div>
+  {{!-- Eurobucks --}}
+  <div class="actor-details-eurobucks">
+    <div class="actor-details-eurobucks-title text-semi text-padding-sides-smallest">
+      {{localize "CPR.characterSheet.rightPane.eurobucks.eurobucks"}}
+    </div>
+    <div class="actor-details-eurobucks-value">
+      {{#if (cprCompare actor.type "===" "character")}}
+        {{cprNumberFormat actor.system.wealth.value}} eb
+      {{else}}
+        {{localize "CPR.global.generic.notApplicable"}}
+      {{/if}}
+    </div>
+    <div class="actor-details-eurobucks-ledger">
+      {{#if (cprCompare actor.type "===" "character")}}
+        <a class="eurobucks-open-ledger"
+           data-tooltip="{{localize "CPR.ledger.ledgerOpen"}}">
+          <i class="fas fa-note-sticky"></i>
+        </a>
+      {{/if}}
+    </div>
+  </div>
+  {{!-- Sheet Filter --}}
+  <div class="actor-details-filter">
+    <div class="actor-details-filter-box text-left">
+      <input class="filter-contents"
+             type="text"
+             value="{{options.cprContentFilter}}"
+             type="string"
+             placeholder="{{localize 'CPR.characterSheet.leftPane.filter.placeholder'}}"/>
+    </div>
+    <div class="actor-details-filter-actions">
+      <a>
+        <i class="fas fa-xmark reset-content-filter"
+           data-tooltip="{{localize "CPR.actorSheets.clearFilter"}}">
+        </i>
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+{
+  "description": "How the AE is triggered",
+  "type": "string",
+  "enum": [
+    "equipped",
+    "installed",
+    "rezzed",
+    "snorted",
+    "toggled"
+  ]
+}

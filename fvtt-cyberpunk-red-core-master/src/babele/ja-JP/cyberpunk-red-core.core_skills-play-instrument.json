@@ -1,0 +1,26 @@
+{
+  "label": "技能(演奏)",
+  "mapping": {},
+  "entries": {
+    "Play Instrument (Drums)": {
+      "name": "演奏(ドラム)",
+      "description": ""
+    },
+    "Play Instrument (Guitar)": {
+      "name": "演奏(ギター)",
+      "description": ""
+    },
+    "Play Instrument (Piano)": {
+      "name": "演奏(ピアノ)",
+      "description": ""
+    },
+    "Play Instrument (Singing)": {
+      "name": "演奏(歌唱)",
+      "description": ""
+    },
+    "Play Instrument (Violin)": {
+      "name": "演奏(バイオリン)",
+      "description": ""
+    }
+  }
+}

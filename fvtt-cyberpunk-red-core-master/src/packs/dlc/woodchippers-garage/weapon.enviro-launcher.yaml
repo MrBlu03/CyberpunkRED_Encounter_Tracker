@@ -1,0 +1,54 @@
+_id: aqyQqrLUiN9iTv3v
+_key: "!items!aqyQqrLUiN9iTv3v"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/weapons/RocketLauncher.svg
+name: Enviro-launcher
+system:
+  ammoVariety:
+    - rocket
+  attackmod: 0
+  brand: Biotechnica
+  concealable:
+    concealable: false
+    isConcealed: false
+  critFailEffect: jammed
+  damage: 8d6
+  description:
+    value: |
+      <p>
+        This specially engineered rocket launcher is only capable of being fired once.
+        However, once it has been fired the user can use an action to break of a vial
+        attached to the launcher, which will release an enzyme that will destroy the
+        launcher totally within an hour.
+      </p>
+  dvTable: DV Rocket Launcher
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 2
+  installedItems:
+    allowed: true
+    allowedTypes: []
+    list: []
+    slots: 0
+    usedSlots: 0
+  isRanged: true
+  magazine:
+    max: 1
+    value: 0
+  price:
+    market: 500
+  quality: standard
+  revealed: true
+  rof: 1
+  source:
+    book: WG
+    page: 3
+  unarmedAutomaticCalculation: true
+  usage: equipped
+  usesType: magazine
+  weaponSkill: Heavy Weapons
+  weaponType: rocketLauncher
+type: weapon

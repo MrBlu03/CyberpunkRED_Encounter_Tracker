@@ -1,0 +1,58 @@
+{
+  "label": "Must Have Cyberware Deals",
+  "mapping": {},
+  "entries": {
+    "Appetite Controller": {
+      "name": "Appetite Controller",
+      "description": "<p>Suppresses hunger response. User ignores Humanity Loss penalties from starvation trauma but User can still starve. Roll a Death Save at start of 7th consecutive day without eating. +1 to successive Death Saves each day afterwards.</p>\n<p>Requires Biomonitor.</p>"
+    },
+    "Cyberpillow": {
+      "name": "Cyberpillow",
+      "description": "<p>A comfortable Cyberarm popout pillow for naps on the go.&nbsp;</p>"
+    },
+    "External Vidscreen": {
+      "name": "External Vidscreen",
+      "description": "<p>Implanted flexible video screen. Use a socketed Memory Chip or linked Agent to stream video to Vidscreen.</p>"
+    },
+    "Holo Projector Palm": {
+      "name": "Holo Projector Palm",
+      "description": "<p>Projects a small hologram from the User&rsquo;s palm. User can interact with hologram to control a linked Agent&rsquo;s functions. Can be installed in meat arm if it&rsquo;s the only piece of cyberware in that arm.</p>"
+    },
+    "Kill Display": {
+      "name": "Kill Display",
+      "description": "<p>Subdermal Alphanumeric display that shines clearly through the skin. Use a linked Agent to customize the output. Commonly used as &ldquo;kill counter.&rdquo;<br>Qualifies as a Light Tattoo. +2 Wardrobe and Style when the user has 3 or more Light Tattoos.</p>"
+    },
+    "Lead's Turn-On-Show-Off Nails": {
+      "name": "Lead's Turn-On-Show-Off Nails",
+      "description": "<p>Customizable illuminated nail for each fingertip. Includes pen tools for creating custom patterns. Nail patterns can be downloaded from the CitiNet and synced with a linked Agent.<br>Qualifies as a Light Tattoo. +2 Wardrobe and Style when the user has 3 or more Light Tattoos.</p>"
+    },
+    "Mood Eye": {
+      "name": "Mood Eye",
+      "description": "<p>Color-shifting eye lenses. Color is dependent on Neural Link &ldquo;mood&rdquo; scans. DV 21 Acting check to fake a mood scan and change color accordingly. Lenses can be deactivated without an action.</p>\n<ul>\n<li>Red: Rage</li>\n<li>Blue: Sorrow</li>\n<li>Yellow: Terror</li>\n<li>Pink: Horny</li>\n<li>Green: Envy</li>\n<li>Gray: Flatlined</li>\n</ul>\n<p>Fashionware. Requires Neural Link.</p>"
+    },
+    "NeuTongue": {
+      "name": "NeuTongue",
+      "description": "<p>Simulates flavor sensations. Use a linked Agent to customize flavor profiles. Can be deactivated without an Action. No sense of taste when deactivated.</p>\n<p>Replaces Meat tongue.</p>"
+    },
+    "PerfectFit Cyberfoot": {
+      "name": "PerfectFit Cyberfoot",
+      "description": "<p>Adjust foot size to perfectly fit any footwear. User can ignore penalties for wearing footwear that would otherwise be uncomfortable or impracticable.<br>Can be installed in meat leg if it&rsquo;s the only piece of cyberware in that leg.</p>"
+    },
+    "PersonalPak KibbleWarmer": {
+      "name": "PersonalPak KibbleWarmer",
+      "description": "<p>Internal compartment with a high-powered heating element, ideal for warming up pre-packaged meals.</p>"
+    },
+    "Pursuit Security Inc. Personal Shredder": {
+      "name": "Pursuit Security Inc. Personal Shredder",
+      "description": "<p>Heavy duty paper shredder, can be concealed. Features an internal storage for paper shreds.</p>"
+    },
+    "Sponsored Covering (Cyberarm)": {
+      "name": "Sponsored Covering (Cyberarm)",
+      "description": "<p>Earn 20eb monthly by sporting a light-up advertisement on your Cyberarm. User may be responsible for paying the installation fee. Corporate sponsorship may be revoked if the terms are violated, such as obscuring the advertisement with clothing or engaging in &ldquo;off-brand&rdquo; activities.</p>\n<p>Can not be installed in Meat arm.</p>"
+    },
+    "Sponsored Covering (Cyberleg)": {
+      "name": "Sponsored Covering (Cyberleg)",
+      "description": "<p>Earn 20eb monthly by sporting a light-up advertisement on your Cyberleg. User may be responsible for paying the installation fee. Corporate sponsorship may be revoked if the terms are violated, such as obscuring the advertisement with clothing or engaging in &ldquo;off-brand&rdquo; activities.</p>\n<p>Can not be installed in Meat leg.</p>"
+    }
+  }
+}

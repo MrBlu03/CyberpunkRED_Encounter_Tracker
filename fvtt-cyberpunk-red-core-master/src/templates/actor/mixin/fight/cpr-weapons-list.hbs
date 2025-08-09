@@ -1,0 +1,26 @@
+<div class="weapon-content">
+  {{! if we have > 0 ranged weapons equipped, show Ranged title}}
+  {{#unless (cprIsEmpty (cprFilterWeapons actor.system.weapons.equipped "ranged"))}}
+    <li class="items-header flexrow">
+      <span class="text-padding-left-smallest">
+        {{localize "CPR.characterSheet.bottomPane.fight.ranged"}}
+      </span>
+    </li>
+  {{/unless}}
+  {{! Loop over equipped ranged weapons}}
+  {{#each (cprSort (cprFilterWeapons actor.system.weapons.equipped "ranged") "name") as |weapon|}}
+      {{> "systems/cyberpunk-red-core/templates/actor/mixin/fight/mixin/cpr-weapon.hbs" this}}
+  {{/each}}
+  {{! if we have > 0 melee weapons equipped, show Melee title}}
+  {{#unless (cprIsEmpty (cprFilterWeapons actor.system.weapons.equipped "melee"))}}
+    <li class="items-header flexrow">
+      <span class="text-padding-left-smallest">
+        {{localize "CPR.characterSheet.bottomPane.fight.melee"}}
+      </span>
+    </li>
+  {{/unless}}
+  {{! Loop over equipped melee weapons}}
+  {{#each (cprSort (cprFilterWeapons actor.system.weapons.equipped "melee") "name") as |weapon|}}
+    {{> "systems/cyberpunk-red-core/templates/actor/mixin/fight/mixin/cpr-weapon.hbs" this}}
+  {{/each}}
+</div>

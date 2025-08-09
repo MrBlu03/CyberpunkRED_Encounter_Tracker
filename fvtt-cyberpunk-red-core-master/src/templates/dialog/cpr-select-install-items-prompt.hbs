@@ -1,0 +1,65 @@
+<form class="dialog-sheet">
+  <div class="dialog-header flexcol">
+    <div class="text-normal text-center">
+      {{header}}
+    </div>
+    <div class="text-center text-semi">
+      {{!-- Display Available Slots --}}
+      {{localize "CPR.dialog.install.availableSlots"}}:
+      {{cprMath "subtract" (
+        cprApplyUpgrade target target.system.installedItems.slots "slots")
+        target.system.installedItems.usedSlots~}}
+        /
+        {{~cprApplyUpgrade target target.system.installedItems.slots "slots"
+      }}
+    </div>
+  </div>
+  {{#unless (cprIsEmpty this.typeList)}}
+    <hr/>
+    <div class="dialog-grid flexcol">
+      <ol class="dialog-list">
+        {{#each this.typeList as |itemType| }}
+          <li class="dialog-item dialog-item-header flexrow">
+            <div class="dialog-item-name flex-width-75">
+              <span class="text-semi">
+                {{localize (cprFindConfigValue "objectTypes" itemType)}}
+              </span>
+            </div>
+            <div class="dialog-item-detail flex-width-10">
+              <span class="text-semi">
+                {{localize "CPR.global.generic.size"}}
+              </span>
+            </div>
+            <div class="dialog-item-input flexrow flex-width-15">
+              <span class="text-semi">
+                {{localize "CPR.dialog.common.select"}}
+              </span>
+            </div>
+          </li>
+          {{#each ../this.itemsList as |item| }}
+            {{#if (cprCompare item.type "===" itemType) }}
+              <li class="dialog-item flexrow">
+                <div class="dialog-item-name flex-width-75 text-nowrap">
+                  {{item.name}}
+                  {{#if (cprCompare item.type "===" "program") }}
+                    ({{localize (cprFindConfigValue "programClassList" item.system.class)}})
+                  {{/if}}
+                </div>
+                <div class="dialog-item-detail flex-width-10">
+                  {{item.system.size}}
+                </div>
+                <div class="dialog-item-input flex-width-15">
+                  <input type="checkbox"
+                         name="selectedItems"
+                         value="{{item.id}}"
+                         {{checked (cprListContains ../../selectedItems item.id) }}/>
+                </div>
+              </li>
+            {{/if}}
+          {{/each}}
+        {{/each}}
+      </ol>
+    </div>
+  {{/unless}}
+  {{> "systems/cyberpunk-red-core/templates/dialog/cpr-dialog-buttons.hbs"}}
+</form>

@@ -1,0 +1,31 @@
+_id: fby6eAZaHGBFcK1v
+_key: "!items.effects!xH9lmDC4oWAt9l4P.fby6eAZaHGBFcK1v"
+changes:
+  - key: system.stats.body.value
+    mode: 5
+    priority: null
+    value: "14"
+description: ""
+disabled: false
+duration:
+  combat: null
+  rounds: null
+  seconds: null
+  startRound: null
+  startTime: null
+  startTurn: null
+  turns: null
+flags:
+  cyberpunk-red-core:
+    changes:
+      cats:
+        "0": stat
+      situational:
+        "0":
+          isSituational: false
+          onByDefault: false
+icon: systems/cyberpunk-red-core/icons/compendium/gear/linearframe_beta.svg
+name: Linear Frame Beta
+statuses: []
+tint: null
+transfer: true

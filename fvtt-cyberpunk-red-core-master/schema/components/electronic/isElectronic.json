@@ -1,0 +1,4 @@
+{
+  "description": "Is this item electronic?",
+  "type": "boolean"
+}

@@ -1,0 +1,25 @@
+{{#if item.isOwned }}
+  <div class="item-summary-line">
+    <span class="summary-name text-semi">
+      {{localize "CPR.itemSheet.physical.concealed"}}:
+    </span>
+    {{#if item.system.concealable.concealable }}
+      <span class="summary-value">
+        {{cprYesNo item.system.concealable.isConcealed}}
+      </span>
+    {{else}}
+      <span class="summary-value">
+        {{localize "CPR.global.generic.no"}}
+      </span>
+    {{/if}}
+  </div>
+{{else}}
+  <div class="item-summary-line">
+    <span class="summary-name text-semi">
+      {{localize "CPR.itemSheet.physical.concealable"}}:
+    </span>
+    <span class="summary-value">
+      {{cprYesNo item.system.concealable.concealable}}
+    </span>
+  </div>
+{{/if}}

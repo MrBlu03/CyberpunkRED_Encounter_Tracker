@@ -1,0 +1,13 @@
+<li class="item flexrow">
+  <div class="item flexrow setting-name text-nowrap"
+       data-tooltip="{{localize "CPR.global.generic.amount"}}">
+    {{localize "CPR.global.generic.amount"}}
+  </div>
+  <div class="item flexrow setting-value text-nowrap item-end">
+    {{#if this.editable }}
+      <input name="system.amount"  type="number" value="{{item.system.amount}}"/>
+    {{else}}
+      <span class="text-flex-end">{{item.system.amount}}</span>
+    {{/if}}
+  </div>
+</li>

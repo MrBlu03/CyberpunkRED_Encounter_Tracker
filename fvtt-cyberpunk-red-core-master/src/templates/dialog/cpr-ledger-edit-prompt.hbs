@@ -1,0 +1,44 @@
+<form>
+  <div class="dialog-header">
+    <ol class="items-list">
+      <li class="item flexrow">
+        <div class="item flexrow setting-name text-nowrap">
+          {{localize "CPR.dialog.ledgerEdit.action"}}:
+        </div>
+        <div class="item flexrow setting-value text-nowrap item-end">
+          <select name="action">
+            <option value="add">
+              {{localize "CPR.global.generic.add"}}
+            </option>
+            <option value="subtract">
+              {{localize "CPR.global.generic.subtract"}}
+            </option>
+            <option value="set">
+              {{localize "CPR.global.generic.set"}}
+            </option>
+          </select>
+        </div>
+      </li>
+      <li class="item flexrow">
+        <div class="item flexrow setting-name text-nowrap">
+          {{localize "CPR.dialog.ledgerEdit.changeBy"}}:
+        </div>
+        <div class="item flexrow setting-value text-nowrap item-end">
+          <input class="text-right"
+                 name="changeValue"
+                 type="number"
+                 value=""
+                 placeholder="0"/>
+        </div>
+      </li>
+      <li class="item flexrow">
+        <div class="item flexrow setting-name text-nowrap">
+          {{localize "CPR.dialog.ledgerEdit.changeReason"}}:
+        </div>
+        <div class="item flexrow setting-value text-nowrap item-end">
+          <input class="text-right" name="changeReason" type="text" value="" />
+        </div>
+      </li>
+    </ol>
+  </div>
+</form>

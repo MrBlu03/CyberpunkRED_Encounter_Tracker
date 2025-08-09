@@ -1,0 +1,34 @@
+_id: qt96px3IUob27p9f
+_key: "!items!qt96px3IUob27p9f"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/black-chrome/chupacabra.svg
+name: Diego Motors Chupacabra
+system:
+  brand: Diego Motors
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        Compact Groundcar built from recycled parts from older vehicles. Low-tech but
+        high-horse-power.
+      </p>
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  price:
+    market: 37000
+  sdp: 70
+  seats: 6
+  source:
+    book: BC
+    page: 66
+  speedCombat: 20
+  speedNarrative: 100 MPH / 161 KPH
+type: vehicle

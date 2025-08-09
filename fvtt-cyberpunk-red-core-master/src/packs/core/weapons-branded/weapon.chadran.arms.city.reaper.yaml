@@ -1,0 +1,54 @@
+_id: roLmao0FHIDPJ7eC
+_key: "!items!roLmao0FHIDPJ7eC"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/weapons/heavySMG_poor.svg
+name: Chadran Arms City Reaper
+system:
+  ammoVariety:
+    - heavyPistol
+  attackmod: 0
+  brand: Chadran Arms
+  concealable:
+    concealable: false
+    isConcealed: false
+  critFailEffect: jammed
+  damage: 3d6
+  description:
+    value: |
+      <p>
+        A heavy SMG. Due to its size it can't be concealed. If you roll 1 on Attack
+        (Crit fail) the gun jams and requires using an action to clear.
+      </p>
+  dvTable: DV SMG
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 3
+    suppressiveFire: true
+  handsReq: 1
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+      - ammo
+    list: []
+    slots: 3
+    usedSlots: 0
+  isRanged: true
+  magazine:
+    max: 40
+    value: 0
+  price:
+    market: 50
+  quality: standard
+  revealed: true
+  rof: 1
+  source:
+    book: Core
+    page: 341
+  unarmedAutomaticCalculation: true
+  usage: equipped
+  usesType: magazine
+  weaponSkill: Handgun
+  weaponType: smg
+type: weapon

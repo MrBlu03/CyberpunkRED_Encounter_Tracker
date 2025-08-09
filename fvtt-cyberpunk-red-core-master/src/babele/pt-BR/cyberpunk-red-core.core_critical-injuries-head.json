@@ -1,0 +1,50 @@
+{
+  "label": "Ferimento Crítico (Cabeça)",
+  "mapping": {},
+  "entries": {
+    "Brain Injury": {
+      "name": "Lesão no cérebro",
+      "description": "<p>-2 para ações.</p>"
+    },
+    "Broken Jaw": {
+      "name": "Geleia Quebrada",
+      "description": "<p>-4 a fala das ações.</p>"
+    },
+    "Concussion": {
+      "name": "Concussão",
+      "description": "<p>-2 to every action.</p>"
+    },
+    "Cracked Skull": {
+      "name": "Crânio Rachado",
+      "description": "<p>Triples damage to HP on aimed headshots (rather than the normal double damage).</p>"
+    },
+    "Crushed Windpipe": {
+      "name": "Pipe de Vento Esmagado",
+      "description": "<p>Não fala.</p>"
+    },
+    "Damaged Ear": {
+      "name": "Orelha Danificada",
+      "description": "<p>If move more than 4m/yds in a Turn, cannot move next turn. -2 to hearing based Perception.</p>"
+    },
+    "Damaged Eye": {
+      "name": "Olho Danificado",
+      "description": "<p>-2 to Ranged and Perception (Sight).</p>"
+    },
+    "Foreign Object (H)": {
+      "name": "Objeto Estrangeiro (H)",
+      "description": "<p>Recebe dano crítico no final do turno se andou mais de 4m/jardas.</p>"
+    },
+    "Lost Ear": {
+      "name": "Orelha Perdida",
+      "description": "<p>Ear is removed. If move more than 4m/yds in a Turn, cannot move next turn. -4 to hearing based Perception.</p>"
+    },
+    "Lost Eye": {
+      "name": "Olho Perdido",
+      "description": "<p>Eye is removed. -4 to Ranged Attacks and vision based Perception.</p>"
+    },
+    "Whiplash": {
+      "name": "Chicote",
+      "description": "<p>No other effects beyond increasing the base Death Save Penalty by 1.</p>"
+    }
+  }
+}

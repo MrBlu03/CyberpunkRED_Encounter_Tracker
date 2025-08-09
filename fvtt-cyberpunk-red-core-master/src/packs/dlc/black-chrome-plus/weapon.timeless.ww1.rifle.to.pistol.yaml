@@ -1,0 +1,50 @@
+_id: 8X8llGr7eUD7KMmP
+_key: "!items!8X8llGr7eUD7KMmP"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/weapons/veryHeavyPistol_poor.svg
+name: Timeless WW1 Rifle to Pistol Conversion
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  critFailEffect: jammed
+  damage: 4d6
+  description:
+    value: |
+      <p>Poor Quality Very Heavy Pistol.</p>
+      <p>Manual rearming of the bolt between each shot (one Action).</p>
+  dvTable: DV Pistol
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 1
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isRanged: true
+  magazine:
+    max: 5
+    value: 0
+  price:
+    market: 20
+  quality: poor
+  revealed: true
+  rof: 1
+  source:
+    book: BC+
+    page: 4
+  unarmedAutomaticCalculation: true
+  usage: toggled
+  usesType: magazine
+  weaponSkill: Handgun
+  weaponType: vHeavyPistol
+type: weapon

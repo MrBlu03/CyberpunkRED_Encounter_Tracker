@@ -1,0 +1,26 @@
+_id: Y65igO9rtakP4qSs
+_key: "!items!Y65igO9rtakP4qSs"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/critical_injuries/broken_arm.svg
+name: Broken Arm
+system:
+  deathSaveIncrease: false
+  description:
+    value: |
+      <p>Arm unusable. Drop what it was holding</p>
+  favorite: false
+  location: body
+  quickFix:
+    dvFirstAid: 0
+    dvParamedic: 13
+    type: paramedic
+  revealed: true
+  source:
+    book: Core
+    page: 187
+  treatment:
+    dvParamedic: 15
+    dvSurgery: 13
+    type: paramedicSurgery
+  usage: toggled
+type: criticalInjury

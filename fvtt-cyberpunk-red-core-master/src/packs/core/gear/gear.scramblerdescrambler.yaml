@@ -1,0 +1,33 @@
+_id: CLaUNQ7cqa05XfFg
+_key: "!items!CLaUNQ7cqa05XfFg"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/gear/scrambler_descrambler.svg
+name: Scrambler/Descrambler
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>Comm scrambler/receiver.</p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: true
+  price:
+    market: 500
+  providesHardening: false
+  revealed: true
+  source:
+    book: Core
+    page: 354
+  usage: toggled
+type: gear

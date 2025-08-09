@@ -1,0 +1,20 @@
+_id: JDfPCCM1T7LZ4SMw
+_key: "!items!JDfPCCM1T7LZ4SMw"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/default/Default_Skill.svg
+name: Science (Zoology)
+system:
+  basic: false
+  category: educationSkills
+  core: false
+  description:
+    value: ""
+  difficulty: typical
+  favorite: false
+  level: 0
+  skillType: science
+  source:
+    book: Core
+    page: 83
+  stat: int
+type: skill

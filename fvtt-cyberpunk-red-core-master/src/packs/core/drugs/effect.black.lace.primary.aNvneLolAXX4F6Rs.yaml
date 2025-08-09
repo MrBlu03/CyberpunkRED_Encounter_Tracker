@@ -1,0 +1,31 @@
+_id: aNvneLolAXX4F6Rs
+_key: "!items.effects!6BM5WFyCyIM8lZib.aNvneLolAXX4F6Rs"
+changes:
+  - key: bonuses.hasPainSuppression
+    mode: 5
+    priority: null
+    value: "1"
+description: ""
+disabled: true
+duration:
+  combat: null
+  rounds: null
+  seconds: null
+  startRound: null
+  startTime: null
+  startTurn: null
+  turns: null
+flags:
+  cyberpunk-red-core:
+    changes:
+      cats:
+        "0": misc
+      situational:
+        "0":
+          isSituational: false
+          onByDefault: false
+icon: systems/cyberpunk-red-core/icons/compendium/status/black_lace.svg
+name: Black Lace Primary
+statuses: []
+tint: null
+transfer: true

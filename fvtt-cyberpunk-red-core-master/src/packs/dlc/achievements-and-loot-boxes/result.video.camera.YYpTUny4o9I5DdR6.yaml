@@ -1,0 +1,12 @@
+_id: YYpTUny4o9I5DdR6
+_key: "!tables.results!4S3emhUCIIDNoTAg.YYpTUny4o9I5DdR6"
+documentCollection: cyberpunk-red-core.core_gear
+documentId: clCxd7qkp2olsKii
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/gear/video_camera.svg
+range:
+  - 4
+  - 4
+text: Video Camera
+type: 2
+weight: 1

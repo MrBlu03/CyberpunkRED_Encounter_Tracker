@@ -1,0 +1,44 @@
+_id: PcfZoO9meC9iAMkY
+_key: "!items!PcfZoO9meC9iAMkY"
+effects: []
+img: icons/equipment/shield/buckler-wooden-boss-brown.webp
+name: Shield
+system:
+  bodyLocation:
+    ablation: 0
+    sp: 0
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>Requires an arm and has HP that is reduced by damage.</p>
+  equipped: owned
+  favorite: false
+  headLocation:
+    ablation: 0
+    sp: 0
+  installedItems:
+    allowed: true
+    allowedTypes: []
+    list: []
+    slots: 0
+    usedSlots: 0
+  isBodyLocation: false
+  isElectronic: false
+  isHeadLocation: false
+  isShield: true
+  penalty: 0
+  price:
+    market: 100
+  providesHardening: false
+  revealed: true
+  shieldHitPoints:
+    max: 10
+    value: 10
+  source:
+    book: ELO
+    page: 3
+  usage: equipped
+type: armor

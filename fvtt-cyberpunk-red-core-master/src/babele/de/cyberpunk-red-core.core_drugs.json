@@ -1,0 +1,46 @@
+{
+  "label": "Drogen",
+  "mapping": {},
+  "entries": {
+    "Antibiotic": {
+      "name": "Antibiotikum",
+      "description": "<p>Wenn beim Ziel der natürliche Heilungsprozess bereits eingesetzt hat, erhöht eine Dosis Antibiotikum die pro Tag regenerierten Trefferpunkte für eine Woche um 2. Dieser Effekt ist nicht stapelbar.</p>"
+    },
+    "Black Lace": {
+      "name": "Schwarze Spitze",
+      "description": "<p><strong>Hauptwirkung</strong></p>\n<p>Dosis hält 24 Stunden an.</p>\n<ul>\n<li>Nutzer verliert 2d6 Menschlichkeit, die beim Bestehen des Rettungswurfes für die Nebenwirkung zurückerlangt werden</li>\n<li>Für die Dauer ignoriert der Nutzer die Effekte des Wundstatus Schwer Verwundet</li>\n</ul>\n<p><br><strong>Nebenwirkung (SG17)</strong></p>\n<p>Beim Ablauf der Dosis würfelt der Nutzer WIL + Folter/Drogen widerstehen + 1d10 gegen den Nebenwirkungs-SG.</p>\n<ul>\n<li>Bei Fehlschlag wird der Menschlichkeitsverlust nicht zurückerlangt</li>\n<li>REF -2 durch die Sucht wann immer der Nutzer nicht unter der Hauptwirkung steht</li>\n</ul>"
+    },
+    "Blue Glass": {
+      "name": "Blauglas",
+      "description": "<p><strong>Hauptwirkung</strong></p>\n<p>Dosis hält 4 Stunden an.</p>\n<ul>\n<li>Die SL kann dem Nutzer gelegentlich sagen, dass er bunte Farbwirbel sieht. Wann immer das geschieht kann der Nutzer in einem Zug keine Aktion durchführen</li>\n</ul>\n<p><strong>Nebenwirkung (SG15)</strong></p>\n<ul>\n<li>Der Nutzer ist durch die Sucht immun gegen die Farbwirbel, solange er unter der Hauptwirkung steht, dafür erlebt er diese nun auch während er nicht unter der Hauptwirkung steht</li>\n</ul>"
+    },
+    "Boost": {
+      "name": "Boost",
+      "description": "<p><strong>Hauptwirkung</strong></p>\n<p>Dosis hält 24 Stunden an.</p>\n<ul>\n<li>Nutzer hat INT +2 für die Dauer</li>\n</ul>\n<p><strong>Nebenwirkung (SG17)</strong></p>\n<ul>\n<li>INT -2 durch die Sucht</li>\n</ul>"
+    },
+    "Rapidetox": {
+      "name": "Rapidetox",
+      "description": "<p>Einem Ziel Rapidetox zu injizieren hebt die Wirkung aller Drogen, Gifte oder Rauschmittel auf, die gerade auf es wirken.</p>"
+    },
+    "Smash": {
+      "name": "Smash",
+      "description": "<p><strong>Hauptwirkung</strong></p>\n<p>Dosis hält 4 Stunden.</p>\n<ul>\n<li>Nutzer fühlt sich glücklich, euphorisch und zufrieden</li>\n<li>+2 auf Tanzen / Kontorsionist / Konversation / Menschenkenntnis / Überreden / Schauspiel</li>\n</ul>\n<p><strong>Nebenwirkung (SG15)</strong></p>\n<ul>\n<li>-2 auf Tanzen / Kontorsionist / Konversation / Menschenkenntnis / Überreden / Schauspiel</li>\n<li>Die SL sagt, wann die Sucht nach mehr Smash zu groß wird - spiele entsprechend</li>\n</ul>"
+    },
+    "Speedheal": {
+      "name": "Speedheal",
+      "description": "<p>Einem Ziel Speedheal zu injizieren heilt es sofort um Trefferpunkte in Höhe seiner KRA plus WIL. Dieser Effekt wirkt bei Zielen, die Tödlich Verletzt sind nicht und pro Ziel nur einmal pro Tag.</p>"
+    },
+    "Stim": {
+      "name": "Stim",
+      "description": "<p>Einem Ziel Stim zu injizieren erlaubt ihm für eine Stunde, alle Mali durch den Wundstatus Schwer Verletzt zu ignorieren. Stim kann bei einem Ziel nur einmal pro Tag verwendet werden.</p>"
+    },
+    "Surge": {
+      "name": "Surge",
+      "description": "<p>Einem Ziel Surge zu injizieren macht es für 24 Stunden gegen Schlafentzug immun. Surge kann pro Ziel nur einmal pro Woche verwendet werden.</p>"
+    },
+    "Synthcoke": {
+      "name": "Synthkoks",
+      "description": "<p><strong>Hauptwirkung</strong></p>\n<p>Dosis hält 4 Stunden an.</p>\n<ul>\n<li>+1 REF für die Dauer</li>\n<li>Gelegentlich paranoide Gedanken</li>\n</ul>\n<p><strong>Nebenwirkung (SG15)</strong></p>\n<ul>\n<li>-2 REF wann immer der Nutzer nicht unter der Hauptwirkung steht</li>\n<li>Die SL sagt, wann die Sucht nach mehr Synthkoks zu groß wird - spiele entsprechend</li>\n</ul>"
+    }
+  }
+}

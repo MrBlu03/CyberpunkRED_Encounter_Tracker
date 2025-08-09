@@ -1,0 +1,5 @@
+{
+  "description": "Is the item equipped? Always 'owned' in compendia",
+  "type": "string",
+  "const": "owned"
+}

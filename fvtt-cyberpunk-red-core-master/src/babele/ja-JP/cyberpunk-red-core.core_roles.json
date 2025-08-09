@@ -1,0 +1,46 @@
+{
+  "label": " ロール",
+  "mapping": {},
+  "entries": {
+    "Exec": {
+      "name": "エグゼク",
+      "description": "<p>すべてを賭けて出世し、ニュー・アメリカン・ドリームを実現しようとする企業幹部や太っ腹な守銭奴たち</p>\n"
+    },
+    "Fixer": {
+      "name": "フィクサー",
+      "description": "<p>金さえあれば、誰にでも何でも融通する。その魅力と交易の技術を駆使して、暗黒近未来経済を維持するための取引を行う。</p>\n"
+    },
+    "Lawman": {
+      "name": "ローマン",
+      "description": "<p>Renegade defenders, corporate strike teams, or the last remnants of a government police force, they patrol the streets to enforce some order in an otherwise lawless world.</p>"
+    },
+    "Media": {
+      "name": "メディア",
+      "description": "<p>Newspeople, influencers, and cultural phenomena, they are ready to expose the truth by any means necessary.</p>"
+    },
+    "Medtech": {
+      "name": "メドテク",
+      "description": "<p>Backalley doctors and mechanics of cyberware, using their skills to keep fellow edgerunners in good shape and cybered up, often at a price.</p>"
+    },
+    "Netrunner": {
+      "name": "ネットランナー",
+      "description": "<p>Master hackers who put themselves at risk as they jack into cyberspace to download secrets and infiltrate networks.</p>"
+    },
+    "Nomad": {
+      "name": "ノーマッド",
+      "description": "<p>Car people, truckers, transportation afficionados, air-pirates, they are the sole carriers of product across the world, maintaining the transport and supply chains in the time of the Red.</p>"
+    },
+    "Rockerboy": {
+      "name": "ロッカーボーイ",
+      "description": "<p>Rebellious performance artists who use their craft to influence fans/crowds and fight back.</p>"
+    },
+    "Solo": {
+      "name": "ソロ",
+      "description": "<p>Experts in combat who use their fighting prowess to dominate in the lawless time of the Red.</p>"
+    },
+    "Tech": {
+      "name": "テク",
+      "description": "<p>Superior understanding of all-things tech allow them to invent, upgrade, and repair to keep the Dark Future functioning.</p>"
+    }
+  }
+}

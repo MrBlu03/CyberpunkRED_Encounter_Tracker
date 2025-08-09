@@ -1,0 +1,71 @@
+
+<div class="injuries-section">
+  <li class="items-header flexrow">
+    <span class="item-name section-name text-nowrap text-padding-left-smallest">
+      {{localize "CPR.characterSheet.bottomPane.fight.criticalInjuries"}}
+      <span class="item-detail gear-actions text-nowrap text-float-right text-padding-right-smallest">
+        <a class="roll-critical-injury"
+           data-tooltip="{{localize "CPR.characterSheet.bottomPane.fight.criticalInjuryRoll"}}"
+           data-item-type="criticalInjury">
+          <i class="fas fa-dice text-padding-right-smallest"></i>
+        </a>
+      </span>
+      <span class="item-detail gear-actions text-nowrap text-float-right text-padding-right-smallest">
+        {{#if (cprSystemConfig "playersCreateInventory") }}
+          <a class="item-create"
+             data-tooltip="{{localize "CPR.actorSheets.commonActions.createNewItem"}}"
+             data-item-type="criticalInjury">
+            <i class="fas fa-circle-plus text-padding-right-smallest"></i>
+          </a>
+        {{/if}}
+      </span>
+    </span>
+  </li>
+  <div class="injuries-content">
+    {{#each (cprSort actor.itemTypes.criticalInjury "name") as |criticalInjury| }}
+      <div class="injuries-grid">
+        <div class="injuries-image">
+          <img alt="{{this.name}}" src="{{this.img}}"/>
+        </div>
+        <div class="injuries-actions">
+          <div class="item-detail gear-actions text-nowrap">
+            <a class="item-action"
+               data-action-type="delete"
+               data-item-id="{{this.id}}"
+               data-item-category="{{this.type}}">
+              <i class="fas fa-trash-can text-float-right text-padding-right"
+                 data-tooltip="{{localize "CPR.actorSheets.commonActions.deleteItem"}}">
+              </i>
+            </a>
+          </div>
+        </div>
+        <div class="injuries-name">
+          <a class="name item-edit text-semi"
+             data-item-id="{{this.id}}"
+             data-tooltip="{{this.name}}
+               <br/>
+               {{localize "CPR.characterSheet.bottomPane.fight.clickToViewTheItem"}}">
+            {{this.name}}
+          </a>
+        </div>
+        <div class="injuries-desc">
+          {{#if this.system.deathSaveIncrease}}
+            <span>
+              {{localize "CPR.characterSheet.leftPane.deathSave.title"}} +1
+            </span>
+          {{/if}}
+        </div>
+        <div class="injuries-effects text-nowrap">
+          {{#each this.effects as |effect|}}
+            {{#each effect.changes as |change| }}
+              <span class="text-pill text-padding-right-smaller">
+                {{cprGetChangeNameByKey ../../item (lookup effect.flags.cyberpunk-red-core.changes.cats @index) change.key}} {{cprEffectModMode change.mode change.value}}
+              </span>
+            {{/each}}
+          {{/each}}
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</div>
+

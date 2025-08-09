@@ -1,0 +1,46 @@
+{
+  "label": "Rollen",
+  "mapping": {},
+  "entries": {
+    "Exec": {
+      "name": "Konzerner",
+      "description": "<p>\nStrippenzieher der Konzerne mit dem Geschäftssinn einer Heuschrecke, die darum kämpfen, die Herrschaft der Megakonzerne wiederherzustellen.\n</p>"
+    },
+    "Fixer": {
+      "name": "Schieber",
+      "description": "<p>\nDealmaker, Organisierer und Informationsmakler auf den Mitternachtsmärkten der Nachkriegszeit auf der Straße.\n</p>"
+    },
+    "Lawman": {
+      "name": "Gesetzeshüter",
+      "description": "<p>\nAbgebrühte Gesetzeshüter, die in den Hexenkesseln und auf den brutalen Straßenkrieger-Highways außerhalb patrouillieren.\n</p>"
+    },
+    "Media": {
+      "name": "Media",
+      "description": "<p>\nJournalisten, Medienstars und soziale Influencer, die alles riskieren, um an die Wahrheit zu kommen – oder an den Ruhm.\n</p>"
+    },
+    "Medtech": {
+      "name": "MediTech",
+      "description": "<p>\nIllegale Straßenärzte und Cyberware-Sanis, die Fleisch und Metall gleichermaßen zusammenflicken.\n</p>"
+    },
+    "Netrunner": {
+      "name": "Netrunner",
+      "description": "<p>\nKybernetische Meister-Hacker der Post-Net-Welt, die einem das Hirn rösten und Geheimnisse stehlen.\n</p>"
+    },
+    "Nomad": {
+      "name": "Nomade",
+      "description": "<p>\nTransportexperten, ultimative Straßenkrieger, Piraten und Schmuggler, welche die Welt am Laufen halten.\n</p>"
+    },
+    "Rockerboy": {
+      "name": "Rockster",
+      "description": "<p>\nRock-and-Roll-Rebellen, die mit Auftritten, Kunst und Rhetorik gegen die Obrigkeit kämpfen.\n</p>"
+    },
+    "Solo": {
+      "name": "Solo",
+      "description": "<p>\nDie Auftragsmörder, Leibwächter, Killer und Söldner der gesetzlosen neuen Welt.</p>"
+    },
+    "Tech": {
+      "name": "Tech",
+      "description": "<p>\nAbtrünnige Mechaniker und Supertech-Erfinder – die Leute, die die Dunkle Zukunft am Laufen halten.\n</p>"
+    }
+  }
+}

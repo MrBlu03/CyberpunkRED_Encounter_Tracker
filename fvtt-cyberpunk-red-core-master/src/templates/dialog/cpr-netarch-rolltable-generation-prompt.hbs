@@ -1,0 +1,23 @@
+<form class="dialog-sheet">
+  <div class="dialog-header flexcol">
+    <div class="text-normal text-center">
+    {{localize "CPR.dialog.netArchitectureRolltableSelection.question"}}
+    </div>
+  </div>
+  <hr/>
+  <div class="dialog-grid flexcol">
+    <ol class="dialog-list">
+      <li class="dialog-item flexrow">
+        <div class="dialog-item-name text-nowrap">
+          {{localize "CPR.dialog.netArchitectureGeneration.difficulty"}}:
+        </div>
+        <div class="dialog-item-input text-nowrap">
+          <select name="difficulty">
+            {{selectOptions (cprFindConfigObj "netArchDifficulty") selected=difficulty localize=true}}
+          </select>
+        </div>
+      </li>
+    </ol>
+  </div>
+  {{> "systems/cyberpunk-red-core/templates/dialog/cpr-dialog-buttons.hbs"}}
+</form>

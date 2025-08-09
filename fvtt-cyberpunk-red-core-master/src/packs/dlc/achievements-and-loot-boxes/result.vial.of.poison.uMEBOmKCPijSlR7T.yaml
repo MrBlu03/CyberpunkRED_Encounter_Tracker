@@ -1,0 +1,12 @@
+_id: uMEBOmKCPijSlR7T
+_key: "!tables.results!uq1cseo3a1hAx7Pg.uMEBOmKCPijSlR7T"
+documentCollection: cyberpunk-red-core.core_gear
+documentId: gaGUmTGViuxZ4mqR
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/gear/vial_poison.svg
+range:
+  - 4
+  - 4
+text: Vial of Poison
+type: 2
+weight: 1

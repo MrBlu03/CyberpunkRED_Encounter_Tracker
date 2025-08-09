@@ -1,0 +1,226 @@
+{
+  "label": "Munitions",
+  "mapping": {},
+  "entries": {
+    "Arrow (Armor-Piercing)": {
+      "name": "Flèche (Perforante)",
+      "description": "<p>Double la perforation d'armure.</p>"
+    },
+    "Arrow (Basic)": {
+      "name": "Flèche (Standard)",
+      "description": "<p>Munition standard, rien de spécial.</p>"
+    },
+    "Arrow (Biotoxin)": {
+      "name": "Flèche (Biotoxine)",
+      "description": "<p>Pas de dégât immédiat. Si touché : jet de <strong> Résistance à la torture/aux drogues SD15</strong> , si échec : 3d6 de dégât. Ne perfore pas l'armure.</p>\n"
+    },
+    "Arrow (Expansive)": {
+      "name": "Flèche (Expansive)",
+      "description": "<p>Si la blessure critique \"Plaie avec corps étranger\" est appliquée (cf. p.187), la victime relance une seconde (et différente) blessure critique. La seconde blessure critique ne délivre pas de dégât bonus.</p>"
+    },
+    "Arrow (Incendiary)": {
+      "name": "Flèche (Incendiaire)",
+      "description": "<p>Si la cible subit des dégâts, elle prend feu. La cible subit 2 points de dégâts aux PS à la fin de son tour à moins qu'elle n'utilise une action pour éteindre les flammes. Ne se cumule pas.</p>"
+    },
+    "Arrow (Poison)": {
+      "name": "Flèche (Poison)",
+      "description": "<p>Pas de dégât immédiat. Si chair touchée : jet de <strong> Résistance à la torture/aux drogues SD13</strong>, si échec : 2d6 de dégâts. Ne perfore pas l'armure.</p>\n"
+    },
+    "Arrow (Rubber)": {
+      "name": "Flèche (Caoutchouc)",
+      "description": "<p>Ne cause pas de blessure critique. Ne perfore pas l'armure. Laisse la cible à 1 PS minimum. Considéré comme munition standard pour les armes exotiques.</p>"
+    },
+    "Arrow (Sleep)": {
+      "name": "Flèche (Soporifique)",
+      "description": "<p>N'applique pas de dégâts. Si chair touchée : jet de <strong>Résistance à la torture/aux drogues SD13</strong>, si échec la victime tombe au sol. (cf. p. 169) et est inconsciente pour 1 minute. Peut être réveillée par dégâts ou par une autre personne utilisant une action en la touchant/secouant.</p>\n"
+    },
+    "Arrow (Smart)": {
+      "name": "Flèche (Intelligente)",
+      "description": "<p>Nécessite cyberimplant Lunette de visée, sinon l'arme ne tire pas. Si l'attaque au coup par coup rate de 4 points ou moins, lancez une seconde attaque avec le même SD mais avec la formule 1d10+10 (sans rien ajouter, sauf points de Chance). La cible peut esquiver cette seconde attaque si elle le peut. </p>"
+    },
+    "Battery Pack": {
+      "name": "Batterie",
+      "description": "<p>Une batterie rechargeable (1 heure) souvent utilisée pour les armes exotiques. Contient 8 charges et peut être rechargée.</p>"
+    },
+    "Grenade (Armor-Piercing)": {
+      "name": "Grenade (Perforante)",
+      "description": "<p>Double la perforation d'armure.</p>"
+    },
+    "Grenade (Biotoxin)": {
+      "name": "Grenade (Biotoxine)",
+      "description": "<p>Pas de dégât immédiat. Si chair touchée : jet de <strong>Résistance à la torture/ aux drogues SD15</strong>. Si échec 3d6 de dégâts. Ne perfore pas l'armure.</p>"
+    },
+    "Grenade (EMP)": {
+      "name": "Grenade (IEM)",
+      "description": "<p>Si touché : jet de <strong>Cybertech SD15</strong>. Si échec, 2 cyberimplants ou appareils électroniques portés (au choix du MJ) cessent de fonctionner pendant 1 minute. Les cybermembres touchés pendent comme un bras de viande démembré (cf. p. 187). </p>"
+    },
+    "Grenade (Flashbang)": {
+      "name": "Grenade (Étourdissante)",
+      "description": "<p>N'applique pas de dégâts. Si touché : jet de <strong>Résistance à la torture/drogues SD15</strong>. Si échec appliquer les blessures critiques Oeil endommagé et Oreille endommagée (cf. p. 188) pendant 1 minute, sans les dégâts bonus de blessures critiques.</p>"
+    },
+    "Grenade (Incendiary)": {
+      "name": "Grenade (Incendiaire)",
+      "description": "<p>Si la cible subit des dégâts, elle prend feu. La cible subit 2 points de dégâts aux PS à la fin de son tour à moins qu'elle n'utilise une action pour éteindre les flammes. Ne se cumule pas.</p>"
+    },
+    "Grenade (Poison)": {
+      "name": "Grenade (Poison)",
+      "description": "<p>Pas de dégât immédiat. Si chair touchée : jet de <strong>Résistance à la torture/aux drogues SD13</strong>, si échec : 2d6 de dégâts. Ne perfore pas l'armure.</p>"
+    },
+    "Grenade (Sleep)": {
+      "name": "Grenade (Soporifique)",
+      "description": "<p>N'applique pas de dégâts. Si chair touchée : jet de <strong>Résistance à la torture/aux drogues SD13</strong>, si échec la victime tombe au sol. (cf. p.169) et est inconsciente pour 1 minute. Peut être réveillée par dégâts ou par une autre personne utilisant une action en la touchant/la secouant.</p>"
+    },
+    "Grenade (Smoke)": {
+      "name": "Grenade (Fumigène)",
+      "description": "<p>N'applique pas de dégât. Remplit une zone de 10mx10m de fumée pendant 1 minute. Malus de -4 aux actions dans cette zone.</p>"
+    },
+    "Grenade (Teargas)": {
+      "name": "Grenade (Lacrymogène)",
+      "description": "<p>N'applique pas de dégâts. Si oeil de chair touché : jet de <strong>Résistance à la torture/ aux drogues SD13</strong>. Si échec, appliquer la blessure critique Oeil endommagé (cf. p. 188) pour 1 minute, sans les dégâts bonus de blessures critiques. </p>"
+    },
+    "Heavy Pistol (Armor-Piercing)": {
+      "name": "Pistolet lourd (Perforante)",
+      "description": "<p>Double la perforation d'armure.</p>"
+    },
+    "Heavy Pistol (Basic)": {
+      "name": "Pistolet lourd (Standard)",
+      "description": "<p>Munition standard, rien de spécial.</p>"
+    },
+    "Heavy Pistol (Expansive)": {
+      "name": "Pistolet lourd (Expansive)",
+      "description": "<p>Si la blessure critique \"Plaie avec corps étranger\" est appliquée (cf. p.187), la victime relance une seconde (et différente) blessure critique. La seconde blessure critique ne délivre pas de dégât bonus.</p>"
+    },
+    "Heavy Pistol (Incendiary)": {
+      "name": "Pistolet lourd (Incendiaire)",
+      "description": "<p>Si la cible subit des dégâts, elle prend feu. La cible subit 2 points de dégâts aux PS à la fin de son tour à moins qu'elle n'utilise une action pour éteindre les flammes. Ne se cumule pas.</p>"
+    },
+    "Heavy Pistol (Rubber)": {
+      "name": "Pistolet lourd (Caoutchouc)",
+      "description": "<p>Ne cause pas de blessure critique. Ne perfore pas l'armure. Laisse la cible à 1 PS minimum. Considéré comme munition standard pour les armes exotiques.</p>"
+    },
+    "Heavy Pistol (Smart)": {
+      "name": "Pistolet lourd (Intelligente)",
+      "description": "<p>Nécessite cyberimplant Lunette de visée, sinon l'arme ne tire pas. Si l'attaque au coup par coup rate de 4 points ou moins, lancez une seconde attaque avec le même SD mais avec la formule 1d10+10 (sans rien ajouter, sauf points de Chance). La cible peut esquiver cette seconde attaque si elle le peut. </p>"
+    },
+    "Medium Pistol (Armor-Piercing)": {
+      "name": "Pistolet Moyen (Perforante)",
+      "description": "<p>Double la perforation d'armure.</p>"
+    },
+    "Medium Pistol (Basic)": {
+      "name": "Pistolet moyen (Standard)",
+      "description": "<p>Munition standard, rien de spécial.</p>"
+    },
+    "Medium Pistol (Expansive)": {
+      "name": "Pistolet moyen (Expansive)",
+      "description": "<p>Si la blessure critique \"Plaie avec corps étranger\" est appliquée (cf. p.187), la victime relance une seconde (et différente) blessure critique. La seconde blessure critique ne délivre pas de dégât bonus.</p>"
+    },
+    "Medium Pistol (Incendiary)": {
+      "name": "Pistolet moyen (Incendiaire)",
+      "description": "<p>Si la cible subit des dégâts, elle prend feu. La cible subit 2 points de dégâts aux PS à la fin de son tour à moins qu'elle n'utilise une action pour éteindre les flammes. Ne se cumule pas.</p>"
+    },
+    "Medium Pistol (Rubber)": {
+      "name": "Pistolet moyen (Caoutchouc)",
+      "description": "<p>Ne cause pas de blessure critique. Ne perfore pas l'armure. Laisse la cible à 1 PS minimum. Considéré comme munition standard pour les armes exotiques.</p>"
+    },
+    "Medium Pistol (Smart)": {
+      "name": "Pistolet moyen (Intelligente)",
+      "description": "<p>Nécessite cyberimplant Lunette de visée, sinon l'arme ne tire pas. Si l'attaque au coup par coup rate de 4 points ou moins, lancez une seconde attaque avec le même SD mais avec la formule 1d10+10 (sans rien ajouter, sauf points de Chance). La cible peut esquiver cette seconde attaque si elle le peut. </p>"
+    },
+    "Paintball (Acid)": {
+      "name": "Paintball (Acide)",
+      "description": "<p>Bille de paintball remplie d'acide. Ne délivre pas de dégâts mais diminue l'armure de 1 par impact*.</p>\n<p><em>*Actuellement non pris en charge, nécessité de réduire l'armure manuellement.</em></p>"
+    },
+    "Paintball (Basic)": {
+      "name": "Paintball (Standard)",
+      "description": "<p>Des billes de peinture ordinaires qui ne causent aucun dégât. Ennuyant, cependant.</p>"
+    },
+    "Rifle (Armor-Piercing)": {
+      "name": "Fusil (Perforante)",
+      "description": "<p>Double la perforation d'armure.</p>"
+    },
+    "Rifle (Basic)": {
+      "name": "Fusil (Standard)",
+      "description": "<p>Munition standard, rien de spécial.</p>"
+    },
+    "Rifle (Expansive)": {
+      "name": "Fusil (Expansive)",
+      "description": "<p>Si la blessure critique \"Plaie avec corps étranger\" est appliquée (cf. p.187), la victime relance une seconde (et différente) blessure critique. La seconde blessure critique ne délivre pas de dégât bonus.</p>"
+    },
+    "Rifle (Incendiary)": {
+      "name": "Fusil (Incendiaire)",
+      "description": "<p>Si la cible subit des dégâts, elle prend feu. La cible subit 2 points de dégâts aux PS à la fin de son tour à moins qu'elle n'utilise une action pour éteindre les flammes. Ne se cumule pas.</p>"
+    },
+    "Rifle (Rubber)": {
+      "name": "Fusil (Caoutchouc)",
+      "description": "<p>Ne cause pas de blessure critique. Ne perfore pas l'armure. Laisse la cible à 1 PS minimum. Considéré comme munition standard pour les armes exotiques.</p>"
+    },
+    "Rifle (Smart)": {
+      "name": "Fusil (Intelligente)",
+      "description": "<p>Nécessite cyberimplant Lunette de visée, sinon l'arme ne tire pas. Si l'attaque au coup par coup rate de 4 points ou moins, lancez une seconde attaque avec le même SD mais avec la formule 1d10+10 (sans rien ajouter, sauf points de Chance). La cible peut esquiver cette seconde attaque si elle le peut. </p>"
+    },
+    "Rocket (Armor-Piercing)": {
+      "name": "Roquette (Perforante)",
+      "description": "<p>Double la perforation d'armure.</p>"
+    },
+    "Rocket (Smart)": {
+      "name": "Roquette (Intelligente)",
+      "description": "<p>Nécessite cyberimplant Lunette de visée, sinon l'arme ne tire pas. Si l'attaque au coup par coup rate de 4 points ou moins, lancez une seconde attaque avec le même SD mais avec la formule 1d10+10 (sans rien ajouter, sauf points de Chance). La cible peut esquiver cette seconde attaque si elle le peut. </p>"
+    },
+    "Shotgun Shell (Basic)": {
+      "name": "Chevrotine de fusil à pompe (Standard)",
+      "description": "<p>Munition standard, rien de spécial.</p>"
+    },
+    "Shotgun Shell (Incendiary)": {
+      "name": "Chevrotine de fusil à pompe (Incendiaire)",
+      "description": "<p>Si la cible subit des dégâts, elle prend feu. La cible subit 2 points de dégâts aux PS à la fin de son tour à moins qu'elle n'utilise une action pour éteindre les flammes. Ne se cumule pas.</p>"
+    },
+    "Shotgun Slug (Armor-Piercing)": {
+      "name": "Slug de fusil à pompe (Perforante)",
+      "description": "<p>Double la perforation d'armure.</p>"
+    },
+    "Shotgun Slug (Basic)": {
+      "name": "Slug de fusil à pompe (Standard)",
+      "description": "<p>Munition standard, rien de spécial.</p>"
+    },
+    "Shotgun Slug (Expansive)": {
+      "name": "Slug de fusil à pompe (Expansive)",
+      "description": "<p>Si la blessure critique \"Plaie avec corps étranger\" est appliquée (cf. p.187), la victime relance une seconde (et différente) blessure critique. La seconde blessure critique ne délivre pas de dégât bonus.</p>"
+    },
+    "Shotgun Slug (Incendiary)": {
+      "name": "Slug de fusil à pompe (Incendiaire)",
+      "description": "<p>Si la cible subit des dégâts, elle prend feu. La cible subit 2 points de dégâts aux PS à la fin de son tour à moins qu'elle n'utilise une action pour éteindre les flammes. Ne se cumule pas.</p>"
+    },
+    "Shotgun Slug (Rubber)": {
+      "name": "Slug de fusil à pompe (Caoutchouc)",
+      "description": "<p>Ne cause pas de blessure critique. Ne perfore pas l'armure. Laisse la cible à 1 PS minimum. Considéré comme munition standard pour les armes exotiques.</p>"
+    },
+    "Shotgun Slug (Smart)": {
+      "name": "Slug de fusil à pompe (Intelligente)",
+      "description": "<p>Nécessite cyberimplant Lunette de visée, sinon l'arme ne tire pas. Si l'attaque au coup par coup rate de 4 points ou moins, lancez une seconde attaque avec le même SD mais avec la formule 1d10+10 (sans rien ajouter, sauf points de Chance). La cible peut esquiver cette seconde attaque si elle le peut. </p>"
+    },
+    "Very Heavy Pistol (Armor-Piercing)": {
+      "name": "Pistolet très lourd (Perforante)",
+      "description": "<p>Double la perforation d'armure.</p>"
+    },
+    "Very Heavy Pistol (Basic)": {
+      "name": "Pistolet très lourd (Standard)",
+      "description": "<p>Munition standard, rien de spécial.</p>"
+    },
+    "Very Heavy Pistol (Expansive)": {
+      "name": "Pistolet très lourd (Expansive)",
+      "description": "<p>Si la blessure critique \"Plaie avec corps étranger\" est appliquée (cf. p.187), la victime relance une seconde (et différente) blessure critique. La seconde blessure critique ne délivre pas de dégât bonus.</p>"
+    },
+    "Very Heavy Pistol (Incendiary)": {
+      "name": "Pistolet très lourd (incendiaire)",
+      "description": "<p>Si la cible subit des dégâts, elle prend feu. La cible subit 2 points de dégâts aux PS à la fin de son tour à moins qu'elle n'utilise une action pour éteindre les flammes. Ne se cumule pas.</p>"
+    },
+    "Very Heavy Pistol (Rubber)": {
+      "name": "Pistolet très lourd (Caoutchouc)",
+      "description": "<p>Ne cause pas de blessure critique. Ne perfore pas l'armure. Laisse la cible à 1 PS minimum. Considéré comme munition standard pour les armes exotiques.</p>"
+    },
+    "Very Heavy Pistol (Smart)": {
+      "name": "Pistolet très lourd (intelligente)",
+      "description": "<p>Nécessite cyberimplant Lunette de visée, sinon l'arme ne tire pas. Si l'attaque au coup par coup rate de 4 points ou moins, lancez une seconde attaque avec le même SD mais avec la formule 1d10+10 (sans rien ajouter, sauf points de Chance). La cible peut esquiver cette seconde attaque si elle le peut. </p>"
+    }
+  }
+}

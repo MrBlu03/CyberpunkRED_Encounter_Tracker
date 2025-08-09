@@ -1,0 +1,202 @@
+/*
+ * Define all variables in this file
+ *
+ * We do not use less variables (@) for colors or fonts in other files.
+ * We use css variables to allow users to modify our css easily.
+ *
+ * All css variable must be prefixed with '--cpr-' to avoid namespace issues
+ */
+:root {
+  // Fonts
+  --cpr-font-primary: "Jost";
+  --cpr-font-hero: "Rubik";
+  --cpr-font-pause: "Tektur";
+  --cpr-font-journal-header: "Rubik";
+
+  --cpr-font-smallest: 0.6rem;
+  --cpr-font-smaller: 0.7rem;
+  --cpr-font-small: 0.9rem;
+  --cpr-font-normal: 1rem;
+  --cpr-font-large: 1.5rem;
+  --cpr-font-larger: 1.7rem;
+  --cpr-font-largest: 2rem;
+  --cpr-font-massive: 4rem;
+
+  // Color variables
+  // Used for common colors within the default theme
+  --cpr-color-black: #000000;
+  --cpr-color-dark-grey: #444444;
+  --cpr-color-faded-black: rgba(0, 0, 0, 0.6);
+  --cpr-color-light-grey: #9e9f9f;
+  --cpr-color-medium-grey: #666666;
+  --cpr-color-near-black: #0d0b0c;
+  --cpr-color-off-black: #0d0b0c;
+  --cpr-color-off-black: #222222;
+  --cpr-color-pink: #ffc3b6;
+  --cpr-color-red: #b90202;
+  --cpr-color-white: #eaeaea;
+
+  // Background Colors
+  --cpr-background-border: var(--cpr-color-red);
+  --cpr-background-box: var(--cpr-color-white);
+  --cpr-background-chat-border: var(--cpr-color-light-grey);
+  --cpr-background-chat-card-block-before: var(--cpr-color-white);
+  --cpr-background-chat-card-block: var(--cpr-color-red);
+  --cpr-background-chat-card: var(--cpr-color-white);
+  --cpr-background-chat: var(--cpr-color-faded-black);
+  --cpr-background-chat-inline-roll: rgba(0, 0, 0, 0.1);
+  --cpr-background-code: var(--cpr-color-light-grey);
+  --cpr-background-cyberdeck-section-header: var(--cpr-color-pink);
+  --cpr-background-dialog-border: var(--cpr-color-red);
+  --cpr-background-dialog-hr-gradient-end: var(--cpr-color-black);
+  --cpr-background-dialog-hr-gradient-middle: rgba(136, 34, 34, 0.75);
+  --cpr-background-dialog-hr-gradient-start: var(--cpr-color-black);
+  --cpr-background-dialog-selected: var(--cpr-color-pink);
+  --cpr-background-editor-button: var(--cpr-color-white);
+  --cpr-background-editor-button-selected: var(--cpr-color-light-grey);
+  --cpr-background-editor-header: var(--cpr-color-white);
+  --cpr-background-foundry-hover: var(--cpr-color-red);
+  --cpr-background-foundry-input: var(--cpr-color-white);
+  --cpr-background-foundry-button: var(--cpr-color-white);
+  --cpr-background-header: var(--cpr-color-near-black);
+  --cpr-background-migration-progress: rgb(27, 151, 11);
+  --cpr-background-migration-modal-backdrop: rgba(0, 0, 0, 0.75);
+  --cpr-background-progress-border: #b2c3ff;
+  --cpr-background-progress-label: var(--cpr-color-faded-black);
+  --cpr-background-progress: #5d49ff;
+  --cpr-background-pill: var(--cpr-color-off-black);
+  --cpr-background-row-even: var(--cpr-color-white);
+  --cpr-background-row-odd: var(--cpr-color-pink);
+  --cpr-background-tab-active: var(--cpr-color-red);
+  --cpr-background-tab-inactive: var(--cpr-color-off-black);
+  --cpr-background-tab-underlay: var(--cpr-color-pink);
+  --cpr-background-toggle-unchecked: var(--cpr-color-dark-grey);
+  --cpr-background-toggle-checked: var(--cpr-background-border);
+  --cpr-background-toggle-dot: var(--cpr-color-white);
+  --cpr-background-window: var(--cpr-color-white);
+  --cpr-background-content-link: #dddddd;
+  --cpr-background-journal-blockquote: #c9c8c5;
+  --cpr-background-journal-secret-hidden-border: rgba(128, 45, 204);
+  --cpr-background-journal-secret-hidden-background: rgba(128, 45, 204, 0.2);
+  --cpr-background-journal-info: rgba(24, 144, 231, 0.3);
+  --cpr-background-item-dir-installed-header: rgba(18, 18, 18, 0.6);
+
+  // UI Colors
+  --cpr-pause-text: var(--cpr-color-white);
+  --cpr-pause-highlight1: #2388d2;
+  --cpr-pause-highlight2: #8ef104;
+  --cpr-item-dir-border: rgba(158, 159, 159, 0.6);
+  --cpr-migration-overlay-error: rgba(156, 18, 18, 0.7);
+  --cpr-migration-overlay-success: rgba(30, 125, 34, 0.7);
+  --cpr-migration-overlay-warning: rgba(156, 123, 30, 0.7);
+
+  // Text Colors
+  --cpr-text-chat-failure: var(--cpr-color-red);
+  --cpr-text-chat-normal: var(--cpr-color-near-black);
+  --cpr-text-chat-success: #609040;
+  --cpr-text-content-link-icon: #dddddd;
+  --cpr-text-editor-button: var(--cpr-color-black);
+  --cpr-text-editor-header: var(--cpr-color-black);
+  --cpr-text-foundry-hint: var(--cpr-color-near-black);
+  --cpr-text-foundry-hover: var(--cpr-color-red);
+  --cpr-text-foundry-input: var(--cpr-color-black);
+  --cpr-text-header: var(--cpr-color-white);
+  --cpr-text-header-line: var(--cpr-color-red);
+  --cpr-text-header-line-box: var(--cpr-color-black);
+  --cpr-text-header-arrow: var(--cpr-color-red);
+  --cpr-text-icon-dimmed: var(--cpr-color-light-grey);
+  --cpr-text-icon-highlight: var(--cpr-color-red);
+  --cpr-text-icon-normal: var(--cpr-color-near-black);
+  --cpr-text-input: var(--cpr-color-black);
+  --cpr-text-mook-header: var(--cpr-color-white);
+  --cpr-text-mook-name: var(--cpr-color-white);
+  --cpr-text-mook-normal: var(--cpr-color-near-black);
+  --cpr-text-normal: var(--cpr-color-near-black);
+  --cpr-text-pill: var(--cpr-color-white);
+  --cpr-text-tab-highlight: #ffff3f;
+  --cpr-text-tab-normal: var(--cpr-color-white);
+  --cpr-text-window: var(--cpr-color-black);
+  --cpr-text-hint: var(--cpr-color-near-black);
+  --cpr-text-pause: var(--cpr-color-white);
+  --cpr-text-journal-table-header: var(--cpr-color-white);
+  --cpr-text-dir-list: var(--cpr-color-white);
+
+  // Icon Colors
+  --cpr-icon-actor-image-overlay: var(--cpr-color-white);
+  --cpr-icon-actor-image-overlay-border: var(--cpr-color-red);
+}
+
+html[data-cpr-theme="darkmode"] {
+  --cpr-darkmode-main: #52606d;
+  --cpr-darkmode-background: #232b2b;
+  --cpr-darkmode-text-main: #eaeaea;
+  --cpr-darkmode-header: #121212;
+  --cpr-darkmode-red: #c62828;
+  --cpr-darkmode-bluish-grey: #394867;
+
+  --cpr-background-content-link: #3b3b3b;
+  --cpr-background-window: var(--cpr-darkmode-background);
+  --cpr-background-border: var(--cpr-darkmode-main);
+  --cpr-background-box: var(--cpr-darkmode-background);
+  --cpr-background-header: var(--cpr-darkmode-header);
+  --cpr-background-pill: var(--cpr-darkmode-header);
+  --cpr-background-row-even: #3b444b;
+  --cpr-background-row-odd: var(--cpr-darkmode-background);
+  --cpr-background-tab-active: var(--cpr-darkmode-main);
+  --cpr-background-tab-inactive: #0e1111;
+  --cpr-background-tab-underlay: #495057;
+  --cpr-background-code: #3b3b3b;
+  --cpr-background-chat-card: var(--cpr-darkmode-background);
+  --cpr-background-chat-card-block: var(--cpr-darkmode-main);
+  --cpr-background-chat-card-block-before: #3b3b3b;
+  --cpr-background-chat-border: #999999;
+  --cpr-background-foundry-input: #454b50;
+  --cpr-background-editor-button: var(--cpr-darkmode-bluish-grey);
+  --cpr-background-editor-button-selected: var(--cpr-color-dark-grey);
+  --cpr-background-cyberdeck-section-header: #414a4c;
+  --cpr-background-dialog-border: var(--cpr-darkmode-main);
+  --cpr-background-dialog-selected: #414a4c;
+  --cpr-background-foundry-hover: var(--cpr-darkmode-main);
+  --cpr-background-dialog-hr-gradient-start: #394867;
+  --cpr-background-dialog-hr-gradient-middle: #bcccdc;
+  --cpr-background-dialog-hr-gradient-end: #394867;
+  --cpr-background-editor-header: var(--cpr-darkmode-header);
+  --cpr-background-editor-button: #656a6a;
+  --cpr-background-editor-button-hover: #3e4242;
+  --cpr-background-editor-button-active: #3e4242;
+  --cpr-background-journal-blockquote: #3f4444;
+  --cpr-background-toggle-checked: #6b95dc;
+
+  // Text Colors
+  --cpr-text-content-link-icon: #dddddd;
+  --cpr-text-normal: var(--cpr-darkmode-text-main);
+  --cpr-text-pill: var(--cpr-darkmode-text-main);
+  --cpr-text-header: var(--cpr-darkmode-text-main);
+  --cpr-text-window: var(--cpr-darkmode-text-main);
+  --cpr-text-tab-normal: var(--cpr-darkmode-text-main);
+  --cpr-text-header-line: var(--cpr-darkmode-main);
+  --cpr-text-header-line-box: #c0c0c5;
+  --cpr-text-header-arrow: var(--cpr-darkmode-main);
+  --cpr-text-icon-normal: #c0c0c5;
+  --cpr-text-icon-dimmed: #66666e;
+  --cpr-text-icon-highlight: var(--cpr-darkmode-red);
+  --cpr-text-chat-normal: var(--cpr-darkmode-text-main);
+  --cpr-text-chat-failure: var(--cpr-darkmode-red);
+  --cpr-text-mook-normal: var(--cpr-darkmode-text-main);
+  --cpr-text-foundry-input: var(--cpr-darkmode-text-main);
+  --cpr-text-hint: #c0c0c0;
+  --cpr-text-foundry-hint: #c0c0c0;
+  --cpr-text-foundry-hover: #bcccdc;
+  --cpr-text-editor-header: var(--cpr-darkmode-text-main);
+  --cpr-text-editor-button: var(--cpr-color-black);
+  --cpr-text-dir-list: var(--cpr-darkmode-text-main);
+
+  // Override some foundry defaults to better fit the theme
+  --color-border-light-primary: #666;
+  --color-border-light-1: #666;
+  --color-shadow-primary: #bcccdc;
+  //
+  // Icon Colors
+  --cpr-icon-actor-image-overlay: var(--cpr-color-white);
+  --cpr-icon-actor-image-overlay-border: #3b444b;
+}

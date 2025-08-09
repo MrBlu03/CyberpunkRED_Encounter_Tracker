@@ -1,0 +1,325 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$ref": "#/definitions/CPRC-Active-Effect",
+  "definitions": {
+    "CPRC-Active-Effect": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "_id": {
+          "$ref": "./components/id.json"
+        },
+        "_key": {
+          "$ref": "./components/key.json"
+        },
+        "changes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CPRC-Effect-Change"
+          }
+        },
+        "description": {
+          "description": "This is a different description type than the common one",
+          "type": "string"
+        },
+        "disabled": {
+          "type": "boolean"
+        },
+        "duration": {
+          "$ref": "#/definitions/CPRC-Effect-Duration"
+        },
+        "flags": {
+          "$ref": "#/definitions/CPRC-Effect-Flags"
+        },
+        "icon": {
+          "$ref": "./components/img.json"
+        },
+        "name": {
+          "type": "string"
+        },
+        "tint": {
+          "type": "null"
+        },
+        "transfer": {
+          "type": "boolean"
+        },
+        "statuses": {
+          "type": "array"
+        }
+      },
+      "required": [
+        "_id",
+        "changes",
+        "description",
+        "disabled",
+        "duration",
+        "flags",
+        "icon",
+        "name",
+        "statuses",
+        "tint",
+        "transfer"
+      ]
+    },
+    "CPRC-Effect-Change": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "key": {
+          "description": "We list all CPR.activeEffectKeys (from system/config.js) or custom keys we use for AE in items explicitly to protect against typos. If you add a new ActiveEffectsKey or custom key, you'll need to add it to this list.",
+          "type": "string",
+          "enum": [
+            "bonuses.hands",
+            "bonuses.initiative",
+            "bonuses.maxHumanity",
+            "bonuses.maxHp",
+            "bonuses.deathSavePenalty",
+            "bonuses.universalAttack",
+            "bonuses.universalDamage",
+            "bonuses.universalDamageReduction",
+            "bonuses.aimedShot",
+            "bonuses.singleShot",
+            "bonuses.melee",
+            "bonuses.ranged",
+            "bonuses.autofire",
+            "bonuses.suppressive",
+            "bonuses.run",
+            "bonuses.walk",
+            "bonuses.attack",
+            "bonuses.defense",
+            "bonuses.brainDamageReduction",
+            "bonuses.perception_net",
+            "bonuses.rez",
+            "bonuses.speed",
+            "bonuses.backdoor",
+            "bonuses.cloak",
+            "bonuses.control",
+            "bonuses.eyedee",
+            "bonuses.pathfinder",
+            "bonuses.scanner",
+            "bonuses.slide",
+            "bonuses.virus",
+            "bonuses.zap",
+            "bonuses.teamwork",
+            "bonuses.operator",
+            "bonuses.backup",
+            "bonuses.credibility",
+            "bonuses.medicalTechCryosystemOperation",
+            "bonuses.medicalTechPharmaceuticals",
+            "bonuses.medicine",
+            "bonuses.surgery",
+            "bonuses.interface",
+            "bonuses.moto",
+            "bonuses.charismaticImpact",
+            "bonuses.combatAwareness",
+            "bonuses.damageDeflection",
+            "bonuses.fumbleRecovery",
+            "bonuses.initiativeReaction",
+            "bonuses.precisionAttack",
+            "bonuses.spotWeakness",
+            "bonuses.threatDetection",
+            "bonuses.fabricationExpertise",
+            "bonuses.fieldExpertise",
+            "bonuses.inventionExpertise",
+            "bonuses.maker",
+            "bonuses.upgradeExpertise",
+            "bonuses.accounting",
+            "bonuses.acting",
+            "bonuses.airVehicleTech",
+            "bonuses.animalHandling",
+            "bonuses.archery",
+            "bonuses.athletics",
+            "bonuses.basicTech",
+            "bonuses.brawling",
+            "bonuses.bribery",
+            "bonuses.bureaucracy",
+            "bonuses.business",
+            "bonuses.composition",
+            "bonuses.concealOrRevealObject",
+            "bonuses.concentration",
+            "bonuses.contortionist",
+            "bonuses.conversation",
+            "bonuses.criminology",
+            "bonuses.cryptography",
+            "bonuses.cybertech",
+            "bonuses.dance",
+            "bonuses.deduction",
+            "bonuses.demolitions",
+            "bonuses.driveLandVehicle",
+            "bonuses.education",
+            "bonuses.electronicsAndSecurityTech",
+            "bonuses.endurance",
+            "bonuses.evasion",
+            "bonuses.firstAid",
+            "bonuses.forgery",
+            "bonuses.gamble",
+            "bonuses.handgun",
+            "bonuses.heavyWeapons",
+            "bonuses.humanPerception",
+            "bonuses.interrogation",
+            "bonuses.landVehicleTech",
+            "bonuses.language",
+            "bonuses.librarySearch",
+            "bonuses.lipReading",
+            "bonuses.localExpert",
+            "bonuses.martialArts",
+            "bonuses.meleeWeapon",
+            "bonuses.paintOrDrawOrSculpt",
+            "bonuses.paramedic",
+            "bonuses.perception",
+            "bonuses.perceptionHearing",
+            "bonuses.perceptionSight",
+            "bonuses.personalGrooming",
+            "bonuses.persuasion",
+            "bonuses.photographyAndFilm",
+            "bonuses.pickLock",
+            "bonuses.pickPocket",
+            "bonuses.pilotAirVehicle",
+            "bonuses.pilotSeaVehicle",
+            "bonuses.playInstrument",
+            "bonuses.playInstrument(Drums)",
+            "bonuses.resistTortureOrDrugs",
+            "bonuses.riding",
+            "bonuses.science",
+            "bonuses.seaVehicleTech",
+            "bonuses.shoulderArms",
+            "bonuses.stealth",
+            "bonuses.streetWise",
+            "bonuses.tactics",
+            "bonuses.tracking",
+            "bonuses.trading",
+            "bonuses.wardrobeAndStyle",
+            "bonuses.weaponstech",
+            "bonuses.wildernessSurvival",
+            "system.stats.int.value",
+            "system.stats.ref.value",
+            "system.stats.dex.value",
+            "system.stats.tech.value",
+            "system.stats.cool.value",
+            "system.stats.will.value",
+            "system.stats.luck.max",
+            "system.stats.move.value",
+            "system.stats.body.value",
+            "system.stats.emp.max",
+            "bonuses.allActions",
+            "bonuses.allActionsHands",
+            "bonuses.allActionsSpeech",
+            "ATL.light.bright",
+            "bonuses.hasPainSuppression"
+          ]
+        },
+        "mode": {
+          "type": "integer",
+          "enum": [0, 1, 2, 3, 4, 5]
+        },
+        "priority": {
+          "type": "null"
+        },
+        "value": {
+          "type": "string",
+          "format": "integer"
+        }
+      },
+      "required": ["key", "mode", "value"]
+    },
+    "CPRC-Effect-Duration": {
+      "description": "We do not currently use 'duration' in our AEs. This will need to be better defined if we start using 'duration'",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "combat": {
+          "type": "null"
+        },
+        "rounds": {
+          "type": "null"
+        },
+        "seconds": {
+          "type": "null"
+        },
+        "startRound": {
+          "type": "null"
+        },
+        "startTime": {
+          "type": "null"
+        },
+        "startTurn": {
+          "type": "null"
+        },
+        "turns": {
+          "type": "null"
+        }
+      },
+      "required": [
+        "combat",
+        "rounds",
+        "seconds",
+        "startRound",
+        "startTime",
+        "startTurn",
+        "turns"
+      ]
+    },
+    "CPRC-Effect-Flags": {
+      "description": "The 'flags' key in an effect object is different to the 'flags' key in the root object, as such we do not use an abstracted common definition.",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "cyberpunk-red-core": {
+          "$ref": "#/definitions/CPRC-Effect-Flags-System"
+        }
+      },
+      "required": ["cyberpunk-red-core"]
+    },
+    "CPRC-Effect-Flags-System": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "changes": {
+          "$ref": "#/definitions/CPRC-Effect-System-Changes"
+        }
+      },
+      "required": ["changes"]
+    },
+    "CPRC-Effect-System-Changes": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "cats": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string",
+            "enum": [
+              "combat",
+              "custom",
+              "netrun",
+              "misc",
+              "role",
+              "skill",
+              "stat"
+            ]
+          }
+        },
+        "situational": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/CPRC-Effect-System-Changes-Situational"
+          }
+        }
+      },
+      "required": ["cats", "situational"]
+    },
+    "CPRC-Effect-System-Changes-Situational": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "isSituational": {
+          "type": "boolean"
+        },
+        "onByDefault": {
+          "type": "boolean"
+        }
+      },
+      "required": ["isSituational", "onByDefault"]
+    }
+  }
+}

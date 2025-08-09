@@ -1,0 +1,246 @@
+{
+  "label": "Armas",
+  "mapping": {
+    "dvTable": "sistema.Tablavd"
+  },
+  "entries": {
+    "Arasaka Prototype Variable Assault Rifle": {
+      "name": "Prototipo de Rifle de Asalto Variable de Arasaka",
+      "description": "<p>El Prototipo de Rifle de Asalto Variable de Arasaka es un Rifle de Asalto Exótico de excelente calidad. Asumiendo que tienes todas las partes, puede usar un modo único alternativo de cañón de raíl. Reglas completas se pueden encontrar en Cromo Negro en la página 102.</p>",
+      "dvTable": "VD Rifle de Asalto"
+    },
+    "Arasaka Weeping Reaver Katana": {
+      "name": "Arasaka Weeping Reaver Katana",
+      "description": "<p>Excellent Quality Two Handed Exotic Very Heavy Melee Weapon.</p>\n<p>Contains three doses of specific fluids for blade coating:</p>\n<ul>\n  <li>Arasaka Fire (can ignite target)</li>\n  <li>Arasaka Acid (ablates armor)</li>\n  <li>Arasaka Wound Salt (applies a second critical injury)</li>\n</ul>\n"
+    },
+    "E-TACK Public Defender": {
+      "name": "E-TACK Defensor Público",
+      "description": "<p>Viene con un adjunto de Conector de Arma Inteligente*. El usuario necesita un Conector Subdermal para operarlo. Tiene un modo letal y no letal.</p>\n<p>Las reglas completas se pueden encontrar en el Cromo Negro en la página 115.</p>\n<p><em>* Esta actualización necesita ser añadida manualmente.</em></p>",
+      "dvTable": "VD Pistola"
+    },
+    "Eagletech Survivalist": {
+      "name": "Eagletech Survivalist",
+      "description": "<p>\n  The Eagletech Survivalist is a 2-in-1 Crossbow and Assault RIfle. It is\n  incapable of Autofire. It comes with an integrated Sniping Scope*.\n</p>\n<p><em>*Must be manually applied after purchase</em></p>\n",
+      "dvTable": "DV Bows & Crossbows"
+    },
+    "Faisal's Dead or Alive": {
+      "name": "Vivo o Muerto de Faisal",
+      "description": "<p>El Vivo o Muerto de Faisal es una escopeta exótica de mala calidad con un lanzador integrado de red de baja calidad. Reglas completas se pueden encontrar en Cromo Negro en la página 104.</p>",
+      "dvTable": "VD Escopeta (Perdigones de escopeta)"
+    },
+    "Faisal's Magna Knuckles": {
+      "name": "Faisal's Magna Knuckles",
+      "description": "<p>\n  One Handed Exotic Medium Melee Weapon. Battery powered EMP effect which can\n  deactivate cyberware.\n</p>\n"
+    },
+    "Federated Arms Pepper Shaker": {
+      "name": "Federated Arms Pepper Shaker",
+      "description": "<p>\n  The Federated Arms Pepper Shaker is an Exotic SMG incapable of single shot or\n  aimed shots. Autofire only use 6 bullets for this weapon.\n</p>\n",
+      "dvTable": "DV SMG (Autofire)"
+    },
+    "Georgia Arms Matchmaker": {
+      "name": "Georgia Arms Matchmaker",
+      "description": "<p>\n  The Georgia Arms Matchmaker is a Poor Quality Exotic Shotgun that only holds\n  one shot in the magazine.\n</p>\n",
+      "dvTable": "DV Shotgun (Slug)"
+    },
+    "GunMart Bubba Buster": {
+      "name": "GunMart Bubba Buster",
+      "description": "<p>\n  The GunMart Bubba Buster is a Poor Quality Exotic Shotgun. It destroys itself\n  if fired more than 3 times in a minute.\n</p>\n",
+      "dvTable": "DV Shotgun (Slug)"
+    },
+    "GunMart Door Cracker": {
+      "name": "GunMart Door Cracker",
+      "description": "<p>Cheap explosive item, small area of effect.</p>\n"
+    },
+    "GunMart Engage Rocket Launcher": {
+      "name": "GunMart Engage Rocket Launcher",
+      "description": "<p>\n  The GunMart Engage Rocket Launcher is a Poor Quality Exotic Rocket Launcher.\n  It explodes on a Critical Failure or when unloading the weapon.\n</p>\n",
+      "dvTable": "DV Rocket Launcher"
+    },
+    "GunMart Smart Special": {
+      "name": "GunMart Especial Inteligente",
+      "description": "<p>El GunMart Especial Inteligente es una Pistola Pesada Exótica de Calidad Pobre con un enlace de Arma Inteligente integrado. Reglas completas se pueden encontrar en Cromo Negro en la página 108.</p>",
+      "dvTable": "VD Pistola"
+    },
+    "GunMart Special": {
+      "name": "Especial de GunMart",
+      "description": "<p>El GunMart Especial es una Pistola Pesada Exótica de Pobre Calidad. Las reglas completas se pueden encontrar en el Cromo Negro en la página 108.</p>",
+      "dvTable": "VD Pistola"
+    },
+    "Hades Multipurpose Assault Shotgun": {
+      "name": "Escopeta de Asalto Multipropósito Hades",
+      "description": "<p>La Escopeta de Asalto Multipropósito Hades es una Escopeta Exótica. El cargador tiene 16 tiros. Las reglas completas se pueden encontrar en el Cromo Negro en la página 109.</p>",
+      "dvTable": "VD Escopeta (Perdigones de escopeta)"
+    },
+    "Kendachi Mono-Guard": {
+      "name": "Kendachi Mono-Guard",
+      "description": "<p>Monowire, One Handed Exotic Heavy Melee Weapon.</p>\n<p>Can apply multiple Critical Injuries.</p>\n"
+    },
+    "Kendachi Mono-Katana": {
+      "name": "Kendachi Mono-Katana",
+      "description": "<p>\n  Two Handed Exotic Very Heavy Melee Weapon. When wielded by the correct user\n  the weapon ignores armor less than 7 SP.\n</p>\n"
+    },
+    "Kendachi Mono-Star": {
+      "name": "Kendachi Mono-Star",
+      "description": "<p>\n  Mono-Shuriken whose orb center contains a kinetic and solar motor allowing the\n  star to spin on itself and vibrate.\n</p>\n<p>Can be used as both a melee and ranged weapon.</p>\n",
+      "dvTable": "DV Thrown Weapon"
+    },
+    "Kendachi Mono-Wakizashi": {
+      "name": "Kendachi Mono-Wakizashi",
+      "description": "<p>\n  One Handed Exotic Heavy Melee Weapon. When wielded by the correct user the\n  weapon ignores armor less than 7 SP.\n</p>\n"
+    },
+    "KillChip 100 Micro-Bomb": {
+      "name": "Micro-Bomba KillChip 100",
+      "description": "<p>Tarjeta de memoria, pero explosiva cuando se conecta a Neuralware. Puede encontrar reglas completas en la página 88 de Cromo Negro.</p>"
+    },
+    "KTech TechHammer": {
+      "name": "KTech TechHammer",
+      "description": "<p>The KTech TechHammer is an Exotic Shotgun/Rocket Launcher.</p>\n",
+      "dvTable": "DV Shotgun (Slug)"
+    },
+    "Micro Hydrogen Combustor": {
+      "name": "Combustor de Micro Hydrogen",
+      "description": "<p> Un pequeño explosivo que detona después de ser sumergido en un líquido. Es a la vez perforante y crea una gran nube de humo. </p> <p> Las reglas completas se pueden encontrar en la página 88. </p>"
+    },
+    "Midnight Arms Beast Shotgun": {
+      "name": "Midnight Arms Beast Shotgun",
+      "description": "<p>\n  The Midnight Arms Beast Shotgun is an Exotic Shotgun. Its magazine holds 40\n  rounds. Requires BODY 10 or higher (unless mounted) when fired or the User\n  will suffer the consequences.\n</p>\n",
+      "dvTable": "DV Shotgun (Slug)"
+    },
+    "Militech Fox Dual Ammo Pistol": {
+      "name": "Militech Fox Dual Ammo Pistol",
+      "description": "<p>The Militech Fox Dual Ammo Pistol is an Exotic Heavy Pistol.</p>\n",
+      "dvTable": "DV Pistol"
+    },
+    "Militech Mastiff SMG": {
+      "name": "Militech Mastiff SMG",
+      "description": "<p>The Militech Mastiff SMG is an Exotic Two-Handed SMG and Shotgun*.</p>\n<p>\n  <em\n    >*Treat this as an SMG with an Underbarrel Shotgun, the upgrade must be\n    added manually.</em\n  >\n</p>\n",
+      "dvTable": "DV SMG"
+    },
+    "Militech Perseus": {
+      "name": "Militech Perseus",
+      "description": "<p>The Militech Perseus is an Excellent Quality Exotic Very Heavy Pistol.</p>\n",
+      "dvTable": "DV Pistol"
+    },
+    "ModFire 10X (Pistol)": {
+      "name": "ModFire 10X (Pistola)",
+      "description": "<p>El ModFire 10X es una Pistola Pesada Exótica. También se puede transformar en un SMG exótico o en un Rifle de Asalto Exótico, asumiendo que el usuario tiene todas las partes necesarias. Reglas completas se pueden encontrar en Cromo Negro en la página 114.</p>",
+      "dvTable": "VD Pistola"
+    },
+    "ModFire 10X (Rifle)": {
+      "name": "ModFire 10X (Rífle)",
+      "description": "<p>El ModFire 10X es una Pistola Pesada Exótica. También se puede transformar en un SMG exótico o en un Rifle de Asalto Exótico, asumiendo que el usuario tiene todas las partes necesarias. Reglas completas se pueden encontrar en Cromo Negro en la página 114.</p>",
+      "dvTable": "VD Rifle de Asalto"
+    },
+    "ModFire 10X (SMG)": {
+      "name": "ModFire 10X (SMG)",
+      "description": "<p>El ModFire 10X es una Pistola Pesada Exótica. También se puede transformar en un SMG exótico o en un Rifle de Asalto Exótico, asumiendo que el usuario tiene todas las partes necesarias. Reglas completas se pueden encontrar en Cromo Negro en la página 114.</p>",
+      "dvTable": "VD Pistola"
+    },
+    "Nomad Rocker": {
+      "name": "Lanzarocas Nómada",
+      "description": "<p>El Lanzarocas Nómada es una Pistola Exótica Muy Pesada de mala calidad que dispara rocas. La munición es gratuita para esta arma. Puede encontrar reglas completas en el Cromo Negro en la página 115.</p>",
+      "dvTable": "VD Pistola"
+    },
+    "OUTLet Explosive": {
+      "name": "OUTLet Explosivo",
+      "description": "<p>Explosivo con aspecto de un adaptador de enchufe eléctrico. Puede encontrar reglas completas en la página 89.</p>"
+    },
+    "Overlord Handcannon": {
+      "name": "Cañón del Soberano Supremo",
+      "description": "<p>El cañón del Soberano Supremo es una Pistola Pesada Exótica de Mala Calidad con una velocidad de disparo de 1. Puede dar una bonificación +1 a Intimidar en ciertas situaciones. Las reglas completas se pueden encontrar en Cromo Negro en la página 106.</p>",
+      "dvTable": "VD Pistola"
+    },
+    "Pursuit Security Bouncer": {
+      "name": "Rebotador de Pursuit Security",
+      "description": "<p>Guante que funciona a baterías.</p>\n<p>Una combinación Exótica de Bastón Aturdidor y Microondas.</p>\n<p>Los detalles completos se pueden encontrar en la página 97.</p>"
+    },
+    "Pursuit Security Incorporated Crowd Buster": {
+      "name": "Pursuit Security Incorporated Crowd Buster",
+      "description": "<p>\n  The Pursuit Security Inc. Crowd Buster is an Exotic Assault Rifle with a\n  unique alternate firing mode. It comes with a pair of Auto Level Dampening Ear\n  Protectors*.\n</p>\n<p><em>*Must be manually applied after purchase</em></p>\n",
+      "dvTable": "DV Assault Rifle"
+    },
+    "Ranger Combat Boomerang": {
+      "name": "Boomerang de Ranger Combat",
+      "description": "<p>Funciona como un arma pesada a una mano, pero a pesar de ser arrojada reduce a la mitad la CP</p>\n<p>Contiene un sistema de guía incorporado, cuyos detalles se pueden encontrar en la página 100.</p>",
+      "dvTable": "VD Armas arrojadizas"
+    },
+    "Rostović Kleaver": {
+      "name": "Cuchilla Rostović",
+      "description": "<p>Arma cuerpo a cuerpo muy pesada exótica a dos manos. Puede usar una batería para aumentar el daño, cuyos detalles se pueden encontrar en la página 94.</p>\n<p>Necesita TCO 11 o más para usarlo.</p>"
+    },
+    "Rostović Ulični Uništitelj (aka the Street Destroyer)": {
+      "name": "Rostović Ulični Uništitelj (aka the Street Destroyer)",
+      "description": "<p>\n  The Rostović Ulični Uništitelj (Street Destroyer) is a Poor Quality Exotic\n  Shotgun. The magazine only holds 3 shots. It can only shoot Shotgun Shells.\n</p>\n",
+      "dvTable": "DV Shotgun (Slug)"
+    },
+    "Sanroo Hello Cutie Ultra-K8 Assault Pistol": {
+      "name": "Sanroo Hello Cutie Ultra-K8 Assault Pistol",
+      "description": "<p>\n  The Sanroo Hello Cutie Ultra-K8 Assault Pistol is an Excellent Quality Exotic\n  Very Heavy Pistol with an Excellent Quality Heavy SMG mode.\n</p>\n",
+      "dvTable": "DV Pistol"
+    },
+    "SlamDance FangFist": {
+      "name": "SlamDance FangFist",
+      "description": "<p>Excellent Quality One Handed Exotic Medium Melee Weapon.</p>\n<p>A glove with a short retractable blade.</p>\n"
+    },
+    "SlamDance Tasmanskiy Klô": {
+      "name": "SlamDance Tasmanskiy Klô",
+      "description": "<p>Excellent Quality Exotic Very Heavy Melee Weapon.</p>\n<p>Big retractable blades in a Combat Glove.</p>\n"
+    },
+    "Solo Wolf and Bot Mono-Katana": {
+      "name": "Solo Wolf and Bot Mono-Katana",
+      "description": "<p>Poor Quality Two Handed Exotic Very Heavy Melee Weapon.</p>\n<p>Mono-Katana cheap look-alike.</p>\n"
+    },
+    "Sternmeyer M-04 Variable Assault": {
+      "name": "Sternmeyer M-04 Variable Assault",
+      "description": "<p>\n  The Sternmeyer M-04 Variable Assault is a Poor Quality Exotic Assault Rifle\n  with a custom Grenade Launcher underbarrel*.\n</p>\n<p><em>*Grenade Launcher must be manually added.</em></p>\n",
+      "dvTable": "DV Assault Rifle"
+    },
+    "Superchrome® Glam Rifle": {
+      "name": "Rifle Superchrome®️ Glam",
+      "description": "<p>El Rifle Superchrome®️ Glam es un Rifle de Asalto Exótico. Da al usuario un bono de +2 a Vestuario y Estilo cuando esté equipado. Reglas completas se pueden encontrar en Cromo Negro en la página 120.</p>",
+      "dvTable": "VD Rifle de Asalto"
+    },
+    "Superchrome® Javelin": {
+      "name": "Superchrome®️ Javelin",
+      "description": "<p>El Superchrome®️ Javelin es un Rifle de Francotirador exótico. Da al usuario una bonificación de +2 a Vestuario y Estilo cuando esté equipado. Las reglas completas se pueden encontrar en Cromo Negro en la página 120.</p>",
+      "dvTable": "VD Rifle de Francotirador"
+    },
+    "Superchrome® Sidearm": {
+      "name": "Superchrome® Sidearm",
+      "description": "<p>La Superchrome® Sidearm es una pistola exótica muy pesada. Da al usuario una bonificación de +2 a Vestuario y Estilo cuando esté equipado. Las reglas completas se pueden encontrar en Cromo Negro en la página 121.</p>",
+      "dvTable": "VD Pistola"
+    },
+    "Techtronika Russia BMG-500": {
+      "name": "Techtronika Russia BMG-500",
+      "description": "<p>\n  The Techtronika Russia BMG-500 is an Exotic Assault Rifle with a magazine of\n  500 rounds and a bipod. Requires BODY 11 or higher (unless mounted).\n</p>\n",
+      "dvTable": "DV Assault Rifle"
+    },
+    "Tommyknocker": {
+      "name": "Tommyknocker",
+      "description": "<p>El Tommyknocker es una Pistola Exótica Muy Pesada y una Escopeta de Calidad Pobre. Requiere TCO 10 o que se mantenga en dos manos al disparar, de lo contrario el usuario suelta el arma al suelo. Reglas completas se pueden encontrar en Cromo Negro en la página 123.</p>",
+      "dvTable": "VD Pistola"
+    },
+    "TR-4 Detonator Fluid": {
+      "name": "Fluido Detonador TR-4",
+      "description": "<p>Debe verterse en el tanque de combustible de un vehículo para que explote. Las reglas completas se pueden encontrar en la página 90.</p>"
+    },
+    "Utility Tomahawk": {
+      "name": "Tomahawk Utilitario",
+      "description": "<p>Hoja y pica, este piolet de acero y material compuesto puede ayudarte a escalar paredes de hielo mientras causa daños graves en una pelea.</p>\n<p>Se puede usar tanto como arma cuerpo a cuerpo como a distancia, cuyas reglas se pueden encontrar en la página 101.</p>",
+      "dvTable": "VD Armas arrojadizas"
+    },
+    "Westwood": {
+      "name": "Westwood",
+      "description": "<p>La Westwood es una pistola muy pesada. Con una capacidad de 6 tiros que no se pueden actualizar con mejoras de cargador. Reglas completas se pueden encontrar en Cromo Negro en la página 121.</p>",
+      "dvTable": "VD Pistola"
+    },
+    "White Hornet Tanto": {
+      "name": "Tanto de Avispón Blanco",
+      "description": "<p>Un arma cuerpo a cuerpo exótica a mano. Puede dejar al objetivo inconsciente en lugar de muerto, con reglas completas encontradas en la página 93.</p>"
+    },
+    "Zhirafa Rhinocefist": {
+      "name": "Zhirafa Rhinocefist",
+      "description": "<p>\n  Armored large stone chisel glove, covering from hand to shoulder. Requires\n  interface plugs. Can be used both for demolition and brawling.\n</p>\n"
+    }
+  }
+}

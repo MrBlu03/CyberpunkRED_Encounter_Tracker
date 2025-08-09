@@ -1,0 +1,30 @@
+{
+  "label": "Anatomie des Drones",
+  "mapping": {},
+  "entries": {
+    "GRAF3": {
+      "name": "GRAF3",
+      "description": "<p>Drone quadrupède de construction.</p>\n"
+    },
+    "My First GRAF3": {
+      "name": "Mon Premier GRAF3",
+      "description": "<p>Drone personnel. Petit GRAF3 qui peut être relié à un Agent.</p>\n"
+    },
+    "Savannah Eagle": {
+      "name": "Aigle Savannah",
+      "description": "<p>Drone de défense aérienne active.</p>\n"
+    },
+    "Savannah Panther": {
+      "name": "Panthère Savannah",
+      "description": "<p>Drone de défense active.</p>\n"
+    },
+    "The Observer": {
+      "name": "L'Observateur",
+      "description": "<p>Drone personnel. Caméra volante qui peut être reliée à un Agent.</p>\n"
+    },
+    "The Transporter": {
+      "name": "Le Transporteur",
+      "description": "<p>Drone personnel. Drone transporteur qui peut être lié à un Agent.</p>\n"
+    }
+  }
+}

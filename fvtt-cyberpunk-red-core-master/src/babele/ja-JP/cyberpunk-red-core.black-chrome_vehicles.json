@@ -1,0 +1,130 @@
+{
+  "label": "ヴィークル",
+  "mapping": {},
+  "entries": {
+    "AmeriCar EconoCompact": {
+      "name": "AmeriCar EconoCompact",
+      "description": "<p>Small and low-cost Compact Groundcar.</p>\n"
+    },
+    "AmeriCar Family Star Van": {
+      "name": "AmeriCar Family Star Van",
+      "description": "<p>Comfortable family Compact Groundcar.</p>\n"
+    },
+    "Dayton TDT 004": {
+      "name": "Dayton TDT 004",
+      "description": "<p>Troop transport Helicopter.</p>\n"
+    },
+    "Diego Motors Chupacabra": {
+      "name": "Diego Motors Chupacabra",
+      "description": "<p>\n  Compact Groundcar built from recycled parts from older vehicles. Low-tech but\n  high-horse-power.\n</p>\n"
+    },
+    "Diego Motors Range Trike": {
+      "name": "Diego Motors Range Trike",
+      "description": "<p>Three wheeled Roadbike.</p>\n"
+    },
+    "Grundy": {
+      "name": "グランディ",
+      "description": "<p>Armored industrial looking Compact Grouncar, with a powerful combat plow.</p>\n<p>Full details can be found on page 68.</p>"
+    },
+    "Harriet 100": {
+      "name": "ハリエット100",
+      "description": "<p>A classic Roadbike with a more feminine look.</p>\n<p>Full details can be found on page 69.</p>"
+    },
+    "Harvey 100": {
+      "name": "ハーヴェイ100",
+      "description": "<p>A classic Roadbike.</p>\n<p>Full details can be found on page 69.</p>"
+    },
+    "Harvey Merc": {
+      "name": "ハーヴェイ・マーク",
+      "description": "<p>A classic Roadbike, this time with mounted weapons.</p>\n"
+    },
+    "Highway Master Artemis": {
+      "name": "ハイウェイマスター・アルテミス",
+      "description": "<p>A low-riding Roadbike with retractable glass cover. Has a surpercharge mode that doesn't come with a safety guarantee.</p>\n<p>Full details can be found on page 70.</p>"
+    },
+    "Kaukaz Volkhov": {
+      "name": "Kaukaz Volkhov",
+      "description": "<p>\n  An armored pickup Compact Groundcar with mounted machine gun. Comes with a\n  bottle of vodka.\n</p>\n"
+    },
+    "Makigai Ebi": {
+      "name": "Makigai Ebi",
+      "description": "<p>Small but well thought out Compact Groundcar.</p>\n"
+    },
+    "Militech Gorgon Security Van": {
+      "name": "Militech Gorgon Security Van",
+      "description": "<p>A monster of an armored van.</p>\n"
+    },
+    "Paladin 500": {
+      "name": "パラディン500",
+      "description": "<p>A High Performance Groundcar. Now you can be MadMax. In town. With two mounted Machine Guns.</p>\n<p>Full details can be found on page 75.</p>"
+    },
+    "Quadra Thunder-X": {
+      "name": "Quadra Thunder-X",
+      "description": "<p>A top of the line High Performance Groundcar.</p>\n"
+    },
+    "SH-45 Patroller Law": {
+      "name": "SH-45 パトローラー・ロー",
+      "description": "<p>One seat Gyrocopter. Police version, with mounted Machine Gun.</p>\n<p>Full stats can be found on page 58.</p>"
+    },
+    "SH-45 Patroller": {
+      "name": "SH-45 パトローラー",
+      "description": "<p>One seat Gyrocopter. Civilian version.</p>\n<p>Full stats can be found on page 58.</p>"
+    },
+    "Street King Combat Vehicle": {
+      "name": "ストリーㇳキング・コンバットヴィークル",
+      "description": "<p>A High Performance Groundcar which is large, armored and has a military look.</p>\n<p>Full details can be found on page 77.</p>"
+    },
+    "Tanson Bellhop": {
+      "name": "Tanson Bellhop",
+      "description": "<p>\n  A one seat Gyrocopter which can be folded to the size of a large suitcase.\n</p>\n"
+    },
+    "Tanson JetBoy Hoverboard": {
+      "name": "Tanson JetBoy Hoverboard",
+      "description": "<p>A hoverboard driven with Athletics Skill. Can't be upgraded.</p>\n"
+    },
+    "TetraCorp America Badger Corporate Bus": {
+      "name": "TetraCorp America Badger Corporate Bus",
+      "description": "<p>\n  A luxurious bus for corporate road trips. Equally well equipped for work\n  meetings and after meeting drinks.\n</p>\n"
+    },
+    "TetraCorp America MegaHauler": {
+      "name": "TetraCorp America MegaHauler",
+      "description": "<p>Armored truck transport. As much a train as a car.</p>\n"
+    },
+    "Yang's Wheels Rickshaw": {
+      "name": "ヤンズ・ホイールズ・リキシャ",
+      "description": "<p>Roadbike with attached trailer for passengers.</p>\n<p>Full details can be found on page 81.</p>"
+    },
+    "Zacatzontli Pickup Truck": {
+      "name": "Zacatzontli Pickup Truck",
+      "description": "<p>A Compact Groundcar equipped for off-road travel.</p>\n"
+    },
+    "Zetatech AeroCop": {
+      "name": "Zetatech AeroCop",
+      "description": "<p>AV4 type Aerodyne. Police version.</p>\n"
+    },
+    "Zetatech AeroVox": {
+      "name": "Zetatech AeroVox",
+      "description": "<p>AV4 type Aerodyne. Civilian version.</p>\n"
+    },
+    "Zetatech Destination": {
+      "name": "Zetatech Destination",
+      "description": "<p>AV4 style Aerodyne, civilian model.</p>\n"
+    },
+    "Zetatech Herakles": {
+      "name": "Zetatech Herakles",
+      "description": "<p>AV4 type troop transport, armored and armed.</p>\n"
+    },
+    "Zonda Molly 1K": {
+      "name": "Zonda Molly 1K",
+      "description": "<p>Off-road Compact Groundcar.</p>\n"
+    },
+    "Zonda Parallax Cybercycle": {
+      "name": "Zonda Parallax Cybercycle",
+      "description": "<p>Top of the line Superbike.</p>\n"
+    },
+    "Zonda Sliver": {
+      "name": "Zonda Sliver",
+      "description": "<p>A Roadbike with all the gadgets you'd ever need.</p>\n"
+    }
+  }
+}

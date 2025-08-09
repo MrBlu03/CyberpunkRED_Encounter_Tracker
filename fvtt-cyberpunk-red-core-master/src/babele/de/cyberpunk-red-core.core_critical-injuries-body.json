@@ -1,0 +1,50 @@
+{
+  "label": "Kritische Verletzungen (Körper)",
+  "mapping": {},
+  "entries": {
+    "Broken Arm": {
+      "name": "Armbruch",
+      "description": "<p>Dieser Arm kann nicht mehr benutzt werden. Du lässt sofort jeden Gegenstand aus der Hand dieses Arms fallen</p>"
+    },
+    "Broken Leg": {
+      "name": "Beinbruch",
+      "description": "<p>-4 BEW (Minimum BEW von 1).</p>"
+    },
+    "Broken Ribs": {
+      "name": "Rippenbruch",
+      "description": "<p>Wenn du dich am Ende jedes Zuges zu Fuß mehr als 4 Meter fortbewegst, wird der Bonusschaden dieser Kritischen Verletzung direkt von deinen Trefferpunkten abgezogen.</p>"
+    },
+    "Collapsed Lung": {
+      "name": "Kollabierte Lunge",
+      "description": "<p>-2 BEW (Minimum BEW von 1).</p>"
+    },
+    "Crushed Fingers": {
+      "name": "Fingerfraktur",
+      "description": "<p>–4 auf alle Aktionen mit dieser Hand.</p>"
+    },
+    "Dismembered Arm": {
+      "name": "Abgetrennter Arm",
+      "description": "<p>Dieser Arm ist verloren. Du lässt sofort jeden Gegenstand fallen, den du in der Hand gehalten hast.</p>"
+    },
+    "Dismembered Hand": {
+      "name": "Abgetrennte Hand",
+      "description": "<p>Diese Hand ist verloren. Du lässt sofort jeden Gegenstand fallen, den du in der Abgetrennten Hand gehalten hast.</p>"
+    },
+    "Dismembered Leg": {
+      "name": "Abgetrenntes Bein",
+      "description": "<p>Bein ist entfernt. Kann nicht ausweichen. -6 BEW (Minimum BEW von 1).</p>"
+    },
+    "Foreign Object": {
+      "name": "Fremdobjekt",
+      "description": "<p>Wenn du dich am Ende jedes Zuges zu Fuß mehr als 4 Meter fortbewegst, wird der Bonusschaden dieser Kritischen Verletzung direkt von deinen Trefferpunkten abgezogen.</p>"
+    },
+    "Spinal Injury": {
+      "name": "Rückgratverletzung",
+      "description": "<p>Im nächsten Zug kannst du keine Aktion aufwenden, aber immer noch eine Bewegungsaktion durchführen.</p>"
+    },
+    "Torn Muscle": {
+      "name": "Muskelriss",
+      "description": "<p>-2 auf Nahkampfangriffe.</p>"
+    }
+  }
+}

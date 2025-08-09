@@ -1,0 +1,35 @@
+{
+  "label": "Tarocchi Di Night City",
+  "mapping": {},
+  "entries": {
+    "Tarot Cards": {
+      "name": "Tarocchi",
+      "results": [
+        {
+          "1-1": "Il Matto. Tutto il Cyberware della vittima si disattiva per un’ora. I Cyberarti pendono inerti dal corpo e infliggono le stesse penalità delle loro controparti di carne quando vengono\nmutilati. Se la vittima dovesse restare priva della capacità di percepire i propri avversari, subisce anche una penalità aggiuntiva di -4 a tutte Prove, come se fosse avvolta dal fumo o dall’oscurità. Chi è privo di Cyberware subisce invece la Ferita Critica Corpo Estraneo e una Perdita d’Umanità di 3d6. (Vedi Tarocchi di Night City Pagina 3).",
+          "2-2": "Il Mago. Il GM sceglie un pezzo di Cyberware della vittima che viene distrutto (ma potrà essere riparato). Inoltre, la vittima è In Fiamme a livello Letale (CPRed pag. 180).\nSe la vittima non ha Cyberware, va comunque In Fiamme e una delle armi che impugna o trasporta subisce un malfunzionamento. Occorre spendere un’ Azione per ripararla prima di poterla usare di nuovo.(Vedi tarocchi di Night City Pagina 3).",
+          "3-3": "La Papessa. La vittima subisce la Ferita Critica Corpo Estraneo, ma non il Danno Bonus. Invece, se si muove a piedi di più di 4m in un Turno deve superare una Prova di Resistere a Tortura/Droghe VD 15 per non subire 3d6 danni diretti ai PF. (Vedi Tarocchi di Night City Pagina 3).",
+          "4-4": "L'imperatrice. I prossimi tre colpi a segno contro bersagli singoli in questo scontro causano automaticamente delle Ferite Critiche, a prescindere dal risultato dei dadi.\nQuesto si applica anche alle Armi da Mischia Leggere, ma non a Biotossine, Veleni, Taser e altre armi che non causano Ferite Critiche. (Vedi tarocchi di Night City Pagina 3).",
+          "5-5": "L' Imperatore. Il GM nomina un Giocatore, che sceglie una Ferita Critica dalla tabella della Testa (CPRed pag. 188) e una da quella del Corpo (CPRed pag. 187). La vittima subisce entrambe. (Vedi Tarocchi di Night City Pagina 3).",
+          "6-6": "Il Papa. L’ attacco infligge il doppio del normale danno, dopo aver applicato l’armatura e ogni altro moltiplicatore. (Proprio come un colpo mirato alla testa). Tuttavia, se è stato effettuato con un’arma, questa è distrutta e non è possibile ripararla. (Vedi Tarocchi di Night City Pagina 3).",
+          "7-7": "Gli Amanti. L’ attacco colpisce la Testa, anche se era diretto a un’altra locazione. Inoltre, se era un Attacco in Mischia, la vittima è ora considerata il difensore in una Lotta con l’attaccante. (Vedi tarocchi di Night City Pagina 3).",
+          "8-8": "Il Carro. L’ armatura del bersaglio nella locazione viene ablata di 5 punti aggiuntivi, persino se l’Attacco non causa danni. (Vedi Tarocchi di Night City Pagina 4).",
+          "9-9": "La Forza. L’ attacco infligge 25 danni aggiuntivi, che vengono sommati prima di applicare gli effetti dell’armatura e dei moltiplicatori. (Vedi Tarocchi di Night City Pagina 4).",
+          "10-10": "L' Eremita. La vittima subisce due volte la Ferita Critica Occhio Danneggiato, ma la penalità viene applicata una volta sola. Se ciò dovesse accecare il bersaglio, questi subisce anche una penalità aggiuntiva di -4 a tutte le Prove, come se fosse avvolto dal fumo o dall’ oscurità. (Vedi Tarocchi di Night City Pagina 4).",
+          "11-11": "Ruota della Fortuna. Se l’ Attacco era a Distanza, il GM determina a caso chi viene colpito al posto del bersaglio originale. Se era un Attacco in Mischia, il Personaggio che ha estratto la Ruota della Fortuna cade Prono e il colpo va automaticamente a vuoto. In entrambi i casi, l’ arma usata subisce un malfunzionamento e occorre spendere un’ Azione per sistemarla prima di poterla riutilizzare. (Vedi Tarocchi di Night City Pagina 4).",
+          "12-12": "La Giustizia. L’ attacco mozza il fiato della vittima che, per i cinque minuti seguenti, subisce una penalità di -5 alle Prove di Elusione per evitare gli Attacchi in Mischia e non può schivare quelli a Distanza. (Vedi Tarocchi di Night City Pagina 4).",
+          "13-13": "L' Appeso. La vittima cade Prona e subisce le Ferite Critiche Lesione Spinale e Colpo di Frusta. (Vedi Tarocchi di Night City Pagina 4).",
+          "14-14": "La Morte. La vittima effettua immediatamente un Tiro della Morte. Se lo fallisce è ridotta a 0 PF e perde i sensi per un minuto. Quando rinviene, grazie a quest’esperienza recupera 3d6 Punti Umanità (fino al proprio massimale). (Vedi Tarocchi di Night City Pagina 4).",
+          "15-15": "La Temperanza. La vittima sceglie uno dei propri arti che subisce la Ferita Critica Smembrato e un altro che subisce la Ferita Critica Rotto. (Vedi Tarocchi di Night City Pagina 5).",
+          "16-16": "Il Diavolo. L’ attacco colpisce la Testa, anche se era diretto a un’altra locazione. Inoltre, la vittima subisce le Ferite Critiche Commozione Cerebrale e Orecchio Perso. (Vedi Tarocchi di Night City Pagina 5).",
+          "17-17": "La Torre. La vittima subisce le Ferite Critiche Teschio Incrinato, Laringe Schiacciata e Colpo di Frusta, ma non il Danno Bonus. Tuttavia, per un’ora non sente più dolore e ignora gli effetti della Ferita Grave. (Vedi Tarocchi di Night City Pagina 5).",
+          "18-18": "La Stella. Se pescata durante un Attacco a Distanza, questo trapassa il bersaglio e rimbalza verso un secondo, scelto dal GM, entro 20m. In assenza di avversari entro 20m, il primo bersaglio viene colpito di nuovo. Il rimbalzo va sempre a segno, colpisce il Corpo e richiede un secondo tiro per il danno. Con un Attacco in Mischia, la vittima subisce le Ferite Critiche Costole Rotte e Polmone Collassato. (Vedi Tarocchi di Night City Pagina 5).",
+          "19-19": "La Luna. La vittima subisce due volte la Ferita Critica Corpo Estraneo, una alla Testa e una al Corpo. Se il colpo è stato portato in Mischia e con un’arma, questa resta incastrata nel corpo della vittima e l’attaccante rimane disarmato. (Vedi Tarocchi di Night City Pagina 5).",
+          "20-20": "Il Sole. Se la vittima ha con sé granate o esplosivi, il GM ne sceglie uno che detona immediatamente. Se non ne ha, un suo pezzo d’equipaggiamento (scelto dal GM e non\nun’arma) si rompe in via definitiva. (Vedi Tarocchi di Night City Pagina 5).",
+          "21-21": "Il Giudizio. La vittima subisce la Ferita Critica Dita Schiacciate a una mano, mentre l’altra viene Smembrata. (Vedi Tarocchi di Night City Pagina 5).",
+          "22-22": "Il Mondo. Il Personaggio che pesca il Mondo può eseguire un altro Turno dopo quello in corso, durante il quale ottiene un bonus di +5 a tutte le Prove d’Abilità, ignora gli effetti della Soglia di Ferita e non deve eseguire un Tiro della Morte se è Moribondo. (Vedi Tarocchi di Night City Pagina 5)."
+        }
+      ]
+    }
+  }
+}

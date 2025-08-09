@@ -1,0 +1,42 @@
+{
+  "label": "Contenedores de Carga y Hoteles de Cubo",
+  "mapping": {},
+  "entries": {
+    "A Touch of Luxury Furniture Set": {
+      "name": "Set de Muebles con un toque de Lujo",
+      "description": "<p>Este Set de Muebles hace que tu Contenedor de Mercancía casi se sienta como una casa.</p>"
+    },
+    "Cargo Container Chic Furniture Set": {
+      "name": "Set de Muebles Chic para Contenedores de Carga",
+      "description": "<p>Puede ser barato, pero es mobiliario real. Este es el set de muebles inicial para la mayoría de los contenedores de carga.</p>"
+    },
+    "Fire Safe": {
+      "name": "A Prueba de Fuego",
+      "description": "<p>Pequeña caja de seguridad a prueba de fuego hecha de acero grueso.</p>\n<ul>\n<li>50PV</li>\n<li>30cm / 1 pie</li>\n<li>Se puede abrir con una tirada de Abrir Cerraduras de VD15</li>\n</ul>"
+    },
+    "Hidden Compartment": {
+      "name": "Compartimiento Oculto",
+      "description": "<p>Un pequeño compartimiento oculto dentro del Contenedor de Cargas.</p>\n<ul>\n<li>15.25x30x7. cm </li>\n<li>Se puede encontrar con una tirada de Ocultar/Revelar Objetos de VD15</li>\n</ul>"
+    },
+    "Koff Popper": {
+      "name": "Koff Popper",
+      "description": "<p>De la empresa Continental Brands, el Koff Popper es el único electrodoméstico especial que necesitarás. </p>\n<ul>\n<li>Termos construidos con un pico bertedor Kof Pop </li>\n<li>Contenido líquido 237ml/8oz </li>\n<li>Solo se puede comprar en una tienda Oasis </li>\n</ul>"
+    },
+    "Koff Pops": {
+      "name": "Koff Pops",
+      "description": "<p>Koff Pops usados en la Continental Brands Koff Popper.&nbsp;</p>\n<ul>\n<li>Paquete de 10</li>\n<li>Incluido en Kibble o Estilo de Vida Superior</li>\n</ul>"
+    },
+    "Second-hand Special Furniture Set": {
+      "name": "Set de Muebles Especiales de segunda mano",
+      "description": "<p>Puede que no se vea bonito, pero funciona. Este conjunto de muebles es el mínimo que necesita tu contenedor de carga.</p>"
+    },
+    "Smart Vanity": {
+      "name": "Vanidad Inteligente",
+      "description": "<p>Estación de aseo inteligente. Viene completamente equipado con todas las herramientas y maquillaje que necesites.&nbsp;</p>"
+    },
+    "Wall Art": {
+      "name": "Decoración de Pared",
+      "description": "<p>Póster Barato.</p>"
+    }
+  }
+}

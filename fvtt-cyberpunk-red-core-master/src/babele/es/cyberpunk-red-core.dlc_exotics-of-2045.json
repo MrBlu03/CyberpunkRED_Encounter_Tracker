@@ -1,0 +1,42 @@
+{
+  "label": "Exóticos del 2045",
+  "mapping": {},
+  "entries": {
+    "Appetite Controller": {
+      "name": "Controlador de Apetito",
+      "description": "<p>Reprime la sensación de hambre. El usuario ignora la pérdida de Humanidad de sanciones por trauma de inanición, pero el usuario todavía puede morir de hambre. Tira Salvación contra la Muerte al comienzo del séptimo día consecutivo sin comer. +1 a las sucesivas tiradas de Salvación contra la Muerte cada día después.</p>\n<p>Requiere Biomonitor.</p>"
+    },
+    "Combat Jaw": {
+      "name": "Mandíbula de Combate",
+      "description": "<p>Arma Cuerpo a Cuerpo Muy Pesada implantada.</p>\n<p>Consulte la descripción completa de la página 72 de Interface Red vol. 2.</p>"
+    },
+    "Combat Tail": {
+      "name": "Cola de Combate",
+      "description": "<p>Arma Cuerpo a Cuerpo Pesada implantada. Requiere Interfaz Neuronal.</p>\n<p>Consulte la descripción completa de la página 72 de Interface Red vol. 2.</p>"
+    },
+    "Extra-Jointed Cyberarm Upgrade": {
+      "name": "Montura de Ciberbrazo Extra-Articulada",
+      "description": "<p>Enhances cyberarm articulation. +2 Contortionist.</p>\n"
+    },
+    "Extra-Jointed Cyberleg Upgrade": {
+      "name": "Montura de Ciberpierna Extra-Articulada",
+      "description": "<p>Enhances cyberleg articulation. +2 Contortionist.</p>\n"
+    },
+    "Firebreather": {
+      "name": "Aliento Ígneo",
+      "description": "<p>Escopeta exótica implantada. Solo puede contener un proyectil de escopeta incendiario. </p>\n<p>Consulte la descripción completa de la página 73 del Interface Red vol. 2.</p>"
+    },
+    "Heuristic Health Monitor": {
+      "name": "Seguidor Heurístico de la Salud",
+      "description": "<p>Requiere Biomonitor. Puede conocer PV de un vistazo. (Vea el Cromo Negro 19 para más detalles)</p>"
+    },
+    "NeuTongue": {
+      "name": "Lengua Neutónica",
+      "description": "<p>Simula sensaciones de sabor. Utiliza un agente vinculado para personalizar los perfiles de sabor. Se puede desactivar sin una acción. No hay sensación de sabor cuando se desactiva.</p>\n<p>Reemplaza la lengua de la carne.</p>"
+    },
+    "Reflex Co-Processor": {
+      "name": "Co-Procesador Reflex",
+      "description": "<p>Implante Neuronal. Niega el requisito de REF para esquivar balas. (Ver cromo negro pg. 21 para más detalles)</p>"
+    }
+  }
+}

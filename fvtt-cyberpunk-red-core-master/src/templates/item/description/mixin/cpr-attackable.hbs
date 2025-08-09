@@ -1,0 +1,53 @@
+{{!-- This awful logic is summarized here:
+Show this content unless one of the following is true:
+1. the item is cyberware and it is not a weapon
+2. the item is an upgrade item and it is not a weapon
+--}}
+{{#unless (cprCompare
+  (cprCompare
+    (cprCompare item.type "===" "cyberware")
+    "&&"
+    (cprCompare item.system.isWeapon "===" false)
+  ) "||"
+  (cprCompare
+    (cprCompare item.type "===" "itemUpgrade")
+    "&&"
+    (cprCompare
+    (cprGetProp item.system.modifiers.secondaryWeapon "configured") "===" false)
+  )
+)}}
+  <div class="item-summary-line">
+    <span class="summary-name text-semi">
+      {{localize "CPR.itemSheet.weapon.rof"}}:
+    </span>
+    <span class="summary-value">
+      {{cprApplyUpgrade item item.system.rof "rof"}}
+    </span>
+  </div>
+  <div class="item-summary-line">
+    <span class="summary-name text-semi">
+      {{localize "CPR.global.generic.damage"}}:
+    </span>
+    <span class="summary-value">
+      {{cprApplyUpgrade item item.system.damage "damage"}}
+    </span>
+  </div>
+  <div class="item-summary-line">
+    <span class="summary-name text-semi">
+      {{localize "CPR.itemSheet.weapon.attackMod"}}:
+    </span>
+    <span class="summary-value">
+      {{cprApplyUpgrade item item.system.attackmod "attackmod"}}
+    </span>
+  </div>
+  {{#if item.system.isRanged }}
+    <div class="item-summary-line">
+      <span class="summary-name text-semi">
+        {{localize "CPR.itemSheet.weapon.magSize"}}:
+      </span>
+      <span class="summary-value">
+        {{cprApplyUpgrade item item.system.magazine.max "magazine"}}
+      </span>
+    </div>
+  {{/if}}
+{{/unless}}

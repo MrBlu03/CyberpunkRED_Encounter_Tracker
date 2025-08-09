@@ -1,0 +1,56 @@
+_id: nsK7GNeDIwpNiGu4
+_key: "!items!nsK7GNeDIwpNiGu4"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/weapons/Shotgun.svg
+name: Midnight Arms Beast Shotgun
+system:
+  ammoVariety:
+    - shotgunShell
+    - shotgunSlug
+  attackmod: 0
+  brand: Midnight Arms
+  concealable:
+    concealable: false
+    isConcealed: false
+  critFailEffect: jammed
+  damage: 5d6
+  description:
+    value: |
+      <p>
+        The Midnight Arms Beast Shotgun is an Exotic Shotgun. Its magazine holds 40
+        rounds. Requires BODY 10 or higher (unless mounted) when fired or the User
+        will suffer the consequences.
+      </p>
+  dvTable: DV Shotgun (Slug)
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 2
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+      - ammo
+    list: []
+    slots: 0
+    usedSlots: 0
+  isRanged: true
+  magazine:
+    max: 40
+    value: 0
+  price:
+    market: 1000
+  quality: standard
+  revealed: true
+  rof: 1
+  source:
+    book: BC
+    page: 111
+  unarmedAutomaticCalculation: true
+  usage: equipped
+  usesType: magazine
+  weaponSkill: Shoulder Arms
+  weaponType: shotgun
+type: weapon

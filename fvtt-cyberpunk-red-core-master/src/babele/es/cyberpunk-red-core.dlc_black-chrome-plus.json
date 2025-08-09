@@ -1,0 +1,98 @@
+{
+  "label": "Cromo Negro Plus",
+  "mapping": {
+    "dvTable": "sistema.Tablavd"
+  },
+  "entries": {
+    "Arrow (Junk)": {
+      "name": "Flecha (Basura)",
+      "description": "<p>Munición basura; barata, pero inflige 1d6 menos de daño a cualquiera con más de 1CP.</p>"
+    },
+    "Big Dreem Rounds": {
+      "name": "Rondas de Gran Dreem",
+      "description": "<p>Munición personalizada para la Dreem Adolescente.</p>"
+    },
+    "Heavy Pistol (Junk)": {
+      "name": "Pistola Pesada (Basura)",
+      "description": "<p>Munición basura; barata, pero inflige 1d6 menos de daño a cualquiera con más de 1CP.</p>"
+    },
+    "Heavy Pistol (Small Game)": {
+      "name": "Pistola Pesada (Juguete)",
+      "description": "<p>Munición de juguete, no ideal para la gente. Inflige 2d6 menos de daño.</p>"
+    },
+    "Medium Pistol (Junk)": {
+      "name": "Pistola Media (Basura)",
+      "description": "<p>Munición basura; barata, pero inflige 1d6 menos de daño a cualquiera con más de 1CP.</p>"
+    },
+    "Medium Pistol (Small Game)": {
+      "name": "Pistola Media (Juguete)",
+      "description": "<p>Munición de juguete, no ideal para la gente. Inflige 2d6 menos de daño.</p>"
+    },
+    "Rifle (Junk)": {
+      "name": "Rifle (Basura)",
+      "description": "<p>Munición basura; barata, pero inflige 1d6 menos de daño a cualquiera con más de 1CP.</p>"
+    },
+    "Rifle (Small Game)": {
+      "name": "Rifle (Juguete)",
+      "description": "<p>Munición de juguete, no ideal para la gente. Inflige 2d6 menos de daño.</p>"
+    },
+    "Shotgun Slug (Junk)": {
+      "name": "Posta de Escopeta (Basura)",
+      "description": "<p>Munición basura; barata, pero inflige 1d6 menos de daño a cualquiera con más de 1CP.</p>"
+    },
+    "Very Heavy Pistol (Junk)": {
+      "name": "Pistola Muy Pesada (Basura)",
+      "description": "<p>Munición basura; barata, pero inflige 1d6 menos de daño a cualquiera con más de 1CP.</p>"
+    },
+    "Very Heavy Pistol (Small Game)": {
+      "name": "Pistola Muy Pesada (Juguete)",
+      "description": "<p>Munición de juguete, no ideal para la gente. Inflige 2d6 menos de daño.</p>"
+    },
+    "Scavenged Armor": {
+      "name": "Armadura de Carroñero",
+      "description": "<p>Un conjunto de armaduras ligeras que no se pueden reparar. Consulte la descripción completa del objeto en BC+ pg. 4.</p>"
+    },
+    "Piranha Smash": {
+      "name": "Smash Piraña",
+      "description": "<p>Parece Smash común, pero tiene sabor a Lima-Limón y un menor riesgo de adicción.</p>\n<p><strong>Efecto Primario</strong></p>\n<p>Dosis de 4hs.</p>\n<p>El usuario se siente feliz y satisfecho, recibiendo un modificador temporario de +2 a las siguientes habilidades</p>\n<ul>\n<li>Actuación</li>\n<li>Bailar</li>\n<li>Contorsionismo</li>\n<li>Conversación</li>\n<li>Percepción Humana</li>\n<li>Persuasión</li>\n</ul>\n<p><strong>Efecto Secundario (VD9)</strong></p>\n<p>Cuando se acaba la dosis, el usuario tira VOL + Resistir Tortura/Drogas + 1d10 contra la VD Secundaria.</p>\n<p>Si falla, recibe un penalizador de -2 a las siguientes habilidades</p>\n<ul>\n<li>Actuación</li>\n<li>Bailar</li>\n<li>Contorsionismo</li>\n<li>Conversación</li>\n<li>Percepción Humana</li>\n<li>Persuasión</li>\n</ul>"
+    },
+    "Bullet To Slug Adapter Casings": {
+      "name": "Casquillo adaptable para balas a perdigones",
+      "description": "<p>Haz que cualquier bala pueda ser disparada como un cartucho de escopeta.</p>\n<p>Una caja de casquillos adaptable para balas a perdigones viene con 10 casquillos.</p>\n<p>Puedes cargar 10 balas en 10 adaptadores usando el dispositivo incluido en una acción. Si se cargan manualmente, se necesita una acción para cargar 1 bala.</p>"
+    },
+    "Solo of Fortune Bodypillow": {
+      "name": "Almohada Corporal de Soldado de Fortuna",
+      "description": "<p>Almohada Corporal con la imagen de un famoso Soldado de los años 2020 (como Morgan Blackhand, BoaBoa Weyland o Adam Smasher).</p>\n<p>20 pulgadas x 54 pulgadas (50,8 cm x 137. 6 cm), excepto la almohada Adam Smasher.</p>"
+    },
+    "Big Dreem": {
+      "name": "Gran Dreem",
+      "description": "<p>Sub Fusil exótico. Si sueltas el arma, continuará con disparando.</p>",
+      "dvTable": "VD SMG (Automático)"
+    },
+    "Hello Cutie 1TruLuv": {
+      "name": "Hello Cutie 1TruLuv",
+      "description": "<p>Rifle de francotirador exótico. Puede cargar munición no básica.</p>\n<p>Equipado con una mira de largo alcance y Visión Nocturna*, y Agente integrado que incluye una pseudo novia/o IA que puede reconocer y hablar con el propietario.</p>\n<p>Cuidarlo bien, usarlo regularmente y el arma mejora. Descuídalo y deberás disculparte...</p>\n<p><em>* Estas actualizaciones deben ser instaladas manualmente después de añadir a un actor<br></em></p>",
+      "dvTable": "VD Rifle de Francotirador"
+    },
+    "Molotov Cocktail": {
+      "name": "Coctél Molotov",
+      "description": "<p>Frágil Granada Incendiaria. Enciende a un objetivo en un fuego mortal (ver CP:R p.180)</p>",
+      "dvTable": "VD Armas arrojadizas"
+    },
+    "SportMaster": {
+      "name": "Maestro del Deporte",
+      "description": "<p>Un rifle deportivo, para la diversión, no para personas. Solo puede cargar una pequeña munición de juguete y es incapaz de autofuego y fuego supresivo.</p>",
+      "dvTable": "VD Rifle de Asalto"
+    },
+    "SurvivalMaster": {
+      "name": "Maestro de Supervivencia",
+      "description": "<p>Rifle de Asalto exótico, sin Autofuego, sin Fuego Supresivo.</p>",
+      "dvTable": "VD Rifle de Asalto"
+    },
+    "Timeless WW1 Rifle to Pistol Conversion": {
+      "name": "Rifle de la 1ra Guerra Mundial convertido a Pistola",
+      "description": "<p>Pistolas muy pesadas de mala calidad.</p>\n<p>Rearmado manual del perno entre cada tiro (una acción).</p>",
+      "dvTable": "VD Pistola"
+    }
+  }
+}

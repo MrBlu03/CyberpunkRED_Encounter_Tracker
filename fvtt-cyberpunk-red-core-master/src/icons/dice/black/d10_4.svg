@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="96"
+   height="96"
+   shape-rendering="crispEdges"
+   version="1.1"
+   id="svg99145"
+   sodipodi:docname="d10_4.svg"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs99149" />
+  <sodipodi:namedview
+     id="namedview99147"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="19.666667"
+     inkscape:cx="47.338983"
+     inkscape:cy="54.966102"
+     inkscape:window-width="1716"
+     inkscape:window-height="1386"
+     inkscape:window-x="1440"
+     inkscape:window-y="702"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg99145" />
+  <path
+     id="path68920"
+     style="fill:#1b1f21;fill-opacity:1"
+     d="M 4.4029382,52.644714 9.5378142,62.32858 48.310361,88.071669 67.799739,75.40942 87.880391,61.678754 91.217361,51.645364 86.531441,41.928757 69.988676,26.840031 48.078006,7.368102 26.012294,26.28245 Z"
+     sodipodi:nodetypes="ccccccccccc" />
+  <path
+     id="path97919"
+     d="m 38,42 v 1 h 6 v -1 z m 6,1 v 11 h 7 V 43 H 50 V 53 H 45 V 43 Z m 7,0 h 6 v -1 h -6 z m 6,0 v 11 h 2 V 53 H 58 V 43 Z m 2,11 v 6 h 1 v -6 z m 0,6 h -2 v 9 h 1 v -8 h 1 z m -2,9 h -6 v 1 h 6 z m -6,0 V 61 60 H 39 v 1 h 11 v 8 z M 39,60 V 49 h -2 v 1 h 1 V 60 Z M 37,49 v -5 h -1 v 5 z m 0,-5 h 1 v -1 h -1 z"
+     style="fill:#2b2b45;fill-opacity:1"
+     sodipodi:nodetypes="cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc" />
+  <path
+     id="path97949"
+     d="m 38,43 v 1 h 6 v -1 z m 0,1 h -1 v 1 h 1 z m 13,-1 v 1 h 6 v -1 z m -7,11 v 1 h 7 v -1 z m 13,0 v 1 h 2 v -1 z"
+     style="fill:#9badb7;fill-opacity:1"
+     sodipodi:nodetypes="ccccccccccccccccccccccccc" />
+  <path
+     id="path97987"
+     d="m 38,44 v 1 h -1 v 4 h 2 v 11 h 12 v 9 h 6 v -9 h 1 1 V 55 H 58 57 V 44 H 51 V 55 H 44 V 44 Z"
+     style="fill:#f4f4f4;fill-opacity:1"
+     sodipodi:nodetypes="ccccccccccccccccccccc" />
+  <path
+     id="path66708"
+     d="m 45.002663,6.9989651 v 1.0000003 h -1 v 1 h -1 v 0.9999997 h -1 v 0.9999829 h -1 v 1 h -1 v 1 h -2 v 1 h -1 v 1.000001 h -1 v 1 h -1 v 1 h -1 v 1 h -1 v 1 h -1 v 1 h -1 v 1 h -1 v 1 h -1 v 1 h -1 v 1 h -2 v 1 h -1 v 1 h -1 v 1 h -1 v 1 h -1 v 1 h -1 v 1 h -1 v 1 h -1 v 1 h -1 v 1 h -1 v 1 h -1 v 1 h -2 v 1 h -1 v 1 h -1 v 1 h -1 v 1 h -1.000001 v 1 H 9.0026442 v 1 h -1 v 1 h -1 v 2 h -1 v 2 h -1 v 2 h -1 v 2 h -1 v 4 h 1 v 2 h 1 v 2 h 1 v 2 h 1 v 1 1 h 1.000002 v 1 h 1 v 1 h 2.0000168 v 1 h 1 v 1 h 2 v 1 h 1 v 1 h 2 v 1 h 1 v 1 h 1 v 1.000001 h 2 v 1 h 1 v 1 h 2 v 1 h 1 v 1 h 2 v 1 h 1 v 1 h 2 v 1 h 1 v 1 h 2 v 1 h 1 v 1 h 2 v 1 h 1 v 1 h 1 v 1 h 2 v 1 h 1 v 1 h 2 v 1 h 1 v 1 h 2 v 1 h 4 v -1 h 2 v -1 h 1 v -1 h 2 v -1 h 1 v -1 h 2 v -1 h 1 v -1 h 1 v -1 h 2 v -1 h 1 v -1 h 2 v -1 h 1 v -1 h 2 v -1 h 1 v -1 h 2 v -1 h 1 v -1 h 1.999998 v -1 h 1 v -1 h 2 v -1.000001 h 1 v -1 h 1 v -1 h 2 v -1 h 1 v -1 h 2 v -1 h 1 v -1 h 2 v -1 h 1 v -1 h 1 v -2 h 1 v -2 h 1 v -2 h 1 v -2 h 1 v -4 h -1 v -2 h -1 v -2 h -1 v -1 -1 h -1 v -2 h -1 v -1 h -1 v -1 h -1 v -1 h -1 v -1 h -1 v -1 h -1 v -1 h -1 v -1 h -2 v -1 h -1 v -1 h -1 v -1 h -1 v -1 h -1 v -1 h -1 v -1 h -1 v -1 h -1 v -1 h -0.999998 v -1 h -1 v -1 h -1 v -1 h -2 v -1 h -1 v -1 h -1 v -1 h -1 v -1 h -1 v -1 h -1 v -1 h -1 v -1 h -1 v -1 h -1 v -1 h -1 v -1.000001 h -1 v -1 h -2 v -1 h -1 v -1 h -1 V 9.9989651 h -1 V 8.9989655 h -1 V 7.9989654 h -1 V 6.9989651 Z m 1,3 h 4 v 0.9999829 h 1 v 1 h 1 v 1 h 1 v 1 h 1 v 1.000001 h 1 v 1 h 2 v 1 h 1 v 1 h 1 v 1 h 1 v 1 h 1 v 1 h 1 v 1 h 1 v 1 h 1 v 1 h 1 v 1 h 1 v 1 h 1 v 1 h 2 v 1 h 1 v 1 h 1 v 1 h 1 v 1 h 0.999998 v 1 h 1 v 1 h 1 v 1 h 1 v 1 h 1 v 1 h 1 v 1 h 1 v 1 h 2 v 1 h 1 v 1 h 1 v 1 h 1 v 1 h 1 v 1 h 1 v 2 h 1 v 2 h 1 v 2 h 1 v 2 h 1 v 2 h -1 v 2 h -1 v 2 h -1 v 2 h -1 v 1 h -1 v 1 h -1 v 1 h -1 v 1 h -2 v 1 h -1 v 1 h -2 v 1 h -1 v 1 h -1 v 1 h -2 v 1 h -1 v 1 h -1.999998 v 1.000001 h -1 v 1 h -2 v 1 h -1 v 1 h -2 v 1 h -1 v 1 h -2 v 1 h -1 v 1 h -2 v 1 h -1 v 1 h -1 v 1 h -2 v 1 h -1 v 1 h -2 v 1 h -1 v 1 h -2 v 1 h -2 v -1 h -2 v -1 h -1 v -1 h -2 v -1 h -1 v -1 h -2 v -1 h -1 v -1 h -1 v -1 h -2 v -1 h -1 v -1 h -2 v -1 h -1 v -1 h -2 v -1 h -1 v -1 h -2 v -1 h -1 v -1.000001 h -2 v -1 h -1 v -1 h -2 v -1 h -1 v -1 h -1 v -1 h -2 v -1 h -1 v -1 h -2 v -1 h -1 v -1 h -1 v -1 h -1.000001 v -1 H 9.0026442 v -1 -1 h -1 v -2 h -1 v -2 h -1 v -2 h 1 v -2 h 1 v -2 h 1 v -2 h 1.0000178 v -2 h 1.000001 v -1 h 1 v -1 h 1 v -1 h 1 v -1 h 1 v -1 h 2 v -1 h 1 v -1 h 1 v -1 h 1 v -1 h 1 v -1 h 1 v -1 h 1 v -1 h 1 v -1 h 1 v -1 h 1 v -1 h 1 v -1 h 2 v -1 h 1 v -1 h 1 v -1 h 1 v -1 h 1 v -1 h 1 v -1 h 1 v -1 h 1 v -1 h 1 v -1 h 1 v -1 h 1 v -1 h 2 v -1 h 1 v -1.000001 h 1 v -1 h 1 v -1 h 1 v -1 h 1 z"
+     sodipodi:nodetypes="ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc" />
+  <path
+     id="path66710"
+     d="m 46.002663,9.9989651 v 0.9999829 h -1 v 1 h -1 v 1 h -1 v 1 h -1 v 1.000001 h -1 v 1 h -1 -1 v 1 h -1 v 1 h -1 v 1 h -1 v 1 h -1 v 1 h -1 v 1 h -1 v 1 h -1 v 1 h -1 v 1 h -1 v 1 h -1 v 1 h -1 -1 v 1 h -1 v 1 h -1 v 1 h -1 v 1 h -1 v 1 h -1 v 1 h -1 v 1 h -1 v 1 h -1 v 1 h -1 v 1 h -1 v 1 h -1 -1 v 1 h -1 v 1 h -1 v 1 h -1 v 1 h -1 v 1 h -1.000001 v 1 1 H 9.0026442 v 1 1 h -1 v 1 1 h -1 v 1 1 h -1 v 1 1 h 1 v 1 1 h 1 v 1 1 h 1 v 1 1 h 1.0000178 v 1 h 1.000001 v 1 h 1 v 1 h 1 1 1 v 1 h 1 1 1 v 1 h 1 1 1 v 1 h 1 v 1 h 1 v -1 -1 h -1 v -1 -1 -1 -1 h 1 v -1 -1 h 1 v -1 -1 h 1 v -1 -1 h 1 v -1 -1 h 1 v -1 -1 h 1 v -1 -1 h 1 v -1 -1 h 1 v -1 -1 h 1 v -1 -1 h 1 v -1 -1 h 1 v -1 -1 h 1 v -1 -1 h 1 v -1 -1 h 1 v -1 -1 h 1 v -1 -1 h 1 v -1 -1 h 1 v -1 -1 h 1 v -1 -1 h 1 v -1 -1 h 1 v -1 -1 h 1 v -1 -1 h 1 v -1 -0.999999 h 1 v -1 -1.000002 h 1 v -1 -0.999999 h 1 v -1 h 1 1 1 V 9.9989651 h -1 -1 -1 z m -23,55.9999839 v 1 h 1 v -1 z m 1,1 v 1 h 1 v -1 z m 16,-50 h 1 v 1 1 h -1 v 1 1 h -1 v 1 1 h -1 v 1 1 h -1 v 1 1 h -1 v 1 1 h -1 v 1 1 h -1 v 1 1 h -1 v 1 1 h -1 v 1 1 h -1 v 1 1 h -1 v 1 1 h -1 v 1 1 h -1 v 1 1 h -1 v 1 1 h -1 v 1 1 h -1 v 1 1 h -1 v 1 1 h -1 v 1 1 h -1 v 1 1 h -1 v 1 1 h -1 v 1 1 h -1 -1 -1 -1 v -1 h -1 -1 -1 v -1 h -1 -1 v -1 h -1.000001 v -1 -1 H 9.0026442 v -1 -1 h -1 v -1 -1 -1 -1 h 1 v -1 -1 h 1.0000178 v -1 -1 h 1.000001 v -1 -1 h 1 v -1 h 1 v -1 h 1 v -1 h 1 v -1 h 1 v -1 h 1 1 v -1 h 1 v -1 h 1 v -1 h 1 v -1 h 1 v -1 h 1 v -1 h 1 v -1 h 1 v -1 h 1 v -1 h 1 v -1 h 1 v -1 h 1 1 v -1 h 1 v -1 h 1 v -1 h 1 v -1 h 1 v -1 h 1 v -1 h 1 v -1 h 1 v -1 h 1 v -1 h 1 v -1 h 1 z"
+     style="fill:#3a3f5e;fill-opacity:1" />
+  <path
+     id="path66716"
+     d="m 47.002663,10.998948 v 1 h -1 v 2 h -1 v 1.000001 1 h -1 v 1 1 h -1 v 1 1 h -1 v 1 1 h -1 v 1 1 h -1 v 1 1 h -1 v 1 1 h -1 v 1 1 h -1 v 1 1 h -1 v 1 1 h -1 v 1 1 h -1 v 1 1 h -1 v 1 1 h -1 v 1 1 h -1 v 1 1 h -1 v 1 1 h -1 v 1 1 h -1 v 1 1 h -1 v 1 1 h -1 v 1 1 h -1 v 1 1 h -1 v 1 1 h -1 v 1 1 h -1 v 4 h 1 v 1 1 h 1 v 1 h 1 v 2 h 1 v 1 h 1 v 1.000001 h 1 v 1 h 1 v 1 h 1 v 1 h 1 v 1 h 1 v 1 h 32 v -1 h 1 v -1 h 1 v -1 h 1 v -1 h 1 v -1 h 1 v -1.000001 h 1 v -1 h 1 v -1 h 1 v -1 h 0.999998 v -1 h 1 v -1 h 2 v -1 h 2 v -1 h -2 v -1 h -1 v -2 h -1 v -1 -1 h -1 v -2 h -0.999998 v -2 h -1 v -2 h -1 v -2 h -1 v -2 h -1 v -2 h -1 v -2 h -1 v -2 h -1 v -2 h -1 v -2 h -1 v -2 h -1 v -2 h -1 v -2 h -1 v -2 h -1 v -2 h -1 v -2 h -1 v -2 h -1 v -2 h -1 v -2 h -1 v -2 h -1 v -2 h -1 v -2.000001 h -1 v -3 z m 0,3 h 2 v 1.000001 h 1 v 2 h 1 v 2 h 1 v 2 h 1 v 2 h 1 v 2 h 1 v 2 h 1 v 2 h 1 v 2 h 1 v 2 h 1 v 2 h 1 v 2 h 1 v 2 h 1 v 2 h 1 v 2 h 1 v 2 h 1 v 2 h 1 v 2 h 1 v 2 h 1 v 2 h 1 v 2 h 1 l 1,2 v 2 h 1 v 6 h -1 v 1 h -1 v 1 h -1 v 1 h -1 v 1 h -1 v 1 h -1 v 1.000001 h -1 v 1 h -1 v 1 h -2 v 1 h -28 v -1 h -2 v -1 h -1 v -1 h -1 v -1.000001 h -1 v -1 h -1 v -1 h -1 v -1 h -1 v -1 h -1 v -1 h -1 v -6 h 1 v -2 h 1 v -2 h 1 v -2 h 1 v -2 h 1 v -2 h 1 v -2 h 1 v -2 h 1 v -2 h 1 v -2 h 1 v -2 h 1 v -2 h 1 v -2 h 1 v -2 h 1 v -2 h 1 v -2 h 1 v -2 h 1 v -2 h 1 v -2 h 1 v -2 h 1 v -2 h 1 v -1 -1 h 1 v -2 h 1 z m -7,3.000001 v 1 h -1 v 1 h -1 v 1 h -1 v 1 h -1 v 1 h -1 v 1 h -1 v 1 h -1 v 1 h -1 v 1 h -1 v 1 h -1 v 1 h -2 v 1 h -1 v 1 h -1 v 1 h -1 v 1 h -1 v 1 h -1 v 1 h -1 v 1 h -1 v 1 h -1 v 1 h -1 v 1 h -1 v 1 h -2 v 1 h -1 v 1 h -1 v 1 h -1 v 1 h -1 v 1 h -1 v 2 h -1.000001 v 2 H 9.0026442 v 2 h -1 v 4 h 1 v 2 h 1.0000178 v 2 h 1.000001 v 1 h 2 v 1 h 3 v 1 h 4 v -2 h 1 v -2 h 1 v -2 h 1 v -2 h 1 v -2 h 1 v -2 h 1 v -2 h 1 v -2 h 1 v -2 h 1 v -2 h 1 v -2 h 1 v -2 h 1 v -2 h 1 v -2 h 1 v -2 h 1 v -2 h 1 v -2 h 1 v -2 h 1 v -2 h 1 v -1 -1 h 1 v -2 h 1 v -2 z m 38.999998,45 v 1 h 2 v -1 z"
+     style="fill:#2b2b45;fill-opacity:1"
+     sodipodi:nodetypes="cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc" />
+  <path
+     id="path66786"
+     d="m 55.002663,16.998949 v 1 1 h 1 v 1 1 h 1 v 1 1 h 1 v 1 1 h 1 v 1 1 h 1 v 1 1 h 1 v 1 1 h 1 v 1 1 h 1 v 1 1 h 1 v 1 1 h 1 v 1 1 h 1 v 1 1 h 1 v 1 1 h 1 v 1 1 h 1 v 1 1 h 1 v 1 1 h 1 v 1 1 h 1 v 1 1 h 0.999998 v 1 1 h 1 v 1 1 h 1 v 1 1 h 1 v 1 1 h 1 1 1 1 v -1 h 1 1 1 v -1 h 1 1 v -1 h 1 v -1 -1 h 1 v -1 -1 h 1 v -1 -1 -1 -1 h -1 v -1 -1 h -1 v -1 -1 h -1 v -1 -1 h -1 v -1 h -1 v -1 h -1 v -1 h -1 v -1 h -1 v -1 h -1 -1 v -1 h -1 v -1 h -1 v -1 h -1 v -1 h -1 v -1 h -1 v -1 h -0.999998 v -1 h -1 v -1 h -1 v -1 h -1 v -1 h -1 v -1 h -1 -1 v -1 h -1 v -1 h -1 v -1 h -1 v -1 h -1 v -1 h -1 v -1 h -1 v -1 h -1 v -1 h -1 v -1 h -1 v -1 h -1 v -1 z m 25.999998,45 v 1 h 1 1 v -1 h -1 z m 0,1 h -1 -1 -1 v 1 h -1 -1 v 1 h -1 -1 v 1 h -1 v 1 h -0.999998 v 1 h -1 v 1 h 1 0.999998 1 v -1 h 1 1 v -1 h 1 v -1 h 1 v -1 h 1 1 v -1 h 1 z m -62.999998,2 v 1 h 1 v 1 h 1 v 1 h 1 1 v -1 h -1 v -1 h -1 v -1 h -1 z m 4,3 v 1 h 1 v 1 h 1 1 v -1 h -1 v -1 h -1 z m 3,2 v 1.000001 h 1 v -1.000001 z m 9,6.000001 v 1 h 1 v 1 c 0.666667,0 1.333333,0 2,0 v 1 h 1 v 1 h 1 v 1 h 1 1 v 1 h 1 v 1 h 1 1 v 1 h 1 v 1 h 1 1 v 1 h 1 1 v -1 h 1 1 v -1 h 1 v -1 h 1 1 v -1 h 1 v -1 h 1 1 v -1 h 1 v -1 h 1 v -1 c 0.666667,0 1.333333,0 2,0 v -1 h 1 v -1 c -9.810233,0 -18.497869,0 -28,0 z m 5,1 c 6,0 12,0 18,0 0,0.666667 0,1.333333 0,2 h -1 v 1 h -1 -1 v 1 h -1 v 1 h -1 -1 v 1 h -1 v 1 h -1 -1 -1 -1 v -1 h -1 v -1 h -1 -1 v -1 h -1 v -1 h -1 -1 v -1 h -1 c 0,-0.666667 0,-1.333333 0,-2 z"
+     style="fill:#101213;fill-opacity:1"
+     sodipodi:nodetypes="cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc" />
+  <path
+     id="path67604"
+     d="m 3.0026442,53.998949 v 2 h 1 v -2 z m 1,2 v 2 h 1 v -2 z m 1,2 v 2 h 1 v -2 z m 1,2 v 2 h 1 v -2 z m 1,2 v 2 h 1.000002 v 1 h 1 v 1 h 2.0000168 v 1 h 1 v 1 h 2 v 1 h 1 v 1 h 2 v 1.000001 h 1 v 1 h 1 v 1 h 2 v 1 h 1 v 1 h 2 v 1 h 1 v 1 h 2 v 1 h 1 v 1 h 2 v 1 h 1 v 1 h 2 v 1 h 1 v 1 h 2 v 1 h 1 v 1 h 1 v 1 h 2 v 1 h 1 v 1 h 2 v 1 h 1 v 1 h 2 v 1 h 4 v -1 h 2 v -1 h 1 v -1 h 2 v -1 h 1 v -1 h 2 v -1 h 1 v -1 h 1 v -1 h 2 v -1 h 1 v -1 h 2 v -1 h 1 v -1 h 2 v -1 h 1 v -1 h 2 v -1 h 1 v -1 h 1.999998 v -1 h 1 v -1 h 2 v -1 h 1 v -1 h 1 v -1.000001 h 2 v -1 h 1 v -1 h 2 v -1 h 1 v -1 h 2 v -1 h 1 v -1 h 1 v -2 h -1 v 1 h -1 v 1 h -2 v 1 h -1 v 1 h -2 v 1 h -1 v 1 h -2 v 1 h -1 v 1 h -1 v 1.000001 h -2 v 1 h -1 v 1 h -1.999998 v 1 h -1 v 1 h -2 v 1 h -1 v 1 h -2 v 1 h -1 v 1 h -2 v 1 h -1 v 1 h -2 v 1 h -1 v 1 h -1 v 1 h -2 v 1 h -1 v 1 h -2 v 1 h -1 v 1 h -2 v 1 h -4 v -1 h -2 v -1 h -1 v -1 h -2 v -1 h -1 v -1 h -2 v -1 h -1 v -1 h -1 v -1 h -2 v -1 h -1 v -1 h -2 v -1 h -1 v -1 h -2 v -1 h -1 v -1 h -2 v -1 h -1 v -1 h -2 v -1 h -1 v -1 h -2 v -1.000001 h -1 v -1 h -1 v -1 h -2 v -1 h -1 v -1 h -2 v -1 h -1 v -1 H 9.0026442 v -1 h -1 v -1 z m 82.0000168,0 h 1 v -2 h -1 z m 1,-2 h 1 v -2 h -1 z m 1,-2 h 1 v -2 h -1 z m 1,-2 h 1 v -2 h -1 z"
+     style="fill:#696a6a;fill-opacity:1"
+     sodipodi:nodetypes="ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc" />
+  <path
+     id="path67670"
+     d="m 3.0026442,55.998949 v 1 h 1 v -1 z m 89.0000168,0 v 1 h 1 v -1 z m -88.0000168,2 v 1 h 1 v -1 z m 87.0000168,0 v 1 h 1 v -1 z m -86.0000168,2 v 1 h 1 v -1 z m 85.0000168,0 v 1 h 1 v -1 z m -84.0000168,2 v 1 h 1 v -1 z m 83.0000168,0 v 1 h 1 v -1 z m -82.0000168,2 v 1 h 1 v -1 z m 1,1 v 1 h 1 v -1 z m 1,1 v 1 h 2.0000188 v -1 z m 2.0000188,1 v 1 h 1 v -1 z m 1,1 v 1 h 2 v -1 z m 2,1 v 1 h 1 v -1 z m 1,1 v 1.000001 h 2 v -1.000001 z m 2,1.000001 v 1 h 1 v -1 z m 1,1 v 1 h 1 v -1 z m 1,1 v 1 h 2 v -1 z m 2,1 v 1 h 1 v -1 z m 1,1 v 1 h 2 v -1 z m 2,1 v 1 h 1 v -1 z m 1,1 v 1 h 2 v -1 z m 2,1 v 1 h 1 v -1 z m 1,1 v 1 h 2 v -1 z m 2,1 v 1 h 1 v -1 z m 1,1 v 1 h 2 v -1 z m 2,1 v 1 h 1 v -1 z m 1,1 v 1 h 2 v -1 z m 2,1 v 1 h 1 v -1 z m 1,1 v 1 h 1 v -1 z m 1,1 v 1 h 2 v -1 z m 2,1 v 1 h 1 v -1 z m 1,1 v 1 h 2 v -1 z m 2,1 v 1 h 1 v -1 z m 1,1 v 1 h 2 v -1 z m 2,1 v 1 h 4 v -1 z m 4,0 h 2 v -1 h -2 z m 2,-1 h 1 v -1 h -1 z m 1,-1 h 2 v -1 h -2 z m 2,-1 h 1 v -1 h -1 z m 1,-1 h 2 v -1 h -2 z m 2,-1 h 1 v -1 h -1 z m 1,-1 h 1 v -1 h -1 z m 1,-1 h 2 v -1 h -2 z m 2,-1 h 1 v -1 h -1 z m 1,-1 h 2 v -1 h -2 z m 2,-1 h 1 v -1 h -1 z m 1,-1 h 2 v -1 h -2 z m 2,-1 h 1 v -1 h -1 z m 1,-1 h 2 v -1 h -2 z m 2,-1 h 1 v -1 h -1 z m 1,-1 h 1.999998 v -1 h -1.999998 z m 1.999998,-1 h 1 v -1 h -1 z m 1,-1 h 2 v -1 h -2 z m 2,-1 h 1 v -1 h -1 z m 1,-1 h 1 v -1 h -1 z m 1,-1 h 2 v -1.000001 h -2 z m 2,-1.000001 h 1 v -1 h -1 z m 1,-1 h 2 v -1 h -2 z m 2,-1 h 1 v -1 h -1 z m 1,-1 h 2 v -1 h -2 z m 2,-1 h 1 v -1 h -1 z m 1,-1 h 1 v -1 h -1 z"
+     style="fill:#847e87;fill-opacity:1"
+     sodipodi:nodetypes="ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc" />
+  <path
+     id="path68118"
+     d="m 70.002663,68.998949 v 1 h -1 v 1.000001 h -1 v 1 h 2 v -1 h 1 v -1.000001 h 1.999998 v -1 z m -2,3.000001 h -1 v 1 h 1 z m -1,1 h -1 v 1 h 1 z m -41,-2 v 1 h 1 1 v -1 h -1 z m 2,1 v 1 h 1 v -1 z m 1,1 v 1 h 1 v -1 z m 10,4 v 2 h 1 v 1 h 2 v 1 h 1 v 1 h 2 v 1 h 1 v 1 h 4 v -1 h 1 v -1 h 2 v -1 h 1 v -1 h 2 v -1 h 1 v -2 z"
+     style="fill:#050606;fill-opacity:1"
+     sodipodi:nodetypes="ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc" />
+</svg>

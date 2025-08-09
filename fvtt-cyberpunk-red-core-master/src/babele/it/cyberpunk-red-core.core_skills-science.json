@@ -1,0 +1,38 @@
+{
+  "label": "Abilità (Scienza)",
+  "mapping": {},
+  "entries": {
+    "Science (Anthropology)": {
+      "name": "Scienza (Antropologia)",
+      "description": ""
+    },
+    "Science (Biology)": {
+      "name": "Scienza (Biologia)",
+      "description": ""
+    },
+    "Science (Chemistry)": {
+      "name": "Scienza (Chimica)",
+      "description": ""
+    },
+    "Science (Geology)": {
+      "name": "Scienza (Geologia)",
+      "description": ""
+    },
+    "Science (History)": {
+      "name": "Scienza (Storia)",
+      "description": ""
+    },
+    "Science (Mathematics)": {
+      "name": "Scienza (Matematica)",
+      "description": ""
+    },
+    "Science (Physics)": {
+      "name": "Scienza (Fisica)",
+      "description": ""
+    },
+    "Science (Zoology)": {
+      "name": "Science (Zoology)",
+      "description": ""
+    }
+  }
+}

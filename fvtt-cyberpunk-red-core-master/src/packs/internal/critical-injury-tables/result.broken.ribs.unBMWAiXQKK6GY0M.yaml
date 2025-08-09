@@ -1,0 +1,12 @@
+_id: unBMWAiXQKK6GY0M
+_key: "!tables.results!n7IlIvMfg7yW1OoE.unBMWAiXQKK6GY0M"
+documentCollection: cyberpunk-red-core.core_critical-injuries-body
+documentId: MQpiPgEtPaIe6MJ6
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/critical_injuries/broken_ribs.svg
+range:
+  - 5
+  - 5
+text: Broken Ribs
+type: 2
+weight: 1

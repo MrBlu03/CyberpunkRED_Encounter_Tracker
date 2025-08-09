@@ -1,0 +1,57 @@
+{{#if (cprCompare (cprSizeOf item.effects) ">" 3) }}
+  <div class="item-summary-line">
+    <span class="summary-name text-semi">
+      {{localize "CPR.itemSheet.effects.effects"}}:
+    </span>
+    <span class="summary-value">
+      {{cprSizeOf item.effects}}
+    </span>
+  </div>
+{{else}}
+  {{#each item.effects as |effect| }}
+    {{!-- "effects" is a Map, so "this" is now an Active Effects object within the #each loop! --}}
+    <hr/>
+    <div class="item-summary-line">
+      <span class="summary-name text-semi">
+        {{effect.name}}
+      </span>
+      <span class="summary-value">
+        {{#if (cprIsDebug) }}
+          ({{effect._id}})
+        {{/if}}
+      </span>
+    </div>
+    {{#if (cprCompare (cprSizeOf effect.changes) ">" 3) }}
+      <div class="text-nowrap">
+        <span class="summary-name text-nowrap text-semi">
+          {{localize "CPR.itemSheet.effects.effects"}}:
+        </span>
+        <span class="summary-value text-nowrap">
+          {{cprSizeOf effect.changes}}
+        </span>
+      </div>
+    {{else}}
+      {{#each effect.changes as |change| }}
+        {{!-- "this" is now an individual mod for the AE object --}}
+        <div class="item-summary-line">
+          <span class="summary-value summary-effect-name">
+            {{cprGetChangeNameByKey ../../item (lookup effect.flags.cyberpunk-red-core.changes.cats @index) change.key}}:
+          </span>
+          <span class="summary-value summary-effect-value">
+            {{#if change.value }}
+              {{cprEffectModMode change.mode change.value}}
+            {{else}}
+              0
+            {{/if}}
+          </span>
+        </div>
+      {{/each}}
+    {{/if}}
+    {{#if effect.disabled }}
+      </span>
+    {{/if}}
+    {{#if @last }}
+      <hr/>
+    {{/if}}
+  {{/each}}
+{{/if}}

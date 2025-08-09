@@ -1,0 +1,60 @@
+{
+  "name": "fvtt-cyberpunk-red-core",
+  "version": "0.0.1",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/cyberpunk-red-team/fvtt-cyberpunk-red-core/"
+  },
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "npx gulp",
+    "lint": "npx eslint gulpfile.mjs gulp/*.mjs src/modules",
+    "build": "npx gulp build",
+    "watch": "npx gulp watch",
+    "extractPacks": "npx gulp extractPacks",
+    "generateBabele": "npx gulp generateBabele",
+    "installPackages": "npm i",
+    "api-docs": "npx jsdoc -c jsdoc.json"
+  },
+  "engines": {
+    "node": ">=15.0",
+    "npm": ">7.0"
+  },
+  "dependencies": {
+    "abstract-level": "^1.0.3",
+    "chalk": "^5.3.0",
+    "classic-level": "^1.3.0",
+    "docdash": "^2.0.2",
+    "editorconfig-checker": "^4.0.2",
+    "eslint": "^8.24.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "fancy-log": "^2.0.0",
+    "fancylog": "^4.0.5",
+    "fs-extra": "^10.1.0",
+    "gitlab-ci-local": "^4.36.1",
+    "gulp": "^4.0.2",
+    "gulp-cli": "^2.3.0",
+    "gulp-less": "^5.0.0",
+    "gulp-svgmin": "^4.1.0",
+    "js-yaml": "^4.1.0",
+    "jsdoc": "^4.0.3",
+    "jsonlint-mod": "^1.7.6",
+    "lint": "^1.1.2",
+    "markdown-it": "^13.0.1",
+    "markdownlint-cli": "^0.32.2",
+    "marked": "^7.0.4",
+    "merge-stream": "^2.0.0",
+    "minimatch": "^5.1.0",
+    "prettier": "^2.8.1",
+    "sanitize-filename": "^1.6.3",
+    "svgo": "^3.3.2",
+    "through2": "^4.0.2",
+    "v8r": "^0.14.0",
+    "vinyl-fs": "^3.0.3",
+    "yargs": "^17.6.2"
+  }
+}

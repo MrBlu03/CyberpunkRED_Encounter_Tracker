@@ -1,0 +1,66 @@
+{
+  "label": "Programmi",
+  "mapping": {},
+  "entries": {
+    "Armor": {
+      "name": "Armor",
+      "description": "<p>Riduce il danno cerebrale di 4 mentre è Rezzato. Solo 1 copia Rezzata alla volta. Ogni copia ha 1 uso per Netrun.</p>"
+    },
+    "Banhammer": {
+      "name": "Banhammer",
+      "description": "<p>Infligge 3d6 REZ ai Programmi non-Black ICE o 2d6 REZ ai Black ICE. </p>"
+    },
+    "DeckKRASH": {
+      "name": "DeckKRASH",
+      "description": "<p>Scollegamento forzato del Netrunner nemico dall'Architettura con tutti i danni inflitti dai Black ICE Rezzati che ha incontrato. </p>"
+    },
+    "Eraser": {
+      "name": "Eraser",
+      "description": "<p>+2 a tutte le Prove di Cloak mentre è Rezzato.</p>"
+    },
+    "Flak": {
+      "name": "Flak",
+      "description": "<p>Mentre è Rezzato gli attacchi non Black ICE contro di te sono ridotti a 0. Solo 1 copia può Rezzata alla volta. Ogni copia ha 1 uso per Netrun.</p>"
+    },
+    "Hellbolt": {
+      "name": "Hellbolt",
+      "description": "<p>2d6 danni diretti al cervello del Netrunner. Il Cyberdeck prende fuoco se non isolato. </p>"
+    },
+    "Nervescrub": {
+      "name": "Nervescrub",
+      "description": "<p>Abbassa RIF, INT e DES del Netrunner di 1d6 (min. 1) per 1 ora.</p>"
+    },
+    "Poison Flatline": {
+      "name": "Poison Flatline",
+      "description": "<p>Distrugge un non Black ICE a caso sul cyberdeck di un nemico.</p>"
+    },
+    "See Ya": {
+      "name": "See Ya",
+      "description": "<p>+2 a tutte le Prove di Mapper finché è Rezzato.</p>"
+    },
+    "Shield": {
+      "name": "Scudo",
+      "description": "<p>Il primo attacco di danno cerebrale provocato da un programma non Black ICE è ridotto a 0. Solo 1 Copia per volta può essere Rezzata. Ogni Copia ha 1 uso per Netrun.</p>"
+    },
+    "Speedy Gonzalvez": {
+      "name": "Speedy Gonzalvez",
+      "description": "<p>+2 Velocità finché è Rezzato.</p>"
+    },
+    "Superglue": {
+      "name": "Superglue",
+      "description": "<p>Il netrunner non può progredire ulteriormente nell'Architettura o scollegarsi in modo sicuro per 1d6 Round. 1 uso per Copia nel Netrun. </p>"
+    },
+    "Sword": {
+      "name": "Spada",
+      "description": "<p>Infligge 2d6 REZ ai Programmi non Black ICE o 3d6 REZ ai Black ICE.</p>"
+    },
+    "Vrizzbolt": {
+      "name": "Vrizzbolt",
+      "description": "<p>1d6 danni diretti al cervello del Netrunner. Riduce di 1 il numero di Azioni NET che può fare\nnel suo Turno successivo (minimo 2). </p>"
+    },
+    "Worm": {
+      "name": "Worm",
+      "description": "<p>+2 a tutte le Prove di Backdoor mentre è Rezzato.</p>"
+    }
+  }
+}

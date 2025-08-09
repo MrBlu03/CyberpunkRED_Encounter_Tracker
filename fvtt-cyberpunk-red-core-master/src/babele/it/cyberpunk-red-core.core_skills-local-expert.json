@@ -1,0 +1,62 @@
+{
+  "label": "Abilità (Conoscenza della Zona)",
+  "mapping": {},
+  "entries": {
+    "Local Expert (Badlands)": {
+      "name": "Conoscenza della Zona (Badlands)",
+      "description": ""
+    },
+    "Local Expert (Little China)": {
+      "name": "Conoscenza della Zona (Little China)",
+      "description": ""
+    },
+    "Local Expert (Little Europe)": {
+      "name": "Conoscenza della Zona (Little Europe)",
+      "description": ""
+    },
+    "Local Expert (Morro Rock)": {
+      "name": "Conoscenza della Zona (Morro Rock)",
+      "description": ""
+    },
+    "Local Expert (New Westbrook)": {
+      "name": "Conoscenza della Zona (New Westbrook)",
+      "description": ""
+    },
+    "Local Expert (Norcal Military Base)": {
+      "name": "Conoscenza della Zona (Base Militare Norcal)",
+      "description": ""
+    },
+    "Local Expert (Old Combat Zone)": {
+      "name": "Conoscenza della Zona (Vecchia Zona di Guerra)",
+      "description": ""
+    },
+    "Local Expert (Old Corp Center)": {
+      "name": "Conoscenza della Zona (Vecchio Corp Center)",
+      "description": ""
+    },
+    "Local Expert (Old Japan Town)": {
+      "name": "Conoscenza della Zona (Vecchia Japan Town)",
+      "description": ""
+    },
+    "Local Expert (South Night City)": {
+      "name": "Conoscenza della Zona (South Night City)",
+      "description": ""
+    },
+    "Local Expert (The Glen)": {
+      "name": "Conoscenza della Zona (La Valle)",
+      "description": ""
+    },
+    "Local Expert (University District)": {
+      "name": "Conoscenza della Zona (Distretto Universitario)",
+      "description": ""
+    },
+    "Local Expert (Upper Marina)": {
+      "name": "Conoscenza della Zona (Upper Marina)",
+      "description": ""
+    },
+    "Local Expert (Watson)": {
+      "name": "Conoscenza della Zona (Watson Development)",
+      "description": ""
+    }
+  }
+}

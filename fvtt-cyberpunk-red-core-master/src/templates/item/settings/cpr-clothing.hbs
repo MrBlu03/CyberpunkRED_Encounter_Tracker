@@ -1,0 +1,22 @@
+{{!-- Clothing Style Settings--}}
+<li class="item flexrow">
+  <div class="item flexrow setting-name text-nowrap">
+    {{localize "CPR.global.itemTypes.clothing"}} {{localize "CPR.itemSheet.clothing.style"}}
+  </div>
+  <div class="item flexrow setting-value text-nowrap item-end">
+    <select name="system.style" data-dtype="{{item.system.style}}">
+      {{selectOptions (cprFindConfigObj "clothingVarieties") selected=item.system.style localize=true}}
+    </select>
+  </div>
+</li>
+{{!-- Clothing Type Settings--}}
+<li class="item flexrow">
+  <div class="item flexrow setting-name text-nowrap">
+    {{localize "CPR.global.itemTypes.clothing"}} {{localize "CPR.global.generic.type"}}
+  </div>
+  <div class="item flexrow setting-value text-nowrap item-end">
+    <select name="system.type" data-dtype="{{item.system.type}}">
+      {{selectOptions (cprFindConfigObj "clothingTypes") selected=item.system.type localize=true}}
+    </select>
+  </div>
+</li>

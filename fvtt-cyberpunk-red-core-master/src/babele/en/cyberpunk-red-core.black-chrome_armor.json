@@ -1,0 +1,98 @@
+{
+  "label": "Armor",
+  "mapping": {},
+  "entries": {
+    "Corporate Island": {
+      "name": "Corporate Island",
+      "description": "<p>Light Armorjack that looks like businesswear.</p>\n"
+    },
+    "Dirk Combat Jacket": {
+      "name": "Dirk Combat Jacket",
+      "description": "<p>\n  Leisurewear-styled Light Armorjack and the ability to conceal two standard\n  magazines without a check.\n</p>\n"
+    },
+    "Executive Armor": {
+      "name": "Executive Armor",
+      "description": "<p>\n  Light Armorjack that looks like businesswear. Restores 1SP every day SP isn't\n  lost on the armor.\n</p>\n"
+    },
+    "Fire Brand Bunker Gear": {
+      "name": "Fire Brand Bunker Gear",
+      "description": "<p>\n  Fireproof flak armor with a built in gas mask and 30 minutes of oxygen in a\n  tank that refills itself after an hour. -4 to REF, DEX, and MOVE.\n</p>\n"
+    },
+    "Laser Light Street Jacket": {
+      "name": "Laser Light Street Jacket",
+      "description": "<p>\n  Urban Flash-styled Light Armorjack that counts as a Light Tattoo while worn.\n</p>\n"
+    },
+    "Lotos Netsuit": {
+      "name": "Lotos Netsuit",
+      "description": "<p>\n  A netsuit allowing an extra cyberdeck hardware slot that's installed directly\n  into the suit which is uninstalled if the suit is removed. Comes standard with\n  an Excellent Quality Cyberdeck*. -2 to REF, DEX, and MOVE.\n</p>\n<p><em>*Must be manually added after acquiring the armor</em></p>\n"
+    },
+    "Masetto AirRider": {
+      "name": "Masetto AirRider",
+      "description": "<p>\n  Kevlar Body Armor that ignores the Whiplash critical injury from car crashes\n  as long as the armor's CO<sub>2</sub> tank is full*.\n</p>\n<p><em>*Must be manually added after acquiring the armor.</em></p>\n"
+    },
+    "MechaMan Motorcycle Helmet": {
+      "name": "MechaMan Motorcycle Helmet",
+      "description": "<p>\n  A Kevlar motorcycle helmet with integrated smart glasses that come with Chyron\n  and Low Light / IR / UV pre-installed*.\n</p>\n<p>\n  <em\n    >*Smart Glasses and associated cyberware must be manually added and\n    installed after acquring the armor.</em\n  >\n</p>\n"
+    },
+    "Mimic Clothing (Asia Pop)": {
+      "name": "Mimic Clothing (Asia Pop)",
+      "description": "<p>Light Armorjack made from a Mimic Clothing Kit and \"Asia Pop\" clothing.</p>\n"
+    },
+    "Mimic Clothing (Bag Lady Chic)": {
+      "name": "Mimic Clothing (Bag Lady Chic)",
+      "description": "<p>\n  Light Armorjack made from a Mimic Clothing Kit and \"Bag Lady Chic\" clothing.\n</p>\n"
+    },
+    "Mimic Clothing (Bohemian)": {
+      "name": "Mimic Clothing (Bohemian)",
+      "description": "<p>Light Armorjack made from a Mimic Clothing Kit and \"Bohemian\" clothing.</p>\n"
+    },
+    "Mimic Clothing (Businesswear)": {
+      "name": "Mimic Clothing (Businesswear)",
+      "description": "<p>\n  Light Armorjack made from a Mimic Clothing Kit and \"Businesswear\" clothing.\n</p>\n"
+    },
+    "Mimic Clothing (Gang Colors)": {
+      "name": "Mimic Clothing (Gang Colors)",
+      "description": "<p>\n  Light Armorjack made from a Mimic Clothing Kit and \"Gang Colors\" clothing.\n</p>\n"
+    },
+    "Mimic Clothing (Generic Chic)": {
+      "name": "Mimic Clothing (Generic Chic)",
+      "description": "<p>\n  Light Armorjack made from a Mimic Clothing Kit and \"Generic Chic\" clothing.\n</p>\n"
+    },
+    "Mimic Clothing (High Fashion)": {
+      "name": "Mimic Clothing (High Fashion)",
+      "description": "<p>\n  Light Armorjack made from a Mimic Clothing Kit and \"High Fashion\" clothing.\n</p>\n"
+    },
+    "Mimic Clothing (Leisurewear)": {
+      "name": "Mimic Clothing (Leisurewear)",
+      "description": "<p>\n  Light Armorjack made from a Mimic Clothing Kit and \"Leisurewear\" clothing.\n</p>\n"
+    },
+    "Mimic Clothing (Nomad Leathers)": {
+      "name": "Mimic Clothing (Nomad Leathers)",
+      "description": "<p>\n  Light Armorjack made from a Mimic Clothing Kit and \"Nomad Leathers\" clothing.\n</p>\n"
+    },
+    "Mimic Clothing (Urban Flash)": {
+      "name": "Mimic Clothing (Urban Flash)",
+      "description": "<p>\n  Light Armorjack made from a Mimic Clothing Kit and \"Urban Flash\" clothing.\n</p>\n"
+    },
+    "Montage Variable Clothing Line": {
+      "name": "Montage Variable Clothing Line",
+      "description": "<p>\n  Light Armorjack that can swap between \"Generic Chic\" and \"Gang Colors\" styles\n  with an action from a palette purchased (20eb per color/pattern) and installed\n  on an agent. Comes with one color or pattern of choice.\n</p>\n"
+    },
+    "Shock Armor": {
+      "name": "Shock Armor",
+      "description": "<p>Kevlar armor that shocks anyone who is grappling you.</p>\n"
+    },
+    "Skid Row Trench": {
+      "name": "Skid Row Trench",
+      "description": "<p>\n  Flak Body Armor that looks like a trench coat in exchange for less protection.\n  -4 to REF, DEX, and MOVE.\n</p>\n"
+    },
+    "Street Viper Riding Suit": {
+      "name": "Street Viper Riding Suit",
+      "description": "<p>\n  Kevlar Body Armor that comes with two pre-installed medium melee weapons*\n  always considered drawn as long as the armor is equipped.\n</p>\n<p><em>*Must be manually added after acquiring the armor.</em></p>\n"
+    },
+    "Tactical Smart Armor": {
+      "name": "Tactical Smart Armor",
+      "description": "<p>\n  A full set of medium armorjack with integrated smart glasses*. -2 to REF, DEX,\n  and MOVE.\n</p>\n<p><em>*Smart Glasses must be manually added after acquiring the armor.</em></p>\n"
+    }
+  }
+}

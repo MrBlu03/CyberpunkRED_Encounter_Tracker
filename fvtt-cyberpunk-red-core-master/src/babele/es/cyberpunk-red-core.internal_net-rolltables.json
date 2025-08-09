@@ -1,0 +1,111 @@
+{
+  "label": "Tabla de Tiradas de Arquitectura de Red",
+  "mapping": {},
+  "entries": {
+    "All Other Floors (Advanced)": {
+      "name": "Todos los Otros Pisos (Avanzado)",
+      "results": [
+        {
+          "3-3": "Perro del Infierno",
+          "4-4": "Aspid x2",
+          "5-5": "Perro del Infierno, Asesino",
+          "6-6": "Perro del Infierno",
+          "7-7": "Perro del Infierno, Dientes de Sable",
+          "8-8": "Perro del Infierno",
+          "9-9": "Contraseña VD10",
+          "10-10": "Archivo VD10",
+          "11-11": "Nodo de Control VD10",
+          "12-12": "Contraseña VD10",
+          "13-13": "Aspid",
+          "14-14": "Aspid",
+          "15-15": "Dragón",
+          "16-16": "Aspid",
+          "17-17": "Dragón, Fuego Fatuo",
+          "18-18": "Dragón x2"
+        }
+      ]
+    },
+    "All Other Floors (Basic)": {
+      "name": "Todos los Otros Pisos (Básico)",
+      "results": [
+        {
+          "3-3": "Perro del Infierno",
+          "4-4": "Aspid x2",
+          "5-5": "Perro del Infierno, Asesino",
+          "6-6": "Perro del Infierno",
+          "7-7": "Perro del Infierno, Dientes de Sable",
+          "8-8": "Perro del Infierno",
+          "9-9": "Contraseña VD10",
+          "10-10": "Archivo VD10",
+          "11-11": "Nodo de Control VD10",
+          "12-12": "Contraseña VD10",
+          "13-13": "Aspid",
+          "14-14": "Aspid",
+          "15-15": "Dragón",
+          "16-16": "Aspid",
+          "17-17": "Dragón, Fuego Fatuo",
+          "18-18": "Dragón x2"
+        }
+      ]
+    },
+    "All Other Floors (Standard)": {
+      "name": "Todos los Otros Pisos (Estándar)",
+      "results": [
+        {
+          "3-3": "Perro del Infierno",
+          "4-4": "Aspid x2",
+          "5-5": "Perro del Infierno, Asesino",
+          "6-6": "Perro del Infierno",
+          "7-7": "Perro del Infierno, Dientes de Sable",
+          "8-8": "Perro del Infierno",
+          "9-9": "Contraseña VD10",
+          "10-10": "Archivo VD10",
+          "11-11": "Nodo de Control VD10",
+          "12-12": "Contraseña VD10",
+          "13-13": "Aspid",
+          "14-14": "Aspid",
+          "15-15": "Dragón",
+          "16-16": "Aspid",
+          "17-17": "Dragón, Fuego Fatuo",
+          "18-18": "Dragón x2"
+        }
+      ]
+    },
+    "All Other Floors (Uncommon)": {
+      "name": "Todos los Otros Pisos (Poco Común)",
+      "results": [
+        {
+          "3-3": "Perro del Infierno",
+          "4-4": "Aspid x2",
+          "5-5": "Perro del Infierno, Asesino",
+          "6-6": "Perro del Infierno",
+          "7-7": "Perro del Infierno, Dientes de Sable",
+          "8-8": "Perro del Infierno",
+          "9-9": "Contraseña VD10",
+          "10-10": "Archivo VD10",
+          "11-11": "Nodo de Control VD10",
+          "12-12": "Contraseña VD10",
+          "13-13": "Aspid",
+          "14-14": "Aspid",
+          "15-15": "Dragón",
+          "16-16": "Aspid",
+          "17-17": "Dragón, Fuego Fatuo",
+          "18-18": "Dragón x2"
+        }
+      ]
+    },
+    "First Two Floors (The Lobby)": {
+      "name": "Primeros Dos Pisos (El Lobby)",
+      "results": [
+        {
+          "1-1": "Archivo VD6",
+          "2-2": "Contraseña VD6",
+          "3-3": "Contraseña VD8",
+          "4-4": "Mofeta",
+          "5-5": "Fuego Fatuo",
+          "6-6": "Asesino"
+        }
+      ]
+    }
+  }
+}

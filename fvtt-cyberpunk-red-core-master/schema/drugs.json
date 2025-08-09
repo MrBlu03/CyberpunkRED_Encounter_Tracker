@@ -1,0 +1,90 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/CPRC-Drugs",
+  "definitions": {
+    "CPRC-Drugs": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "_id": {
+          "$ref": "./components/id.json"
+        },
+        "_key": {
+          "$ref": "./components/key.json"
+        },
+        "effects": {
+          "$ref": "./components/effects.json"
+        },
+        "flags": {
+          "$ref": "./components/flags.json"
+        },
+        "img": {
+          "$ref": "./components/img.json"
+        },
+        "name": {
+          "$ref": "./components/name.json"
+        },
+        "type": {
+          "type": "string",
+          "const": "drug"
+        },
+        "system": {
+          "$ref": "#/definitions/System"
+        }
+      },
+      "required": ["_id", "_key", "effects", "img", "name", "system", "type"]
+    },
+    "System": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "amount": {
+          "$ref": "./components/stackable/amount.json"
+        },
+        "brand": {
+          "$ref": "./components/physical/brand.json"
+        },
+        "concealable": {
+          "$ref": "./components/physical/concealable.json"
+        },
+        "consumed": {
+          "description": "Effect to apply when Drug is consumed",
+          "type": "string"
+        },
+        "description": {
+          "$ref": "./components/common/description.json"
+        },
+        "equipped": {
+          "$ref": "./components/equippable/equipped.json"
+        },
+        "favorite": {
+          "$ref": "./components/common/favorite.json"
+        },
+        "price": {
+          "$ref": "./components/valuable/price.json"
+        },
+        "revealed": {
+          "$ref": "./components/effects/revealed.json"
+        },
+        "source": {
+          "$ref": "./components/common/source.json"
+        },
+        "usage": {
+          "$ref": "./components/effects/usage.json"
+        }
+      },
+      "required": [
+        "amount",
+        "brand",
+        "concealable",
+        "description",
+        "equipped",
+        "favorite",
+        "price",
+        "revealed",
+        "source",
+        "usage"
+      ]
+    }
+  }
+}

@@ -1,0 +1,272 @@
+.chat-message,
+.chat-message.whisper,
+.chat-message.emote {
+  font-family: var(--cpr-font-primary);
+  background: var(--cpr-background-chat-card);
+  color: var(--cpr-text-chat-normal);
+
+  .message-header {
+    color: var(--cpr-text-chat-normal) !important;
+  }
+
+  img {
+    border: none;
+  }
+
+  footer {
+    color: var(--cpr-text-foundry-hint);
+  }
+
+  .table-description {
+    color: var(--cpr-text-foundry-hint) !important;
+  }
+}
+
+.rollcard-top {
+  padding-bottom: 0.313rem;
+}
+
+.rollcard-critinjury-icon {
+  width: 3.25rem;
+  height: 3.25rem;
+}
+
+.rollcard-critinjury-data {
+  grid-area: d6-data;
+  display: flex;
+  padding-left: 0.313rem;
+  align-items: center;
+}
+.rollcard-subtitle {
+  display: grid;
+  grid-template-columns: 1.25rem auto 1.25rem;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "subtitle-left subtitle-center subtitle-right"
+    "subtitle-2-left subtitle-2-center subtitle-2-right";
+}
+
+.rollcard-subtitle-left {
+  grid-area: subtitle-left;
+}
+
+.rollcard-subtitle-center {
+  grid-area: subtitle-center;
+  justify-self: center;
+}
+
+.rollcard-subtitle-right {
+  grid-area: subtitle-right;
+}
+
+.rollcard-subtitle-2-left {
+  grid-area: subtitle-2-left;
+}
+
+.rollcard-subtitle-2-center {
+  grid-area: subtitle-2-center;
+  justify-self: center;
+}
+
+.rollcard-subtitle-2-right {
+  grid-area: subtitle-2-right;
+}
+
+.rollcard {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+}
+
+.generic-rollcard-data,
+.d10-rollcard-data {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "d10-dice d10-number"
+    "d10-data d10-data";
+}
+
+.generic-dice-div {
+  grid-area: d10-dice;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 0.313rem;
+}
+
+.d10-dice-div {
+  grid-area: d10-dice;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.generic-number-div,
+.d10-number-div {
+  grid-area: d10-number;
+  min-height: 4.375rem;
+  text-align: right;
+  padding-right: 0.313rem;
+  font-size: var(--cpr-font-massive);
+}
+
+.roll-success {
+  color: var(--cpr-text-chat-success);
+}
+.roll-failure {
+  color: var(--cpr-text-chat-failure);
+}
+
+.generic-data-div,
+.d10-data-div {
+  grid-area: d10-data;
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  justify-content: flex-end;
+  padding-right: 0.313rem;
+}
+
+///
+.d6-rollcard-data {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "d6-dice d6-number"
+    "d6-data d6-data";
+}
+
+.d6-dice-div {
+  grid-area: d6-dice;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.d6-number-div {
+  grid-area: d6-number;
+  min-height: 4.375rem;
+  text-align: right;
+  padding-right: 0.313rem;
+  font-size: var(--cpr-font-massive);
+}
+
+.d6-data-div {
+  grid-area: d6-data;
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  justify-content: flex-end;
+  padding-right: 0.313rem;
+}
+
+.humanity-static-div {
+  grid-area: d6-dice;
+  text-align: center;
+  align-self: center;
+  font-size: var(--cpr-font-larger);
+  font-style: italic;
+}
+
+.bottom-div {
+  grid-area: rc-bottom;
+}
+
+.hide {
+  display: none;
+}
+
+.d10 {
+  height: 4.375rem;
+  width: 4.375rem;
+  display: block;
+  border: none;
+  align-self: center;
+  &-20 {
+    height: 1.25rem;
+    width: 1.25rem;
+  }
+  &-30 {
+    height: 1.875rem;
+    width: 1.875rem;
+  }
+}
+
+.d6 {
+  display: block;
+  border: none;
+  align-self: center;
+  &-20 {
+    height: 1.25rem;
+    width: 1.25rem;
+  }
+  &-30 {
+    height: 1.875rem;
+    width: 1.875rem;
+  }
+  &-40 {
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+}
+
+a.inline-roll {
+  background: var(--cpr-background-chat-inline-roll);
+
+  .dice-tooltip {
+    background: var(--cpr-background-chat-card);
+    color: var(--cpr-text-chat-normal);
+
+    .dice-rolls {
+      .roll {
+        color: var(--cpr-text-chat-normal);
+      }
+    }
+  }
+}
+
+/*-------------------------
+| Chat visibility design  |
+-------------------------*/
+
+.chat-mode-indicator {
+  display: inline-block;
+  margin: 0 0.188rem 0 0;
+  padding: 0 0.188rem;
+  line-height: 1rem;
+  border: 0.063rem solid var(--cpr-background-chat-border);
+  border-radius: 0.188rem;
+  background: var(--cpr-background-chat-card);
+}
+
+/*--------------------
+  cpr-block element styling
+---------------------*/
+
+.cpr-block {
+  background-color: var(--cpr-background-chat-card-block);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 0.25rem;
+  clip-path: polygon(0 0.938rem, 0 100%, 100% 100%, 100% 0, 0.938rem 0);
+
+  &::before {
+    position: absolute;
+    height: calc(100% - 0.5rem);
+    width: calc(100% - 0.5rem);
+    top: 0.25rem;
+    left: 0.25rem;
+
+    content: "";
+    background-color: var(--cpr-background-chat-card-block-before);
+    clip-path: polygon(0 0.875rem, 0 100%, 100% 100%, 100% 0, 0.875rem 0);
+    z-index: -1;
+  }
+}

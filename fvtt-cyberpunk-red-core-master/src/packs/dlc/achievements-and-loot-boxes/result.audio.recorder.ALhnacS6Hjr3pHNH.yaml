@@ -1,0 +1,12 @@
+_id: ALhnacS6Hjr3pHNH
+_key: "!tables.results!WmWdGRlhzhA2ZcmV.ALhnacS6Hjr3pHNH"
+documentCollection: cyberpunk-red-core.core_gear
+documentId: Lo7rXsc5ToQf2KlN
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/gear/audio_recorder.svg
+range:
+  - 4
+  - 4
+text: Audio Recorder
+type: 2
+weight: 1

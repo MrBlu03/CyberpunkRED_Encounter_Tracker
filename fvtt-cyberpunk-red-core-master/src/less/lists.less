@@ -1,0 +1,423 @@
+// All lists use this
+
+.items-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  scrollbar-width: thin;
+
+  .items-header {
+    align-items: center;
+    background-color: var(--cpr-background-header) !important;
+    color: var(--cpr-text-header);
+    span {
+      padding: 0.125rem;
+    }
+  }
+
+  // Sublists are the collapsable gear sublists
+  .sub-list {
+    min-width: 100%;
+    display: grid;
+    grid-template-rows: 1fr;
+    transition: grid-template-rows 150ms ease-in-out, opacity 200ms linear;
+    ol {
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+      border: 0.188rem solid transparent;
+      border-top: 0;
+      border-bottom: 0;
+      li {
+        padding: 0;
+      }
+      [data-row-level="1"]:before,
+      [data-row-level="2"]:before,
+      [data-row-level="3"]:before,
+      [data-row-level="4"]:before {
+        margin-right: 0.25rem;
+        content: "";
+        display: block;
+        height: 0.01rem;
+        width: 0.33rem;
+        border-top: 0.1rem solid var(--cpr-background-dialog-border);
+      }
+      [data-row-level="2"] {
+        padding-left: 0.33rem;
+      }
+      [data-row-level="3"] {
+        padding-left: 0.66rem;
+      }
+      [data-row-level="4"] {
+        padding-left: 0.99rem;
+      }
+
+      .action-container {
+        text-align: end;
+        padding-right: 0.1rem;
+      }
+
+      .action-container > a {
+        display: inline;
+      }
+    }
+    .type-tag {
+      border-radius: 0.1rem;
+      padding: 0.05rem 0.15rem;
+      font-size: 0.52rem;
+      font-weight: 500;
+      margin-right: 0.25rem;
+      letter-spacing: 0.06rem;
+      text-transform: uppercase;
+      color: white;
+      background-color: var(--cpr-background-border);
+      width: 3.166rem;
+      justify-content: center;
+      display: flex;
+    }
+    // Apply styling on all rows
+    li {
+      background-color: transparent !important; // Don't use zebra striping in sublists
+      border-top: 0.1rem solid var(--cpr-background-dialog-border);
+    }
+  }
+
+  .item {
+    align-items: center;
+    padding: 0 0.125rem;
+  }
+  .item-hidden {
+    grid-template-rows: 0fr;
+    opacity: 0;
+  }
+
+  .item-name {
+    flex: 2;
+    margin: 0;
+    overflow: hidden;
+    text-align: left;
+    align-items: center;
+    text-overflow: ellipsis;
+    flex-flow: initial;
+
+    .rollable {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .item-thumb {
+      position: relative;
+      width: 1.75rem;
+      height: 1.75rem;
+      margin: 0.188rem 0.188rem 0.188rem 0.063rem;
+      // If the item has an upgrade icon, show it on the top right corner
+      i.fa-square-caret-up {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.2rem;
+        color: white;
+      }
+      i.fa-circle-info {
+        position: absolute;
+        top: 0.5rem;
+        left: 0.17rem;
+        color: white;
+      }
+      img {
+        width: 100%;
+      }
+    }
+
+    .toggle-installed-visibility {
+      opacity: 0.5;
+      flex: 0 0 2rem;
+      min-width: 1.2rem;
+      margin-right: 0.25rem;
+      text-align: right;
+      padding-right: 0.2rem;
+      &:hover {
+        opacity: 1;
+      }
+      i {
+        transition: transform 150ms ease-in-out;
+        transform-origin: center -0.1rem; // Make the arrow flip from the middle
+      }
+    }
+  }
+
+  .item-image {
+    flex: 0 0 1.875rem;
+    border: none;
+    margin-right: 0.313rem;
+  }
+
+  .item-detail {
+    word-break: break-word;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  // Hide a row in the list
+  .hide {
+    display: none;
+  }
+
+  .inline-block {
+    display: inline-block;
+    zoom: 1;
+  }
+
+  .item-end {
+    text-align: end;
+  }
+}
+
+.effects-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  scrollbar-width: thin;
+
+  .effects-category {
+    padding: 0;
+    color: var(--cpr-text-header) !important;
+    background-color: var(--cpr-background-header) !important;
+    span {
+      padding: 0.125rem;
+    }
+  }
+
+  .item-header {
+    background-color: var(--cpr-background-header) !important;
+    color: var(--cpr-text-header);
+  }
+
+  li:nth-child(even) {
+    background-color: var(--cpr-background-row-even);
+  }
+
+  li:nth-child(odd) {
+    background-color: var(--cpr-background-row-odd);
+  }
+
+  .item.effect {
+    div {
+      padding: 0.188rem;
+    }
+  }
+
+  .effect-image {
+    flex: 0 0 1.875rem;
+    border: none;
+    margin-right: 0.313rem;
+    margin-left: 0;
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .effect-name {
+    flex: 0 0 65%;
+    margin: 0;
+    overflow: hidden;
+    text-align: left;
+    align-items: center;
+    text-overflow: ellipsis;
+
+    &item {
+      flex: 0 0 85%;
+    }
+  }
+
+  .effect-source {
+    flex: 0 0 20%;
+    text-align: left;
+    word-break: break-word;
+    white-space: nowrap;
+    overflow: hidden;
+    align-self: center;
+    text-overflow: ellipsis;
+  }
+
+  .effect-actions {
+    flex: 0 0 15%;
+    text-align: center;
+    align-self: center;
+    padding-right: 0.313rem;
+  }
+}
+
+.changes-list {
+  list-style: none;
+  margin: 2;
+  padding: 0;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  div {
+    padding: 0.125rem;
+  }
+
+  li:nth-child(even) {
+    background-color: var(--cpr-background-row-odd);
+  }
+
+  li:nth-child(odd) {
+    background-color: var(--cpr-background-row-even);
+  }
+
+  .change-header {
+    padding: 0;
+    div {
+      padding: 0.125rem;
+    }
+  }
+
+  .change-key {
+    flex: 0 0 40%;
+
+    .key-input {
+      width: 68%;
+    }
+    .key-cat {
+      width: 30%;
+    }
+    .key-key {
+      width: 68%;
+    }
+  }
+
+  .change-value {
+    flex: 0 0 12%;
+  }
+
+  .change-mode {
+    flex: 0 0 16%;
+    align-self: center;
+  }
+
+  .situational {
+    flex: 0 0 12%;
+  }
+
+  .on-by-default {
+    flex: 0 0 12%;
+  }
+
+  .change-actions {
+    text-align: right;
+    padding-right: 0.313rem;
+    flex: 0 0 8%;
+    align-self: center;
+  }
+}
+
+.skills-tab {
+  li:nth-child(even) {
+    background-color: var(--cpr-background-row-odd);
+  }
+
+  li:nth-child(odd) {
+    background-color: var(--cpr-background-row-even);
+  }
+
+  .skill-level,
+  .skill-base,
+  .skill-mod-value {
+    flex: 0 0 2.375rem;
+  }
+
+  .skill-favorite {
+    flex: 0 0 2.313rem;
+    text-align: center;
+  }
+
+  .skill-custom {
+    flex: none;
+  }
+}
+
+.gear-tab {
+  li:nth-child(even) {
+    background-color: var(--cpr-background-row-odd);
+  }
+
+  li:nth-child(odd) {
+    background-color: var(--cpr-background-row-even);
+  }
+
+  .gear-section-header {
+    padding: 0.313rem;
+  }
+
+  .gear-name {
+    text-overflow: ellipsis;
+    flex: 0 0 33%;
+  }
+
+  .name.item-edit > sup {
+    margin-left: 0.313rem;
+  }
+
+  .gear-amount {
+    max-width: 3.75rem;
+    margin: 0;
+
+    .gear-amount-value {
+      max-width: 100%;
+      padding: 0.188rem;
+
+      .gear-amount-input {
+        width: 1.875rem;
+      }
+    }
+  }
+
+  .gear-data {
+    text-align: left;
+    flex: 0 0 40%;
+    padding-left: 0.125rem;
+  }
+
+  .gear-actions {
+    text-align: end;
+    min-width: 7.188rem;
+    padding-right: 0.438rem !important;
+
+    .fa-trash-can {
+      color: var(--cpr-text-icon-highlight);
+    }
+  }
+}
+
+.role-tab {
+  width: 100%;
+
+  .role-tab-content {
+    .role-item {
+      .fa-trash-can {
+        color: var(--cpr-text-icon-highlight);
+      }
+
+      .role-name,
+      .ability-name {
+        flex: 1 1 12.5rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .role-rank,
+      .ability-rank {
+        flex: 0 0 5.625rem;
+        text-align: center;
+        padding-right: 0.313rem;
+      }
+    }
+  }
+}
+
+.zero-not-visible:not(:hover):not(:focus-within) {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}

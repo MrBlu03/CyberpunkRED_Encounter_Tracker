@@ -1,0 +1,74 @@
+{
+  "label": "Le Noël des punks à flingues",
+  "mapping": {
+    "dvTable": "system.tableSD"
+  },
+  "entries": {
+    "Nova Model 757 Rounds": {
+      "name": "Munitions pour Nova Model 757",
+      "description": "<p>À utiliser uniquement avec le Nova Model 757 Cityhunter. Viens en pack de 18 au lieu d'un pack de 10.</p>\n\n<p>A besoin d'un implant Dispositif de visée, ou ne tirera pas. S'il rate une Attaque de 4 ou moins, lancez une seconde attaque au même SD 1d10+10 (statistique d'attaque non normale). Ajout possible de Chance. La cible peut esquiver la second attaque normalement si elle en est capable.</p>\n"
+    },
+    "Sub-Flechette Rounds": {
+      "name": "Fléchettes spéciales",
+      "description": "<p>Munitions spéciales qui ne peuvent être utilisées que par la Mitrailleuse à fléchettes Malorian Arms. Perforent l'armure de 4 PA par coup.</p>\n"
+    },
+    "ARS-5 Submachine Gun": {
+      "name": "Pistolet-mitrailleur ARS-5",
+      "description": "<p>Ce pistolet-mitrailleur lourd a la totale : il est équipé d'une liaison smartgun, d'une lunette infrarouge de vision nocturne et d'une lunette de précision*.</p>\n<p><em>*les trois doivent être ajoutés manuellement après avoir acquis l'arme.</em></p>\n",
+      "dvTable": "SD Pistolet-mitrailleur"
+    },
+    "Chainknife": {
+      "name": "Couteau tronçonneur",
+      "description": "<p>Prend une action pour le démarrer, mais une fois lancé c'est une arme de mêlée puissante. Quand la chaine ne tourne pas, fait 2d6 de dégâts*.</p>\n<p><em>*Le mode non actif n'est pas supporté, il faut donc réduire manuellement les dégâts.</em></p>"
+    },
+    "Crusher": {
+      "name": "Crusher",
+      "description": "<p>Un pistolet qui tire des chevrotines de fusil à pompe. Comment ne pas aimer ?</p>",
+      "dvTable": "SD Pistolet"
+    },
+    "Dragon Flamethrower": {
+      "name": "Lance-flamme Dragon",
+      "description": "<p>Un déluge de feu à portée d'index. Ne peut tirer que des Chevrotines incendiaires pour fusil à pompe, mais la cible enflammée par cette arme brûle de 4PS par tour.</p>"
+    },
+    "Hellbringer": {
+      "name": "Hellbringer",
+      "description": "<p>Quand cette chose tire, vous le savez. S'il est utilisé par quelqu'un avec moins de 10 en COR, le revolver s'enraye. Une action est requise pour la débloquer.</p>",
+      "dvTable": "SD Pistolet"
+    },
+    "Multiple Ammunition Pistol": {
+      "name": "Revolver à munitions multiples",
+      "description": "<p>Un pistolet très lourd capable de charger jusqu'à 5 types de munitions différentes en même temps*, donnant à l'utilisateur la capacité de choisir celle de son choix à chaque tir.</p>\n<p><em>*N'est pas encore supporté, les joueurs doivent changer manuellement le type de munitions.</em></p>",
+      "dvTable": "SD Pistolet"
+    },
+    "Nomad Pneumatic Bolt Gun": {
+      "name": "Fusil à verrou pneumatique de Nomade",
+      "description": "<p>Capable de tirer toutes les munitions spéciales, cette arme est toujours aussi versatile que lorsqu'elle a été inventé il y a deux décennies.</p>",
+      "dvTable": "SD Fusil de précision"
+    },
+    "Nova Model 757 Cityhunter": {
+      "name": "Nova Model 757 Cityhunter",
+      "description": "<p>Ce revolver tire ses propres munitions customisées achetées par pack de 18, même si elles coutent le même prix qu'un pack de 10 munitions. Livré avec une liaison smartgun*.</p>\n<p><em>*La liaison smartgun doit être ajoutée après avoir acquis l'arme.</em></p>\n",
+      "dvTable": "SD Pistolet"
+    },
+    "ST-5 Assault Rifle": {
+      "name": "Fusil d'assaut ST-5",
+      "description": "<p>Une arme - relativement - fiable. Si vous obtenez un 1 sur une Attaque (Échec critique) vous devez alors faire un pile ou face : si vous gagnez le fusil tire normalement, si vous perdez le fusil s'enraye et nécessite une action pour le débloquer.</p>",
+      "dvTable": "SD Fusil d'assaut"
+    },
+    "Sub-Flechette Gun": {
+      "name": "Mitrailleuse à fléchettes",
+      "description": "<p>Ce pistolet-mitrailleur ne peut tirer que ses propres munitions perforantes personnalisées, cependant ces munitions perforent les armures de 4 quand elles infligent des dégâts. Livré avec une liaison smartgun*.</p>\n<p><em>*La liaison smartgun doit être ajoutée après avoir acquis l'arme.</em></p>\n",
+      "dvTable": "SD Pistolet-mitrailleur"
+    },
+    "Teen Dreem": {
+      "name": "Teen Dreem",
+      "description": "<p>Ce pistolet-mitrailleur peut utiliser le tir automatique et le tir de suppression tant qu'il lui reste au moins 2 balles. Cependant, utiliser l'un de ces modes de tir fera fondre l'arme, la rendant irréparable.</p>\n",
+      "dvTable": "SD Pistolet-mitrailleur"
+    },
+    "WAA Bullpup Assault Weapon": {
+      "name": "Fusil d'assaut bullpup WAA",
+      "description": "<p>Un fusil d'assaut bullpup en service depuis plus de deux décennies. Peut tirer des munitions spéciales et livré avec une liaison smartgun*.</p>\n<p><em>*La liaison smartgun doit être ajoutée après avoir acquis l'arme.</em></p>\n",
+      "dvTable": "SD Fusil d'assaut"
+    }
+  }
+}

@@ -1,0 +1,65 @@
+_id: 2XhNJ80rCSvxAenP
+_key: "!items!2XhNJ80rCSvxAenP"
+effects:
+  - sate0Jnbsdj9xuX7
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/cyberware/implanted_linearframe_sigma.svg
+name: Implanted Linear Frame ∑ (Sigma)
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  core: false
+  damage: 1d6
+  description:
+    value: |
+      <ul>
+        <li>Requires BODY 6, Grafted Muscle and Bone Lace</li>
+        <li>
+          Increases your BODY stat to 12 (adjusting your HP, Wound Threshold, and
+          Death Save)
+        </li>
+      </ul>
+  dvTable: ""
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  humanityLoss:
+    roll: 4d6
+    static: 14
+  installLocation: hospital
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+      - cyberware
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: true
+  isFoundational: true
+  isRanged: false
+  isWeapon: false
+  magazine:
+    max: 0
+    value: 0
+  price:
+    market: 1000
+  providesHardening: false
+  revealed: true
+  rof: 1
+  size: 0
+  source:
+    book: Core
+    page: 367
+  type: borgware
+  unarmedAutomaticCalculation: true
+  usage: installed
+  usesType: magazine
+  weaponSkill: Archery
+  weaponType: assaultRifle
+type: cyberware

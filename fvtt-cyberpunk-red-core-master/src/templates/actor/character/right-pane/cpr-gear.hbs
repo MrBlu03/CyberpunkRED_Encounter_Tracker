@@ -1,0 +1,67 @@
+<div class="gear-tab-data">
+  <ol class="items-list">
+    {{#each (cprFindConfigObj "inventoryCategories") as |category c| }}
+      <div class="collapsible">
+        <li class="items-header flexrow collapsible">
+          <span class="item-name gear-name gear-section-header text-nowrap expand-button"
+                id="gearTab-{{c}}"
+                data-tooltip="{{localize "CPR.actorSheets.commonActions.toggleCategoryPinned"}}">
+            {{localize category}}
+            {{#if (cprListContains ../this.options.collapsedSections (cprGeneratePartial "gearTab-VAR" c)) }}
+              <i class="fas fa-plus collapse-icon"></i>
+              <i class="fas fa-minus expand-icon hide"></i>
+            {{else}}
+              <i class="fas fa-plus collapse-icon hide"></i>
+              <i class="fas fa-minus expand-icon"></i>
+            {{/if}}
+          </span>
+          {{#if (cprListContains "ammo,gear,clothing,drug" c) }}
+            <span class="item-detail gear-amount gear-section-header text-nowrap">
+              {{localize "CPR.global.generic.amount"}}
+            </span>
+          {{/if}}
+          {{#if (cprListContains "armor" c) }}
+            <span class="item-detail gear-amount gear-section-header text-nowrap">
+              {{localize "CPR.global.generic.stats"}}
+            </span>
+          {{/if}}
+          {{#if (cprListContains "cyberdeck" c) }}
+            <span class="item-detail gear-amount gear-section-header text-nowrap">
+              {{localize "CPR.global.generic.slots"}}
+            </span>
+          {{/if}}
+          {{#if (cprListContains "weapon" c) }}
+            <span class="item-detail gear-amount gear-section-header text-nowrap">
+              {{localize "CPR.global.itemTypes.ammo"}}
+            </span>
+          {{/if}}
+          {{#if (cprListContains "netarch" c) }}
+            <span class="item-detail gear-amount gear-section-header text-nowrap">
+              {{localize "CPR.netArchitecture.floor.floors"}}
+            </span>
+          {{/if}}
+          <span class="item-detail gear-data gear-section-header text-nowrap">
+            {{localize "CPR.characterSheet.rightPane.data"}}
+          </span>
+          <span class="item-detail gear-actions gear-section-header text-nowrap">
+            {{localize "CPR.global.generic.actions"}}
+            {{#if (cprSystemConfig "playersCreateInventory") }}
+              <a class="item-create"
+                 data-tooltip="{{localize "CPR.actorSheets.commonActions.createNewItem"}}"
+                 data-item-type="{{c}}"><i class="fas fa-circle-plus text-padding-right-smallest"></i></a>
+            {{/if}}
+          </span>
+        </li>
+        <ol class="items-list">
+          {{#each (cprSort (cprGetProp ../actor.itemTypes c) "name") as |item i| }}
+            {{#if (cprSheetContentFilter ../../this.options.cprContentFilter item.name) }}
+              {{!-- Partial handles Name and Data columns --}}
+              {{> (cprGeneratePartial "systems/cyberpunk-red-core/templates/actor/character/right-pane/tabs/gear/cpr-VAR-content.hbs" c) (cprMergeForPartialArg "item,actor,sheet" this ../../this.actor ../../this)}}
+              {{!-- {{cprNestedInstalledGearTab item}} --}}
+            {{/if}}
+          {{/each}}
+        </ol>
+      </div>
+    {{/each}}
+  </ol>
+</div>

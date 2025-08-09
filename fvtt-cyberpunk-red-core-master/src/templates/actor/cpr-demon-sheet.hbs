@@ -1,0 +1,71 @@
+<form>
+  <div class="demon-sheet">
+    <div class="demon-image">
+      <img class="profile-img"
+           src="{{actor.img}}"
+           data-edit="img"
+           data-tooltip="{{actor.name}}"/>
+    </div>
+    <div class="demon-name text-hero">
+      <input name="name" type="text" value="{{actor.name}}"/>
+    </div>
+    <div class="demon-stats-title text-semi">
+      {{#each (cprFindConfigObj "demonStatList") as |stat s| }}
+        <div class="demon-stats-title-{{s}}">
+          {{#unless (cprListContains "rez,netactions" s)}}
+            <a class="rollable"
+               data-roll-title="{{s}}"
+               data-tooltip="{{localize "CPR.actorSheets.rolling.clickToRollThisStat"}}">
+          {{/unless}}
+          {{localize stat}}
+          {{#unless (cprListContains "rez,netactions" s)}}
+            </a>
+          {{/unless}}
+        </div>
+      {{/each}}
+    </div>
+    <div class="demon-stats text-normal">
+      {{#each actor.system.stats as |stat s| }}
+        {{#if (cprCompare s "===" "rez") }}
+          <div class="min-of-max-container">
+            <input class="text-center text-normal"
+                   name="system.stats.rez.value"
+                   type="number"
+                   value="{{this.value}}"/>
+            <div class="of text-normal text-semi">
+              of
+            </div>
+            <input class="text-center"
+                   name="system.stats.rez.max"
+                   type="number"
+                   value="{{this.max}}"/>
+          </div>
+          {{else}}
+          <div class="demon-stats-{{s}} text-normal">
+              <input name="system.stats.{{s}}" type="number" value="{{this}}"/>
+            </div>
+          {{/if}}
+        {{/each}}
+      <div class="demon-stats-rez">
+      </div>
+      <div class="demon-stats-interface">
+      </div>
+      <div class="demon-stats-netactions">
+      </div>
+      <div class="demon-stats-combat-number">
+      </div>
+    </div>
+    <div class="demon-notes">
+      <div class="demon-edit-section">
+        {{editor
+            enrichedHTML.notes
+            target="system.notes"
+            button=true
+            owner=owner
+            editable=editable
+            engine="prosemirror"
+        }}
+      </div>
+    </div>
+  </div>
+</form>

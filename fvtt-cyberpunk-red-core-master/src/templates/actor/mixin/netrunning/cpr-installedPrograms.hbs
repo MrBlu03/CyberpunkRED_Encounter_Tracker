@@ -1,0 +1,104 @@
+
+<div class="cyberdeck-installed-section">
+  <li class="items-header flexrow">
+    <span class="item-name section-name text-nowrap text-padding-left-smallest">
+      {{localize "CPR.characterSheet.bottomPane.fight.installed"}}
+    </span>
+  </li>
+  <div class="cyberdeck-installed-content">
+    <div class="cyberdeck-installed-software">
+      {{#each (cprFindConfigObj "programClassList") as |pgmClass pc| }}
+        <li class="items-header flexrow">
+          <span class="text-semi text-padding-left-smallest">{{localize pgmClass}}</span>
+        </li>
+        {{#each ../fightData.cyberdeck.system.installedPrograms as |program| }}
+          {{#if (cprCompare program.system.class "===" pc) }}
+            <li class="item flexrow text-padding-left-smallest cyberdeck-installed-software-list"
+                data-item-id="{{program.id}}">
+              {{#if (cprListContains "booster,defender,blackice" pc) }}
+                <div class="installed-program-name">
+                  <a class="name item-view{{#if program.system.isRezzed }} text-italic{{/if }}">{{program.name }}</a>
+                </div>
+                <div class="installed-program-attack-and-damage">
+                  {{#if (cprCompare pc "!==" "blackice") }}
+                    <div class="installed-program-defense">
+                      <a class="program-execution"
+                         data-roll-type="cyberdeckProgram"
+                         data-execution-type="def"
+                         data-cyberdeck-id="{{../../fightData.cyberdeck.id}}"
+                         data-program-id="{{program.id}}">
+                        <i class="fas fa-shield red-fg"
+   data-tooltip="{{localize "CPR.characterSheet.bottomPane.fight.rollDefense"}}"></i>
+                      </a>
+                    </div>
+                  {{/if}}
+                  <a class="program-execution"
+                     data-execution-type="{{#if program.system.isRezzed }}de{{/if }}rez"
+                     data-cyberdeck-id="{{../../fightData.cyberdeck.id}}"
+                     data-program-id="{{program.id}}">
+                    {{#if program.system.isRezzed }}
+                      <i class="far fa-circle-down"
+                         data-tooltip="{{localize "CPR.characterSheet.bottomPane.fight.clickToDeactivateProgram"}}"></i>
+                    {{else}}
+                      <i class="far fa-circle-up"
+                         data-tooltip="{{localize "CPR.characterSheet.bottomPane.fight.clickToActivateProgram"}}"></i>
+                    {{/if}}
+                  </a>
+                </div>
+                <div class="installed-program-actions">
+                  <a class="uninstall-single-item"
+                     data-cyberdeck-id="{{../../fightData.cyberdeck.id}}"
+                     data-item-id="{{program.id}}">
+                    <i class="fas fa-folder-minus"
+                       data-tooltip="{{localize "CPR.characterSheet.bottomPane.fight.eraseProgram"}}"></i>
+                  </a>
+                </div>
+              {{else}}
+                <div class="installed-program-name">
+                  <a class="name item-view"
+                     data-tooltip="{{localize "CPR.characterSheet.bottomPane.fight.clickToView"}}">
+                    {{program.name}}
+                  </a>
+                </div>
+                <div class="installed-program-attack-and-damage">
+                  <div class="installed-program-attack">
+                    <a class="program-execution"
+                       data-roll-type="cyberdeckProgram"
+                       data-execution-type="atk"
+                       data-cyberdeck-id="{{../../fightData.cyberdeck.id}}"
+                       data-program-id="{{program.id}}">
+                      <i class="fas fa-hand-fist red-fg"
+                         data-tooltip="{{localize "CPR.characterSheet.bottomPane.fight.rollAnAttack"}}"></i>
+                    </a>
+                  </div>
+                  {{#if (cprProgramHasDamageRoll program) }}
+                    <div class="installed-program-damage">
+                      <a class="program-execution"
+                         data-roll-type="cyberdeckProgram"
+                         data-execution-type="damage"
+                         data-cyberdeck-id="{{../../fightData.cyberdeck.id}}"
+                         data-program-id="{{program.id}}">
+                        <i class="fas fa-droplet red-fg"
+                           data-tooltip="{{localize "CPR.actorSheets.commonActions.rollDamage"}}"></i>
+                      </a>
+                    </div>
+                  {{/if}}
+                </div>
+                <div class="installed-program-actions">
+                  <a class="uninstall-single-item"
+                     data-cyberdeck-id="{{../../fightData.cyberdeck.id}}"
+                     data-item-id="{{program.id}}">
+                    <i class="fas fa-folder-minus"
+                       data-tooltip="{{localize "CPR.characterSheet.bottomPane.fight.eraseProgram"}}"></i>
+                  </a>
+                </div>
+              {{/if}}
+            </li>
+          {{/if}}
+        {{/each}}
+      {{/each}}
+    </div>
+    <div class="cyberdeck-installed-hardware"></div>
+  </div>
+</div>
+

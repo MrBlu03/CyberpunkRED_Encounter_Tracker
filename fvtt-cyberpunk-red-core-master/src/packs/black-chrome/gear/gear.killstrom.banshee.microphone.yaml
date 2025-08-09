@@ -1,0 +1,39 @@
+_id: seglg544pSg95OjB
+_key: "!items!seglg544pSg95OjB"
+effects:
+  - nmfV8HiXPcYsChjv
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/black-chrome/killstrom-banshee-microphone.svg
+name: KillStrom Banshee Microphone
+system:
+  amount: 1
+  brand: KillStrom Music
+  concealable:
+    concealable: true
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        Wireless Microphone Headset. Gives the User a +2 bonus to Play Instrument
+        (Singing) Skill Checks while worn. Doesn't stack with other bonuses to Play
+        Instrument.
+      </p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 0
+    usedSlots: 0
+  isElectronic: false
+  price:
+    market: 1000
+  providesHardening: false
+  revealed: true
+  source:
+    book: BC
+    page: 40
+  usage: equipped
+type: gear

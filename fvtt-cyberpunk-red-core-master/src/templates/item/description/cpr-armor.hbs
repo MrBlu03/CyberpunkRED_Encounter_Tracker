@@ -1,0 +1,60 @@
+{{!-- Head Armor --}}
+{{#if item.system.isHeadLocation }}
+  <div class="item-summary-line">
+    <span class="summary-name text-semi">
+      {{localize "CPR.itemSheet.armor.headSp"}}:
+    </span>
+    <span class="summary-value">
+      {{cprApplyUpgrade item item.system.headLocation.sp "headSp"}}
+    </span>
+  </div>
+  <div class="item-summary-line">
+    <span class="summary-name text-semi">
+      {{localize "CPR.itemSheet.armor.ablation"}}:
+    </span>
+    <span class="summary-value">
+      {{item.system.headLocation.ablation}}
+    </span>
+  </div>
+{{/if}}
+
+{{!-- Body Armor --}}
+{{#if item.system.isBodyLocation }}
+  <div class="item-summary-line">
+    <span class="summary-name text-semi">
+      {{localize "CPR.itemSheet.armor.bodySp"}}:
+    </span>
+    <span class="summary-value">
+      {{cprApplyUpgrade item item.system.bodyLocation.sp "bodySp"}}
+    </span>
+  </div>
+  <div class="item-summary-line">
+    <span class="summary-name text-semi">
+      {{localize "CPR.itemSheet.armor.ablation"}}:
+    </span>
+    <span class="summary-value">
+      {{item.system.bodyLocation.ablation}}
+    </span>
+  </div>
+{{/if}}
+
+{{!-- Sheild --}}
+{{#if item.system.isShield }}
+  <div class="item-summary-line">
+    <span class="summary-name text-semi">
+      {{localize "CPR.itemSheet.common.maximumShort"}}
+      {{localize "CPR.global.generic.hitpointsShort"}}:
+    </span>
+    <span class="summary-value">
+      {{cprApplyUpgrade item item.system.shieldHitPoints.max "shieldHp"}}
+    </span>
+  </div>
+  <div class="item-summary-line">
+    <span class="summary-name text-semi">
+      {{localize "CPR.itemSheet.armor.currentHitpointsShort"}}:
+    </span>
+    <span class="summary-value">
+      {{item.system.shieldHitPoints.value}}
+    </span>
+  </div>
+{{/if}}

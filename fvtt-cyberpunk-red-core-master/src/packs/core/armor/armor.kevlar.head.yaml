@@ -1,0 +1,45 @@
+_id: n4nBTZca1I6bg9rs
+_key: "!items!n4nBTZca1I6bg9rs"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/armor/kevlar_head.svg
+name: Kevlar® (Head)
+system:
+  bodyLocation:
+    ablation: 0
+    sp: 0
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>Standard Kevlar for your head. No armor penalty.</p>
+  equipped: owned
+  favorite: false
+  headLocation:
+    ablation: 0
+    sp: 7
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isBodyLocation: false
+  isElectronic: false
+  isHeadLocation: true
+  isShield: false
+  penalty: 0
+  price:
+    market: 50
+  providesHardening: false
+  revealed: true
+  shieldHitPoints:
+    max: 0
+    value: 0
+  source:
+    book: Core
+    page: 350
+  usage: equipped
+type: armor

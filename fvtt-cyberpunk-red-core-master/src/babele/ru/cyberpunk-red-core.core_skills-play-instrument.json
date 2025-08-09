@@ -1,0 +1,26 @@
+{
+  "label": "Навыки (Игра на инструменте)",
+  "mapping": {},
+  "entries": {
+    "Play Instrument (Drums)": {
+      "name": "Игра на инструменте (Ударные)",
+      "description": ""
+    },
+    "Play Instrument (Guitar)": {
+      "name": "Игра на инструменте (Гитара)",
+      "description": ""
+    },
+    "Play Instrument (Piano)": {
+      "name": "Игра на инструменте (Фортепиано)",
+      "description": ""
+    },
+    "Play Instrument (Singing)": {
+      "name": "Игра на инструменте (Пение)",
+      "description": ""
+    },
+    "Play Instrument (Violin)": {
+      "name": "Игра на инструменте (Скрипка)",
+      "description": ""
+    }
+  }
+}

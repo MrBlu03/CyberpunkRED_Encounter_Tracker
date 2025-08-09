@@ -1,0 +1,50 @@
+{
+  "label": "致命的損傷(頭)",
+  "mapping": {},
+  "entries": {
+    "Brain Injury": {
+      "name": "脳損傷",
+      "description": "<p>-2 to actions.</p>"
+    },
+    "Broken Jaw": {
+      "name": "顎部損傷",
+      "description": "<p>-4 to Speech Actions.</p>"
+    },
+    "Concussion": {
+      "name": "脳震盪",
+      "description": "<p>-2 to every action.</p>"
+    },
+    "Cracked Skull": {
+      "name": "頭蓋損傷",
+      "description": "<p>Triples damage to HP on aimed headshots (rather than the normal double damage).</p>"
+    },
+    "Crushed Windpipe": {
+      "name": "気管損傷",
+      "description": "<p>Cannot speak.</p>"
+    },
+    "Damaged Ear": {
+      "name": "片耳損傷",
+      "description": "<p>If move more than 4m/yds in a Turn, cannot move next turn. -2 to hearing based Perception.</p>"
+    },
+    "Damaged Eye": {
+      "name": "片目損傷",
+      "description": "<p>-2 to Ranged and Perception (Sight).</p>"
+    },
+    "Foreign Object (H)": {
+      "name": "外傷異物(頭部)",
+      "description": "<p>Suffer Crit damage at end of turn if move more than 4m/yrds on foot.</p>"
+    },
+    "Lost Ear": {
+      "name": "片耳喪失",
+      "description": "<p>Ear is removed. If move more than 4m/yds in a Turn, cannot move next turn. -4 to hearing based Perception.</p>"
+    },
+    "Lost Eye": {
+      "name": "片目喪失",
+      "description": "<p>Eye is removed. -4 to Ranged Attacks and vision based Perception.</p>"
+    },
+    "Whiplash": {
+      "name": "頚椎損傷",
+      "description": "<p>No other effects beyond increasing the base Death Save Penalty by 1.</p>"
+    }
+  }
+}

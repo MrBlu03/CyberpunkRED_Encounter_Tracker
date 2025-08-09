@@ -1,0 +1,57 @@
+{
+  "label": "Hardened Enemies",
+  "mapping": {},
+  "entries": {
+    "Hardened Lieutenant Tactics": {
+      "name": "Hardened Lieutenant Tactics",
+      "results": [
+        {
+          "1-1": "Lieutenant and their allies ambush the party (CP:R page 399).",
+          "2-2": "Lieutenant is grappling a human shield (CP:R page 184).",
+          "3-3": "Lieutenant orders their allies to focus on a particular player.",
+          "4-4": "Lieutenant orders their allies to charge wildly at the party.",
+          "5-5": "Lieutenant is in a highly defensible position, making use of cover.",
+          "6-6": "Lieutenant has First Aid and Paramedic Skill Bases of 14 each.",
+          "7-7": "Lieutenant has rigged an Armor-Piercing Grenade (CP:R page 345) as a trap before the combat, somewhere on the field. Noticing it requires a DV15 Perception Skill Check. Disarming it requires a DV9 Demolitions Skill Check. The grenade goes off if any Character moves into the square in which it is hidden.",
+          "8-8": "Lieutenant has done extensive research into the combat capabilities of the party.",
+          "9-9": "Lieutenant has a COOL of 6, a Reputation of 2, and attempts a Facedown. (CP:R page 194) either before combat begins or right at the beginning.",
+          "10-10": "Lieutenant has a Tactics Skill Base of 16 and is in command."
+        }
+      ]
+    },
+    "Hardened Mini Boss Mini Promotion": {
+      "name": "Hardened Mini Boss Mini Promotion",
+      "results": [
+        {
+          "1-1": "Increase one of their Skill Bases that is above 10 to 17.",
+          "2-2": "Increase their HP by 10.",
+          "3-3": "Give them Teamwork 3 (see CP:R page 153), and give them a Team Member of your choice.",
+          "4-4": "Give them Medium Armorjack that’s been Tech upgraded, removing the Armor Penalty.",
+          "5-5": "Give them an additional 600eb of Cyberware.",
+          "6-6": "Give them a Reputation of 5.",
+          "7-7": "Give them an EMP Grenade (see CP:R page 345) and an Athletics Skill Base of 16.",
+          "8-8": "Give them either a dose of Black Lace (see CP:R page 357) or Synthcoke (see CP:R page 358) before combat starts.",
+          "9-9": "Increase their MOVE to 8 or increase their Evasion Skill Base to 18.",
+          "10-10": "Give them Gills (see CP:R page 363) and a round of Exotic Bodysculpting (see CP:R page 226). Shark? Arowana? You decide."
+        }
+      ]
+    },
+    "Mook Encounter Complication": {
+      "name": "Mook Encounter Complication",
+      "results": [
+        {
+          "1-1": "1 Mook is firing incendiary ammunition (CP:R page 346), but only has 10 rounds.",
+          "2-2": "Add 2 additional Mooks to the encounter at the start of the 2nd Round.",
+          "3-3": "2 Mooks are currently experiencing the primary effect of Black Lace (CP:R page 227).",
+          "4-4": "One Mook has an Armor-Piercing Grenade (CP:R page 345) and a Athletics Skill Base of 12.",
+          "5-5": "One Mook is wearing Heavy Armorjack (SP13) Body Armor. Increase their REF, DEX, and MOVE by 2 (before calculating the Armor Penalty).",
+          "6-6": "The Mooks are unusually organized. One Mook has a Tactics Skill Base of 13, and a Smoke Grenade (CP:R page 347).",
+          "7-7": "Add an additional Mook of a different type to the encounter.",
+          "8-8": "Add 2 Mooks to the encounter. Give each a Critical Injury to the head.",
+          "9-9": "Add 1 additional Mook to the encounter at the start of Rounds 2, 3, and 4.",
+          "10-10": "1 Mook has an SMG, no sense of self preservation, an Autofire Skill Base of 16, and no head armor."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,38 @@
+_id: 3rtsVDMaB16lc5tY
+_key: "!items!3rtsVDMaB16lc5tY"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/ammo/grenade_teargas.png
+name: Grenade (Teargas)
+system:
+  ablationValue: 0
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: true
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        Deals no Damage. Hit targets with Meat eyes roll
+        <strong>DV13 Resist Torture/Drugs</strong> Check. On fail suffer Damaged Eye
+        Critical Injury (See pg. 188) for 1 minute. Does not deal critical bonus
+        damage.
+      </p>
+  favorite: false
+  overrides:
+    autofire:
+      minimum: 3
+      mode: none
+      value: -1
+    damage:
+      minimum: 1d6
+      mode: set
+      value: "0"
+  price:
+    market: 50
+  source:
+    book: Core
+    page: 347
+  type: teargas
+  variety: grenade
+type: ammo

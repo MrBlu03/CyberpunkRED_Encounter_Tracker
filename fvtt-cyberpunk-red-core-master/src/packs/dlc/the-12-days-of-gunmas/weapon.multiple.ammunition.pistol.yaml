@@ -1,0 +1,55 @@
+_id: goHANswbJoTXBlpG
+_key: "!items!goHANswbJoTXBlpG"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/weapons/veryHeavyPistol.svg
+name: Multiple Ammunition Pistol
+system:
+  ammoVariety:
+    - vHeavyPistol
+  attackmod: 0
+  brand: Constitutional Arms
+  concealable:
+    concealable: false
+    isConcealed: false
+  critFailEffect: jammed
+  damage: 4d6
+  description:
+    value: |
+      <p>
+        A very heavy pistol capable of loading up to five different ammo types at
+        once*, with the user able to pick between them before firing.
+      </p>
+      <p>
+        <em>*Currently not supported, so users have to manually change ammo types</em>
+      </p>
+  dvTable: DV Pistol
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 1
+  installedItems:
+    allowed: true
+    allowedTypes: []
+    list: []
+    slots: 0
+    usedSlots: 0
+  isRanged: true
+  magazine:
+    max: 5
+    value: 0
+  price:
+    market: 500
+  quality: standard
+  revealed: true
+  rof: 1
+  source:
+    book: 12DoG
+    page: 3
+  unarmedAutomaticCalculation: true
+  usage: equipped
+  usesType: magazine
+  weaponSkill: Handgun
+  weaponType: vHeavyPistol
+type: weapon

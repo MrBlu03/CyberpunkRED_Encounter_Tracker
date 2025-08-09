@@ -1,0 +1,18 @@
+{
+  "description": "The DV Table used for this weapon",
+  "type": "string",
+  "enum": [
+    "",
+    "DV Assault Rifle",
+    "DV Assault Rifle (Autofire)",
+    "DV Bows & Crossbows",
+    "DV Grenade Launcher",
+    "DV Pistol",
+    "DV Rocket Launcher",
+    "DV Shotgun (Slug)",
+    "DV SMG",
+    "DV SMG (Autofire)",
+    "DV Sniper Rifle",
+    "DV Thrown Weapon"
+  ]
+}

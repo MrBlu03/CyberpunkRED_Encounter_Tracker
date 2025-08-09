@@ -1,0 +1,50 @@
+{
+  "label": "Kritische Verletzungen (Kopf)",
+  "mapping": {},
+  "entries": {
+    "Brain Injury": {
+      "name": "Hirntrauma",
+      "description": "<p>-2 auf alle Aktionen.</p>"
+    },
+    "Broken Jaw": {
+      "name": "Kieferbruch",
+      "description": "<p>-4 auf alle Aktionen mit Sprache</p>"
+    },
+    "Concussion": {
+      "name": "Gehirnerschütterung",
+      "description": "<p>-2 auf alle Aktionen.</p>"
+    },
+    "Cracked Skull": {
+      "name": "Schädeltrauma",
+      "description": "<p>Verdreifacht den TP-Schaden durch gezielte Kopfschüsse (statt des normalen zweifachen Schadens).</p>"
+    },
+    "Crushed Windpipe": {
+      "name": "Zerquetschte Luftröhre",
+      "description": "<p>Du kannst nicht sprechen.</p>"
+    },
+    "Damaged Ear": {
+      "name": "Ohrenschaden",
+      "description": "<p>Wenn du dich mehr als 4 Meter in einem Zug bewegst, kannst du im nächsten Zug gar keine Bewegungsaktion durchführen. -2 auf Wahrnehmungsproben beim Hören.</p>"
+    },
+    "Damaged Eye": {
+      "name": "Augenschaden",
+      "description": "<p>-2 für Fernkampfangriffe und Wahrnehmungsproben mit Sicht.</p>"
+    },
+    "Foreign Object (H)": {
+      "name": "Fremdkörper (Kopf)",
+      "description": "<p>Wenn du dich mehr als 4 Meter in einem Zug bewegst, wird am Ende des Zuges der Bonusschaden der Kritischen Verletzung direkt von deinen TP abgezogen.</p>"
+    },
+    "Lost Ear": {
+      "name": "Verlorenes Ohr",
+      "description": "<p>Dein Ohr ist verloren. Wenn du dich mehr als 4 Meter in einem Zug bewegst, kannst du im nächsten Zug gar keine Bewegungsaktion durchführen. -4 auf Wahrnehmungsproben beim Hören.</p>"
+    },
+    "Lost Eye": {
+      "name": "Verlorenes Auge",
+      "description": "<p>Dein Auge ist verloren. -4 für Fernkampfangriffe und Wahrnehmung mit Sicht.</p>"
+    },
+    "Whiplash": {
+      "name": "Schleudertrauma",
+      "description": "<p>Grundmalus für die Traumaprobe wird um 1 erhöht. Kein weiterer Effekt.</p>"
+    }
+  }
+}

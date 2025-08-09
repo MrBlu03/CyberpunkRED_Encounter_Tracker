@@ -1,0 +1,33 @@
+<form class="dialog-sheet">
+  <div class="dialog-header flexcol">
+    <div class="text-normal text-center">
+      {{localize "CPR.rolls.rollingFor" rollTitle=rollData.rollTitle}}
+    </div>
+  </div>
+  <hr/>
+  <div class="dialog-grid flexcol">
+    <ol class="dialog-list">
+      <li class="dialog-item flexrow">
+        <div class="dialog-item-name text-nowrap">
+          {{localize "CPR.global.generic.deathPenalty"}}:
+        </div>
+        <div class="dialog-item-input text-nowrap">
+          <input name="penalty" type="number" data-dtype="Number" value="{{rollData.penalty}}"/>
+        </div>
+      </li>
+      <li class="dialog-item flexrow">
+        <div class="dialog-item-name text-nowrap">
+          {{localize "CPR.characterSheet.rightPanke.skills.base"}} {{localize "CPR.global.generic.deathPenalty"}}:
+        </div>
+        <div class="dialog-item-input text-nowrap">
+          <input name="basePenalty" type="number" data-dtype="Number" value="{{rollData.basePenalty}}"/>
+        </div>
+      </li>
+      {{!-- All applied modifier list partial --}}
+      {{> "systems/cyberpunk-red-core/templates/dialog/rolls/cpr-all-modifiers.hbs" this}}
+    </ol>
+  </div>
+  {{!-- Situational modifier list partial --}}
+  {{> "systems/cyberpunk-red-core/templates/dialog/rolls/cpr-situational-modifiers.hbs" this}}
+  {{> "systems/cyberpunk-red-core/templates/dialog/cpr-dialog-buttons.hbs"}}
+</form>

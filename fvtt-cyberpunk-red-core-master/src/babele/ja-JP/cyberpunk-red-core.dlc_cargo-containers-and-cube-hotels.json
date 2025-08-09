@@ -1,0 +1,42 @@
+{
+  "label": "Cargo Containers and Cube Hotels",
+  "mapping": {},
+  "entries": {
+    "A Touch of Luxury Furniture Set": {
+      "name": "A Touch of Luxury Furniture Set",
+      "description": "<p>This Furniture Set makes your Cargo Container almost feel like a home.</p>"
+    },
+    "Cargo Container Chic Furniture Set": {
+      "name": "Cargo Container Chic Furniture Set",
+      "description": "<p>It might be cheap, but it is real furniture. This is the starting Furniture Set for most cargo containers.</p>"
+    },
+    "Fire Safe": {
+      "name": "Fire Safe",
+      "description": "<p>Small fireproof lockbox made of Thick Steel.</p>\n<ul>\n<li>50HP</li>\n<li>30cm / 1ft</li>\n<li>Can be picked with a DV15 Pick Lock Skill Check</li>\n</ul>"
+    },
+    "Hidden Compartment": {
+      "name": "Hidden Compartment",
+      "description": "<p>A small hidden compartment inside the Cargo Container.</p>\n<ul>\n<li>15.25x30x7.5cm / 6x12x3in</li>\n<li>Can be found with a DV15 Conceal/Reveal Object Skill Check</li>\n</ul>"
+    },
+    "Koff Popper": {
+      "name": "Koff Popper",
+      "description": "<p>The Continental Brands Koff Popper is the only specialty thermos you'll need.</p>\n<ul>\n<li>Thermos with built in Kof Pop brewer</li>\n<li>Holds 237ml/8oz</li>\n<li>Can only be purchased at an Oasis store</li>\n</ul>"
+    },
+    "Koff Pops": {
+      "name": "Koff Pops",
+      "description": "<p>Koff Pops used with the Continental Brands Koff Popper.&nbsp;</p>\n<ul>\n<li>Pack of 10</li>\n<li>Included in Kibble or higher lifestyle</li>\n</ul>"
+    },
+    "Second-hand Special Furniture Set": {
+      "name": "Second-hand Special Furniture Set",
+      "description": "<p>It may not look pretty, but it works. This furniture Set is the bare minimum your Cargo Container needs.</p>"
+    },
+    "Smart Vanity": {
+      "name": "Smart Vanity",
+      "description": "<p>Smart grooming station. Comes fully equipped with any tools and makeup you'll need.&nbsp;</p>"
+    },
+    "Wall Art": {
+      "name": "Wall Art",
+      "description": "<p>Cheap poster.</p>"
+    }
+  }
+}

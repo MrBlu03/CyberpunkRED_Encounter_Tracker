@@ -1,0 +1,366 @@
+{
+  "label": "Vestimenta",
+  "mapping": {},
+  "entries": {
+    "Asia Pop Bottoms": {
+      "name": "Pantalones Asia Pop",
+      "description": "<p>Siguiendo las últimas tendencias de la moda asiática, Asia Pop está segura de capturar el ojo con sus colores brillantes y su estilo extravagante.</p>"
+    },
+    "Asia Pop Contact Lenses": {
+      "name": "Lentes de contacto de Asia Pop",
+      "description": "<p>Siguiendo las últimas tendencias de la moda asiática, Asia Pop está segura de capturar el ojo con sus colores brillantes y su estilo extravagante.</p>"
+    },
+    "Asia Pop Footwear": {
+      "name": "Calzado de Asia Pop",
+      "description": "<p>Siguiendo las últimas tendencias de la moda asiática, Asia Pop está segura de capturar el ojo con sus colores brillantes y su estilo extravagante.</p>"
+    },
+    "Asia Pop Glasses": {
+      "name": "Gafas de Asia Pop",
+      "description": "<p>Siguiendo las últimas tendencias de la moda asiática, Asia Pop está segura de capturar el ojo con sus colores brillantes y su estilo extravagante.</p>"
+    },
+    "Asia Pop Hat": {
+      "name": "Sombrero de Asia Pop",
+      "description": "<p>Siguiendo las últimas tendencias de la moda asiática, Asia Pop está segura de capturar el ojo con sus colores brillantes y su estilo extravagante.</p>"
+    },
+    "Asia Pop Jacket": {
+      "name": "Chaqueta de Asia Pop",
+      "description": "<p>Siguiendo las últimas tendencias de la moda asiática, Asia Pop está segura de capturar el ojo con sus colores brillantes y su estilo extravagante.</p>"
+    },
+    "Asia Pop Jewelry": {
+      "name": "Joyería de Asia Pop",
+      "description": "<p>Siguiendo las últimas tendencias de la moda asiática, Asia Pop está segura de capturar el ojo con sus colores brillantes y su estilo extravagante.</p>"
+    },
+    "Asia Pop Mirrorshades": {
+      "name": "Lentes Espejados de Asia Pop",
+      "description": "<p>Siguiendo las últimas tendencias de la moda asiática, Asia Pop está segura de capturar el ojo con sus colores brillantes y su estilo extravagante.</p>"
+    },
+    "Asia Pop Top": {
+      "name": "Remera de Asia Pop",
+      "description": "<p>Siguiendo las últimas tendencias de la moda asiática, Asia Pop está segura de capturar el ojo con sus colores brillantes y su estilo extravagante.</p>"
+    },
+    "Bag Lady Chic Bottoms": {
+      "name": "Pantalones de Bag Lady Chic",
+      "description": "<p>¡Sigue las últimas tendencias de buceo en el basural! Ropas Desgarradas y desgastadas, perfectas por si quieres tener ese aspecto de vagabundo.</p>"
+    },
+    "Bag Lady Chic Contact Lenses": {
+      "name": "Lentes de Contacto de Bag Lady Chic",
+      "description": "<p>¡Sigue las últimas tendencias de buceo en el basural! Ropas Desgarradas y desgastadas, perfectas por si quieres tener ese aspecto de vagabundo.</p>"
+    },
+    "Bag Lady Chic Footwear": {
+      "name": "Calzado de Bag Lady Chic",
+      "description": "<p>¡Sigue las últimas tendencias de buceo en el basural! Ropas Desgarradas y desgastadas, perfectas por si quieres tener ese aspecto de vagabundo.</p>"
+    },
+    "Bag Lady Chic Glasses": {
+      "name": "Gafas de Bag Lady Chic",
+      "description": "<p>¡Sigue las últimas tendencias de buceo en el basural! Ropas Desgarradas y desgastadas, perfectas por si quieres tener ese aspecto de vagabundo.</p>"
+    },
+    "Bag Lady Chic Hat": {
+      "name": "Sombrero de Bag Lady Chic",
+      "description": "<p>¡Sigue las últimas tendencias de buceo en el basural! Ropas Desgarradas y desgastadas, perfectas por si quieres tener ese aspecto de vagabundo.</p>"
+    },
+    "Bag Lady Chic Jacket": {
+      "name": "Chaqueta de Bag Lady Chic",
+      "description": "<p>¡Sigue las últimas tendencias de buceo en el basural! Ropas Desgarradas y desgastadas, perfectas por si quieres tener ese aspecto de vagabundo.</p>"
+    },
+    "Bag Lady Chic Jewelry": {
+      "name": "Joyeria de Bag Lady Chic",
+      "description": "<p>¡Sigue las últimas tendencias de buceo en el basural! Ropas Desgarradas y desgastadas, perfectas por si quieres tener ese aspecto de vagabundo.</p>"
+    },
+    "Bag Lady Chic Mirrorshades": {
+      "name": "Lentes Espejados de Bag Lady Chic",
+      "description": "<p>¡Sigue las últimas tendencias de buceo en el basural! Ropas Desgarradas y desgastadas, perfectas por si quieres tener ese aspecto de vagabundo.</p>"
+    },
+    "Bag Lady Chic Top": {
+      "name": "Remera de Bag Lady Chic",
+      "description": "<p>¡Sigue las últimas tendencias de buceo en el basural! Ropas Desgarradas y desgastadas, perfectas por si quieres tener ese aspecto de vagabundo.</p>"
+    },
+    "Bohemian Bottoms": {
+      "name": "Pantalones de Bohemios",
+      "description": "<p>¡Canaliza tu hippie interior de los años 70! Muéstrale a todo el mundo el espíritu libre que eres con estas prendas.</p>"
+    },
+    "Bohemian Contact Lenses": {
+      "name": "Lentes de Contacto de Bohemios",
+      "description": "<p>¡Canaliza tu hippie interior de los años 70! Muéstrale a todo el mundo el espíritu libre que eres con estas prendas.</p>"
+    },
+    "Bohemian Footwear": {
+      "name": "Calzado de Bohemios",
+      "description": "<p>¡Canaliza tu hippie interior de los años 70! Muéstrale a todo el mundo el espíritu libre que eres con estas prendas.</p>"
+    },
+    "Bohemian Glasses": {
+      "name": "Gafas de Bohemios",
+      "description": "<p>¡Canaliza tu hippie interior de los años 70! Muéstrale a todo el mundo el espíritu libre que eres con estas prendas.</p>"
+    },
+    "Bohemian Hat": {
+      "name": "Sombrero de Bohemios",
+      "description": "<p>¡Canaliza tu hippie interior de los años 70! Muéstrale a todo el mundo el espíritu libre que eres con estas prendas.</p>"
+    },
+    "Bohemian Jacket": {
+      "name": "Chaqueta de Bohemios",
+      "description": "<p>¡Canaliza tu hippie interior de los años 70! Muéstrale a todo el mundo el espíritu libre que eres con estas prendas.</p>"
+    },
+    "Bohemian Jewelry": {
+      "name": "Joyería de Bohemios",
+      "description": "<p>¡Canaliza tu hippie interior de los años 70! Muéstrale a todo el mundo el espíritu libre que eres con estas prendas.</p>"
+    },
+    "Bohemian Mirrorshades": {
+      "name": "Lentes Espejados de Bohemios",
+      "description": "<p>¡Canaliza tu hippie interior de los años 70! Muéstrale a todo el mundo el espíritu libre que eres con estas prendas.</p>"
+    },
+    "Bohemian Top": {
+      "name": "Remera de Bohemios",
+      "description": "<p>¡Canaliza tu hippie interior de los años 70! Muéstrale a todo el mundo el espíritu libre que eres con estas prendas.</p>"
+    },
+    "Businesswear Bottoms": {
+      "name": "Pantalones de Vestir de Negocios",
+      "description": "<p>Tu típica ropa corporativa. Muéstrale a todo el mundo que estás aquí y que el negocio es lo tuyo.</p>"
+    },
+    "Businesswear Contact Lenses": {
+      "name": "Lentes de Contacto de Vestir de Negocios",
+      "description": "<p>Tu típica ropa corporativa. Muéstrale a todo el mundo que estás aquí y que el negocio es lo tuyo.</p>"
+    },
+    "Businesswear Footwear": {
+      "name": "Calzado de Vestir de Negocios",
+      "description": "<p>Tu típica ropa corporativa. Muéstrale a todo el mundo que estás aquí y que el negocio es lo tuyo.</p>"
+    },
+    "Businesswear Glasses": {
+      "name": "Gafas de Vestir de Negocios",
+      "description": "<p>Tu típica ropa corporativa. Muéstrale a todo el mundo que estás aquí y que el negocio es lo tuyo.</p>"
+    },
+    "Businesswear Hat": {
+      "name": "Sombrero de Vestir de Negocios",
+      "description": "<p>Tu típica ropa corporativa. Muéstrale a todo el mundo que estás aquí y que el negocio es lo tuyo.</p>"
+    },
+    "Businesswear Jacket": {
+      "name": "Chaqueta de Vestir de Negocios",
+      "description": "<p>Tu típica ropa corporativa. Muéstrale a todo el mundo que estás aquí y que el negocio es lo tuyo.</p>"
+    },
+    "Businesswear Jewelry": {
+      "name": "Joyería de Vestir de Negocios",
+      "description": "<p>Tu típica ropa corporativa. Muéstrale a todo el mundo que estás aquí y que el negocio es lo tuyo.</p>"
+    },
+    "Businesswear Mirrorshades": {
+      "name": "Lentes Espejadas de Vestir de Negocios",
+      "description": "<p>Tu típica ropa corporativa. Muéstrale a todo el mundo que estás aquí y que el negocio es lo tuyo.</p>"
+    },
+    "Businesswear Top": {
+      "name": "Camisa de Vestir de Negocios",
+      "description": "<p>Tu típica ropa corporativa. Muéstrale a todo el mundo que estás aquí y que el negocio es lo tuyo.</p>"
+    },
+    "Gang Colors Bottoms": {
+      "name": "Pantalones de Pandilleros",
+      "description": "<p>¡Muestra tu lealtad con colores de tu Pandilla!</p>"
+    },
+    "Gang Colors Contact Lenses": {
+      "name": "Lentes de Contacto de Pandilleros",
+      "description": "<p>¡Muestra tu lealtad con colores de tu Pandilla!</p>"
+    },
+    "Gang Colors Footwear": {
+      "name": "Calzado de Pandilleros",
+      "description": "<p>¡Muestra tu lealtad con colores de tu Pandilla!</p>"
+    },
+    "Gang Colors Glasses": {
+      "name": "Gafas de Pandilleros",
+      "description": "<p>¡Muestra tu lealtad con colores de tu Pandilla!</p>"
+    },
+    "Gang Colors Hat": {
+      "name": "Sombrero de Pandilleros",
+      "description": "<p>¡Muestra tu lealtad con colores de tu Pandilla!</p>"
+    },
+    "Gang Colors Jacket": {
+      "name": "Chaqueta de Pandilleros",
+      "description": "<p>¡Muestra tu lealtad con colores de tu Pandilla!</p>"
+    },
+    "Gang Colors Jewelry": {
+      "name": "Joyería de Pandilleros",
+      "description": "<p>¡Muestra tu lealtad con colores de tu Pandilla!</p>"
+    },
+    "Gang Colors Mirrorshades": {
+      "name": "Lentes Espejadas de Pandilleros",
+      "description": "<p>¡Muestra tu lealtad con colores de tu Pandilla!</p>"
+    },
+    "Gang Colors Top": {
+      "name": "Remera de Pandilleros",
+      "description": "<p>¡Muestra tu lealtad con colores de tu Pandilla!</p>"
+    },
+    "Generic Chic Bottoms": {
+      "name": "Pantalones Chic Genéricos",
+      "description": "<p>El tipo de ropa que encontrarás en los Mega-Complejos del futuro oscuro. Perfecto si no quieres destacar en la multitud.</p>"
+    },
+    "Generic Chic Contact Lenses": {
+      "name": "Lentes de Contacto Chic Genéricos",
+      "description": "<p>El tipo de ropa que encontrarás en los Mega-Complejos del futuro oscuro. Perfecto si no quieres destacar en la multitud.</p>"
+    },
+    "Generic Chic Footwear": {
+      "name": "Calzado Chic Genérico",
+      "description": "<p>El tipo de ropa que encontrarás en los Mega-Complejos del futuro oscuro. Perfecto si no quieres destacar en la multitud.</p>"
+    },
+    "Generic Chic Glasses": {
+      "name": "Gafas Chic Genéricas",
+      "description": "<p>El tipo de ropa que encontrarás en los Mega-Complejos del futuro oscuro. Perfecto si no quieres destacar en la multitud.</p>"
+    },
+    "Generic Chic Hat": {
+      "name": "Sombrero Chic Genérico",
+      "description": "<p>El tipo de ropa que encontrarás en los Mega-Complejos del futuro oscuro. Perfecto si no quieres destacar en la multitud.</p>"
+    },
+    "Generic Chic Jacket": {
+      "name": "Chaqueta Chic Genérica",
+      "description": "<p>El tipo de ropa que encontrarás en los Mega-Complejos del futuro oscuro. Perfecto si no quieres destacar en la multitud.</p>"
+    },
+    "Generic Chic Jewelry": {
+      "name": "Joyería Chic Genérica",
+      "description": "<p>El tipo de ropa que encontrarás en los Mega-Complejos del futuro oscuro. Perfecto si no quieres destacar en la multitud.</p>"
+    },
+    "Generic Chic Mirrorshades": {
+      "name": "Lentes Espejadas Chic Genéricas",
+      "description": "<p>El tipo de ropa que encontrarás en los Mega-Complejos del futuro oscuro. Perfecto si no quieres destacar en la multitud.</p>"
+    },
+    "Generic Chic Top": {
+      "name": "Remera Chic Genérica",
+      "description": "<p>El tipo de ropa que encontrarás en los Mega-Complejos del futuro oscuro. Perfecto si no quieres destacar en la multitud.</p>"
+    },
+    "High Fashion Bottoms": {
+      "name": "Pantalones de Última Moda",
+      "description": "<p>Fabricado con los materiales de calidad más caros y por los productores más exclusivos, esto es lo que llevas cuando estás hecho. El tipo de moda que ves en supermodelos en los videos de la Red.</p>"
+    },
+    "High Fashion Contact Lenses": {
+      "name": "Lentes de Contacto de Última Moda",
+      "description": "<p>Fabricado con los materiales de calidad más caros y por los productores más exclusivos, esto es lo que llevas cuando estás hecho. El tipo de moda que ves en supermodelos en los videos de la Red.</p>"
+    },
+    "High Fashion Footwear": {
+      "name": "Calzado de Última Moda",
+      "description": "<p>Fabricado con los materiales de calidad más caros y por los productores más exclusivos, esto es lo que llevas cuando estás hecho. El tipo de moda que ves en supermodelos en los videos de la Red.</p>"
+    },
+    "High Fashion Glasses": {
+      "name": "Gafas de Última Moda",
+      "description": "<p>Fabricado con los materiales de calidad más caros y por los productores más exclusivos, esto es lo que llevas cuando estás hecho. El tipo de moda que ves en supermodelos en los videos de la Red.</p>"
+    },
+    "High Fashion Hat": {
+      "name": "Sombrero de Última Moda",
+      "description": "<p>Fabricado con los materiales de calidad más caros y por los productores más exclusivos, esto es lo que llevas cuando estás hecho. El tipo de moda que ves en supermodelos en los videos de la Red.</p>"
+    },
+    "High Fashion Jacket": {
+      "name": "Chaqueta de Última Moda",
+      "description": "<p>Fabricado con los materiales de calidad más caros y por los productores más exclusivos, esto es lo que llevas cuando estás hecho. El tipo de moda que ves en supermodelos en los videos de la Red.</p>"
+    },
+    "High Fashion Jewelry": {
+      "name": "Joyería de Última Moda",
+      "description": "<p>Fabricado con los materiales de calidad más caros y por los productores más exclusivos, esto es lo que llevas cuando estás hecho. El tipo de moda que ves en supermodelos en los videos de la Red.</p>"
+    },
+    "High Fashion Mirrorshades": {
+      "name": "Lentes Espejadas de Última Moda",
+      "description": "<p>Fabricado con los materiales de calidad más caros y por los productores más exclusivos, esto es lo que llevas cuando estás hecho. El tipo de moda que ves en supermodelos en los videos de la Red.</p>"
+    },
+    "High Fashion Top": {
+      "name": "Remera de Última Moda",
+      "description": "<p>Fabricado con los materiales de calidad más caros y por los productores más exclusivos, esto es lo que llevas cuando estás hecho. El tipo de moda que ves en supermodelos en los videos de la Red.</p>"
+    },
+    "Leisurewear Bottoms": {
+      "name": "Pantalones Informales",
+      "description": "<p>Tu ropa deportiva de super atleta. Perfecto para hacer footing o relajarse en casa.</p>"
+    },
+    "Leisurewear Contact Lenses": {
+      "name": "Lentes de Contacto Informales",
+      "description": "<p>Tu ropa deportiva de super atleta. Perfecto para hacer footing o relajarse en casa.</p>"
+    },
+    "Leisurewear Footwear": {
+      "name": "Calzado Informal",
+      "description": "<p>Tu ropa deportiva de super atleta. Perfecto para hacer footing o relajarse en casa.</p>"
+    },
+    "Leisurewear Glasses": {
+      "name": "Gafas Informales",
+      "description": "<p>Tu ropa deportiva de super atleta. Perfecto para hacer footing o relajarse en casa.</p>"
+    },
+    "Leisurewear Hat": {
+      "name": "Sombrero Informal",
+      "description": "<p>Tu ropa deportiva de super atleta. Perfecto para hacer footing o relajarse en casa.</p>"
+    },
+    "Leisurewear Jacket": {
+      "name": "Chaqueta Informal",
+      "description": "<p>Tu ropa deportiva de super atleta. Perfecto para hacer footing o relajarse en casa.</p>"
+    },
+    "Leisurewear Jewelry": {
+      "name": "Joyería Informal",
+      "description": "<p>Tu ropa deportiva de super atleta. Perfecto para hacer footing o relajarse en casa.</p>"
+    },
+    "Leisurewear Mirrorshades": {
+      "name": "Lentes Espejadas Informales",
+      "description": "<p>Tu ropa deportiva de super atleta. Perfecto para hacer footing o relajarse en casa.</p>"
+    },
+    "Leisurewear Top": {
+      "name": "Remera Informal",
+      "description": "<p>Tu ropa deportiva de super atleta. Perfecto para hacer footing o relajarse en casa.</p>"
+    },
+    "Nomad Leathers Bottoms": {
+      "name": "Pantalones de Cuero Nómadas",
+      "description": "<p>Si quieres parecer un vaquero cromado, esto es perfecto para ti.</p>"
+    },
+    "Nomad Leathers Contact Lenses": {
+      "name": "Lentes de Contacto Nómades",
+      "description": "<p>Si quieres parecer un vaquero cromado, esto es perfecto para ti.</p>"
+    },
+    "Nomad Leathers Footwear": {
+      "name": "Calzado de Cuero Nómadas",
+      "description": "<p>Si quieres parecer un vaquero cromado, esto es perfecto para ti.</p>"
+    },
+    "Nomad Leathers Glasses": {
+      "name": "Gafas Nómadas",
+      "description": "<p>Si quieres parecer un vaquero cromado, esto es perfecto para ti.</p>"
+    },
+    "Nomad Leathers Hat": {
+      "name": "Sombrero de Cuero Nómadas",
+      "description": "<p>Si quieres parecer un vaquero cromado, esto es perfecto para ti.</p>"
+    },
+    "Nomad Leathers Jacket": {
+      "name": "Chaqueta de Cuero Nómada",
+      "description": "<p>Si quieres parecer un vaquero cromado, esto es perfecto para ti.</p>"
+    },
+    "Nomad Leathers Jewelry": {
+      "name": "Joyería de Nómadas",
+      "description": "<p>Si quieres parecer un vaquero cromado, esto es perfecto para ti.</p>"
+    },
+    "Nomad Leathers Mirrorshades": {
+      "name": "Lentes Espejadas Nómades",
+      "description": "<p>Si quieres parecer un vaquero cromado, esto es perfecto para ti.</p>"
+    },
+    "Nomad Leathers Top": {
+      "name": "Remera de Nómades",
+      "description": "<p>Si quieres parecer un vaquero cromado, esto es perfecto para ti.</p>"
+    },
+    "Urban Flash Bottoms": {
+      "name": "Pantalones de Flash Urbano",
+      "description": "<p>La ropa más tecnológica y llena de luces que puedas encontrar en el Tiempo del Rojo.</p>"
+    },
+    "Urban Flash Contact Lenses": {
+      "name": "Lentes de Contacto de Flash Urbano",
+      "description": "<p>La ropa más tecnológica y llena de luces que puedas encontrar en el Tiempo del Rojo.</p>"
+    },
+    "Urban Flash Footwear": {
+      "name": "Calzado de Flash Urbano",
+      "description": "<p>La ropa más tecnológica y llena de luces que puedas encontrar en el Tiempo del Rojo.</p>"
+    },
+    "Urban Flash Glasses": {
+      "name": "Gafas de Flash Urbano",
+      "description": "<p>La ropa más tecnológica y llena de luces que puedas encontrar en el Tiempo del Rojo.</p>"
+    },
+    "Urban Flash Hat": {
+      "name": "Sombrero de Flash Urbano",
+      "description": "<p>La ropa más tecnológica y llena de luces que puedas encontrar en el Tiempo del Rojo.</p>"
+    },
+    "Urban Flash Jacket": {
+      "name": "Chaqueta de Flash Urbano",
+      "description": "<p>La ropa más tecnológica y llena de luces que puedas encontrar en el Tiempo del Rojo.</p>"
+    },
+    "Urban Flash Jewelry": {
+      "name": "Joyería de Flash Urbano",
+      "description": "<p>La ropa más tecnológica y llena de luces que puedas encontrar en el Tiempo del Rojo.</p>"
+    },
+    "Urban Flash Mirrorshades": {
+      "name": "Lentes Espejadas de Flash Urbano",
+      "description": "<p>La ropa más tecnológica y llena de luces que puedas encontrar en el Tiempo del Rojo.</p>"
+    },
+    "Urban Flash Top": {
+      "name": "Remeras de Flash Urbano",
+      "description": "<p>La ropa más tecnológica y llena de luces que puedas encontrar en el Tiempo del Rojo.</p>"
+    }
+  }
+}

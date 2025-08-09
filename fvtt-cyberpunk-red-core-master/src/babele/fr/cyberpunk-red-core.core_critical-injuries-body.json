@@ -1,0 +1,50 @@
+{
+  "label": "Blessures critiques (Corps)",
+  "mapping": {},
+  "entries": {
+    "Broken Arm": {
+      "name": "Bras cassé",
+      "description": "<p>Vous ne pouvez pas utiliser votre bras cassé. Vous lâchez immédiatement tous les objets que vous teniez dans la main</p>"
+    },
+    "Broken Leg": {
+      "name": "Jambe cassée",
+      "description": "<p>-4 au MOUV (minimum 1).</p>"
+    },
+    "Broken Ribs": {
+      "name": "Côtes cassées",
+      "description": "<p>A la fin de chaque tour lors duquel vous vous déplacez de plus de 4m à pied, vous subissez de nouveau les dégâts bonus de cette blessure critique.</p>"
+    },
+    "Collapsed Lung": {
+      "name": "Poumon affaissé",
+      "description": "<p>-2 au MOUV (minimum 1).</p>"
+    },
+    "Crushed Fingers": {
+      "name": "Doigts écrasés",
+      "description": "<p>-4 à toute action impliquant cette main.</p>"
+    },
+    "Dismembered Arm": {
+      "name": "Bras arraché",
+      "description": "<p>Le bras arraché est perdu. Vous lâchez immédiatement tous les objets que vous teniez dans la main.</p>"
+    },
+    "Dismembered Hand": {
+      "name": "Main arrachée",
+      "description": "<p>La main arraché est perdu. Vous lâchez immédiatement tous les objets que vous teniez dans la main.</p>"
+    },
+    "Dismembered Leg": {
+      "name": "Jambe arrachée",
+      "description": "<p>Jambe perdue. Esquive impossible. -6 au MOUV (minimum 1).</p>"
+    },
+    "Foreign Object": {
+      "name": "Plaie avec corps étranger",
+      "description": "<p>A la fin de chaque tour lors duquel vous vous déplacez de plus de 4m à pied, vous subissez de nouveau les dégâts bonus de cette blessure critique.</p>"
+    },
+    "Spinal Injury": {
+      "name": "Vertèbre endommagée",
+      "description": "<p>Prochain tour : Aucune action, sauf mouvement.</p>"
+    },
+    "Torn Muscle": {
+      "name": "Muscle déchiré",
+      "description": "<p>-2 aux attaques de mêlée.</p>"
+    }
+  }
+}

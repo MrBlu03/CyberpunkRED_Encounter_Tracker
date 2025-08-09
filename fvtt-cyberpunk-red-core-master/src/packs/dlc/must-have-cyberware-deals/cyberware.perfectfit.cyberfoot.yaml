@@ -1,0 +1,62 @@
+_id: u9qz2RDLomNTMl2n
+_key: "!items!u9qz2RDLomNTMl2n"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/must_have_cyberware_deals/perfectfit_cyberfoot.svg
+name: PerfectFit Cyberfoot
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  core: false
+  damage: 1d6
+  description:
+    value: |
+      <p>
+        Adjust foot size to perfectly fit any footwear. User can ignore penalties for
+        wearing footwear that would otherwise be uncomfortable or impracticable.<br />Can
+        be installed in meat leg if it&rsquo;s the only piece of cyberware in that
+        leg.
+      </p>
+  dvTable: ""
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  humanityLoss:
+    roll: 1d3
+    static: 2
+  installLocation: clinic
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: true
+  isFoundational: false
+  isRanged: false
+  isWeapon: false
+  magazine:
+    max: 0
+    value: 0
+  price:
+    market: 100
+  providesHardening: false
+  revealed: true
+  rof: 1
+  size: 1
+  source:
+    book: MHCD
+    page: 4
+  type: cyberLeg
+  unarmedAutomaticCalculation: true
+  usage: toggled
+  usesType: magazine
+  weaponSkill: ""
+  weaponType: ""
+type: cyberware

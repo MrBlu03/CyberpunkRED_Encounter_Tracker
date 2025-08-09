@@ -1,0 +1,39 @@
+_id: CMDlHoVTmNq5MRwZ
+_key: "!items.effects!uApwuxpuIJMe47Vn.CMDlHoVTmNq5MRwZ"
+changes:
+  - key: bonuses.aimedShot
+    mode: 2
+    priority: null
+    value: "1"
+  - key: bonuses.singleShot
+    mode: 2
+    priority: null
+    value: "1"
+description: ""
+disabled: false
+duration:
+  combat: null
+  rounds: null
+  seconds: null
+  startRound: null
+  startTime: null
+  startTurn: null
+  turns: null
+flags:
+  cyberpunk-red-core:
+    changes:
+      cats:
+        "0": combat
+        "1": combat
+      situational:
+        "0":
+          isSituational: false
+          onByDefault: false
+        "1":
+          isSituational: false
+          onByDefault: false
+icon: systems/cyberpunk-red-core/icons/compendium/cyberware/teleoptics.svg
+name: TeleOptics
+statuses: []
+tint: null
+transfer: true

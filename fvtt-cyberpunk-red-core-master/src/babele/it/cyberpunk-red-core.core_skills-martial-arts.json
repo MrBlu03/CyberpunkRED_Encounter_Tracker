@@ -1,0 +1,22 @@
+{
+  "label": "Abilità (Arti Marziali)",
+  "mapping": {},
+  "entries": {
+    "Martial Arts (Aikido)": {
+      "name": "Arti Marziali (Aikido)",
+      "description": ""
+    },
+    "Martial Arts (Judo)": {
+      "name": "Arti Marziali (Judo)",
+      "description": ""
+    },
+    "Martial Arts (Karate)": {
+      "name": "Arti Marziali (Karate)",
+      "description": ""
+    },
+    "Martial Arts (Taekwondo)": {
+      "name": "Arti Marziali (Taekwondo)",
+      "description": ""
+    }
+  }
+}

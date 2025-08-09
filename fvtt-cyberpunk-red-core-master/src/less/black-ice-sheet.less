@@ -1,0 +1,189 @@
+.blackice-sheet {
+  font-family: var(--cpr-font-primary);
+  display: grid;
+  grid-template-columns: 4.5rem 3.75rem 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 5rem auto auto;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "blackice-image blackice-image blackice-info blackice-info blackice-info blackice-info blackice-info blackice-actions"
+    "blackice-image blackice-image blackice-stats blackice-stats blackice-stats blackice-stats blackice-stats blackice-stats"
+    "blackice-notes blackice-notes blackice-notes blackice-notes blackice-notes blackice-notes blackice-notes blackice-notes";
+  height: auto;
+  gap: 0.313rem;
+  padding: 0.313rem;
+  background-color: var(--cpr-background-border);
+
+  .blackice-image {
+    grid-area: blackice-image;
+    clip-path: polygon(0.938rem 0, 100% 0, 100% 100%, 0 100%, 0 0.938rem);
+  }
+
+  input {
+    border: none;
+    height: 100%;
+    color: var(--cpr-text-normal);
+    background-color: var(--cpr-background-box) !important;
+  }
+
+  .blackice-info {
+    display: grid;
+    grid-template-columns: 11.75rem 1fr 1fr;
+    grid-template-rows: 1.2fr 0.8fr;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "blackice-info-name blackice-info-name blackice-info-name"
+      "blackice-info-class blackice-info-class blackice-info-price";
+    grid-area: blackice-info;
+    gap: 0.313rem;
+
+    .blackice-info-name {
+      grid-area: blackice-info-name;
+      background-color: var(--cpr-background-box);
+      display: grid;
+      align-content: center;
+      padding: 0.125rem;
+    }
+
+    .blackice-info-class {
+      grid-area: blackice-info-class;
+      background-color: var(--cpr-background-box);
+      display: flex;
+      align-content: center;
+      justify-content: left;
+      padding: 0.125rem;
+
+      .blackice-info-class-title {
+        width: min-content;
+        white-space: nowrap;
+      }
+
+      .blackice-info-class-value {
+        width: 100%;
+      }
+
+      div {
+        display: grid;
+        align-content: center;
+      }
+    }
+
+    .blackice-info-price {
+      grid-area: blackice-info-price;
+      background-color: var(--cpr-background-box);
+      display: inline-flex;
+      align-content: center;
+      justify-content: left;
+      padding: 0.125rem;
+
+      input {
+        width: 3rem;
+      }
+
+      div {
+        display: grid;
+        align-content: center;
+      }
+    }
+  }
+
+  .blackice-actions {
+    display: grid;
+    grid-area: blackice-actions;
+    background-color: var(--cpr-background-box);
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 3fr;
+    grid-auto-flow: column;
+    grid-template-areas:
+      "blackice-actions-title"
+      "blackice-actions-value";
+    gap: 0.313rem;
+
+    .blackice-actions-title {
+      grid-area: blackice-actions-title;
+    }
+
+    .blackice-actions-value {
+      grid-area: blackice-actions-value;
+      display: grid;
+      grid-auto-flow: column;
+      justify-content: center;
+      align-content: center;
+    }
+  }
+
+  .blackice-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-auto-flow: row;
+    grid-template-areas: "blackice-stats-per blackice-stats-spd blackice-stats-atk blackice-stats-def blackice-stats-rez blackice-stats-dmg";
+    grid-area: blackice-stats;
+    gap: 0.313rem;
+    background-color: var(--cpr-background-border);
+    align-content: center;
+    justify-content: center;
+
+    input {
+      width: 100%;
+      border: none;
+      text-align: center;
+    }
+
+    .blackice-stats-per {
+      grid-area: blackice-stats-per;
+      background-color: var(--cpr-background-box);
+    }
+
+    .blackice-stats-spd {
+      grid-area: blackice-stats-spd;
+      background-color: var(--cpr-background-box);
+    }
+
+    .blackice-stats-atk {
+      grid-area: blackice-stats-atk;
+      background-color: var(--cpr-background-box);
+    }
+
+    .blackice-stats-def {
+      grid-area: blackice-stats-def;
+      background-color: var(--cpr-background-box);
+    }
+
+    .blackice-stats-rez {
+      grid-area: blackice-stats-rez;
+      background-color: var(--cpr-background-box);
+
+      .blackice-stats-rez-value {
+        display: flex;
+
+        .blackice-stats-rez-value-min {
+          justify-content: right;
+        }
+
+        .blackice-stats-rez-value-divider {
+          justify-content: center;
+          align-content: center;
+        }
+
+        .blackice-stats-rez-value-max {
+          justify-content: left;
+        }
+      }
+    }
+
+    .blackice-stats-dmg {
+      grid-area: blackice-stats-dmg;
+      background-color: var(--cpr-background-box);
+
+      .blackice-stats-dmg-value {
+        display: grid;
+      }
+    }
+  }
+
+  .blackice-notes {
+    grid-area: blackice-notes;
+    background-color: var(--cpr-background-box);
+    min-height: 2rem;
+  }
+}

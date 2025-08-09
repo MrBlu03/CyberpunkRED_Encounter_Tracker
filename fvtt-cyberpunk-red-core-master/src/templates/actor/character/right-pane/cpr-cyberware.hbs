@@ -1,0 +1,23 @@
+<div class="cyberware-tab">
+  <ol class="items-list cyberware-list">
+    {{#each (cprFindConfigObj "cyberwareTypes") as |type t| }}
+      <div >
+        <li class="items-header flexrow">
+          <span class="item-name gear-name expand-button"
+                id="cyberwareTab-{{c}}">
+            {{localize type}}
+          </span>
+          <span class="item-detail gear-data">
+            {{localize "CPR.characterSheet.rightPane.data"}}
+          </span>
+          <span class="item-detail gear-actions">
+            {{localize "CPR.global.generic.actions"}}
+          </span>
+        </li>
+        <ol class="items-list">
+          {{> "systems/cyberpunk-red-core/templates/actor/character/right-pane/tabs/cyberware/cpr-cyberware-content.hbs" (cprMergeForPartialArg "actor,cyberwareType" ../actor t)}}
+        </ol>
+      </div>
+    {{/each}}
+  </ol>
+</div>

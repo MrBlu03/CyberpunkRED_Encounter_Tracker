@@ -1,0 +1,46 @@
+# Builds the system for release then uploads the artifacts to the GitLab
+# Package Registry.
+
+build-artifacts:
+  stage: build
+  before_script:
+    - apt-get update
+    - apt-get install curl zip jq -y
+  script:
+    - ./.gitlab/pipeline_utils/build.sh
+  needs:
+    - job: init
+      artifacts: true
+    - job: code-formatting
+    - job: code-localization
+    - job: compendia-use
+    - job: game-id
+    - job: test-less-units
+    - job: test-less-colors
+    - job: handlebars-tags
+    - job: handlebars-attributes
+    - job: handlebars-inlinestyles
+    - job: handlebars-helpers
+    - job: handlebars-compare
+    - job: handlebars-skill-localization
+    - job: handlebars-tooltips
+    - job: language-babele
+    - job: language-unused-strings
+    - job: language-exists
+    - job: lint-code
+    - job: lint-json
+    - job: lint-yaml
+    - job: lint-markdown
+    - job: test-build
+      optional: true
+    - job: test-shell-scripts
+      optional: true
+    - job: validate-packs
+  rules:
+    # Don't run if we're in the cleanup-dev schedule
+    - if: $CPR_SCHEDULE == "cleanup-dev"
+      when: never
+    # Run on MRs
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+    # Run on git tag
+    - if: $CI_COMMIT_TAG

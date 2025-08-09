@@ -1,0 +1,36 @@
+{{!-- Vehicle Item Settings--}}
+<li class="item flexrow">
+  <div class="item flexrow setting-name text-nowrap">
+    {{localize "CPR.itemSheet.vehicle.structuralDamagePoints"}} {{cprShowUpgrade this.item "sdp"}}
+  </div>
+  <div class="item flexrow setting-value text-nowrap item-end">
+    <input name="system.sdp" type="number" value="{{item.system.sdp}}" placeholder="50"/>
+  </div>
+</li>
+<li class="item flexrow">
+  <div class="item flexrow setting-name text-nowrap">
+    {{localize "CPR.itemSheet.vehicle.seats"}} {{cprShowUpgrade this.item "seats"}}
+  </div>
+  <div class="item flexrow setting-value text-nowrap item-end">
+    <input name="system.seats" type="number" value="{{item.system.seats}}" placeholder="4"/>
+  </div>
+</li>
+<li class="item flexrow">
+  <div class="item flexrow setting-name text-nowrap">
+    {{localize "CPR.itemSheet.vehicle.combatSpeed"}} {{cprShowUpgrade this.item "speedCombat"}}
+  </div>
+  <div class="item flexrow setting-value text-nowrap item-end">
+    <input name="system.speedCombat" type="number" value="{{item.system.speedCombat}}" placeholder="50"/>
+  </div>
+</li>
+<li class="item flexrow">
+  <div class="item flexrow setting-name text-nowrap">
+    {{localize "CPR.itemSheet.vehicle.speedNarrative"}}
+  </div>
+  <div class="item flexrow setting-value text-nowrap item-end">
+    <input name="system.speedNarrative"
+           type="text"
+           value="{{item.system.speedNarrative}}"
+           placeholder="50"/>
+  </div>
+</li>

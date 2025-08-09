@@ -1,0 +1,33 @@
+_id: Zp8YbDBMTCl7sy61
+_key: "!items!Zp8YbDBMTCl7sy61"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/gear/pocket_amplifier.svg
+name: Pocket Amplifier
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>Duration: 6h. Supports two instruments.</p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: true
+  price:
+    market: 50
+  providesHardening: false
+  revealed: true
+  source:
+    book: Core
+    page: 354
+  usage: toggled
+type: gear

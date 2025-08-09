@@ -1,0 +1,129 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/CPRC-Clothing",
+  "definitions": {
+    "CPRC-Clothing": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "_id": {
+          "$ref": "./components/id.json"
+        },
+        "_key": {
+          "$ref": "./components/key.json"
+        },
+        "effects": {
+          "$ref": "./components/effects.json"
+        },
+        "flags": {
+          "$ref": "./components/flags.json"
+        },
+        "img": {
+          "$ref": "./components/img.json"
+        },
+        "name": {
+          "$ref": "./components/name.json"
+        },
+        "type": {
+          "type": "string",
+          "const": "clothing"
+        },
+        "system": {
+          "$ref": "#/definitions/System"
+        }
+      },
+      "required": ["_id", "_key", "effects", "img", "name", "system", "type"]
+    },
+    "System": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "amount": {
+          "type": "integer"
+        },
+        "brand": {
+          "$ref": "./components/physical/brand.json"
+        },
+        "concealable": {
+          "$ref": "./components/physical/concealable.json"
+        },
+        "description": {
+          "$ref": "./components/common/description.json"
+        },
+        "equipped": {
+          "$ref": "./components/equippable/equipped.json"
+        },
+        "favorite": {
+          "$ref": "./components/common/favorite.json"
+        },
+        "installedItems": {
+          "$ref": "./components/container/installedItems.json"
+        },
+        "isElectronic": {
+          "$ref": "./components/electronic/isElectronic.json"
+        },
+        "price": {
+          "$ref": "./components/valuable/price.json"
+        },
+        "providesHardening": {
+          "$ref": "./components/electronic/providesHardening.json"
+        },
+        "revealed": {
+          "$ref": "./components/effects/revealed.json"
+        },
+        "source": {
+          "$ref": "./components/common/source.json"
+        },
+        "style": {
+          "type": "string",
+          "enum": [
+            "asiaPop",
+            "bagLadyChic",
+            "bohemian",
+            "businesswear",
+            "gangColors",
+            "genericChic",
+            "highFashion",
+            "leisurewear",
+            "nomadLeathers",
+            "urbanFlash"
+          ]
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "bottoms",
+            "contactLenses",
+            "footwear",
+            "glasses",
+            "hats",
+            "jacket",
+            "jewelry",
+            "mirrorshades",
+            "top"
+          ]
+        },
+        "usage": {
+          "$ref": "./components/effects/usage.json"
+        }
+      },
+      "required": [
+        "amount",
+        "brand",
+        "concealable",
+        "description",
+        "equipped",
+        "favorite",
+        "installedItems",
+        "isElectronic",
+        "price",
+        "providesHardening",
+        "source",
+        "style",
+        "revealed",
+        "type",
+        "usage"
+      ]
+    }
+  }
+}

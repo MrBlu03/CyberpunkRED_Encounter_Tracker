@@ -1,0 +1,62 @@
+{
+  "label": "Vehicles",
+  "mapping": {},
+  "entries": {
+    "Aerozep": {
+      "name": "Aerozep",
+      "description": "<p>A modern-day cargo blimp. Requires a minimum of two rooms. The price is for each room below deck. </p>"
+    },
+    "AV-4 Multipurpose Aerodyne": {
+      "name": "AV-4 Multipurpose Aerodyne",
+      "description": "<p>A multipurpose aircraft capable of quick insertion thanks to vertical thrusters. Used commonly by Trauma Teams. </p>"
+    },
+    "AV-9 Super Aerodyne": {
+      "name": "AV-9 Super Aerodyne",
+      "description": "<p>A highly advanced AV with limited seats. Can travel up to 300 miles per hour. </p>"
+    },
+    "Cabin Cruiser": {
+      "name": "Cabin Cruiser",
+      "description": "<p>A very fast speedboat. Requires a minimum of two rooms. The price is for each room below deck. </p>"
+    },
+    "Compact Groundcar": {
+      "name": "Compact Groundcar",
+      "description": "<p>A CHOOH2-powered groundcar. Very common with a few dozen manufacturers producing similar models. </p>"
+    },
+    "Gyrocopter": {
+      "name": "Gyrocopter",
+      "description": "<p>A small two-seater rotorcraft. </p>"
+    },
+    "Helicopter": {
+      "name": "Helicopter",
+      "description": "<p>A four-seater helicopter capable of high speeds and long flights. </p>"
+    },
+    "High Performance Groundcar": {
+      "name": "High Performance Groundcar",
+      "description": "<p>A specialised groundcar designed for sports performance. </p>"
+    },
+    "Jetski": {
+      "name": "Jetski",
+      "description": "<p>A common CHOOH2-powered jetski that can seat two people. </p>"
+    },
+    "Roadbike": {
+      "name": "Roadbike",
+      "description": "<p>A common CHOOH2-powered roadbike seen during the time of the Red.</p>"
+    },
+    "Speedboat": {
+      "name": "Speedboat",
+      "description": "<p>A fast CHOOH2-powered speedboat. </p>"
+    },
+    "Super Groundcar": {
+      "name": "Super Groundcar",
+      "description": "<p>An expensive, exotic CHOOH2 powered sportscar. It is capable of very high speeds. </p>"
+    },
+    "Superbike": {
+      "name": "Superbike",
+      "description": "<p>A beefed-up version of a roadbike, capable of very high speeds. </p>"
+    },
+    "Yacht": {
+      "name": "Yacht",
+      "description": "<p>A luxury speedboat. Requires a minimum of two rooms. The price is for each room below or above deck. </p>"
+    }
+  }
+}

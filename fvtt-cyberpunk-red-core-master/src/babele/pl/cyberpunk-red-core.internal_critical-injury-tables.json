@@ -1,0 +1,42 @@
+{
+  "label": "Tabela Ran Krytycznych",
+  "mapping": {},
+  "entries": {
+    "Critical Injuries (Body)": {
+      "name": "Rany Krytyczne (Ciało)",
+      "results": [
+        {
+          "2-2": "Odcięta ręka",
+          "3-3": "Odcięta dłoń",
+          "4-4": "Zapadnięte płuca",
+          "5-5": "Złamane żebra",
+          "6-6": "Złamana ręka",
+          "7-7": "Ciało obce",
+          "8-8": "Złamana noga",
+          "9-9": "Naderwany mięsień",
+          "10-10": "Uraz kręgosłupa",
+          "11-11": "Strzaskane palce",
+          "12-12": "Odcięta noga"
+        }
+      ]
+    },
+    "Critical Injuries (Head)": {
+      "name": "Rany Krytyczne (Głowa)",
+      "results": [
+        {
+          "2-2": "Utrata oka",
+          "3-3": "Uraz mózgu",
+          "4-4": "Uraz ucha",
+          "5-5": "Wstrząśnienie mózgu",
+          "6-6": "Złamana szczęka",
+          "7-7": "Ciało obce (G)",
+          "8-8": "Odgięciowy uraz kręgosłupa szyjnego",
+          "9-9": "Pęknięta czaszka",
+          "10-10": "Uraz ucha",
+          "11-11": "Zmiażdżona krtań",
+          "12-12": "Urwane ucho"
+        }
+      ]
+    }
+  }
+}

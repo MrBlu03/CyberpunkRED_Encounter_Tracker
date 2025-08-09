@@ -1,0 +1,59 @@
+_id: wAUReVQtYbe3TNSj
+_key: "!items!wAUReVQtYbe3TNSj"
+effects:
+  - Ns4hlbJVhX0j1thK
+  - qSb9OyRqLojya1co
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/black-chrome-plus/piranha-smash.svg
+name: Piranha Smash
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  consumed: Piranha Smash Primary
+  description:
+    value: |
+      <p>
+        Looks like smash but it's smash with a lime flavor. And a lower risk of
+        addiction.
+      </p>
+      <p><strong>Primary Effect</strong></p>
+      <p>Dose lasts 4 hours.</p>
+      <p>
+        The user feels happy and satisfied, receiving a temporary modifier of +2 to
+        the following skills
+      </p>
+      <ul>
+        <li>Acting</li>
+        <li>Dance</li>
+        <li>Contortionist</li>
+        <li>Conversation</li>
+        <li>Human Perception</li>
+        <li>Persuasion</li>
+      </ul>
+      <p><strong>Secondary Effect (DV9)</strong></p>
+      <p>
+        When the dose wears off, the user rolls
+        <strong>WILL + Resist Torture/Drugs + 1d10 against Secondary DV</strong>.
+      </p>
+      <p>If this fails, they take a -2 to the following skills</p>
+      <ul>
+        <li>Acting</li>
+        <li>Dance</li>
+        <li>Contortionist</li>
+        <li>Conversation</li>
+        <li>Human Perception</li>
+        <li>Persuasion</li>
+      </ul>
+  equipped: owned
+  favorite: false
+  price:
+    market: 10
+  revealed: true
+  source:
+    book: BC+
+    page: 4
+  usage: snorted
+type: drug

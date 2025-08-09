@@ -1,0 +1,31 @@
+_id: mjoHK8yhLZoNnjlS
+_key: "!items!mjoHK8yhLZoNnjlS"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/black-chrome/sh-45-patroller.svg
+name: SH-45 Patroller
+system:
+  brand: Dayton Aeronautics
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>One seat Gyrocopter. Civilian version.</p>
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  price:
+    market: 16000
+  sdp: 35
+  seats: 1
+  source:
+    book: BC
+    page: 58
+  speedCombat: 20
+  speedNarrative: 100 MPH / 161 KPH
+type: vehicle

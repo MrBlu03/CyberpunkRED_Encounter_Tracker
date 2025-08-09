@@ -1,0 +1,33 @@
+_id: i0xmIJjhcMKIWJ0M
+_key: "!items!i0xmIJjhcMKIWJ0M"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/gear/rope.svg
+name: Rope (60m/yd)
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>Nylon.</p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: false
+  price:
+    market: 20
+  providesHardening: false
+  revealed: true
+  source:
+    book: Core
+    page: 354
+  usage: toggled
+type: gear

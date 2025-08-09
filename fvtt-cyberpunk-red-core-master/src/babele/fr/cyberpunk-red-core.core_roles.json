@@ -1,0 +1,46 @@
+{
+  "label": "Rôles",
+  "mapping": {},
+  "entries": {
+    "Exec": {
+      "name": "Corporatiste",
+      "description": "<p>Cadres d'entreprise et gros bonnets du monde du business prêts à tout risquer pour s'élever au sommet de l'échelle corporatiste et réaliser le nouveau rêve américain.</p>"
+    },
+    "Fixer": {
+      "name": "Fixer",
+      "description": "<p>Tant que le prix est juste, ils peuvent fournir n'importe quoi à n'importe qui. Avec leur charme et leurs compétences, ils réalisent les transactions qui gardent l'économie du Futur Sombre  à flot.</p>"
+    },
+    "Lawman": {
+      "name": "Justicier",
+      "description": "<p>Défenseurs rénégats, équipe de choc corpo, ou les derniers vestiges des forces de l'ordre gouvernementales, ils patrouillent les rues pour faire régner un semblant d'ordre dans un monde sans foi ni loi.</p>"
+    },
+    "Media": {
+      "name": "Média",
+      "description": "<p>Journalistes, influenceurs et phénomènes culturels qui risquent tout au nom de la vérité ou pour la gloire.</p>"
+    },
+    "Medtech": {
+      "name": "Medtech",
+      "description": "<p>Docteurs et mécaniciens de quartiers qui exercent pour garder ces chers edgerunners en bon état et cybernétisés, souvent contre monnaie sonnante et trébuchante.</p>"
+    },
+    "Netrunner": {
+      "name": "Netrunner",
+      "description": "<p>Maîtres cybernétiques qui se mettent en danger lorsqu'ils se connectent au cyberespace pour télécharger des secrets et infiltrer des réseaux.</p>"
+    },
+    "Nomad": {
+      "name": "Nomade",
+      "description": "<p>Experts en transports, camionneurs, aficionados du transport, pirates de l'air, ils sont les seuls transporteurs de produits à travers le monde, maintenant les chaînes de production et de livraison durant l'Ère du Rouge.</p>"
+    },
+    "Rockerboy": {
+      "name": "Rockeur",
+      "description": "<p>Rebelles rock'n'roll qui défient l'autorité à l'aide de concerts, d'œuvres d'art et de discours enflammés.</p>"
+    },
+    "Solo": {
+      "name": "Solo",
+      "description": "<p>Experts au combat qui utilisent leurs prouesses martiales pour s'imposer durant l'Ère du Rouge.</p>"
+    },
+    "Tech": {
+      "name": "Techie",
+      "description": "<p>Mécaniciens renégats et inventeurs des supertechnologies ; ce sont eux qui assurent le fonctionnement de ce futur sombre.</p>"
+    }
+  }
+}

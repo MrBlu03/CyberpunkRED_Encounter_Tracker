@@ -1,0 +1,43 @@
+<form class="dialog-sheet">
+  <div class="dialog-header flexcol">
+    <div class="text-normal text-center">
+      {{localize "CPR.rolls.rollingFor" rollTitle=(localize "CPR.global.generic.facedown")}}
+    </div>
+  </div>
+  <hr/>
+  <div class="dialog-grid flexcol">
+    <ol class="dialog-list">
+      <li class="dialog-item flexrow">
+        <div class="dialog-item-name text-nowrap">
+          {{localize "CPR.global.generic.stat"}} {{localize "CPR.global.generic.value"}}:
+        </div>
+        <div class="dialog-item-input text-nowrap item-end">
+          <input name="statValue" type="number" data-dtype="Number" value="{{rollData.statValue}}"/>
+        </div>
+      </li>
+      <li class="dialog-item flexrow">
+        <div class="dialog-item-name text-nowrap">
+          {{localize "CPR.rolls.reputation"}}:
+        </div>
+        <div class="dialog-item-input text-nowrap item-end">
+          <input name="repValue" type="text" data-dtype="String" value="{{rollData.repValue}}"/>
+        </div>
+      </li>
+      {{!-- Additional user inputted modifiers --}}
+      {{> "systems/cyberpunk-red-core/templates/dialog/rolls/cpr-additional-modifiers.hbs" this}}
+      <li class="dialog-item flexrow">
+        <div class="dialog-item-name text-nowrap">
+          {{localize "CPR.rolls.shouldRollCriticals"}}:
+        </div>
+        <div class="dialog-item-input text-nowrap item-end">
+          <input name="calculateCritical" type="checkbox" data-dtype="Checkbox" {{checked rollData.calculateCritical}}/>
+        </div>
+      </li>
+      {{!-- All applied modifier list partial --}}
+      {{> "systems/cyberpunk-red-core/templates/dialog/rolls/cpr-all-modifiers.hbs" this}}
+    </ol>
+  </div>
+  {{!-- Situational modifier list partial --}}
+  {{> "systems/cyberpunk-red-core/templates/dialog/rolls/cpr-situational-modifiers.hbs" this}}
+  {{> "systems/cyberpunk-red-core/templates/dialog/cpr-dialog-buttons.hbs"}}
+</form>

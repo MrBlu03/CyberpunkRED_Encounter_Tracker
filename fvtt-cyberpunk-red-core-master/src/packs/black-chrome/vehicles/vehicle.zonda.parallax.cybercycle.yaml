@@ -1,0 +1,31 @@
+_id: J1uOVT3BkhSWuat6
+_key: "!items!J1uOVT3BkhSWuat6"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/black-chrome/zonda-parallax.svg
+name: Zonda Parallax Cybercycle
+system:
+  brand: Zonda
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>Top of the line Superbike.</p>
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  price:
+    market: 110000
+  sdp: 35
+  seats: 2
+  source:
+    book: BC
+    page: 83
+  speedCombat: 60
+  speedNarrative: 300 MPH / 483 KPH
+type: vehicle

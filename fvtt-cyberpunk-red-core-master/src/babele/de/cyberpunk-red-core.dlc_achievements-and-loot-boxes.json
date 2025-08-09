@@ -1,0 +1,136 @@
+{
+  "label": "Errungenschaften und Lootboxen",
+  "mapping": {},
+  "entries": {
+    "A Box Bound Tightly in Rope": {
+      "name": "A Box Bound Tightly in Rope",
+      "results": [
+        {
+          "1-1": "Seil (60 m)",
+          "2-2": "Virtuality-Brille",
+          "3-3": "Halteseilkanone",
+          "4-4": "Flasche mit Gift",
+          "5-5": "Stadtprotz Schmuck",
+          "6-6": "Batteriepack"
+        }
+      ]
+    },
+    "A Box Covered in Chipped Paint": {
+      "name": "A Box Covered in Chipped Paint",
+      "results": [
+        {
+          "1-1": "Granate (Tränengas)",
+          "2-2": "Schwere Pistole (Basis)",
+          "3-3": "Fahrrad",
+          "4-4": "Straßenleuchtfackel",
+          "5-5": "Kugelsicherer Schild",
+          "6-6": "Schrotpatrone (Basis)"
+        }
+      ]
+    },
+    "A Box Dripping Wet With Fluid": {
+      "name": "A Box Dripping Wet With Fluid",
+      "results": [
+        {
+          "1-1": "Smash",
+          "2-2": "Schwarze Spitze",
+          "3-3": "Bodyweight AutoInjektor",
+          "4-4": "AirWell 50",
+          "5-5": "Granate (Gift)",
+          "6-6": "TR-4 Detonator Fluid"
+        }
+      ]
+    },
+    "A Box Freezing Cold To The Touch": {
+      "name": "A Box Freezing Cold To The Touch",
+      "results": [
+        {
+          "1-1": "Ausgefallen Verspiegelte Sonnenbrille",
+          "2-2": "Street Viper Riding Suit",
+          "3-3": "Gesponsertes Cyberauge",
+          "4-4": "Skid Row Trench",
+          "5-5": "Prime Time",
+          "6-6": "Laserlicht-Straßenjacke"
+        }
+      ]
+    },
+    "A Box Handsomely Gift Wrapped": {
+      "name": "A Box Handsomely Gift Wrapped",
+      "results": [
+        {
+          "1-1": "Feldstecher",
+          "2-2": "Leichter Panzeranzug (Körper)",
+          "3-3": "Mittelschwere Pistole (Smart)",
+          "4-4": "Videokamera",
+          "5-5": "NeuTongue",
+          "6-6": "Reflex Koprozessor"
+        }
+      ]
+    },
+    "A Box Marked With A Lime Green X": {
+      "name": "A Box Marked With A Lime Green X",
+      "results": [
+        {
+          "1-1": "Elflines Online",
+          "2-2": "Wegwerfhandy",
+          "3-3": "Modular Finger Cyberhand",
+          "4-4": "Freizeit Schmuck",
+          "5-5": "Agent",
+          "6-6": "Smart-Brille"
+        }
+      ]
+    },
+    "A Box Melted Out Of Shape": {
+      "name": "A Box Melted Out Of Shape",
+      "results": [
+        {
+          "1-1": "Geplünderte Panzerung",
+          "2-2": "Granate (Brand)",
+          "3-3": "Neo-Soviet Cyberarm",
+          "4-4": "Gewehr (Basis)",
+          "5-5": "Gewehr (Basis)",
+          "6-6": "Schrotpatrone (Brand)"
+        }
+      ]
+    },
+    "A Box Reeking Of Oil": {
+      "name": "A Box Reeking Of Oil",
+      "results": [
+        {
+          "1-1": "Schrotpatrone (Basis)",
+          "2-2": "Schwere Pistole (Basis)",
+          "3-3": "Nomaden-Lederkluft Fuß­be­kleidung",
+          "4-4": "Gewehr (Smart)",
+          "5-5": "Scharfschützen-Zielfernrohr",
+          "6-6": "Smartgun-Verbindung"
+        }
+      ]
+    },
+    "A Box Sealed With A Lipstick Kiss": {
+      "name": "A Box Sealed With A Lipstick Kiss",
+      "results": [
+        {
+          "1-1": "Kampfmesser",
+          "3-3": "Shuriken Tornado-Granate",
+          "4-4": "Asia Pop Fuß­be­kleidung",
+          "5-5": "Geschäftlich Oberbekleidung",
+          "6-6": "White Hornet Tanto",
+          "2-2": "Mr. Studd Lustimplantat"
+        }
+      ]
+    },
+    "A Box Showing Signs Of Repair": {
+      "name": "A Box Showing Signs Of Repair",
+      "results": [
+        {
+          "1-1": "Utility Tomahawk",
+          "2-2": "Holo Projector Palm",
+          "3-3": "Techwerkzeug",
+          "4-4": "Audiorekorder",
+          "5-5": "Granate (Panzerbrechend)",
+          "6-6": "TechScanner"
+        }
+      ]
+    }
+  }
+}

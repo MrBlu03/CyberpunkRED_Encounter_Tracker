@@ -1,0 +1,117 @@
+_id: oEK3gfarTQznYvv8
+_key: "!items!oEK3gfarTQznYvv8"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/upgrades/communications_center.svg
+name: Communications Center
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  damage: 1d6
+  description:
+    value: |
+      <p>
+        Can be applied to all vehicles. Touchscreen console that functions as an
+        Agent, along with a storage unit containing 6
+        <strong>Radio Communicators</strong>, 6
+        <strong>Scrambler/Descramblers</strong>, a
+        <strong>Radio Scanner/Music Player</strong>, a
+        <strong>Homing tracer</strong> with 6 tracers, and an
+        <strong>Audio Recorder</strong>.
+      </p>
+  dvTable: ""
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 0
+  installLocation: mall
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: false
+  isRanged: false
+  magazine:
+    max: 0
+    value: 0
+  modifiers:
+    Wardrobe & Style:
+      isSituational: false
+      onByDefault: false
+      value: null
+    attackmod:
+      isSituational: false
+      onByDefault: false
+      type: modifier
+      value: null
+    bodySp:
+      isSituational: false
+      onByDefault: false
+      value: null
+    cool:
+      isSituational: false
+      onByDefault: false
+      value: null
+    damage:
+      isSituational: false
+      onByDefault: false
+      type: modifier
+      value: null
+    headSp:
+      isSituational: false
+      onByDefault: false
+      value: null
+    magazine:
+      isSituational: false
+      onByDefault: false
+      type: modifier
+      value: null
+    rof:
+      isSituational: false
+      onByDefault: false
+      type: modifier
+      value: null
+    sdp:
+      isSituational: false
+      onByDefault: false
+      type: modifier
+      value: null
+    seats:
+      isSituational: false
+      onByDefault: false
+      type: modifier
+      value: null
+    secondaryWeapon:
+      configured: false
+    shieldHp:
+      isSituational: false
+      onByDefault: false
+      value: null
+    slots:
+      isSituational: false
+      onByDefault: false
+      value: null
+    speedCombat:
+      type: modifier
+      value: null
+  price:
+    market: 1000
+  providesHardening: false
+  rof: 1
+  size: 0
+  source:
+    book: Core
+    page: 163
+  type: vehicle
+  unarmedAutomaticCalculation: true
+  usesType: magazine
+  weaponSkill: ""
+  weaponType: ""
+type: itemUpgrade

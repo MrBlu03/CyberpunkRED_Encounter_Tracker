@@ -1,0 +1,12 @@
+_id: QGtmPYrCvP88rKzC
+_key: "!tables.results!n7IlIvMfg7yW1OoE.QGtmPYrCvP88rKzC"
+documentCollection: cyberpunk-red-core.core_critical-injuries-body
+documentId: yBy9rlhgZeaWGtHh
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/critical_injuries/broken_leg.svg
+range:
+  - 8
+  - 8
+text: Broken Leg
+type: 2
+weight: 1

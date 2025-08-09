@@ -1,0 +1,25 @@
+# Check the CHANGELOG has been updated when a Merge Request is opened
+#
+# This works on the Labels an issue has applied to it.
+#
+# TODO: Does not work corectly on Forks as fork pipelines do not have access
+#       to our Environmnet Variables which means it does not work corectly and
+#       just passes. This should be addressed.
+
+changelog-has-changed:
+  stage: test
+  image: mvdan/shfmt:latest-alpine
+  before_script:
+    - apk update
+    - apk add bash jq curl git
+  script:
+    - ./.gitlab/pipeline_tests/test-changelog-dev-changed.sh
+  needs:
+    - job: init
+      artifacts: true
+  rules:
+    # Don't run if we're in the cleanup-dev schedule
+    - if: $CPR_SCHEDULE == "cleanup-dev"
+      when: never
+    # Run on MRs
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"

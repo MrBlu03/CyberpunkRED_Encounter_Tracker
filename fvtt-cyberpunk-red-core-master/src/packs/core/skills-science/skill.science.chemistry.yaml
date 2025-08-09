@@ -1,0 +1,20 @@
+_id: b1y9Oaaz41Js0Wkj
+_key: "!items!b1y9Oaaz41Js0Wkj"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/default/Default_Skill.svg
+name: Science (Chemistry)
+system:
+  basic: false
+  category: educationSkills
+  core: false
+  description:
+    value: ""
+  difficulty: typical
+  favorite: false
+  level: 0
+  skillType: science
+  source:
+    book: Core
+    page: 83
+  stat: int
+type: skill

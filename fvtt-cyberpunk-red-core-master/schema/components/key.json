@@ -1,0 +1,16 @@
+{
+  "description": "The FoundryVTT leveldb _key",
+  "type": "string",
+  "oneOf": [
+    {
+      "description": "Key without subkey",
+      "type": "string",
+      "pattern": "!(items|scenes|tables|macros)![0-9a-zA-Z]{16}"
+    },
+    {
+      "description": "Key without subkey",
+      "type": "string",
+      "pattern": "!(items|scenes|tables|macros)\\.(effects|results)![0-9a-zA-Z]{16}\\.[0-9a-zA-Z]{16}"
+    }
+  ]
+}

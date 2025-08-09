@@ -1,0 +1,33 @@
+_id: Fa8Mse1uXrLLWIxo
+_key: "!items!Fa8Mse1uXrLLWIxo"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/gear/bug_detector.svg
+name: Bug Detector
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>Detect listening devices. Range 2m/yds.</p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: true
+  price:
+    market: 500
+  providesHardening: false
+  revealed: true
+  source:
+    book: Core
+    page: 352
+  usage: toggled
+type: gear

@@ -1,0 +1,74 @@
+{
+  "label": "The 12 Days of Gunmas",
+  "mapping": {
+    "dvTable": "system.dvTable"
+  },
+  "entries": {
+    "Nova Model 757 Rounds": {
+      "name": "Nova Model 757 Rounds",
+      "description": "<p>For use only in the Nova Model 757 Cityhunter. Comes in packs of 18 instead of the normal 10.</p>\n<p>&nbsp;</p>\n<p>Req Targeting Scope Cyberware, otherwise won't fire. If miss single attack by 4 or less, roll second attack at same DV 1d10+10 (not normal stat). Can add luck. Target can dodge the second roll as normal if able to do so.</p>"
+    },
+    "Sub-Flechette Rounds": {
+      "name": "Sub-Flechette Rounds",
+      "description": "<p>Special ammo to only be used with the Malorian Arms Sub-Flechette Gun. Ablates armor by 4 SP per hit.</p>"
+    },
+    "ARS-5 Submachine Gun": {
+      "name": "ARS-5 Submachine Gun",
+      "description": "<p>This heavy SMG is the complete package; it comes with a Smartgun Link, Infrared Nightvision Scope, and a Sniping Scope*.</p>\n<p><em>*All three must be manually added after acquiring the weapon</em></p>",
+      "dvTable": "PT PM-y"
+    },
+    "Chainknife": {
+      "name": "Chainknife",
+      "description": "<p>Takes an action to rev up, but once revved is a powerful melee weapon. When not revved deals 2d6 damage*.</p>\n<p><em>*Not revved mode not currently supported, so will need to manually reduce damage</em></p>"
+    },
+    "Crusher": {
+      "name": "Crusher",
+      "description": "<p>A pistol that fires shotgun shells. What's not to love.</p>",
+      "dvTable": "PT Pistolety"
+    },
+    "Dragon Flamethrower": {
+      "name": "Dragon Flamethrower",
+      "description": "<p>Fire at your finger tips. Can only fire Incendiary Shotgun Shells, but targets ignited by this weapon burn for 4HP a turn.</p>"
+    },
+    "Hellbringer": {
+      "name": "Hellbringer",
+      "description": "<p>When this things shoots, you know about it. If fired by someone with less than 10 BODY, this pistol jams. An action is required to unjam it.</p>",
+      "dvTable": "PT Pistolety"
+    },
+    "Multiple Ammunition Pistol": {
+      "name": "Multiple Ammunition Pistol",
+      "description": "<p>A very heavy pistol capable of loading up to five different ammo types at once*, with the user able to pick between them before firing.</p>\n<p><em>*Currently not supported, so users have to manually change ammo types</em></p>",
+      "dvTable": "PT Pistolety"
+    },
+    "Nomad Pneumatic Bolt Gun": {
+      "name": "Nomad Pneumatic Bolt Gun",
+      "description": "<p>Capable of firing all Non-Basic ammunition, this weapon is still as versatile as when it was invented over two decades ago.</p>",
+      "dvTable": "PT Karabiny snajperskie"
+    },
+    "Nova Model 757 Cityhunter": {
+      "name": "Nova Model 757 Cityhunter",
+      "description": "<p>This pistol fires it's own custom rounds bought in packs of 18, though they cost the same as a pack of 10. Comes with a Smartgun Link*.</p>\n<p><em>*Smartgun Link must be manually added after acquiring the weapon</em></p>",
+      "dvTable": "PT Pistolety"
+    },
+    "ST-5 Assault Rifle": {
+      "name": "ST-5 Assault Rifle",
+      "description": "<p>A - relatively - reliable gun. If you roll 1 on Attack (Crit fail) you must then toss a coin; if you win the gun fires as normal, while if you lose the gun jams and requires using an action to clear.</p>",
+      "dvTable": "PT Karabiny szturmowe"
+    },
+    "Sub-Flechette Gun": {
+      "name": "Sub-Flechette Gun",
+      "description": "<p>This SMG can only fire it's own custom Armor-Piercing Ammunition, however that ammo ablates by 4 when dealing damage. Comes with a Smartgun Link*.</p>\n<p><em>*Smartgun Link must be manually added after acquiring the weapon</em></p>",
+      "dvTable": "PT PM-y"
+    },
+    "Teen Dreem": {
+      "name": "Teen Dreem",
+      "description": "<p>This SMG can use Autofire and Suppressive Fire all the way down to it's last 2 bullets. Caution is required however, as using either firing mode well melt the gun beyond repair.</p>",
+      "dvTable": "PT PM-y"
+    },
+    "WAA Bullpup Assault Weapon": {
+      "name": "WAA Bullpup Assault Weapon",
+      "description": "<p>A bullpup rifle in operation for over two decades. Can fire non-basic ammunition and comes with a Smartgun Link*.</p>\n<p><em>*Smartgun Link must be manually added after acquiring the weapon</em></p>",
+      "dvTable": "PT Karabiny szturmowe"
+    }
+  }
+}

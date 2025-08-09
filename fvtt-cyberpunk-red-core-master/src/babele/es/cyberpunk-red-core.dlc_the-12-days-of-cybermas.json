@@ -1,0 +1,62 @@
+{
+  "label": "Los 12 Días de CiberNavidad",
+  "mapping": {},
+  "entries": {
+    "MagnaSlot BatteryBrick": {
+      "name": "Superbateria MagnaSlot",
+      "description": "<p>Paquete de batería que solo se ajusta al Ciberbrazo de Radline Blitzkrieg Lanza-Relámpagos. Se puede recargar en 1 hora.</p>"
+    },
+    "FleshWeave (Armor)": {
+      "name": "Tejido Dérmico (Armadura)",
+      "description": "<p>Objeto de Armadura para el Cyberware de Tejido Dérmico de Sycust.</p>"
+    },
+    "Blitzkrieg Arc-Thrower Cyberarm": {
+      "name": "Ciberbrazo de Radline Blitzkrieg Lanza-Relámpagos",
+      "description": "<p>\n  An \"arm\" in name only, the Arc-Thrower is a massive electricity cannon. 0\n  option slots.\n</p>\n<p>\n  The Arc-Thrower is One-Handed Exotic Poor Quality Shotgun that uses Heavy\n  Weapons Skill. Fires \"Shotgun Shell\" electricity blast with 4d6 damage.\n  Critical Injuries are not possible. Armor is not ablated. If target goes under\n  1HP from the blast, target has 1HP and is Unconscious.\n</p>\n<p>\n  Firing the Arc-Thrower consumes a charge from the included Radline MagnaSlot\n  BatteryBrick (100eb). BatteryBrick has a 32 shot capacity and can be recharged\n  in 1 hour. Use an Action to swap in a fresh battery pack even if user has no\n  free hands available. Arc-Thrower does not have a hand attachment.\n</p>\n"
+    },
+    "Bug Eye": {
+      "name": "Ojo Insectoide",
+      "description": "<p>Ciberojo insectoide grande lleno de ranuras de opciones. Borgware.</p>"
+    },
+    "ChainRipp": {
+      "name": "Motosierra Ripp",
+      "description": "<p>Una motosierra de ciberarma saliente con un puerto de escape integrado. Se puede desplegar y retraerse sin usar una acción. El usuario no puede usar la mano en el ciberbrazo de Motosierra Ripp cuando se activa la sierra.</p>\n<p>Al desplegar, Motosierra Ripp puede ser acelerada como una acción, transformándola en un arma de cuerpo a cuerpo exótica muy pesado de una mano de excelente calidad. La Motosierra Ripp permanece acelerada hasta que se desactive como una Acción.</p>\n<p>En el estado desplegado, pero no acelerado, la Motosierra Ripp es un arma de cuerpo a cuerpo exótica muy pesada de una sola mano. Requiere 4 ranuras de opción de ciberbrazo</p>"
+    },
+    "DeathTrance": {
+      "name": "Trance de la Muerte",
+      "description": "<p>Activa como una acción para detener signos de vida como el ritmo cardíaco y la respiración. Para el observador casual, el usuario parece estar muerto. -4 para todas las Acciones en este estado letargo. Se puede desactivar con una acción. El usuario puede experimentar la piel azul o pálida de múltiples usos.</p>\n<p>Tecnología médica VD17 o VD21 (Diagnóstico, Deducción, Percepción) para descubrir que el usuario no está realmente muerto</p>"
+    },
+    "FleshWeave": {
+      "name": "Tejido Dérmico",
+      "description": "<p>Cyberware corporal externo*. 7 CP para la cabeza y el cuerpo.<br>Armadura de Tejido Dérmico con funcionalidad avanzada de curación automática. Miles de millones de nanobots reparan todo el daño a la armadura de Tejido Dérmico(cuerpo y cabeza) después de 10 minutos de descanso. La armadura no se acumula.</p>\n<p><em>* El Cyberware de Armadura no funciona como armadura en el sistema, por favor añade el elemento \"Tejido Dérmico (Armadura)\" de Sycust al personaje/tipejo para rastrear</em></p>"
+    },
+    "Gang Jazzler": {
+      "name": "Noqueador de Pandillas",
+      "description": "<p>Usa una acción de choque para apuñalar a un objetivo agarrado con una aguja electrificada. El objetivo no recibe daño, pero debe hacer un chequeo de Resistencia contra Tortugas/Drogas. Al fallar la comprobación, el objetivo cae inconsciente durante 1 minuto.</p>\n<p>Funciona con un paquete de baterías recargables (50ed). El paquete de batería debe ser recargado durante 1 hora después de cada uso. No es necesario realizar ningún control para ocultar el Noqueador de Pandillas y el paquete de baterías. Se puede instalar en el brazo de la carne si la única pieza de ciberware en ese brazo.</p>"
+    },
+    "MicroWaldo": {
+      "name": "MicroWaldo",
+      "description": "<p>Una colección de instrumentos y sondas montados en las muñecas para facilitar la cirugía.<br>+1 Técnica Médica.</p>\n<p>Toma una ranura de Opción de Ciberbrazo y una ranura de Opción de Enlace Neural.</p>"
+    },
+    "MonoVision": {
+      "name": "MonoVisión",
+      "description": "<p>\n  Single-optic Cybereye visor that takes the place of two meat eyes. Too large\n  for a MultiOptic Mount.\n</p>\n<p>\n  Cybereye Options are always \"paired\" even if there is only one of each type.\n  Penalties from Lost Eye Critical Injury are doubled if the target solely\n  relies on the Monovision for sight.\n</p>\n<p>Borgware.</p>\n"
+    },
+    "OptiShield": {
+      "name": "Escudo Óptico",
+      "description": "<p>Lentes espejadas retractables incrustadas. Cuando se activa como acción, el usuario es inmune a efectos negativos de luz brillante, como por ejemplo de granadas cegadoras.</p>"
+    },
+    "Poser Chip": {
+      "name": "Chip Imitador",
+      "description": "<p>Chipware. Permite al usuario imitar sin esfuerzo los patrones de voz y la personalidad preprogramada. Ciberware de edición estándar para Pandillas de Imitadores.</p>\n<ul>\n<li>+4 a Chequeos de Actuación al imitar esa personalidad específica.</li>\n<li>+5 a Chequeos de Actuación con Roleplay convincente.</li>\n</ul>\n<p>Los Chips de Imitación que vienen programados con innumerables horas de imágenes de celebridades cuestan 500ed. Chips de Imitación más personalizados programados con más de 10 horas de imágenes de un coste individual privado de 1000ed.</p>"
+    },
+    "Romanova Cyberlegs": {
+      "name": "Ciberpiernas Romanova",
+      "description": "<p>Ciberpiernas de alta moda con cuchillas integradas en cada talón. Las cuchillas no pueden ser eliminadas.</p>\n<p>Ciberpiernas emparejadas, 1000eb para ambas piernas. Cada pierna tiene 3 ranuras para las opciones de Ciberpierna. Tira solo una vez para registrar la perdida de humanidad del par de piernas. Cada pierna puede sufrir lesiones críticas separadas y debe ser reparada individualmente.</p>"
+    },
+    "Watch-Man": {
+      "name": "Mira-Man",
+      "description": "<p>\n  Internal Agent with retractable screen on the user's forearm. Requires a\n  Cyberarm.\n</p>\n"
+    }
+  }
+}

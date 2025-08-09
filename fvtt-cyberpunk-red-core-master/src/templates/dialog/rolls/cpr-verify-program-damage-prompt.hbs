@@ -1,0 +1,36 @@
+<form class="dialog-sheet">
+  <div class="dialog-header flexcol">
+    <div class="text-normal text-center">
+      {{localize "CPR.rolls.rollingForDamage" rollTitle=rollData.rollTitle}}
+    </div>
+    {{#if rollData.rollCardExtraArgs.program.system.name }}
+      <div class="text-center">
+        <span class="text-semi">{{localize "CPR.global.programClass.programClass"}}:</span> ({{localize (cprFindConfigValue "programClassList" rollData.rollCardExtraArgs.program.system.class)}})
+      </div>
+    {{/if}}
+  </div>
+  <hr/>
+  <div class="dialog-grid flexcol">
+    <ol class="dialog-list">
+      {{#if (cprCompare (cprCompare rollData.rollCardExtraArgs.program.system.class "===" "antiprogramattacker") "&&" (cprCompare rollData.rollCardExtraArgs.program.system.damage.blackIce "!==" "")) }}
+        <li class="dialog-item flexrow">
+          <div class="dialog-item-name text-nowrap">
+            {{localize "CPR.rolls.selectTarget"}}:
+          </div>
+          <div class="dialog-item-input text-nowrap">
+            <select name="formula">
+              {{selectOptions programDamageSelectOptions selected=rollData.formula}}
+          </select>
+        </div>
+      </li>
+    {{/if}}
+    {{!-- Additional user inputted modifiers --}}
+    {{> "systems/cyberpunk-red-core/templates/dialog/rolls/cpr-additional-modifiers.hbs" this}}
+    {{!-- All applied modifier list partial --}}
+    {{> "systems/cyberpunk-red-core/templates/dialog/rolls/cpr-all-modifiers.hbs" this}}
+  </ol>
+</div>
+{{!-- Situational modifier list partial --}}
+{{> "systems/cyberpunk-red-core/templates/dialog/rolls/cpr-situational-modifiers.hbs" this}}
+{{> "systems/cyberpunk-red-core/templates/dialog/cpr-dialog-buttons.hbs"}}
+</form>

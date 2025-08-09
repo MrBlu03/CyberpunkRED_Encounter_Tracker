@@ -1,0 +1,42 @@
+{
+  "label": "Munitions",
+  "mapping": {},
+  "entries": {
+    "Arasaka Acid": {
+      "name": "Acide Arasaka",
+      "description": "<p>Revêtement spécial pour le katana Larme tranchante d'Arasaka. Augmente la perforation d'armure.</p>\n"
+    },
+    "Arasaka Fire": {
+      "name": "Feu Arasaka",
+      "description": "<p>\n  Revêtement spécial pour le katana Larme tranchante d'Arasaka. Enflamme la cible. \n  Les applications multiples ne se cumulent pas.\n</p>\n"
+    },
+    "Arasaka Wound Salt": {
+      "name": "Sel de plaie Arasaka",
+      "description": "<p>\n  Revêtement spécial pour le katana Larme tranchante d'Arasaka.\n  Ajoute une seconde Blessure critique. Pas de dégâts supplémentaires.\n</p>\n"
+    },
+    "Doberman 500 Marking Scent": {
+      "name": "Marqueur olfactif pour Doberman 500",
+      "description": "<p>\n  Type de munitions spéciales pour le pistolet à air comprimé.\n  Marque la cible d'une odeur spécifique.\n</p>\n"
+    },
+    "Grenade (Arachnid)": {
+      "name": "Grenade (Arachnide)",
+      "description": "<p>\n  Une grenade très collante. Créé une toile collante qui enchevêtre la cible. Doit être détruite ou arrachée par n'importe qui au corps à corps faisant un <strong>Jet de Bagarre SD 15</strong>.\n</p>\n"
+    },
+    "Grenade (KTech Security)": {
+      "name": "Grenade (KTech Sécurité)",
+      "description": "<p>Grenade perforante. Fait des dégâts aux cibles mais n'endommage pas les couverts.</p>\n"
+    },
+    "Grenade (Shuriken Tornado)": {
+      "name": "Grenade (Shuriken tornade)",
+      "description": "<p>\n  Littéralement une explosion de shurikens. Grenade perforante. Chaque shuriken inflige des dégâts individuels.\n</p>\n"
+    },
+    "Net": {
+      "name": "Filet",
+      "description": "<p>Filet pour le lanceur escamotable de filet qui capture la cible à l'impact.</p>\n<p>\n  À l'impact, capture la cible. La cible peut s'échapper avec un <strong>Jet de Contorsionniste SD 13</strong> (uniquement la victime du filet) ou un <strong>Jet de Bagarre SD 13</strong> effectué par n'importe qui. Le filet peut aussi être détruit.\n</p>\n"
+    },
+    "Rocks": {
+      "name": "Rochers",
+      "description": "<p>\n  Munitions pour le Rocker nomade si de taille suffisamment petite.\n  Les munitions sont considérées comme gratuites et disponibles si des petits cailloux sont présents à l'endroit où est l'utilisateur.\n</p>\n"
+    }
+  }
+}

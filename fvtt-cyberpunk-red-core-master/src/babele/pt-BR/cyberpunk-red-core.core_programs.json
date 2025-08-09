@@ -1,0 +1,66 @@
+{
+  "label": "Programas",
+  "mapping": {},
+  "entries": {
+    "Armor": {
+      "name": "Armadura",
+      "description": "<p>Reduz o dano cerebral em 4 enquanto Carregado. Limite de 1 cópia Carregada por vez. Cada cópia tem 1 uso por Invasão.</p>"
+    },
+    "Banhammer": {
+      "name": "Banhammer",
+      "description": "<p>Causa 3d6 REZ a dano não-Preto ou 2d6 Rez ao Elixir Negro. </p>"
+    },
+    "DeckKRASH": {
+      "name": "DeckKRASH",
+      "description": "<p>Força o Trilha Rede a Desconectar de forma insegura. </p>"
+    },
+    "Eraser": {
+      "name": "Eraser",
+      "description": "<p>+2 para Capa verificações enquanto Rezzed.</p>"
+    },
+    "Flak": {
+      "name": "Armadura",
+      "description": "<p>Os ataques de não Black ICE contra você são reduzidos a 0 enquanto Carregado. Apenas 1 cópia pode ser Carregada de cada vez. Cada cópia tem 1 uso por Invasão.</p>"
+    },
+    "Hellbolt": {
+      "name": "Hellbolt",
+      "description": "<p>2d6 de dano direto ao cérebro do Trilha Rede. O alvo pega fogo se o console não tiver isolamento elétrico. </p>"
+    },
+    "Nervescrub": {
+      "name": "Nervescrub",
+      "description": "<p>Por 1 hora, diminui o INT, REF e DES por 1d6 (min. 1).</p>"
+    },
+    "Poison Flatline": {
+      "name": "Alinhamento Venenoso",
+      "description": "<p>Destrui um gelo fora do preto no baralho inimigo aleAtoriamente.</p>"
+    },
+    "See Ya": {
+      "name": "See Ya",
+      "description": "<p>+2 para os Verificadores de Descobridor enquanto Rezido.</p>"
+    },
+    "Shield": {
+      "name": "Escudos",
+      "description": "<p>O primeiro ataque ao cérebro de um Programa ICE não Negro é interrompido. Apenas 1 cópia pode ser Rezada de cada vez. Cada cópia tem 1 uso por Invasão.</p>"
+    },
+    "Speedy Gonzalvez": {
+      "name": "Veloz Gonzalvez",
+      "description": "<p>+2 a Velocidade enquanto Rezido.</p>"
+    },
+    "Superglue": {
+      "name": "Super-cola",
+      "description": "<p>O Trilha Rede não pode continuar a descer na REDE local ou Desconectar com segurança por 1d6 turnos. Uso limitado de 1 por Invasão.</p>"
+    },
+    "Sword": {
+      "name": "Espada",
+      "description": "<p>Causa dano 3d6 REZ ao Elixir Negro ou 2d6 Rez ao Elixir não-Negro. </p>"
+    },
+    "Vrizzbolt": {
+      "name": "Vrizzbolt",
+      "description": "<p>1d6 de dano direto ao cérebro do Trilha Rede. Abaixa o total de ações na REDE em 1 até o próximo turno. (mínimo de ações de REDE é 2)</p>"
+    },
+    "Worm": {
+      "name": "Minhoca",
+      "description": "<p>+2 para as verificações da porta de trás enquanto Quebrado.</p>"
+    }
+  }
+}

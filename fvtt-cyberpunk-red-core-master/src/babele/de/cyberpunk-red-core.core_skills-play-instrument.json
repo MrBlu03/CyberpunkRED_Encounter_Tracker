@@ -1,0 +1,26 @@
+{
+  "label": "Skills (Play Instrument)",
+  "mapping": {},
+  "entries": {
+    "Play Instrument (Drums)": {
+      "name": "Play Instrument (Drums)",
+      "description": ""
+    },
+    "Play Instrument (Guitar)": {
+      "name": "Play Instrument (Guitar)",
+      "description": ""
+    },
+    "Play Instrument (Piano)": {
+      "name": "Play Instrument (Piano)",
+      "description": ""
+    },
+    "Play Instrument (Singing)": {
+      "name": "Play Instrument (Singing)",
+      "description": ""
+    },
+    "Play Instrument (Violin)": {
+      "name": "Play Instrument (Violin)",
+      "description": ""
+    }
+  }
+}

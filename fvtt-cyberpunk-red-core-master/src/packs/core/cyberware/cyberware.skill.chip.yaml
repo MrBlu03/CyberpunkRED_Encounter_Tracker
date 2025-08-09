@@ -1,0 +1,58 @@
+_id: RJLEe558aeef5kHr
+_key: "!items!RJLEe558aeef5kHr"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/cyberware/skill_chip.svg
+name: Skill Chip
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  core: false
+  damage: 1d6
+  description:
+    value: |
+      <p>Chipware.</p>
+      <p>Sets a Skill to 3 unless the skill is already &gt;3*.</p>
+      <p><em>* Not supported, Skill must be modified manually.</em></p>
+  dvTable: ""
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  humanityLoss:
+    roll: 2d6
+    static: 7
+  installLocation: notApplicable
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: true
+  isFoundational: false
+  isRanged: false
+  isWeapon: false
+  magazine:
+    max: 0
+    value: 0
+  price:
+    market: 500
+  providesHardening: false
+  revealed: true
+  rof: 1
+  size: 1
+  source:
+    book: Core
+    page: 360
+  type: neuralWare
+  unarmedAutomaticCalculation: true
+  usage: toggled
+  usesType: magazine
+  weaponSkill: Archery
+  weaponType: assaultRifle
+type: cyberware

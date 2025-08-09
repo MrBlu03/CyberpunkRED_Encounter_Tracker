@@ -1,0 +1,177 @@
+<form class="dialog-sheet">
+  <div class="dialog-grid flexcol">
+    <ol class="dialog-list">
+      <li class="dialog-item dialog-item-header flexrow text-semi">
+        <div class="dialog-item-name">
+          {{localize "CPR.global.generic.setting"}}
+        </div>
+        <div class="dialog-item-input text-nowrap text-nowrap">
+          {{localize "CPR.global.generic.value"}}
+        </div>
+      </li>
+      <li class="dialog-item flexrow">
+        <div class="dialog-item-name">
+          <div class="text-semi">
+            {{localize "CPR.dialog.netArchitectureGeneration.animate"}}
+          </div>
+          <div class="text-smaller">
+            {{localize "CPR.dialog.netArchitectureGeneration.animateHint"}}
+          </div>
+        </div>
+        <div class="dialog-item-input text-nowrap">
+            <input type="checkbox" name="animated" {{checked animated}}/>
+        </div>
+      </li>
+      <div class="dialog-item dialog-item-header text-semi">
+        {{localize "CPR.global.generic.advancedSettings" }}
+      </div>
+      <li class="dialog-item flexrow">
+        <div class="dialog-item-name">
+          <div class="text-semi">
+            {{localize "CPR.dialog.netArchitectureGeneration.tilesCustom"}}
+          </div>
+          <div class="text-smaller">
+            {{localize "CPR.dialog.netArchitectureGeneration.tilesCustomHint"}}
+          </div>
+        </div>
+        <div class="dialog-item-input text-nowrap">
+            <input type="checkbox" name="customTiles" {{checked customTiles}}/>
+        </div>
+      </li>
+      <li class="dialog-item flexrow">
+        <div class="dialog-item-name">
+          <div class="text-semi">
+            {{localize "CPR.dialog.netArchitectureGeneration.imageFolder"}}
+          </div>
+          <div class="text-smaller">
+            {{localize "CPR.dialog.netArchitectureGeneration.imageFolderHint"}}
+          </div>
+          <div class="dialog-item-input text-nowrap flexrow">
+            <input type="text" name="filePath" value="{{filePath}}"/>
+            {{filePicker type="folder" target="filePath"}}
+          </div>
+        </div>
+      </li>
+      <li class="dialog-item flexrow">
+        <div class="dialog-item-name">
+          <div class="text-semi">
+            {{localize "CPR.dialog.netArchitectureGeneration.fileExtension"}}
+          </div>
+          <div class="text-smaller">
+            {{localize "CPR.dialog.netArchitectureGeneration.fileExtensionHint"}}
+          </div>
+        </div>
+        <div class="dialog-item-input text-nowrap">
+          <input type="text" name="fileExtension" value="{{fileExtension}}"/>
+        </div>
+      </li>
+      <li class="dialog-item flexrow">
+        <div class="dialog-item-name">
+          <div class="text-semi">
+            {{localize "CPR.dialog.netArchitectureGeneration.sceneName"}}
+          </div>
+          <div class="text-smaller">
+            {{localize "CPR.dialog.netArchitectureGeneration.sceneNameHint"}}
+          </div>
+        </div>
+        <div class="dialog-item-input text-nowrap">
+          <span class="text-semi">
+            <input type="text" name="sceneName" value="{{sceneName}}"/>
+          </span>
+        </div>
+      </li>
+      <li class="dialog-item flexrow">
+        <div class="dialog-item-name">
+          <div class="text-semi">
+            {{localize "CPR.dialog.netArchitectureGeneration.sceneGrid"}}
+          </div>
+          <div class="text-smaller">
+            {{localize "CPR.dialog.netArchitectureGeneration.sceneGridHint"}}
+          </div>
+        </div>
+        <div class="dialog-item-input text-nowrap">
+          <input type="text" name="gridSize" value="{{gridSize}}"/>
+        </div>
+      </li>
+      <li class="dialog-item flexrow">
+        <div class="dialog-item-name">
+          <div class="text-semi">
+            {{localize "CPR.dialog.netArchitectureGeneration.levelWidth"}}
+          </div>
+          <div class="text-smaller">
+            {{localize "CPR.dialog.netArchitectureGeneration.levelWidthHint"}}
+          </div>
+        </div>
+        <div class="dialog-item-input text-nowrap">
+            <input type="text" name="levelWidth" value="{{levelWidth}}"/>
+        </div>
+      </li>
+      <li class="dialog-item flexrow">
+        <div class="dialog-item-name">
+          <div class="text-semi">
+            {{localize "CPR.dialog.netArchitectureGeneration.levelHeight"}}
+          </div>
+          <div class="text-smaller">
+            {{localize "CPR.dialog.netArchitectureGeneration.levelHeightHint"}}
+          </div>
+        </div>
+        <div class="dialog-item-input text-nowrap">
+          <input type="text" name="levelHeight" value="{{levelHeight}}"/>
+        </div>
+      </li>
+      <li class="dialog-item flexrow">
+        <div class="dialog-item-name">
+          <div class="text-semi">
+            {{localize "CPR.dialog.netArchitectureGeneration.connectorWidth"}}
+          </div>
+          <div class="text-smaller">
+            {{localize "CPR.dialog.netArchitectureGeneration.connectorWidthHint"}}
+          </div>
+        </div>
+        <div class="dialog-item-input text-nowrap">
+          <input type="text" name="connectorWidth" value="{{connectorWidth}}"/>
+        </div>
+      </li>
+      <li class="dialog-item flexrow">
+        <div class="dialog-item-name">
+          <div class="text-semi">
+            {{localize "CPR.dialog.netArchitectureGeneration.connectorHeight"}}
+          </div>
+          <div class="text-smaller">
+            {{localize "CPR.dialog.netArchitectureGeneration.connectorHeightHint"}}
+          </div>
+        </div>
+        <div class="dialog-item-input text-nowrap">
+          <input type="text" name="connectorHeight" value="{{connectorHeight}}"/>
+        </div>
+      </li>
+      <li class="dialog-item flexrow">
+        <div class="dialog-item-name">
+          <div class="text-semi">
+            {{localize "CPR.dialog.netArchitectureGeneration.offsetX"}}
+          </div>
+          <div class="text-smaller">
+            {{localize "CPR.dialog.netArchitectureGeneration.offsetXHint"}}
+          </div>
+        </div>
+        <div class="dialog-item-input text-nowrap">
+            <input type="text" name="cornerOffsetX" value="{{cornerOffsetX}}"/>
+        </div>
+      </li>
+      <li class="dialog-item flexrow">
+        <div class="dialog-item-name">
+          <div class="text-semi">
+            {{localize "CPR.dialog.netArchitectureGeneration.offsetY"}}
+          </div>
+          <div class="text-smaller">
+            {{localize "CPR.dialog.netArchitectureGeneration.offsetYHint"}}
+          </div>
+        </div>
+        <div class="dialog-item-input text-nowrap">
+          <input type="text" name="cornerOffsetY" value="{{cornerOffsetY}}"/>
+        </div>
+      </li>
+    </ol>
+  </div>
+  {{> "systems/cyberpunk-red-core/templates/dialog/cpr-dialog-buttons.hbs"}}
+</form>

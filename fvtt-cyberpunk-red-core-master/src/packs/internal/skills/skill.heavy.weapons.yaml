@@ -1,0 +1,20 @@
+_id: TNA0LGN1MAYoA60l
+_key: "!items!TNA0LGN1MAYoA60l"
+effects: []
+img: icons/svg/item-bag.svg
+name: Heavy Weapons
+system:
+  basic: false
+  category: rangedweaponSkills
+  core: true
+  description:
+    value: ""
+  difficulty: difficult
+  favorite: false
+  level: 0
+  skillType: generic
+  source:
+    book: Core
+    page: 137
+  stat: ref
+type: skill

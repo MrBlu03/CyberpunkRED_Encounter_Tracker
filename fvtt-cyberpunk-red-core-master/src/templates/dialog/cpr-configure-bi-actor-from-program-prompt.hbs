@@ -1,0 +1,17 @@
+<form class="dialog-sheet">
+  <div class="dialog-header">
+    <ol class="items-list">
+      <li class="item flexrow">
+        <div class="item flexrow">
+          <select name="programUUID">
+            <option value="unlink">
+              {{localize "CPR.dialog.configureBlackIceActorFromProgram.unlinkBlackIceFromProgram"}}
+            </option>
+            {{selectOptions biProgramList selected=programUUID labelAttr="name" valueAttr="uuid"}}
+          </select>
+        </div>
+      </li>
+    </ol>
+  </div>
+  {{> "systems/cyberpunk-red-core/templates/dialog/cpr-dialog-buttons.hbs"}}
+</form>

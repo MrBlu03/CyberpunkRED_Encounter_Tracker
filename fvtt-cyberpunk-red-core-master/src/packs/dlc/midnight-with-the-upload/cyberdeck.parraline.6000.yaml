@@ -1,0 +1,35 @@
+_id: i3ctRyHXpcva3ccw
+_key: "!items!i3ctRyHXpcva3ccw"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/default/cyberdeck.svg
+name: Parraline 6000
+system:
+  brand: Zetatech
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>All the Hardware options with none of the restrictions.</p>
+      <p>3 Program slots, 6 Hardware slots.</p>
+  equipped: owned
+  favorite: false
+  installLocation: mall
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+      - program
+    list: []
+    slots: 9
+    usedSlots: 0
+  isElectronic: true
+  price:
+    market: 500
+  providesHardening: false
+  quality: standard
+  size: 1
+  source:
+    book: MwtU
+    page: 4
+type: cyberdeck

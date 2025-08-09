@@ -1,0 +1,45 @@
+_id: 2hwEBP93U98aRz4p
+_key: "!items!2hwEBP93U98aRz4p"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/armor/leathers_body.svg
+name: Leathers (Body)
+system:
+  bodyLocation:
+    ablation: 0
+    sp: 4
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>Simple Leather armor. No armor penalty.</p>
+  equipped: owned
+  favorite: false
+  headLocation:
+    ablation: 0
+    sp: 0
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isBodyLocation: true
+  isElectronic: false
+  isHeadLocation: false
+  isShield: false
+  penalty: 0
+  price:
+    market: 20
+  providesHardening: false
+  revealed: true
+  shieldHitPoints:
+    max: 0
+    value: 0
+  source:
+    book: Core
+    page: 350
+  usage: equipped
+type: armor

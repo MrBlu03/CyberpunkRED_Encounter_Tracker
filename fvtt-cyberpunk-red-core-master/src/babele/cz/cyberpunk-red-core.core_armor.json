@@ -1,0 +1,78 @@
+{
+  "label": "Brnění",
+  "mapping": {},
+  "entries": {
+    "Bodyweight Suit": {
+      "name": "Bodyweight Suit",
+      "description": "<p>Netrunner armored skinsuit. Can store Cyberdeck and support Interface Plugs. Can't be bought in two pieces. Always worn on both Head and Body Location. Adds one Hardware only Option Slot to connected Cyberdeck. No armor penalty.</p>"
+    },
+    "Bullet Proof Shield": {
+      "name": "Bullet Proof Shield",
+      "description": "<p>Requires an arm and has HP that is reduced by damage.</p>"
+    },
+    "Flak (Body)": {
+      "name": "Flak (Body)",
+      "description": "<p>Metal plated armor to resist the most powerful hits. -4 to REF, DEX, and MOVE.</p>"
+    },
+    "Flak (Head)": {
+      "name": "Flak (Head)",
+      "description": "<p>Metal plated armor to resist the most powerful hits to your head. -4 to REF, DEX, and MOVE.</p>"
+    },
+    "Heavy Armorjack (Body)": {
+      "name": "Heavy Armorjack (Body)",
+      "description": "<p>Heavier version of an Armorjack. -2 to REF, DEX, and MOVE.</p>"
+    },
+    "Heavy Armorjack (Head)": {
+      "name": "Heavy Armorjack (Head)",
+      "description": "<p>Heavier version of an Armorjack for your head. -2 to REF, DEX, and MOVE.</p>"
+    },
+    "Kevlar® (Body)": {
+      "name": "Kevlar® (Body)",
+      "description": "<p>Standard Kevlar clothing. No armor penalty.</p>\n"
+    },
+    "Kevlar® (Head)": {
+      "name": "Kevlar® (Head)",
+      "description": "<p>Standard Kevlar for your head. No armor penalty.</p>\n"
+    },
+    "Leathers (Body)": {
+      "name": "Leathers (Body)",
+      "description": "<p>Simple Leather armor. No armor penalty.</p>"
+    },
+    "Leathers (Head)": {
+      "name": "Leathers (Head)",
+      "description": "<p>Simple Leather armor for your head. No armor penalty.</p>"
+    },
+    "Light Armorjack (Body)": {
+      "name": "Light Armorjack (Body)",
+      "description": "<p>Light version of an Armorjack. No armor penalty.</p>"
+    },
+    "Light Armorjack (Head)": {
+      "name": "Light Armorjack (Head)",
+      "description": "<p>Light version of an Armorjack for your head. No armor penalty.</p>"
+    },
+    "Medium Armorjack (Body)": {
+      "name": "Medium Armorjack (Body)",
+      "description": "<p>Medium version of an Armorjack. -2 to REF, DEX, and MOVE.</p>"
+    },
+    "Medium Armorjack (Head)": {
+      "name": "Medium Armorjack (Head)",
+      "description": "<p>Medium version of an Armorjack for your head. -2 to REF, DEX, and MOVE.</p>"
+    },
+    "Metalgear® (Body)": {
+      "name": "Metalgear® (Body)",
+      "description": "<p>\n  Heaviest and most powerful armor in circulation. -4 to REF, DEX, and MOVE.\n</p>\n"
+    },
+    "Metalgear® (Head)": {
+      "name": "Metalgear® (Head)",
+      "description": "<p>\n  Heaviest and most powerful armor in circulation. Protects your head -4 to REF,\n  DEX, and MOVE.\n</p>\n"
+    },
+    "Skin Weave": {
+      "name": "Skin Weave",
+      "description": "<p>Armor Item for Skin Weave Cyberware.</p>"
+    },
+    "Subdermal Armor": {
+      "name": "Subdermal Armor",
+      "description": "<p>Armor Item for Subdermal Armor Cyberware.</p>"
+    }
+  }
+}

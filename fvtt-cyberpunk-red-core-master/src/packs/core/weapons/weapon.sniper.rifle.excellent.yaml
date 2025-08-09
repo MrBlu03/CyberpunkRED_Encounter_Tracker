@@ -1,0 +1,53 @@
+_id: g1WPHBmTgxEHTbSp
+_key: "!items!g1WPHBmTgxEHTbSp"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/weapons/SniperRifle_excellent.svg
+name: Sniper Rifle (Excellent)
+system:
+  ammoVariety:
+    - rifle
+  attackmod: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  critFailEffect: jammed
+  damage: 5d6
+  description:
+    value: |
+      <p>
+        A long-distance sniper rifle. Holds 4 bullets in a magazine. +1 to Attack.
+      </p>
+  dvTable: DV Sniper Rifle
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 2
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+      - ammo
+    list: []
+    slots: 3
+    usedSlots: 0
+  isRanged: true
+  magazine:
+    max: 4
+    value: 0
+  price:
+    market: 1000
+  quality: excellent
+  revealed: true
+  rof: 1
+  source:
+    book: Core
+    page: 341
+  unarmedAutomaticCalculation: true
+  usage: equipped
+  usesType: magazine
+  weaponSkill: Shoulder Arms
+  weaponType: sniperRifle
+type: weapon

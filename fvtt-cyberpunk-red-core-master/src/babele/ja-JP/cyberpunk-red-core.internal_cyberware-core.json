@@ -1,0 +1,18 @@
+{
+  "label": "サイバー ウェア (コア)",
+  "mapping": {},
+  "entries": {
+    "External (7 Option Slots)": {
+      "name": "体表 (7 オプションスロット)",
+      "description": ""
+    },
+    "Fashionware (7 Option Slots)": {
+      "name": "ファッションウェア(7オプションスロット)",
+      "description": ""
+    },
+    "Internal (7 Option Slots)": {
+      "name": "体内 (7 オプションスロット)",
+      "description": ""
+    }
+  }
+}

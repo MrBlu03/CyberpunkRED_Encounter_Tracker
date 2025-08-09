@@ -1,0 +1,76 @@
+_id: 4lQ54pxcVlCLKaie
+_key: "!items!4lQ54pxcVlCLKaie"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/midnight-with-the-upload/smithy.svg
+name: Smithy
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  damage: 1d6
+  description:
+    value: |
+      <p>
+        Be prepared for anything. Enter a NET Architecture full of Black ICE and you
+        don&rsquo;t have have a Sword Program handy? Swap out your useless Banhammer
+        with the press of a button.
+      </p>
+      <p>
+        Use Meat Action to change any and all installed Sword Programs into Banhammer
+        Programs or vice versa.
+      </p>
+  dvTable: ""
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 0
+  installLocation: mall
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: true
+  isRanged: false
+  magazine:
+    max: 0
+    value: 0
+  modifiers:
+    attackmod:
+      type: modifier
+      value: null
+    damage:
+      type: modifier
+      value: null
+    magazine:
+      type: modifier
+      value: null
+    rof:
+      type: modifier
+      value: null
+    secondaryWeapon:
+      configured: false
+    slots:
+      type: modifier
+      value: null
+  price:
+    market: 500
+  providesHardening: false
+  rof: 1
+  size: 1
+  source:
+    book: MwtU
+    page: 5
+  type: cyberdeck
+  unarmedAutomaticCalculation: true
+  usesType: magazine
+  weaponSkill: ""
+  weaponType: ""
+type: itemUpgrade

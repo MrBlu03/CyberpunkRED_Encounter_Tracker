@@ -158,3 +158,22 @@ h2 {
     left: 10px;
     z-index: 1000;
 }
+
+/* Skills list styling */
+.skill-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.skill-item {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    padding: 4px 6px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 4px;
+}
+.skill-item .skill-name { flex: 1; }
+.skill-item .skill-level { width: 24px; text-align: right; }
+.skill-item .remove-skill-btn { margin-left: auto; }

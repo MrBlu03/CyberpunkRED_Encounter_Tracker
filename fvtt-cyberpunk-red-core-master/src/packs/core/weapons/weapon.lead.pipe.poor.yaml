@@ -1,0 +1,57 @@
+_id: wDPkVbsM0UK9vwoW
+_key: "!items!wDPkVbsM0UK9vwoW"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/weapons/LeadPipe_poor.svg
+name: Lead Pipe (Poor)
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: ""
+  canIgnoreArmor: true
+  concealable:
+    concealable: false
+    isConcealed: false
+  critFailEffect: jammed
+  damage: 3d6
+  description:
+    value: |
+      <p>
+        A hollow cylinder, typically made of metal or fiberglass. It may have conveyed
+        fluids once. If you roll 1 on Attack (Crit Fail) the weapon fails in some way
+        and requires an action to be made usable again.
+      </p>
+  dvTable: ""
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 2
+  ignoreArmorPercent: 50
+  ignoreBelowSP: 0
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+      - ammo
+    list: []
+    slots: 3
+    usedSlots: 0
+  isRanged: false
+  magazine:
+    max: 0
+    value: 0
+  price:
+    market: 50
+  quality: poor
+  revealed: true
+  rof: 2
+  source:
+    book: Core
+    page: 340
+  unarmedAutomaticCalculation: true
+  usage: equipped
+  usesType: magazine
+  weaponSkill: Melee Weapon
+  weaponType: heavyMelee
+type: weapon

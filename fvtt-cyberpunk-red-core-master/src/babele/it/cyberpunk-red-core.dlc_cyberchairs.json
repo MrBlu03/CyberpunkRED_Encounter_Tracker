@@ -1,0 +1,14 @@
+{
+  "label": "Cyberchair",
+  "mapping": {},
+  "entries": {
+    "Mercurius Cyberchair": {
+      "name": "Cyberchair Mercurio",
+      "description": "<p>Un modello sportivo, con un’impressionante quantità di caratteristiche rispetto al prezzo. Quando si controlla la Mercurius, la VEL del pilota diventa 5 (meno le Penalità dell'Arma- tura) e può usare tutte le normali opzioni di Movimento (Correre, Saltare, Arrampicarsi, Nuotare, Alzarsi ecc.).</p>\n<p>L’utente può controllarla senza mani, collegandosi a un Connettore, oppure usando il pannello inserito nel bracciolo.</p>\n<p>Qualsiasi Ferita Critica che riduca la VEL subita dal pilota, abbassa invece la VEL della Cyberchair.</p>\n<p>La Cyberchair Mercurius non può essere disattivata da effetti EMP, come gli impulsi di un Microwaver o gli effetti di programmi non-Black ICE.</p>"
+    },
+    "Spider Cyberchair": {
+      "name": "Cyberchair Ragno",
+      "description": "<p>Questa Cyberchair è il modello di punta della Rocklin. Quando si controlla la Mercurius, la VEL del pilota diventa 5 (meno le Penalità dell'Armatura) e può usare tutte le normali opzioni di Movimento (Correre, Saltare, Arrampicarsi, Nuotare, Alzarsi ecc.).</p>\n<p>La Spider ha quattro Slot per opzioni da Cyberbraccia, Cybergambe o Cyberarti*. Installare un'opzione nella Cyberchair costa quanto montarla in un Cyberarto.</p>\n<p>L’utente può controllarla senza mani, collegandosi a un Connettore, oppure usando il pannello inserito nel bracciolo. La mano usata per guidare non può essere impiegata per fare altro.</p>\n<p>Qualsiasi Ferita Critica che riduca la VEL subita dal pilota, abbassa invece la VEL della Cyberchair.</p>\n<p>La Cyberchair Spider e tutte le opzioni installate non possono essere disattivate da effetti EMP, come gli impulsi di un Microwaver o gli effetti di programmi non-Black ICE.</p>\n<p><em>*L'installazione dell'opzione cyberclimp non è attualmente supportata</em></p>"
+    }
+  }
+}

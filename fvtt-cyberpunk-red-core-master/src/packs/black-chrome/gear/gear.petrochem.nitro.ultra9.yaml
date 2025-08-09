@@ -1,0 +1,36 @@
+_id: oMgMhUUI35PyKJ50
+_key: "!items!oMgMhUUI35PyKJ50"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/black-chrome/nitro-ultra9.svg
+name: Petrochem Nitro Ultra9
+system:
+  amount: 1
+  brand: Petrochem
+  concealable:
+    concealable: true
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        Can be poured into a Vehicle's tank to refill it as an Action. Gives bonuses
+        to movement at the expense of safety.
+      </p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 0
+    usedSlots: 0
+  isElectronic: false
+  price:
+    market: 100
+  providesHardening: false
+  revealed: true
+  source:
+    book: BC
+    page: 49
+  usage: toggled
+type: gear

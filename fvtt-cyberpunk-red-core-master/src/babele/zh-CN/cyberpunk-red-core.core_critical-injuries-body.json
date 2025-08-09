@@ -1,0 +1,50 @@
+{
+  "label": "Critical Injuries (Body)",
+  "mapping": {},
+  "entries": {
+    "Broken Arm": {
+      "name": "Broken Arm",
+      "description": "<p>Arm unusable. Drop what it was holding</p>"
+    },
+    "Broken Leg": {
+      "name": "Broken Leg",
+      "description": "<p>-4 MOVE (minimum MOVE of 1).</p>"
+    },
+    "Broken Ribs": {
+      "name": "Broken Ribs",
+      "description": "<p>Suffer crit damage at end of turn if you move more than 4m/yrds on foot.</p>"
+    },
+    "Collapsed Lung": {
+      "name": "Collapsed Lung",
+      "description": "<p>-2 MOVE (minimum MOVE of 1).</p>"
+    },
+    "Crushed Fingers": {
+      "name": "Crushed Fingers",
+      "description": "<p>-4 to hand actions.</p>"
+    },
+    "Dismembered Arm": {
+      "name": "Dismembered Arm",
+      "description": "<p>Arm removed, drop anything it was holding.</p>"
+    },
+    "Dismembered Hand": {
+      "name": "Dismembered Hand",
+      "description": "<p>Hand removed, drop anything it was holding.</p>"
+    },
+    "Dismembered Leg": {
+      "name": "Dismembered Leg",
+      "description": "<p>Leg is removed. Cannot Dodge. -6 MOVE (minimum MOVE of 1).</p>"
+    },
+    "Foreign Object": {
+      "name": "Foreign Object",
+      "description": "<p>Suffer Crit damage at end of turn if move more than 4m/yrds on foot.</p>"
+    },
+    "Spinal Injury": {
+      "name": "Spinal Injury",
+      "description": "<p>Next turn: No action, move only.</p>"
+    },
+    "Torn Muscle": {
+      "name": "Torn Muscle",
+      "description": "<p>-2 to Melee Attacks.</p>"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+_id: qRkCxq0KTuBnw2wj
+_key: "!items!qRkCxq0KTuBnw2wj"
+effects:
+  - Z1UtRgahC2BAOxh5
+img: systems/cyberpunk-red-core/icons/compendium/critical_injuries/damaged_ear.svg
+name: Damaged Ear
+system:
+  deathSaveIncrease: false
+  description:
+    value: |
+      <p>
+        If move more than 4m/yds in a Turn, cannot move next turn. -2 to hearing based
+        Perception.
+      </p>
+  favorite: false
+  location: head
+  quickFix:
+    dvFirstAid: 0
+    dvParamedic: 13
+    type: paramedic
+  revealed: true
+  source:
+    book: Core
+    page: 188
+  treatment:
+    dvParamedic: 0
+    dvSurgery: 13
+    type: surgery
+  usage: toggled
+type: criticalInjury

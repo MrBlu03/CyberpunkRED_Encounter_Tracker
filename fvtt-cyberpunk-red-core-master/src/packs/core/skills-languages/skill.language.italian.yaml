@@ -1,0 +1,20 @@
+_id: DMfVyd7iL2QWBc5N
+_key: "!items!DMfVyd7iL2QWBc5N"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/default/Default_Skill.svg
+name: Language (Italian)
+system:
+  basic: false
+  category: educationSkills
+  core: false
+  description:
+    value: ""
+  difficulty: typical
+  favorite: false
+  level: 4
+  skillType: language
+  source:
+    book: Core
+    page: 45
+  stat: int
+type: skill

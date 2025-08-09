@@ -1,0 +1,15 @@
+# Test that the system builds corectly
+
+test-build:
+  stage: test
+  script:
+    - npm run build
+  needs:
+    - job: init
+      artifacts: true
+  rules:
+    # Don't run if we're in the cleanup-dev schedule
+    - if: $CPR_SCHEDULE == "cleanup-dev"
+      when: never
+    # Run on MRs
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"

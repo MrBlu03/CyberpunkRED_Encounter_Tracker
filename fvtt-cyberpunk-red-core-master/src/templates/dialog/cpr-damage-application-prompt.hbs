@@ -1,0 +1,71 @@
+<form class="dialog-sheet">
+  <div class="dialog-header flexcol">
+    <div class="text-center">
+      {{allowedTypesMessage}}
+    </div>
+    <div class="text-padding-left-massive">
+      <ul>
+        {{#each allowedActors as |actor a| }}
+          <li>
+            <span {{#if (cprCompare a "===" ../count)}}class="text-semi"{{/if}}>
+              {{actor.name}}
+            </span>
+          </li>
+        {{/each}}
+      </ul>
+    </div>
+    {{#if (cprCompare forbiddenActors.length ">" 0) }}
+    <hr/>
+      <div class="text-center">
+        {{localize "CPR.chat.damageApplication.prompt.forbiddenTypes"}}
+      </div>
+      <div class="text-padding-left-massive">
+        <ul>
+          {{#each forbiddenActors as |actor| }}
+            <li>{{actor.name}}</li>
+          {{/each}}
+        </ul>
+      </div>
+    {{/if}}
+  </div>
+  <div class="dialog-grid flexcol">
+    <ol class="dialog-list">
+      <li class="dialog-item flexrow">
+        <div class="dialog-item-name">
+          {{localize "CPR.chat.damageApplication.prompt.useShield"}}
+        </div>
+        <div class="dialog-item-input">
+          <input type="checkbox" name="useShield" {{checked useShield}}/>
+        </div>
+      </li>
+      <li class="dialog-item flexrow">
+        <div class="dialog-item-name">
+          {{localize "CPR.chat.damageApplication.prompt.damageReductionRole"}}
+        </div>
+        <div class="dialog-item-input">
+          <input type="checkbox" name="damageReductionRole" {{checked damageReductionRole}}/>
+        </div>
+      </li>
+      <li class="dialog-item flexrow">
+        <div class="dialog-item-name">
+          {{localize "CPR.chat.damageApplication.prompt.damageReductionAE"}}
+        </div>
+        <div class="dialog-item-input">
+          <input type="checkbox" name="damageReductionAE"  {{checked damageReductionAE}}/>
+        </div>
+      </li>
+      {{#if showBrainDamageReduction }}
+        <hr/>
+        <li class="dialog-item flexrow">
+          <div class="dialog-item-name">
+            {{localize "CPR.chat.damageApplication.prompt.brainDamageReduction"}}
+          </div>
+          <div class="dialog-item-input">
+            <input type="checkbox" name="brainDamageReduction" {{checked brainDamageReduction}}/>
+          </div>
+        </li>
+      {{/if}}
+    </ol>
+  </div>
+  {{> "systems/cyberpunk-red-core/templates/dialog/cpr-dialog-buttons.hbs"}}
+</form>

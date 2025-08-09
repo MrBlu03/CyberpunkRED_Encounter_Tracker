@@ -1,0 +1,78 @@
+{
+  "label": "Armadura",
+  "mapping": {},
+  "entries": {
+    "Bodyweight Suit": {
+      "name": "Macacão especializado",
+      "description": "<p>Macacão reforçado, peça única. Pode armazenar um Console e suporta plugs de interface. Obrigatório ser usado nos espaços de Corpo e Cabeça. +1 de espaços para Hardwares no Console equipado. Sem penalidade de armadura</p>"
+    },
+    "Bullet Proof Shield": {
+      "name": "Escudo à prova de bala",
+      "description": "<p>Requer um braço e tem VP que é reduzido por danos.</p>"
+    },
+    "Flak (Body)": {
+      "name": "Armadura (corpo)",
+      "description": "<p>Armadura chapada de metal para resistir aos golpes mais poderosos. -4 a REF, DEX e MOVE.</p>"
+    },
+    "Flak (Head)": {
+      "name": "Armadura (cabeça)",
+      "description": "<p>Armadura chapada de metal para resistir aos acertos mais poderosos. -4 para REF, DEX e MOVE.</p>"
+    },
+    "Heavy Armorjack (Body)": {
+      "name": "Colete Pesado",
+      "description": "<p>Versão mais pesada de um colete. -2 para REF, DEX e MOVE.</p>"
+    },
+    "Heavy Armorjack (Head)": {
+      "name": "Capacete Pesado",
+      "description": "<p>A versão mais pesada de um capacete. -2 para REF, DEX e MOVE.</p>"
+    },
+    "Kevlar® (Body)": {
+      "name": "Kevlar® (Body)",
+      "description": "<p>Standard Kevlar clothing. No armor penalty.</p>\n"
+    },
+    "Kevlar® (Head)": {
+      "name": "Kevlar® (Head)",
+      "description": "<p>Standard Kevlar for your head. No armor penalty.</p>\n"
+    },
+    "Leathers (Body)": {
+      "name": "Couro (Corpo)",
+      "description": "<p>Armadura de Couro Simples. Sem penalidade de armadura.</p>"
+    },
+    "Leathers (Head)": {
+      "name": "Couros (Cabeça)",
+      "description": "<p>Capacete de Couro simples para sua cabeça. Sem penalidade de armadura.</p>"
+    },
+    "Light Armorjack (Body)": {
+      "name": "Colete Leve",
+      "description": "<p>Versão leve de um colete. Sem penalidade de armadura.</p>"
+    },
+    "Light Armorjack (Head)": {
+      "name": "Capacete Leve",
+      "description": "<p>Versão leve de um capacete. Sem penalização de armadura.</p>"
+    },
+    "Medium Armorjack (Body)": {
+      "name": "Colete Médio",
+      "description": "<p>Versão média de um colete. -2 para REF, DEX e MOVE.</p>"
+    },
+    "Medium Armorjack (Head)": {
+      "name": "Capacete Médio (cabeça)",
+      "description": "<p>A versão média de um capacete. -2 para REF, DEX e MOVE.</p>"
+    },
+    "Metalgear® (Body)": {
+      "name": "Metalgear® (Body)",
+      "description": "<p>\n  Heaviest and most powerful armor in circulation. -4 to REF, DEX, and MOVE.\n</p>\n"
+    },
+    "Metalgear® (Head)": {
+      "name": "Metalgear® (Head)",
+      "description": "<p>\n  Heaviest and most powerful armor in circulation. Protects your head -4 to REF,\n  DEX, and MOVE.\n</p>\n"
+    },
+    "Skin Weave": {
+      "name": "Trenó de Pele",
+      "description": "<p>Armor Item for Skin Weave Cyberware.</p>"
+    },
+    "Subdermal Armor": {
+      "name": "Armadura Subdermal",
+      "description": "<p>Armor Item for Subdermal Armor Cyberware.</p>"
+    }
+  }
+}

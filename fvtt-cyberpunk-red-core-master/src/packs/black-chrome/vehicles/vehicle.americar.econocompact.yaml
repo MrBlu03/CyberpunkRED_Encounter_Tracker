@@ -1,0 +1,31 @@
+_id: ESkB5MZNBQ9Kh5bw
+_key: "!items!ESkB5MZNBQ9Kh5bw"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/black-chrome/econocompact.svg
+name: AmeriCar EconoCompact
+system:
+  brand: AmeriCar
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>Small and low-cost Compact Groundcar.</p>
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  price:
+    market: 20000
+  sdp: 50
+  seats: 3
+  source:
+    book: BC
+    page: 64
+  speedCombat: 20
+  speedNarrative: 100 MPH / 161 KPH
+type: vehicle

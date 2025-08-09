@@ -1,0 +1,52 @@
+_id: Mnf5BkWEt22EvAfK
+_key: "!items!Mnf5BkWEt22EvAfK"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/weapons/SniperRifle.svg
+name: Nomad Pneumatic Bolt Gun
+system:
+  ammoVariety:
+    - arrow
+  attackmod: 0
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  critFailEffect: jammed
+  damage: 4d6
+  description:
+    value: |
+      <p>
+        Capable of firing all Non-Basic ammunition, this weapon is still as versatile
+        as when it was invented over two decades ago.
+      </p>
+  dvTable: DV Sniper Rifle
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 2
+  installedItems:
+    allowed: true
+    allowedTypes: []
+    list: []
+    slots: 0
+    usedSlots: 0
+  isRanged: true
+  magazine:
+    max: 8
+    value: 0
+  price:
+    market: 500
+  quality: standard
+  revealed: true
+  rof: 1
+  source:
+    book: 12DoG
+    page: 5
+  unarmedAutomaticCalculation: true
+  usage: equipped
+  usesType: magazine
+  weaponSkill: Shoulder Arms
+  weaponType: sniperRifle
+type: weapon

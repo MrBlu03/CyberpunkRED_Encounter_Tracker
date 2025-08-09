@@ -1,0 +1,105 @@
+/* ------------------------------------- */
+/* Glitch
+/* ------------------------------------- */
+
+.glitch {
+  @offset1: 0.125rem;
+  @offset2: -0.125rem;
+  @highlight1: var(--cpr-pause-highlight1);
+  @highlight2: var(--cpr-pause-highlight2);
+
+  margin: 0 auto;
+  text-align: center;
+  text-transform: uppercase;
+  transform: scale3d(1, 1, 1);
+
+  &::before,
+  &::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+  }
+
+  &::before {
+    left: @offset1;
+    text-shadow: -0.125rem 0 @highlight1;
+    clip: rect(1.5rem, 34.375rem, 5.625rem, 0);
+    animation: glitch-anim-2 7s infinite linear alternate-reverse;
+  }
+
+  &::after {
+    left: @offset2;
+    text-shadow: -0.125rem 0 @highlight2;
+    clip: rect(80.313rem, 34.375rem, 8.75rem, 0);
+    animation: glitch-anim 6.5s infinite linear alternate-reverse;
+  }
+}
+
+@keyframes glitch-anim {
+  0% {
+    clip: rect(60.313rem, 624.938rem, 3.188rem, 0);
+  }
+  10% {
+    clip: rect(10.375rem, 624.938rem, 3.188rem, 0);
+  }
+  20% {
+    clip: rect(0.375rem, 624.938rem, 8.5rem, 0);
+  }
+  30% {
+    clip: rect(3.063rem, 624.938rem, 4.25rem, 0);
+  }
+  40% {
+    clip: rect(2.313rem, 624.938rem, 7.5rem, 0);
+  }
+  50% {
+    clip: rect(7.688rem, 624.938rem, 4.063rem, 0);
+  }
+  60% {
+    clip: rect(50.5rem, 624.938rem, 9rem, 0);
+  }
+  70% {
+    clip: rect(0.688rem, 624.938rem, 1rem, 0);
+  }
+  80% {
+    clip: rect(10.375rem, 624.938rem, 4.188rem, 0);
+  }
+  90% {
+    clip: rect(2.438rem, 624.938rem, 4.813rem, 0);
+  }
+  100% {
+    clip: rect(2.438rem, 624.938rem, 3.313rem, 0);
+  }
+}
+
+@keyframes glitch-anim-2 {
+  20% {
+    clip: rect(6.688rem, 624.938rem, 4.688rem, 0);
+  }
+  30% {
+    clip: rect(0.5rem, 624.938rem, 0.188rem, 0);
+  }
+  40% {
+    clip: rect(70.5rem, 624.938rem, 8.938rem, 0);
+  }
+  50% {
+    clip: rect(140.375rem, 624.938rem, 7.5rem, 0);
+  }
+  60% {
+    clip: rect(4.938rem, 624.938rem, 6.875rem, 0);
+  }
+  70% {
+    clip: rect(0.625rem, 624.938rem, 2.063rem, 0);
+  }
+  80% {
+    clip: rect(80.313rem, 624.938rem, 0.563rem, 0);
+  }
+  90% {
+    clip: rect(8.75rem, 624.938rem, 1.438rem, 0);
+  }
+  100% {
+    clip: rect(0.313rem, 624.938rem, 6.875rem, 0);
+  }
+}

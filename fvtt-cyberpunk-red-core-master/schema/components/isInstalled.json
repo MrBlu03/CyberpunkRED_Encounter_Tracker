@@ -1,0 +1,5 @@
+{
+  "description": "Is the item installed? SHould always be false in compendia",
+  "type": "boolean",
+  "enum": false
+}

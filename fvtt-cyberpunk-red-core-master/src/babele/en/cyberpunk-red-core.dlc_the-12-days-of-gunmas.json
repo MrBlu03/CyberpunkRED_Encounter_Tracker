@@ -1,0 +1,74 @@
+{
+  "label": "The 12 Days of Gunmas",
+  "mapping": {
+    "dvTable": "system.dvTable"
+  },
+  "entries": {
+    "Nova Model 757 Rounds": {
+      "name": "Nova Model 757 Rounds",
+      "description": "<p>\n  For use only in the Nova Model 757 Cityhunter. Comes in packs of 18 instead of\n  the normal 10.\n</p>\n\n<p>\n  Req Targeting Scope Cyberware, otherwise won't fire. If miss single attack by\n  4 or less, roll second attack at same DV 1d10+10 (not normal stat). Can add\n  luck. Target can dodge the second roll as normal if able to do so.\n</p>\n"
+    },
+    "Sub-Flechette Rounds": {
+      "name": "Sub-Flechette Rounds",
+      "description": "<p>\n  Special ammo to only be used with the Malorian Arms Sub-Flechette Gun. Ablates\n  armor by 4 SP per hit.\n</p>\n"
+    },
+    "ARS-5 Submachine Gun": {
+      "name": "ARS-5 Submachine Gun",
+      "description": "<p>\n  This heavy SMG is the complete package; it comes with a Smartgun Link,\n  Infrared Nightvision Scope, and a Sniping Scope*.\n</p>\n<p><em>*All three must be manually added after acquiring the weapon</em></p>\n",
+      "dvTable": "DV SMG"
+    },
+    "Chainknife": {
+      "name": "Chainknife",
+      "description": "<p>\n  Takes an action to rev up, but once revved is a powerful melee weapon. When\n  not revved deals 2d6 damage*.\n</p>\n<p>\n  <em\n    >*Not revved mode not currently supported, so will need to manually reduce\n    damage</em\n  >\n</p>\n"
+    },
+    "Crusher": {
+      "name": "Crusher",
+      "description": "<p>A pistol that fires shotgun shells. What's not to love.</p>\n",
+      "dvTable": "DV Pistol"
+    },
+    "Dragon Flamethrower": {
+      "name": "Dragon Flamethrower",
+      "description": "<p>\n  Fire at your finger tips. Can only fire Incendiary Shotgun Shells, but targets\n  ignited by this weapon burn for 4HP a turn.\n</p>\n"
+    },
+    "Hellbringer": {
+      "name": "Hellbringer",
+      "description": "<p>\n  When this things shoots, you know about it. If fired by someone with less than\n  10 BODY, this pistol jams. An action is required to unjam it.\n</p>\n",
+      "dvTable": "DV Pistol"
+    },
+    "Multiple Ammunition Pistol": {
+      "name": "Multiple Ammunition Pistol",
+      "description": "<p>\n  A very heavy pistol capable of loading up to five different ammo types at\n  once*, with the user able to pick between them before firing.\n</p>\n<p>\n  <em>*Currently not supported, so users have to manually change ammo types</em>\n</p>\n",
+      "dvTable": "DV Pistol"
+    },
+    "Nomad Pneumatic Bolt Gun": {
+      "name": "Nomad Pneumatic Bolt Gun",
+      "description": "<p>\n  Capable of firing all Non-Basic ammunition, this weapon is still as versatile\n  as when it was invented over two decades ago.\n</p>\n",
+      "dvTable": "DV Sniper Rifle"
+    },
+    "Nova Model 757 Cityhunter": {
+      "name": "Nova Model 757 Cityhunter",
+      "description": "<p>\n  This pistol fires it's own custom rounds bought in packs of 18, though they\n  cost the same as a pack of 10. Comes with a Smartgun Link*.\n</p>\n<p><em>*Smartgun Link must be manually added after acquiring the weapon</em></p>\n",
+      "dvTable": "DV Pistol"
+    },
+    "ST-5 Assault Rifle": {
+      "name": "ST-5 Assault Rifle",
+      "description": "<p>\n  A - relatively - reliable gun. If you roll 1 on Attack (Crit fail) you must\n  then toss a coin; if you win the gun fires as normal, while if you lose the\n  gun jams and requires using an action to clear.\n</p>\n",
+      "dvTable": "DV Assault Rifle"
+    },
+    "Sub-Flechette Gun": {
+      "name": "Sub-Flechette Gun",
+      "description": "<p>\n  This SMG can only fire it's own custom Armor-Piercing Ammunition, however that\n  ammo ablates by 4 when dealing damage. Comes with a Smartgun Link*.\n</p>\n<p><em>*Smartgun Link must be manually added after acquiring the weapon</em></p>\n",
+      "dvTable": "DV SMG"
+    },
+    "Teen Dreem": {
+      "name": "Teen Dreem",
+      "description": "<p>\n  This SMG can use Autofire and Suppressive Fire all the way down to it's last 2\n  bullets. Caution is required however, as using either firing mode well melt\n  the gun beyond repair.\n</p>\n",
+      "dvTable": "DV SMG"
+    },
+    "WAA Bullpup Assault Weapon": {
+      "name": "WAA Bullpup Assault Weapon",
+      "description": "<p>\n  A bullpup rifle in operation for over two decades. Can fire non-basic\n  ammunition and comes with a Smartgun Link*.\n</p>\n<p><em>*Smartgun Link must be manually added after acquiring the weapon</em></p>\n",
+      "dvTable": "DV Assault Rifle"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+_id: 3g3tb3EuuakVaYgt
+_key: "!items!3g3tb3EuuakVaYgt"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/clothing/generic_jacket.svg
+name: Bag Lady Chic Jacket
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        Follow the latest dumpster diver fashion trends! Torn and worn out clothes,
+        perfect if you want that homeless look.
+      </p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: false
+  price:
+    market: 20
+  providesHardening: false
+  revealed: true
+  source:
+    book: Core
+    page: 356
+  style: bagLadyChic
+  type: jacket
+  usage: equipped
+type: clothing

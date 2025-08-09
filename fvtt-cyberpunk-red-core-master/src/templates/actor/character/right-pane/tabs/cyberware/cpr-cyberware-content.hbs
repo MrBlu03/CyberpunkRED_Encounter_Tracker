@@ -1,0 +1,5 @@
+{{#each actor.system.installedItems.list as |id| }}
+  {{#if (cprCompare (cprGetProp (cprGetOwnedItem ../actor id) "system.type") "===" ../cyberwareType) }}
+    {{> "systems/cyberpunk-red-core/templates/actor/character/right-pane/tabs/cyberware/cpr-cyberware-foundational-content.hbs" (cprMergeForPartialArg "actor,cyberware" ../actor (cprGetOwnedItem ../actor id))}}
+  {{/if}}
+{{/each}}

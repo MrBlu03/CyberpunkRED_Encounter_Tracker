@@ -1,0 +1,55 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/CPRC-Table",
+  "definitions": {
+    "CPRC-Table": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "_id": {
+          "$ref": "./components/id.json"
+        },
+        "_key": {
+          "$ref": "./components/key.json"
+        },
+        "description": {
+          "type": "string"
+        },
+        "displayRoll": {
+          "type": "boolean"
+        },
+        "formula": {
+          "type": "string",
+          "pattern": "^(?:[0-9]{1,4}d[0-9]{1,4})?$",
+          "description": "This matches XXXXdXXXX which should be plenty..."
+        },
+        "img": {
+          "$ref": "./components/img.json"
+        },
+        "name": {
+          "$ref": "./components/name.json"
+        },
+        "replacement": {
+          "type": "boolean"
+        },
+        "results": {
+          "type": "array",
+          "items": {
+            "$ref": "./components/id.json"
+          }
+        }
+      },
+      "required": [
+        "_id",
+        "_key",
+        "description",
+        "displayRoll",
+        "formula",
+        "img",
+        "name",
+        "replacement",
+        "results"
+      ]
+    }
+  }
+}

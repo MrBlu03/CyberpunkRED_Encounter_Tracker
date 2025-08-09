@@ -1,0 +1,42 @@
+{
+  "label": "Exotiques de 2045",
+  "mapping": {},
+  "entries": {
+    "Appetite Controller": {
+      "name": "Contrôleur d'appétit",
+      "description": "<p>Supprime la sensation de faim. L'utilisateur ignore les pénalités de perte d'Humanité dues à un traumatisme de famine mais l'utilisateur peut encore mourir de faim. Lancez une sauvegarde contre la mort au début de la 7e journée consécutive sans manger. +1 aux sauvegardes successives contre la Mort par la suite.</p>\n<p>Nécessite un Biomoniteur.</p>\n"
+    },
+    "Combat Jaw": {
+      "name": "Mâchoire de combat",
+      "description": "<p>Arme de mêlée très lourde implantée.</p>\n"
+    },
+    "Combat Tail": {
+      "name": "Queue de combat",
+      "description": "<p>Arme de mêlée lourde implantée. Nécessite un lien neural.</p>\n"
+    },
+    "Extra-Jointed Cyberarm Upgrade": {
+      "name": "Amélioration de cyberbras Extra-articulation",
+      "description": "<p>Améliore les articulations de cyberbras. Contorsion +2.</p>\n"
+    },
+    "Extra-Jointed Cyberleg Upgrade": {
+      "name": "Amélioration de cyberjambe Extra-articulation",
+      "description": "<p>Améliore les articulations de cyberjambe. Contorsion +2.</p>\n"
+    },
+    "Firebreather": {
+      "name": "Souffle de feu",
+      "description": "<p>Fusil à pompe exotique implanté. Ne peux contenir qu'une seule cartouche de fusil à pompe chevrotine incendiaire. </p>\n"
+    },
+    "Heuristic Health Monitor": {
+      "name": "Moniteur Heuristique de Santé",
+      "description": "<p>Nécessite un biomoniteur. Pour voir les PS en un coup d'œil.</p>\n"
+    },
+    "NeuTongue": {
+      "name": "NovLangue",
+      "description": "<p>Simule les sensations de saveur. Utilise un Agent lié pour personnaliser les profils de saveurs. Peut être désactivé sans Action. Aucun sens du goût lorsqu'il est désactivé.</p>\n<p>Remplace la langue de chair.</p>"
+    },
+    "Reflex Co-Processor": {
+      "name": "Coprocesseur de Réflexe",
+      "description": "<p>Neuromatériel. Permet l'esquive des balles indépendamment des REF.</p>\n"
+    }
+  }
+}

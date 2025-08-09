@@ -1,0 +1,66 @@
+{
+  "label": "Programs",
+  "mapping": {},
+  "entries": {
+    "Armor": {
+      "name": "Armor",
+      "description": "<p>Reduce brain damage by 4 while Rezzed. Only 1 copy Rezzed at a time. Each copy has 1 use per Netrun.</p>"
+    },
+    "Banhammer": {
+      "name": "Banhammer",
+      "description": "<p>Deals 3d6 REZ to non-Black ICE or 2d6 Rez damage to Black ICE. </p>"
+    },
+    "DeckKRASH": {
+      "name": "DeckKRASH",
+      "description": "<p>Forces Netrunner to Jack Out unsafely. </p>"
+    },
+    "Eraser": {
+      "name": "Eraser",
+      "description": "<p>+2 to Cloak Checks while Rezzed.</p>"
+    },
+    "Flak": {
+      "name": "Flak",
+      "description": "<p>Non-Black ICE attacks against you are reduced to 0 while Rezzed. Only 1 copy may be Rezzed at a time. Each copy has 1 use per Netrun.</p>"
+    },
+    "Hellbolt": {
+      "name": "Hellbolt",
+      "description": "<p>2d6 damage direct to Netrunner's Brain. Their gear catches fire if not insulated. </p>"
+    },
+    "Nervescrub": {
+      "name": "Nervescrub",
+      "description": "<p>Lowers a Netrunner's INT REF and DEX by 1d6 (min. 1) for 1 hour.</p>"
+    },
+    "Poison Flatline": {
+      "name": "Poison Flatline",
+      "description": "<p>Destroys a non-Black ICE on the enemy's cyberdeck at random.</p>"
+    },
+    "See Ya": {
+      "name": "See Ya",
+      "description": "<p>+2 to Pathfinder Checks while Rezzed.</p>"
+    },
+    "Shield": {
+      "name": "Shield",
+      "description": "<p>The first successful brain damage attack from a Non-Black ICE Program is stopped. Only 1 copy may be Rezzed at a time. Each copy has 1 use per Netrun.</p>"
+    },
+    "Speedy Gonzalvez": {
+      "name": "Speedy Gonzalvez",
+      "description": "<p>+2 to Speed while Rezzed.</p>"
+    },
+    "Superglue": {
+      "name": "Superglue",
+      "description": "<p>The netrunner cannot progress further into the Local NET or safely jacking out for 1d6 rounds.1 use per netrun. </p>"
+    },
+    "Sword": {
+      "name": "Sword",
+      "description": "<p>Deals 3d6 REZ to Black ICE or 2d6 Rez damage to non-Black ICE. </p>"
+    },
+    "Vrizzbolt": {
+      "name": "Vrizzbolt",
+      "description": "<p>1d6 damage direct to Netrunner's Brain. Lowers total net actions they can take by 1 (min. 2) on their next turn. </p>"
+    },
+    "Worm": {
+      "name": "Worm",
+      "description": "<p>+2 to Backdoor Checks while Rezzed.</p>"
+    }
+  }
+}

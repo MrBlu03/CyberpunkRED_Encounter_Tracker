@@ -1,0 +1,53 @@
+_id: CW4Vmiv2Rqo4JZxR
+_key: "!items!CW4Vmiv2Rqo4JZxR"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/weapons/veryHeavyPistol.svg
+name: Westwood
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: Nova Arms
+  concealable:
+    concealable: false
+    isConcealed: false
+  critFailEffect: jammed
+  damage: 4d6
+  description:
+    value: |
+      <p>
+        The Westwood is a Very Heavy Pistol. 6 shot capacity that can't be upgraded
+        with magazine attachments.
+      </p>
+  dvTable: DV Pistol
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 1
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+      - ammo
+    list: []
+    slots: 3
+    usedSlots: 0
+  isRanged: true
+  magazine:
+    max: 6
+    value: 0
+  price:
+    market: 500
+  quality: standard
+  revealed: true
+  rof: 1
+  source:
+    book: BC
+    page: 121
+  unarmedAutomaticCalculation: true
+  usage: toggled
+  usesType: magazine
+  weaponSkill: Handgun
+  weaponType: vHeavyPistol
+type: weapon

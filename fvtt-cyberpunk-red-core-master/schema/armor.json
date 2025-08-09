@@ -1,0 +1,148 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$ref": "#/definitions/CPRC-Armor",
+  "definitions": {
+    "CPRC-Armor": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "_id": {
+          "$ref": "./components/id.json"
+        },
+        "_key": {
+          "$ref": "./components/key.json"
+        },
+        "effects": {
+          "$ref": "./components/effects.json"
+        },
+        "flags": {
+          "$ref": "./components/flags.json"
+        },
+        "img": {
+          "$ref": "./components/img.json"
+        },
+        "name": {
+          "$ref": "./components/name.json"
+        },
+        "system": {
+          "$ref": "#/definitions/System"
+        },
+        "type": {
+          "description": "The Foundry/System Item type",
+          "type": "string",
+          "const": "armor"
+        }
+      },
+      "required": ["_id", "_key", "effects", "img", "name", "system", "type"]
+    },
+    "System": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "brand": {
+          "$ref": "./components/physical/brand.json"
+        },
+        "bodyLocation": {
+          "$ref": "#/definitions/Location"
+        },
+        "concealable": {
+          "$ref": "./components/physical/concealable.json"
+        },
+        "description": {
+          "$ref": "./components/common/description.json"
+        },
+        "equipped": {
+          "$ref": "./components/equippable/equipped.json"
+        },
+        "favorite": {
+          "$ref": "./components/common/favorite.json"
+        },
+        "headLocation": {
+          "$ref": "#/definitions/Location"
+        },
+        "installedItems": {
+          "$ref": "./components/container/installedItems.json"
+        },
+        "isElectronic": {
+          "$ref": "./components/electronic/isElectronic.json"
+        },
+        "isBodyLocation": {
+          "type": "boolean"
+        },
+        "isHeadLocation": {
+          "type": "boolean"
+        },
+        "isShield": {
+          "type": "boolean"
+        },
+        "penalty": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "price": {
+          "$ref": "./components/valuable/price.json"
+        },
+        "providesHardening": {
+          "$ref": "./components/electronic/providesHardening.json"
+        },
+        "revealed": {
+          "$ref": "./components/effects/revealed.json"
+        },
+        "shieldHitPoints": {
+          "$ref": "#/definitions/ShieldHitPoints"
+        },
+        "source": {
+          "$ref": "./components/common/source.json"
+        },
+        "usage": {
+          "$ref": "./components/effects/usage.json"
+        }
+      },
+      "required": [
+        "brand",
+        "bodyLocation",
+        "concealable",
+        "description",
+        "equipped",
+        "favorite",
+        "headLocation",
+        "installedItems",
+        "isBodyLocation",
+        "isHeadLocation",
+        "isShield",
+        "penalty",
+        "price",
+        "revealed",
+        "shieldHitPoints",
+        "source",
+        "usage"
+      ]
+    },
+    "Location": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ablation": {
+          "type": "integer"
+        },
+        "sp": {
+          "type": "integer"
+        }
+      },
+      "required": ["ablation", "sp"]
+    },
+    "ShieldHitPoints": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "max": {
+          "type": "integer"
+        },
+        "value": {
+          "type": "integer"
+        }
+      },
+      "required": ["max", "value"]
+    }
+  }
+}

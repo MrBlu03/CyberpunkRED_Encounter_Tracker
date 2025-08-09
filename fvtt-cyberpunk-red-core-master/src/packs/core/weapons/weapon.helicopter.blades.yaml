@@ -1,0 +1,56 @@
+_id: vqUPo2YSPLAcV04T
+_key: "!items!vqUPo2YSPLAcV04T"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/weapons/HelicopterBlade.svg
+name: Helicopter Blades
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: ""
+  canIgnoreArmor: true
+  concealable:
+    concealable: false
+    isConcealed: false
+  critFailEffect: jammed
+  damage: 4d6
+  description:
+    value: |
+      <p>
+        Taken from a derelict aircraft, these blades are capable of slicing most
+        things easily.
+      </p>
+  dvTable: ""
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 2
+  ignoreArmorPercent: 50
+  ignoreBelowSP: 0
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+      - ammo
+    list: []
+    slots: 3
+    usedSlots: 0
+  isRanged: false
+  magazine:
+    max: 0
+    value: 0
+  price:
+    market: 500
+  quality: standard
+  revealed: true
+  rof: 1
+  source:
+    book: Core
+    page: 340
+  unarmedAutomaticCalculation: true
+  usage: equipped
+  usesType: magazine
+  weaponSkill: Melee Weapon
+  weaponType: vHeavyMelee
+type: weapon

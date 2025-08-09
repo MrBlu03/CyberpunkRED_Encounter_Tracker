@@ -1,0 +1,429 @@
+{
+  "label": "Cyborgizacje",
+  "mapping": {
+    "dvTable": "system.dvTable"
+  },
+  "entries": {
+    "Amplified Hearing": {
+      "name": "Ulepszony słuch",
+      "description": "<p>Provides +2 to perception checks that use hearing.</p>"
+    },
+    "Anti-Dazzle": {
+      "name": "Antyoślepiacz",
+      "description": "<p>Musi być sparowany. Zapewnia niewrażliwość na oślepiąjace efekty (takie jak granaty hukbłyskowe).</p>"
+    },
+    "Artificial Shoulder Mount": {
+      "name": "Stelaż na sztuczne ramiona",
+      "description": "<p>Pozwala na zainstalowanie dodatkowej pary cyberrąk.</p>"
+    },
+    "Audio Recorder": {
+      "name": "Rejestrator dźwięku",
+      "description": "<p>Nagrywa dźwięk. Można połączyć z czipem lub agentem.</p>"
+    },
+    "AudioVox": {
+      "name": "AudioVox",
+      "description": "<p>Syntezator głosu. Zapewnia +2 do testów Aktorstwa i Gry na instrumencie.</p>"
+    },
+    "Big Knucks": {
+      "name": "Jebkłykcie",
+      "description": "<p>Pancerne kłykcie funkcjonujące jako średnia broń biała.</p>"
+    },
+    "Biomonitor": {
+      "name": "Biomonitor",
+      "description": "<p>Wyświetla funkcje życiowe. Może zostać podłączony do agenta.</p>"
+    },
+    "Braindance Recorder": {
+      "name": "Rejestrator braindance'u",
+      "description": "<p>Zapisuje wspomnienia w formie braindance'u. Idealne dla mediów.</p>"
+    },
+    "Bug Detector": {
+      "name": "Wykrywacz podsłuchu",
+      "description": "<p>Ostrzega o podsłuchach w zasięgu 2m/yd.</p>"
+    },
+    "Chemical Analyzer": {
+      "name": "Analizator biochemiczny",
+      "description": "<p>Modyfikacja gniazda czipów. Sprawdza chemiczny skład substancji.</p>"
+    },
+    "Chemskin": {
+      "name": "Chemskóra",
+      "description": "<p>+2 do Atrakcyjności jeśli użytkownik posiada jednocześnie Techfryz. Zmienia odcień.</p>"
+    },
+    "Chipware Socket": {
+      "name": "Gniazdo czipów",
+      "description": "<p>Pojedyncze gniazdo do instalacji i usuwania modyfikacji gniazda czipów.</p>"
+    },
+    "Chyron": {
+      "name": "Wyświetlacz",
+      "description": "<p>Mały ekran w oku. Zapewnia obraz na te nudne momenty.</p>"
+    },
+    "Color Shift": {
+      "name": "Zmiantakty",
+      "description": "<p>Pozwala na nielimitowane zmiany koloru i wzoru oczu.</p>"
+    },
+    "Contraceptive Implant": {
+      "name": "Implant antykoncepcyjny",
+      "description": "<p>Zapobiega niepożądanej ciąży.</p>"
+    },
+    "Cyberarm": {
+      "name": "Cyberręka",
+      "description": "<p>Cybernetyczna ręka zastępcza z darmową dłonią.</p>"
+    },
+    "Cyberaudio Suite": {
+      "name": "Zestaw Cyberaudio",
+      "description": "<p>Podstawowy interfejs pod ulepszenia audio.</p>"
+    },
+    "Cyberdeck (Hardwired)": {
+      "name": "Cyberdek",
+      "description": "<p>Wbudowany cyberdek. Zawsze pod ręką.</p>"
+    },
+    "Cybereye": {
+      "name": "Cyberoko",
+      "description": "<p>Sztuczne oko. Wybierz Kiroshi Optics!</p>"
+    },
+    "Cyberleg": {
+      "name": "Cybernoga",
+      "description": "<p>Cybernetyczna noga zastępcza z darmową stopą.</p>"
+    },
+    "Cybersnake": {
+      "name": "Cyberwąż",
+      "description": "<p>A throat snake which is a Very Heavy Melee weapon.</p>"
+    },
+    "Dartgun": {
+      "name": "Pistolet strzałkowy",
+      "description": "<p>Ukryta broń z pojedyńczym strzałem.</p>"
+    },
+    "Difficult Skill Chip": {
+      "name": "Czip trudnych umiejętności",
+      "description": "<p>Modyfikacja gniazda czipów. Zwiększa poziom konkretnej umiejętności (x2) do 3 póki jest zainstalowany (chyba, że poziom umiejętności jest już 3+).</p>"
+    },
+    "EMP Threading": {
+      "name": "Henna EMP",
+      "description": "<p>Efekt układu scalonego na skórze.</p>"
+    },
+    "Enhanced Antibodies": {
+      "name": "Ulepszone przeciwciała",
+      "description": "<p>Podwaja samoczynne leczenie podczas odpoczynku.</p>"
+    },
+    "Gills": {
+      "name": "Skrzela",
+      "description": "<p>Umożliwiają oddychanie pod wodą.</p>"
+    },
+    "Grafted Muscle and Bone Lace": {
+      "name": "Przeszczep splotu mięśniowo-kostnego",
+      "description": "<p>Zwiększa BC o 2 (i powiązane statystyki). Nakłada się. Nie zwiększa powyżej 10 BC.</p>"
+    },
+    "Grapple Hand": {
+      "name": "Chwytna dłoń",
+      "description": "<p>Wysuwany hak do wspinaczki w dłoni. (s. 364)</p>"
+    },
+    "Grip Foot": {
+      "name": "Chwytna stopa",
+      "description": "<p>Zapewnia dodatkowe tarcie przy wspinaczce pionowej. Musi być sparowana. (s. 366)</p>"
+    },
+    "Hardened Shielding (Cyber Arm)": {
+      "name": "Wzmocniona osłona (Cyberręka)",
+      "description": "<p>Ręka i zinstalowane modyfikacje są niewrażliwe na efekty EMP.</p>"
+    },
+    "Hardened Shielding (Cyber Leg)": {
+      "name": "Wzmocniona osłona (Cybernoga)",
+      "description": "<p>Noga i zinstalowane modyfikacje są niewrażliwe na efekty EMP.</p>"
+    },
+    "Hidden Holster": {
+      "name": "Ukryta kabura",
+      "description": "<p>Kabura ukryta w środku ciała.</p>"
+    },
+    "Homing Tracer": {
+      "name": "Odbiornik lokalizatora",
+      "description": "<p>Dźwiękowe śledzenie nadajnika lokalizatora do 1.5km. Części zastępcze nie uwzględnione.</p>"
+    },
+    "Image Enhance": {
+      "name": "Poprawa obrazu",
+      "description": "<p>Musi być sparowany. +2 do testów Percepcji, Czytania z ruch warg i Ukrycia/schowania przedmiotu przy używaniu wzroku.</p>"
+    },
+    "Implanted Linear Frame β (Beta)": {
+      "name": "Implantowana ramownica linearna β (Beta)",
+      "description": "<p>Zwiększa BC do 14 (wpływa na PW, progi ran i Testy Przeżywalności).</p>"
+    },
+    "Implanted Linear Frame ∑ (Sigma)": {
+      "name": "Implantowana ramownica linearna ∑ (Sigma)",
+      "description": "<p>Zwiększa BC do 12 (wpływa na PW, progi ran i Testy Przeżywalności).</p>"
+    },
+    "Independent Air Supply": {
+      "name": "Niezależny zapas powietrza",
+      "description": "<p>30 minut powietrza. Można ponownie napełnić w godzinę na powietrzu.</p>"
+    },
+    "Interface Plugs": {
+      "name": "Złącza interfejsu",
+      "description": "<p>Złącza w nadgarstku lub głowie pozwalające podłączyć się do maszyn/systemów.</p>"
+    },
+    "Internal Agent": {
+      "name": "Agent wewnętrzny",
+      "description": "<p>Wbudowany agent. Tylko audio, ale można połączyć z innymi cyborgizacjami.</p>"
+    },
+    "Jump Booster": {
+      "name": "Dopalacz skoku",
+      "description": "<p>Wbudowane mechanizmy hydrauliczne negują kary za skakanie. Musi być sparowany.</p>"
+    },
+    "Kerenzikov": {
+      "name": "Kerenzikov",
+      "description": "<p>Ulepszenie cybersynaps. Stałe +2 do Inicjatywy.</p>"
+    },
+    "Level Damper": {
+      "name": "Wygłuszacz",
+      "description": "<p>Zapewnia niewrażliwość na głuchotę i nagłe głośne dźwięki.</p>"
+    },
+    "Light Tattoo": {
+      "name": "Tatuaż świetlny",
+      "description": "<p>\n  Glowing tattoos. +2 to Wardrobe &amp; Style if you have at least three\n  installed.\n</p>\n"
+    },
+    "Low Light/IR/UV": {
+      "name": "Widzenie w ciemności/podczerwieni/UV",
+      "description": "<p>Musi być sparowany. Neguje kary za słabe oświetlenie lub mgłę/dym.</p>"
+    },
+    "Meat Arm": {
+      "name": "Biologiczna ręka",
+      "description": "<p>Zwykła ręka. Może obsługiwać dodatki takie jak standardowa ręka lub niektóre bronie i narzędzia jako jedynie zainstalowany element.</p>"
+    },
+    "Meat Leg": {
+      "name": "Biologiczna noga",
+      "description": "<p>Zwykła noga. Może obsługiwać dodatki takie jak standardowa noga lub bronie takie jak Stopa-szpon.</p>"
+    },
+    "Medical Grade Cyberarm": {
+      "name": "Medyczna cyberręka",
+      "description": "<p>A medical grade cyberarm. Does not allow options to be installed.</p>"
+    },
+    "Medical Grade Cyberleg": {
+      "name": "Medyczna Cybernoga",
+      "description": "<p>A medical grade cyberleg. Does not allow options to be installed.</p>"
+    },
+    "Medscanner": {
+      "name": "Skaner medyczny",
+      "description": "<p>Wbudowany medskaner pozwalający na szybką ocenę ran. Zapewnia +2 do testów Pierwszej pomocy i Ratownictwa medycznego.</p>"
+    },
+    "Memory Chip": {
+      "name": "Czip pamięci",
+      "description": "<p>Modyfikacja gniazda czipów. Pamięć danych. Coś w stylu pendrive'a do mózgu. Wyciągaj w bezpieczny sposób.</p>"
+    },
+    "MicroOptics": {
+      "name": "Mikrooptyka",
+      "description": "<p>Zapewnia powiększenie do 400x.</p>"
+    },
+    "MicroVideo": {
+      "name": "Mikrokamera",
+      "description": "<p>Kamera w oku, którą można połączyć do czipa lub agenta. Idealna dla mediów.</p>"
+    },
+    "Midnight Lady Sexual Implant": {
+      "name": "Dama nocy implant seksualny",
+      "description": "<p>Można prać w pralce. 60 stopni. Nie używać detergentów. Nie używać wybielacza.</p>"
+    },
+    "Mr. Studd Sexual Implant": {
+      "name": "Mr. Drąg implant seksualny",
+      "description": "<p>Ten konar zawsze płonie.</p>"
+    },
+    "MultiOptic Mount": {
+      "name": "Stelaż multioptyki",
+      "description": "<p>Pozwala na zainstalowanie do 5 dodatkowych cyberoczu. Cyberoczy sprzedawane oddzielnie.</p>"
+    },
+    "Nasal Filters": {
+      "name": "Filtry nosowe",
+      "description": "<p>Zapewnia niewrażliwość na wdychane gazy i opary.</p>"
+    },
+    "Neural Link": {
+      "name": "Sprzęg neuralny",
+      "description": "<p>Dostęp do układu nerwowego.</p>"
+    },
+    "Olfactory Boost": {
+      "name": "Dopalacz zapachu",
+      "description": "<p>Modyfikacja gniazda czipów. Pozwala na śledzenie zapachów.</p>"
+    },
+    "Pain Editor": {
+      "name": "Edytor bólu",
+      "description": "<p>Modyfikacja gniazda czipów. Usuwa kary za bycie Poważnie rannym.</p>"
+    },
+    "Plastic Covering (Cyber Arm)": {
+      "name": "Pokrycie plastikowe (Cyberręka)",
+      "description": "<p>Rodzaj powłoki z plastiku dla ręki.</p>"
+    },
+    "Plastic Covering (Cyber Leg)": {
+      "name": "Pokrycie plastikowe (Cybernoga)",
+      "description": "<p>Rodzaj powłoki z plastiku dla nogi.</p>"
+    },
+    "Popup Grenade Launcher": {
+      "name": "Wysuwany granatnik",
+      "description": "<p>Wysuwany granatnik pojedynczego strzału. Nie można nic trzymać w tej ręce, gdy jest wysunięty.</p>",
+      "dvTable": "PT Granatniki"
+    },
+    "Popup Melee Weapon": {
+      "name": "Wysuwana broń biała",
+      "description": "<p>Wysuwana broń biała. Nie można nic trzymać w tej ręce, gdy jest wysunięta.</p>"
+    },
+    "Popup Ranged Weapon": {
+      "name": "Wysuwana broń dystansowa",
+      "description": "<p>Wysuwana jednoręczna broń dystansowa. Nie można nic trzymać w tej ręce, gdy jest wysunięta.</p>"
+    },
+    "Popup Shield": {
+      "name": "Wysuwana tarcza",
+      "description": "<p>Składana tarcza kuloodporna, którą można łatwo wyciągnąć i schować. Nie można nic trzymać w tej ręce, gdy jest wyciągnięta.</p>"
+    },
+    "Quick Change Mount": {
+      "name": "Uniwersalne mocowanie",
+      "description": "<p>Pozwala na szybkie odłączanie i przyczepianie różnych rąk przy użycia otwartego gniazda. Miej rękę na każdą okazję.</p>"
+    },
+    "Radar Detector": {
+      "name": "Wykrywacz radaru",
+      "description": "<p>Ostrzega o wykrytym aktywnym radarze w promieniu 100m.</p>"
+    },
+    "Radar/Sonar Implant": {
+      "name": "Radar/Sonar",
+      "description": "<p>Scans 50m/yds around you. Doesn't work through cover. </p>"
+    },
+    "Radiation Detector": {
+      "name": "Wykrywacz promieniowania",
+      "description": "<p>Pokazuje promieniowanie pod postacią niebieskiego blasku. Maksymalny zasięg 100m/jardów.</p>"
+    },
+    "Radio Communicator": {
+      "name": "Radiokomunikator",
+      "description": "<p>Wbudowana krótkofalówka. Zasięg: 1.5km.</p>"
+    },
+    "Radio Scanner/Music Player": {
+      "name": "Radio/odtwarzacz muzyki",
+      "description": "<p>Słuchaj stacji radiowych CitiNet albo lokalnie zapisanej muzyki.</p>"
+    },
+    "Realskinn Covering (Cyber Arm)": {
+      "name": "Pokrycie Realskinn (Cyberręka)",
+      "description": "<p>Sztuczna skóra dla twojej ręki.</p>"
+    },
+    "Realskinn Covering (Cyber Leg)": {
+      "name": "Pokrycie Realskinn (Cybernoga)",
+      "description": "<p>Sztuczna skóra dla twojej nogi.</p>"
+    },
+    "Rippers": {
+      "name": "Rozpruwacze",
+      "description": "<p>Bardzo ostre szpony funkcjonujące jako średnia broń biała. Mogą zostać ukryte.</p>"
+    },
+    "Sandevistan": {
+      "name": "Sandevistan",
+      "description": "<p>Modyfikacja cybersynaps. +3 do Inicjatywy na 1 minutę. Czas odnowienia: 1 godzina.</p>"
+    },
+    "Scrambler/Descrambler": {
+      "name": "Koder/dekoder",
+      "description": "<p>Szyfruje i deszyfruje transmisje.</p>"
+    },
+    "Scratchers": {
+      "name": "Pazury",
+      "description": "<p>Ostre pazury funkcjonujące jako lekka broń biała. Mogą zostać ukryte.</p>"
+    },
+    "Sensor Array": {
+      "name": "System nasłuchowy",
+      "description": "<p>Pozwala zainstalować do 5 dodatkowych modyfikacji cyberaudio.</p>"
+    },
+    "Shift Tacts": {
+      "name": "Zmiantakty",
+      "description": "<p>Zmieniają kolor oczu. Mogą być aktywowane/dezaktywowane na zawołanie.</p>"
+    },
+    "Shoulder Cam": {
+      "name": "Kamera naramienna",
+      "description": "<p>Wysuwana kamera naramienna. Można połączyć z agentem lub czipem pamięci.</p>"
+    },
+    "Skate Foot": {
+      "name": "Rolki",
+      "description": "<p>Podczas biegu, Twój ruch zwiększa się o 6m/jardów. Muszą być sparowane.</p>"
+    },
+    "Skill Chip": {
+      "name": "Czip umiejętności",
+      "description": "<p>Modyfikacja gniazda czipów. Zwiększa poziom konkretnej umiejętności do 3 póki jest zainstalowany (chyba, że poziom umiejętności jest już 3+).</p>"
+    },
+    "Skin Weave": {
+      "name": "Splot skórny",
+      "description": "<p>External Body Cyberware*. Head and Body Armor SP7 and recovers 1SP/day. Armor does not stack.</p>\n<p><em>* Cyberware Armor does not function as armor in the system, please add the \"Skin Weave\" item to the character/mook to track</em></p>"
+    },
+    "Skinwatch": {
+      "name": "Zegarek podskórny",
+      "description": "<p>LEDowy zegarek podskórny.</p>"
+    },
+    "Slice 'N Dice": {
+      "name": "Szatkownica",
+      "description": "<p>Bicz z włókna monofilamentowego funkcjonujący jako średnia broń biała. Może zostać ukryty.</p>"
+    },
+    "Standard Foot": {
+      "name": "Standardowa stopa",
+      "description": "<p>W większości wygląda jak zwykła stopa.</p>"
+    },
+    "Standard Hand": {
+      "name": "Standardowa ręka",
+      "description": "<p>W większości wygląda jak zwykła dłoń.</p>"
+    },
+    "Subdermal Armor": {
+      "name": "Pancerz podskórny",
+      "description": "<p>External Body Cyberware*. Head and Body Armor SP11 and recovers 1SP/day. Armor does not stack.</p>\n<p><em>* Cyberware Armor does not function as armor in the system, please add the \"Subdermal Armor\" item to the character/mook to track</em></p>"
+    },
+    "Subdermal Grip": {
+      "name": "Uchwyt podskórny",
+      "description": "<p>Płytka podskórna pozwalająca na korzystanie ze smartgunów. Wymaga sprzęgu neuralnego.</p>"
+    },
+    "Subdermal Pocket": {
+      "name": "Kieszeń podskórna",
+      "description": "<p>Podskórna kieszeń o wymiarach 5cm x 10cm.</p>"
+    },
+    "Superchrome® Covering (Cyber Arm)": {
+      "name": "Pokrycie Superchrom® (Cyberręka)",
+      "description": "<p>Ulepszenie cyberkończyny. Błyszczące, metaliczne pokrycie cyberkończyny. +2 do Mody i stylu. (Premia nie kumuluje się z inną tego typu).</p>"
+    },
+    "Superchrome® Covering (Cyber Leg)": {
+      "name": "Pokrycie Superchrom® (Cybernoga)",
+      "description": "<p>Ulepszenie cyberkończyny. Błyszczące, metaliczne pokrycie cyberkończyny. +2 do Mody i stylu. (Premia nie kumuluje się z inną tego typu).</p>"
+    },
+    "Tactile Boost": {
+      "name": "Dopalacz dotyku",
+      "description": "<p>Modyfikacja gniazda czipów. Pozwala wykryć ruch do 20m/jardów poprzez powierzchnie.</p>"
+    },
+    "Talon Foot": {
+      "name": "Stopa-szpon",
+      "description": "<p>Wysuwane ostrze w stopie funkcjonujące jak lekka broń biała.</p>"
+    },
+    "Targeting Scope": {
+      "name": "Celownik optyczny",
+      "description": "<p>Zapewnia +1 to testów strzelania przy Celowaniu.</p>"
+    },
+    "Techhair": {
+      "name": "Techfryz",
+      "description": "<p>Zapewnia +2 do Atrakcyjności jeśli użytkownik posiada też Chemskórę. Włosy zmieniające kolor. </p>"
+    },
+    "Techscanner": {
+      "name": "Techskaner",
+      "description": "<p>Zawiera różne wbudowane gadżety i narzędzia. Zapewnia bonus +2 do różnych testów. (s. 365)</p>"
+    },
+    "TeleOptics": {
+      "name": "Teleskop",
+      "description": "<p>Telescope in your eye up to 800m/yds. +1 to single shot/aimed shot if greater than 50m away.</p>"
+    },
+    "Tool Hand": {
+      "name": "Dłoń z narzędziami",
+      "description": "<p>Każdy palec dłoni to inne narzędzie. Idealne dla techników!</p>"
+    },
+    "Toxin Binders": {
+      "name": "Detoksykator",
+      "description": "<p>Zapewnia +2 do testów Odporności na tortury/narkotyki.</p>"
+    },
+    "Vampyres": {
+      "name": "Wampirki",
+      "description": "<p>Kły wszczepione w jamie ustnej funkcjonujące jako lekka broń biała. Można używać trucizn/biotoksyn w połączeniu z kłami. (s. 363)</p>"
+    },
+    "Virtuality": {
+      "name": "Wirtual",
+      "description": "<p>Musi być sparowany. Wbudowane gogle wirtualowe.</p>"
+    },
+    "Voice Stress Analyzer": {
+      "name": "Analizator stresu w głosie",
+      "description": "<p>Zapewnia +2 do testów Odczytywania emocji i Przesłuchiwania. Można aktywować specjalny tryb wykrywania kłamstw.</p>"
+    },
+    "Web Foot": {
+      "name": "Stopa z błoną pławną",
+      "description": "<p>Błony pławne pomiędzy palcami u stóp pozwalające na pływanie. Muszą być sparowane.</p>"
+    },
+    "Wolvers": {
+      "name": "Rosomaki",
+      "description": "<p>Szpony chowające się w knykciach funkcjonujące jako ciężka broń biała. Mogą być ukryte.</p>"
+    }
+  }
+}

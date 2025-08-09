@@ -1,0 +1,20 @@
+_id: ZPAq4r2HXIwfzSYv
+_key: "!items!ZPAq4r2HXIwfzSYv"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/default/Default_Skill.svg
+name: Language (Burmese)
+system:
+  basic: false
+  category: educationSkills
+  core: false
+  description:
+    value: ""
+  difficulty: typical
+  favorite: false
+  level: 4
+  skillType: language
+  source:
+    book: Core
+    page: 45
+  stat: int
+type: skill

@@ -1,0 +1,10 @@
+[tool.djlint]
+# Ignore:
+#   H006: img tag should have height and width attributes
+#   H013: img tag should have alt attributes
+#   H021: Inline styles should be avoided
+ignore="H006,H013,H021,T027"
+extension=".hbs"
+profile="handlebars"
+indent=2
+max_line_length=80

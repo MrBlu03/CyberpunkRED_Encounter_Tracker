@@ -1,0 +1,65 @@
+<div class="rollcard">
+  <div class="rollcard-top">
+    <div class="cpr-block chat-rollTitle-stat">
+      <div class="text-center text-padding-top text-normal text-semi">
+        {{localize (cprGetLocalizedlNameKey rollTitle "roleAbility")}}
+      </div>
+      <div class="text-center text-small">{{localize "CPR.rolls.roleAbility"}}</div>
+    </div>
+  </div>
+  <div class="rollcard-bottom">
+    <div class="cpr-block">
+      <div class="d10-rollcard-data">
+        <div class="d10-dice-div">
+          {{!-- die image for initialRoll --}}
+          {{#if criticalCard }}
+            {{#if wasCritSuccess }}
+              <img class="d10"
+                   src="systems/cyberpunk-red-core/icons/dice/red/d10_{{initialRoll}}_preem.svg"/>
+              <i class="fas fa-plus"></i>
+            {{else}}
+              <img class="d10"
+                   src="systems/cyberpunk-red-core/icons/dice/red/d10_{{initialRoll}}_fail.svg"/>
+              <i class="fas fa-minus"></i>
+            {{/if}}
+            <img class="d10"
+                 src="systems/cyberpunk-red-core/icons/dice/red/d10_{{cprMath "abs" criticalRoll}}.svg"/>
+          {{else}}
+            <img class="d10"
+                 src="systems/cyberpunk-red-core/icons/dice/black/d10_{{initialRoll}}.svg"/>
+          {{/if}}
+        </div>
+        <div class="d10-number-div">
+          <a><span class="clickable{{#if criticalCard }} text-semi{{/if }}"
+      data-action="toggleVisibility"
+      data-visible-element="d10-data-details">{{resultTotal}}</span></a>
+        </div>
+        <div class="d10-data-div">
+          <div class="d10-data-details hide">
+            <div class="text-normal text-nowrap">
+              {{localize "CPR.rolls.abilityRank"}}: {{roleValue}}
+            </div>
+            {{#if statValue }}
+              <div class="text-normal text-nowrap">
+                {{localize (cprFindConfigValue "statList" statName)}}: {{statValue}}
+              </div>
+            {{/if}}
+            {{#if skillValue }}
+              <div class="text-normal">
+                {{localize (cprGetLocalizedlNameKey skillName "skill")}}: {{skillValue}}
+              </div>
+            {{/if}}
+            {{#if (cprCompare mods.length "||" additionalMods.length) }}
+              {{> "systems/cyberpunk-red-core/templates/chat/cpr-rollcard-modifiers.hbs" this}}
+            {{/if}}
+            {{#if luck }}
+              <div class="text-normal text-semi text-nowrap">
+                {{localize "CPR.global.stats.luck"}}: {{luck}}
+              </div>
+            {{/if}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

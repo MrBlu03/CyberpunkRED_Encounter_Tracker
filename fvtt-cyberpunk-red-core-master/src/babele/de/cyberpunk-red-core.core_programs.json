@@ -1,0 +1,66 @@
+{
+  "label": "Programme",
+  "mapping": {},
+  "entries": {
+    "Armor": {
+      "name": "Panzer",
+      "description": "<p>Senkt den Hirnschaden, den du erleiden würdest, um 4, solange das Programm integriert bleibt. Es kann nur 1 Programmkopie gleichzeitig laufen. Jede Kopie dieses Programms kann nur einmal pro Netrun benutzt werden.</p>"
+    },
+    "Banhammer": {
+      "name": "Bannhammer",
+      "description": "<p>Richtet bei allen Programmen, die nicht Schwarzes ICE sind, 3W6 Integritätsschaden und bei allen Schwarzes-ICE-Programmen 2W6 Integritätsschaden an.</p>"
+    },
+    "DeckKRASH": {
+      "name": "DeckKRASH",
+      "description": "<p>Feindlicher Netrunner wird gewaltsam und unsicher aus der Architektur ausgeklinkt und erleidet die Effekte jedes integrierten Schwarzen ICE, dem er beim Verlassen der Architektur begegnet ist.</p>"
+    },
+    "Eraser": {
+      "name": "Verwischen",
+      "description": "<p>Erhöht alle deine Deckmantel-Proben um +2, solange das Programm integriert bleibt.</p>"
+    },
+    "Flak": {
+      "name": "Flak",
+      "description": "<p>Senkt den ANG aller Angriffsprogramme, die kein Schwarzes ICE sind und sich gegen dich richten, auf 0, solange das Programm integriert bleibt. Es kann nur 1 Programmkopie gleichzeitig laufen. Jede Kopie dieses Programms kann nur einmal pro Netrun benutzt werden.</p>"
+    },
+    "Hellbolt": {
+      "name": "Höllenblitz",
+      "description": "<p>Richtet 2W6 Schaden direkt am Hirn des Netrunners an. Ein nicht isoliertes Cyberdeck fängt zusammen mit seiner Kleidung Feuer.</p>"
+    },
+    "Nervescrub": {
+      "name": "Nervenfetzer",
+      "description": "<p>Für die nächste Stunde sinken INT, REF und GES des feindlichen Netrunners jeweils um 1W6 (Minimum 1).</p>"
+    },
+    "Poison Flatline": {
+      "name": "Giftiger Tod",
+      "description": "<p>Zerstört ein zufälliges Programm, das nicht Schwarzes ICE und auf dem Cyberdeck des Ziels installiert ist, auf das der Netrunner es abgesehen hat.</p>"
+    },
+    "See Ya": {
+      "name": "Seh dich",
+      "description": "<p>Erhöht alle deine Kundschafter-Proben um +2, solange das Programm integriert bleibt.</p>"
+    },
+    "Shield": {
+      "name": "Schild",
+      "description": "<p>Der erste erfolgreiche Hirnschadenangriff durch ein Nicht-Schwarzes ICE wird gestoppt. Es kann nur 1 Programmkopie gleichzeitig laufen. Jede Kopie dieses Programms kann nur einmal pro Netrun benutzt werden.</p>"
+    },
+    "Speedy Gonzalvez": {
+      "name": "Speedy Gonzalvez",
+      "description": "<p>Erhöht dein TEM um +2, solange das Programm integriert bleibt.</p>"
+    },
+    "Superglue": {
+      "name": "Superkleber",
+      "description": "<p>Für 1W6 Runden kann ein feindlicher Netrunner nicht tiefer in die Architektur vordringen oder sich sicher ausklinken. Jede Programmkopie kann nur einmal pro Netrun benutzt werden.</p>"
+    },
+    "Sword": {
+      "name": "Schwert",
+      "description": "<p>Richtet bei Schwarzes-ICE-Programmen 3W6 Integritätsschaden oder bei Programmen, die nicht Schwarzes-ICE sind, 2W6 Integritätsschaden an.</p>"
+    },
+    "Vrizzbolt": {
+      "name": "Hirnblitz",
+      "description": "<p>Richtet direkt am Hirn eines Netrunners 1W6 Schaden an und senkt die Anzahl der Net-Aktionen, die er in seinem nächsten Zug durchführen kann, um 1 (Minimum 2).</p>"
+    },
+    "Worm": {
+      "name": "Wurm",
+      "description": "<p>Erhöht alle deine Hintertür-Proben um +2, solange das Programm integriert bleibt.</p>"
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "label": "Enemigos Endurecidos",
+  "mapping": {},
+  "entries": {
+    "Hardened Lieutenant Tactics": {
+      "name": "Tácticas de Tenientes Endurecidos",
+      "results": [
+        {
+          "1-1": "1 Tipejo está disparando munición incendiaria (página CP:R 346), pero solo tiene 10 rondas.",
+          "2-2": "Añada 2 Tipejos adicionales al encuentro al comienzo de la segunda ronda.",
+          "3-3": "2 Tipejos están experimentando actualmente el efecto primario de Lazo Negro (CP:R página 227).",
+          "4-4": "Dales una Chaqueta Blindada Media que ha sido mejorado por un Técnico eliminando la Penalización de Armadura.",
+          "5-5": "Dales 600ed adicionales de Ciberimplantes.",
+          "6-6": "Dales una Reputación de 5.",
+          "7-7": "Añade un Tipejo adicional de un tipo diferente al encuentro.",
+          "8-8": "Añade 2 Tipejos al encuentro. Dale a cada uno una lesión crítica en la cabeza.",
+          "9-9": "Añada 1 Tipejo adicional al encuentro al comienzo de las Rondas 2, 3 y 4.",
+          "10-10": "1 Tipejo tiene un SMG, cero sentido de la autopreservación, una habilidad de Autofuego de 16, y sin armadura de cabeza."
+        }
+      ]
+    },
+    "Hardened Mini Boss Mini Promotion": {
+      "name": "Promover a Mini Jefe Endurecido",
+      "results": [
+        {
+          "1-1": "1 Tipejo está disparando munición incendiaria (página CP:R 346), pero solo tiene 10 rondas.",
+          "2-2": "Añada 2 Tipejos adicionales al encuentro al comienzo de la segunda ronda.",
+          "3-3": "2 Tipejos están experimentando actualmente el efecto primario de Lazo Negro (CP:R página 227).",
+          "4-4": "Dales una Chaqueta Blindada Media que ha sido mejorado Técnico eliminando la Penalización de Armadura.",
+          "5-5": "Dales 600ed adicionales de Ciberimplantes.",
+          "6-6": "Dales una Reputación de 5.",
+          "7-7": "Añade un Tipejo adicional de un tipo diferente al encuentro.",
+          "8-8": "Añade 2 Tipejos al encuentro. Dale a cada uno una lesión crítica en la cabeza.",
+          "9-9": "Añada 1 Tipejo adicional al encuentro al comienzo de las Rondas 2, 3 y 4.",
+          "10-10": "1 Tipejo tiene un SMG, cero sentido de la autopreservación, una habilidad de Autofuego de 16, y sin armadura de cabeza."
+        }
+      ]
+    },
+    "Mook Encounter Complication": {
+      "name": "Complicación de Encuentro con Tipejos",
+      "results": [
+        {
+          "1-1": "1 Tipejo está disparando munición incendiaria (página CP:R 346), pero solo tiene 10 rondas.",
+          "2-2": "Añada 2 Tipejos adicionales al encuentro al comienzo de la segunda ronda.",
+          "3-3": "2 Tipejos están experimentando actualmente el efecto primario de Lazo Negro (CP:R página 227).",
+          "4-4": "Dales una Chaqueta Blindada Media que ha sido mejorado por un Técnico eliminando la Penalización de Armadura.",
+          "5-5": "Dales 600ed adicionales de Ciberimplantes.",
+          "6-6": "Dales una Reputación de 5.",
+          "7-7": "Añade un Tipejo adicional de un tipo diferente al encuentro.",
+          "8-8": "Añade 2 Tipejos al encuentro. Dale a cada uno una lesión crítica en la cabeza.",
+          "9-9": "Añada 1 Tipejo adicional al encuentro al comienzo de las Rondas 2, 3 y 4.",
+          "10-10": "1 Tipejo tiene un SMG, cero sentido de la autopreservación, una habilidad de Autofuego de 16, y sin armadura de cabeza."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,40 @@
+_id: ZJJEcMX3RdfsRFMK
+_key: "!items!ZJJEcMX3RdfsRFMK"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/clothing/generic_contact_lenses.svg
+name: High Fashion Contact Lenses
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        Made from the most expensive quality materials and by the most exclusive
+        producers, this is what you wear when you've made it. The kind of fashion you
+        see supermodels wearing in videos on the Citinet.
+      </p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: false
+  price:
+    market: 1000
+  providesHardening: false
+  revealed: true
+  source:
+    book: Core
+    page: 356
+  style: highFashion
+  type: contactLenses
+  usage: equipped
+type: clothing

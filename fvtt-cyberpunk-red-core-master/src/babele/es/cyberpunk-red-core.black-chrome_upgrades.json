@@ -1,0 +1,26 @@
+{
+  "label": "Actualizaciones",
+  "mapping": {},
+  "entries": {
+    "4Tify": {
+      "name": "4Tificar",
+      "description": "<p>Una aplicación para tu agente. Puedes ver puntos débiles escaneando tu casa. O una sección de la cobertura...</p>\n<p>Reglas completas se pueden encontrar en la página 13.</p>"
+    },
+    "Digital Gladiator": {
+      "name": "Gladiador Digital",
+      "description": "<p>Una aplicación para tu agente. ¡Crea un Mercenario Virtual que lucha por ti en el reino digital!</p>\n<p>Reglas para peleas se pueden encontrar en la página 12.</p>"
+    },
+    "NCPD Crime Database": {
+      "name": "Base de Datos del Crimen de NCPD",
+      "description": "<p>Una aplicación para tu agente. Permite al usuario buscar información criminal pública. Las reglas completas para el uso se pueden encontrar en la página 13.</p>\n<p>&nbsp;</p>"
+    },
+    "Trauma Team MedScan": {
+      "name": "Trauma Team MedScan",
+      "description": "<p>Agent App.</p>\n<p>\n  Requires CitiNet access. MedScan can connect you to a Trauma Team Remote\n  Specialist but their actual guidance costs extra.\n</p>\n<p>\n  For an increased fee, a remote Trauma Specialist can be hired to direct the\n  user through an entire 4-hour procedure.\n</p>\n<p>\n  Rules related to cost of hiring and procedures allowed to be done with this\n  App are contained in Black Chrome rulebook for this item.\n</p>\n"
+    },
+    "Ziggurat City Database": {
+      "name": "Ziggurat City Database",
+      "description": "<p>Agent App.</p>\n<p>\n  +1 bonus to all Local Expert Skills Checks related to communities and\n  neighborhoods for that city.\n</p>\n"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+_id: 3QXtTqLRdD1lZYsI
+_key: "!items!3QXtTqLRdD1lZYsI"
+effects: []
+img: icons/svg/item-bag.svg
+name: Trading
+system:
+  basic: false
+  category: socialSkills
+  core: true
+  description:
+    value: ""
+  difficulty: typical
+  favorite: false
+  level: 0
+  skillType: generic
+  source:
+    book: Core
+    page: 139
+  stat: cool
+type: skill

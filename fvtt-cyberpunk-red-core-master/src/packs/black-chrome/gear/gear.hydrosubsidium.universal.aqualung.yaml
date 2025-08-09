@@ -1,0 +1,36 @@
+_id: THuhq91qOtXUZCrf
+_key: "!items!THuhq91qOtXUZCrf"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/gear/antismog_breathing_mask.svg
+name: Hydrosubsidium Universal Aqualung
+system:
+  amount: 1
+  brand: Hydrosubsidium Inc.
+  concealable:
+    concealable: true
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        When worn, User can breathe underwater as long as within 10 m/yards of the
+        surface.
+      </p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 0
+    usedSlots: 0
+  isElectronic: true
+  price:
+    market: 5000
+  providesHardening: false
+  revealed: true
+  source:
+    book: BC
+    page: 42
+  usage: toggled
+type: gear

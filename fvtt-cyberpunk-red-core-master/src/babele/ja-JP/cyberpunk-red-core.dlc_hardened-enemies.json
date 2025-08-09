@@ -1,0 +1,57 @@
+{
+  "label": "Hardened Enemies",
+  "mapping": {},
+  "entries": {
+    "Hardened Lieutenant Tactics": {
+      "name": "Hardened Lieutenant Tactics",
+      "results": [
+        {
+          "1-1": "1 Mook is firing incendiary ammunition (CP:R page 346), but only has 10 rounds.",
+          "2-2": "Add 2 additional Mooks to the encounter at the start of the 2nd Round.",
+          "3-3": "2 Mooks are currently experiencing the primary effect of Black Lace (CP:R page 227).",
+          "4-4": "Give them Medium Armorjack that’s been Tech upgraded, removing the Armor Penalty.",
+          "5-5": "Give them an additional 600eb of Cyberware.",
+          "6-6": "Give them a Reputation of 5.",
+          "7-7": "Add an additional Mook of a different type to the encounter.",
+          "8-8": "Add 2 Mooks to the encounter. Give each a Critical Injury to the head.",
+          "9-9": "Add 1 additional Mook to the encounter at the start of Rounds 2, 3, and 4.",
+          "10-10": "1 Mook has an SMG, no sense of self preservation, an Autofire Skill Base of 16, and no head armor."
+        }
+      ]
+    },
+    "Hardened Mini Boss Mini Promotion": {
+      "name": "Hardened Mini Boss Mini Promotion",
+      "results": [
+        {
+          "1-1": "1 Mook is firing incendiary ammunition (CP:R page 346), but only has 10 rounds.",
+          "2-2": "Add 2 additional Mooks to the encounter at the start of the 2nd Round.",
+          "3-3": "2 Mooks are currently experiencing the primary effect of Black Lace (CP:R page 227).",
+          "4-4": "Give them Medium Armorjack that’s been Tech upgraded, removing the Armor Penalty.",
+          "5-5": "Give them an additional 600eb of Cyberware.",
+          "6-6": "Give them a Reputation of 5.",
+          "7-7": "Add an additional Mook of a different type to the encounter.",
+          "8-8": "Add 2 Mooks to the encounter. Give each a Critical Injury to the head.",
+          "9-9": "Add 1 additional Mook to the encounter at the start of Rounds 2, 3, and 4.",
+          "10-10": "1 Mook has an SMG, no sense of self preservation, an Autofire Skill Base of 16, and no head armor."
+        }
+      ]
+    },
+    "Mook Encounter Complication": {
+      "name": "Mook Encounter Complication",
+      "results": [
+        {
+          "1-1": "1 Mook is firing incendiary ammunition (CP:R page 346), but only has 10 rounds.",
+          "2-2": "Add 2 additional Mooks to the encounter at the start of the 2nd Round.",
+          "3-3": "2 Mooks are currently experiencing the primary effect of Black Lace (CP:R page 227).",
+          "4-4": "Give them Medium Armorjack that’s been Tech upgraded, removing the Armor Penalty.",
+          "5-5": "Give them an additional 600eb of Cyberware.",
+          "6-6": "Give them a Reputation of 5.",
+          "7-7": "Add an additional Mook of a different type to the encounter.",
+          "8-8": "Add 2 Mooks to the encounter. Give each a Critical Injury to the head.",
+          "9-9": "Add 1 additional Mook to the encounter at the start of Rounds 2, 3, and 4.",
+          "10-10": "1 Mook has an SMG, no sense of self preservation, an Autofire Skill Base of 16, and no head armor."
+        }
+      ]
+    }
+  }
+}

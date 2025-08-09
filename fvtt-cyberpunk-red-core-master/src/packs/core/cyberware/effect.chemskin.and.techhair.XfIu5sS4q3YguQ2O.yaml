@@ -1,0 +1,31 @@
+_id: XfIu5sS4q3YguQ2O
+_key: "!items.effects!opzHe5mz24EwqNCM.XfIu5sS4q3YguQ2O"
+changes:
+  - key: bonuses.personalGrooming
+    mode: 2
+    priority: null
+    value: "2"
+description: ""
+disabled: false
+duration:
+  combat: null
+  rounds: null
+  seconds: null
+  startRound: null
+  startTime: null
+  startTurn: null
+  turns: null
+flags:
+  cyberpunk-red-core:
+    changes:
+      cats:
+        "0": skill
+      situational:
+        "0":
+          isSituational: false
+          onByDefault: false
+icon: systems/cyberpunk-red-core/icons/compendium/cyberware/chemskin.svg
+name: Chemskin & Techhair
+statuses: []
+tint: null
+transfer: true

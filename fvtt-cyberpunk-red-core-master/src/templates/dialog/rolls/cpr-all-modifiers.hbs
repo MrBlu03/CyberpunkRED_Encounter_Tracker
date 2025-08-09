@@ -1,0 +1,26 @@
+<li class="dialog-item dialog-item-footer total-mods flexrow">
+  <div class="dialog-item-name text-nowrap text-semi">
+    {{localize "CPR.rolls.modifiers.modsTotal"}}:
+  </div>
+  <div class="dialog-item-input text-semi text-nowrap"
+    {{#if (cprCompare rollData.mods.length "||" rollData.additionalMods.length) }}
+       data-tooltip="{{#each rollData.mods as |mod| }}
+                       {{localize mod.source }}
+                       {{~#if mod.key }}
+                         ({{cprGetChangeNameByKey false mod.category mod.key }})
+                       {{~/if }}:
+                       {{numberFormat mod.value sign=true}}
+                       <br/>
+                     {{/each}}
+                     {{#if rollData.additionalMods }}
+                       {{localize "CPR.rolls.modifiers.additionalMods"}}:
+                       {{#each rollData.additionalMods as |mod| }}
+                         {{numberFormat mod sign=true}}{{#unless @last}},{{/unless}}
+                       {{/each}}
+                     {{/if}} "
+    {{/if}}>
+    <span class="total-mod-value">
+      {{numberFormat totalMods sign=true}}
+    </span>
+  </div>
+</li>

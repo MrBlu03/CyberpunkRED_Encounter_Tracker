@@ -1,0 +1,50 @@
+{
+  "label": "Blessures critiques (Tête)",
+  "mapping": {},
+  "entries": {
+    "Brain Injury": {
+      "name": "Lésion cérébrale",
+      "description": "<p>-2 à toutes les actions.</p>"
+    },
+    "Broken Jaw": {
+      "name": "Mâchoire cassée",
+      "description": "<p>-4 à toutes les actions impliquant de parler.</p>"
+    },
+    "Concussion": {
+      "name": "Commotion cérébrale",
+      "description": "<p>-2 à toutes les actions.</p>"
+    },
+    "Cracked Skull": {
+      "name": "Fracture du crâne",
+      "description": "<p>Triple les dégâts aux PS sur les tirs à la tête (plutôt que les dégâts doubles normaux).</p>"
+    },
+    "Crushed Windpipe": {
+      "name": "Trachée écrasée",
+      "description": "<p>Impossible de parler.</p>"
+    },
+    "Damaged Ear": {
+      "name": "Oreille endommagée",
+      "description": "<p>Si déplacement de plus de 4m/yds en un tour, pas de mouvement le prochain tour. -2 sur jets de Perception basés sur l'ouïe.</p>"
+    },
+    "Damaged Eye": {
+      "name": "Œil endommagé",
+      "description": "<p>-2 aux attaques à distance et Perception basée sur la vue.</p>"
+    },
+    "Foreign Object (H)": {
+      "name": "Plaie avec corps étranger",
+      "description": "<p>A la fin de chaque tour lors duquel vous vous déplacez de plus de 4m à pied, vous subissez de nouveau les dégâts bonus de cette blessure critique.</p>"
+    },
+    "Lost Ear": {
+      "name": "Oreille arrachée",
+      "description": "<p>L'oreille est perdue. Si mouvement de plus de 4m/yds sur un tour, pas de mouvement au prochain tour. -4 aux jets de Perception basés sur l'ouïe.</p>"
+    },
+    "Lost Eye": {
+      "name": "Œil crevé",
+      "description": "<p>L'oeil est perdu. -4 aux attaques à distance et à la Perception basée sur la vision.</p>"
+    },
+    "Whiplash": {
+      "name": "Coup du lapin",
+      "description": "<p>Aucun autre effet au-delà de l'augmentation de 1 de la pénalité de sauvegarde contre la Mort.</p>"
+    }
+  }
+}

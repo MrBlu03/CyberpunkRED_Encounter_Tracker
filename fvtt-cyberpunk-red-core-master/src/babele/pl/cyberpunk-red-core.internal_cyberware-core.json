@@ -1,0 +1,18 @@
+{
+  "label": "Cyberware (Core)",
+  "mapping": {},
+  "entries": {
+    "External (7 Option Slots)": {
+      "name": "Zewnętrzne (7 gniazd na modyfikacje)",
+      "description": ""
+    },
+    "Fashionware (7 Option Slots)": {
+      "name": "Cybermoda (7 gniazd na modyfikacje)",
+      "description": ""
+    },
+    "Internal (7 Option Slots)": {
+      "name": "Wewnętrzne (7 gniazd na modyfikacje)",
+      "description": ""
+    }
+  }
+}

@@ -1,0 +1,27 @@
+_id: Z3iVuSFtma3Bx7SX
+_key: "!items!Z3iVuSFtma3Bx7SX"
+effects:
+  - KkhtjtxpPv03U2Km
+img: systems/cyberpunk-red-core/icons/compendium/critical_injuries/torn_muscle.svg
+name: Torn Muscle
+system:
+  deathSaveIncrease: false
+  description:
+    value: |
+      <p>-2 to Melee Attacks.</p>
+  favorite: false
+  location: body
+  quickFix:
+    dvFirstAid: 13
+    dvParamedic: 13
+    type: firstAidParamedic
+  revealed: true
+  source:
+    book: Core
+    page: 187
+  treatment:
+    dvParamedic: 0
+    dvSurgery: 0
+    type: quickFix
+  usage: toggled
+type: criticalInjury

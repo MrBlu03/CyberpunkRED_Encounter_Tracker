@@ -1,0 +1,12 @@
+_id: O7yueN1blyInPhr9
+_key: "!tables.results!McQc33tLYAp7djIV.O7yueN1blyInPhr9"
+documentCollection: cyberpunk-red-core.core_cyberware
+documentId: AAzvZil3N8CJfwW8
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/cyberware/mr_studd.svg
+range:
+  - 2
+  - 2
+text: Mr. Studd Sexual Implant
+type: 2
+weight: 1

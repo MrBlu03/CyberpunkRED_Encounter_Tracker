@@ -1,0 +1,60 @@
+_id: vBtkLoClI8oQWXLx
+_key: "!items!vBtkLoClI8oQWXLx"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/must_have_cyberware_deals/personalpak_kibble_warmer.svg
+name: PersonalPak KibbleWarmer
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  core: false
+  damage: 1d6
+  description:
+    value: |
+      <p>
+        Internal compartment with a high-powered heating element, ideal for warming up
+        pre-packaged meals.
+      </p>
+  dvTable: ""
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  humanityLoss:
+    roll: 1d6
+    static: 3
+  installLocation: clinic
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 0
+    usedSlots: 0
+  isElectronic: true
+  isFoundational: false
+  isRanged: false
+  isWeapon: false
+  magazine:
+    max: 0
+    value: 0
+  price:
+    market: 100
+  providesHardening: false
+  revealed: true
+  rof: 1
+  size: 1
+  source:
+    book: MHCD
+    page: 4
+  type: cyberArm
+  unarmedAutomaticCalculation: true
+  usage: toggled
+  usesType: magazine
+  weaponSkill: ""
+  weaponType: ""
+type: cyberware

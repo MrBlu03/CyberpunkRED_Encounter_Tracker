@@ -1,0 +1,119 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/CPRC-CriticalInjuries",
+  "definitions": {
+    "CPRC-CriticalInjuries": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "_id": {
+          "$ref": "./components/id.json"
+        },
+        "_key": {
+          "$ref": "./components/key.json"
+        },
+        "effects": {
+          "$ref": "./components/effects.json"
+        },
+        "flags": {
+          "$ref": "./components/flags.json"
+        },
+        "img": {
+          "$ref": "./components/img.json"
+        },
+        "name": {
+          "$ref": "./components/name.json"
+        },
+        "type": {
+          "type": "string",
+          "const": "criticalInjury"
+        },
+        "system": {
+          "$ref": "#/definitions/System"
+        }
+      },
+      "required": ["_id", "_key", "effects", "img", "name", "system", "type"]
+    },
+    "System": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "deathSaveIncrease": {
+          "type": "boolean"
+        },
+        "description": {
+          "$ref": "./components/common/description.json"
+        },
+        "favorite": {
+          "$ref": "./components/common/favorite.json"
+        },
+        "location": {
+          "type": "string",
+          "enum": ["head", "body"]
+        },
+        "quickFix": {
+          "$ref": "#/definitions/QuickFix"
+        },
+        "revealed": {
+          "$ref": "./components/effects/revealed.json"
+        },
+        "source": {
+          "$ref": "./components/common/source.json"
+        },
+        "treatment": {
+          "$ref": "#/definitions/Treatment"
+        },
+        "usage": {
+          "$ref": "./components/effects/usage.json"
+        }
+      },
+      "required": [
+        "deathSaveIncrease",
+        "description",
+        "favorite",
+        "location",
+        "quickFix",
+        "revealed",
+        "source",
+        "treatment",
+        "usage"
+      ]
+    },
+    "QuickFix": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "dvFirstAid": {
+          "type": "integer",
+          "enum": [0, 13]
+        },
+        "dvParamedic": {
+          "type": "integer",
+          "enum": [0, 13, 15]
+        },
+        "type": {
+          "type": "string"
+        }
+      },
+      "required": ["dvFirstAid", "dvParamedic", "type"]
+    },
+    "Treatment": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "dvParamedic": {
+          "type": "integer",
+          "enum": [0, 13, 15]
+        },
+        "dvSurgery": {
+          "type": "integer",
+          "enum": [0, 13, 15, 17]
+        },
+        "type": {
+          "type": "string"
+        }
+      },
+      "required": ["dvParamedic", "dvSurgery", "type"]
+    }
+  }
+}

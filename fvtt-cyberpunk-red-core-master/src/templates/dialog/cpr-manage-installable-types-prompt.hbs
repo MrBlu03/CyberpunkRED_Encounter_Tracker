@@ -1,0 +1,27 @@
+<form class="dialog-sheet">
+  <div class="dialog-grid flexcol">
+    <ol class="dialog-list">
+      <li class="dialog-item dialog-item-header flexrow">
+        <div class="dialog-item-name text-nowrap">
+          <span class="text-semi">{{localize "CPR.dialog.manageItemTypes.itemTypes"}}</span>
+        </div>
+        <div class="dialog-item-input text-nowrap">
+          <span class="text-semi">{{localize "CPR.global.generic.allow"}}</span>
+        </div>
+      </li>
+      {{#each (cprFindConfigObj "objectTypes") as |objectType ot| }}
+        {{#if (cprListContains (cprGetTemplates ot) "installable") }}
+          <li class="dialog-item flexrow">
+            <div class="dialog-item-name text-nowrap">
+              {{localize objectType}}
+            </div>
+            <div class="dialog-item-input text-nowrap">
+              <input type="checkbox" name="selectedTypes" value="{{ot}}" {{checked (cprListContains ../selectedTypes ot)}}/>
+            </div>
+          </li>
+        {{/if}}
+      {{/each}}
+    </ol>
+  </div>
+  {{> "systems/cyberpunk-red-core/templates/dialog/cpr-dialog-buttons.hbs"}}
+</form>

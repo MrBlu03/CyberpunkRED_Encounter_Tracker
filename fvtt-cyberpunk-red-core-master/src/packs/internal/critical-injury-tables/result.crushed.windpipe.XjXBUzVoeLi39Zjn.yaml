@@ -1,0 +1,13 @@
+_id: XjXBUzVoeLi39Zjn
+_key: "!tables.results!QiwaqQtocypL0FXG.XjXBUzVoeLi39Zjn"
+documentCollection: cyberpunk-red-core.core_critical-injuries-head
+documentId: mVE8ovTniNKFs9Y7
+drawn: false
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/critical_injuries/crushed_windpipe.svg
+range:
+  - 11
+  - 11
+text: Crushed Windpipe
+type: 2
+weight: 1

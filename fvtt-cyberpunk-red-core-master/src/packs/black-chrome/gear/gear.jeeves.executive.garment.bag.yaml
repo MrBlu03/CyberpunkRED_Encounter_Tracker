@@ -1,0 +1,34 @@
+_id: jD1vibznO6KMHfJR
+_key: "!items!jD1vibznO6KMHfJR"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/black-chrome/jeeves-garment-bag.svg
+name: Jeeves Executive Garment Bag
+system:
+  amount: 1
+  brand: Nu-Tek
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>Bag that can repair one piece of fashion or armor at a time.</p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 0
+    usedSlots: 0
+  isElectronic: true
+  price:
+    market: 1000
+  providesHardening: false
+  revealed: true
+  source:
+    book: BC
+    page: 43
+  usage: toggled
+type: gear

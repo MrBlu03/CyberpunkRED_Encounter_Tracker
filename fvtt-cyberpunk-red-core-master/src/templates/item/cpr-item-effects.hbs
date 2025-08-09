@@ -1,0 +1,123 @@
+<div class="item-effects-tab">
+  <div class="item-effects-section">
+    <ol class="effects-list">
+      <li class="effects-category flexrow">
+        <span class="effect-name-item">{{localize "CPR.itemSheet.effects.nameAndChanges"}}</span>
+        <span class="effect-actions text-padding-right">{{localize "CPR.itemSheet.effects.actions"}}</span>
+      </li>
+      {{#each item.effects as |effect| }}
+        {{!-- "effects" is a Map, so "this" is now an Active Effects object within the #each loop! --}}
+        <li class="item effect flexrow">
+          <div class="effect-name-item flexrow">
+            <img class="effect-image" src="{{effect.img}}" />
+            <div>
+              <span class="text-semi">{{effect.name}}</span>
+              <br/>
+              {{#if effect.changes.length }}
+                {{#each effect.changes as |change| }}
+                  {{!-- "this" is now an individual "change" for the AE object --}}
+                  {{cprGetChangeNameByKey ../../item (lookup effect.flags.cyberpunk-red-core.changes.cats @index) change.key}}
+                  {{#if change.value }}
+                    {{cprEffectModMode change.mode change.value}}
+                  {{else}}
+                    0
+                  {{~/if}}
+                  {{~#if (cprArrayLikeObjectByIndex effect.flags.cyberpunk-red-core.changes.situational @index "isSituational")}}
+                    {{~#if (cprArrayLikeObjectByIndex effect.flags.cyberpunk-red-core.changes.situational @index "onByDefault")}}
+                      <i data-tooltip="{{localize "CPR.characterSheet.rightPane.effects.situationalOnByDefault"}}"
+                        class="fas fa-circle-dot"></i>
+                    {{~else}}
+                      <i data-tooltip="{{localize "CPR.characterSheet.rightPane.effects.situationalOffByDefault"}}"
+                        class="far fa-circle"></i>
+                    {{~/if}}
+                  {{~/if}}
+                  {{~#unless @last}},{{/unless}}
+                {{/each}}
+              {{else}}
+                ({{localize "CPR.characterSheet.rightPane.effects.noBonusesConfigured"}})
+              {{/if}}
+            </div>
+          </div>
+          <div class="effect-actions effect-controls">
+            {{#if ../this.editable }}
+              {{#if (cprCompare ../item.system.usage "===" "toggled") }}
+                <a class="effect-control"
+                   data-action="toggle"
+                   data-effect-id="{{this._id}}"
+                   data-tooltip="{{localize "CPR.itemSheet.effects.toggleEffectDesc"}}">
+                  <i class="far {{#if this.disabled }}fa-circle{{else }}fa-circle-check{{/if }}"></i>
+                </a>
+              {{/if}}
+              <a class="effect-control"
+                 data-action="edit"
+                 data-effect-id="{{this._id}}"
+                 data-tooltip="{{localize "CPR.itemSheet.effects.editEffectDesc"}}">
+                <i class="fas fa-pen-to-square"></i>
+              </a>
+              <a class="effect-control"
+                 data-action="copy"
+                 data-effect-id="{{this._id}}"
+                 data-tooltip="{{localize "CPR.itemSheet.effects.duplicateEffectDesc"}}">
+                <i class="fa-regular fa-copy"></i>
+              </a>
+              <a class="effect-control"
+                 data-action="delete"
+                 data-effect-id="{{this._id}}"
+                 data-tooltip="{{localize "CPR.itemSheet.effects.deleteEffectDesc"}}">
+                <i class="fas fa-trash-can"></i>
+              </a>
+            {{else}}
+              <!-- viewing from a compendium -->
+              <i class="fas fa-circle-question"
+                 data-tooltip="{{localize "CPR.itemSheet.effects.readOnly"}}"></i>
+            {{/if}}
+          </div>
+        </li>
+      {{/each}}
+      {{#if this.editable }}
+        <br/>
+        <div class="item-controls effect-controls">
+          <a class="effect-control"
+             data-action="create"
+             data-tooltip="{{localize 'CPR.itemSheet.effects.createEffectDesc'}}">
+            <i class="fas fa-plus"></i> {{localize "CPR.itemSheet.effects.createEffect"}}
+          </a>
+        </div>
+      {{/if}}
+    </ol>
+    {{#if (cprCompare item.effects.size ">" 0) }}
+      <ol>
+        <li class="item flexrow">
+          <div class="item flexrow setting-name text-nowrap text-vert-center">
+            {{localize "CPR.effectSheet.uses.usage"}}:
+          </div>
+          <div class="item flexrow set-usage setting-value text-nowrap item-end">
+            {{#if this.editable }}
+              <select name="system.usage" data-dtype="{{item.system.usage}}">
+                {{selectOptions allowedUsages selected=item.system.usage localize=true}}
+              </select>
+            {{else}}
+              <span class="text-flex-end">{{localize (cprFindConfigValue "effectUses" item.system.usage)}}</span>
+            {{/if}}
+          </div>
+        </li>
+        {{#if (cprCompare item.system.usage "===" "snorted") }}
+          <li class="item flexrow">
+            <div class="item flexrow setting-name text-nowrap">
+              {{localize "CPR.itemSheet.effects.primaryEffect"}}
+            </div>
+            <div class="item flexrow setting-value text-nowrap item-end">
+              {{#if this.editable }}
+                <select name="system.consumed" data-dtype="{{item.system.consumed}}">
+                  {{selectOptions effectNames selected=item.system.consumed}}
+                </select>
+              {{else}}
+                <span class="text-flex-end">{{item.system.consumed}}</span>
+              {{/if}}
+            </div>
+          </li>
+        {{/if}}
+      </ol>
+    {{/if}}
+  </div>
+</div>

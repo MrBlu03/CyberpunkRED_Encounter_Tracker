@@ -1,0 +1,26 @@
+{
+  "label": "Abilità (Musica)",
+  "mapping": {},
+  "entries": {
+    "Play Instrument (Drums)": {
+      "name": "Musica (Percussioni)",
+      "description": ""
+    },
+    "Play Instrument (Guitar)": {
+      "name": "Musica (Chitarra)",
+      "description": ""
+    },
+    "Play Instrument (Piano)": {
+      "name": "Musica (Pianoforte)",
+      "description": ""
+    },
+    "Play Instrument (Singing)": {
+      "name": "Musica (Canto)",
+      "description": ""
+    },
+    "Play Instrument (Violin)": {
+      "name": "Musica (Violino)",
+      "description": ""
+    }
+  }
+}

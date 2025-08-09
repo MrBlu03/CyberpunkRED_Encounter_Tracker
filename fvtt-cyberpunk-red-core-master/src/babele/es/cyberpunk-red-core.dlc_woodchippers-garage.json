@@ -1,0 +1,73 @@
+{
+  "label": "Garaje de Woodchipper",
+  "mapping": {
+    "dvTable": "sistema.Tablavd"
+  },
+  "entries": {
+    "M-02 Rounds": {
+      "name": "Rondas M-02",
+      "description": "<p>Rondas de munición perforante de armadura especiales solo para uso en el Rifle Pesado de Sternmeyer M-02. Viene en un tambor de 80.</p>"
+    },
+    "Paintball (Biotoxin)": {
+      "name": "Bola de pintura (Biotoxina)",
+      "description": "<p>Poco más que 3 Frascos de Biotoxina atados. No inflige daño directo al golpear.</p>"
+    },
+    "Paintball (Poison)": {
+      "name": "Bola de pintura (Veneno)",
+      "description": "<p>Poco más que 3 Frascos de Biotoxina atados. No inflige daño directo al golpear.</p>"
+    },
+    "Aegis": {
+      "name": "Aegis",
+      "description": "<p>Esta arma no puede causar lesiones críticas, no produce ablación de armadura, y si reduce un objetivo a menos de 1 PV, en su lugar los deja Inconsciente en 1 PV.</p>"
+    },
+    "Archimedes": {
+      "name": "Arquímedes",
+      "description": "<p>Usa la Habilidad de Pilotar Vehículos Aéreos en lugar de la Habilidad de Armas Pesadas para disparar, requiere que el implante de sistema de puntería para que alcance el objetivo y solo puede usar Cohetes Inteligentes. No obstante, viene con uno incluido. Qué bonito.</p>",
+      "dvTable": "VD Lanzacohetes"
+    },
+    "Burst Flamethrower": {
+      "name": "Lanzallamas de explosión",
+      "description": "<p>Solo puede disparar proyectiles de escopeta incendiaria, pero los objetivos encendidos por esta arma arden durante un turno recibiendo 4 PV de daño.<br><br>Además, esta arma puede consumir toda la munición restante para disparar una bola de fuego, que explota de forma similar a una granada incendiaria. El usuario del arma también es consumido por la bola de fuego, recibiendo daño mortal por fuego*.</p><p><em>*El modo de fuego especial no está soportado actualmente; tendrá que ser aplicado manualmente</em></p>",
+      "dvTable": "VD Escopeta (Perdigones de escopeta)"
+    },
+    "Enviro-launcher": {
+      "name": "Lanzador de Enviro",
+      "description": "<p>Este lanzador de cohetes especialmente diseñado solo puede ser disparado una vez. Sin embargo, una vez que se ha disparado, el usuario puede usar una acción para romper un vial conectado al lanzador, que liberará una enzima que destruirá el lanzador totalmente en una hora.</p>",
+      "dvTable": "VD Lanzacohetes"
+    },
+    "Flare Gun": {
+      "name": "Pistola de Bengalas",
+      "description": "<p>Además de la munición normal de granadas, esta arma puede disparar bengalas*. No causan ningún daño, pero si se dispara al aire se puede ver a partir de 3 millas. No puedes instalar esta arma en implante de arma oculta.</p><p><em>*Actualmente no está soportado, por lo que tendrá que eliminar manualmente una bengala del inventario de actores después de disparar</em></p>",
+      "dvTable": "VD Lanzagranadas"
+    },
+    "M-02 Heavy Rifle": {
+      "name": "Rifle Pesado M-02",
+      "description": "<p>Esta arma dispara su propia munición personalizada, con un precio de 500ed (Caro) por 80 rondas de munición Perforadora de armadura.</p>",
+      "dvTable": "VD Rifle de Asalto"
+    },
+    "Nomad Air Cannon": {
+      "name": "Cañón aéreo nomade",
+      "description": "<p>En lugar de las municiones normales, esta arma dispara cualquier líquido que se coloque en ella. El ácido se puede comprar por 10eb (Barato) que reduce todas las armaduras usadas por el objetivo por 1 SP. También se puede cargar veneno o biotoxina, aunque requiere 3 viales por disparo.</p>"
+    },
+    "Pocket Launcher": {
+      "name": "Lanzacohetes de Bolsillo",
+      "description": "<p>Mientras está descarga, esta arma puede ser ocultada.</p>",
+      "dvTable": "VD Lanzacohetes"
+    },
+    "SDF-45": {
+      "name": "SDF-45",
+      "description": "<p>Este lanzador de cohetes solo puede cargar cohetes perforantes de armadura y tiene un rango máximo de 400 m/yds. Cuando se dispara un cohete a la vez, el DJ elige dónde aterrizan. Cuando se disparan dos cohetes a la vez, el DJ elige dónde aterrizan los cohetes, pero esta vez hasta 50 m/yd lejos del objetivo, y con cada cohete de más de 10 m/yds unos de otros.</p>",
+      "dvTable": "VD Lanzacohetes"
+    },
+    "TearJerker": {
+      "name": "Bromista-Llorón",
+      "description": "<p>Esta arma solo puede disparar humo o gas lacrimoso</p>",
+      "dvTable": "VD Lanzagranadas"
+    },
+    "Triple Treat": {
+      "name": "Amenaza Triple",
+      "description": "<p>\n  Comes with an Exotic Grenade Launcher Underbarrel* which - as the main gun is\n  poor quality - functions as a poor quality weapon. It can't be removed. Both\n  that and the main weapon can fire non-Basic Ammunition.\n</p>\n<p><em>*Must be manually added after acquiring the weapon</em></p>\n",
+      "dvTable": "VD Lanzacohetes"
+    }
+  }
+}

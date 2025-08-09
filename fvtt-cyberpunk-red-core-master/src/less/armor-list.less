@@ -1,0 +1,110 @@
+.armor-list {
+  height: 100%;
+}
+.armor-grid {
+  display: grid;
+  grid-template-columns: 3.5rem 1fr auto 1.9rem 2.2rem;
+  grid-template-rows: 1.1rem 1.1rem 1.1rem;
+  grid-auto-columns: 1fr;
+  grid-auto-rows: 1fr;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "armor-image armor-name       armor-name    armor-name   armor-name"
+    "armor-image armor-1-location armor-1-stats armor-1-type armor-1-actions"
+    "armor-image armor-2-location armor-2-stats armor-2-type armor-2-actions";
+  //width: 100%;
+  height: 3.5rem;
+  margin: 0.15rem;
+  padding-top: 0.188rem;
+}
+
+.armor-1-type {
+  grid-area: armor-1-type;
+  justify-self: end;
+  align-self: center;
+  width: 100%;
+  height: 100%;
+}
+
+.armor-2-type {
+  grid-area: armor-2-type;
+  justify-self: end;
+  align-self: center;
+  width: 100%;
+  height: 100%;
+}
+
+.armor-image {
+  grid-area: armor-image;
+  margin: auto;
+  height: 3.5rem;
+  width: 3.5rem;
+  padding-right: 0.15rem;
+  i {
+    position: absolute;
+    top: 0.25rem;
+    right: 0.5rem;
+    color: white;
+  }
+}
+
+.armor-1-location {
+  grid-area: armor-1-location;
+  justify-self: end;
+  align-self: center;
+  width: 100%;
+  height: 100%;
+
+  align-items: center;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.armor-1-stats {
+  grid-area: armor-1-stats;
+  justify-self: center;
+  align-self: center;
+  width: 100%;
+  height: 100%;
+}
+
+.armor-1-actions {
+  grid-area: armor-1-actions;
+  justify-self: center;
+  align-self: center;
+  width: 100%;
+  height: 100%;
+}
+
+.armor-2-location {
+  grid-area: armor-2-location;
+  justify-self: end;
+  align-self: center;
+  width: 100%;
+  height: 100%;
+}
+
+.armor-2-stats {
+  grid-area: armor-2-stats;
+  justify-self: end;
+  align-self: center;
+  width: 100%;
+  height: 100%;
+}
+
+.armor-2-actions {
+  grid-area: armor-2-actions;
+  justify-self: center;
+  align-self: center;
+  width: 100%;
+  height: 100%;
+}
+
+.armor-name {
+  grid-area: armor-name;
+  justify-self: start;
+  align-self: center;
+  width: 100%;
+  height: 100%;
+}

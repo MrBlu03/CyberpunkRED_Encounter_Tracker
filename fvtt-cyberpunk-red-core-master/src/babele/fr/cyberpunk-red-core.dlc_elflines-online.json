@@ -1,0 +1,18 @@
+{
+  "label": "Elflines Online",
+  "mapping": {},
+  "entries": {
+    "Elflines Online": {
+      "name": "Elflines Online",
+      "description": "<p>Une nouvelle copie in-box du hit BDMMORPG Elflines Online.</p>"
+    },
+    "Rank 10 ELO Character": {
+      "name": "Personnage ELO de rang 10",
+      "description": "<p>Un personnage ELO de niveau 10 (un personnage ELO doit être créé via la Macro et ses niveaux montés manuellement.)</p>\n"
+    },
+    "Rush Revolution": {
+      "name": "Rush Revolution",
+      "description": "<p>Casque de Braindance. Requis pour jouer à Elflines Online.</p>"
+    }
+  }
+}

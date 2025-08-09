@@ -1,0 +1,62 @@
+{
+  "label": "Umiejętność (Wiedza lokalna)",
+  "mapping": {},
+  "entries": {
+    "Local Expert (Badlands)": {
+      "name": "Wiedza lokalna (Pustkowia)",
+      "description": ""
+    },
+    "Local Expert (Little China)": {
+      "name": "Wiedza lokalna (Little China)",
+      "description": ""
+    },
+    "Local Expert (Little Europe)": {
+      "name": "Wiedza lokalna (Little Europe)",
+      "description": ""
+    },
+    "Local Expert (Morro Rock)": {
+      "name": "Wiedza lokalna (Morro Rock)",
+      "description": ""
+    },
+    "Local Expert (New Westbrook)": {
+      "name": "Wiedz lokalna (New Westbrook)",
+      "description": ""
+    },
+    "Local Expert (Norcal Military Base)": {
+      "name": "Wiedza lokalna (Baza wojskowa Norcal)",
+      "description": ""
+    },
+    "Local Expert (Old Combat Zone)": {
+      "name": "Wiedza lokalna (Stara strefa walki)",
+      "description": ""
+    },
+    "Local Expert (Old Corp Center)": {
+      "name": "Wiedza lokalna (Dawne centrum korporacyjne)",
+      "description": ""
+    },
+    "Local Expert (Old Japan Town)": {
+      "name": "Wiedza lokalna (Dawne JapanTown)",
+      "description": ""
+    },
+    "Local Expert (South Night City)": {
+      "name": "Wiedza lokalna (Południowe Night City)",
+      "description": ""
+    },
+    "Local Expert (The Glen)": {
+      "name": "Wiedza lokalna (Glen)",
+      "description": ""
+    },
+    "Local Expert (University District)": {
+      "name": "Wiedza lokalna (Dzielnica Uniwersytecka)",
+      "description": ""
+    },
+    "Local Expert (Upper Marina)": {
+      "name": "Wiedza lokalna (Upper Marina)",
+      "description": ""
+    },
+    "Local Expert (Watson)": {
+      "name": "Wiedza lokalna (Watson)",
+      "description": ""
+    }
+  }
+}

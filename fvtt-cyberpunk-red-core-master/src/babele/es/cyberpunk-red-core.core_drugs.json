@@ -1,0 +1,46 @@
+{
+  "label": "Drogas",
+  "mapping": {},
+  "entries": {
+    "Antibiotic": {
+      "name": "Antibiótico",
+      "description": "<p>Si un objetivo ha comenzado el proceso de curación natural inyectándolos con antibióticos, cura 2 puntos adicionales por semana. Este efecto no se acumula.</p>"
+    },
+    "Black Lace": {
+      "name": "Lazo Negro",
+      "description": "<p><strong>Efecto Primario</strong></p>\n<p>Cada dosis dura 24hs.</p>\n<ul>\n<li>El usuario pierde 2d6 de Humanidad que se devuelve si pasa la tirada de salvación de Efecto Secundario</li>\n<li>El usuario ignora los penalizadores por Heridas Serias por la duración del efecto</li>\n</ul>\n<p><br><strong>Efecto Secundario (VD17)</strong></p>\n<p>Cuando la dosis se acaba, el usuario tira VOL + Resistir Torturas/Drogas + 1d10 contra la VD Secundaria.</p>\n<ul>\n<li>Si falla no se recupera la Humanidad perdida</li>\n<li>Si el usuario no era ya adicto al Encaje negro, ahora lo es. Mientras es adicto, a menos que el usuario esté experimentando el efecto primario de esta droga, sus REF se reducen en 2 puntos.</li>\n</ul>"
+    },
+    "Blue Glass": {
+      "name": "Cristal Azul",
+      "description": "<p><strong>Efecto primario</strong></p>\n<p>La dosis dura 4 horas.</p>\n<ul>\n<li>El GM puede indicar ocasionalmente al usuario que está viendo remolinos de colores. Si esto ocurre, el usuario pierde su acción en un solo turno</li>\n</ul>\n<p><strong>Efecto secundario (VD15)</strong></p>\n<ul>\n<li>El GM puede indicar ocasionalmente al usuario que está viendo remolinos de colores. Cuando esto ocurre, el usuario pierde su acción en un solo turno</li>\n</ul>"
+    },
+    "Boost": {
+      "name": "Boost",
+      "description": "<p><strong>Efecto Primario</strong></p>\n<p>La dosis dura 24 horas.</p>\n<ul>\n<li>El usuario gana +2 a INT durante la duración</li>\n</ul>\n<p><strong>Efecto secundario (VD17)</strong></p>\n<ul>\n<li>INT -2</li>\n</ul>"
+    },
+    "Rapidetox": {
+      "name": "Rapidetox",
+      "description": "<p>Inyectar a un objetivo con Rapidetox eliminará los efectos de cualquier fármaco, veneno o intoxicante que sufra actualmente.</p>"
+    },
+    "Smash": {
+      "name": "Smash",
+      "description": "<p><strong>Efecto Primario</strong></p>\n<p>La dosis dura 4 horas.</p>\n<ul>\n<li>El usuario se siente feliz y satisfecho</li>\n<li>+2 a Baile / Conversación / Percepción Humana / Persuasión / Actuación / Contorsionismo</li>\n</ul>\n<p><strong>Efecto Secundario (VD15)</strong></p>\n<ul>\n<li>-2 a Baile / Conversación / Percepción Humana / Persuasión / Actuación / Contorsionismo</li>\n<li>El DJ le dirá cuando necesite más Smash. Deberás hacer todo lo posible por representar\nel papel.</li>\n</ul>"
+    },
+    "Speedheal": {
+      "name": "Speedheal",
+      "description": "<p>Inyectar a un objetivo con Speedheal inmediatamente hace que cura a un PV igual a su BODY más su WILL. Este efecto no funciona en objetivos heridos morales, y solo se puede usar en un objetivo una vez al día.</p>"
+    },
+    "Stim": {
+      "name": "Stim",
+      "description": "<p>Inyectar a un objetivo con Stim hace que ignore todas las penalizaciones por heridas serias durante una hora. Solo se puede usar en un objetivo una vez al día.</p>"
+    },
+    "Surge": {
+      "name": "Surge",
+      "description": "<p>Inyectar a un objetivo con Surge hace que sea inmune a la privación del sueño durante 24 horas. Solo se puede usar en un objetivo una vez por semana.</p>"
+    },
+    "Synthcoke": {
+      "name": "Sintecoca",
+      "description": "<p><strong>Efecto Primario</strong></p>\n<p>La dosis dura 4 horas.</p>\n<ul>\n<li>+1 REF por 1 punto para la duración</li>\n<li>El usuario se siente paranoide de vez en cuando</li>\n</ul>\n<p><strong>Efecto secundario (VD15)</strong></p>\n<ul>\n<li>-2 REF a menos que se esté bajo el Efecto Primario</li>\n<li>El DJ te dirá cuándo necesitas más Sintecoca. Deberás hacer todo lo posible por representar\nel papel.</li>\n</ul>"
+    }
+  }
+}

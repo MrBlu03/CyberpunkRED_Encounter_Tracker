@@ -1,0 +1,4 @@
+{
+  "description": "Can this weapon ignore Armor SP below a set amount?",
+  "type": "boolean"
+}

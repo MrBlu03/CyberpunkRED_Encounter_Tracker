@@ -1,0 +1,19 @@
+_id: VszxZ4TJjQ8FGuoc
+_key: "!tables!VszxZ4TJjQ8FGuoc"
+description: >-
+  Source: Achievements and Loot Boxes pg.5
+
+  All weapons come fully loaded with a compatible ammo type of the GM's
+  choosing.
+displayRoll: true
+formula: 1d6
+img: icons/containers/chest/chest-simple-box-blue.webp
+name: A Box Freezing Cold To The Touch
+replacement: true
+results:
+  - JiMN6zADBZGPIqHC
+  - wqG4JWoUVJYhyJqH
+  - qVw9IIb1peHOxlXK
+  - C1PBkQkgZesy7QSz
+  - 1luj1hZCHHXcW6eT
+  - xdzTOenYphIk50Dk

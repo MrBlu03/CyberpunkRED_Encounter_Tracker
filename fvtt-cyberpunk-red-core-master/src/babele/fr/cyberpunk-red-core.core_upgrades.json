@@ -1,0 +1,214 @@
+{
+  "label": "Améliorations",
+  "mapping": {
+    "dvTable": "system.tableSD"
+  },
+  "entries": {
+    "Armored Chassis": {
+      "name": "Châssis blindé",
+      "description": "<p>Peut être appliqué à tous les véhicules. Armure du véhicule PA13. N'affecte pas les parties vitrées.</p>"
+    },
+    "AV-4 Engine Upgrade": {
+      "name": "Amélioration de moteur d'AV-4",
+      "description": "<p>Peut être appliqué à tous les véhicules terrestres. Ajoute des propulseurs Aérodyne au véhicule, permettant le vol. En volant le véhicule a une vitesse narrative de 322Km/H, et une vitesse de combat de 40. Le véhicule en vol doit être piloté en utilisant la compétence de Pilotage de véhicule aérien.</p>"
+    },
+    "Backup Drive": {
+      "name": "Disque dur de sauvegarde",
+      "description": "<p>Sauvegarde les programmes lorsque détruits, à l'exclusion des GLACE Noir. En dépensant une action réelle, un netrunner peut réinstaller tous les programmes sauvés.</p>"
+    },
+    "Bayonet": {
+      "name": "Baïonnette",
+      "description": "<p>Une vieille idée qui fonctionne toujours aussi bien ; vous permet d'utiliser votre arme à feu comme une arme de mêlée légère. Lorsqu'elle est attachée, l'arme ne peut pas être cachée sous les vêtements.</p>"
+    },
+    "Bulletproof Glass": {
+      "name": "Verre pare-balles",
+      "description": "<p>Peut être appliqué à tous les véhicules. Tout le verre sur le véhicule est maintenant considéré comme couvert avec 15PA. Peut être amélioré une seconde fois pour passer à 30PA. Chaque fenêtre subit des dégâts individuellement.</p>\n<p>Se référer aux règles de couverts dans CP:R, p.182.</p>"
+    },
+    "Combat Plow": {
+      "name": "Pare-chocs de combat",
+      "description": "<p>Peut être appliqué à tous les véhicules terrestres et maritimes, à l'exception des vélos et des jet-skis. Lorsque vous percutez quelque chose à l'avant de votre véhicule, votre véhicule ne subit pas de dommages et personne à l'intérieur ne souffre de la blessure critique Coup du lapin. Vous infligez 2d6 dégâts de percussion supplémentaires si votre véhicule a été boosté par CAFAY (NOS) le tour où vous percutez l'objet.</p>"
+    },
+    "Communications Center": {
+      "name": "Centre de communications",
+      "description": "<p>Peut être appliqué à tous les véhicules. Console à écran tactile qui fonctionne comme un Agent, avec une unité de stockage contenant 6 <strong>Communicateurs Radio</strong>, 6 <strong>Brouilleurs / Décrypteurs</strong>, un <strong>Récepteur radio / de musique</strong>, un <strong>récepteur traceur</strong> avec 6 traceurs, et un <strong>enregistreur audio</strong>.</p>"
+    },
+    "Deployable Spike Strip": {
+      "name": "Herse déployable",
+      "description": "<p>Peut être appliqué à toutes les voitures de sol. Par une action, le conducteur peut déployer une bande de pointes. Lorsque déployé, tout véhicule avec des pneus qui suit de près doit effectuer un jet de conduite de véhicule terrestre SD17. En cas d'échec, le véhicule subit 4d6 de dégâts comme s'il touchait un point faible. Les bandes de pointes de rechange coûtent 10eb.</p>\n<p>Vous pouvez installer cette amélioration plusieurs fois, chaque amélioration augmente la quantité de bandes de pointes qui peuvent être déployées avant le rechargement du système, et il ne peut pas être rechargé pendant que le véhicule se déplace.</p>"
+    },
+    "DNA Lock": {
+      "name": "Verrou biométrique",
+      "description": "<p>Utilise la biométrie pour verrouiller la cyberconsole. Impossible d'accéder à une cyberconsole verrouillée sans sa clé biométrique, à moins de réussir un <strong>jet de Sécurité électronique SD 17</strong>.</p>"
+    },
+    "Drum Magazine (Assault Rifle)": {
+      "name": "Chargeur à cylindre (Fusil d'assaut)",
+      "description": "<p>Augmente la taille du chargeur à 45 balles.</p>"
+    },
+    "Drum Magazine (Grenade Launcher)": {
+      "name": "Chargeur à cylindre (Lance-grenades)",
+      "description": "<p>Augmente la taille du chargeur à 6 grenades.</p>"
+    },
+    "Drum Magazine (Heavy Pistol)": {
+      "name": "Chargeur à cylindre (Pistolet lourd)",
+      "description": "<p>Augmente la taille du chargeur à 28 balles.</p>"
+    },
+    "Drum Magazine (Heavy SMG)": {
+      "name": "Chargeur à cylindre (Pistolet-mitrailleur lourd)",
+      "description": "<p>Augmente la taille du chargeur à 60 balles.</p>"
+    },
+    "Drum Magazine (Medium Pistol)": {
+      "name": "Chargeur à cylindre (Pistolet moyen)",
+      "description": "<p>Augmente la taille du chargeur à 36 balles.</p>"
+    },
+    "Drum Magazine (Rocket Launcher)": {
+      "name": "Chargeur à cylindre (Lance-roquettes)",
+      "description": "<p>Augmente la taille du chargeur à 3 roquettes. C'est pas mal de BOOM.</p>"
+    },
+    "Drum Magazine (Shotgun)": {
+      "name": "Chargeur à cylindre (Fusil à pompe)",
+      "description": "<p>Augmente la taille du chargeur à 16 coups.</p>"
+    },
+    "Drum Magazine (SMG)": {
+      "name": "Chargeur à cylindre (Pistolet-mitrailleur)",
+      "description": "<p>Augmente la taille du chargeur à 50 balles.</p>"
+    },
+    "Drum Magazine (Sniper Rifle)": {
+      "name": "Chargeur à cylindre (Fusil de précision)",
+      "description": "<p>Augmente la taille du chargeur à 12 balles.</p>"
+    },
+    "Drum Magazine (Very Heavy Pistol)": {
+      "name": "Chargeur à cylindre (Pistolet très lourd)",
+      "description": "<p>Augmente la taille du chargeur à 28 balles.</p>"
+    },
+    "Enhanced Interface Plug Integration": {
+      "name": "Intégration améliorée des ports d'interface neurale",
+      "description": "<p>Peut être appliqué à toutes les motos. Lorsque vous utilisez des prises d'interface pour conduire ce véhicule, si vous avez REF 8 ou plus, et si vous, un passager, ou votre moto est la cible d'une attaque, vous pouvez essayer d'esquiver comme vous le feriez à pied. Si vous esquivez pour un passager, cela devient leur défense.</p>"
+    },
+    "Extended Magazine (Assault Rifle)": {
+      "name": "Extension de chargeur (Fusil d'assaut)",
+      "description": "<p>Augmente la taille du chargeur à 35 balles.</p>"
+    },
+    "Extended Magazine (Grenade Launcher)": {
+      "name": "Extension de chargeur (Lance-grenades)",
+      "description": "<p>Augmente la taille du chargeur à 4 grenades.</p>"
+    },
+    "Extended Magazine (Heavy Pistol)": {
+      "name": "Extension de chargeur (Pistolet lourd)",
+      "description": "<p>Augmente la taille du chargeur à 14 balles.</p>"
+    },
+    "Extended Magazine (Heavy SMG)": {
+      "name": "Extension de chargeur (Pistolet-mitrailleur lourd)",
+      "description": "<p>Augmente la taille du chargeur à 50 balles.</p>"
+    },
+    "Extended Magazine (Medium Pistol)": {
+      "name": "Extension de chargeur (Pistolet moyen)",
+      "description": "<p>Augmente la taille du chargeur à 18 balles.</p>"
+    },
+    "Extended Magazine (Rocket Launcher)": {
+      "name": "Extension de chargeur (Lance-roquettes)",
+      "description": "<p>Augmente la taille du chargeur à 2 roquettes.</p>"
+    },
+    "Extended Magazine (Shotgun)": {
+      "name": "Extension de chargeur (Fusil à pompe)",
+      "description": "<p>Augmente la taille du chargeur à 8 coups.</p>"
+    },
+    "Extended Magazine (SMG)": {
+      "name": "Extension de chargeur (Pistolet-mitrailleur)",
+      "description": "<p>Augmente la taille du chargeur à 40 balles.</p>"
+    },
+    "Extended Magazine (Sniper Rifle)": {
+      "name": "Extension de chargeur (Fusil de précision)",
+      "description": "<p>Augmente la taille du chargeur à 8 balles.</p>"
+    },
+    "Extended Magazine (Very Heavy Pistol)": {
+      "name": "Extension de chargeur (Pistolet très lourd)",
+      "description": "<p>Augmente la taille du chargeur à 14 balles.</p>"
+    },
+    "Grenade Launcher Underbarrel": {
+      "name": "Lance-grenades sous canon",
+      "description": "<p>Fonctionne comme un lance-grenades standard, mais avec un chargeur de 1. Nécessite 2 mains pour utiliser et prend 2 emplacements d'extension. Tant qu'elle est attachée, l'arme ne peut pas être dissimulée sous les vêtements.</p>\n<p>Notez que l'arme hérite de tous les modificateurs de l'arme à laquelle elle est attachée, comme d'autres accessoires et qualité.</p>",
+      "dvTable": "SD Lance-grenades"
+    },
+    "Hardened Circuitry": {
+      "name": "Circuits renforcés",
+      "description": "<p>Une Cyberconsole aux circuits renforcés ne peut pas être désactivé ou détruit par les effets d'IEM.</p>"
+    },
+    "Heavy Chassis": {
+      "name": "Châssis lourd",
+      "description": "<p>Peut être appliqué à tous les véhicules sauf les motos, jet-skis et gyrocoptères. Ajoute 20 PDS au véhicule. Cela n'affecte pas le verre, et le véhicule peut maintenant remorquer jusqu'à 10 tonnes.</p>"
+    },
+    "Housing Capacity": {
+      "name": "Partie habitable",
+      "description": "<p>Peut être appliqué à Aérozep, AV-4, bateau de plaisance, voiture terrestre et yacht. Lorsqu'il est installé sur une voiture ou un AV-4, il ajoute une zone de couchage avec un lit, des toilettes, une douche, et une petite cuisine au véhicule. Lorsqu'il est installé dans un bateau de plaisance, un yacht ou un aérozep, il ajoute une pièce au véhicule.</p>\n<p><strong>Nécessite un châssis lourd sur une voiture compacte ou une voiture à haute performance.</strong>.</p>"
+    },
+    "Hover Upgrade": {
+      "name": "Amélioration d'aéroglisseur",
+      "description": "<p>Peut être appliqué à tous les véhicules terrestres. Ajoute des ventilateurs au véhicule qui lui permettent de se déplacer sur l’eau à une vitesse narrative de 24 km/h, et une vitesse de combat de 10.</p>"
+    },
+    "Infrared Nightvision Scope": {
+      "name": "Lunette infrarouge de vision nocturne",
+      "description": "<p>Réduit à 0 le malus imposé au tir contre une cible dissimulée par l'obscurité, la fumée, le brouillard etc.</p>"
+    },
+    "Insulated Wiring": {
+      "name": "Câblage isolé",
+      "description": "<p>Une cyberconsole dotée d'un câblage isolé ne peut ni prendre feu ni mettre le feu eux vêtements de l'utilisateur à cause de l'effet d'un programme.</p>"
+    },
+    "KRASH Barrier": {
+      "name": "Barrière anti-KRASH",
+      "description": "<p>La cyberconsole est immunisée contre les effets qui forcent le Netrunner à se déconnecter (de façon sûre ou non).</p>"
+    },
+    "NOS": {
+      "name": "CAFAY",
+      "description": "<p>Peut être appliqué à tous les véhicules. Ajoute un réservoir d'oxyde d'azote au véhicule. Vous permet d'utiliser votre action pour utiliser une action de mouvement supplémentaire pendant la conduite.</p>\n<p>Vous pouvez installer cette mise à jour plusieurs fois, chaque amélioration ajoute un réservoir supplémentaire et chaque réservoir peut être utilisé une fois par jour.</p>"
+    },
+    "Onboard Flamethrower": {
+      "name": "Crache-feu intégré",
+      "description": "<p>Peut être appliqué à tous les véhicules. Un <strong>Crache-feu </strong>qui peut être monté vers l'avant, le côté ou l'arrière du véhicule. Le pilote peut le faire tirer en utilisant une action. Il ne peut pas être rechargé en conduisant et ne peut pas accepter les accessoires d'arme.</p>\n<p>Vous pouvez installer cette amélioration plusieurs fois.</p>"
+    },
+    "Onboard Machine Gun": {
+      "name": "Mitrailleuse intégrée",
+      "description": "<p>Peut être appliqué à tous les véhicules. Un <strong>fusil d'assaut </strong> avec une capacité de 30 balles et uniquement capable de tir automatique, qui peut être monté vers l'avant du véhicule. Le conducteur peut le faire tirer en utilisant une action. Ne peut pas être rechargé en conduisant et ne peut pas accepter les améliorations d'arme.</p>\n<p>Vous pouvez installer cette mise à jour plusieurs fois.</p>"
+    },
+    "Onboard Melee Weapon": {
+      "name": "Arme de mêlée intégrée",
+      "description": "<p>Peut être appliqué à tous les véhicules terrestres et maritimes. Une <strong>arme de mêlée très lourde</strong> qui peut être montée à l'avant, le côté ou l'arrière du véhicule. Le pilote peut attaquer avec en utilisant une action. L'arme ne peut pas être enlevée.</p>\n<p>Vous pouvez installer cette améliorations plusieurs fois.</p>"
+    },
+    "Onboard Rocket Pod": {
+      "name": "Lance-roquettes intégré",
+      "description": "<p>Peut être appliqué à tous les véhicules sauf les motos, jet-skis et gyrocoptères. Un <strong>lance-roquettes</strong>avec un chargeur de trois roquettes, qui peut être monté à l'avant du véhicule. Le conducteur peut le faire tirer en utilisant une action. Il ne peut pas être rechargé en conduisant et ne peut pas accepter les accessoires d'arme.</p>\n<p>Vous pouvez installer cette amélioration plusieurs fois. <strong>Nécessite un châssis lourd</strong>.</p>"
+    },
+    "Range Upgrade": {
+      "name": "Extension de portée",
+      "description": "<p>Une cyberconsole dotée d'une extension de portée peut se connecter à un point d'accès situé à 8 m de distance ou moins (au lieu de 6m).</p>"
+    },
+    "Seating Upgrade": {
+      "name": "Amélioration de places assises",
+      "description": "<p>Peut être appliqué à tous les véhicules. Ajoute deux sièges au véhicule. Elles peuvent être installées en tant que side-car, elles peuvent également être installées sous la forme de sièges éjecteurs avec des parachutes amovibles.</p>\n<p>Peut être pris plusieurs fois à l'exception des motos, des jet-skis et des gyrocoptères.</p>"
+    },
+    "Security Upgrade": {
+      "name": "Amélioration de sécurité",
+      "description": "<p>Peut être appliqué à tous les véhicules. Ajoute des verrous ADN au véhicule requérant la biométrie correcte ou un jet SD 17 Sécurité électronique pour le déverrouiller. Rater le déverrouillage du véhicule délivre des dégâts comme touché avec une matraque électrique.</p>\n<p>De plus, quand il est immobile le véhicule est camouflé et nécessite un <strong>jet de Perception SD17</strong> pour le repérer. Le véhicule doit rester stationnaire pendant une minute avant que cela ne s'active.</p>"
+    },
+    "Shotgun Underbarrel": {
+      "name": "Double canon à pompe",
+      "description": "<p>Fonctionne comme un fusil à pompe standard, mais avec un chargeur de 2 coups. Nécessite 2 mains pour utiliser et prend 2 emplacements d'extension. Tant qu'elle est attachée, l'arme ne peut pas être dissimulée sous les vêtements.</p>\n<p>Notez que l'arme hérite de tous les modificateurs de l'arme à laquelle elle est attachée, comme d'autres accessoires et qualité.</p>",
+      "dvTable": "SD Fusil à pompe (Slug)"
+    },
+    "Smartgun Link": {
+      "name": "Liaison smartgun",
+      "description": "<p>Transforme l'arme en \"Smartgun\".</p>"
+    },
+    "Smuggling Upgrade": {
+      "name": "Amélioration de contrebande",
+      "description": "<p>Peut être appliqué à tous les véhicules. Ajoute deux <strong>holsters cachés</strong> au véhicule, et un grand compartiment caché à des fins de contrebande. Ceux-ci peuvent être découverts avec un <strong>jet de Dissimulation / Révélation d'objet SD17</strong>.</p>\n<p>Peut être pris plusieurs fois à l'exception des motos, des jet-skis et des gyrocoptères.</p>"
+    },
+    "Sniping Scope": {
+      "name": "Lunette de précision",
+      "description": "<p>Vous permet de voir les détails jusqu'à 800 m. +1 au tir en coup par coup et tirs visés pour les cibles distantes de plus de 50 m.</p>"
+    },
+    "Vehicle Heavy Weapon Mount": {
+      "name": "Support d'arme lourde pour véhicule",
+      "description": "<p>Peut être appliqué à tous les véhicules sauf les motos, jet-skis et gyrocoptèrers. Un des sièges du véhicule devient une monture pivotante pour toutes les armes à distance à deux mains. Un passager peut tirer l'arme en utilisant une action. Le passager peut recharger l'arme. L'arme peut être retirée ou réinstallée en utilisant une action.</p>\n<p>La première fois que cette mise à niveau est prise, elle inclut un <strong>Helix deTsunami Arms</strong>, un <strong>canon électrique EMG-86 Rhinemetall</strong>, ou un <strong>lance-grenades Militech \"Cowboy\" U-56</strong>. Si le véhicule dispose de l'amélioration de la vitre pare-balle, le tireur est protégé par le même verre.</p>\n<p>Vous pouvez installer cette amélioration plusieurs fois si le véhicule a l'amélioration Partie habitable. <strong>Nécessite un châssis lourd</strong>.</p>"
+    }
+  }
+}

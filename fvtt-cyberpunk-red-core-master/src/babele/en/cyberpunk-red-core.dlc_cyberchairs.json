@@ -1,0 +1,14 @@
+{
+  "label": "Cyberchairs",
+  "mapping": {},
+  "entries": {
+    "Mercurius Cyberchair": {
+      "name": "Mercurius Cyberchair",
+      "description": "<p>\n  An impressively affordable cyberchair, offering great features at this price\n  point. While using it the operator's base MOVE becomes 5, with all regular\n  movement options remaining available.\n</p>\n<p>\n  Operation of the cyberchair requires either a free hand, or interface plugs.\n</p>\n<p>\n  If the operator suffers a critical injury that reduces their MOVE, the MOVE of\n  the cyberchair is instead effected.\n</p>\n<p>\n  The cyberchair cannot be targeted specifically, nor can it be disabled via EMP\n  effects.\n</p>\n"
+    },
+    "Spider Cyberchair": {
+      "name": "Spider Cyberchair",
+      "description": "<p>\n  The top of the line cyberchair, giving the premier user many options. While\n  using it the operator's base MOVE becomes 5, with all regular movement options\n  remaining available.\n</p>\n<p>\n  Additionally, this cyberchair has room for 4 cyberlimb options*. Any options\n  installed always count as being paired.\n</p>\n<p>\n  Operation of the cyberchair requires either a free hand, or interface plugs.\n</p>\n<p>\n  If the operator suffers a critical injury that reduces their MOVE, the MOVE of\n  the cyberchair is instead effected.\n</p>\n<p>\n  The cyberchair cannot be targeted specifically, nor can it be disabled via EMP\n  effects.\n</p>\n<p><em>*Installing cyberlimb options currently not supported</em></p>\n"
+    }
+  }
+}

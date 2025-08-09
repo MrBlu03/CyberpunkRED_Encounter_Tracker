@@ -1,0 +1,12 @@
+_id: g0YvDqhptZVY8bIh
+_key: "!tables.results!T6pocp9VStxtFPzP.g0YvDqhptZVY8bIh"
+documentCollection: cyberpunk-red-core.core_clothing
+documentId: Q7LFdojJFEIRaLlN
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/clothing/generic_jewelry.svg
+range:
+  - 4
+  - 4
+text: Leisurewear Jewelry
+type: 2
+weight: 1

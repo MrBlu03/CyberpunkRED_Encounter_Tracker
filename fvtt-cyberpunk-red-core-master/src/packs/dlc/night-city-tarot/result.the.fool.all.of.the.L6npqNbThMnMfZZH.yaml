@@ -1,0 +1,18 @@
+_id: L6npqNbThMnMfZZH
+_key: "!tables.results!bEeDgE9CfongXFAR.L6npqNbThMnMfZZH"
+documentCollection: ""
+documentId: null
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/night_city_tarot/the_fool.svg
+range:
+  - 1
+  - 1
+text: >-
+  The Fool. All of the target's cyberware is inoperable for 1 hour. Their Checks
+  gain the "Obscured by Darkness" modifier if it would leave them with no way to
+  sense an enemy. Cyberlimbs affected will act as their dismembered meat
+  counterpart, but are still attached to the target's body. If the target
+  doesn't have any cyberware, they are dealt the Foreign Object Critical Injury
+  and take 3d6 Humanity Loss instead. (See Night City Tarot Page 3).
+type: 0
+weight: 1

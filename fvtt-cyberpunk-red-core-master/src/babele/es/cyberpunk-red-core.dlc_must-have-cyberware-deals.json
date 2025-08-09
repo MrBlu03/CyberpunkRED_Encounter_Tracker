@@ -1,0 +1,58 @@
+{
+  "label": "Ofertas Imperdibles en Ciberimplantes",
+  "mapping": {},
+  "entries": {
+    "Appetite Controller": {
+      "name": "Controlador de Apetito",
+      "description": "<p>Reprime la sensación de hambre. El usuario ignora la pérdida de Humanidad de sanciones por trauma de inanición, pero el usuario todavía puede morir de hambre. Tira Salvación contra la Muerte al comienzo del séptimo día consecutivo sin comer. +1 a las sucesivas tiradas de Salvación contra la Muerte cada día después.</p>\n<p>Requiere Biomonitor.</p>"
+    },
+    "Cyberpillow": {
+      "name": "Ciberalmohada",
+      "description": "<p>Una cómoda almohada que sale del ciberbrazo para las siestas sobre la marcha.</p>"
+    },
+    "External Vidscreen": {
+      "name": "Videopantalla Externa",
+      "description": "<p>Implantada pantalla de vídeo flexible. Utiliza un chip de memoria o un agente vinculado para transmitir vídeo a Videopantalla.</p>"
+    },
+    "Holo Projector Palm": {
+      "name": "Holo-Proyector de mano",
+      "description": "<p>Proyecta un pequeño holograma desde la palma del usuario. El usuario puede interactuar con el holograma para controlar las funciones de un agente vinculado. Se puede instalar en el brazo de la carne si es la única pieza de ciberware en ese brazo.</p>"
+    },
+    "Kill Display": {
+      "name": "Contador de Muertes",
+      "description": "<p>Contador alfanumérico subdermal que brilla claramente a través de la piel. Usa un agente vinculado para personalizar la salida. Comúnmente usado como contador de bajas.<br>Califica como un Tatuaje Luminoso. +2 Vestimenta y Estilo cuando el usuario tenga 3 o más Tatuajes Luminosos.</p>"
+    },
+    "Lead's Turn-On-Show-Off Nails": {
+      "name": "Uñas Luminosas de Lead",
+      "description": "<p>Uñas iluminadas personalizables para cada punta de los dedos. Incluye herramientas para crear patrones personalizados. Los patrones de uñas se pueden descargar del CitiNet y sincronizar con un agente vinculado.<br>Califica como un Tatuaje Luminoso. +2 Vestimenta y Estilo cuando el usuario tiene 3 o más Tatuajes Luminosos.</p>"
+    },
+    "Mood Eye": {
+      "name": "Ojo Animado",
+      "description": "<p>Lentes oculares que cambian de color. El color depende de un conector neuronal que escanea el humor. VD 21 de Actuación para simular un estado de ánimo y cambiar el color en consecuencia. Las lentes se pueden desactivar sin una acción.</p>\n<ul>\n<li>Rojo: Furia</li>\n<li>Azul: Pena</li>\n<li>Amarillo: Terror</li>\n<li>Rosa: Exitado</li>\n<li>Verde: Envidia</li>\n<li>Gray: Muerto</li>\n</ul>\n<p>Fashionware. Requiere Conector Neuronal.</p>"
+    },
+    "NeuTongue": {
+      "name": "Lengua Neutónica",
+      "description": "<p>Simula sensaciones de sabor. Utiliza un agente vinculado para personalizar los perfiles de sabor. Se puede desactivar sin una acción. No hay sensación de sabor cuando se desactiva.</p>\n<p>Reemplaza la lengua de la carne.</p>"
+    },
+    "PerfectFit Cyberfoot": {
+      "name": "Ciberpie CalcePerfecto",
+      "description": "<p>Ajusta el tamaño de los pies para encajar perfectamente con cualquier calzado. El usuario puede ignorar las penalizaciones por llevar calzado, que de lo contrario sería incómodo o impracticable.<br>Se puede instalar en la pierna de carne si es la única pieza de ciberware de esa pierna.</p>"
+    },
+    "PersonalPak KibbleWarmer": {
+      "name": "Calentador de Paquetes de Kibble Personal",
+      "description": "<p>Compartimento interno con un elemento de calefacción de alta potencia, ideal para calentar comidas pre-empaquetadas.</p>"
+    },
+    "Pursuit Security Inc. Personal Shredder": {
+      "name": "Triturador Personal de Pursuit Security Inc.",
+      "description": "<p>Triturador de papel de alto impacto, puede ser ocultado. Tiene un compartimento de almacenamiento interno para los residuos de papel.</p>"
+    },
+    "Sponsored Covering (Cyberarm)": {
+      "name": "Cobertura Patrocinada (Ciberbrazo)",
+      "description": "<p>Gana 20ed mensualmente al llevar un anuncio luminoso en tu Ciberbrazo. El usuario puede ser responsable de pagar la cuota de instalación. El patrocinio corporativo puede ser revocado si se violan los términos, tales como oscurecer el anuncio con ropa o envolverse en actividades inapropiadas.</p>\n<p>No se puede instalar en el brazo de carne.</p>"
+    },
+    "Sponsored Covering (Cyberleg)": {
+      "name": "Cobertura Patrocinada (Ciberpierna)",
+      "description": "<p>Gana 20ed mensualmente al llevar un anuncio luminoso en tu Ciberpierna. El usuario puede ser responsable de pagar la cuota de instalación. El patrocinio corporativo puede ser revocado si se violan los términos, tales como oscurecer el anuncio con ropa o envolverse en actividades inapropiadas.</p>\n<p>No se puede instalar en el brazo de carne.</p>"
+    }
+  }
+}

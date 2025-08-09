@@ -1,0 +1,35 @@
+_id: Qs40FdFNYmpEf6lM
+_key: "!items!Qs40FdFNYmpEf6lM"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/black-chrome/badger-corporate-bus.svg
+name: TetraCorp America Badger Corporate Bus
+system:
+  brand: TetraCorp America
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        A luxurious bus for corporate road trips. Equally well equipped for work
+        meetings and after meeting drinks.
+      </p>
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  price:
+    market: 50000
+  sdp: 70
+  seats: 12
+  source:
+    book: BC
+    page: 80
+  speedCombat: 20
+  speedNarrative: 100 MPH / 161 KPH
+type: vehicle

@@ -1,0 +1,26 @@
+{{!-- Item purchase or take --}}
+{{#if (cprCompare item.system.amount ">" "1") }}
+  <a class="item-action" data-action-type="purchaseFraction">
+    {{#if actor.flags.cyberpunk-red-core.items-free }}
+      <i class="fas fa-hand-pointer"
+         data-tooltip="{{localize "CPR.containerSheet.action.takeItemPart"}}"></i>
+    {{else}}
+      <i class="fas fa-basket-shopping"
+         data-tooltip="{{localize "CPR.containerSheet.action.purchaseItemPart"}}"></i>
+    {{/if}}
+  </a>
+{{/if}}
+<a class="item-action" data-action-type="purchase">
+  {{#if actor.flags.cyberpunk-red-core.items-free }}
+    <i class="fas fa-hand"
+       data-tooltip="{{localize "CPR.containerSheet.action.takeItemAll"}}"></i>
+  {{else}}
+    <i class="fas fa-cart-shopping"
+       data-tooltip="{{localize "CPR.containerSheet.action.purchaseItemAll"}}"></i>
+  {{/if}}
+</a>
+{{!-- Item deletion --}}
+{{#if (cprCompare isGM "||" actor.flags.cyberpunk-red-core.players-delete) }}
+  <a class="item-action" data-action-type="delete"><i class="fas fa-trash-can"
+   data-tooltip="{{localize "CPR.actorSheets.commonActions.deleteItem"}}"></i></a>
+{{/if}}

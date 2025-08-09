@@ -1,0 +1,42 @@
+{
+  "label": "Frachtcontainer und Cube-Hotels",
+  "mapping": {},
+  "entries": {
+    "A Touch of Luxury Furniture Set": {
+      "name": "Ein Hauch von Luxus Möbelset",
+      "description": "<p>Möbel, mit denen sich dein Frachtcontainer fast wie ein Zuhause anfühlt.</p>"
+    },
+    "Cargo Container Chic Furniture Set": {
+      "name": "Frachtcontainer-Chic Möbelset",
+      "description": "<p>Günstig, aber echte Möbel. Das Starter-Set der meisten Frachtcontainer.</p>"
+    },
+    "Fire Safe": {
+      "name": "Feuersafe",
+      "description": "<p>Kleiner Tresor aus Dickem Stahl.</p>\n<ul>\n<li>50 TP</li>\n<li>30cm / 1ft</li>\n<li>Kann mit einem Wurf auf Schloss knacken gegen SG 15 geknackt werden</li>\n</ul>"
+    },
+    "Hidden Compartment": {
+      "name": "Verborgenes Fach",
+      "description": "<p>Ein kleines, verstecktes Fach im Frachtcontainer.</p>\n<ul>\n<li>15.25×30×7.5cm / 6×12×3 Zoll</li>\n<li>Kann mit einem Wurf auf Objekt verbergen/entdecken mit SG 15 entdeckt werden</li>\n</ul>"
+    },
+    "Koff Popper": {
+      "name": "Koff-Popper",
+      "description": "<p>Der Continental Brands Koff-Popper ist die einzige Spezialthermoskanne, die du in deinem Leben brauchst.</p>\n<ul>\n<li>Thermoskanne mit eingebautem Koff-Pop-Brüher</li>\n<li>Fasst 237ml / 8oz</li>\n<li>Nur erhältlich bei Oasis-Geschäften</li>\n</ul>"
+    },
+    "Koff Pops": {
+      "name": "Koff-Pops",
+      "description": "<p>Koff-Pops für den Continental Brands Koff-Popper.&nbsp;</p>\n<ul>\n<li>10er-Packung</li>\n<li>In allen Lebensstilen ab Kibble oder höher bereits eingerechnet</li>\n</ul>"
+    },
+    "Second-hand Special Furniture Set": {
+      "name": "Gebrauchtes Möbelset",
+      "description": "<p>Nicht hübsch, aber funktional. Dieses Möbelset ist das absolute Minimum, das dein Frachtcontainer braucht.</p>"
+    },
+    "Smart Vanity": {
+      "name": "Smart-Kosmetiktisch",
+      "description": "<p>Smarte Frisierstation. Vollständig ausgestattet mit Werkzeugen und Kosmetik.</p>"
+    },
+    "Wall Art": {
+      "name": "Wandkunstwerk",
+      "description": "<p>Billiges Poster.</p>"
+    }
+  }
+}

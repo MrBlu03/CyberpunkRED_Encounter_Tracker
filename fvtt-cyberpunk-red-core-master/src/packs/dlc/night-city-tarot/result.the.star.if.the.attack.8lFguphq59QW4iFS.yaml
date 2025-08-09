@@ -1,0 +1,18 @@
+_id: 8lFguphq59QW4iFS
+_key: "!tables.results!bEeDgE9CfongXFAR.8lFguphq59QW4iFS"
+documentCollection: ""
+documentId: null
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/night_city_tarot/the_star.svg
+range:
+  - 18
+  - 18
+text: >-
+  The Star. If the Attack was a Ranged Attack, it hits the target and hits a
+  second target within 20 m/yards that is chosen by the GM. If there is no valid
+  second target, it hits the first target another time. The second hit hits the
+  body. You roll a new Damage Roll for the second hit. If the Attack was a Melee
+  Attack, the target is dealt the Broken Ribs and Collapsed Lung Critical
+  Injuries. (See Night City Tarot Page 5).
+type: 0
+weight: 1

@@ -1,0 +1,28 @@
+_id: 82sXoExwFlRIWesU
+_key: "!items!82sXoExwFlRIWesU"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/drugs/surge.svg
+name: Surge
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  consumed: None
+  description:
+    value: |
+      <p>
+        Injecting a target with Surge causes them to be immune to sleep deprivation
+        for 24 hours. It can only be used on a target once per week.
+      </p>
+  equipped: owned
+  favorite: false
+  price:
+    market: 0
+  revealed: true
+  source:
+    book: Core
+    page: 150
+  usage: toggled
+type: drug

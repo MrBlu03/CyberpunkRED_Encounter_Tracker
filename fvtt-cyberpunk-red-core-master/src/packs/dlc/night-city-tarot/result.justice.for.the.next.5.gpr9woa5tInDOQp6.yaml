@@ -1,0 +1,15 @@
+_id: gpr9woa5tInDOQp6
+_key: "!tables.results!bEeDgE9CfongXFAR.gpr9woa5tInDOQp6"
+documentCollection: ""
+documentId: null
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/night_city_tarot/justice.svg
+range:
+  - 12
+  - 12
+text: >-
+  Justice. For the next 5 minutes, the target suffers a -5 penalty to Evasion
+  Skill Checks and they cannot dodge Ranged Attacks. (See Night City Tarot Page
+  4).
+type: 0
+weight: 1

@@ -1,0 +1,4 @@
+{{#if (cprCompare system.dvTable "!==" "") }}
+  <a class="item-action dv-glyph{{#if (cprHighlightDVRuler this)}} button-active{{/if}}" data-item-id="{{id}}" data-action-type="dv-ruler" data-action="measure-dv"><i class="fas fa-ruler"
+  data-tooltip="{{localize "CPR.actorSheets.commonActions.measureDv"}}"></i></a>
+{{/if}}

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="512.0px"
+   height="512.0px"
+   viewBox="0 0 512.0 512.0"
+   version="1.1"
+   id="SVGRoot"
+   sodipodi:docname="token-icon.svg"
+   inkscape:version="1.0.2 (e86c870879, 2021-01-15, custom)">
+  <defs
+     id="defs18" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.979899"
+     inkscape:cx="625.09957"
+     inkscape:cy="224.55314"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="true"
+     inkscape:window-width="3440"
+     inkscape:window-height="1377"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid27" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata21">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="rect89"
+       style="fill:#ffffff"
+       d="M 35.545634,419.95689 88.578643,472.9899 481.02291,80.54563 427.9899,27.512624 l -24.74874,24.748737 10.6066,10.606602 -3.53553,3.535534 -10.6066,-10.606602 -24.74874,24.748735 24.74874,24.74874 -3.53554,3.53553 -24.74874,-24.74873 -24.74873,24.74873 10.6066,10.60661 -3.53553,3.53553 -10.60661,-10.6066 -24.74873,24.74874 24.74873,24.74873 -3.53553,3.53554 -24.74874,-24.74874 -24.74873,24.74874 10.6066,10.6066 -3.53554,3.53553 -10.6066,-10.6066 -24.74874,24.74874 24.74874,24.74873 -3.53553,3.53554 -24.74874,-24.74874 -24.74874,24.74874 10.6066,10.6066 -3.53553,3.53553 L 230,225.50252 205.25126,250.25126 230,275 l -3.53554,3.53553 -24.74873,-24.74874 -24.74874,24.74874 10.6066,10.6066 -3.53553,3.53554 -10.6066,-10.6066 -24.74874,24.74873 24.74874,24.74874 -3.53554,3.53553 -24.74873,-24.74873 -24.74874,24.74873 10.6066,10.60661 -3.53553,3.53553 -10.60661,-10.6066 -24.748734,24.74873 24.748734,24.74874 -3.53553,3.53554 -24.748737,-24.74874 -24.748738,24.74874 10.606602,10.6066 -3.535534,3.53553 -10.606602,-10.6066 z" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;fill:#ffffff;fill-opacity:1;stroke:none;"
+       x="94.192902"
+       y="235.66246"
+       id="text248"><tspan
+         sodipodi:role="line"
+         id="tspan246"
+         x="94.192902"
+         y="235.66246"
+         style="font-size:192px;fill:#ffffff;">D</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;fill:#ffffff;fill-opacity:1;stroke:none;"
+       x="286.91876"
+       y="432.27667"
+       id="text252"><tspan
+         sodipodi:role="line"
+         id="tspan250"
+         x="286.91876"
+         y="432.27667"
+         style="font-size:192px;fill:#ffffff;">V</tspan></text>
+  </g>
+</svg>

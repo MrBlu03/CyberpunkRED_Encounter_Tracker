@@ -1,0 +1,31 @@
+_id: KQw6UltgErhRC89e
+_key: "!items!KQw6UltgErhRC89e"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/black-chrome/sh-45-patroller.svg
+name: SH-45 Patroller Law
+system:
+  brand: Dayton Aeronautics
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>One seat Gyrocopter. Police version, with mounted Machine Gun.</p>
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  price:
+    market: 21000
+  sdp: 35
+  seats: 1
+  source:
+    book: BC
+    page: 58
+  speedCombat: 20
+  speedNarrative: 100 MPH / 161 KPH
+type: vehicle

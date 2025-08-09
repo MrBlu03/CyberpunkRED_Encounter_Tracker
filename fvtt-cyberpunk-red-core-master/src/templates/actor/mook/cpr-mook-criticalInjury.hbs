@@ -1,0 +1,30 @@
+<div class="mook-crit-header items-header flexrow">
+  <span class="item-name section-name text-nowrap text-padding-left-smallest text-semi">
+    {{localize "CPR.mookSheet.criticalInjuries"}}
+    <a class="roll-critical-injury"
+       data-tooltip="{{localize "CPR.mookSheet.criticalInjuryRoll"}}"
+       data-item-type="criticalInjury">
+      <i class="fas fa-dice text-padding-right-smallest"></i>
+    </a>
+  </span>
+</div>
+<div class="mook-crit-content text-padding-left-smallest mook-crit-list">
+  {{#each actor.itemTypes.criticalInjury as |item i| }}
+    <a class="name item-edit deletable changeable {{#if item.system.deathSaveIncrease }}text-semi{{/if }}"
+       data-tooltip="{{localize "CPR.mookSheet.items.clickToViewItem" }}
+                     <br/>
+                     {{localize "CPR.actorSheets.commonActions.ctrlClickToSendToChat"}}
+                     <br/>
+                     {{localize "CPR.mookSheet.items.pressDeleteToDelete"}}"
+       tabindex="0"
+       data-item-id="{{item.id}}">
+      {{#if (cprCompare item.system.location "===" "body") }}
+        <i class="fas fa-user-injured text-padding-left-smallest"></i>
+      {{/if}}
+      {{#if (cprCompare item.system.location "===" "head") }}
+        <i class="fas fa-user-injured text-padding-left-smallest"></i>
+      {{/if}}
+      {{item.name}}{{#unless @last}},{{/unless}}
+    </a>
+  {{/each}}
+</div>

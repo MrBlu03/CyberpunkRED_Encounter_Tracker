@@ -1,0 +1,30 @@
+_id: 6eJSLpqij03VxIFa
+_key: "!items.effects!ka6ccQeTt7ud3pFi.6eJSLpqij03VxIFa"
+changes:
+  - key: bonuses.speed
+    mode: 2
+    value: "-2"
+description: ""
+disabled: true
+duration:
+  combat: null
+  rounds: null
+  seconds: null
+  startRound: null
+  startTime: null
+  startTurn: null
+  turns: null
+flags:
+  cyberpunk-red-core:
+    changes:
+      cats:
+        "0": netrun
+      situational:
+        "0":
+          isSituational: false
+          onByDefault: false
+icon: systems/cyberpunk-red-core/icons/compendium/status/sixgun_addiction.svg
+name: Sixgun Addiction
+statuses: []
+tint: null
+transfer: true

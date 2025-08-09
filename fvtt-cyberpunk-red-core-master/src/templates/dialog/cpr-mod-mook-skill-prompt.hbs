@@ -1,0 +1,37 @@
+<form class="dialog-sheet">
+  <div class="dialog-grid flexcol">
+    <ol class="dialog-list">
+      <li class="dialog-item dialog-item-header flexrow">
+        <span class="dialog-item-name skill-name text-nowrap text-padding-left">{{localize "CPR.mookSheet.skills.skill"}}</span>
+        <span class="dialog-item-detail skill-base text-nowrap">{{localize "CPR.mookSheet.skills.base"}}</span>
+        <span class="dialog-item-detail skill-level text-nowrap">{{localize "CPR.mookSheet.skills.level"}}</span>
+        <span class="dialog-item-detail skill-mod-value text-nowrap">{{localize "CPR.mookSheet.skills.mod"}}</span>
+        <span class="dialog-item-detail skill-mod-value text-nowrap">{{localize "CPR.mookSheet.skills.total"}}</span>
+      </li>
+    {{#each object as |skill| }}
+      <li class="dialog-item skill-name flexrow">
+        <div class="dialog-item-name text-nowrap">
+          {{localize (cprGetLocalizedlNameKey skill.name "skill")}}
+        </div>
+        <div class="dialog-item-detail skill-base text-nowrap">
+          +{{skill.stat}}
+        </div>
+        <div class="dialog-item-detail skill-level text-nowrap">
+          <input class="number skill-input"
+                 name="{{skill.id}}.level"
+                 type="number"
+                 value="{{skill.level}}"/>
+        </div>
+        <div class="dialog-item-detail skill-mod-value text-nowrap">
+          {{!-- we only support mode 2 (add/subtract) for skills --}}
+          {{cprEffectModMode 2 skill.mod}}
+        </div>
+        <div class="dialog-item-detail skill-total text-nowrap">
+          {{cprMath "sum" skill.stat skill.level skill.mod}}
+        </div>
+      </li>
+    {{/each}}
+    </ol>
+  </div>
+</form>
+{{> "systems/cyberpunk-red-core/templates/dialog/cpr-dialog-buttons.hbs"}}

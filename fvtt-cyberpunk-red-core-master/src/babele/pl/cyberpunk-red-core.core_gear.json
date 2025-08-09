@@ -1,0 +1,230 @@
+{
+  "label": "Wyposażenie",
+  "mapping": {},
+  "entries": {
+    "Cyberdeck (Excellent)": {
+      "name": "Cyberdek (doskonałej jakości)",
+      "description": "<p>Netrunner deck. 9 slots.</p>"
+    },
+    "Cyberdeck (Poor)": {
+      "name": "Cyberdek (niskiej jakości)",
+      "description": "<p>Netrunner deck. 5 slots.</p>"
+    },
+    "Cyberdeck": {
+      "name": "Cyberdek",
+      "description": "<p>Dek netrunnera. 7 gniazd.</p>"
+    },
+    "Battleglove": {
+      "name": "Rękawica bojowa",
+      "description": "<p>An exotic heavy gauntlet, that covers your hand and forearm. Provides three option slots. Refer to the full item description on pg. 347.</p>"
+    },
+    "Smart Glasses": {
+      "name": "Smartkulary",
+      "description": "<p>Eyewear with two options slots for cybereye options.</p>"
+    },
+    "Agent": {
+      "name": "Agent",
+      "description": "<p>Smarfon SI. +2 do Przeszukiwania baz danych, +2 do Mody i stylu w zależności od okoliczności.</p>"
+    },
+    "Airhypo": {
+      "name": "Strzykawka bezigłowa",
+      "description": "<p>Strzykawka podskórna.</p>"
+    },
+    "Anti-Smog Breathing Mask": {
+      "name": "Maska antysmogowa",
+      "description": "<p>Odfiltrowuje toksyny w powietrzu.</p>"
+    },
+    "Audio Recorder": {
+      "name": "Rejestrator dźwięku",
+      "description": "<p>Nagrywa 24 godziny audio na czipie pamięci.</p>"
+    },
+    "Auto Level Dampening Ear Protectors": {
+      "name": "Automatyczne słuchawki wygłuszające",
+      "description": "<p>Użytkownik jest niewrażliwy na głośne dźwięki.</p>"
+    },
+    "Binoculars": {
+      "name": "Lornetka",
+      "description": "<p>Powiększenie: x2 lub x3.</p>"
+    },
+    "Braindance Viewer": {
+      "name": "Przeglądarka braindance'u",
+      "description": "<p>Urządzenie pozwalające oglądać braindance'y.</p>"
+    },
+    "Bug Detector": {
+      "name": "Wykrywacz podsłuchu",
+      "description": "<p>Wykrywa podsłuchy. Zasięg 2m/jardy.</p>"
+    },
+    "Carryall": {
+      "name": "Torba podręczna",
+      "description": "<p>Torba.</p>"
+    },
+    "Chemical Analyzer": {
+      "name": "Analizator biochemiczny",
+      "description": "<p>Określa skład chemiczny za pomocą przykładowej bazy danych (s. 352).</p>"
+    },
+    "Computer": {
+      "name": "Komputer",
+      "description": "<p>Stacjonarny lub laptop.</p>"
+    },
+    "Cryopump": {
+      "name": "Kriopompa",
+      "description": "<p>Aktówka używana do podpinania rannych. Umieszcza rannego w stazie (s. 353).</p>"
+    },
+    "Cryotank": {
+      "name": "Kriozbiornik",
+      "description": "<p>Zmieści pełno wymiarową osobę, leczy szybciej niż normalnie (s. 353).</p>"
+    },
+    "Disposable Cell Phone": {
+      "name": "Jednorazowy telefon komórkowy",
+      "description": "<p>Tylko połączenia głosowe.</p>"
+    },
+    "Drum Synthesizer": {
+      "name": "Syntezator perkusyjny",
+      "description": "<p>Wydaje dźwięki perkusyjne po podłączeniu do wzmacniacza.</p>"
+    },
+    "Duct Tape": {
+      "name": "Mocna taśma klejąca",
+      "description": "<p>Do zaklejania rzeczy, lub ludzi...</p>"
+    },
+    "Electric Guitar/Other Instrument": {
+      "name": "Gitara elektryczna/inny instrument",
+      "description": "<p>Musical instrument. Electric instruments requires an amplifier.</p>"
+    },
+    "Flashlight": {
+      "name": "Latarka",
+      "description": "<p>10h światła na pojedynczym naładowaniu. Zasięg 100m/yd.</p>"
+    },
+    "Food Stick": {
+      "name": "Gryzipatyk",
+      "description": "<p>Obrzydliwy posiłek pod postacią batona.</p>"
+    },
+    "Glow Paint": {
+      "name": "Farba świecąca",
+      "description": "<p>Farba fluorescencyjna w spray'u.</p>"
+    },
+    "Glow Stick": {
+      "name": "Światło chemiczne",
+      "description": "<p>Czas działania: 10h. Zasięg: 4m/yd.</p>"
+    },
+    "Grapple Gun": {
+      "name": "Wyrzutnia haków",
+      "description": "<p>Zasięg: 30m/yd. Nie nadaje się jako broń (s. 355).</p>"
+    },
+    "Handcuffs": {
+      "name": "Kajdanki",
+      "description": "<p>BC > 10 może zerwać.</p>"
+    },
+    "Homing Tracer": {
+      "name": "Odbiornik lokalizatora",
+      "description": "<p>Zasięg: 1.5km. Można dokupić dodatkowe nadajniki i podłączyć pod ten sam odbiornik.</p>"
+    },
+    "Inflatable Bed & Sleep-bag": {
+      "name": "Nadmuchiwany materac i śpiwór",
+      "description": "<p>Przenośny zestaw do spania. Kostka 15cm x 15cm.</p>"
+    },
+    "Kibble Pack": {
+      "name": "Torba karmy",
+      "description": "<p>Jeden posiłek.</p>"
+    },
+    "Linear Frame β (Beta)": {
+      "name": "Ramownica linearna β (Beta)",
+      "description": "<p>Egzoszkielet. Wymaga 2 złącz interfejsu. Zwiększa BC do 14 dopóki jest podłączony. Nie zmienia PW i testów Przeżywalności (s. 354).</p>"
+    },
+    "Linear Frame ∑ (Sigma)": {
+      "name": "Ramownica linearna ∑ (Sigma)",
+      "description": "<p>Egzoszkielet. Wymaga 1 złącza interfejsu. Zwiększa BC do 12 dopóki jest podłączony. Nie zmienia PW i testów Przeżywalności (s. 354).</p>"
+    },
+    "Lock Picking Set": {
+      "name": "Zestaw wytrychów",
+      "description": "<p>Potrzebne do otwierania zamków mechanicznych.</p>"
+    },
+    "Medscanner": {
+      "name": "Skaner medyczny",
+      "description": "<p>+2 do testów Pierwszej pomocy i Ratownictwa medycznego. Premie z różnych urządzeń nie kumulują się.</p>"
+    },
+    "Medtech Bag": {
+      "name": "Torba medyka",
+      "description": "<p>Sprzęt medyczny.</p>"
+    },
+    "Memory Chip": {
+      "name": "Czip pamięci",
+      "description": "<p>Pamięć danych.</p>"
+    },
+    "MRE": {
+      "name": "Racje żywnościowe MRE",
+      "description": "<p>Przenośny posiłek. Samoogrzewanie chemiczne.</p>"
+    },
+    "Personal CarePak": {
+      "name": "Kosmetyczka CarePak",
+      "description": "<p>Szczoteczka do zębów itp.</p>"
+    },
+    "Pocket Amplifier": {
+      "name": "Wzmacniacz kieszonkowy",
+      "description": "<p>Czas działania: 6h. Obsługuje maksymalnie dwa instrumenty na raz.</p>"
+    },
+    "Radar Detector": {
+      "name": "Wykrywacz radaru",
+      "description": "<p>Wykrywa wiązki radarów. Zasięg: 100m/yd.</p>"
+    },
+    "Radiation Suit": {
+      "name": "Kombinezon chroniący przed promieniowaniem",
+      "description": "<p>Chroni noszącego przed promieniowaniem.</p>"
+    },
+    "Radio Communicator": {
+      "name": "Radiokomunikator",
+      "description": "<p>Zasięg: 1.5km. Słuchawka dokanałowa.</p>"
+    },
+    "Radio Scanner/Music Player": {
+      "name": "Radio/odtwarzacz muzyki",
+      "description": "<p>Odbiera transmisje radiowe i pozwala odtwarzać muzykę. Zasięg: 1.5km. (s. 354)</p>"
+    },
+    "Road Flare": {
+      "name": "Flara alarmowa",
+      "description": "<p>Jednorazówka. Dostępne różne kolory. Zasięg oświetlenia: 100m/yd. Czas trwania: 1h.</p>"
+    },
+    "Rope (60m/yd)": {
+      "name": "Lina (60m/yd)",
+      "description": "<p>Nylonowa lina. Dostępne różne kolory. Udźwig: 360kg.</p>"
+    },
+    "Scrambler/Descrambler": {
+      "name": "Koder/dekoder",
+      "description": "<p>Odbiornik i koder komunikacyjny. (s. 353)</p>"
+    },
+    "Tech Bag": {
+      "name": "Przybornik technika",
+      "description": "<p>Torba narzędziowa.</p>"
+    },
+    "Techscanner": {
+      "name": "Techskaner",
+      "description": "<p>+2 do wielu umiejętności opartych na TECH (naprawy, elektronika, cyberinżynieria). Premie z różnych urządzeń nie kumulują się. (s. 355)</p>"
+    },
+    "Techtool": {
+      "name": "Technarzędzie",
+      "description": "<p>Multinarzędzie.</p>"
+    },
+    "Tent and Camping Equipment": {
+      "name": "Namiot i sprzęt biwakowy",
+      "description": "<p>Dla jednej osoby.</p>"
+    },
+    "Tracer Button": {
+      "name": "Nadajnik lokalizatora",
+      "description": "<p>Można śledzić za pomocą odbiornika lokalizatora do maksymalnie 1.5km.</p>"
+    },
+    "Vial of Biotoxin": {
+      "name": "Fiolka biotoksyny",
+      "description": "<p>3k6 obrażeń przy niezdanym przeciwstawnym teście na Odporność na tortury/narkotyki. Zbroja nie wpływa na obrażenia.</p>"
+    },
+    "Vial of Poison": {
+      "name": "Fiolka trucizny",
+      "description": "<p>2k6 obrażeń przy niezdanym przeciwstawnym teście na Odporność na tortury/narkotyki. Zbroja nie wpływa na obrażenia.</p>"
+    },
+    "Video Camera": {
+      "name": "Kamera wideo",
+      "description": "<p>12 godzin nagrań na każdy czip pamięci.</p>"
+    },
+    "Virtuality Goggles": {
+      "name": "Gogle wirtualowe",
+      "description": "<p>Nakłada obraz cyberprzestrzeni na prawdziwy świat.</p>"
+    }
+  }
+}

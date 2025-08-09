@@ -1,0 +1,176 @@
+{
+  "label": "Cyberimplants",
+  "mapping": {
+    "dvTable": "system.tableSD"
+  },
+  "entries": {
+    "Airhypo Cyberfinger": {
+      "name": "Cyberdoigt hypodair",
+      "description": "<p>Cyberdoigt qui contient un hypodair. Ne peut être installé que sur une cybermain à doigts modulaires.</p>\n"
+    },
+    "Ballpoint Cyberfinger": {
+      "name": "Cyberdoigt stylo à bille",
+      "description": "<p>Cyberdoigt avec un stylo à bille à l'intérieur. Ne peut être installé que sur une cybermain à doigts modulaires.</p>\n"
+    },
+    "Budget Chipware Socket": {
+      "name": "Support de puces à prix d'ami",
+      "description": "<p>Un support bon marché pour une seule installation de puce. Les dommages à la tête envoient la puce installée à 30 m de distance, la cassant potentiellement.</p>\n"
+    },
+    "Bullet Storage Cyberfinger": {
+      "name": "Cyberdoigt de stockage de balles",
+      "description": "<p>Cyberdoigt pouvant être utilisé pour dissimuler deux balles de n'importe quel type. Ne peut être installé que sur une cybermain à doigts modulaires.</p>\n"
+    },
+    "Dartgun Cyberfinger": {
+      "name": "Cyberdoigt pistolet à fléchettes",
+      "description": "<p>Cyberdoigt contenant un pistolet à fléchettes dissimulé. Ne peut être installé que sur une cybermain à doigts modulaires.</p>\n",
+      "dvTable": "SD Pistolet"
+    },
+    "Discount Cyberaudio Suite": {
+      "name": "Kit cyberaudio au rabais",
+      "description": "<p>Une interface bon marché et encombrante pour une amélioration audio.</p>\n"
+    },
+    "Dynalar Modular Finger Enthusiast Cyberhand": {
+      "name": "Cybermain pour fan de doigts modulaires Dynalar",
+      "description": "<p>Cyborgimplant. Nécessite un cyberbras. Livré avec 8 cyberdoigts*.</p>\n<p>*Les doigts doivent être ajoutés après l'installation</p>\n"
+    },
+    "Explicit Memory Stimulator": {
+      "name": "Stimulateur de mémoire explicite",
+      "description": "<p>Puce.</p>\n<p>Améliore la mémorisation. Concentration +2 quand installée.</p>\n"
+    },
+    "Extra-Jointed Cyberarm Upgrade": {
+      "name": "Articulations supplémentaires pour cyberbras",
+      "description": "<p>Améliore les articulations de cyberbras. Contorsion +2.</p>\n"
+    },
+    "Extra-Jointed Cyberleg Upgrade": {
+      "name": "Articulations supplémentaires pour cyberjambe",
+      "description": "<p>Améliore les articulations de cyberjambe. Contorsion +2.</p>\n"
+    },
+    "Flashbulb": {
+      "name": "Flash",
+      "description": "<p>Nécessite un cyberbras. L'utilisateur peut essayer d'aveugler n'importe qui dans un rayon de 25 m.</p>\n"
+    },
+    "Flashlight Cyberfinger": {
+      "name": "Cyberdoigt lampe-torche",
+      "description": "<p>Cyberdoigt contenant une lampe-torche dissimulée. Ne peut être installé que sur une cybermain à doigts modulaires.</p>\n"
+    },
+    "Hardened Shielding (Borgware)": {
+      "name": "Renforcement électronique de cyborgimplant",
+      "description": "<p>Cyborgimplant</p>\n<p>Le Cyborgimplant pour lequel cette option est installée n'est plus affecté par les effets IEM.</p>\n"
+    },
+    "Hardened Shielding (Cybereye)": {
+      "name": "Orbite renforcée pour cyberœil",
+      "description": "<p>L'œil et les options installées ne sont pas affectés par les effets IEM.</p>\n"
+    },
+    "Hardened Shielding (Internal)": {
+      "name": "Renforcement électronique de cyberimplant corporel interne",
+      "description": "<p>Cyberimplant interne.</p>\n<p>Protège les cyberimplants internes des effets IEM.</p>\n"
+    },
+    "Heuristic Health Monitor": {
+      "name": "Moniteur de santé heuristique",
+      "description": "<p>Nécessite un biomoniteur. Pour voir les PS en un coup d'œil.</p>\n"
+    },
+    "Homing Tracer Cyberfinger": {
+      "name": "Cyberdoigt traceur",
+      "description": "<p>Cyberdoigt qui fonctionne comme un Traceur. Ne peut être installé que sur une cybermain à doigts modulaires.</p>\n"
+    },
+    "Implanted Fūma Kotarō Linear Frame": {
+      "name": "Charpente linéaire interne Fūma Kotarō",
+      "description": "<ul>\n  <li>Requiert COR 8, 2 Maillages musculosquelettique</li>\n  <li>\n    Augmente la valeur de COR à 12 (ajuste vos PS, seuil de blessure, et Jet de Sauvegarde contre la mort)\n  </li>\n  <li>Discrétion +2</li>\n  <li>Dégainer et rengainer les armes de la charpente ne nécessite aucune action</li>\n  <li>\n    Un jet de dissimulation n'est pas requis pour les armes cachés dans la charpente.\n  </li>\n  <li>\n    <p>La charpente dispose de deux choix* :</p>\n    <ul>\n      <li>Deux armes de mêlée lourde exotique d'excellente qualité</li>\n      <li>\n        Une arme de même légère d'excellente qualité et une arme de mêlée très lourde\n        exotique d'excellente qualité\n      </li>\n    </ul>\n  </li>\n</ul>\n<p><em>* Doit être ajouté manuellement.</em></p>\n"
+    },
+    "Implanted LF-001 SWAT Linear Frame": {
+      "name": "Charpente linéaire implantée CL-001 RAID",
+      "description": "<ul>\n  <li>Requiert COR 8, 2 Maillages musculosquelettiques</li>\n  <li>\n    Augmente la valeur de COR à 12 (ajuste vos PS, seuil de blessure, et Jet de Sauvegarde contre la mort)\n  </li>\n  <li>Ignore les pénalités habituelles de mouvement pour escalader et nager.</li>\n</ul>\n"
+    },
+    "Implanted Vermilion Linear Frame": {
+      "name": "Charpente linéaire implantée Vermeille",
+      "description": "<ul>\n  <li>Requiert COR 8, 2 Maillages musculosquelettiques</li>\n  <li>\n   Augmente la valeur de COR à 12 (ajuste vos PS, seuil de blessure, et Jet de Sauvegarde contre la mort)\n  </li>\n  <li>Pas de pénalité de mouvement pour sauter</li>\n  <li>Agit comme si une paire de roller était installée</li>\n</ul>\n"
+    },
+    "Integrated Cyberdeck Upgrade": {
+      "name": "Amélioration de cyberconsole intégrée",
+      "description": "<p>Nécessite une cyberconsole (câblée), ajoute un emplacement supplémentaire à la cybeconsole.</p>\n"
+    },
+    "Laser Pointer Cyberfinger": {
+      "name": "Cyberdoigt pointeur laser",
+      "description": "<p>Cyberdoigt contenant un pointeur laser caché. Ne peut être installé que sur une cybermain à doigts modulaires.</p>\n"
+    },
+    "Lighter Cyberfinger": {
+      "name": "Cyberdoigt briquet",
+      "description": "<p>Cyberdoigt contenant un briquet caché. Ne peut être installé que sur une cybermain à doigts modulaires.</p>\n"
+    },
+    "Lockpick Cyberfinger": {
+      "name": "Cyberdoigt de crochetage",
+      "description": "<p>Cyberdoigt contenant un kit de crochetage dissimulé. Ne peut être installé que sur une cybermain à doigts modulaires.</p>\n"
+    },
+    "Microphone Cyberfinger": {
+      "name": "Cyberdoigt microphone",
+      "description": "<p>Cyberdoigt contenant un enregistreur caché. Ne peut être installé que sur une cybermain à doigts modulaires.</p>\n"
+    },
+    "Mini Air Supply Cyberfinger": {
+      "name": "Cyberdoigt à mini-réserve d'air",
+      "description": "<p>Cyberdoigt contenant une réserve d'air. Ne peut être installé que sur une cybermain à doigts modulaires.</p>\n"
+    },
+    "Modular Finger Cyberhand": {
+      "name": "Cybermain à doigts modulaires",
+      "description": "<p>Nécessite un cyberbras. Livrée avec 5 cyberdoigts*.</p>\n<p>*Les doigts doivent être ajoutés après l'installation</p>\n"
+    },
+    "Neo-Soviet Cyberarm": {
+      "name": "Cyberbras néosoviétique",
+      "description": "<p>Un bras de remplacement cybernétique soviétique. Fourni avec une main gratuite préinstallée. -1 aux jets nécessitant le bras sans COR 8+.</p>\n"
+    },
+    "One Shot Special Cyberfinger": {
+      "name": "Cyberdoigt à un coup",
+      "description": "<p>Cyberdoigt contenant un pistolet lourd exotique dissimulé. Ne peut être installé que sur une cybermain à doigts modulaires.</p>\n",
+      "dvTable": "SD Pistolet"
+    },
+    "Popup Net Launcher": {
+      "name": "Lance-filet escamotable",
+      "description": "<p>Un lanceur de filet exotique dissimulable. Lorsque activé, la main ne peut rien tenir. </p>\n",
+      "dvTable": "SD Fusil à pompe (Slug)"
+    },
+    "Popup Shotgun": {
+      "name": "Fusil à pompe escamotable",
+      "description": "<p>Un fusil à pompe dissimulable. Il est fourni avec une liaison Smartgun préinstallée. Lorsque activé, la main ne peut rien tenir.</p>\n<p><em>* La liaison Smart doit être ajoutée manuellement.</em></p>\n",
+      "dvTable": "SD Fusil à pompe (Slug)"
+    },
+    "RacerBracer": {
+      "name": "Minerve de course",
+      "description": "<p>Cyberimplant interne. Donne l'immunité au Coup du lapin.</p>\n"
+    },
+    "Reflex Co-Processor": {
+      "name": "Coprocesseur de réflexes",
+      "description": "<p>Neuromatériel.</p>\n<p>Annule le prérequis de REF pour esquiver les balles.</p>\n"
+    },
+    "Reinforced Cyberarm Upgrade": {
+      "name": "Renforcement pour cyberbras",
+      "description": "<p>Nécessite un cyberbras. Le cyberbras sur lequel il est installé ne peut pas être cassé.</p>\n"
+    },
+    "Reinforced Cyberleg Upgrade": {
+      "name": "Renforcement pour cyberjambe",
+      "description": "<p>Nécessite une cyberjambe. La cyberjambe sur laquelle il est installé ne peut pas être cassée.</p>\n"
+    },
+    "Sponsored Cybereye": {
+      "name": "Cyberœil publicitaire",
+      "description": "<p>Un œil de remplacement. Bandeau est préinstallé*. L'utilisateur expérimente aléatoirement des publicités aléatoires.</p>\n<p><em>*Bandeau doit être ajouté après l'installation</em></p>\n"
+    },
+    "Spray Paint Cyberfinger": {
+      "name": "Cyberdoigt bombe de peinture",
+      "description": "<p>Cyberdoigt fonctionnant comme une bombe de peinture. Ne peut être installé que sur une cybermain à doigts modulaires.</p>\n"
+    },
+    "Squirt Cyberfinger": {
+      "name": "Cyberdoigt pulvérisateur",
+      "description": "<p>Cyberdoigt qui peut contenir et vaporiser différents liquides dissimulés. Ne peut être installé que sur une cybermain à doigts modulaires.</p>\n"
+    },
+    "Standard Cyberfinger": {
+      "name": "Cyberdoigt standard",
+      "description": "<p>Les cyberdoigts ne peuvent être installés que sur une Cybermain à doigts modulaires.</p>\n"
+    },
+    "Trauma Response Nanomatrix": {
+      "name": "Nanomatrice de réponse aux traumatismes",
+      "description": "<p>Peut réparer entièrement une fois par jour le treillissage dermique ou l'armure subdermique.</p>\n"
+    },
+    "Wirecutter/Scissors Cyberfingers": {
+      "name": "Cyberdoigts pince coupante/ciseaux",
+      "description": "<p>Paire de cyberdoigts qui peuvent servir de ciseaux dissimulés. Ne peut être installé que sur une cybermain à doigts modulaires.</p>\n"
+    }
+  }
+}

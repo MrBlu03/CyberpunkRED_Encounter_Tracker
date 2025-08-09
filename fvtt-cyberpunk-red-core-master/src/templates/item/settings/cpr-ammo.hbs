@@ -1,0 +1,96 @@
+{{!-- Ammo Item Settings--}}
+{{!-- Ammo Variety Setting --}}
+<li class="item flexrow">
+  <div class="item flexrow setting-name text-nowrap">
+    {{localize "CPR.itemSheet.ammo.variety"}}
+  </div>
+  <div class="item flexrow setting-value text-nowrap item-end">
+    <select name="system.variety" data-dtype="{{item.system.variety}}">
+      {{selectOptions (cprFindConfigObj "ammoVarieties") selected=item.system.variety localize=true}}
+    </select>
+  </div>
+</li>
+{{!-- Ammo Type Settings--}}
+<li class="item flexrow">
+  <div class="item flexrow setting-name text-nowrap">
+    {{localize "CPR.global.generic.type"}}
+  </div>
+  <div class="item flexrow setting-value text-nowrap item-end">
+    <select name="system.type" data-dtype="{{item.system.type}}">
+      {{selectOptions (cprFindConfigObj "ammoTypes") selected=item.system.type localize=true}}
+    </select>
+  </div>
+</li>
+{{!-- Ablation Value --}}
+<li class="item flexrow">
+  <div class="item flexrow setting-name text-nowrap">
+    {{localize "CPR.itemSheet.ammo.ablationValue"}}
+  </div>
+  <div class="item flexrow setting-value text-nowrap item-end">
+    <input name="system.ablationValue" type="number" value="{{item.system.ablationValue}}"/>
+  </div>
+</li>
+
+{{!-- Damage Override Information --}}
+<li class="item flexrow">
+  <div class="item flexrow setting-name text-nowrap">
+    {{localize "CPR.itemSheet.ammo.modifyDamage"}}
+  </div>
+  <div class="item flexrow setting-value text-nowrap item-end">
+    <select name="system.overrides.damage.mode" data-dtype="{{item.system.overrides.damage.mode}}">
+      {{selectOptions (cprFindConfigObj "ammoDamageOverrideModes") selected=item.system.overrides.damage.mode localize=true}}
+    </select>
+  </div>
+</li>
+{{#if (cprCompare item.system.overrides.damage.mode "!==" "none")}}
+  <li class="item flexrow">
+    <div class="item flexrow setting-name text-nowrap text-padding-left-largest">
+      {{localize "CPR.itemSheet.ammo.modifierValue"}}
+    </div>
+    <div class="item flexrow setting-value text-nowrap item-end">
+      <input name="system.overrides.damage.value" type="text" value="{{item.system.overrides.damage.value}}"/>
+    </div>
+  </li>
+  {{#if (cprCompare item.system.overrides.damage.mode "===" "modify")}}
+    <li class="item flexrow">
+      <div class="item flexrow setting-name text-nowrap text-padding-left-largest">
+        {{localize "CPR.itemSheet.ammo.modifierMinimum"}}
+      </div>
+      <div class="item flexrow setting-value text-nowrap item-end">
+        <input name="system.overrides.damage.minimum" type="text" value="{{item.system.overrides.damage.minimum}}"/>
+      </div>
+    </li>
+  {{/if}}
+{{/if}}
+
+{{!-- Autofire Override Information --}}
+<li class="item flexrow">
+  <div class="item flexrow setting-name text-nowrap">
+    {{localize "CPR.itemSheet.ammo.modifyAutofire"}}
+  </div>
+  <div class="item flexrow setting-value text-nowrap item-end">
+    <select name="system.overrides.autofire.mode" data-dtype="{{item.system.overrides.autofire.mode}}">
+      {{selectOptions (cprFindConfigObj "ammoAutofireOverrideModes") selected=item.system.overrides.autofire.mode localize=true}}
+    </select>
+  </div>
+</li>
+{{#if (cprCompare item.system.overrides.autofire.mode "!==" "none")}}
+  <li class="item flexrow">
+    <div class="item flexrow setting-name text-nowrap text-padding-left-largest">
+      {{localize "CPR.itemSheet.ammo.modifierValue"}}
+    </div>
+    <div class="item flexrow setting-value text-nowrap item-end">
+      <input name="system.overrides.autofire.value" type="number" value="{{item.system.overrides.autofire.value}}"/>
+    </div>
+  </li>
+  {{#if (cprCompare item.system.overrides.autofire.mode "===" "modify")}}
+    <li class="item flexrow">
+      <div class="item flexrow setting-name text-nowrap text-padding-left-largest">
+        {{localize "CPR.itemSheet.ammo.modifierMinimum"}}
+      </div>
+      <div class="item flexrow setting-value text-nowrap item-end">
+        <input name="system.overrides.autofire.minimum" type="number" value="{{item.system.overrides.autofire.minimum}}"/>
+      </div>
+    </li>
+  {{/if}}
+{{/if}}

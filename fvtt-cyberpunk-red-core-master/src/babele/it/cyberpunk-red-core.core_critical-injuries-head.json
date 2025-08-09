@@ -1,0 +1,50 @@
+{
+  "label": "Ferite Critiche (Testa)",
+  "mapping": {},
+  "entries": {
+    "Brain Injury": {
+      "name": "Commozione Celebrale",
+      "description": "<p>-2 alle azioni.</p>"
+    },
+    "Broken Jaw": {
+      "name": "Mascella Rotta",
+      "description": "<p>-4 alle azioni in cui serve parlare.</p>"
+    },
+    "Concussion": {
+      "name": "Trauma Cranico",
+      "description": "<p>--2 a tutte le Azioni. La Penalità Base al Tiro della Morte aumenta di 1.</p>"
+    },
+    "Cracked Skull": {
+      "name": "Teschio Incrinato",
+      "description": "<p>I Colpi Mirati alla Testa moltiplicano per 3, invece che per 2, i danni che superano il PA. La Penalità Base al Tiro della Morte aumenta di 1.</p>"
+    },
+    "Crushed Windpipe": {
+      "name": "Laringe Schiacciata",
+      "description": "<p>Impossibile parlare. Penalità TS Morte: +1</p>"
+    },
+    "Damaged Ear": {
+      "name": "Orecchio Danneggiato",
+      "description": "<p>Se il Pg si muove di più di 4m a piedi non può Muoversi nel suo Turno seguente. -2 alle Prove di Percezione basate sull’udito.</p>"
+    },
+    "Damaged Eye": {
+      "name": "Occhio Danneggiato",
+      "description": "<p>-2 agli Attacchi a Distanza e alle Prove di Percezione basate sulla vista.</p>"
+    },
+    "Foreign Object (H)": {
+      "name": "Corpo Estraneo",
+      "description": "<p>Subisci Danno Bonus alla fine del turno se ti muovi per più di 4m a piedi.</p>"
+    },
+    "Lost Ear": {
+      "name": "Perdita dell'Udito",
+      "description": "<p>L’orecchio è distrutto. Se il Pg si muove di più di 4m a piedi non può Muoversi nel suo Turno seguente. -4 alle Prove di Percezione basate sull’udito. La Penalità Base al Tiro della Morte aumenta di 1.</p>"
+    },
+    "Lost Eye": {
+      "name": "Perdita dell'Occhio",
+      "description": "<p>L’occhio è distrutto -4 agli Attacchi a Distanza e alle Prove di Percezione basate sulla vista. La Penalità Base al Tiro della Morte aumenta di 1.</p>"
+    },
+    "Whiplash": {
+      "name": "Colpo di Frusta",
+      "description": "<p>La Penalità Base al Tiro della Morte aumenta di 1.</p>"
+    }
+  }
+}

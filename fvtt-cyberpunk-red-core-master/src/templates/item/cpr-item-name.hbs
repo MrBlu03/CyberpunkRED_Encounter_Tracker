@@ -1,0 +1,20 @@
+<li class="item flexrow">
+  <div class="item flexrow setting-name text-nowrap"
+       {{#if (cprCompare item.type "===" "role") }}
+         data-tooltip="{{localize "CPR.tooltip.nameChangeWarning" }}"
+       {{/if }}>
+    {{localize "CPR.global.generic.name"}}
+    {{#if (cprCompare item.type "===" "role") }}
+      <span class="text-super">
+        <i class="text-small text-padding-left-smaller fa-solid fa-triangle-exclamation"></i>
+      </span>
+    {{/if}}
+  </div>
+  <div class="item flexrow setting-value text-nowrap item-end">
+    {{#if this.editable }}
+      <input name="name" type="text" value="{{item.name}}"/>
+    {{else}}
+      <span class="text-flex-end">{{item.name}}</span>
+    {{/if}}
+  </div>
+</li>

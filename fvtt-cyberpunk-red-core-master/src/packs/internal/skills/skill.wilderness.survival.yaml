@@ -1,0 +1,20 @@
+_id: jFdPv4BuD0tLj7su
+_key: "!items!jFdPv4BuD0tLj7su"
+effects: []
+img: icons/svg/item-bag.svg
+name: Wilderness Survival
+system:
+  basic: false
+  category: educationSkills
+  core: true
+  description:
+    value: ""
+  difficulty: typical
+  favorite: false
+  level: 0
+  skillType: generic
+  source:
+    book: Core
+    page: 136
+  stat: int
+type: skill

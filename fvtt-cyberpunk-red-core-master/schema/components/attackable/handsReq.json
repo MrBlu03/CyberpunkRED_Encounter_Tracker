@@ -1,0 +1,9 @@
+{
+  "description": "Number of hands needed to weild the weapon",
+  "type": "integer",
+  "enum": [
+    0,
+    1,
+    2
+  ]
+}

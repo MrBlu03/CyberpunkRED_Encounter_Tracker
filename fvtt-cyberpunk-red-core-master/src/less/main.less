@@ -1,0 +1,68 @@
+@import "active-effect-sheet.less";
+@import "actor-sheet.less";
+@import "apps.less";
+@import "armor-list.less";
+@import "black-ice-sheet.less";
+@import "chat.less";
+@import "container-sheet.less";
+@import "demon-sheet.less";
+@import "dialogs.less";
+@import "flex.less";
+@import "fonts.less";
+@import "foundry-overrides.less";
+@import "glitch.less";
+@import "injuries-list.less";
+@import "item-card.less";
+@import "item-directory.less";
+@import "item-sheet.less";
+@import "layout.less";
+@import "ledger.less";
+@import "lists.less";
+@import "migration.less";
+@import "module-support.less";
+@import "mook-sheet.less";
+@import "text.less";
+@import "variables.less";
+@import "weapon-list.less";
+@import "progress-bar.less";
+
+div,
+section {
+  scrollbar-width: thin;
+}
+
+.window-app .window-content,
+.application .window-content {
+  font-family: var(--cpr-font-primary) !important;
+  color: var(--cpr-text-normal);
+  background: var(--cpr-background-window);
+
+  button {
+    color: var(--cpr-text-foundry-input);
+    background-color: var(--cpr-background-foundry-input);
+  }
+
+  select {
+    color: var(--cpr-text-normal);
+    background: var(--cpr-background-window);
+  }
+
+  .entry-name,
+  .directory-list {
+    color: var(--cpr-text-dir-list);
+  }
+}
+
+.editor {
+  flex: 1 0 auto;
+  padding: 0 0rem;
+  min-height: 100%;
+  .tox-toolbar-overlord,
+  .tox-toolbar__primary {
+    background: none;
+  }
+}
+
+.editor-content {
+  padding: 0.313rem;
+}

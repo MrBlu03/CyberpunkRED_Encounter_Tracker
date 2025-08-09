@@ -1,0 +1,12 @@
+_id: JiMN6zADBZGPIqHC
+_key: "!tables.results!VszxZ4TJjQ8FGuoc.JiMN6zADBZGPIqHC"
+documentCollection: cyberpunk-red-core.core_clothing
+documentId: Xi3LUVQem3nBHgB1
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/clothing/generic_mirrorshades.svg
+range:
+  - 1
+  - 1
+text: Bohemian Mirrorshades
+type: 2
+weight: 1

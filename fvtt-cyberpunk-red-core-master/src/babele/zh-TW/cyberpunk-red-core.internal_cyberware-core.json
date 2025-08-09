@@ -1,0 +1,18 @@
+{
+  "label": "Cyberware (Core)",
+  "mapping": {},
+  "entries": {
+    "External (7 Option Slots)": {
+      "name": "External (7 Option Slots)",
+      "description": ""
+    },
+    "Fashionware (7 Option Slots)": {
+      "name": "Fashionware (7 Option Slots)",
+      "description": ""
+    },
+    "Internal (7 Option Slots)": {
+      "name": "Internal (7 Option Slots)",
+      "description": ""
+    }
+  }
+}

@@ -1,0 +1,12 @@
+_id: qVw9IIb1peHOxlXK
+_key: "!tables.results!VszxZ4TJjQ8FGuoc.qVw9IIb1peHOxlXK"
+documentCollection: cyberpunk-red-core.black-chrome_cyberware
+documentId: BYDAED1axkFYm1h9
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/cyberware/cybereye.svg
+range:
+  - 3
+  - 3
+text: Sponsored Cybereye
+type: 2
+weight: 1

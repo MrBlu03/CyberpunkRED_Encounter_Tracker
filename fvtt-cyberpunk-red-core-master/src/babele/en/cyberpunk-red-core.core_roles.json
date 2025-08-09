@@ -1,0 +1,46 @@
+{
+  "label": "Roles",
+  "mapping": {},
+  "entries": {
+    "Exec": {
+      "name": "Exec",
+      "description": "<p>\n  Business executives and fat-cat defenders ready to risk it all to rise the\n  corporate ladder and realize the New American dream.\n</p>\n"
+    },
+    "Fixer": {
+      "name": "Fixer",
+      "description": "<p>\n  They can get anyone anything, as long as the price is right. Using their charm\n  and skills of trade, they make the deals that keep the economy of the Dark\n  Future flowing.\n</p>\n"
+    },
+    "Lawman": {
+      "name": "Lawman",
+      "description": "<p>\n  Renegade defenders, corporate strike teams, or the last remnants of a\n  government police force, they patrol the streets to enforce some order in an\n  otherwise lawless world.\n</p>\n"
+    },
+    "Media": {
+      "name": "Media",
+      "description": "<p>\n  Newspeople, influencers, and cultural phenomena, they are ready to expose the\n  truth by any means necessary.\n</p>\n"
+    },
+    "Medtech": {
+      "name": "Medtech",
+      "description": "<p>\n  Backalley doctors and mechanics of cyberware, using their skills to keep\n  fellow edgerunners in good shape and cybered up, often at a price.\n</p>\n"
+    },
+    "Netrunner": {
+      "name": "Netrunner",
+      "description": "<p>\n  Master hackers who put themselves at risk as they jack into cyberspace to\n  download secrets and infiltrate networks.\n</p>\n"
+    },
+    "Nomad": {
+      "name": "Nomad",
+      "description": "<p>\n  Car people, truckers, transportation afficionados, air-pirates, they are the\n  sole carriers of product across the world, maintaining the transport and\n  supply chains in the time of the Red.\n</p>\n"
+    },
+    "Rockerboy": {
+      "name": "Rockerboy",
+      "description": "<p>\n  Rebellious performance artists who use their craft to influence fans/crowds\n  and fight back.\n</p>\n"
+    },
+    "Solo": {
+      "name": "Solo",
+      "description": "<p>\n  Experts in combat who use their fighting prowess to dominate in the lawless\n  time of the Red.\n</p>\n"
+    },
+    "Tech": {
+      "name": "Tech",
+      "description": "<p>\n  Superior understanding of all-things tech allow them to invent, upgrade, and\n  repair to keep the Dark Future functioning.\n</p>\n"
+    }
+  }
+}

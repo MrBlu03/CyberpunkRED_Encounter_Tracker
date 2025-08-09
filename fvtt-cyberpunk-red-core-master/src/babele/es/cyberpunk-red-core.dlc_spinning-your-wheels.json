@@ -1,0 +1,74 @@
+{
+  "label": "Gira tus Ruedas",
+  "mapping": {},
+  "entries": {
+    "Inline Skates": {
+      "name": "Patines en línea",
+      "description": "<p>¡Son patines en linea! Aumenta el momento en 4 m/yds al realizar la acción de correr, deteniendo el uso de cualquier opción en las piernas del usuario. Puede causar que las tareas físicas se realicen en -2.</p>"
+    },
+    "Skateboard": {
+      "name": "Patineta",
+      "description": "<p>Las ruedas más chulas a tu alrededor. Aumenta el momento en 4 m/yd al usar la acción de correr en el suelo o en bajada. Puede causar que las tareas físicas se realicen en -2.</p>"
+    },
+    "Bottle Dynamo": {
+      "name": "Botella Dinamo",
+      "description": "<p>Un dinamo en la rueda de tu bicicleta para convertir la energía mecánica en electricidad. Carga un paquete de pilas (como por ejemplo armas) en una hora.</p>"
+    },
+    "Bulletproof Glass": {
+      "name": "Cristal Antibalas",
+      "description": "<p>El cristal blindado otorga 7 PV.</p>\n<p>La bicicleta primero requiere la actualización de Encuadre para instalar esta actualización.</p>"
+    },
+    "Cycle Armor": {
+      "name": "Armadura de Bicicleta",
+      "description": "<p>Bicicleta Blindada con 7 CP.</p>\n<p>La bicicleta primero requiere la actualización de Marco Reforzado para instalar esta actualización.</p>"
+    },
+    "Electric Pedal Assist": {
+      "name": "Pedal Eléctrico Asistido",
+      "description": "<p>Sistema motorizado eléctrico que ayuda a pedalear, aumentar la velocidad y reducir el cansancio.</p>\n<p>Hasta el siguiente nivel de velocidad narrativa de velocidad de nivel TCO, o +5MPH (8KPH) si ya está en el nivel superior.</p>\n<p>El jinete obtiene +4 bonificaciones en los Chequeos de Resistencia al montar.</p>"
+    },
+    "Enclosure": {
+      "name": "Encuadre",
+      "description": "<p>La bicicleta se convierte en un triciclo con un cuerpo de fibra de vidrio y plástico.</p>\n<p>No se puede instalar esta actualización con la actualización de Marco Plegable.</p>"
+    },
+    "Extended Seat": {
+      "name": "Asiento Extendido",
+      "description": "<p>An elongated saddle, gaining a seat for a passenger.</p>\n"
+    },
+    "Folding Frame": {
+      "name": "Marco Plegable",
+      "description": "<p>Ahora puedes doblar tu bicicleta al tamaño de una maleta grande para facilitar el transporte y almacenamiento.</p>\n<p>No se puede instalar esta actualización con mejoras de Encuadre, Marco Reforzado o Contrabando.</p>"
+    },
+    "Gun Mount": {
+      "name": "Montura de Arma",
+      "description": "<p>Un sistema para conectar un Rifle de Asalto, un SMG pesado o una Escopeta en el manillar, junto con un botón de disparo.</p>\n<p>Dispara solo hacia delante.</p>\n<p>El montaje y el desprendimiento requieren una acción.</p>"
+    },
+    "Neon Lightning": {
+      "name": "Luz de Neón",
+      "description": "<p>Luminarias de fibra óptica en el marco y ruedas de la bicicleta.</p>\n<p>Considerado como un Tatuaje Luminoso, cuando está en o cerca de la bicicleta (ganando +2 a Vestuario y Estilo)</p>"
+    },
+    "Reinforced Frame": {
+      "name": "Marco Reforzado",
+      "description": "<p>Ahora la bicicleta es más resistente: +5 PD y jinete puede ser TCO 11 o más.</p>\n<p>No se puede instalar esta actualización con la mejora Marco Plegable.</p>"
+    },
+    "Security System": {
+      "name": "Sistema de Seguridad",
+      "description": "<p>Enlazado con tu agente para electrificar tu bicicleta. Un ladrón debe superar una tirada de Resistir Tortura/Drogas VD13 o desmontar la bicicleta.</p>\n<p>Bicicleta está registrada con un Nano-VIN.</p>"
+    },
+    "Smuggling Compartment": {
+      "name": "Compartimiento de Contrabando",
+      "description": "<p>Añade un espacio de almacenamiento oculto pequeño en el marco.</p>\n<p>1 pulgada x 6 pulgadas (2.54cm x 15. 4cm)</p>\n<p>Revelar Objeto VD17 para descubrir.</p>\n<p>No se puede instalar esta actualización con Marco Plegable.</p>"
+    },
+    "Stunt Frame": {
+      "name": "Marco Acrobático",
+      "description": "<p>La bicicleta pierde peso y gana maniobrabilidad.</p>\n<p>El jinete obtiene una bonificación de +2 a la habilidad de Atletismo al montar y hacer maniobras.</p>"
+    },
+    "Trailer": {
+      "name": "Remolque",
+      "description": "<p>Gancho con un pequeño remolque de carga.</p>\n<p>5 pies x 1,5 pies (1,5m x 0. 6m).</p>\n<p>Se necesita una acción para conectar y separar el remolque.</p>"
+    },
+    "Bicycle": {
+      "name": "Bicicleta",
+      "description": "<p>Una bicicleta sencilla. Su velocidad se basa en el TCO del ciclista.</p>\n<table style=\"width: 100%; height: 76px;\" border=\"1\"><colgroup><col style=\"width: 14.0725%;\"><col style=\"width: 42.4307%;\"><col style=\"width: 43.4968%;\"></colgroup>\n<tbody>\n<tr style=\"height: 19px;\">\n<td style=\"height: 19px;\"><strong>TCO</strong></td>\n<td style=\"height: 19px;\"><strong>Velocidad (Combate)</strong></td>\n<td style=\"height: 19px;\"><strong>Velocidad (Nominal)</strong></td>\n</tr>\n<tr style=\"height: 19px;\">\n<td style=\"height: 19px;\">&lt;4</td>\n<td style=\"height: 19px;\">8 MOV</td>\n<td style=\"height: 19px;\">19 KPH / 12 MPH</td>\n</tr>\n<tr style=\"height: 19px;\">\n<td style=\"height: 19px;\">4 - 7</td>\n<td style=\"height: 19px;\">10 MOV</td>\n<td style=\"height: 19px;\">32 KPH / 20 MPH</td>\n</tr>\n<tr style=\"height: 19px;\">\n<td style=\"height: 19px;\">8+</td>\n<td style=\"height: 19px;\">15 MOV</td>\n<td style=\"height: 19px;\">\n<p>48 KPH / 30 MPH</p>\n</td>\n</tr>\n</tbody>\n</table>\n<ul>\n<li>Jinetes con TCO 10+ requieren la actualización de Marco Reforzado</li>\n<li>Las bicicletas usan la habilidad Atletismo</li>\n<li>Solo control manual</li>\n<li>Subirse a una bicicleta no lo mueve a la parte superior de la cola de Iniciativas</li>\n<li>El daño por embestida es 3d6 con el ciclista arrojado de la bicicleta y sufriendo la lesión crítica por latigazo cervical</li>\n<li>Los defensores no pueden aterrizar en la bicicleta cuando esquivan</li>\n</ul>"
+    }
+  }
+}

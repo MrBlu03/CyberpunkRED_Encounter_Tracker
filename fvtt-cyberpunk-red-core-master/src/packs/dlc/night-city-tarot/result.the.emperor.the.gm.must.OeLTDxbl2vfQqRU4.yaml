@@ -1,0 +1,16 @@
+_id: OeLTDxbl2vfQqRU4
+_key: "!tables.results!bEeDgE9CfongXFAR.OeLTDxbl2vfQqRU4"
+documentCollection: ""
+documentId: null
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/night_city_tarot/the_emperor.svg
+range:
+  - 5
+  - 5
+text: >-
+  The Emperor. The GM must select a Player. This Player then selects one
+  Critical Injury from the Head Critical Injury Rolltable (CPR: Page 188) and
+  from the Body Critical Injury Rolltable (CP:R Page 187). The target is dealt
+  both Critical Injuries. (See Night City Tarot Page 3).
+type: 0
+weight: 1

@@ -1,0 +1,22 @@
+{
+  "label": "技能 (武術)",
+  "mapping": {},
+  "entries": {
+    "Martial Arts (Aikido)": {
+      "name": "武術(合気道)",
+      "description": ""
+    },
+    "Martial Arts (Judo)": {
+      "name": "武術(柔道)",
+      "description": ""
+    },
+    "Martial Arts (Karate)": {
+      "name": "武術(空手)",
+      "description": ""
+    },
+    "Martial Arts (Taekwondo)": {
+      "name": "武術(テコンドー)",
+      "description": ""
+    }
+  }
+}

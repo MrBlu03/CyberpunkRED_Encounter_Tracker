@@ -1,0 +1,44 @@
+_id: fVIM3FiEpnx5ha1f
+_key: "!items!fVIM3FiEpnx5ha1f"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/default/cyberdeck.svg
+name: Kirama Entry Deck
+system:
+  brand: Kirama
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        An affordable and balanced Cyberdeck for novice Netrunners. Though limited by
+        its modest hardware specs, it retains the advanced safety features of
+        Kirama&rsquo;s flagship Cyberdecks.
+      </p>
+      <p>5 slots only for Programs.</p>
+      <p>
+        Only one of each Program category can be installed at a time (Attacker,
+        Defender, Booster, Black ICE). Netrunner suffers no negative effects from an
+        Unsafe Jack Out.
+      </p>
+  equipped: owned
+  favorite: false
+  installLocation: mall
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+      - program
+    list: []
+    slots: 5
+    usedSlots: 0
+  isElectronic: true
+  price:
+    market: 100
+  providesHardening: false
+  quality: standard
+  size: 1
+  source:
+    book: MwtU
+    page: 3
+type: cyberdeck

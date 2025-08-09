@@ -1,0 +1,126 @@
+_id: FiZDgbVLFADR6QTT
+_key: "!items!FiZDgbVLFADR6QTT"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/upgrades/vehicle_heavy_weapon_mount.svg
+name: Vehicle Heavy Weapon Mount
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  damage: 1d6
+  description:
+    value: |
+      <p>
+        Can be applied to all vehicles except Bikes, Jetskis and Gyrocopters. One of
+        the vehicles seats becomes a swivel mount for any two-handed ranged weapon. A
+        passenger may fire the weapon using an Action. The passenger can reload the
+        weapon. The weapon can be removed or reinstalled using an Action.
+      </p>
+      <p>
+        The first time this upgrade is taken, included is a
+        <strong>Tsunami Arms Helix</strong>,
+        <strong>Rhinemetall EMG-86 Railgun</strong>, or
+        <strong>Militech "Cowboy" U-56 Grenade Launcher</strong>. If the vehicle has
+        the Bulletproof Glass upgrade, the gunner is protected by the same glass.
+      </p>
+      <p>
+        You may install this upgrade multiple times if the vehicle has the Housing
+        Capacity upgrade. <strong>Requires Heavy Chassis</strong>.
+      </p>
+  dvTable: ""
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 0
+  installLocation: mall
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: false
+  isRanged: false
+  magazine:
+    max: 0
+    value: 0
+  modifiers:
+    Wardrobe & Style:
+      isSituational: false
+      onByDefault: false
+      value: null
+    attackmod:
+      isSituational: false
+      onByDefault: false
+      type: modifier
+      value: null
+    bodySp:
+      isSituational: false
+      onByDefault: false
+      value: null
+    cool:
+      isSituational: false
+      onByDefault: false
+      value: null
+    damage:
+      isSituational: false
+      onByDefault: false
+      type: modifier
+      value: null
+    headSp:
+      isSituational: false
+      onByDefault: false
+      value: null
+    magazine:
+      isSituational: false
+      onByDefault: false
+      type: modifier
+      value: null
+    rof:
+      isSituational: false
+      onByDefault: false
+      type: modifier
+      value: null
+    sdp:
+      isSituational: false
+      onByDefault: false
+      type: modifier
+      value: null
+    seats:
+      isSituational: false
+      onByDefault: false
+      type: modifier
+      value: null
+    secondaryWeapon:
+      configured: false
+    shieldHp:
+      isSituational: false
+      onByDefault: false
+      value: null
+    slots:
+      isSituational: false
+      onByDefault: false
+      value: null
+    speedCombat:
+      type: modifier
+      value: null
+  price:
+    market: 5000
+  providesHardening: false
+  rof: 1
+  size: 0
+  source:
+    book: Core
+    page: 164
+  type: vehicle
+  unarmedAutomaticCalculation: true
+  usesType: magazine
+  weaponSkill: ""
+  weaponType: ""
+type: itemUpgrade

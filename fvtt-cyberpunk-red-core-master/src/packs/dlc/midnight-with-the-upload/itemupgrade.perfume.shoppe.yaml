@@ -1,0 +1,68 @@
+_id: tny5QJTwitpn37l2
+_key: "!items!tny5QJTwitpn37l2"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/midnight-with-the-upload/perfume_shoppe.svg
+name: Perfume Shoppe
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  damage: 1d6
+  description:
+    value: |
+      <p>Skunk Black ICE will only take 1 option slot to install.</p>
+  dvTable: ""
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 0
+  installLocation: mall
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: true
+  isRanged: false
+  magazine:
+    max: 0
+    value: 0
+  modifiers:
+    attackmod:
+      type: modifier
+      value: null
+    damage:
+      type: modifier
+      value: null
+    magazine:
+      type: modifier
+      value: null
+    rof:
+      type: modifier
+      value: null
+    secondaryWeapon:
+      configured: false
+    slots:
+      type: modifier
+      value: null
+  price:
+    market: 500
+  providesHardening: false
+  rof: 1
+  size: 1
+  source:
+    book: MwtU
+    page: 5
+  type: cyberdeck
+  unarmedAutomaticCalculation: true
+  usesType: magazine
+  weaponSkill: ""
+  weaponType: ""
+type: itemUpgrade

@@ -1,0 +1,50 @@
+{
+  "label": "Heridas Críticas (Cabeza)",
+  "mapping": {},
+  "entries": {
+    "Brain Injury": {
+      "name": "Lesión Cerebral",
+      "description": "<p>-2 a las acciones.</p>"
+    },
+    "Broken Jaw": {
+      "name": "Mandíbula Rota",
+      "description": "<p>-4 para acciones que requieran la voz.</p>"
+    },
+    "Concussion": {
+      "name": "Concusión",
+      "description": "<p> -2 a las acciones.</p>"
+    },
+    "Cracked Skull": {
+      "name": "Cráneo Partido",
+      "description": "<p>Triplica el daño a PV en los disparos dirigidos a la cabeza (en lugar del doble de daño normal).</p>"
+    },
+    "Crushed Windpipe": {
+      "name": "Traquea Aplastada",
+      "description": "<p>No se puede hablar.</p>"
+    },
+    "Damaged Ear": {
+      "name": "Oído Dañado",
+      "description": "<p>Si se mueve más de 4m/yds en un turno, no se puede mover el siguiente turno. -2 a la Percepción (oído).</p>"
+    },
+    "Damaged Eye": {
+      "name": "Ojo Dañado",
+      "description": "<p> -2 a Ataques a Distancia y Percepción (visión).</p>"
+    },
+    "Foreign Object (H)": {
+      "name": "Objeto Extraño (H)",
+      "description": "<p>Sufre daño crítico al final del turno si te mueves más de 4m/yardas a pie.</p>"
+    },
+    "Lost Ear": {
+      "name": "Oído Perdido",
+      "description": "<p>El oído ha sido eliminado. Si se mueve más de 4m/yds en un turno, no se puede mover el siguiente turno. -4 a la Percepción (oído).</p>"
+    },
+    "Lost Eye": {
+      "name": "Ojo Perdido",
+      "description": "<p>Se ha eliminado el ojo. -4 a los Ataques a Distancia y Percepción basada en la visión.</p>"
+    },
+    "Whiplash": {
+      "name": "Latigazo",
+      "description": "<p>No hay otros efectos más allá de aumentar la pena básica de salvación contra la muerte en 1.</p>"
+    }
+  }
+}

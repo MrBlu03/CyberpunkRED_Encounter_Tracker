@@ -1,0 +1,742 @@
+// Overall Sheet Layout
+.actor-sheet {
+  display: grid;
+  grid-gap: 0.313rem;
+  grid-template-columns: 17.3rem auto;
+  grid-template-rows: 34rem auto;
+
+  grid-template-areas:
+    "pane-left pane-right"
+    "pane-bottom pane-bottom";
+
+  background-color: var(--cpr-background-window);
+
+  // Pane for main and stats
+  .left-pane {
+    display: grid;
+    grid-template-columns: 13rem 4rem;
+    grid-template-rows: 1fr;
+    grid-auto-columns: 1fr;
+    grid-auto-rows: 1fr;
+    gap: 0rem 0.313rem;
+    grid-auto-flow: row;
+    grid-template-areas: "actor-details actor-stats";
+    width: 100%;
+    height: 100%;
+
+    .actor-details {
+      background-color: var(--cpr-background-border);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 12.4rem 2.8rem 1.5rem 3.2em 3.2rem 3.2rem 3.2rem auto;
+      gap: 0.313rem 0.313rem;
+      grid-auto-flow: row;
+      grid-template-areas:
+        "actor-details-image actor-details-image"
+        "actor-details-handle actor-details-handle"
+        "actor-details-role actor-details-role"
+        "actor-details-hp actor-details-humanity"
+        "actor-details-wound-state actor-details-death-save"
+        "actor-details-improvement-points actor-details-reputation"
+        "actor-details-eurobucks actor-details-eurobucks"
+        "actor-details-filter actor-details-filter";
+      grid-area: actor-details;
+      padding: 0.313rem;
+    }
+
+    .actor-details * {
+      background-color: var(--cpr-background-box);
+      display: grid;
+    }
+
+    .actor-details-image {
+      position: relative;
+      display: inline-block;
+      background-color: var(--cpr-background-border);
+      clip-path: polygon(1.563rem 0, 100% 0, 100% 100%, 0 100%, 0 1.563rem);
+      grid-area: actor-details-image;
+
+      .overlay {
+        background-color: unset;
+        position: absolute;
+        bottom: 0.625rem;
+        left: 0.625rem;
+        color: white;
+        font-size: 1.5rem;
+        -webkit-text-stroke-width: 0.125rem;
+        -webkit-text-fill-color: var(--cpr-icon-actor-image-overlay);
+        -webkit-text-stroke-color: var(--cpr-icon-actor-image-overlay-border);
+      }
+    }
+
+    .actor-details-handle {
+      grid-area: actor-details-handle;
+    }
+
+    .actor-details-role {
+      grid-area: actor-details-role;
+      overflow: hidden;
+
+      input {
+        height: 100%;
+      }
+    }
+
+    .actor-details-hp {
+      grid-area: actor-details-hp;
+      grid-template-columns: 1fr 0fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 0rem 0rem;
+      grid-template-areas:
+        "actor-details-hp-title actor-details-hp-title actor-details-hp-title"
+        "actor-details-hp-current actor-details-hp-of actor-details-hp-max";
+      width: 100%;
+    }
+
+    .actor-details-hp-title {
+      grid-area: actor-details-hp-title;
+      overflow: hidden;
+      text-overflow: clip;
+    }
+    .actor-details-hp-current {
+      grid-area: actor-details-hp-current;
+      align-items: center;
+    }
+    .actor-details-hp-of {
+      grid-area: actor-details-hp-of;
+      align-items: center;
+    }
+    .actor-details-hp-max {
+      grid-area: actor-details-hp-max;
+      align-items: center;
+    }
+
+    .actor-details-humanity {
+      grid-area: actor-details-humanity;
+      grid-template-columns: 1fr 0fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 0rem 0rem;
+      grid-template-areas:
+        "actor-details-humanity-title actor-details-humanity-title actor-details-humanity-title"
+        "actor-details-humanity-current actor-details-humanity-of actor-details-humanity-max";
+    }
+
+    .actor-details-humanity-title {
+      grid-area: actor-details-humanity-title;
+      overflow: hidden;
+      text-overflow: clip;
+    }
+    .actor-details-humanity-current {
+      grid-area: actor-details-humanity-current;
+      align-items: center;
+    }
+    .actor-details-humanity-of {
+      grid-area: actor-details-humanity-of;
+      align-items: center;
+    }
+    .actor-details-humanity-max {
+      grid-area: actor-details-humanity-max;
+      align-items: center;
+    }
+
+    .actor-details-death-save {
+      grid-area: actor-details-death-save;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 0rem 0rem;
+      grid-template-areas:
+        "actor-details-death-save-title actor-details-death-save-title actor-details-death-save-title"
+        "actor-details-death-save-reset actor-details-death-save-value actor-details-death-save-actions";
+    }
+
+    .actor-details-death-save-reset {
+      grid-area: actor-details-death-save-reset;
+      padding-top: 0.188rem;
+    }
+
+    .actor-details-death-save-title {
+      grid-area: actor-details-death-save-title;
+      overflow: hidden;
+      text-overflow: clip;
+    }
+    .actor-details-death-save-value {
+      grid-area: actor-details-death-save-value;
+    }
+    .actor-details-death-save-actions {
+      grid-area: actor-details-death-save-actions;
+      padding-top: 0.188rem;
+    }
+
+    .actor-details-wound-state {
+      grid-area: actor-details-wound-state;
+
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 0rem 0rem;
+      grid-template-areas:
+        "actor-details-wound-state-title"
+        "actor-details-wound-state-value";
+    }
+
+    .actor-details-wound-state-title {
+      grid-area: actor-details-wound-state-title;
+      overflow: hidden;
+      text-overflow: clip;
+    }
+    .actor-details-wound-state-value {
+      grid-area: actor-details-wound-state-value;
+      justify-content: center;
+    }
+
+    .actor-details-improvement-points {
+      grid-area: actor-details-improvement-points;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 0rem 0rem;
+      grid-template-areas:
+        "actor-details-improvement-points-title actor-details-improvement-points-title actor-details-improvement-points-title"
+        "actor-details-wound-state-blank        actor-details-improvement-points-value actor-details-improvement-points-actions";
+    }
+
+    .actor-details-improvement-points-title {
+      grid-area: actor-details-improvement-points-title;
+      overflow: hidden;
+      text-overflow: clip;
+    }
+    .actor-details-improvement-points-value {
+      grid-area: actor-details-improvement-points-value;
+    }
+    .actor-details-improvement-points-actions {
+      grid-area: actor-details-improvement-points-actions;
+      padding-top: 0.188rem;
+    }
+    .actor-details-wound-statee-blank {
+      grid-area: actor-details-wound-state-blank;
+    }
+
+    .actor-details-reputation {
+      grid-area: actor-details-reputation;
+      grid-auto-columns: 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 0rem 0rem;
+      grid-template-areas:
+        "actor-details-reputation-title actor-details-reputation-title actor-details-reputation-title"
+        "actor-details-reputation-facedown actor-details-reputation-value actor-details-reputation-actions";
+    }
+
+    .actor-details-reputation-title {
+      grid-area: actor-details-reputation-title;
+      overflow: hidden;
+      text-overflow: clip;
+    }
+    .actor-details-reputation-value {
+      grid-area: actor-details-reputation-value;
+    }
+    .actor-details-reputation-actions {
+      grid-area: actor-details-reputation-actions;
+      padding-top: 0.188rem;
+    }
+    .actor-details-reputation-facedown {
+      grid-area: actor-details-reputation-facedown;
+      padding-top: 0.188rem;
+    }
+
+    .actor-details-eurobucks {
+      grid-area: actor-details-eurobucks;
+      grid-template-columns: 2rem 1fr 2rem;
+      grid-template-rows: 1fr 1fr;
+      gap: 0rem 0rem;
+      grid-template-areas:
+        "actor-details-eurobucks-title actor-details-eurobucks-title actor-details-eurobucks-title"
+        "actor-details-eurobucks-blank actor-details-eurobucks-value actor-details-eurobucks-ledger";
+    }
+
+    .actor-details-eurobucks-title {
+      grid-area: actor-details-eurobucks-title;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      text-overflow: clip;
+    }
+
+    .actor-details-eurobucks-value {
+      grid-area: actor-details-eurobucks-value;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .actor-details-eurobucks-ledger {
+      grid-area: actor-details-eurobucks-ledger;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .actor-details-filter {
+      grid-area: actor-details-filter;
+      grid-template-columns: 5fr 1fr;
+      grid-template-rows: 1fr;
+      gap: 0.313rem 0rem;
+      grid-auto-flow: row;
+      grid-template-areas: "actor-details-filter-box actor-details-filter-actions";
+    }
+
+    .actor-details-filter-box {
+      grid-area: actor-details-filter-box;
+
+      .filter-contents {
+        &::placeholder {
+          color: var(--cpr-text-normal);
+          opacity: 0.6;
+        }
+      }
+    }
+    .actor-details-filter-actions {
+      grid-area: actor-details-filter-actions;
+      align-items: center;
+      color: var(--cpr-text-icon-highlight);
+    }
+
+    .actor-stats {
+      display: grid;
+      gap: 0.313rem 0rem;
+      padding: 0.313rem;
+      background-color: var(--cpr-background-border);
+
+      * {
+        background-color: var(--cpr-background-box);
+      }
+
+      .actor-stats-of {
+        input {
+          width: 100%;
+          padding: 0;
+          text-align: center;
+        }
+
+        .actor-stats-of-min {
+          padding: 0;
+        }
+
+        .actor-stats-of-max {
+          padding: 0;
+        }
+
+        .actor-stats-of-sep {
+          flex: 0;
+        }
+      }
+    }
+  }
+
+  .right-pane {
+    grid-area: pane-right;
+    width: auto;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 1.44rem auto;
+    grid-template-areas:
+      "tabs-right"
+      "content-right";
+
+    .right-tabs-section {
+      grid-area: tabs-right;
+      width: 100%;
+    }
+
+    .right-content-section {
+      grid-area: content-right;
+      display: flex;
+      width: 100%;
+      height: auto;
+      border-style: solid;
+      border-width: 0.313rem;
+      border-color: var(--cpr-background-border);
+      overflow-y: scroll;
+      background-color: var(--cpr-background-box);
+    }
+  }
+
+  .bottom-pane {
+    grid-area: pane-bottom;
+    display: grid;
+
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "tabs-bottom"
+      "content-bottom";
+
+    overflow-y: hidden;
+
+    .bottom-tabs-section {
+      grid-area: tabs-bottom;
+
+      width: 100%;
+      height: 1.438rem;
+    }
+
+    .bottom-content-section {
+      grid-area: content-bottom;
+      display: flex;
+      width: 100%;
+
+      border-style: solid;
+      border-width: 0.313rem;
+      overflow-y: auto;
+      background-color: var(--cpr-background-box);
+      border-color: var(--cpr-background-border);
+    }
+  }
+}
+
+.skills-tab {
+  background-color: var(--cpr-background-box);
+  min-width: 100%;
+
+  .skills-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "skills-left skills-right";
+    width: inherit;
+    gap: 0.313rem;
+    padding-bottom: 0.313rem;
+    background-color: var(--cpr-background-border);
+
+    .left-pane-skills {
+      grid-area: skills-left;
+      background-color: var(--cpr-background-box);
+    }
+
+    .right-pane-skills {
+      grid-area: skills-right;
+      background-color: var(--cpr-background-box);
+    }
+
+    .text-pill {
+      flex-grow: 0;
+      flex-shrink: 0;
+      flex-basis: 2.5rem;
+      display: inline-flex;
+      justify-content: center;
+      align-content: center;
+      background-color: var(--cpr-background-pill);
+      color: var(--cpr-text-pill);
+    }
+  }
+}
+
+.cyberware-tab {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  width: inherit;
+
+  .icon-button {
+    color: var(--cpr-text-icon-highlight);
+  }
+}
+
+.effects-tab,
+.gear-tab {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  width: inherit;
+}
+
+.lifepath-tab {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.lifepath-tab {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-rows: auto;
+  grid-template-areas: "notes-pane lifepath-pane";
+
+  .section-name {
+    background-color: var(--cpr-background-header);
+    color: var(--cpr-text-header);
+  }
+
+  .lifepath-section {
+    grid-area: lifepath-pane;
+    margin: 0.313rem;
+  }
+
+  .notes-section {
+    grid-area: notes-pane;
+    margin: 0.313rem;
+    height: 100%;
+
+    .notes-details {
+      height: 100%;
+    }
+
+    .note-pad {
+      display: flex;
+      min-height: 26.563rem;
+      height: 100%;
+    }
+  }
+}
+
+.fight-tab {
+  display: grid;
+  grid-template-columns: 25% 25% auto;
+  grid-template-rows: auto;
+  grid-template-areas: "injuries armor weapon";
+  width: inherit;
+  grid-gap: 0.313rem;
+  background-color: var(--cpr-background-border);
+
+  .fight-tab > div {
+    background-color: var(--cpr-background-box);
+  }
+
+  .section-name {
+    background-color: var(--cpr-background-header);
+    color: var(--cpr-text-header);
+  }
+
+  .injuries-section {
+    grid-area: injuries;
+    min-height: 2.188rem;
+
+    .fa-trash-can {
+      color: var(--cpr-text-icon-highlight);
+    }
+  }
+
+  .armor-section {
+    grid-area: armor;
+    min-height: 2.188rem;
+    background-color: var(--cpr-background-box);
+  }
+
+  .weapon-section {
+    grid-area: weapon;
+    min-height: 2.188rem;
+    background-color: var(--cpr-background-box);
+
+    .items-header {
+      background-color: var(--cpr-background-header);
+      color: var(--cpr-text-header);
+    }
+  }
+
+  .interface-abilities-section {
+    grid-area: injuries;
+    min-height: 2.188rem;
+
+    .items-header {
+      height: 1.25rem;
+    }
+  }
+
+  .select-net-role {
+    height: 1.25rem;
+    max-width: 50%;
+    background-color: var(--cpr-background-box);
+  }
+
+  .cyberdeck-installed-section {
+    grid-area: armor;
+    min-height: 2.188rem;
+
+    .items-header {
+      background-color: var(--cpr-background-cyberdeck-section-header);
+    }
+
+    .cyberdeck-installed-software-list {
+      display: grid;
+      grid-template-columns: 1fr 1.875rem 1.875rem;
+      grid-template-areas: "program-name program-attack-and-damage program-actions";
+
+      .installed-program-name {
+        grid-area: "program-name";
+      }
+
+      .installed-program-attack-and-damage {
+        grid-area: "program-attack-and-damage";
+        display: grid;
+        grid-template-columns: 0.938rem 0.938rem;
+        grid-template-areas: "program-attack program-damage";
+
+        .installed-program-attack {
+          grid-area: "program-attack";
+        }
+        .installed-program-defense {
+          grid-area: "program-defense";
+        }
+        .installed-program-damage {
+          grid-area: "program-damage";
+        }
+      }
+
+      .installed-program-actions {
+        grid-area: "program-actions";
+
+        .fa-folder-minus {
+          color: var(--cpr-text-icon-highlight);
+        }
+      }
+    }
+  }
+
+  .cyberdeck-rezzed-section {
+    grid-area: weapon;
+    min-height: 2.188rem;
+
+    .items-header {
+      background-color: var(--cpr-background-cyberdeck-section-header);
+    }
+
+    .cyberdeck-rezzed-software-list {
+      display: grid;
+      grid-template-columns: 1fr 1.875rem 1.875rem 1.875rem 1.875rem 1.875rem 4.375rem;
+      grid-template-areas: "program-name program-per  program-spd program-atk program-def program-rez-and-decrement program-reset";
+
+      .rezzed-program-name {
+        grid-area: "program-name";
+      }
+
+      .rezzed-program-per {
+        grid-area: "program-per";
+      }
+      .rezzed-program-spd {
+        grid-area: "program-spd";
+      }
+      .rezzed-program-atk {
+        grid-area: "program-atk";
+      }
+      .rezzed-program-def {
+        grid-area: "program-def";
+      }
+
+      .rezzed-program-rez-and-decrement {
+        grid-area: "program-rez-and-decrement";
+        display: grid;
+        grid-template-columns: 0.938rem 0.938rem;
+        grid-template-areas: "program-rez program-rez-decrement";
+
+        .rezzed-program-rez {
+          grid-area: "program-rez";
+        }
+        .rezzed-program-rez-decrement {
+          grid-area: "program-rez-decrement";
+        }
+      }
+
+      .rezzed-program-reset {
+        grid-area: "program-reset";
+      }
+    }
+  }
+}
+
+.image-block {
+  height: 11.875rem;
+  width: 11.875rem;
+
+  .profile-img {
+    clip-path: polygon(20.313rem 0, 100% 0, 100% 100%, 0 100%, 0 1.563rem);
+  }
+  overflow: hidden;
+}
+
+.block-label {
+  text-align: center;
+}
+
+.block-data {
+  text-align: center;
+}
+
+.tab-label {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  min-width: 9.375rem;
+  background-color: var(--cpr-background-tab-inactive);
+  color: var(--cpr-text-tab-normal);
+
+  &.tab-indent {
+    clip-path: polygon(2.063rem 0, 100% 0%, 100% 100%, 0.688rem 100%);
+  }
+
+  &.active {
+    background-color: var(--cpr-background-tab-active);
+  }
+
+  &:hover {
+    text-shadow: none;
+  }
+
+  .tab-highlight {
+    color: var(--cpr-text-tab-highlight);
+  }
+}
+
+.tab-pink-underlay {
+  background-color: var(--cpr-background-tab-underlay);
+  margin-left: 1.25rem;
+  clip-path: polygon(1.375rem 0, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.cpr-tabs {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+
+.cpr-tabs > * {
+  flex: 1;
+}
+
+.cpr-tabs > .flex0 {
+  display: block;
+  flex: 0;
+}
+
+.cpr-tabs > .flex1 {
+  flex: 1;
+}
+
+.cpr-tabs > .flex2 {
+  flex: 2;
+}
+
+.cpr-tabs > .flex3 {
+  flex: 3;
+}
+
+.cpr-tabs .item {
+  text-align: center;
+}
+
+.cpr-tabs .item.active {
+  text-shadow: 0 0 0.625rem var(--cpr-color-red);
+}
+
+.collapse-icon,
+.expand-icon {
+  font-size: xx-small;
+}
+
+.button-active {
+  color: var(--cpr-text-icon-highlight);
+}
+
+.pinned {
+  color: var(--cpr-text-icon-normal);
+}
+.unpinned {
+  color: var(--cpr-text-icon-dimmed);
+}

@@ -1,0 +1,17 @@
+_id: 5Kiokw100kS6wnO7
+_key: "!tables.results!bEeDgE9CfongXFAR.5Kiokw100kS6wnO7"
+documentCollection: ""
+documentId: null
+drawn: false
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/night_city_tarot/the_hierophant.svg
+range:
+  - 6
+  - 6
+text: >-
+  The Hierophant. Double the damage the Attack would've dealt after armor and
+  modifiers. (Just like how you would double the damage on an Aimed Shot to the
+  Head). If the Attack was made with a weapon, that weapon is now Destroyed
+  Beyond Repair. (See Night City Tarot Page 3).
+type: 0
+weight: 1

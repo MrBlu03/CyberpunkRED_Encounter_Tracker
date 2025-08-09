@@ -1,0 +1,14 @@
+{
+  "label": "Cibersillas",
+  "mapping": {},
+  "entries": {
+    "Mercurius Cyberchair": {
+      "name": "Cibersilla Mercurius",
+      "description": "<p>Una cibersilla increíblemente asequible. Durante su uso el operador MOV base se convierte en 5, con todas las opciones de movimiento regulares disponibles.</p><p>La operación de la cibersilla requiere una mano libre o enchufes de interfaz.</p><p>Si el operador sufre una lesión crítica que reduce su MOV, el MOV de la cibersilla se efectúa en su lugar.</p><p>La cibersilla no puede ser dirigida específicamente, ni puede ser deshabilitada por efectos EMP.</p>"
+    },
+    "Spider Cyberchair": {
+      "name": "Cibersilla Araña",
+      "description": "<p>La cima de las sillas cibernéticas, dando al usuario principal muchas opciones. Mientras lo usa, el MOV base del operador se convierte en 5, con todas las opciones de movimiento regulares restantes disponibles.</p>\n<p>Además, esta cibersilla tiene espacio para 4 opciones de cibermiembro *. Cualquier opción instalada siempre cuenta como emparejada.</p>\n<p>La operación de la cibersilla requiere unas manos, o unos enchufes de interfaz.</p>\n<p>Si el operador sufre una lesión crítica que reduce su MOV, el MOV de la cibersilla se efectúa en su lugar.</p>\n<p>La cibersilla no puede ser dirigida específicamente, ni puede ser deshabilitada a través de efectos EMP.</p>\n<p><em>*Instalar opciones de ciberlimp actualmente no soportadas</em></p>"
+    }
+  }
+}

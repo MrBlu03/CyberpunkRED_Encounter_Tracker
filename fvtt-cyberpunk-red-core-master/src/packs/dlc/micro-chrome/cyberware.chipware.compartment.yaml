@@ -1,0 +1,56 @@
+_id: jcaBaa81CJiRktcu
+_key: "!items!jcaBaa81CJiRktcu"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/micro_chrome/chipware_compartment.svg
+name: Chipware Compartment
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: ""
+  concealable:
+    concealable: true
+    isConcealed: false
+  core: false
+  damage: 1d6
+  description:
+    value: |
+      <p>Lets you conceal up to four pieces of chipware, no Check required.</p>
+  dvTable: ""
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  humanityLoss:
+    roll: 1d6
+    static: 3
+  installLocation: clinic
+  installedItems:
+    allowed: true
+    allowedTypes: []
+    list: []
+    slots: 0
+    usedSlots: 0
+  isElectronic: true
+  isFoundational: false
+  isRanged: false
+  isWeapon: false
+  magazine:
+    max: 0
+    value: 0
+  price:
+    market: 100
+  providesHardening: false
+  revealed: true
+  rof: 1
+  size: 3
+  source:
+    book: MC
+    page: 1
+  type: cyberEye
+  unarmedAutomaticCalculation: true
+  usage: toggled
+  usesType: magazine
+  weaponSkill: Archery
+  weaponType: assaultRifle
+type: cyberware

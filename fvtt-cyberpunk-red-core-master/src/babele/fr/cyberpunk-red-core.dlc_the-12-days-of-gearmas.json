@@ -1,0 +1,58 @@
+{
+  "label": "Les 12 Jours d'Équipements de Noël",
+  "mapping": {},
+  "entries": {
+    "Esporma Environment Suit": {
+      "name": "Tenue de protection Esporma",
+      "description": "<p>Combinaison anti-radiations renforcée. Protège le porteur et est livrée avec un réservoir d'oxygène de 30 minutes qui peut être rempli en une heure en air sain.</p>\n<p>Des nanomachines restaurent 1PA chaque heure tant que la tenue ne subit pas de dommage.</p>\n"
+    },
+    "PackShield": {
+      "name": "Sac bouclier",
+      "description": "<p>Croisement entre un sac à dos de style Cadre Sup et un bouclier ballistique.</p>\n<p>Peut transporter des objets comme un @UUID[Compendium.cyberpunk-red-core.core_gear.Item.y2a4HDhIl7FlJyD7]{Fourre-tout}, et être équipé dans votre main comme un bouclier.</p>\n<p>Offre seulement une protection lorsqu'il est équipé dans une main.</p>\n<p>Ne peut pas être installé dans un @UUID[Compendium.cyberpunk-red-core.core_cyberware.Item.I08f3hOEgAPNG4kJ]{Bouclier escamotable}.</p>\n"
+    },
+    "Integrated Cyberscanner": {
+      "name": "Cyberscanner intégré",
+      "description": "<p>Peut scanner un individu à 2m et fournir une liste de toute la cybernétique installée. Nécessite 1 minute de scan. Fait apparaitre une erreur si une pièce de cybernétique est détectée comme étant modifiée, unique ou inconnue.</p>\n"
+    },
+    "Xtra-Dex Smart Glove": {
+      "name": "Gant Intelligent Xtra-Dex",
+      "description": "<p>Un gant intelligent avec options de cyberdoigts. Possède 2 emplacements pour des options de cyberbras et est traité comme une cybermain modulaire*.</p>\n<p>Nécessite des prises d’interface pour accéder aux options cyberbras/cyberdoigt installées dans le gant.</p>\n<p>*Doigt modulaire cybermain doit être ajouté après l'installation.</p>\n"
+    },
+    "Cybercam EX-1": {
+      "name": "Cybercam EX-1",
+      "description": "<p>Caméra casque. Un Média couvrant un sujet en live en portant la Cybercam EX-1 gagne +1 en Crédibilité lorsqu'il utilise sa capacité de rôle. Se cumule avec des bonus basés sur la preuve.\n</p>\n"
+    },
+    "Cyberscanner": {
+      "name": "Cyberscanner",
+      "description": "<p>Peut scanner un individu à 2m et fournir une liste de toute la cybernétique installée. Nécessite 1 minute de scan. Fait apparaitre une erreur si une pièce de cybernétique est détectée comme étant modifiée, unique ou inconnue.</p>\n"
+    },
+    "Green Light Go Sniffer": {
+      "name": "Sniffeur Green Light Go",
+      "description": "<p>Analyseur de substance chimique. Fournit une lueur verte ou rouge selon que la substance chimique (comme des drogues de rue ou des médicaments) est pure ou coupée/mélangée avec une autre substance.</p>\n"
+    },
+    "Ion Cuffs": {
+      "name": "Menottes Ion",
+      "description": "<p>Menottes destinées aux borgs. Désactive toutes les cyberoptions non-renforcées installées dans le membre auxquels les menottes sont attachées.\nUn sujet avec COR 13 ou plus peut briser les menottes Ion.</p>\n"
+    },
+    "MagViewer": {
+      "name": "MagJumelles",
+      "description": "<p> Binoculaires destinés au repérage. Fournit des détails jusqu'à 800m. Confère à l'utilisateur un bonus d'assistance/repérage de +1 à un jet d'attaque réussi sur une cible à 51 m ou plus.</p>\n<p> Ne se cumule pas avec une lunette de visée.</p>"
+    },
+    "Master Mechanic's Tool Kit": {
+      "name": "Kit d'outils Master Mécanique",
+      "description": "<p>Boite à outils massive offrant +4 aux compétences lors des tests de constructeur.\nAssez grande pour être considérée comme une couverture en acier épais, nécessite un COR de 10 pour être déplacée.</p>\n"
+    },
+    "MiniMag Speakers": {
+      "name": "Haut-parleurs MiniMag",
+      "description": "<p>Petits haut-parleurs magnétiques. Peut jouer de l'audio à partir d'un agent connecté à 100m.\n</p>\n"
+    },
+    "Smartsticks": {
+      "name": "Smartsticks",
+      "description": "<p>Baguettes connectées intelligentes. Donne à l'utilisateur un bonus de +1 en Instrument (Batterie) quand il joue avec. Ne se cumule pas avec d'autres bonus d'Instrument.</p>"
+    },
+    "Metrocar": {
+      "name": "Metrocar",
+      "description": "<p>Une voiture terrestre compacte bon marché construite pour la conduite en ville.</p>\n"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "label": "Vêtements",
+  "mapping": {},
+  "entries": {
+    "Masetto Holo-Wear": {
+      "name": "Holomode Masetto",
+      "description": "<p>Vêtements holographiques. Peuvent être désactivés pendant une minute par des dispositifs IEM. Permet en une action de permuter entre les styles achetés.</p>\n"
+    }
+  }
+}

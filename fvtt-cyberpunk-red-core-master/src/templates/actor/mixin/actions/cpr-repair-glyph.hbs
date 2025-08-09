@@ -1,0 +1,20 @@
+{{#if (cprCompare system.isBodyLocation "||" system.isHeadLocation) }}
+  {{#if (cprCompare system.bodyLocation.ablation ">" 0) }}
+    <a class="repair" data-item-id="{{this._id}}">
+      <i class="fas fa-screwdriver-wrench" data-tooltip="{{localize "CPR.actorSheets.commonActions.repair"}}"></i>
+    </a>
+  {{else}}
+    {{#if (cprCompare system.headLocation.ablation ">" 0) }}
+      <a class="repair" data-item-id="{{this._id}}">
+        <i class="fas fa-screwdriver-wrench" data-tooltip="{{localize "CPR.actorSheets.commonActions.repair"}}"></i>
+      </a>
+    {{/if}}
+  {{/if}}
+{{/if}}
+{{#if system.isShield }}
+  {{#if (cprCompare system.shieldHitPoints.value "<" (cprApplyUpgrade this system.shieldHitPoints.max "shieldHp")) }}
+    <a class="repair" data-item-id="{{this._id}}">
+      <i class="fas fa-screwdriver-wrench" data-tooltip="{{localize "CPR.actorSheets.commonActions.repair"}}"></i>
+    </a>
+  {{/if}}
+{{/if}}

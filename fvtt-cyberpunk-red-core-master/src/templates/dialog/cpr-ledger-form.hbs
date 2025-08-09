@@ -1,0 +1,98 @@
+<form class="ledger">
+  <div class="ledger-grid">
+    <div class="ledger-info">
+      <div class="text-larger text-center text-nowrap">
+        {{localize ledgername}}
+      </div>
+      <div class="text-larger text-center">
+        {{cprNumberFormat total}}
+        {{#if (cprCompare ledgername "===" "CPR.ledger.wealth")}}
+          eb
+        {{else if (cprCompare ledgername "===" "CPR.ledger.improvementpoints")}}
+          {{localize "CPR.characterSheet.leftPane.improvementPointsShort"}}
+        {{/if}}
+      </div>
+    </div>
+    <div class="ledger-edit">
+      <div class="ledger-edit-modify text-right text-padding-right-smallest">
+        {{localize "CPR.characterSheet.rightPane.eurobucks.eurobucksModify"}}:
+      </div>
+      <div class="ledger-edit-modify-input">
+        <input placeholder="0" name="modifyValue" type="number"/>
+      </div>
+      <div class="ledger-edit-actions">
+        <a class="ledger-edit-button"
+           data-tooltip="{{localize "CPR.global.generic.add"}}"
+           data-action="add">
+          <i class="fas fa-circle-plus"></i>
+        </a>
+        <a class="ledger-edit-button"
+           data-tooltip="{{localize "CPR.global.generic.subtract"}}"
+           data-action="subtract">
+          <i class="fas fa-circle-minus"></i>
+        </a>
+        <a class="ledger-edit-button"
+           data-tooltip="{{localize "CPR.global.generic.set"}}"
+           data-action="set">
+          <i class="fas fa-circle-chevron-right"></i>
+        </a>
+      </div>
+      <div class="ledger-edit-reason text-right text-padding-right-smallest">
+        {{localize "CPR.characterSheet.rightPane.eurobucks.eurobucksModifyReason"}}:
+      </div>
+      <div class="ledger-edit-reason-input">
+        <input name="reason" type="text"/>
+      </div>
+    </div>
+    <div class="ledger-history items-list">
+      <li class="ledger-history-list items-header flexrow">
+        <span class="item-name
+                     ledger-number
+                     text-nowrap">
+          {{localize "CPR.dialog.ledgerForm.number"}}
+        </span>
+        <span class="item-name
+                     ledger-transaction
+                     text-nowrap">
+          {{localize "CPR.dialog.ledgerForm.transaction"}}
+        </span>
+        <span class="item-name
+                     ledger-reason
+                     text-nowrap">
+          {{localize "CPR.dialog.ledgerForm.reason"}}
+        </span>
+        {{#if isGM }}
+          <span class="item-name
+                       ledger-delete
+                       text-nowrap">
+          </span>
+        {{/if}}
+      </li>
+      <ol class="items-list ledger-list">
+        {{#each (cprReverse contents) as |content c| }}
+          <li class="ledger-history-list item flexrow">
+            <div class="ledger-number">
+              {{cprMath "subtract" ../contents.length @index}}
+            </div>
+            <div class="ledger-transaction">
+              {{content.[0]}}
+            </div>
+            <div class="ledger-reason">
+              {{content.[1]}}
+            </div>
+            {{#if ../isGM }}
+              <div class="ledger-delete">
+                <a class="delete-ledger-line"
+                   data-line="{{cprMath "subtract" ../contents.length @index 1}}">
+                  <i class="fas fa-trash-can"
+                     data-tooltip="{{localize "CPR.dialog.ledgerForm.delete"}}">
+                  </i>
+                </a>
+              </div>
+            {{/if}}
+          </li>
+        {{/each}}
+      </ol>
+    </div>
+  </div>
+</form>

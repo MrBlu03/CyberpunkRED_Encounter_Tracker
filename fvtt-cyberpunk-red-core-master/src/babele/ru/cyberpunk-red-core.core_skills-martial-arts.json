@@ -1,0 +1,22 @@
+{
+  "label": "Навыки (Боевые искусства)",
+  "mapping": {},
+  "entries": {
+    "Martial Arts (Aikido)": {
+      "name": "Боевые искусства (Айкидо)",
+      "description": ""
+    },
+    "Martial Arts (Judo)": {
+      "name": "Боевые искусства (Дзюдо)",
+      "description": ""
+    },
+    "Martial Arts (Karate)": {
+      "name": "Боевые искусства (Карате)",
+      "description": ""
+    },
+    "Martial Arts (Taekwondo)": {
+      "name": "Боевые искусства (Тхэквондо)",
+      "description": ""
+    }
+  }
+}

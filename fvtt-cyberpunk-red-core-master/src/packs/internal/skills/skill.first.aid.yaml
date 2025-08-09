@@ -1,0 +1,20 @@
+_id: 8yxaK6GbNu59yxKH
+_key: "!items!8yxaK6GbNu59yxKH"
+effects: []
+img: icons/svg/item-bag.svg
+name: First Aid
+system:
+  basic: true
+  category: techniqueSkills
+  core: true
+  description:
+    value: ""
+  difficulty: typical
+  favorite: false
+  level: 2
+  skillType: generic
+  source:
+    book: Core
+    page: 141
+  stat: tech
+type: skill

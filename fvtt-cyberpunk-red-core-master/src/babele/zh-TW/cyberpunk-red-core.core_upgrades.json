@@ -1,0 +1,214 @@
+{
+  "label": "Upgrades",
+  "mapping": {
+    "dvTable": "system.dvTable"
+  },
+  "entries": {
+    "Armored Chassis": {
+      "name": "Armored Chassis",
+      "description": "<p>Can be applied to all vehicles. Armors the vehicle to SP13. Doesn't affect the glass.</p>"
+    },
+    "AV-4 Engine Upgrade": {
+      "name": "AV-4 Engine Upgrade",
+      "description": "<p>Can be applied to all land vehicles. Adds Aerodyne thrusters to the vehicle, allowing flight. While flying the vehicle has a narrative speed of 200MPH / 322KPH, and a combat speed of 40. The vehicle must be piloted using the Pilot Air Vehicle skill while mid-air.</p>"
+    },
+    "Backup Drive": {
+      "name": "Backup Drive",
+      "description": "<p>\n  Saves Non-Black ICE programs when destroyed. These programs can be\n  re-installed by a Netrunner as a meat action.\n</p>\n"
+    },
+    "Bayonet": {
+      "name": "Bayonet",
+      "description": "<p>An old idea that still works just as good; lets you use your gun as a light melee weapon. While attached, the weapon can't be concealed under clothing.</p>"
+    },
+    "Bulletproof Glass": {
+      "name": "Bulletproof Glass",
+      "description": "<p>Can be applied to all vehicles. All glass on the vehicle is now considered cover with 15 HP. Can be taken a second time to upgrade to 30HP. All windows take damage individually.</p>"
+    },
+    "Combat Plow": {
+      "name": "Combat Plow",
+      "description": "<p>Can be applied to all land and sea vehicles, except Bikes and Jetskies. When you ram something with the front of your vehicle, your vehicle doesn't take damage and nobody inside suffers from the Whiplash critical injury. You deal 2d6 additional ramming damage if your vehicle was boosted by NOS on the turn you ram the object.&nbsp;</p>"
+    },
+    "Communications Center": {
+      "name": "Communications Center",
+      "description": "<p>Can be applied to all vehicles. Touchscreen console that functions as an Agent, along with a storage unit containing 6 <strong>Radio Communicators</strong>, 6 <strong>Scrambler/Descramblers</strong>, a <strong>Radio Scanner/Music Player</strong>, a <strong>Homing tracer</strong> with 6 tracers, and an <strong>Audio Recorder</strong>.</p>"
+    },
+    "Deployable Spike Strip": {
+      "name": "Deployable Spike Strip",
+      "description": "<p>Can be applied to all groundcars. As an Action, the driver can deploy a spike strip. While deployed, any closely trailing vehicles with tires must make a DV17 Drive Land Vehicle Check. On a failure, their vehicle takes 4d6 damage as if hitting a weak point. Replacement spike strips cost 10eb.&nbsp;</p>\n<p>You may install this upgrade multiple times, each upgrade increases the amount of spike strips that can be deployed before the system requires reloading, and it cannot be reloaded while the vehicle is moving.</p>"
+    },
+    "DNA Lock": {
+      "name": "DNA Lock",
+      "description": "<p>Uses biometrics to lock the cyberdeck. Requires DV17 Electronics/Security Tech Check to crack.&nbsp;</p>"
+    },
+    "Drum Magazine (Assault Rifle)": {
+      "name": "Drum Magazine (Assault Rifle)",
+      "description": "<p>Increases magazine size to a massive 45 bullets.</p>"
+    },
+    "Drum Magazine (Grenade Launcher)": {
+      "name": "Drum Magazine (Grenade Launcher)",
+      "description": "<p>Increases magazine size to a massive 6 grenades.</p>"
+    },
+    "Drum Magazine (Heavy Pistol)": {
+      "name": "Drum Magazine (Heavy Pistol)",
+      "description": "<p>Increases magazine size to a massive 28 bullets.</p>"
+    },
+    "Drum Magazine (Heavy SMG)": {
+      "name": "Drum Magazine (Heavy SMG)",
+      "description": "<p>Increases magazine size to a massive 60 bullets.</p>"
+    },
+    "Drum Magazine (Medium Pistol)": {
+      "name": "Drum Magazine (Medium Pistol)",
+      "description": "<p>Increases magazine size to a massive 36 bullets.</p>"
+    },
+    "Drum Magazine (Rocket Launcher)": {
+      "name": "Drum Magazine (Rocket Launcher)",
+      "description": "<p>Increases magazine size to a massive 3 rockets. That's a lot of boom.</p>"
+    },
+    "Drum Magazine (Shotgun)": {
+      "name": "Drum Magazine (Shotgun)",
+      "description": "<p>Increases magazine size to a massive 16 rounds.</p>"
+    },
+    "Drum Magazine (SMG)": {
+      "name": "Drum Magazine (SMG)",
+      "description": "<p>Increases magazine size to a massive 50 bullets.</p>"
+    },
+    "Drum Magazine (Sniper Rifle)": {
+      "name": "Drum Magazine (Sniper Rifle)",
+      "description": "<p>Increases magazine size to a massive 12 bullets.</p>"
+    },
+    "Drum Magazine (Very Heavy Pistol)": {
+      "name": "Drum Magazine (Very Heavy Pistol)",
+      "description": "<p>Increases magazine size to a massive 28 bullets.</p>"
+    },
+    "Enhanced Interface Plug Integration": {
+      "name": "Enhanced Interface Plug Integration",
+      "description": "<p>Can be applied to all bikes. While using Interface Plugs to drive this vehicle, if you have a REF 8 or higher and you, a passenger, or your bike are the target of an attack, you can attempt to dodge as you would on foot. If you dodge for a passenger, that becomes their defence.&nbsp;</p>"
+    },
+    "Extended Magazine (Assault Rifle)": {
+      "name": "Extended Magazine (Assault Rifle)",
+      "description": "<p>Increases magazine size to a hefty 35 bullets.</p>"
+    },
+    "Extended Magazine (Grenade Launcher)": {
+      "name": "Extended Magazine (Grenade Launcher)",
+      "description": "<p>Increases magazine size to a hefty 4 grenades.</p>"
+    },
+    "Extended Magazine (Heavy Pistol)": {
+      "name": "Extended Magazine (Heavy Pistol)",
+      "description": "<p>Increases magazine size to a hefty 14 bullets.</p>"
+    },
+    "Extended Magazine (Heavy SMG)": {
+      "name": "Extended Magazine (Heavy SMG)",
+      "description": "<p>Increases magazine size to a hefty 50 bullets.</p>"
+    },
+    "Extended Magazine (Medium Pistol)": {
+      "name": "Extended Magazine (Medium Pistol)",
+      "description": "<p>Increases magazine size to a hefty 18 bullets.</p>"
+    },
+    "Extended Magazine (Rocket Launcher)": {
+      "name": "Extended Magazine (Rocket Launcher)",
+      "description": "<p>Increases magazine size to a hefty 2 rockets.</p>"
+    },
+    "Extended Magazine (Shotgun)": {
+      "name": "Extended Magazine (Shotgun)",
+      "description": "<p>Increases magazine size to a hefty 8 rounds.</p>"
+    },
+    "Extended Magazine (SMG)": {
+      "name": "Extended Magazine (SMG)",
+      "description": "<p>Increases magazine size to a hefty 40 bullets.</p>"
+    },
+    "Extended Magazine (Sniper Rifle)": {
+      "name": "Extended Magazine (Sniper Rifle)",
+      "description": "<p>Increases magazine size to a hefty 8 bullets.</p>"
+    },
+    "Extended Magazine (Very Heavy Pistol)": {
+      "name": "Extended Magazine (Very Heavy Pistol)",
+      "description": "<p>Increases magazine size to a hefty 14 bullets.</p>"
+    },
+    "Grenade Launcher Underbarrel": {
+      "name": "Grenade Launcher Underbarrel",
+      "description": "<p>Functions like a standard grenade launcher, but with a magazine size of 1. Requires 2 hands to use, and takes up 2 attachment slots. While attached, the weapon can't be concealed under clothing.</p>\n<p>Note that the weapon inherits any modifiers from the gun it is attached to, such as other attachments and quality.</p>",
+      "dvTable": "DV Grenade Launcher"
+    },
+    "Hardened Circuitry": {
+      "name": "Hardened Circuitry",
+      "description": "<p>Cyberdeck cannot be disabled or destroyed by EMP effects.&nbsp;</p>"
+    },
+    "Heavy Chassis": {
+      "name": "Heavy Chassis",
+      "description": "<p>Can be applied to all vehicles except Bikes, Jetskis and Gyrocopters. Adds 20 SDP to the vehicle. This doesn't affect the glass, and vehicle can now tow up to 10 tons.&nbsp;</p>"
+    },
+    "Housing Capacity": {
+      "name": "Housing Capacity",
+      "description": "<p>Can be applied to Aerozep, AV-4, Cabin Cruiser, Groundcars and Yacht. When installed onto a Groundcar or AV-4, it adds a sleeping area with 1 bed, a toilet, a shower, and a small kitchen to the vehicle. When installed into a Cabin Cruiser, Yacht, or Aerozep, it adds one room to the vehicle.&nbsp;</p>\n<p><strong>Requires a Heavy Chassis on a Compact Groundcar and High Performance Groundcar</strong>.</p>"
+    },
+    "Hover Upgrade": {
+      "name": "Hover Upgrade",
+      "description": "<p>Can be applied to all land vehicles. Adds fans onto the vehicle that allow it to traverse water at a narrative speed of 15 MPH/ 24KPH, and a combat speed of 10.</p>"
+    },
+    "Infrared Nightvision Scope": {
+      "name": "Infrared Nightvision Scope",
+      "description": "<p>Reduces penalties against targets in darkness, smoke/fog to 0.</p>"
+    },
+    "Insulated Wiring": {
+      "name": "Insulated Wiring",
+      "description": "<p>Cyberdeck and user clothing cannot catch fire.&nbsp;</p>"
+    },
+    "KRASH Barrier": {
+      "name": "KRASH Barrier",
+      "description": "<p>Cyberdeck is immune to effects that force the Netrunner to Jack Out (safely or unsafely).</p>"
+    },
+    "NOS": {
+      "name": "NOS",
+      "description": "<p>Can be applied to all vehicles. Adds a tank of nitrous oxide to the vehicle. Allows you to use your Action to use an additional Move Action while driving.&nbsp;</p>\n<p>You may install this upgrade multiple times, each upgrade adds an additional tank and each tank may be used once per day.</p>"
+    },
+    "Onboard Flamethrower": {
+      "name": "Onboard Flamethrower",
+      "description": "<p>Can be applied to all vehicles.<strong> </strong>A <strong>Flamethrower </strong>that can be mounted facing the front, side or back of the vehicle. The driver may fire it using an Action. It cannot be reloaded while driving, and cannot accept weapon attachments.</p>\n<p>You may install this upgrade multiple times.</p>"
+    },
+    "Onboard Machine Gun": {
+      "name": "Onboard Machine Gun",
+      "description": "<p>Can be applied to all vehicles. An <strong>Assault Rifle </strong>with a 30 round capacity and only capable of Autofire, that can be mounted facing the front of the vehicle. The driver may fire it using an Action, cannot be reloaded while driving and cannot accept weapon attachments.&nbsp;</p>\n<p>You may install this upgrade multiple times.</p>"
+    },
+    "Onboard Melee Weapon": {
+      "name": "Onboard Melee Weapon",
+      "description": "<p>Can be applied to all land and sea vehicles. A <strong>Very Heavy Melee Weapon&nbsp;</strong>that can be mounted facing the front, side or back of the vehicle. The driver may attack with it using an Action. The weapon cannot be removed.&nbsp;</p>\n<p>You may install this upgrade multiple times.</p>"
+    },
+    "Onboard Rocket Pod": {
+      "name": "Onboard Rocket Pod",
+      "description": "<p>Can be applied to all vehicles except Bikes, Jetskis and Gyrocopters. A <strong>Rocket Launcher&nbsp;</strong>with a drum of three rockets, that can be mounted facing the front of the vehicle. The driver may fire it using an Action. It cannot be reloaded while driving, and cannot accept weapon attachments.&nbsp;</p>\n<p>You may install this upgrade multiple times. <strong>Requires Heavy Chassis</strong>.</p>"
+    },
+    "Range Upgrade": {
+      "name": "Range Upgrade",
+      "description": "<p>Cyberdeck can connect to access points from up to 8m/yds away (instead of 6m/yds).</p>"
+    },
+    "Seating Upgrade": {
+      "name": "Seating Upgrade",
+      "description": "<p>Can be applied to all vehicles. Adds two seats to the vehicle. These can be installed as an external sidecar, they may also be installed as ejector seats with removable parachutes.</p>\n<p>Can be taken multiple times with the exception of Bikes, Jetskis and Gyrocopters.</p>"
+    },
+    "Security Upgrade": {
+      "name": "Security Upgrade",
+      "description": "<p>Can be applied to all vehicles. Adds DNA Locks to the vehicle requring the correct biometrics or a DV 17 Electronics/Security Tech check to unlock. Failure to unlock the vehicle takes damage as if hit with a Stun Baton.</p>\n<p>In addition, while remaining still the vehicle is cloaked and requires a DV17 Perception check to spot. The vehicle must remain stationary for a minute before this activates.</p>"
+    },
+    "Shotgun Underbarrel": {
+      "name": "Shotgun Underbarrel",
+      "description": "<p>Functions like a standard shotgun, but with a magazine size of 2. Requires 2 hands to use, and takes up 2 attachment slots. While attached, the weapon can't be concealed under clothing.</p>\n<p>Note that the weapon inherits any modifiers from the gun it is attached to, such as other attachments and quality.</p>",
+      "dvTable": "DV Shotgun (Slug)"
+    },
+    "Smartgun Link": {
+      "name": "Smartgun Link",
+      "description": "<p>Turns weapon into a \"Smartgun\". Refer to all rules specified on pg. 344 before using.&nbsp;</p>"
+    },
+    "Smuggling Upgrade": {
+      "name": "Smuggling Upgrade",
+      "description": "<p>Can be applied to all vehicles. Adds two <strong>Hidden Holsters</strong> to the vehicle, and a large hidden compartment for smuggling purposes. These can be discovered with a DV17 Conceal/Reveal Object check.&nbsp;<br><br>Can be taken multiple times with the exception of Bikes, Jetskis and Gyrocopters.</p>"
+    },
+    "Sniping Scope": {
+      "name": "Sniping Scope",
+      "description": "<p>Allows you to see detail up to 800m/yds. +1 to Single Shot/Aimed Shots for targets greater than 50m/yds.&nbsp;</p>"
+    },
+    "Vehicle Heavy Weapon Mount": {
+      "name": "Vehicle Heavy Weapon Mount",
+      "description": "<p>Can be applied to all vehicles except Bikes, Jetskis and Gyrocopters. One of the vehicles seats becomes a swivel mount for any two-handed ranged weapon. A passenger may fire the weapon using an Action. The passenger can reload the weapon. The weapon can be removed or reinstalled using an Action.&nbsp;</p>\n<p>The first time this upgrade is taken, included is a <strong>Tsunami Arms Helix</strong>,&nbsp; <strong>Rhinemetall EMG-86 Railgun</strong>, or <strong>Militech \"Cowboy\" U-56 Grenade Launcher</strong>. If the vehicle has the Bulletproof Glass upgrade, the gunner is protected by the same glass.&nbsp;</p>\n<p>You may install this upgrade multiple times if the vehicle has the Housing Capacity upgrade. <strong>Requires Heavy Chassis</strong>.</p>"
+    }
+  }
+}

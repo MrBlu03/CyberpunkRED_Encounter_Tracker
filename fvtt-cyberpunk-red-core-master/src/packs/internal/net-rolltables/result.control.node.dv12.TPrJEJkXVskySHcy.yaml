@@ -1,0 +1,12 @@
+_id: TPrJEJkXVskySHcy
+_key: "!tables.results!X9Bhs1i802SIVUPP.TPrJEJkXVskySHcy"
+documentCollection: ""
+documentId: null
+drawn: false
+img: icons/svg/d20-black.svg
+range:
+  - 11
+  - 11
+text: Control Node DV12
+type: 0
+weight: 1

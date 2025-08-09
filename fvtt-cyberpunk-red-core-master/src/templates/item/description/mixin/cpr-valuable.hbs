@@ -1,0 +1,19 @@
+<div class="item-summary-line">
+  <span class="summary-name text-semi">
+    {{localize "CPR.itemSheet.physical.price.price"}}:
+  </span>
+  <span class="summary-value">
+    {{cprNumberFormat item.system.price.market}}
+  </span>
+</div>
+<div class="item-summary-line">
+  <span class="summary-name text-semi">
+    {{localize "CPR.itemSheet.physical.price.category"}}:
+  </span>
+  <span class="summary-value">
+    {{localize
+        (cprFindConfigValue "itemPriceCategory"
+          (cprGetPriceCategory item.system.price.market)
+    )}}
+  </span>
+</div>

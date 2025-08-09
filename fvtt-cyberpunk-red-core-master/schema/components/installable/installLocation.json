@@ -1,0 +1,10 @@
+{
+  "description": "Where can you get the cyberware installed",
+  "type": "string",
+  "enum": [
+    "clinic",
+    "hospital",
+    "mall",
+    "notApplicable"
+  ]
+}

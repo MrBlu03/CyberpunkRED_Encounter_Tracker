@@ -1,0 +1,218 @@
+{
+  "label": "Habilidades (Idiomas)",
+  "mapping": {},
+  "entries": {
+    "Language (Arabic)": {
+      "name": "Idioma (Árabe)",
+      "description": ""
+    },
+    "Language (Bengali)": {
+      "name": "Idioma (Bengalí)",
+      "description": ""
+    },
+    "Language (Berber)": {
+      "name": "Idioma (Bereber)",
+      "description": ""
+    },
+    "Language (Burmese)": {
+      "name": "Idioma (Birmano)",
+      "description": ""
+    },
+    "Language (Cantonese Chinese)": {
+      "name": "Idioma (Chino Cantonés)",
+      "description": ""
+    },
+    "Language (Cree)": {
+      "name": "Idioma (Cri)",
+      "description": ""
+    },
+    "Language (Creole)": {
+      "name": "Idioma (Criolla)",
+      "description": ""
+    },
+    "Language (Dari)": {
+      "name": "Idioma (Persa Dari)",
+      "description": ""
+    },
+    "Language (Dutch)": {
+      "name": "Idioma (Neerlandés)",
+      "description": ""
+    },
+    "Language (English)": {
+      "name": "Idioma (Inglés)",
+      "description": ""
+    },
+    "Language (Farsi)": {
+      "name": "Idioma (Persa Farsi)",
+      "description": ""
+    },
+    "Language (Filipino)": {
+      "name": "Idioma (Filipino)",
+      "description": ""
+    },
+    "Language (Finnish)": {
+      "name": "Idioma (Finlandés)",
+      "description": ""
+    },
+    "Language (French)": {
+      "name": "Idioma (Francés)",
+      "description": ""
+    },
+    "Language (German)": {
+      "name": "Idioma (Alemán)",
+      "description": ""
+    },
+    "Language (Guarani)": {
+      "name": "Idioma (Guaraní)",
+      "description": ""
+    },
+    "Language (Hausa)": {
+      "name": "Idioma (Hausa)",
+      "description": ""
+    },
+    "Language (Hawaiian)": {
+      "name": "Idioma (Hawaiano)",
+      "description": ""
+    },
+    "Language (Hebrew)": {
+      "name": "Idioma (Hebreo)",
+      "description": ""
+    },
+    "Language (Hindi)": {
+      "name": "Idioma (Hindú)",
+      "description": ""
+    },
+    "Language (Indonesian)": {
+      "name": "Idioma (Indonesio)",
+      "description": ""
+    },
+    "Language (Italian)": {
+      "name": "Idioma (Italiano)",
+      "description": ""
+    },
+    "Language (Japanese)": {
+      "name": "Idioma (Japonés)",
+      "description": ""
+    },
+    "Language (Khmer)": {
+      "name": "Idioma (Jemer)",
+      "description": ""
+    },
+    "Language (Korean)": {
+      "name": "Idioma (Coreano)",
+      "description": ""
+    },
+    "Language (Lingala)": {
+      "name": "Idioma (Lingala)",
+      "description": ""
+    },
+    "Language (Malayan)": {
+      "name": "Idioma (Malayo)",
+      "description": ""
+    },
+    "Language (Mandarin Chinese)": {
+      "name": "Idioma (Chino Mandarín)",
+      "description": ""
+    },
+    "Language (Maori)": {
+      "name": "Idioma (Maorí)",
+      "description": ""
+    },
+    "Language (Mayan)": {
+      "name": "Idioma (Maya)",
+      "description": ""
+    },
+    "Language (Mongolian)": {
+      "name": "Idioma (Mongol)",
+      "description": ""
+    },
+    "Language (Navajo)": {
+      "name": "Idioma (Navajo)",
+      "description": ""
+    },
+    "Language (Nepali)": {
+      "name": "Idioma (Nepalí)",
+      "description": ""
+    },
+    "Language (Norwegian)": {
+      "name": "Idioma (Noruego)",
+      "description": ""
+    },
+    "Language (Oromo)": {
+      "name": "Idioma (Oromo)",
+      "description": ""
+    },
+    "Language (Pama-Nyungan)": {
+      "name": "Idioma (Pama-Nyungan)",
+      "description": ""
+    },
+    "Language (Polish)": {
+      "name": "Idioma (Polaco)",
+      "description": ""
+    },
+    "Language (Portuguese)": {
+      "name": "Idioma (Portugués)",
+      "description": ""
+    },
+    "Language (Quechua)": {
+      "name": "Idioma (Quechua)",
+      "description": ""
+    },
+    "Language (Romanian)": {
+      "name": "Idioma (Rumano)",
+      "description": ""
+    },
+    "Language (Russian)": {
+      "name": "Idioma (Ruso)",
+      "description": ""
+    },
+    "Language (Sinhalese)": {
+      "name": "Idioma (Cingalés)",
+      "description": ""
+    },
+    "Language (Spanish)": {
+      "name": "Idioma (Español)",
+      "description": ""
+    },
+    "Language (Swahili)": {
+      "name": "Idioma (Suajili)",
+      "description": ""
+    },
+    "Language (Swedish)": {
+      "name": "Idioma (Sueco)",
+      "description": ""
+    },
+    "Language (Tahitian)": {
+      "name": "Idioma (Tahitiano)",
+      "description": ""
+    },
+    "Language (Tamil)": {
+      "name": "Idioma (Tamil)",
+      "description": ""
+    },
+    "Language (Turkish)": {
+      "name": "Idioma (Turco)",
+      "description": ""
+    },
+    "Language (Twi)": {
+      "name": "Idioma (Twi)",
+      "description": ""
+    },
+    "Language (Ukrainian)": {
+      "name": "Idioma (Ucraniano)",
+      "description": ""
+    },
+    "Language (Urdu)": {
+      "name": "Idioma (Urdu)",
+      "description": ""
+    },
+    "Language (Vietnamese)": {
+      "name": "Idioma (Vietnamita)",
+      "description": ""
+    },
+    "Language (Yoruba)": {
+      "name": "Idioma (Yoruba)",
+      "description": ""
+    }
+  }
+}

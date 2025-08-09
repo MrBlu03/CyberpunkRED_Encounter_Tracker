@@ -1,0 +1,26 @@
+{
+  "label": "Améliorations",
+  "mapping": {},
+  "entries": {
+    "4Tify": {
+      "name": "4Tify",
+      "description": "<p>Une application pour votre Agent. </p>\n<p>Peut révéler des points faibles en scannant votre maison. Ou une section de couverture.</p>\n"
+    },
+    "Digital Gladiator": {
+      "name": "Digital Gladiator",
+      "description": "<p>Une application pour votre agent.</p>\n<p>Peut-être êtes-vous plus adapté pour en découdre en ligne que dans la rue...</p>\n<p>\n  Les règles relatives à la création, au jeu et au combat des adversaires dans Digital Gladiator se trouvent dans le livre de règle Black Chrome pour cet objet\n</p>\n"
+    },
+    "NCPD Crime Database": {
+      "name": "Base de données criminelles du NCPD",
+      "description": "<p>Une application pour votre Agent.</p>\n<p>\n  Nécessite un accès CitiNet à Night City. Permet à l'utilisateur d'explorer la base de données des crimes.\n</p>\n"
+    },
+    "Trauma Team MedScan": {
+      "name": "Trauma Team MedScan",
+      "description": "<p>Une application pour votre agent.</p>\n<p>\n  Nécessite un accès à Citinet. MedScan peut vous connecter à distance \n  à un spécialiste de la Trauma Team mais ses conseils effectifs coûtent plus cher\n</p>\n<p>\n  Pour un coût supplémentaire, un spécialiste de la Trauma Team peut être engagé \n  pour guider l'utilisateur à distance pour une procédure de 4 heures.\n</p>\n<p>\n  Les règles relatives au coût d'embauche et aux procédures autorisées avec \n  cette application se trouvent dans le livre de règle Black Chrome pour cet objet.\n</p>\n"
+    },
+    "Ziggurat City Database": {
+      "name": "Base de données de ville Ziggurat",
+      "description": "<p>Une application pour votre Agent. </p>\n<p>\n  Bonus de +1 à tous les jets de compétence de Guide local concernant \n  les communautés et les quartiers de cette ville.\n</p>\n"
+    }
+  }
+}

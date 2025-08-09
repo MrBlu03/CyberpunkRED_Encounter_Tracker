@@ -1,0 +1,20 @@
+_id: nPVwsGDzkjaGu6mZ
+_key: "!items!nPVwsGDzkjaGu6mZ"
+effects: []
+img: icons/svg/item-bag.svg
+name: Perception
+system:
+  basic: true
+  category: awarenessSkills
+  core: true
+  description:
+    value: ""
+  difficulty: typical
+  favorite: false
+  level: 2
+  skillType: generic
+  source:
+    book: Core
+    page: 131
+  stat: int
+type: skill

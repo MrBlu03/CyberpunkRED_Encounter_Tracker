@@ -1,0 +1,50 @@
+{
+  "label": "Critical Injuries (Head)",
+  "mapping": {},
+  "entries": {
+    "Brain Injury": {
+      "name": "Brain Injury",
+      "description": "<p>-2 to actions.</p>"
+    },
+    "Broken Jaw": {
+      "name": "Broken Jaw",
+      "description": "<p>-4 to Speech Actions.</p>"
+    },
+    "Concussion": {
+      "name": "Concussion",
+      "description": "<p>-2 to every action.</p>"
+    },
+    "Cracked Skull": {
+      "name": "Cracked Skull",
+      "description": "<p>Triples damage to HP on aimed headshots (rather than the normal double damage).</p>"
+    },
+    "Crushed Windpipe": {
+      "name": "Crushed Windpipe",
+      "description": "<p>Cannot speak.</p>"
+    },
+    "Damaged Ear": {
+      "name": "Damaged Ear",
+      "description": "<p>If move more than 4m/yds in a Turn, cannot move next turn. -2 to hearing based Perception.</p>"
+    },
+    "Damaged Eye": {
+      "name": "Damaged Eye",
+      "description": "<p>-2 to Ranged and Perception (Sight).</p>"
+    },
+    "Foreign Object (H)": {
+      "name": "Foreign Object (H)",
+      "description": "<p>Suffer Crit damage at end of turn if move more than 4m/yrds on foot.</p>"
+    },
+    "Lost Ear": {
+      "name": "Lost Ear",
+      "description": "<p>Ear is removed. If move more than 4m/yds in a Turn, cannot move next turn. -4 to hearing based Perception.</p>"
+    },
+    "Lost Eye": {
+      "name": "Lost Eye",
+      "description": "<p>Eye is removed. -4 to Ranged Attacks and vision based Perception.</p>"
+    },
+    "Whiplash": {
+      "name": "Whiplash",
+      "description": "<p>No other effects beyond increasing the base Death Save Penalty by 1.</p>"
+    }
+  }
+}

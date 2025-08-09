@@ -1,0 +1,136 @@
+{
+  "label": "Achievements and Loot Boxes",
+  "mapping": {},
+  "entries": {
+    "A Box Bound Tightly in Rope": {
+      "name": "A Box Bound Tightly in Rope",
+      "results": [
+        {
+          "1-1": "ロープ(60m)",
+          "2-2": "バーチャリティ・ゴーグル",
+          "3-3": "グラップルガン",
+          "4-4": "毒の小瓶",
+          "5-5": "アーバンフラッシュジュエリー",
+          "6-6": "バッテリーパック"
+        }
+      ]
+    },
+    "A Box Covered in Chipped Paint": {
+      "name": "A Box Covered in Chipped Paint",
+      "results": [
+        {
+          "1-1": "催涙ガス・グレネード",
+          "2-2": "大型拳銃（通常弾）",
+          "3-3": "Bicycle",
+          "4-4": "Road Flare",
+          "5-5": "防弾シールド",
+          "6-6": "ショットガンの散弾（通常弾）"
+        }
+      ]
+    },
+    "A Box Dripping Wet With Fluid": {
+      "name": "A Box Dripping Wet With Fluid",
+      "results": [
+        {
+          "1-1": "スマッシュ",
+          "2-2": "ブラック・レース",
+          "3-3": "Bodyweight AutoInjector",
+          "4-4": "AirWell 50",
+          "5-5": "グレネード（毒弾）",
+          "6-6": "TR-4 Detonator Fluid"
+        }
+      ]
+    },
+    "A Box Freezing Cold To The Touch": {
+      "name": "A Box Freezing Cold To The Touch",
+      "results": [
+        {
+          "1-1": "ボヘミアンミラーシェード",
+          "2-2": "Street Viper Riding Suit",
+          "3-3": "Sponsored Cybereye",
+          "4-4": "Skid Row Trench",
+          "5-5": "Prime Time",
+          "6-6": "Laser Light Street Jacket"
+        }
+      ]
+    },
+    "A Box Handsomely Gift Wrapped": {
+      "name": "A Box Handsomely Gift Wrapped",
+      "results": [
+        {
+          "1-1": "双眼鏡",
+          "2-2": "軽装アーマージャック (身体)",
+          "3-3": "中型拳銃（スマート弾）",
+          "4-4": "ビデオカメラ",
+          "5-5": "NeuTongue",
+          "6-6": "Reflex Co-Processor"
+        }
+      ]
+    },
+    "A Box Marked With A Lime Green X": {
+      "name": "A Box Marked With A Lime Green X",
+      "results": [
+        {
+          "1-1": "Elflines Online",
+          "2-2": "使い捨て携帯電話",
+          "3-3": "モジュラーサイバーフィンガー",
+          "4-4": "レジャーウェアジュエリー",
+          "5-5": "エージェント",
+          "6-6": "スマート グラス"
+        }
+      ]
+    },
+    "A Box Melted Out Of Shape": {
+      "name": "A Box Melted Out Of Shape",
+      "results": [
+        {
+          "1-1": "Scavenged Armor",
+          "2-2": "グレネード（焼夷弾）",
+          "3-3": "Neo-Soviet Cyberarm",
+          "4-4": "ライフル（通常弾）",
+          "5-5": "ライフル（通常弾）",
+          "6-6": "ショットガン（焼夷弾）"
+        }
+      ]
+    },
+    "A Box Reeking Of Oil": {
+      "name": "A Box Reeking Of Oil",
+      "results": [
+        {
+          "1-1": "ショットガンの散弾（通常弾）",
+          "2-2": "大型拳銃（通常弾）",
+          "3-3": "ノーマッドレザーフットウェア",
+          "4-4": "ライフル（スマート弾）",
+          "5-5": "Sniping Scope",
+          "6-6": "スマートガンリンク"
+        }
+      ]
+    },
+    "A Box Sealed With A Lipstick Kiss": {
+      "name": "A Box Sealed With A Lipstick Kiss",
+      "results": [
+        {
+          "1-1": "コンバットナイフ",
+          "3-3": "Shuriken Tornado Grenade",
+          "4-4": "アジアポップフットウェア",
+          "5-5": "ビジネスウェアトップス",
+          "6-6": "White Hornet Tanto",
+          "2-2": "Mr. スタッド"
+        }
+      ]
+    },
+    "A Box Showing Signs Of Repair": {
+      "name": "A Box Showing Signs Of Repair",
+      "results": [
+        {
+          "1-1": "ユーティリティートマホーク",
+          "2-2": "Holo Projector Palm",
+          "3-3": "テクツール",
+          "4-4": "Audio Recorder",
+          "5-5": "グレネード（徹甲弾）",
+          "6-6": "テクスキャナ"
+        }
+      ]
+    }
+  }
+}

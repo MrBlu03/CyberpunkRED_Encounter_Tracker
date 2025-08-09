@@ -1,0 +1,78 @@
+{
+  "label": "Armures",
+  "mapping": {},
+  "entries": {
+    "Bodyweight Suit": {
+      "name": "Combinaison connectée",
+      "description": "<p>Combinaison de Netrunner. Peut stocker une cyberconsole et supporte les ports d'interface neuronale. Ne peut pas être achetée en deux parties. La combinaison doit toujours être portée sur les zones de corps et de tête. Ajoute un emplacement d'extension réservé au matériel à une cyberconsole. Pas de pénalité d'armure.</p>"
+    },
+    "Bullet Proof Shield": {
+      "name": "Bouclier balistique",
+      "description": "<p>Requiert un bras et a des PS réduit par les dégâts.</p>"
+    },
+    "Flak (Body)": {
+      "name": "Flak (Corps)",
+      "description": "<p>Armure avec des plaques métalliques conçue pour résister aux coups les plus puissants. -4 en REF, DEX et MOUV.</p>"
+    },
+    "Flak (Head)": {
+      "name": "Flak (Tête)",
+      "description": "<p>Armure avec des plaques métalliques conçues pour résister aux coups les plus puissants. -4 en REF, DEX et MOUV.</p>"
+    },
+    "Heavy Armorjack (Body)": {
+      "name": "Tenue pare-balles lourde (Corps)",
+      "description": "<p>Version la plus épaisse de toutes les tenues pare-balles. -2 en REF, DEX et MOUV.</p>"
+    },
+    "Heavy Armorjack (Head)": {
+      "name": "Tenue pare-balles lourde (Tête)",
+      "description": "<p>Version la plus épaisse de toutes les tenues pare-balles. -2 en REF, DEX et MOUV.</p>"
+    },
+    "Kevlar® (Body)": {
+      "name": "Kevlar® (Corps)",
+      "description": "<p>La protection de prédilection des 90 dernières années. Pas de pénalité d'armure.</p>\n"
+    },
+    "Kevlar® (Head)": {
+      "name": "Kevlar® (Tête)",
+      "description": "<p>La protection de prédilection des 90 dernières années. Protège la tête. Pas de pénalité d'armure.</p>\n"
+    },
+    "Leathers (Body)": {
+      "name": "Cuir (Corps)",
+      "description": "<p>Tenue de cuir classique. Pas de pénalité d'armure.</p>"
+    },
+    "Leathers (Head)": {
+      "name": "Cuir (Tête)",
+      "description": "<p>Tenue de cuir classique pour votre tête. Pas de pénalité d'armure.</p>"
+    },
+    "Light Armorjack (Body)": {
+      "name": "Tenue pare-balles légère (Corps)",
+      "description": "<p>La version légère de l'armure pare-balles. Pas de pénalité d'armure.</p>"
+    },
+    "Light Armorjack (Head)": {
+      "name": "Tenue pare-balles légère (Tête)",
+      "description": "<p>La version légère de l'armure pare-balles pour votre tête. Pas de pénalité d'armure.</p>"
+    },
+    "Medium Armorjack (Body)": {
+      "name": "Tenue pare-balles moyenne (Corps)",
+      "description": "<p>La version intermédiaire de l'armure pare-balles. -2 à REF, DEX et MOUV.</p>"
+    },
+    "Medium Armorjack (Head)": {
+      "name": "Tenue pare-balles moyenne (Tête)",
+      "description": "<p>La version intermédiaire de l'armure pare-balles pour votre tête. -2 à REF, DEX et MOUV.</p>"
+    },
+    "Metalgear® (Body)": {
+      "name": "Metalgear® (Corps)",
+      "description": "<p>\nLa plus lourde et la plus puissante des armures en circulation. -4 à REF, DEX et MOUV.\n</p>\n"
+    },
+    "Metalgear® (Head)": {
+      "name": "Metalgear® (Tête)",
+      "description": "<p>\nLa plus lourde et la plus puissante des armures en circulation. Protège votre tête. -4 à REF, DEX et MOUV.\n</p>\n"
+    },
+    "Skin Weave": {
+      "name": "Treillissage dermique",
+      "description": "<p>Cyberimplant peau tissée blindée</p>"
+    },
+    "Subdermal Armor": {
+      "name": "Armure subdermique",
+      "description": "<p>Cyberimplant armure sous-cutanée</p>"
+    }
+  }
+}

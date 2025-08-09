@@ -1,0 +1,122 @@
+_id: aFg1nXhz37e1C2YP
+_key: "!items!aFg1nXhz37e1C2YP"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/upgrades/shotgun_underbarrel.svg
+name: Shotgun Underbarrel
+system:
+  ammoVariety:
+    - shotgunShell
+    - shotgunSlug
+  attackmod: 0
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  damage: 5d6
+  description:
+    value: |
+      <p>
+        Functions like a standard shotgun, but with a magazine size of 2. Requires 2
+        hands to use, and takes up 2 attachment slots. While attached, the weapon
+        can't be concealed under clothing.
+      </p>
+      <p>
+        Note that the weapon inherits any modifiers from the gun it is attached to,
+        such as other attachments and quality.
+      </p>
+  dvTable: DV Shotgun (Slug)
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 0
+  installLocation: mall
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: false
+  isRanged: true
+  magazine:
+    max: 2
+    value: 0
+  modifiers:
+    Wardrobe & Style:
+      isSituational: false
+      onByDefault: false
+      type: modifier
+      value: null
+    attackmod:
+      isSituational: false
+      onByDefault: false
+      type: modifier
+      value: null
+    bodySp:
+      isSituational: false
+      onByDefault: false
+      type: modifier
+      value: null
+    cool:
+      isSituational: false
+      onByDefault: false
+      type: modifier
+      value: null
+    damage:
+      isSituational: false
+      onByDefault: false
+      type: modifier
+      value: null
+    headSp:
+      isSituational: false
+      onByDefault: false
+      type: modifier
+      value: null
+    magazine:
+      isSituational: false
+      onByDefault: false
+      type: modifier
+      value: null
+    rof:
+      isSituational: false
+      onByDefault: false
+      type: modifier
+      value: null
+    sdp:
+      isSituational: false
+      onByDefault: false
+      type: modifier
+      value: null
+    seats:
+      isSituational: false
+      onByDefault: false
+      type: modifier
+      value: null
+    secondaryWeapon:
+      configured: true
+    shieldHp:
+      isSituational: false
+      onByDefault: false
+      type: modifier
+      value: null
+    slots:
+      isSituational: false
+      onByDefault: false
+      type: modifier
+      value: null
+  price:
+    market: 500
+  providesHardening: false
+  rof: 1
+  size: 2
+  source:
+    book: Core
+    page: 343
+  type: weapon
+  unarmedAutomaticCalculation: true
+  usesType: magazine
+  weaponSkill: Shoulder Arms
+  weaponType: shotgun
+type: itemUpgrade

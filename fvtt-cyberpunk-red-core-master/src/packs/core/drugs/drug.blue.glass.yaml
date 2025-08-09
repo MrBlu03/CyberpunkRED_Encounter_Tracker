@@ -1,0 +1,39 @@
+_id: UrKzMiFp4xFOLNIC
+_key: "!items!UrKzMiFp4xFOLNIC"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/drugs/blue_glass.svg
+name: Blue Glass
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  consumed: None
+  description:
+    value: |
+      <p><strong>Primary Effect</strong></p>
+      <p>Dose lasts 4 hours.</p>
+      <ul>
+        <li>
+          The GM may occasionally tell the user that they are seeing swirls of
+          colours. When this happens the user loses their action on a single turn
+        </li>
+      </ul>
+      <p><strong>Secondary Effect (DV15)</strong></p>
+      <ul>
+        <li>
+          The GM may occasionally tell the user that they are seeing swirls of
+          colours. When this happens the user loses their action on a single turn
+        </li>
+      </ul>
+  equipped: owned
+  favorite: false
+  price:
+    market: 20
+  revealed: true
+  source:
+    book: Core
+    page: 357
+  usage: toggled
+type: drug

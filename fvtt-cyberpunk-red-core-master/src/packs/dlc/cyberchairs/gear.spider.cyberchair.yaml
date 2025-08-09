@@ -1,0 +1,53 @@
+_id: YM2dXOMEhmYn3LKy
+_key: "!items!YM2dXOMEhmYn3LKy"
+effects:
+  - cBI5wVXww67hC4qx
+img: systems/cyberpunk-red-core/icons/compendium/cyberchairs/cyberchair.svg
+name: Spider Cyberchair
+system:
+  amount: 1
+  brand: Rocklin Augmentics
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        The top of the line cyberchair, giving the premier user many options. While
+        using it the operator's base MOVE becomes 5, with all regular movement options
+        remaining available.
+      </p>
+      <p>
+        Additionally, this cyberchair has room for 4 cyberlimb options*. Any options
+        installed always count as being paired.
+      </p>
+      <p>
+        Operation of the cyberchair requires either a free hand, or interface plugs.
+      </p>
+      <p>
+        If the operator suffers a critical injury that reduces their MOVE, the MOVE of
+        the cyberchair is instead effected.
+      </p>
+      <p>
+        The cyberchair cannot be targeted specifically, nor can it be disabled via EMP
+        effects.
+      </p>
+      <p><em>*Installing cyberlimb options currently not supported</em></p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes: []
+    list: []
+    slots: 0
+    usedSlots: 0
+  isElectronic: false
+  price:
+    market: 1000
+  providesHardening: false
+  revealed: true
+  source:
+    book: CC
+    page: 2
+  usage: equipped
+type: gear

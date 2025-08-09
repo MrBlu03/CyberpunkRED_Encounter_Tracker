@@ -1,0 +1,20 @@
+{{!-- Partials to create stat-units from template --}}
+{{#each actor.system.stats as |stat s| }}
+  <div class="mook-{{s}}-stat">
+    <div>
+      <a class="rollable"
+         data-roll-type="stat"
+         data-roll-title="{{s}}"
+         data-tooltip="{{localize CPR.clicktorollthisstat}}">
+        {{localize (cprFindConfigValue "statList" s)}}
+      </a>
+    </div>
+    <div class="block-data text-normal">
+      {{#if (cprCompare s "!==" "luck") }}
+        <input name="system.stats.{{s}}.value" type="number" value="{{this.value}}"/>
+      {{else}}
+        <input name="dash" type="text" readonly value="-"/>
+      {{/if}}
+    </div>
+  </div>
+{{/each}}

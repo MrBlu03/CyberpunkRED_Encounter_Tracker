@@ -1,0 +1,77 @@
+{
+  "label": "Arsenal de Elflines Online",
+  "entries": {
+    "Arrow": {
+      "name": "Flecha",
+      "description": "<p>Munición básica, nada especial.</p>"
+    },
+    "Poison Arrow": {
+      "name": "Flecha Venenosa",
+      "description": "<p>Sin daño inmediato. Al golpear, tira Resistir Tortugas/Drogas contra VD13. Al fallar 2d6 de daño a PV sin ablación. </p>"
+    },
+    "Chainmail Armor (Body)": {
+      "name": "Armadura de cota de mallas (Cuerpo)",
+      "description": "<p>Versión media de una Armorjack. -2 a REF, DES, y MOV.</p>"
+    },
+    "Chainmail Armor (Head)": {
+      "name": "Armadura de cota de mallas (Cabeza)",
+      "description": "<p>Versión media de un Armorjack para tu cabeza. -2 a REF, DES y MOV.</p>"
+    },
+    "Full Plate Armor (Body)": {
+      "name": "Armadura de placas completa (Cuerpo)",
+      "description": "<p>Armadura de metal para resistir los golpes más poderosos. -4 para REF, DES y MOV.</p>"
+    },
+    "Full Plate Armor (Head)": {
+      "name": "Armadura de placas completa (Cabeza)",
+      "description": "<p>Armadura de metal para resistir los golpes más poderosos a la cabeza. -4 a REF, DES y MOV.</p>"
+    },
+    "Leather Armor (Body)": {
+      "name": "Armadura de cuero (Cuerpo)",
+      "description": "<p>Armadura de cuero sencilla. Sin penalización de armadura.</p>"
+    },
+    "Leather Armor (Head)": {
+      "name": "Armadura de cuero (Cabeza)",
+      "description": "<p>Armadura de cuero sencilla para tu cabeza. Sin penalización de armadura.</p>"
+    },
+    "Shield": {
+      "name": "Escudo",
+      "description": "<p>Requiere un brazo y tiene vida reducida por daño.</p>"
+    },
+    "Studded Leather Armor (Body)": {
+      "name": "Armadura de cuero tachonado (Cuerpo)",
+      "description": "<p>Ropa estándar de Kevlar. Sin penalización de armadura.</p>"
+    },
+    "Studded Leather Armor (Head)": {
+      "name": "Armadura de cuero tachonado (Cabeza)",
+      "description": "<p>Kevlar estándar para tu cabeza. Sin penalización de armadura.</p>"
+    },
+    "Sacred Herbs": {
+      "name": "Hierbas sagradas",
+      "description": ""
+    },
+    "Vial of Poison": {
+      "name": "Frasco de veneno",
+      "description": "<p>2d6 de daño a menos que resistan a la tortuga/drogas. La armadura no se aplica.</p>"
+    },
+    "Bow": {
+      "name": "Arco",
+      "description": "<p>Arco revitalizado, recargado como parte de una acción de Ataque.</p>"
+    },
+    "Dagger": {
+      "name": "Daga",
+      "description": "<p>Un cuchillo apto para las calles.</p>"
+    },
+    "Greataxe": {
+      "name": "Hacha Grande",
+      "description": "<p>Un poste de madera japonés con una hoja curvada de un lado. Favorito de los equipos tácticos de Arasaka para encuentros a corta distancia. </p>"
+    },
+    "Longsword": {
+      "name": "Espada larga",
+      "description": "<p>Un cilindro hueco, normalmente de metal o fibra de vidrio. Puede haber transmitido fluidos una vez. </p>"
+    },
+    "Shortsword": {
+      "name": "Espada corta",
+      "description": "<p>Útil como herramienta y como arma. Una vara de hierro con cuñas divididas en los extremos. </p>"
+    }
+  }
+}

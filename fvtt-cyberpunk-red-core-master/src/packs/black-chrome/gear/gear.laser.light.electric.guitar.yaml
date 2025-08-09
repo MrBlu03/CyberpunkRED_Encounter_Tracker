@@ -1,0 +1,39 @@
+_id: GMouAyDuNb6QJ4a4
+_key: "!items!GMouAyDuNb6QJ4a4"
+effects:
+  - pXuqlBa6lrqAAf82
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/black-chrome/laser-light-electric-guitar.svg
+name: Laser Light Electric Guitar
+system:
+  amount: 1
+  brand: Laser Light
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        Electric Guitar that gives the User a +1 to their Play Instrument (Guitar)
+        Skill Check. This guitar also counts as one installation of Light Tattoo
+        Fashionware while worn.
+      </p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 0
+    usedSlots: 0
+  isElectronic: false
+  price:
+    market: 1000
+  providesHardening: false
+  revealed: true
+  source:
+    book: BC
+    page: 41
+  usage: equipped
+type: gear

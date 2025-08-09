@@ -1,0 +1,429 @@
+{
+  "label": "サイバーウェア",
+  "mapping": {
+    "dvTable": "system.dvTable"
+  },
+  "entries": {
+    "Amplified Hearing": {
+      "name": "聴覚強化",
+      "description": "<p>Provides +2 to perception checks that use hearing.</p>"
+    },
+    "Anti-Dazzle": {
+      "name": "対閃光",
+      "description": "<p>Must be paired. Provides immunity to dazzling effects (like flashbangs).</p>"
+    },
+    "Artificial Shoulder Mount": {
+      "name": "追加肩マウント",
+      "description": "<p>Allows you to install an extra pair of cyberarms. </p>"
+    },
+    "Audio Recorder": {
+      "name": "オーディオ・レコーダー",
+      "description": "<p>Records sound. Can link into a chip or agent.  </p>"
+    },
+    "AudioVox": {
+      "name": "オーディオ・ヴォックス",
+      "description": "<p>Autotune synthesizer. Provides +2 to Acting and Play Instrument checks. </p>"
+    },
+    "Big Knucks": {
+      "name": "ビッグ・ナック",
+      "description": "<p>Armored knuckles which function as a Melee Weapon. </p>"
+    },
+    "Biomonitor": {
+      "name": "バイオモニタ",
+      "description": "<p>Provides an LED showing vitals readouts. Can be linked to your agent. </p>"
+    },
+    "Braindance Recorder": {
+      "name": "ブレインダンス・レコーダー",
+      "description": "<p>Records memories for BD replay. Great for Medias.</p>"
+    },
+    "Bug Detector": {
+      "name": "盗聴器検出器",
+      "description": "<p>Notifies of bugs or taps within 2m/yds.</p>"
+    },
+    "Chemical Analyzer": {
+      "name": "化学物質分析器",
+      "description": "<p>Chipware. Test chemical make up of something.</p>"
+    },
+    "Chemskin": {
+      "name": "ケムスキン",
+      "description": "<p>+2 Personal Grooming when using Techhair as well. Changes hue.</p>"
+    },
+    "Chipware Socket": {
+      "name": "チップウェア・ソケット",
+      "description": "<p>Single socket for installation and removal of a piece of chipware. </p>"
+    },
+    "Chyron": {
+      "name": "カイロン",
+      "description": "<p>Tiny screen in your eye. Provides picture-in-picture for those boring moments. </p>"
+    },
+    "Color Shift": {
+      "name": "光彩変色",
+      "description": "<p>Allows you to shift eyes to an unlimited number of colors and patterns. </p>"
+    },
+    "Contraceptive Implant": {
+      "name": "避妊インプラント",
+      "description": "<p>Prevents undesired pregnancy.</p>"
+    },
+    "Cyberarm": {
+      "name": "サイバーアーム",
+      "description": "<p>A cybernetical replacement arm. Comes with a free hand. </p>"
+    },
+    "Cyberaudio Suite": {
+      "name": "サイバー聴覚基本システム",
+      "description": "<p>A base interface for audio enhancements.</p>"
+    },
+    "Cyberdeck (Hardwired)": {
+      "name": "サイバーデッキ",
+      "description": "<p>A built-in cyberdeck. Always available. </p>"
+    },
+    "Cybereye": {
+      "name": "サイバーアイ",
+      "description": "<p>An artificial eye. Choose Kiroshi Optics!</p>"
+    },
+    "Cyberleg": {
+      "name": "サイバーレッグ",
+      "description": "<p>A cybernetical replacement leg. Comes with a free foot. </p>"
+    },
+    "Cybersnake": {
+      "name": "サイバースネーク",
+      "description": "<p>A throat snake which is a Very Heavy Melee weapon.</p>"
+    },
+    "Dartgun": {
+      "name": "ダーツガン",
+      "description": "<p>A single shot weapon which can be concealed. </p>"
+    },
+    "Difficult Skill Chip": {
+      "name": "スキルチップ(×2)",
+      "description": "<p>Chipware. Provides  a value of 3 to a specific (x2) skill while installed (unless the skill is already 3+). </p>"
+    },
+    "EMP Threading": {
+      "name": "EMPスレッディング",
+      "description": "<p>PCB effect on skin.</p>"
+    },
+    "Enhanced Antibodies": {
+      "name": "強化抗体",
+      "description": "<p>Doubles natural healing while resting. </p>"
+    },
+    "Gills": {
+      "name": "えら",
+      "description": "<p>Allows for breathing underwater. </p>"
+    },
+    "Grafted Muscle and Bone Lace": {
+      "name": "強化移植筋肉&骨膜編織",
+      "description": "<p>Increase Body by 2 (and related stats). Stacks. Max at 10 Body.</p>"
+    },
+    "Grapple Hand": {
+      "name": "グラップル・ハンド",
+      "description": "<p>A retractable grappling hook embedded into your hand.</p>"
+    },
+    "Grip Foot": {
+      "name": "グリップ・フット",
+      "description": "<p>Provides traction for climbing vertically. Must be paired. </p>"
+    },
+    "Hardened Shielding (Cyber Arm)": {
+      "name": "ハードンド・シールディング(サイバーアーム)",
+      "description": "<p>The arm and installed options are not affected by EMP effects. </p>"
+    },
+    "Hardened Shielding (Cyber Leg)": {
+      "name": "ハードンド・シールディング(サイバーレッグ)",
+      "description": "<p>The leg and installed options are not affected by EMP effects. </p>"
+    },
+    "Hidden Holster": {
+      "name": "隠しホルスター",
+      "description": "<p>Holster that is hidden inside you.</p>"
+    },
+    "Homing Tracer": {
+      "name": "追跡装置",
+      "description": "<p>Audio tracking of a tracer up to 1 mile. Replacements not included. </p>"
+    },
+    "Image Enhance": {
+      "name": "画像強調",
+      "description": "<p>Must be paired. +2 Perception and Lip Reading and Conceal/Reveal Object when using sight.</p>"
+    },
+    "Implanted Linear Frame β (Beta)": {
+      "name": "埋込型リニア・フレームβ(ベータ)",
+      "description": "<p>Increases your BODY stat to 14 (adjusting your HP and Wound Threshold and Death Save)</p>"
+    },
+    "Implanted Linear Frame ∑ (Sigma)": {
+      "name": "埋込型リニア・フレームΣ(シグマ)",
+      "description": "<p>Increases your BODY stat to 12 (adjusting your HP and Wound Threshold and Death Save)</p>"
+    },
+    "Independent Air Supply": {
+      "name": "独立空気補給",
+      "description": "<p>30 minutes of refillable breathable air. </p>"
+    },
+    "Interface Plugs": {
+      "name": "インターフェイス・プラグ",
+      "description": "<p>Plugs in the wrist or head to allow you to connect to machines/systems hands-free. </p>"
+    },
+    "Internal Agent": {
+      "name": "内蔵エージェント",
+      "description": "<p>Built in agent. Audio only but can be linked with other cybergear. </p>"
+    },
+    "Jump Booster": {
+      "name": "ジャンプ・ブースター",
+      "description": "<p>Built-in hydraulics negates penalty for jumping. Must be paired. </p>"
+    },
+    "Kerenzikov": {
+      "name": "ケレンジコフ",
+      "description": "<p>Speedware. Permanent +2 to Initiative. </p>"
+    },
+    "Level Damper": {
+      "name": "レベル・ダンプナー",
+      "description": "<p>Provides immunity to deafness or sudden loud noises. </p>"
+    },
+    "Light Tattoo": {
+      "name": "ライト・タトゥー",
+      "description": "<p>\n  Glowing tattoos. +2 to Wardrobe &amp; Style if you have at least three\n  installed.\n</p>\n"
+    },
+    "Low Light/IR/UV": {
+      "name": "低光量/赤外線/紫外線",
+      "description": "<p>Must be paired. Ignore any vision penalties due to lighting or fog/smoke.</p>"
+    },
+    "Meat Arm": {
+      "name": "生身の腕",
+      "description": "<p>A regular arm. This can support attachments like a Standard Hand or some weapons and tools as the only installed piece.</p>"
+    },
+    "Meat Leg": {
+      "name": "生身の脚",
+      "description": "<p>A regular leg. This can support attachments like a Standard Foot or weapons such as the Talon Foot.</p>"
+    },
+    "Medical Grade Cyberarm": {
+      "name": "医療用サイバーアーム",
+      "description": "<p>A medical grade cyberarm. Does not allow options to be installed.</p>"
+    },
+    "Medical Grade Cyberleg": {
+      "name": "医療用サイバーレッグ",
+      "description": "<p>A medical grade cyberleg. Does not allow options to be installed.</p>"
+    },
+    "Medscanner": {
+      "name": "メドスキャナー",
+      "description": "<p>Built-in medscanner which allows for quick assessment of injuries. Provides +2 to First Aid and Paramedic skill checks.</p>"
+    },
+    "Memory Chip": {
+      "name": "メモリ・チップ",
+      "description": "<p>Chipware. Data Storage. Like a flash drive for your brain. Eject safely. </p>"
+    },
+    "MicroOptics": {
+      "name": "顕微",
+      "description": "<p>Provides up to 400x magnification.</p>"
+    },
+    "MicroVideo": {
+      "name": "マイクロ・ビデオ",
+      "description": "<p>An eye camera which can link into a chip or agent. Great for Medias. </p>"
+    },
+    "Midnight Lady Sexual Implant": {
+      "name": "ミッドナイト・レディ™性的インプラント",
+      "description": "<p>Machine washable.</p>"
+    },
+    "Mr. Studd Sexual Implant": {
+      "name": "Mr. スタッド™性的インプラント",
+      "description": "<p>Ready when you are.</p>"
+    },
+    "MultiOptic Mount": {
+      "name": "多眼マウント",
+      "description": "<p>Allows you to install up to 5 more cybereyes. Cybereyes sold separately. </p>"
+    },
+    "Nasal Filters": {
+      "name": "鼻孔フィルター",
+      "description": "<p>Provides immunity to inhalable gases or fumes. </p>"
+    },
+    "Neural Link": {
+      "name": "ニューラル・リンク",
+      "description": "<p>Access to nervous system. </p>"
+    },
+    "Olfactory Boost": {
+      "name": "嗅覚増強",
+      "description": "<p>Chipware. Allows scent tracking</p>"
+    },
+    "Pain Editor": {
+      "name": "痛覚操作",
+      "description": "<p>Chipware. Removes Seriously Wounded penalties.</p>"
+    },
+    "Plastic Covering (Cyber Arm)": {
+      "name": "プラスチック・カヴァーリング(サイバーアーム)",
+      "description": "<p>A type of plastic coating for your arm. </p>"
+    },
+    "Plastic Covering (Cyber Leg)": {
+      "name": "プラスチック・カヴァーリング(サイバーレッグ)",
+      "description": "<p>A type of plastic coating for your leg. </p>"
+    },
+    "Popup Grenade Launcher": {
+      "name": "ポップアップ・グレネード・ランチャー",
+      "description": "<p>A concealable one-shot Grenade Launcher. Can't hold anything with this hand while activated. </p>",
+      "dvTable": "DV グレネードランチャー"
+    },
+    "Popup Melee Weapon": {
+      "name": "ポップアップ近接武器",
+      "description": "<p>A concealable Melee Weapon. Can't hold anything with this hand while activated. </p>"
+    },
+    "Popup Ranged Weapon": {
+      "name": "ポップアップ遠隔武器",
+      "description": "<p>A concealable one-handed Ranged Weapon. Can't hold anything with this hand while activated. </p>"
+    },
+    "Popup Shield": {
+      "name": "ポップアップ・シールド",
+      "description": "<p>A foldable bulletproof shield that can be drawn or stowed easily. Can't hold anything with this hand while activated. </p>"
+    },
+    "Quick Change Mount": {
+      "name": "クイック・チェンジ・マウント",
+      "description": "<p>Your cyberarm can be detached and re-attached (and swapped) using your open socket. Keep an arm for every occasion. </p>"
+    },
+    "Radar Detector": {
+      "name": "レーダー探知機",
+      "description": "<p>Notifies of detected active radar within a 1 mile radius.</p>"
+    },
+    "Radar/Sonar Implant": {
+      "name": "レーダー/ソナー・インプラント",
+      "description": "<p>Scans 50m/yds around you. Doesn't work through cover. </p>"
+    },
+    "Radiation Detector": {
+      "name": "放射線感知器",
+      "description": "<p>Shows radiation with a blue glow. Maximum range 100m/yds.</p>"
+    },
+    "Radio Communicator": {
+      "name": "無線通信機",
+      "description": "<p>Built in walkie-talkie. 1 mile range.</p>"
+    },
+    "Radio Scanner/Music Player": {
+      "name": "通信スキャナー/音楽プレーヤー",
+      "description": "<p>Tune into CitiNet radio stations or play your locally saved music.</p>"
+    },
+    "Realskinn Covering (Cyber Arm)": {
+      "name": "リアルスキン™・カヴァーリング(サイバーアーム)",
+      "description": "<p>An artifical skin type for your arm. </p>"
+    },
+    "Realskinn Covering (Cyber Leg)": {
+      "name": "リアルスキン™・カヴァーリング(サイバーレッグ)",
+      "description": "<p>An artifical skin type for your leg. </p>"
+    },
+    "Rippers": {
+      "name": "リパー",
+      "description": "<p>Very sharp fingernails which are a Medium Melee Weapon. Can be concealed. </p>"
+    },
+    "Sandevistan": {
+      "name": "サンデヴィスタン",
+      "description": "<p>Speedware. +3 to Initiative for 1 min. 1hr cooldown.</p>"
+    },
+    "Scrambler/Descrambler": {
+      "name": "スクランブラー/ディスクランブラー",
+      "description": "<p>Encodes and decodes transmissions.</p>"
+    },
+    "Scratchers": {
+      "name": "スクラッチャー",
+      "description": "<p>Sharp fingernails which are a Light Melee Weapon. Can be concealed. </p>"
+    },
+    "Sensor Array": {
+      "name": "センサー・アレイ",
+      "description": "<p>Allows you to install up to 5 more cyberaudio options. </p>"
+    },
+    "Shift Tacts": {
+      "name": "シフトタクト",
+      "description": "<p>Change eye color. Can be activated/deactivated at will. </p>"
+    },
+    "Shoulder Cam": {
+      "name": "ショルダー・カム",
+      "description": "<p>A stowable camera that pops out of your shoulder. Can link with an agent or memory chip. </p>"
+    },
+    "Skate Foot": {
+      "name": "スケート・フット",
+      "description": "<p>While running your movement is increased by 6m/yds. Must be paired. </p>"
+    },
+    "Skill Chip": {
+      "name": "技能チップ",
+      "description": "<p>Chipware. Provides  a value of 3 to a specific skill while installed (unless the skill is already 3+). </p>"
+    },
+    "Skin Weave": {
+      "name": "皮膚編繊",
+      "description": "<p>External Body Cyberware*. Head and Body Armor SP7 and recovers 1SP/day. Armor does not stack.</p>\n<p><em>* Cyberware Armor does not function as armor in the system, please add the \"Skin Weave\" item to the character/mook to track</em></p>"
+    },
+    "Skinwatch": {
+      "name": "スキンウォッチ",
+      "description": "<p>An LED watch in your skin.</p>"
+    },
+    "Slice 'N Dice": {
+      "name": "スライスン・ダイス",
+      "description": "<p>Monofilament wiring which is a Medium Melee Weapon. Can be concealed. </p>"
+    },
+    "Standard Foot": {
+      "name": "スタンダート・フット",
+      "description": "<p>Looks like a normal foot for the most part. </p>"
+    },
+    "Standard Hand": {
+      "name": "スタンダード・ハンド",
+      "description": "<p>Looks like a normal hand for the most part. </p>"
+    },
+    "Subdermal Armor": {
+      "name": "皮下アーマー",
+      "description": "<p>External Body Cyberware*. Head and Body Armor SP11 and recovers 1SP/day. Armor does not stack.</p>\n<p><em>* Cyberware Armor does not function as armor in the system, please add the \"Subdermal Armor\" item to the character/mook to track</em></p>"
+    },
+    "Subdermal Grip": {
+      "name": "皮下グリップ",
+      "description": "<p>Plating on your hand which allows you to utilise Smartguns. Requires a neural link. </p>"
+    },
+    "Subdermal Pocket": {
+      "name": "皮下ポケット",
+      "description": "<p>2x4 inch underskin pocket</p>"
+    },
+    "Superchrome® Covering (Cyber Arm)": {
+      "name": "スーパークローム®・カヴァーリング(サイバーアーム)",
+      "description": "<p>サイバー四肢を光沢ある金属でコーティングする。*</p>\n<p>\n  <em\n    >*Note: スーパークローム®・カヴァーリングの効果は累積しません。\n    効果タブで管理する必要があります。</em\n  >\n</p>\n"
+    },
+    "Superchrome® Covering (Cyber Leg)": {
+      "name": "スーパークローム®・カヴァーリング(サイバーレッグ)",
+      "description": "<p>サイバー四肢を光沢ある金属でコーティングする。*</p>\n<p>\n  <em\n    >*Note: スーパークローム®・カヴァーリングの効果は累積しません。\n    効果タブで管理する必要があります。</em\n  >\n</p>\n"
+    },
+    "Tactile Boost": {
+      "name": "触覚増強",
+      "description": "<p>Chipware. Can detect motion up to 20m/yd away through surfaces.</p>"
+    },
+    "Talon Foot": {
+      "name": "タロン・フット",
+      "description": "<p>A retractable blade in your foot which is a Light Melee Weapon. </p>"
+    },
+    "Targeting Scope": {
+      "name": "ターゲティング・スコープ",
+      "description": "<p>Provides a +1 to aimed shots.</p>"
+    },
+    "Techhair": {
+      "name": "テックヘア",
+      "description": "<p>+2 Grooming with Chemskin. Color changing hair.</p>"
+    },
+    "Techscanner": {
+      "name": "テクスキャナ",
+      "description": "<p>Contains a variety of built-in gadgets and tools. Provides a +2 bonus to multiple skill checks. </p>"
+    },
+    "TeleOptics": {
+      "name": "望遠",
+      "description": "<p>Telescope in your eye up to 800m/yds. +1 to single shot/aimed shot if greater than 50m away.</p>"
+    },
+    "Tool Hand": {
+      "name": "ツール・ハンド",
+      "description": "<p>Each finger in your hand has a different tool. Great for Techs!</p>"
+    },
+    "Toxin Binders": {
+      "name": "毒素固定体",
+      "description": "<p>Provides +2 to Resist Torture/Drugs checks. </p>"
+    },
+    "Vampyres": {
+      "name": "ヴァンパイア",
+      "description": "<p>Pointy Teeth which is a Light Melee weapon. Can use poison/toxins. </p>"
+    },
+    "Virtuality": {
+      "name": "ヴァーチャリティ",
+      "description": "<p>Must be paired. Built-in virtuality goggles. </p>"
+    },
+    "Voice Stress Analyzer": {
+      "name": "ボイス・ストレス・アナライザ",
+      "description": "<p>Provides +2 to Human Perception and Interrogation checks. Can activate a special lie-detecting mode. </p>"
+    },
+    "Web Foot": {
+      "name": "ウェブ・フット",
+      "description": "<p>Webbing between your toes allows you to swim. Must be paired. </p>"
+    },
+    "Wolvers": {
+      "name": "ウルヴァー",
+      "description": "<p>Claws which retract from your knuckles which is a Heavy Melee Weapon. Can be concealed. </p>"
+    }
+  }
+}

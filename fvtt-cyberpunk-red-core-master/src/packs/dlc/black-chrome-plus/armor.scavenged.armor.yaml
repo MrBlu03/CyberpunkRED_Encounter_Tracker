@@ -1,0 +1,48 @@
+_id: ZWoM763wXSI3njJA
+_key: "!items!ZWoM763wXSI3njJA"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/black-chrome-plus/scavenged-armor.svg
+name: Scavenged Armor
+system:
+  bodyLocation:
+    ablation: 0
+    sp: 11
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        A scavenged set of Light Armorjack body armor that is unable to be repaired.
+      </p>
+  equipped: owned
+  favorite: false
+  headLocation:
+    ablation: 0
+    sp: 0
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isBodyLocation: true
+  isElectronic: false
+  isHeadLocation: false
+  isShield: false
+  penalty: 0
+  price:
+    market: 50
+  providesHardening: false
+  revealed: true
+  shieldHitPoints:
+    max: 0
+    value: 0
+  source:
+    book: BC+
+    page: 4
+  usage: toggled
+type: armor

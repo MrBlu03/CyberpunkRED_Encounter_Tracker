@@ -1,0 +1,8 @@
+<div class="buttons flexrow">
+  {{#each this as |buttonData action|}}
+    <button class="migration-button" data-action="{{action}}">
+      <i class="icon-pre {{buttonData.icon}}"></i>
+      {{localize buttonData.label}}
+    </button>
+  {{/each}}
+</div>

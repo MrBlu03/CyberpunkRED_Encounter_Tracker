@@ -1,0 +1,61 @@
+_id: 3WelrloimwsNI29P
+_key: "!items!3WelrloimwsNI29P"
+effects:
+  - toZ7L2JATaPu0yPl
+img: systems/cyberpunk-red-core/icons/compendium/weapons/AssaultRifle.svg
+name: Superchrome® Glam Rifle
+system:
+  ammoVariety:
+    - rifle
+  attackmod: 0
+  brand: Centurian Essentials
+  concealable:
+    concealable: false
+    isConcealed: false
+  critFailEffect: jammed
+  damage: 5d6
+  description:
+    value: |
+      <p>
+        The Superchrome® Glam Rifle is an Exotic Assault Rifle. It gives the user a +2
+        bonus to Wardrobe and Style when equipped.
+      </p>
+      <p>
+        <em
+          >*Note: Superchrome effects do not stack and will need to be managed in the
+          Effects tab if multiple Superchrome items are installed.</em
+        >
+      </p>
+  dvTable: DV Assault Rifle
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 4
+    suppressiveFire: true
+  handsReq: 2
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+      - ammo
+    list: []
+    slots: 0
+    usedSlots: 0
+  isRanged: true
+  magazine:
+    max: 25
+    value: 0
+  price:
+    market: 1000
+  quality: standard
+  revealed: true
+  rof: 1
+  source:
+    book: BC
+    page: 120
+  unarmedAutomaticCalculation: true
+  usage: toggled
+  usesType: magazine
+  weaponSkill: Shoulder Arms
+  weaponType: assaultRifle
+type: weapon

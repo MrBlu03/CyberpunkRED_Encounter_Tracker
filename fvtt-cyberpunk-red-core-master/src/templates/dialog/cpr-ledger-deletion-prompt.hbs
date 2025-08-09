@@ -1,0 +1,23 @@
+<form class="dialog-sheet">
+  <div class="dialog-header flexcol">
+    <div class="text-semi">
+      {{localize "CPR.dialog.ledgerDeletion.statement"}}
+    </div>
+    <div class="text-padding-left-massive text-padding-top-small">
+      <span class="text-semi">{{localize "CPR.dialog.ledgerForm.transaction"}}:</span> {{this.transaction}}
+    </div>
+    <div class="text-padding-left-massive">
+      <span class="text-semi">{{localize "CPR.dialog.ledgerForm.reason"}}:</span> {{this.reason}}
+    </div>
+  </div>
+  <hr/>
+  <div class="dialog-header flexcol">
+    <div class="text-semi">
+      {{localize "CPR.dialog.ledgerDeletion.questionValue"}}
+    </div>
+    <div class="text-padding-left-massive text-padding-top-small">
+      <span class="text-semi">{{localize "CPR.dialog.ledgerDeletion.valueDetected"}}</span> {{this.value}}
+    </div>
+  </div>
+  {{> "systems/cyberpunk-red-core/templates/dialog/cpr-dialog-buttons.hbs"}}
+</form>

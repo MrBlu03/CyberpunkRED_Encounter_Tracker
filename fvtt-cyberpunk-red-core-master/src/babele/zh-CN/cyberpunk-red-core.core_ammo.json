@@ -1,0 +1,226 @@
+{
+  "label": "Ammo",
+  "mapping": {},
+  "entries": {
+    "Arrow (Armor-Piercing)": {
+      "name": "Arrow (Armor-Piercing)",
+      "description": "<p>Double ablation to armor.</p>"
+    },
+    "Arrow (Basic)": {
+      "name": "Arrow (Basic)",
+      "description": "<p>Basic ammo, nothing special.</p>"
+    },
+    "Arrow (Biotoxin)": {
+      "name": "Arrow (Biotoxin)",
+      "description": "<p>No immediate damage. If hit DV15 Resist Torture/Drugs Check. On a fail 3d6 damage to HP. No Ablation. </p>"
+    },
+    "Arrow (Expansive)": {
+      "name": "Arrow (Expansive)",
+      "description": "<p>If you roll Foreign object Critical (see pg. 187), victim rolls for a second (different) Critical Injury. Second injury does not deal bonus damage.</p>"
+    },
+    "Arrow (Incendiary)": {
+      "name": "Arrow (Incendiary)",
+      "description": "<p>If damage dealt to target they are set alight. Target takes 2 damage to HP at end of their turn unless they use action to extinguish flames. Does not stack. </p>"
+    },
+    "Arrow (Poison)": {
+      "name": "Arrow (Poison)",
+      "description": "<p>No immediate damage. If meat target hit, DV13 Resist Torture/Drugs Check. On a fail 2d6 damage to HP. No Ablation. </p>"
+    },
+    "Arrow (Rubber)": {
+      "name": "Arrow (Rubber)",
+      "description": "<p>Does not cause Critical Injury. Does not ablate armor. Leaves target at minimum 1hp. Counts as Basic ammo for exotic weapons</p>"
+    },
+    "Arrow (Sleep)": {
+      "name": "Arrow (Sleep)",
+      "description": "<p>Deals no damage. If meat target hit DV13 Resist Torture/Drugs. On fail falls Prone (see pg. 169) and unconscious for 1 minute. Can be woken by damage or another person using an action to touch/shake them.</p>"
+    },
+    "Arrow (Smart)": {
+      "name": "Arrow (Smart)",
+      "description": "<p>Req Targeting Scope Cyberware, otherwise won't fire. If miss single attack by 4 or less, roll second attack at same DV 1d10+10 (not normal stat). Can add luck. Target can dodge the second roll as normal if able to do so. </p>"
+    },
+    "Battery Pack": {
+      "name": "Battery Pack",
+      "description": "<p>A rechargeable (1 hour) battery pack, commonly used with Exotic weapons. Contains 8 shots and can be recharged.&nbsp;</p>"
+    },
+    "Grenade (Armor-Piercing)": {
+      "name": "Grenade (Armor-Piercing)",
+      "description": "<p>Double ablation to armor. </p>"
+    },
+    "Grenade (Biotoxin)": {
+      "name": "Grenade (Biotoxin)",
+      "description": "<p>No immediate damage. If hit DV15 Resist Torture/Drugs Check. On a fail 3d6 damage to HP. No Ablation. </p>"
+    },
+    "Grenade (EMP)": {
+      "name": "Grenade (EMP)",
+      "description": "<p>If hit DV15 Cybertech Check. On Fail 2 pieces of Cyberware or carried electronics (GM's choice) stop working for 1 minute. Cyberlimbs hang loosely like a dismembered meat arm see pg. 187.</p>"
+    },
+    "Grenade (Flashbang)": {
+      "name": "Grenade (Flashbang)",
+      "description": "<p>Deals no damage. If hit roll DV15 Resist Torture/Drugs. On a fail take the Damaged Eye and Damaged Ear Critical injuries (see pg. 188) for 1 minute. No Crit damage dealt. </p>"
+    },
+    "Grenade (Incendiary)": {
+      "name": "Grenade (Incendiary)",
+      "description": "<p>If damage dealt to target they are set alight. Target takes 2 damage to HP at end of their turn unless they use action to extinguish flames. Does not stack. </p>"
+    },
+    "Grenade (Poison)": {
+      "name": "Grenade (Poison)",
+      "description": "<p>No immediate damage. If meat target hit, DV13 Resist Torture/Drugs Check. On a fail 2d6 damage to HP. No Ablation. </p>"
+    },
+    "Grenade (Sleep)": {
+      "name": "Grenade (Sleep)",
+      "description": "<p>Deals no damage. If meat target hit DV13 Resist Torture/Drugs. On fail falls Prone (see pg. 169) and unconscious for 1 minute. Can be woken by damage or another person using an action to touch/shake them.</p>"
+    },
+    "Grenade (Smoke)": {
+      "name": "Grenade (Smoke)",
+      "description": "<p>Deals no Damage. Fills a 10m/yd x 10m/yd with smoke for 1 minute. Tasks obscured by smoke have a -4 penalty.</p>"
+    },
+    "Grenade (Teargas)": {
+      "name": "Grenade (Teargas)",
+      "description": "<p>Deals no Damage. Hit targets with Meat eyes roll DV13 Resist Torture/Drugs Check. On fail suffer Damaged Eye Critical Injury (See pg. 188) for 1 minute. Does not deal critical bonus damage.</p>"
+    },
+    "Heavy Pistol (Armor-Piercing)": {
+      "name": "Heavy Pistol (Armor-Piercing)",
+      "description": "<p>Double ablation to armor. </p>"
+    },
+    "Heavy Pistol (Basic)": {
+      "name": "Heavy Pistol (Basic)",
+      "description": "<p>Basic ammo, nothing special.</p>"
+    },
+    "Heavy Pistol (Expansive)": {
+      "name": "Heavy Pistol (Expansive)",
+      "description": "<p>If you roll Foreign object Critical (see pg. 187), victim rolls for a second (different) Critical Injury. Second injury does not deal bonus damage.</p>"
+    },
+    "Heavy Pistol (Incendiary)": {
+      "name": "Heavy Pistol (Incendiary)",
+      "description": "<p>If damage dealt to target they are set alight. Target takes 2 damage to HP at end of their turn unless they use action to extinguish flames. Does not stack. </p>"
+    },
+    "Heavy Pistol (Rubber)": {
+      "name": "Heavy Pistol (Rubber)",
+      "description": "<p>Does not cause Critical Injury. Does not ablate armor. Leaves target at minimum 1hp. Counts as Basic ammo for exotic weapons</p>"
+    },
+    "Heavy Pistol (Smart)": {
+      "name": "Heavy Pistol (Smart)",
+      "description": "<p>Req Targeting Scope Cyberware, otherwise won't fire. If miss single attack by 4 or less, roll second attack at same DV 1d10+10 (not normal stat). Can add luck. Target can dodge the second roll as normal if able to do so. </p>"
+    },
+    "Medium Pistol (Armor-Piercing)": {
+      "name": "Medium Pistol (Armor-Piercing)",
+      "description": "<p>Double ablation to armor. </p>"
+    },
+    "Medium Pistol (Basic)": {
+      "name": "Medium Pistol (Basic)",
+      "description": "<p>Basic ammo, nothing special.</p>"
+    },
+    "Medium Pistol (Expansive)": {
+      "name": "Medium Pistol (Expansive)",
+      "description": "<p>If you roll Foreign object Critical (see pg. 187), victim rolls for a second (different) Critical Injury. Second injury does not deal bonus damage.</p>"
+    },
+    "Medium Pistol (Incendiary)": {
+      "name": "Medium Pistol (Incendiary)",
+      "description": "<p>If damage dealt to target they are set alight. Target takes 2 damage to HP at end of their turn unless they use action to extinguish flames. Does not stack. </p>"
+    },
+    "Medium Pistol (Rubber)": {
+      "name": "Medium Pistol (Rubber)",
+      "description": "<p>Does not cause Critical Injury. Does not ablate armor. Leaves target at minimum 1hp. Counts as Basic ammo for exotic weapons</p>"
+    },
+    "Medium Pistol (Smart)": {
+      "name": "Medium Pistol (Smart)",
+      "description": "<p>Req Targeting Scope Cyberware, otherwise won't fire. If miss single attack by 4 or less, roll second attack at same DV 1d10+10 (not normal stat). Can add luck. Target can dodge the second roll as normal if able to do so. </p>"
+    },
+    "Paintball (Acid)": {
+      "name": "Paintball (Acid)",
+      "description": "<p>Paintballs filled with acid. Deals no damage but ablates armour by 1 SP on hit*.</p>\n<p><em>*Not currently supported so will need to manually reduce armour on hit</em></p>"
+    },
+    "Paintball (Basic)": {
+      "name": "Paintball (Basic)",
+      "description": "<p>Regular paintballs that don't do any damage. Annoying though.</p>"
+    },
+    "Rifle (Armor-Piercing)": {
+      "name": "Rifle (Armor-Piercing)",
+      "description": "<p>Double ablation to armor. </p>"
+    },
+    "Rifle (Basic)": {
+      "name": "Rifle (Basic)",
+      "description": "<p>Basic ammo, nothing special.</p>"
+    },
+    "Rifle (Expansive)": {
+      "name": "Rifle (Expansive)",
+      "description": "<p>If you roll Foreign object Critical (see pg. 187), victim rolls for a second (different) Critical Injury. Second injury does not deal bonus damage.</p>"
+    },
+    "Rifle (Incendiary)": {
+      "name": "Rifle (Incendiary)",
+      "description": "<p>If damage dealt to target they are set alight. Target takes 2 damage to HP at end of their turn unless they use action to extinguish flames. Does not stack. </p>"
+    },
+    "Rifle (Rubber)": {
+      "name": "Rifle (Rubber)",
+      "description": "<p>Does not cause Critical Injury. Does not ablate armor. Leaves target at minimum 1hp. Counts as Basic ammo for exotic weapons</p>"
+    },
+    "Rifle (Smart)": {
+      "name": "Rifle (Smart)",
+      "description": "<p>Req Targeting Scope Cyberware, otherwise won't fire. If miss single attack by 4 or less, roll second attack at same DV 1d10+10 (not normal stat). Can add luck. Target can dodge the second roll as normal if able to do so. </p>"
+    },
+    "Rocket (Armor-Piercing)": {
+      "name": "Rocket (Armor-Piercing)",
+      "description": "<p>Double ablation to armor. </p>"
+    },
+    "Rocket (Smart)": {
+      "name": "Rocket (Smart)",
+      "description": "<p>Req Targeting Scope Cyberware, otherwise won't fire. If miss single attack by 4 or less, roll second attack at same DV 1d10+10 (not normal stat). Can add luck. Target can dodge the second roll as normal if able to do so. </p>"
+    },
+    "Shotgun Shell (Basic)": {
+      "name": "Shotgun Shell (Basic)",
+      "description": "<p>Basic ammo, nothing special.</p>"
+    },
+    "Shotgun Shell (Incendiary)": {
+      "name": "Shotgun Shell (Incendiary)",
+      "description": "<p>If damage dealt to target they are set alight. Target takes 2 damage to HP at end of their turn unless they use action to extinguish flames. Does not stack. </p>"
+    },
+    "Shotgun Slug (Armor-Piercing)": {
+      "name": "Shotgun Slug (Armor-Piercing)",
+      "description": "<p>Double ablation to armor. </p>"
+    },
+    "Shotgun Slug (Basic)": {
+      "name": "Shotgun Slug (Basic)",
+      "description": "<p>Basic ammo, nothing special.</p>"
+    },
+    "Shotgun Slug (Expansive)": {
+      "name": "Shotgun Slug (Expansive)",
+      "description": "<p>If you roll Foreign object Critical (see pg. 187), victim rolls for a second (different) Critical Injury. Second injury does not deal bonus damage.</p>"
+    },
+    "Shotgun Slug (Incendiary)": {
+      "name": "Shotgun Slug (Incendiary)",
+      "description": "<p>If damage dealt to target they are set alight. Target takes 2 damage to HP at end of their turn unless they use action to extinguish flames. Does not stack. </p>"
+    },
+    "Shotgun Slug (Rubber)": {
+      "name": "Shotgun Slug (Rubber)",
+      "description": "<p>Does not cause Critical Injury. Does not ablate armor. Leaves target at minimum 1hp. Counts as Basic ammo for exotic weapons</p>"
+    },
+    "Shotgun Slug (Smart)": {
+      "name": "Shotgun Slug (Smart)",
+      "description": "<p>Req Targeting Scope Cyberware, otherwise won't fire. If miss single attack by 4 or less, roll second attack at same DV 1d10+10 (not normal stat). Can add luck. Target can dodge the second roll as normal if able to do so. </p>"
+    },
+    "Very Heavy Pistol (Armor-Piercing)": {
+      "name": "Very Heavy Pistol (Armor-Piercing)",
+      "description": "<p>Double ablation to armor. </p>"
+    },
+    "Very Heavy Pistol (Basic)": {
+      "name": "Very Heavy Pistol (Basic)",
+      "description": "<p>Basic ammo, nothing special.</p>"
+    },
+    "Very Heavy Pistol (Expansive)": {
+      "name": "Very Heavy Pistol (Expansive)",
+      "description": "<p>If you roll Foreign object Critical (see pg. 187), victim rolls for a second (different) Critical Injury. Second injury does not deal bonus damage.</p>"
+    },
+    "Very Heavy Pistol (Incendiary)": {
+      "name": "Very Heavy Pistol (Incendiary)",
+      "description": "<p>If damage dealt to target they are set alight. Target takes 2 damage to HP at end of their turn unless they use action to extinguish flames. Does not stack. </p>"
+    },
+    "Very Heavy Pistol (Rubber)": {
+      "name": "Very Heavy Pistol (Rubber)",
+      "description": "<p>Does not cause Critical Injury. Does not ablate armor. Leaves target at minimum 1hp. Counts as Basic ammo for exotic weapons</p>"
+    },
+    "Very Heavy Pistol (Smart)": {
+      "name": "Very Heavy Pistol (Smart)",
+      "description": "<p>Req Targeting Scope Cyberware, otherwise won't fire. If miss single attack by 4 or less, roll second attack at same DV 1d10+10 (not normal stat). Can add luck. Target can dodge the second roll as normal if able to do so. </p>"
+    }
+  }
+}

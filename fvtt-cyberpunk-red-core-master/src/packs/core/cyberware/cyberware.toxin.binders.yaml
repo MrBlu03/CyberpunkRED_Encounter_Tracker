@@ -1,0 +1,57 @@
+_id: OhW1h2rwb7lvJPs3
+_key: "!items!OhW1h2rwb7lvJPs3"
+effects:
+  - nTFDCUhwOYZ6aNA9
+img: systems/cyberpunk-red-core/icons/compendium/cyberware/toxin_binders.svg
+name: Toxin Binders
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  core: false
+  damage: 1d6
+  description:
+    value: |
+      <p>Provides +2 to Resist Torture/Drugs checks.</p>
+  dvTable: ""
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  humanityLoss:
+    roll: 1d3
+    static: 2
+  installLocation: clinic
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: true
+  isFoundational: false
+  isRanged: false
+  isWeapon: false
+  magazine:
+    max: 0
+    value: 0
+  price:
+    market: 100
+  providesHardening: false
+  revealed: true
+  rof: 1
+  size: 1
+  source:
+    book: Core
+    page: 363
+  type: cyberwareInternal
+  unarmedAutomaticCalculation: true
+  usage: installed
+  usesType: magazine
+  weaponSkill: Archery
+  weaponType: assaultRifle
+type: cyberware

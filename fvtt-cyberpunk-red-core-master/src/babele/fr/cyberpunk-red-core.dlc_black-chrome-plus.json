@@ -1,0 +1,98 @@
+{
+  "label": "Black Chrome Plus",
+  "mapping": {
+    "dvTable": "system.tableSD"
+  },
+  "entries": {
+    "Arrow (Junk)": {
+      "name": "Flèche (Camelote)",
+      "description": "<p>Munition de camelote ; bon marché mais inflige 1d6 points de dégâts en moins à toute personne ayant plus de 1PA.</p>\n"
+    },
+    "Big Dreem Rounds": {
+      "name": "Munitions Big Dreem",
+      "description": "<p>Munitions personnalisées pour TeenDreem.</p>"
+    },
+    "Heavy Pistol (Junk)": {
+      "name": "Pistolet lourd (camelote)",
+      "description": "<p>Munition de camelote ; bon marché mais inflige 1d6 points de dégâts en moins à toute personne ayant plus de 1PA.</p>\n"
+    },
+    "Heavy Pistol (Small Game)": {
+      "name": "Pistolet Lourd (Petit gibier)",
+      "description": "<p>Munition de petit gibier ; pas géniale pour les gens. Inflige 2d6 dégâts de moins.</p>"
+    },
+    "Medium Pistol (Junk)": {
+      "name": "Pistolet moyen (camelote)",
+      "description": "<p>Munition de camelote ; bon marché mais inflige 1d6 points de dégâts en moins à toute personne ayant plus de 1PA.</p>\n"
+    },
+    "Medium Pistol (Small Game)": {
+      "name": "Pistolet Moyen (Petit gibier)",
+      "description": "<p>Munition de petit gibier ; pas géniale pour les gens. Inflige 2d6 dégâts de moins.</p>"
+    },
+    "Rifle (Junk)": {
+      "name": "Fusil (camelote)",
+      "description": "<p>Munition de camelote ; bon marché mais inflige 1d6 points de dégâts en moins à toute personne ayant plus de 1PA.</p>\n"
+    },
+    "Rifle (Small Game)": {
+      "name": "Fusil (Petit gibier)",
+      "description": "<p>Munition de petit gibier ; pas géniale pour les gens. Inflige 2d6 dégâts de moins.</p>"
+    },
+    "Shotgun Slug (Junk)": {
+      "name": "Slug de fusil à pompe (camelote)",
+      "description": "<p>Munition de camelote ; bon marché mais inflige 1d6 points de dégâts en moins à toute personne ayant plus de 1PA.</p>\n"
+    },
+    "Very Heavy Pistol (Junk)": {
+      "name": "Pistolet très lourd (camelote)",
+      "description": "<p>Munition de camelote ; bon marché mais inflige 1d6 points de dégâts en moins à toute personne ayant plus de 1PA.</p>\n"
+    },
+    "Very Heavy Pistol (Small Game)": {
+      "name": "Pistolet très lourd (Petit gibier)",
+      "description": "<p>Munition de petit gibier ; pas géniale pour les gens. Inflige 2d6 dégâts de moins.</p>"
+    },
+    "Scavenged Armor": {
+      "name": "Armure de récupération",
+      "description": "<p>Une armure légère bricolée pour le corps et qui ne peut être réparé.</p>\n"
+    },
+    "Piranha Smash": {
+      "name": "Smash Piranha",
+      "description": "<p>On dirait du Smash, mais c'est du Smash goût citron vert. Et avec un risque d'addiction moindre.</p>\n<p><strong>Effet principal</strong></p>\n<p>Un dose dure 4 heures.</p>\n<ul>\n<li>L'utilisateur se sent heureux et satisfait</li>\n<li>+2 en Danse / Contorsion / Conversation / Psychologie / Persuasion / Jeu d'acteur</li>\n</ul>\n<p>\n  Lorsque l'effet de la dose s'estompe, l'utilisateur fait un jet de \n  <strong>VOL+ Résistance à la torture/aux drogues + 1d10 contre un jet d'effets secondaires (SD 9)</strong>.\n</p>\n<p>En cas d'échec :</p>\n<ul>\n<li>-2 en Danse / Contortion / Conversation / Psychologie / Persuasion / Jeu d'acteur</li>\n<li>Le MJ dira quand l'utilisateur a besoin de plus de Smash. Jeu de rôle en conséquence.</li>\n</ul>\n"
+    },
+    "Bullet To Slug Adapter Casings": {
+      "name": "Douilles adaptatrices de balles vers slugs",
+      "description": "<p>Permet de tirer n'importe quelle balle en tant que slug de fusil à pompe.</p>\n<p>Vendue en boîte de 10 douilles adaptatrices.</p>\n<p>Vous pouvez charger en une Action 10 balles dans 10 adaptateurs en utilisant le casier inclus. Si le chargement est effectué balle par balle il faut une Action pour charger 1 adaptateur.</p>"
+    },
+    "Solo of Fortune Bodypillow": {
+      "name": "Traversin Solo of Fortune",
+      "description": "<p>Grand coussin avec l'image d'un Solo célèbre des années 2020 (comme Morgan Blackhand, BoaBoa Weyland, ou Adam Smasher).</p>\n<p>50,8 cm x 137. 6 cm, à l'exception du coussin Adam Smasher qui est considérablement plus grand.</p>"
+    },
+    "Big Dreem": {
+      "name": "Big Dreem",
+      "description": "<p>Pistolet-mitrailleur exotique. Tir automatique seulement. Même si vous lâchez l'arme, il continuera à tirer automatiquement.</p>",
+      "dvTable": "SD Pistolet-mitrailleur (Tir Automatique)"
+    },
+    "Hello Cutie 1TruLuv": {
+      "name": "Hello Cutie 1TruLuv",
+      "description": "<p>Fusil de précision exotique. Peut charger des munitions non basiques.</p>\n<p>Équipé d'une lunette de précision, de la vision nocturne et infrarouge*, et un Agent intégré comprenant une IA pseudo petite amie qui peut reconnaître et parler au propriétaire de l'arme.</p>\n<p>Prenez bien soin d'elle/lui et utilisez-la/le et l'arme s'améliorera. Délaissez le/la et vous devrez vous excuser...</p>\n<p><em>* Ces améliorations doivent être installées manuellement après avoir ajouté l'arme à un acteur<br></em></p>",
+      "dvTable": "SD Fusil de précision"
+    },
+    "Molotov Cocktail": {
+      "name": "Cocktail Molotov",
+      "description": "<p>Grenade incendiaire fragile. Met une cible en feu d'intensité mortelle (voir CP:R p.180)</p>\n",
+      "dvTable": "SD Arme de lancer"
+    },
+    "SportMaster": {
+      "name": "SportMaster",
+      "description": "<p>Un fusil de sport, pour le plaisir, pas les gens. Peut seulement charger des munitions de petit gibier et est incapable de tir automatique et de tir suppressif.</p>",
+      "dvTable": "SD Fusil d'assaut"
+    },
+    "SurvivalMaster": {
+      "name": "SurvivalMaster",
+      "description": "<p>Fusil d'assaut exotique, pas de tir automatique, pas de tir de suppression.</p>",
+      "dvTable": "SD Fusil d'assaut"
+    },
+    "Timeless WW1 Rifle to Pistol Conversion": {
+      "name": "Timeless Conversion Fusil 1ereGM en Pistolet",
+      "description": "<p>Pistolet très lourd de qualité médiocre.</p>\n<p>Réarmement manuel de la culasse entre chaque tir (une action).</p>",
+      "dvTable": "SD Pistolet"
+    }
+  }
+}

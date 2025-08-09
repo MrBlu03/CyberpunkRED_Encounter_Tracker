@@ -1,0 +1,176 @@
+{
+  "label": "Cyberware",
+  "mapping": {
+    "dvTable": "system.dvTable"
+  },
+  "entries": {
+    "Airhypo Cyberfinger": {
+      "name": "Ciberdedo Airhypo",
+      "description": "<p>Ciberdedo que contiene un @UUID[Compendium.cyberpunk-red-core.gear.Th74cfC87RqEJKAb]{Airhypo}. Solo se puede instalar en dedo de una cibermano modular. (Ver Black Chrome pg. 24 para más detalles)</p>"
+    },
+    "Ballpoint Cyberfinger": {
+      "name": "Ciberdedo Birome",
+      "description": "<p>Ciberdedo con una birome. Solo se puede instalar en un dedo de una cibermano modular. (Vea la pg. 24 del Cromo Negro para más detalles)</p>"
+    },
+    "Budget Chipware Socket": {
+      "name": "Zócalo de Chips Implantado Barato",
+      "description": "<p>Un zócalo barato para una sola instalación de chipware. El daño a la cabeza envía el chipware instalado a 30 m/yds de distancia, potencialmente rompiéndolo (ver Black Chrome pg. 17 para más detalles).</p>"
+    },
+    "Bullet Storage Cyberfinger": {
+      "name": "Ciberdedo de Almacenamiento de Balas",
+      "description": "<p>Ciberdedo que se puede utilizar para ocultar dos rondas de munición de cualquier tipo. Solo se puede instalar en un dedo de una cibermano modular. (Ver Cromo Negro pg. 24 para más detalles)</p>"
+    },
+    "Dartgun Cyberfinger": {
+      "name": "Ciberdedo Lanzadardos",
+      "description": "<p>Ciberdedo oculto que contiene un @UUID[Compendium.cyberpunk-red-core.weapons.fSvkIl83Rsqd7O16]{Dartgun}. Solo se puede instalar en dedo de una cibermano modular. (Ver Cromo Negro pg. 24 para obtener más detalles)</p>",
+      "dvTable": "VD Pistola"
+    },
+    "Discount Cyberaudio Suite": {
+      "name": "Ciberaudio Suite de Descuento",
+      "description": "<p>Interfaz barata y voluminosa para una mejora de audio. (ver Black Chrome pg. 17 para más detalles)</p>"
+    },
+    "Dynalar Modular Finger Enthusiast Cyberhand": {
+      "name": "Dynalar Modular Finger Enthusiast Cyberhand",
+      "description": "<p>Borgware. Requires cyberarm. Comes with 8 cyberfingers*.</p>\n<p>*Fingers must be added after installation</p>\n"
+    },
+    "Explicit Memory Stimulator": {
+      "name": "Estimulador de Memoria Explícita",
+      "description": "<p>Chipware. Mejora la memorización. +2 Concentración mientras está instalado. (Ver Cromo Negro pg. 18 para más detalles)</p>"
+    },
+    "Extra-Jointed Cyberarm Upgrade": {
+      "name": "Montura de Ciberbrazo Extra-Articulada",
+      "description": "<p>Mejora de articulación del ciberbrazo. +2 Contorsionista. (Ver Cromo Negro 18 para más detalles)</p>"
+    },
+    "Extra-Jointed Cyberleg Upgrade": {
+      "name": "Montura de Ciberpierna Extra-Articulada",
+      "description": "<p>Mejora de articulación de la ciberpierna. +2 Contorsionista. (Ver Cromo Negro 18 para más detalles)</p>"
+    },
+    "Flashbulb": {
+      "name": "Deslumbrante",
+      "description": "<p>Requiere ciberbrazo. El usuario puede intentar cegar a cualquier persona a menos de 25m/yds. (Ver Cromo Negro pg. 18 para más detalles)</p>"
+    },
+    "Flashlight Cyberfinger": {
+      "name": "Ciberdedo Linterna",
+      "description": "<p>Ciberdedo oculto que contiene un @UUID[Compendium.cyberpunk-red-core.gear.spgehgLv94vrH4Zo]{Flashlight}. Solo se puede instalar en dedo de una cibermano modular. (Ver Cromo Negro pg. 24 para obtener más detalles)</p>"
+    },
+    "Hardened Shielding (Borgware)": {
+      "name": "Escudo Endurecido (Borgware)",
+      "description": "<p>El Borgware para el que está instalado no se ve afectado por los efectos EMP. (ver Cromo Negro pg. 17 para más detalles.)</p>"
+    },
+    "Hardened Shielding (Cybereye)": {
+      "name": "Escudo Endurecido (Ciberóptico)",
+      "description": "<p>Las opciones de Ciberóptico e instalación no se ven afectadas por los efectos de EMP. (Ver Cromo Negro pg. 19 para más detalles)</p>"
+    },
+    "Hardened Shielding (Internal)": {
+      "name": "Escudo Endurecido (Interno)",
+      "description": "<p>Ciberware interno. Todo el ciberware interno no se ve afectado por los efectos EMP. (ver Cromo Negro pg. 20 para más detalles).</p>"
+    },
+    "Heuristic Health Monitor": {
+      "name": "Seguidor Heurístico de la Salud",
+      "description": "<p>Requiere Biomonitor. Puede conocer PV de un vistazo. (Vea el Cromo Negro 19 para más detalles)</p>"
+    },
+    "Homing Tracer Cyberfinger": {
+      "name": "Ciberdedo Rastreador",
+      "description": "<p>Ciberdedo que funciona como un @UUID[Compendium.cyberpunk-red-core.gear.QIHx5oQOirtTlAaD]{Homing Tracer}. Solo se puede instalar en dedo de una cibermano modular. (Ver Cromo Negro pg. 25 para obtener más detalles)</p>"
+    },
+    "Implanted Fūma Kotarō Linear Frame": {
+      "name": "Implante de Armazón Lineal Fūma Kotarō",
+      "description": "<ul>\n<li>Requiere 2 Conectores de Interface</li>\n<li>Aumenta TCO a 12 mientras estás enchufado</li>\n<li>No afecta a PV ni a Tirada de Salvacion</li>\n<li>Sigilo +2</li>\n</ul>\n<p>Viene con dos armas cuerpo a cuerpo pesadas exóticas de calidad excelente y una arma cuerpo a cuerpo ligera exótica de excelente calidad*.</p>\n<p>Consulte la página de Cromo Negro 52 para más detalles.</p>\n<p><em>* Debe ser añadido manualmente.</em></p>"
+    },
+    "Implanted LF-001 SWAT Linear Frame": {
+      "name": "Implante de Armazón Lineal LF-001 SWAT",
+      "description": "<p>Aumenta tu estadística TCO a 12 (ajustando tu PV y Nivel de Heridas y Salvación contra la muerte). Elimina la penalización de movimiento por la escalada y la natación. (Ver Cromo Negro pg. 53 para más detalles.)</p>"
+    },
+    "Implanted Vermilion Linear Frame": {
+      "name": "Implante de Armazón Lineal Bermellón",
+      "description": "<p>Aumenta tu estadística TCO a 12 (ajustando tu PV y Nivel de Heridas y Salvación contra la muerte). Elimina la penalización por salto a la vez que tu movimiento se incrementa a 6m/yds. mientras corres. (Ver Cromo Negro, pg. 54 para más detalles.)</p>"
+    },
+    "Integrated Cyberdeck Upgrade": {
+      "name": "Actualización de Ciberterminal Integrada",
+      "description": "<p>Requiere Ciberterminal (Cableada), añade una ranura extra a la ciberterminal (ver Cromo Negro, pg. 19 para más detalles)</p>"
+    },
+    "Laser Pointer Cyberfinger": {
+      "name": "Ciberdedo Puntero Láser",
+      "description": "<p>Ciberdedo con un puntero láser oculto. Solo se puede instalar en dedo de una cibermano modular. (Ver Cromo Negro, pg. 25 para más detalles)</p>"
+    },
+    "Lighter Cyberfinger": {
+      "name": "Ciberdedo Encendedor",
+      "description": "<p>Ciberdedo con un encendedor oculto. Solo se puede instalar en un dedo de una cibermano modular. (Ver Cromo Negro, pg. 25 para más detalles)</p>"
+    },
+    "Lockpick Cyberfinger": {
+      "name": "Ciberdedo Ganzúa",
+      "description": "<p>Ciberdedo que contiene un @UUID[Compendium.cyberpunk-red-core.gear.vlhGpguIMioeA8fe]{Lock Picking Set}. Solo se puede instalar en dedo de una cibermano modular. (Ver Cromo Negro, pg. 25 para más detalles)</p>"
+    },
+    "Microphone Cyberfinger": {
+      "name": "Ciberdedo Micrófono",
+      "description": "<p>Ciberdedo con un dispositivo de grabación oculto. Solo se puede instalar en un dedo de una cibermano modular. (Ver Cromo Negro, pg. 25 para más detalles)</p>"
+    },
+    "Mini Air Supply Cyberfinger": {
+      "name": "Ciberdedo con Mini Suministro de Aire",
+      "description": "<p>Ciberdedo con un tanque de aire integrado. Solo se puede instalar en un dedo de una cibermano modular. (Ver Cromo Negro, pg. 26 para más detalles)</p>"
+    },
+    "Modular Finger Cyberhand": {
+      "name": "Cibermano con Dedos Modulares",
+      "description": "<p>Requiere ciberbrazo. Viene con 5 ciberdedos*. (ver la pg. 20 del Cromo Negro para más detalles)</p>\n<p>*Los dedos deben ser añadidos después de la instalación</p>"
+    },
+    "Neo-Soviet Cyberarm": {
+      "name": "Ciberbrazo Neo-Soviet",
+      "description": "<p>Un brazo de sustitución cibernético soviético. Viene con una mano preinstalada. -1 a las tiradas que requieran brazos sin TCO 8+. (Ver Cromo Negro, pg. 20 para más detalles)</p>"
+    },
+    "One Shot Special Cyberfinger": {
+      "name": "Ciberdedo Especial 1 Tiro",
+      "description": "<p>Ciberdedo oculto que contiene un @UUID[Compendium.cyberpunk-red-core.weapons.Y433cjlB1uVHPysk]{Heavy Pistol}. Solo se puede instalar en dedo de una cibermano modular. (Ver Cromo Negro, pg. 26 para obtener más detalles)</p>",
+      "dvTable": "VD Pistola"
+    },
+    "Popup Net Launcher": {
+      "name": "Lanzador de Red Popup",
+      "description": "<p>Un lanzador de red exótico oculto. No puede contener nada con esta mano mientras está activado. (Ver páginas de Cromo Negro. 20-21 para más detalles)</p>",
+      "dvTable": "VD Escopeta (Perdigones de escopeta)"
+    },
+    "Popup Shotgun": {
+      "name": "Escopeta Popup",
+      "description": "<p>Una escopeta oculta. Viene con un enlace de arma inteligente preinstalado. No se puede sostener nada con esta mano mientras está activada. (Ver Cromo Negro, pg. 21 para más detalles)</p>",
+      "dvTable": "VD Escopeta (Perdigones de escopeta)"
+    },
+    "RacerBracer": {
+      "name": "CubreCorredor",
+      "description": "<p>Ciberimplante interno. Otorga inmunidad al Latigazo. (Ver Cromo Negro pg. 22 para más detalles)</p>"
+    },
+    "Reflex Co-Processor": {
+      "name": "Co-Procesador Reflex",
+      "description": "<p>Implante Neuronal. Niega el requisito de REF para esquivar balas. (Ver cromo negro pg. 21 para más detalles)</p>"
+    },
+    "Reinforced Cyberarm Upgrade": {
+      "name": "Mejora Reforzada de Ciberbrazo",
+      "description": "<p>Requiere ciberbrazo. El ciberbrazo en el que sea instalado no se puede romper. (Ver pg Cromo Negro 21-22 para más detalles)</p>"
+    },
+    "Reinforced Cyberleg Upgrade": {
+      "name": "Mejora Reforzada de Ciberpierna",
+      "description": "<p>Requiere ciberpierna. La ciberpierna en la que sea instalado no se puede romper. (Ver pg Cromo Negro 21-22 para más detalles)</p>"
+    },
+    "Sponsored Cybereye": {
+      "name": "Ciberojo Patrocinado",
+      "description": "<p>Un ojo de reemplazo. Chyron viene preinstalado*. El usuario al azar experimenta anuncios aleatorios. (Ver página de Chrome negro. 22 para más detalles)</p>\n<p>*Chyron debe ser añadido después de la instalación</p>"
+    },
+    "Spray Paint Cyberfinger": {
+      "name": "Ciberdedo de Pintura en Aerosol",
+      "description": "<p>El ciberdedo funciona como una lata de pintura en aerosol. Solo se puede instalar en un dedo de una cibermano modular. (Vea el Cromo Negro, pg. 26 para más detalles)</p>"
+    },
+    "Squirt Cyberfinger": {
+      "name": "Ciberdedo de Chorros",
+      "description": "<p>Ciberdedo que puede contener y rociar varios líquidos. Solo se puede instalar en un dedo de una cibermano modular. (Ver Cromo Negro, pg. 26 para más detalles)</p>"
+    },
+    "Standard Cyberfinger": {
+      "name": "Ciberdedo Estándar",
+      "description": "<p>Ciberdedo. Solo se puede instalar en una cibermano modular. (Ver Cromo Negro, pg. 26 para más detalles)</p>"
+    },
+    "Trauma Response Nanomatrix": {
+      "name": "Nanomatriz de Respuesta al Trauma",
+      "description": "<p>Puede reparar completamente el Blindaje Subcutáneo o Tejido Dérmico una vez al día. (Vea el cromo negro en la página 22 para más detalles.)</p>"
+    },
+    "Wirecutter/Scissors Cyberfingers": {
+      "name": "Ciberdedo Tijeras/Corta Cables",
+      "description": "<p>Un ciberdedo que puede servir como tijeras o corta cables. Solo se puede instalar en un dedo de una cibermano modular. (Ver Cromo Negro, pg. 26 para más detalles)</p>"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+_id: DCKlDDJE2cSxhTzr
+_key: "!items!DCKlDDJE2cSxhTzr"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/clothing/generic_contact_lenses.svg
+name: Asia Pop Contact Lenses
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        Following the latest Asian fashion trends, Asia Pop is sure to catch the eye
+        with it's bright colors and extravagant style.
+      </p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: false
+  price:
+    market: 100
+  providesHardening: false
+  revealed: true
+  source:
+    book: Core
+    page: 356
+  style: asiaPop
+  type: contactLenses
+  usage: equipped
+type: clothing

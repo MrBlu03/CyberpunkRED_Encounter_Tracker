@@ -1,0 +1,55 @@
+_id: TQhXMRbZyVmvYDKN
+_key: "!items!TQhXMRbZyVmvYDKN"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/weapons/GrenadeLauncher_excellent.svg
+name: Tsunami Arms Type-18
+system:
+  ammoVariety:
+    - grenade
+  attackmod: 1
+  brand: Tsunami Arms
+  concealable:
+    concealable: false
+    isConcealed: false
+  critFailEffect: jammed
+  damage: 6d6
+  description:
+    value: |
+      <p>
+        A high-impact grenade launcher. You can use a variety of grenades with this.
+        +1 to Attack.
+      </p>
+  dvTable: DV Grenade Launcher
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 2
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+      - ammo
+    list: []
+    slots: 3
+    usedSlots: 0
+  isRanged: true
+  magazine:
+    max: 2
+    value: 0
+  price:
+    market: 1000
+  quality: standard
+  revealed: true
+  rof: 1
+  source:
+    book: Core
+    page: 341
+  unarmedAutomaticCalculation: true
+  usage: equipped
+  usesType: magazine
+  weaponSkill: Heavy Weapons
+  weaponType: grenadeLauncher
+type: weapon

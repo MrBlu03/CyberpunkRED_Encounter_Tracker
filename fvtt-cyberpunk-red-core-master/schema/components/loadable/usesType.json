@@ -1,0 +1,7 @@
+{
+  "description": "What is loaded into this?",
+  "type": "string",
+  "enum": [
+    "magazine"
+  ]
+}

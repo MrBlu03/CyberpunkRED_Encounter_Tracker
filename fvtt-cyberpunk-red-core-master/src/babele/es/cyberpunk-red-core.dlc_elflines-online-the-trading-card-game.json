@@ -1,0 +1,26 @@
+{
+  "label": "Elflines Online el Juego de Cartas",
+  "mapping": {
+    "dvTable": "sistema.Tablavd"
+  },
+  "entries": {
+    "Elflines Online Playing Cards": {
+      "name": "Cartas de Juego de Elflines Online",
+      "description": "<p>Cartas destinadas a ser usadas como parte del juego Elflines Online el Juego de Cartas.</p>"
+    },
+    "Duel Caster": {
+      "name": "Lanzador de Duelo",
+      "description": "<p>Una carcasa de plástico y lanzador de cartas para Cartas de ELO. CdT 3 si solo se dispara en tu turno. También se puede cargar con cartas normales, pero hace que el arma sea de Calidad Pobre.</p>",
+      "dvTable": "VD Pistola"
+    },
+    "Scarlet Blackbow": {
+      "name": "ArcoNegro Escarlata",
+      "description": "<p>Un arco revitalizado que debe recargarse después de cada ataque. Si tira 1 en Ataque (Crit fail), el paquete de batería del arco explota. Viene con una carcaída y 6 flechas de goma.</p>",
+      "dvTable": "VD Arcos y Ballestas"
+    },
+    "Sword of Arvish": {
+      "name": "Espada de Arvish",
+      "description": "<p>Arma de filo empuñada. Específicamente diseñada para cortar o pinchar. Si tira 1 en el ataque (pifia) el arma aplasta los dedos de su portador.</p>"
+    }
+  }
+}

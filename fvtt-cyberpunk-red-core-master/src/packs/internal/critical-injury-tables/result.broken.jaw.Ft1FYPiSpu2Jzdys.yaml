@@ -1,0 +1,12 @@
+_id: Ft1FYPiSpu2Jzdys
+_key: "!tables.results!QiwaqQtocypL0FXG.Ft1FYPiSpu2Jzdys"
+documentCollection: cyberpunk-red-core.core_critical-injuries-head
+documentId: VWmTqmsW6S5v51FO
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/critical_injuries/broken_jaw.svg
+range:
+  - 6
+  - 6
+text: Broken Jaw
+type: 2
+weight: 1

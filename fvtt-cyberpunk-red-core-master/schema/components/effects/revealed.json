@@ -1,0 +1,5 @@
+{
+  "description": "Is the Effect revealed to the user? Not currently implemented, so should always be true",
+  "type": "boolean",
+  "const": true
+}

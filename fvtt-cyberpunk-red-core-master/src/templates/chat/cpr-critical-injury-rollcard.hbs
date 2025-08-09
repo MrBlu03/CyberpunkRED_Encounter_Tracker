@@ -1,0 +1,42 @@
+<div class="rollcard">
+  <div class="rollcard-top">
+    <div class="cpr-block chat-rollTitle-stat">
+      <div class="text-center text-padding-top text-normal text-semi">
+        {{rollTitle}}
+      </div>
+      <div class="text-center text-small">
+        {{rollCardExtraArgs.tableName}}
+      </div>
+    </div>
+  </div>
+  <div class="rollcard-bottom">
+    <div class="cpr-block">
+      <div class="d6-rollcard-data">
+        <div class="d6-dice-div">
+          {{!-- die image for initialRoll --}}
+          {{#each faces as |dieFace| }}
+            <img class="{{cprDiceSizeImageClass ../formula}}"
+                 src="systems/cyberpunk-red-core/icons/dice/black/d6_{{dieFace}}.svg"/>
+          {{/each}}
+        </div>
+        <div class="d6-number-div">
+          <span class="clickable{{#if criticalCard }} text-semi{{/if }}"
+                data-action="toggleVisibility"
+                data-visible-element="d6-data-details">
+            {{resultTotal}}
+          </span>
+        </div>
+        <div class="rollcard-critinjury-data text-padding-bottom-small">
+          <img class="rollcard-critinjury-icon"
+               src="{{rollCardExtraArgs.itemImg}}"/>
+            <a class="clickable text-padding-left-small"
+               data-action="displayInjury"
+               data-item-name="{{entityData.item}}"
+               data-item-comp="{{entityData.comp}}">
+              {{rollCardExtraArgs.itemName}}
+            </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

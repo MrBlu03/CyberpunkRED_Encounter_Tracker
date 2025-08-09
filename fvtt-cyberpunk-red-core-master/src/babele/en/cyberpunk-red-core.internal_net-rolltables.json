@@ -1,0 +1,111 @@
+{
+  "label": "NET Architecture Rolltables",
+  "mapping": {},
+  "entries": {
+    "All Other Floors (Advanced)": {
+      "name": "All Other Floors (Advanced)",
+      "results": [
+        {
+          "3-3": "Hellhound",
+          "4-4": "Asp x2",
+          "5-5": "Hellhound, Killer",
+          "6-6": "Hellhound",
+          "7-7": "Hellhound, Sabertooth",
+          "8-8": "Hellhound",
+          "9-9": "Password DV10",
+          "10-10": "File DV10",
+          "11-11": "Control Node DV10",
+          "12-12": "Password DV10",
+          "13-13": "Asp",
+          "14-14": "Asp",
+          "15-15": "Dragon",
+          "16-16": "Asp",
+          "17-17": "Dragon, Wisp",
+          "18-18": "Dragon x2"
+        }
+      ]
+    },
+    "All Other Floors (Basic)": {
+      "name": "All Other Floors (Basic)",
+      "results": [
+        {
+          "3-3": "Hellhound",
+          "4-4": "Asp x2",
+          "5-5": "Hellhound, Killer",
+          "6-6": "Hellhound",
+          "7-7": "Hellhound, Sabertooth",
+          "8-8": "Hellhound",
+          "9-9": "Password DV10",
+          "10-10": "File DV10",
+          "11-11": "Control Node DV10",
+          "12-12": "Password DV10",
+          "13-13": "Asp",
+          "14-14": "Asp",
+          "15-15": "Dragon",
+          "16-16": "Asp",
+          "17-17": "Dragon, Wisp",
+          "18-18": "Dragon x2"
+        }
+      ]
+    },
+    "All Other Floors (Standard)": {
+      "name": "All Other Floors (Standard)",
+      "results": [
+        {
+          "3-3": "Hellhound",
+          "4-4": "Asp x2",
+          "5-5": "Hellhound, Killer",
+          "6-6": "Hellhound",
+          "7-7": "Hellhound, Sabertooth",
+          "8-8": "Hellhound",
+          "9-9": "Password DV10",
+          "10-10": "File DV10",
+          "11-11": "Control Node DV10",
+          "12-12": "Password DV10",
+          "13-13": "Asp",
+          "14-14": "Asp",
+          "15-15": "Dragon",
+          "16-16": "Asp",
+          "17-17": "Dragon, Wisp",
+          "18-18": "Dragon x2"
+        }
+      ]
+    },
+    "All Other Floors (Uncommon)": {
+      "name": "All Other Floors (Uncommon)",
+      "results": [
+        {
+          "3-3": "Hellhound",
+          "4-4": "Asp x2",
+          "5-5": "Hellhound, Killer",
+          "6-6": "Hellhound",
+          "7-7": "Hellhound, Sabertooth",
+          "8-8": "Hellhound",
+          "9-9": "Password DV10",
+          "10-10": "File DV10",
+          "11-11": "Control Node DV10",
+          "12-12": "Password DV10",
+          "13-13": "Asp",
+          "14-14": "Asp",
+          "15-15": "Dragon",
+          "16-16": "Asp",
+          "17-17": "Dragon, Wisp",
+          "18-18": "Dragon x2"
+        }
+      ]
+    },
+    "First Two Floors (The Lobby)": {
+      "name": "First Two Floors (The Lobby)",
+      "results": [
+        {
+          "1-1": "File DV6",
+          "2-2": "Password DV6",
+          "3-3": "Password DV8",
+          "4-4": "Skunk",
+          "5-5": "Wisp",
+          "6-6": "Killer"
+        }
+      ]
+    }
+  }
+}

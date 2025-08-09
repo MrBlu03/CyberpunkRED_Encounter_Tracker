@@ -1,0 +1,40 @@
+{{#if cyberware.system.core }}
+  {{#each cyberware.system.installedItems.list as |id| }}
+    {{> "systems/cyberpunk-red-core/templates/actor/character/right-pane/tabs/cyberware/cpr-cyberware-optional-content.hbs" (cprMergeForPartialArg "actor,cyberware,depth" ../actor (cprGetOwnedItem ../actor id) 0)}}
+  {{/each}}
+{{else}}
+  <li class="item flexrow"
+      data-item-id="{{cyberware._id}}"
+      draggable="false">
+    <div class="item-name cyberware-name text-nowrap text-semi">
+      <a class="name item-view">
+        {{cyberware.name}}
+        ({{cyberware.system.installedItems.usedSlots}}/{{cprApplyUpgrade cyberware cyberware.system.installedItems.slots "slots"}}
+        {{localize "CPR.itemSheet.cyberware.optionalSlots"}})
+        {{#if cyberware.system.isUpgraded }}
+          <i class="text-super fa-solid fa-square-caret-up"></i>
+        {{/if}}
+      </a>
+    </div>
+    <div class="item-detail cyberware-data text-nowrap">
+      {{localize (cprFindConfigValue "cyberwareTypes" cyberware.system.type)}}
+    </div>
+    <div class="item-detail cyberware-actions text-nowrap">
+      {{#unless (cprListContains "fashionware,cyberwareInternal,cyberwareExternal" cyberware.system.type)}}
+        {{!-- INSTALL ACTION --}}
+        {{> "systems/cyberpunk-red-core/templates/actor/mixin/actions/cpr-uninstall-glyph.hbs" cyberware}}
+        {{!-- ITEM MANAGEMENT --}}
+        {{#if isUpgraded }}
+          {{> "systems/cyberpunk-red-core/templates/actor/mixin/actions/cpr-upgrade-glyph.hbs"}}
+        {{else}}
+          {{#unless (cprIsEmpty (cprFilter (cprFilter actor.itemTypes.itemUpgrade "type" "cyberware") "system.isInstalled" false))}}
+            {{> "systems/cyberpunk-red-core/templates/actor/mixin/actions/cpr-upgrade-glyph.hbs"}}
+          {{/unless}}
+        {{/if}}
+      {{/unless}}
+    </div>
+  </li>
+  {{#each cyberware.system.installedItems.list as |id| }}
+    {{> "systems/cyberpunk-red-core/templates/actor/character/right-pane/tabs/cyberware/cpr-cyberware-optional-content.hbs" (cprMergeForPartialArg "actor,cyberware,depth" ../actor (cprGetOwnedItem ../actor id) 1)}}
+  {{/each}}
+{{/if}}

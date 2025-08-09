@@ -1,0 +1,32 @@
+_id: B5UD7QmiTRg3jyFR
+_key: "!items.effects!R3b9aNqHxWIAo4tX.B5UD7QmiTRg3jyFR"
+changes:
+  - key: system.stats.body.value
+    mode: 5
+    priority: null
+    value: "12"
+description: ""
+disabled: false
+duration:
+  combat: null
+  rounds: null
+  seconds: null
+  startRound: null
+  startTime: null
+  startTurn: null
+  turns: null
+flags:
+  cyberpunk-red-core:
+    changes:
+      cats:
+        "0": stat
+      situational:
+        "0":
+          isSituational: false
+          onByDefault: false
+icon: >-
+  systems/cyberpunk-red-core/icons/compendium/default/default-implanted-linearframe.svg
+name: Implanted LF-001 SWAT Linear Frame
+statuses: []
+tint: null
+transfer: true

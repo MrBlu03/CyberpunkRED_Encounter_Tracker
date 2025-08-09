@@ -1,0 +1,20 @@
+_id: L4tVCWCpkCW7OYhE
+_key: "!items!L4tVCWCpkCW7OYhE"
+effects: []
+img: icons/svg/item-bag.svg
+name: Composition
+system:
+  basic: false
+  category: educationSkills
+  core: true
+  description:
+    value: ""
+  difficulty: typical
+  favorite: false
+  level: 0
+  skillType: generic
+  source:
+    book: Core
+    page: 134
+  stat: int
+type: skill

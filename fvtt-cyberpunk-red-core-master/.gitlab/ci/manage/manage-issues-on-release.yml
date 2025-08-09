@@ -1,0 +1,23 @@
+# Manages issues when we create a release.
+#
+# Automates updating any Issues when creating we make a release:
+#   * Removes any Labels from previous dev process
+
+manage-issues-on-release:
+  stage: release
+  image: mvdan/shfmt:latest-alpine
+  before_script:
+    - apk update
+    - apk add bash jq curl
+  script:
+    - ./.gitlab/pipeline_utils/manage-issues-on-release.sh
+  needs:
+    - job: init
+      artifacts: true
+    - job: create-release
+  rules:
+    # Don't run if we're in the cleanup-dev schedule
+    - if: $CPR_SCHEDULE == "cleanup-dev"
+      when: never
+    # Run on git tag
+    - if: $CI_COMMIT_TAG

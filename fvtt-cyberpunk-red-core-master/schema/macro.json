@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/CPRC-Macro",
+  "definitions": {
+    "CPRC-Macro": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "_id": {
+          "$ref": "./components/id.json"
+        },
+        "_key": {
+          "$ref": "./components/key.json"
+        },
+        "command": {
+          "type": "string"
+        },
+        "img": {
+          "$ref": "./components/img.json"
+        },
+        "name": {
+          "type": "string"
+        },
+        "scope": {
+          "type": "string",
+          "constant": "global"
+        },
+        "type": {
+          "type": "string",
+          "constant": "script"
+        }
+      },
+      "required": ["_id", "_key", "command", "img", "name", "scope", "type"]
+    }
+  }
+}

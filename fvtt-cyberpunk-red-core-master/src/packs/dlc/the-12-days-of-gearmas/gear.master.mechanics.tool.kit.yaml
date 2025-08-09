@@ -1,0 +1,39 @@
+_id: yI9sUHnAIXGYncg9
+_key: "!items!yI9sUHnAIXGYncg9"
+effects:
+  - eLAjuE7xaYrcbIzN
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/the_12_days_of_gearmas/master_mechanics_tool_kit.svg
+name: Master Mechanic's Tool Kit
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        Massive Tool Chest. Provides a +4 to multiple skills when rolling Maker Skill
+        Checks. Large enough to be considered Thick Steel Cover, requires BODY 10 to
+        move.
+      </p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 0
+    usedSlots: 0
+  isElectronic: false
+  price:
+    market: 20000
+  providesHardening: false
+  revealed: true
+  source:
+    book: 12DoGear
+    page: 3
+  usage: carried
+type: gear

@@ -1,0 +1,62 @@
+{
+  "label": "Skills (Local Expert)",
+  "mapping": {},
+  "entries": {
+    "Local Expert (Badlands)": {
+      "name": "Local Expert (Badlands)",
+      "description": ""
+    },
+    "Local Expert (Little China)": {
+      "name": "Local Expert (Little China)",
+      "description": ""
+    },
+    "Local Expert (Little Europe)": {
+      "name": "Local Expert (Little Europe)",
+      "description": ""
+    },
+    "Local Expert (Morro Rock)": {
+      "name": "Local Expert (Morro Rock)",
+      "description": ""
+    },
+    "Local Expert (New Westbrook)": {
+      "name": "Local Expert (New Westbrook)",
+      "description": ""
+    },
+    "Local Expert (Norcal Military Base)": {
+      "name": "Local Expert (Norcal Military Base)",
+      "description": ""
+    },
+    "Local Expert (Old Combat Zone)": {
+      "name": "Local Expert (Old Combat Zone)",
+      "description": ""
+    },
+    "Local Expert (Old Corp Center)": {
+      "name": "Local Expert (Old Corp Center)",
+      "description": ""
+    },
+    "Local Expert (Old Japan Town)": {
+      "name": "Local Expert (Old Japan Town)",
+      "description": ""
+    },
+    "Local Expert (South Night City)": {
+      "name": "Local Expert (South Night City)",
+      "description": ""
+    },
+    "Local Expert (The Glen)": {
+      "name": "Local Expert (The Glen)",
+      "description": ""
+    },
+    "Local Expert (University District)": {
+      "name": "Local Expert (University District)",
+      "description": ""
+    },
+    "Local Expert (Upper Marina)": {
+      "name": "Local Expert (Upper Marina)",
+      "description": ""
+    },
+    "Local Expert (Watson)": {
+      "name": "Local Expert (Watson)",
+      "description": ""
+    }
+  }
+}

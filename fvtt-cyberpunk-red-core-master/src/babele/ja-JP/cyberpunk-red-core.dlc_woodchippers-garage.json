@@ -1,0 +1,73 @@
+{
+  "label": "ウッドチッパーのガレージ。",
+  "mapping": {
+    "dvTable": "system.dvTable"
+  },
+  "entries": {
+    "M-02 Rounds": {
+      "name": "M-02 弾",
+      "description": "<p>Special Armor-Piercing rounds for use only in the Sternmeyer M-02 Heavy Rifle. Comes in a drum of 80.</p>"
+    },
+    "Paintball (Biotoxin)": {
+      "name": "ペイントボール (バイオトキシン)",
+      "description": "<p>Created from 3 Vials of Biotoxin strapped together. Deals no direct damage on hit.</p>"
+    },
+    "Paintball (Poison)": {
+      "name": "ペイントボール (毒)",
+      "description": "<p>Created from 3 Vials of Poison strapped together. Deals no direct damage on hit.</p>"
+    },
+    "Aegis": {
+      "name": "イージス",
+      "description": "<p>This weapon can't cause Critical Injuries, can't ablate armor, and if it would reduce a target to under 1 HP it instead leaves them Unconscious on 1 HP.</p>"
+    },
+    "Archimedes": {
+      "name": "アルキメデス",
+      "description": "<p>Uses the Pilot Air Vehicle Skill instead of the Heavy Weapons Skill to fire, requires the has Targeting Scope Cyberware, and can only use Smart Rockets. It does come with one Smart Rocket included however. How nice.</p>",
+      "dvTable": "DV Rocket Launcher"
+    },
+    "Burst Flamethrower": {
+      "name": "バーストフレイムスロワー",
+      "description": "<p>Can only fire Incendiary Shotgun Shells, but targets ignited by this weapon burn for 4HP a turn.<br><br>Additionally, this weapon can consume all it's remaining ammo to shoot a fireball, which explodes in a similar fashion to an incendiary grenade. The user of the weapon is also consumed by the fireball, getting Deadly on Fire*.</p>\n<p><em>*Special fire mode not currently supported; will need to be manually applied</em></p>",
+      "dvTable": "DV Shotgun (Slug)"
+    },
+    "Enviro-launcher": {
+      "name": "エコエコランチャー",
+      "description": "<p>This specially engineered rocket launcher is only capable of being fired once. However, once it has been fired the user can use an action to break of a vial attached to the launcher, which will release an enzyme that will destroy the launcher totally within an hour.</p>",
+      "dvTable": "DV Rocket Launcher"
+    },
+    "Flare Gun": {
+      "name": "フレアガン",
+      "description": "<p>As well as normal Grenade Ammunition, this weapon can fire road flares*. They don't deal any damage, but if fired into the air can be seen from 3 miles. You cannot install this weapon in Pop-up Cyberware.</p>\n<p><em>*Currently not supported so will need to manually delete a road flare from actors inventory after firing</em></p>",
+      "dvTable": "DV Grenade Launcher"
+    },
+    "M-02 Heavy Rifle": {
+      "name": "M-02 ヘビーライフル",
+      "description": "<p>This weapon fires it's own custom ammunition, priced at 500eb (Expensive) for 80 rounds of Armor-Piercing ammo.</p>",
+      "dvTable": "DV Assault Rifle"
+    },
+    "Nomad Air Cannon": {
+      "name": "ノーマッドエアキャノン",
+      "description": "<p>Rather than normal shotgun ammunition, this weapon fires whatever liquid is placed into it. Acid can be bought for 10eb (Cheap) that reduces all armour worn by the target by 1 SP. Poison or Biotoxin can also be loaded, though requires 3 vials per shot.</p>"
+    },
+    "Pocket Launcher": {
+      "name": "ポケットランチャー",
+      "description": "<p>While unloaded, this weapon can be concealed.</p>",
+      "dvTable": "DV Rocket Launcher"
+    },
+    "SDF-45": {
+      "name": "SDF-45",
+      "description": "<p>This rocket launcher can only load Armor-Piercing rockets, and has a maximum range of 400 m/yds. When fired one rocket at a time, the GM chooses where they rockets land. When fired two rockets at a time, the GM chooses where the rockets land but this time up to 50 m/yds away from the target, and with each rocket more than 10 m/yds from each other.</p>",
+      "dvTable": "DV Rocket Launcher"
+    },
+    "TearJerker": {
+      "name": "ティアジャッカー",
+      "description": "<p>This weapon can only fire Smoke or Teargas Ammunition.</p>",
+      "dvTable": "DV Grenade Launcher"
+    },
+    "Triple Treat": {
+      "name": "トリプルースレット",
+      "description": "<p>\n  Comes with an Exotic Grenade Launcher Underbarrel* which - as the main gun is\n  poor quality - functions as a poor quality weapon. It can't be removed. Both\n  that and the main weapon can fire non-Basic Ammunition.\n</p>\n<p><em>*Must be manually added after acquiring the weapon</em></p>\n",
+      "dvTable": "DV Rocket Launcher"
+    }
+  }
+}

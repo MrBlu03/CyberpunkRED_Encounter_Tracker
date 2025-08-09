@@ -1,0 +1,30 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "allowed": {
+      "type": "boolean"
+    },
+    "allowedTypes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["ammo", "cyberdeck", "cyberware", "itemUpgrade", "program"]
+      }
+    },
+    "list": {
+      "description": "The list of installed items, we do not support this in compendia at present so should not have any items",
+      "type": "array",
+      "maxLength": 0
+    },
+    "slots": {
+      "type": "integer"
+    },
+    "usedSlots": {
+      "description": "Number of slots used, not supported in compendia so must be 0",
+      "type": "integer",
+      "const": 0
+    }
+  },
+  "required": ["allowed", "allowedTypes", "list", "slots", "usedSlots"]
+}

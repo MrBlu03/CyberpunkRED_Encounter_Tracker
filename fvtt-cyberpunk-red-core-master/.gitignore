@@ -1,0 +1,31 @@
+# IDE
+.idea/
+.vscode/
+!.vscode/extensions.json
+node_modules
+**/*.pdf
+**/*.bak
+**/*.swp
+**/*~
+
+# MacOS clutter
+**/.DS_Store
+
+# Local ci
+.gitlab-ci-local/
+vars.env
+errors.txt
+results.json
+
+# Local config
+foundryconfig.json
+
+# Build
+dist/
+docs/
+src/packs/other/changelog
+
+# Ryan's temp files
+**/foo*
+**/bar*
+src/packs.*

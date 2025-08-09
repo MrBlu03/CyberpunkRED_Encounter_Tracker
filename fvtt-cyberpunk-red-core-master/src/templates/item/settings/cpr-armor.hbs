@@ -1,0 +1,109 @@
+{{!-- Armor Penalty Settings--}}
+<li class="item flexrow">
+  <div class="item flexrow setting-name text-nowrap">
+    {{localize "CPR.itemSheet.armor.armorPenalty"}}
+  </div>
+  <div class="item flexrow setting-value text-nowrap item-end">
+    <input name="system.penalty"  type="number" value="{{item.system.penalty}}"/>
+  </div>
+</li>
+{{#unless (cprCompare item.system.isBodyLocation "||" item.system.isHeadLocation)}}
+<li class="item flexrow">
+  <div class="item flexrow setting-name text-nowrap">
+    {{localize "CPR.itemSheet.armor.isShield"}}
+  </div>
+  <div class="item flexrow setting-value text-nowrap item-end">
+    {{#if item.system.isShield }}
+      <a class="item-checkbox" data-target="system.isShield"><i class="far fa-circle-check"></i></a>
+    {{else}}
+      <a class="item-checkbox" data-target="system.isShield"><i class="far fa-circle"></i></a>
+    {{/if}}
+  </div>
+</li>
+{{/unless}}
+{{#if item.system.isShield }}
+  <hr/>
+  <li class="item flexrow">
+    <div class="item flexrow setting-name text-nowrap">
+      {{localize "CPR.itemSheet.common.maximum"}} {{localize "CPR.global.generic.hitpoints"}} {{cprShowUpgrade item "shieldHp"}}
+    </div>
+    <div class="item flexrow setting-value text-nowrap item-end">
+      <input class="armor-shield-max" data-item-id="{{item.id}}" name="system.shieldHitPoints.max" type="number" value="{{item.system.shieldHitPoints.max}}"/>
+    </div>
+  </li>
+  <li class="item flexrow">
+    <div class="item flexrow setting-name text-nowrap">
+      {{localize "CPR.itemSheet.armor.currentHitpoints"}}
+    </div>
+    <div class="item flexrow setting-value text-nowrap item-end">
+      <input class="armor-shield-value" data-item-id="{{item.id}}" name="system.shieldHitPoints.value" type="number" value="{{item.system.shieldHitPoints.value}}"/>
+    </div>
+  </li>
+{{else}}
+  {{!--Head Armor Settings--}}
+  <li class="item flexrow">
+    <div class="item flexrow setting-name text-nowrap">
+      {{localize "CPR.global.location.head"}} {{localize "CPR.global.itemTypes.armor"}}
+    </div>
+    <div class="item flexrow setting-value text-nowrap item-end">
+      {{#if item.system.isHeadLocation }}
+        <a class="item-checkbox" data-target="system.isHeadLocation"><i class="far fa-circle-check"></i></a>
+      {{else}}
+        <a class="item-checkbox" data-target="system.isHeadLocation"><i class="far fa-circle"></i></a>
+      {{/if}}
+    </div>
+  </li>
+  {{#if item.system.isHeadLocation }}
+    <hr/>
+    <li class="item flexrow">
+      <div class="item flexrow setting-name text-nowrap">
+        {{localize "CPR.itemSheet.armor.headArmorSp"}} {{cprShowUpgrade item "headSp"}}
+      </div>
+      <div class="item flexrow setting-value text-nowrap item-end">
+        <input class="armor-head-sp" data-item-id="{{item.id}}" name="system.headLocation.sp" type="number" value="{{item.system.headLocation.sp}}"/>
+      </div>
+    </li>
+    <li class="item flexrow">
+      <div class="item flexrow setting-name text-nowrap">
+        {{localize "CPR.global.location.head"}} {{localize "CPR.global.itemTypes.armor"}} {{localize
+        "CPR.itemSheet.armor.ablation"}}
+      </div>
+      <div class="item flexrow setting-value text-nowrap item-end">
+        <input class="armor-head-ablation" data-item-id="{{item.id}}"  name="system.headLocation.ablation" type="number" value="{{item.system.headLocation.ablation}}"/>
+      </div>
+    </li>
+    <hr/>
+  {{/if}}
+  {{!-- Body Armor Settings--}}
+  <li class="item flexrow">
+    <div class="item flexrow setting-name text-nowrap">
+      {{localize "CPR.global.location.body"}} {{localize "CPR.global.itemTypes.armor"}}
+    </div>
+    <div class="item flexrow setting-value text-nowrap item-end">
+      {{#if item.system.isBodyLocation }}
+        <a class="item-checkbox" data-target="system.isBodyLocation"><i class="far fa-circle-check"></i></a>
+      {{else}}
+        <a class="item-checkbox" data-target="system.isBodyLocation"><i class="far fa-circle"></i></a>
+      {{/if}}
+    </div>
+  </li>
+  {{#if item.system.isBodyLocation }}
+    <hr/>
+    <li class="item flexrow">
+      <div class="item flexrow setting-name text-nowrap">
+        {{localize "CPR.itemSheet.armor.bodyArmorSp"}}  {{cprShowUpgrade item "bodySp"}}
+      </div>
+      <div class="item flexrow setting-value text-nowrap item-end">
+        <input class="armor-body-sp" data-item-id="{{item.id}}" name="system.bodyLocation.sp" type="number" value="{{item.system.bodyLocation.sp}}"/>
+      </div>
+    </li>
+    <li class="item flexrow">
+      <div class="item flexrow setting-name text-nowrap">
+        {{localize "CPR.global.location.body"}} {{localize "CPR.global.itemTypes.armor"}} {{localize "CPR.itemSheet.armor.ablation"}}
+      </div>
+      <div class="item flexrow setting-value text-nowrap item-end">
+        <input class="armor-body-ablation" data-item-id="{{item.id}}" name="system.bodyLocation.ablation" type="number" value="{{item.system.bodyLocation.ablation}}"/>
+      </div>
+    </li>
+  {{/if}}
+{{/if}}

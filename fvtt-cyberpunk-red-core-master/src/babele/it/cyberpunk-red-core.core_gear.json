@@ -1,0 +1,230 @@
+{
+  "label": "Equipaggiamento",
+  "mapping": {},
+  "entries": {
+    "Cyberdeck (Excellent)": {
+      "name": "Cyberdeck (Alta Qualità)",
+      "description": "<p>Piattaforma modulare per Netrunner. 9 slot.</p>"
+    },
+    "Cyberdeck (Poor)": {
+      "name": "Cyberdeck (Bassa Qualità)",
+      "description": "<p>Piattaforma modulare per Netrunner. 5 slot.</p>"
+    },
+    "Cyberdeck": {
+      "name": "Cyberdeck",
+      "description": "<p>Piattaforma Netrunner. 7 slot.</p>"
+    },
+    "Battleglove": {
+      "name": "Guanto da Battaglia",
+      "description": "<p>Un guanto pesante esotico, che copre la mano e l'avambraccio. Fornisce 3 slot di opzione da Cyberbraccio o Cyberarto. (Vedi pg. 347)</p>"
+    },
+    "Smart Glasses": {
+      "name": "Occhiali Intelligenti",
+      "description": "<p>Visore che include due Slot Opzioni da Cyberocchio.</p>"
+    },
+    "Agent": {
+      "name": "Agent",
+      "description": "<p>AI Smartphone. +2 a Archivistica e +2 a Guardaroba e Stile in certe situazioni.</p>"
+    },
+    "Airhypo": {
+      "name": "Aerodermica",
+      "description": "<p>Siringa ipodermica ad aria compressa.</p>"
+    },
+    "Anti-Smog Breathing Mask": {
+      "name": "Respiratore Anti-Smog",
+      "description": "<p>Filtro delle tossine trasportate dall'aria.</p>"
+    },
+    "Audio Recorder": {
+      "name": "Registratore Audio",
+      "description": "<p>Registra 24h di audio su un chip di memoria.</p>"
+    },
+    "Auto Level Dampening Ear Protectors": {
+      "name": "Protezione Auricolare Autolivellante",
+      "description": "<p>L'utente è immune ai suoni rumorosi.</p>"
+    },
+    "Binoculars": {
+      "name": "Binocolo",
+      "description": "<p>Utile per bersagli lontani. Ingrandimento: x2 o x3.</p>"
+    },
+    "Braindance Viewer": {
+      "name": "Visore Braindance",
+      "description": "<p>Dispositivo di visualizzazione Braindance.</p>"
+    },
+    "Bug Detector": {
+      "name": "Rilevatore di Cimici",
+      "description": "<p>Rileva dispositivi di ascolto. Raggio 2m.</p>"
+    },
+    "Carryall": {
+      "name": "Borsone",
+      "description": "<p>Borsa o zaino.</p>"
+    },
+    "Chemical Analyzer": {
+      "name": "Analizzatore Chimico",
+      "description": "<p>Determinare la composizione chimica usando un campione.</p>"
+    },
+    "Computer": {
+      "name": "Computer",
+      "description": "<p>Desktop o portatile.</p>"
+    },
+    "Cryopump": {
+      "name": "Criopompa",
+      "description": "<p>Questo dispositivo, grande come una valigetta, contiene una sacca per cadaveri e una potente pompa che con un'Azione riempie con un composto super-refrigerante, ponendo la persona in stasi. </p>"
+    },
+    "Cryotank": {
+      "name": "Crioserbatoio",
+      "description": "<p>Contenitore che può contenere un essere umano di dimensioni adulte, guarisce le lesioni più velocemente del normale e può mantenere il paziente in stasi quasi all'infinito. </p>"
+    },
+    "Disposable Cell Phone": {
+      "name": "Cellulare Usa-e-Getta",
+      "description": "<p>Solo chiamate vocali.</p>"
+    },
+    "Drum Synthesizer": {
+      "name": "Sintetizzatore di Percussioni",
+      "description": "<p>Percussioni elettroniche. Richiede una qualche forma di amplificazione.</p>"
+    },
+    "Duct Tape": {
+      "name": "Nastro Isolante",
+      "description": "<p>Usalo per nastrare roba ed essendo in vari colori e fosforescente, usato per segnalazioni, tunnel, casse, ecc...</p>"
+    },
+    "Electric Guitar/Other Instrument": {
+      "name": "Chitarra Elettrica/Altro Strumento",
+      "description": "<p>Strumento musicale. Gli strumenti elettrici richiedono un amplificatore.</p>"
+    },
+    "Flashlight": {
+      "name": "Torcia Elettrica",
+      "description": "<p>10 ore di luce su una singola carica. Cono di luce di 100m.</p>"
+    },
+    "Food Stick": {
+      "name": "Barretta Alimentare",
+      "description": "<p>Barra di granaglie secche che sostituisce un pasto.</p>"
+    },
+    "Glow Paint": {
+      "name": "Vernice Fosforescente",
+      "description": "<p>Vernice ad effetto luminoso in bombolette spray, usata per marcare luoghi importanti o per fare arte</p>"
+    },
+    "Glow Stick": {
+      "name": "Torcia Chimica",
+      "description": "<p>Barra luminescente che illumina un'area 4x4m per 10 ore. Monouso.</p>"
+    },
+    "Grapple Gun": {
+      "name": "Pistola con Rampino",
+      "description": "<p>Scaglia un rampino a reazione che si aggancia su qualsiasi copertura spessa entro il raggio di 30m. Non utilizzabile come arma.</p>"
+    },
+    "Handcuffs": {
+      "name": "Manette",
+      "description": "<p>FIS>10 può romperle facilmente.</p>"
+    },
+    "Homing Tracer": {
+      "name": "Localizzatore",
+      "description": "<p>Raggio: 1,6km.</p>"
+    },
+    "Inflatable Bed & Sleep-bag": {
+      "name": "Letto Gonfiabile e Sacco a Pelo",
+      "description": "<p>Un materassino autogonfiabile con un sottile sacco a pelo. Si può ridurre a un pacchetto da 15×15cm.</p>"
+    },
+    "Kibble Pack": {
+      "name": "Pacchetto di Kibble",
+      "description": "<p>Un pasto di cibo secco.</p>"
+    },
+    "Linear Frame β (Beta)": {
+      "name": "Telaio Lineare β (Beta)",
+      "description": "<p>Esoscheletro. Richiede 2 connettori di interfaccia. Aumenta il FIS a 14 mentre è collegato. Nessuna modifica ai tuoi PF o TS Morte. </p>"
+    },
+    "Linear Frame ∑ (Sigma)": {
+      "name": "Telaio Lineare ∑ (Sigma)",
+      "description": "<p>Esoscheletro. Richiede 1 connettore di interfaccia. Aumenta il FIS a 12 mentre è collegato. Nessuna modifica ai tuoi PF o TS Morte. </p>"
+    },
+    "Lock Picking Set": {
+      "name": "Set di Grimaldelli",
+      "description": "<p>Necessario per scassinare serrature meccaniche.</p>"
+    },
+    "Medscanner": {
+      "name": "Medscanner",
+      "description": "<p>alle Abilità Paramedico e Pronto Soccorso. Il bonus non è cumulativo.</p>"
+    },
+    "Medtech Bag": {
+      "name": "Borsa da Meditech",
+      "description": "<p>Apparecchiature mediche salvavita.</p>"
+    },
+    "Memory Chip": {
+      "name": "Chip di memoria",
+      "description": "<p>Archiviazione dati.</p>"
+    },
+    "MRE": {
+      "name": "Razione Militare",
+      "description": "<p>Pasto portatile autoriscaldante. Aggiungere acqua ed è pronto in 2 minuti.</p>"
+    },
+    "Personal CarePak": {
+      "name": "CarePak Personale",
+      "description": "<p>Spazzolino ecc.</p>"
+    },
+    "Pocket Amplifier": {
+      "name": "Amplificatore Tascabile",
+      "description": "<p>Ricaricabile, grande quanto un portatile, udibile fino a 100m. Durata batterie: 6 ore. Supporta due strumenti.</p>"
+    },
+    "Radar Detector": {
+      "name": "Rivelatore Radar",
+      "description": "<p>Rileva il segnale radar. Raggio: 100m</p>"
+    },
+    "Radiation Suit": {
+      "name": "Tuta Antiradiazioni",
+      "description": "<p>Protegge chi lo indossa dalle radiazioni.</p>"
+    },
+    "Radio Communicator": {
+      "name": "Comunicatore Radio",
+      "description": "<p>Raggio: 1,6km. Auricolare.</p>"
+    },
+    "Radio Scanner/Music Player": {
+      "name": "Radio/Lettore Musicale",
+      "description": "<p>Ricevi trasmissioni radio entro un raggio di 1,6 km.</p>"
+    },
+    "Road Flare": {
+      "name": "Bengala",
+      "description": "<p>Area: 100x100m. Durata: 1 ora.</p>"
+    },
+    "Rope (60m/yd)": {
+      "name": "Corda (60m)",
+      "description": "<p>Nylon.</p>"
+    },
+    "Scrambler/Descrambler": {
+      "name": "Codificatore/Decodificatore",
+      "description": "<p>Codificatore/Decodificatore</p>"
+    },
+    "Tech Bag": {
+      "name": "Borsa da Tecnico",
+      "description": "<p>Una piccola cassetta degli attrezzi per riparazioni meccaniche ed elettroniche. Include un Tecnoattrezzo, parti elettriche, come cavi e crimpaggi, viti e dadi, moduli plug-in per riparazioni, torcia termica, due piccoli piedi di porco e un martello .</p>"
+    },
+    "Techscanner": {
+      "name": "Tecnoscanner",
+      "description": "<p>+2 a più abilità basate su TEC.</p>"
+    },
+    "Techtool": {
+      "name": "Tecnoattrezzo",
+      "description": "<p>Un attrezzo tutto in uno. Include un piccolo coltello da lavoro, pinze, cacciaviti di diverso tipo, lime e forbici in uno  strumento compatto e facile da trasportare.</p>"
+    },
+    "Tent and Camping Equipment": {
+      "name": "Tenda ed Equipaggiamento da Campeggio",
+      "description": "<p>Tenda per una persona e una pentola autoriscaldante.</p>"
+    },
+    "Tracer Button": {
+      "name": "Tracciatore",
+      "description": "<p>Può essere rintracciato fino a 1,6km di distanza con un Localizzatore.</p>"
+    },
+    "Vial of Biotoxin": {
+      "name": "Fiala di Biotossina",
+      "description": "<p>Una fiala di biotossina può essere applicata su un’Arma da Mischia Leggera usando un’Azione. Per i 30 minuti seguenti, l’arma non infligge il normale danno, ma costringe chi viene colpito a effettuare una Prova di Resistere a Tortura/Droghe VD 15. Se fallisce, subisce 3d6 danni diretti ai PF. L’armatura non viene ablata, poiché non viene influenzata.</p>"
+    },
+    "Vial of Poison": {
+      "name": "Fiala di Veleno",
+      "description": "<p>Una fiala di veleno può essere applicata su un’Arma da Mischia Leggera usando un’Azione. Per i 30 minuti seguenti, l’arma non infligge il normale danno, ma costringe chi viene colpito a effettuare una Prova di Resistere a Tortura/Droghe VD 13. Se fallisce, subisce 3d6 danni diretti ai PF. L’armatura non viene ablata, poiché non viene influenzata.</p>"
+    },
+    "Video Camera": {
+      "name": "Videocamera",
+      "description": "<p>12hr per chip di memoria.</p>"
+    },
+    "Virtuality Goggles": {
+      "name": "Visore Virtuality",
+      "description": "<p>Un visore che proietta il cyberspazio in sovrimpressione.</p>"
+    }
+  }
+}

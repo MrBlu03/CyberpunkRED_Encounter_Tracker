@@ -1,0 +1,57 @@
+{
+  "label": "Ennemis endurcis",
+  "mapping": {},
+  "entries": {
+    "Hardened Lieutenant Tactics": {
+      "name": "Tactiques des lieutenants endurcis",
+      "results": [
+        {
+          "1-1": "Le lieutenant et ses alliés tendent une embuscade au groupe (CP:R page 399).",
+          "2-2": "Le lieutenant agrippe un bouclier humain (CP:R page 184).",
+          "3-3": "Le lieutenant ordonne à ses alliés de se concentrer sur un·e joueur·euse en particulier.",
+          "4-4": "Le lieutenant ordonne à ses alliés de charger sauvagement sur le groupe.",
+          "5-5": "Le lieutenant est dans une position facilement défendable, faisant usage du couvert.",
+          "6-6": "Le lieutenant a ses bases de compétences de Premier secours et d'Assistance médicale à 14 chacune.",
+          "7-7": "Le lieutenant a modifié une grenade perforante (CP:R page 345) comme piège avant le combat, quelque part sur le champ. La remarquer nécessite un jet de Perception SD 15. La désarmer requiert un jet de Démolition SD9. La grenade explose si n'importe quel personnage se déplace dans le carré dans lequel elle est cachée.",
+          "8-8": "Le lieutenant a fait des recherches approfondies sur les capacités de combat du groupe.",
+          "9-9": "Le lieutenant a PRES 6, une réputation de 2, et initie une Baston de regard (CP:R page 194), soit avant que le combat ne commence ou bien à son tout début.",
+          "10-10": "Le lieutenant a sa base de compétence de Tactique à 16 et est au commandement."
+        }
+      ]
+    },
+    "Hardened Mini Boss Mini Promotion": {
+      "name": "Mini Promotion des Mini Boss Endurcis",
+      "results": [
+        {
+          "1-1": "Augmente une de ses bases de compétences qui est au-dessus de 10 à 17.",
+          "2-2": "Augmente ses PS de 10.",
+          "3-3": "Lui donne Travail d'équipe 3 (voir CP:R page 153), et lui donne un équipier de votre choix.",
+          "4-4": "Le Mini-boss est équipé d'une tenue pare-balles moyenne qui a été améliorée, supprimant la pénalité d'armure.",
+          "5-5": "Le Mini-boss aura 600 ed de cyberimplants supplémentaire.",
+          "6-6": "Le Mini-boss a une réputation de 5.",
+          "7-7": "Donnez lui une Grenade IEM (voir CP:R page 345) et une base de compétence d'Athlétisme à 16.",
+          "8-8": "Lui donne soir une dose de Dentelle Noire (voir CP:R page 357) ou de Synthécoke (voir CP:R page 358) avant que le combat ne commence.",
+          "9-9": "Augmentez son MOUV à 8 ou augmentez sa base de compétence d'Esquive à 18.",
+          "10-10": "Lui donne des branchies (voir CP:R page 363) et du Bodysculpting exotique (voir CP:R page 226). Requin ? Arowana ? Vous choisissez."
+        }
+      ]
+    },
+    "Mook Encounter Complication": {
+      "name": "Complications de rencontre d'un sbire",
+      "results": [
+        {
+          "1-1": "Un sbire tire des munitions incendiaires (CP:R page 346), mais n'a que 10 balles.",
+          "2-2": "Ajoutez 2 sbires supplémentaires à la rencontre au début du 2e round.",
+          "3-3": "Deux sbires subissent actuellement l'effet principal de la Dentelle noire (CP:R page 227).",
+          "4-4": "Un sbire a une grenade perforante (CP:R page 345) et une base de compétence d'Athlétisme à 12.",
+          "5-5": "Un sbire porte une armure pare-balle lourde (PA 13) pour son corps. Augmentez ses REF, DEX et MOUV de 2 (avant de calculer la pénalité d'armure).",
+          "6-6": "Les sbires sont inhabituellement organisés. Un sbire à sa base de compétence Tactique à 13, et une grenade fumigène (CP:R page 347).",
+          "7-7": "Ajoutez un sbire supplémentaire d'un type différent lors de la rencontre.",
+          "8-8": "Ajoutez 2 sbires à la rencontre. Ils auront toutefois une Blessure Critique à la tête chacun.",
+          "9-9": "Ajoutez 1 sbire supplémentaire à la rencontre au début des rounds 2, 3 et 4.",
+          "10-10": "Un sbire a un pistolet-mitrailleur, aucun sens de l'auto-préservation, une base de compétence de Tir automatique de\n16 et ne porte pas d'armure de tête."
+        }
+      ]
+    }
+  }
+}

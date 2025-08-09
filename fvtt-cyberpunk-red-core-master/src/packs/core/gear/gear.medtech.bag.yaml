@@ -1,0 +1,33 @@
+_id: klPfcM59dHl4lvWS
+_key: "!items!klPfcM59dHl4lvWS"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/gear/medtech_bag.svg
+name: Medtech Bag
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>Medical equipment.</p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: false
+  price:
+    market: 100
+  providesHardening: false
+  revealed: true
+  source:
+    book: Core
+    page: 354
+  usage: toggled
+type: gear

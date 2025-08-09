@@ -1,0 +1,84 @@
+{{!-- Upgrade Installed Setting --}}
+{{!-- Cyberware's upgrade slots is dictated by the number of option slots it has --}}
+{{#if (cprCompare item.type "==" "cyberware") }}
+  {{#unless item.system.isFoundational}}
+  <li class="item flexrow">
+    <div class="item flexrow setting-name text-nowrap">
+      {{localize "CPR.global.generic.slots"}}
+    </div>
+    <div class="item flexrow setting-value text-nowrap item-end">
+      {{#if this.editable }}
+        <input name="system.installedItems.slots" type="number" value="{{item.system.installedItems.slots}}"/>
+      {{else}}
+        <span class="text-flex-end">{{item.system.installedItems.slots}}</span>
+      {{/if}}
+    </div>
+  </li>
+{{/unless}}
+{{else}}
+<li class="item flexrow">
+  <div class="item flexrow setting-name text-nowrap">
+    {{localize "CPR.global.generic.slots"}}
+  </div>
+  <div class="item flexrow setting-value text-nowrap item-end">
+    {{#if this.editable }}
+      <input name="system.installedItems.slots" type="number" value="{{item.system.installedItems.slots}}"/>
+    {{else}}
+      <span class="text-flex-end">{{item.system.installedItems.slots}}</span>
+    {{/if}}
+  </div>
+</li>
+{{/if}}
+{{!-- listing out installed upgrades --}}
+{{#if (cprCompare item.type "===" "weapon") }}
+  <li class="item flexrow">
+    <div class="item flexrow setting-name text-nowrap text-padding-left-smaller">
+      ({{localize "CPR.itemSheet.itemUpgrade.unusedSlots"}}: {{cprMath "subtract" (cprApplyUpgrade item item.system.installedItems.slots "slots") item.system.installedItems.usedSlots}})
+    </div>
+  </li>
+{{/if}}
+<li class="item flexrow">
+  <div class="item flexrow setting-name text-nowrap">
+    {{#if this.editable }}
+      <a class="manage-installed-upgrades"
+         data-item-prop="manage-installed-upgrades">
+      {{/if}}
+      <span class="text-semi">
+        {{localize "CPR.itemSheet.common.itemUpgrades"}}
+        {{#if (cprCompare item.type "===" "weapon") }}
+          & {{localize "CPR.itemSheet.weapon.attachments"}}
+        {{/if}}
+      </span>
+        {{#if this.editable }}
+          <i class="text-smallest text-super fas fa-wrench"></i>
+        </a>
+        {{/if}}
+    </div>
+  <div class="item flexrow setting-value text-nowrap item-end"></div>
+</li>
+{{#if item.system.isUpgraded }}
+  <hr/>
+  {{#each item.system.installedUpgrades as |upgrade| }}
+    <li class="item flexrow" data-item-id="{{upgrade.id}}" draggable="false">
+      <div class="item-name flexrow setting-name text-nowrap">
+        {{#if this.editable }}
+          <a class="name item-view">{{upgrade.name}}</a>
+        {{else}}
+          <span class="text-flex-end">{{upgrade.name}}</span>
+        {{/if}}
+      </div>
+      <div class="item flexrow setting-value text-nowrap item-end">
+        {{localize "CPR.itemSheet.common.itemUpgradeSize"}}: {{upgrade.system.size}}
+      </div>
+      <div class="item flexrow setting-value text-nowrap item-end">
+        {{#if ../this.editable }}
+          <a class="uninstall-single-item" data-item-id="{{upgrade.id}}">
+            <i class="fas fa-arrow-right-from-bracket"
+               data-tooltip="{{localize "CPR.actorSheets.commonActions.removeUpgrade"}}"></i>
+          </a>
+        {{/if}}
+      </div>
+    </li>
+  {{/each}}
+  <hr/>
+{{/if}}

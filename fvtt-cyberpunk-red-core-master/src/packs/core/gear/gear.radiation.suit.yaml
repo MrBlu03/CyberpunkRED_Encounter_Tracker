@@ -1,0 +1,33 @@
+_id: 88mkKO3YUWfSOGoD
+_key: "!items!88mkKO3YUWfSOGoD"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/gear/radiation_suit.svg
+name: Radiation Suit
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>Protects the wearer from radiation.</p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: false
+  price:
+    market: 1000
+  providesHardening: false
+  revealed: true
+  source:
+    book: Core
+    page: 354
+  usage: toggled
+type: gear

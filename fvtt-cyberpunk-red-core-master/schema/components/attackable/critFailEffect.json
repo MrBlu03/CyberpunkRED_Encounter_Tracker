@@ -1,0 +1,5 @@
+{
+  "description": "Effect on a crit fail attack",
+  "type": "string",
+  "enum": ["destroyed", "destroyedBeyondRepair", "jammed", "coinToss"]
+}

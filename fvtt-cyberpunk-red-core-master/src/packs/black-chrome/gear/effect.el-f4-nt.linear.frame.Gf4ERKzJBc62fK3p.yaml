@@ -1,0 +1,31 @@
+_id: Gf4ERKzJBc62fK3p
+_key: "!items.effects!yK1OjwJXiEvjPnS5.Gf4ERKzJBc62fK3p"
+changes:
+  - key: system.stats.body.value
+    mode: 5
+    priority: null
+    value: "12"
+description: ""
+disabled: false
+duration:
+  combat: null
+  rounds: null
+  seconds: null
+  startRound: null
+  startTime: null
+  startTurn: null
+  turns: null
+flags:
+  cyberpunk-red-core:
+    changes:
+      cats:
+        "0": stat
+      situational:
+        "0":
+          isSituational: false
+          onByDefault: false
+icon: systems/cyberpunk-red-core/icons/compendium/default/default-linearframe.svg
+name: EL-F4-NT Linear Frame
+statuses: []
+tint: null
+transfer: true

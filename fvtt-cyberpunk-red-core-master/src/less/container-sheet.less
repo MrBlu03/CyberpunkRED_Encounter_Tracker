@@ -1,0 +1,119 @@
+.container-sheet {
+  font-family: "Jost";
+  display: grid;
+  grid-template-columns: 13.125rem auto;
+  grid-template-areas: "pane-left pane-right";
+  background-color: var(--cpr-background-border);
+  gap: 0.313rem;
+  padding: 0.313rem;
+
+  .fa-trash-can {
+    color: var(--cpr-text-icon-highlight);
+  }
+
+  .left-pane {
+    grid-area: pane-left;
+    display: grid;
+    grid-template-rows: 13.125rem 1.875rem 1.875rem 1.688rem auto;
+    grid-template-areas:
+      "image"
+      "name"
+      "settings"
+      "eurobucks"
+      "settingsgm";
+    gap: 0.313rem;
+
+    .image-block {
+      grid-area: image;
+      width: 13.125rem;
+      height: 13.125rem;
+      overflow: hidden;
+    }
+
+    .name-section {
+      grid-area: name;
+      background-color: var(--cpr-background-box);
+      padding: 0.125rem;
+      display: grid;
+      justify-content: center;
+      align-content: center;
+
+      input {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        text-justify: center;
+      }
+    }
+
+    .settings-section {
+      grid-area: settings;
+      background-color: var(--cpr-background-box);
+      padding: 0.125rem;
+
+      .trade-with-label {
+        display: flex;
+        align-items: center;
+      }
+
+      .trade-with-dropdown {
+        width: 6.563rem;
+      }
+    }
+
+    .settings-gm-section {
+      grid-area: settingsgm;
+      background-color: var(--cpr-background-box);
+      padding: 0.125rem;
+
+      .container-type-label {
+        display: flex;
+        align-items: center;
+      }
+
+      .container-type-dropdown {
+        width: 9.375rem;
+        float: right;
+      }
+
+      .eurobucks-modify-reason-label {
+        max-width: fit-content;
+      }
+
+      .container-type-settings {
+      }
+
+      .container-shop-settings {
+      }
+
+      .container-eurobucks-ledger {
+      }
+    }
+
+    .eurobucks-section {
+      grid-area: eurobucks;
+      height: 1.688rem;
+      background-color: var(--cpr-background-box);
+      padding: 0.313rem;
+
+      .eurobucks-label {
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+
+  .right-pane {
+    grid-area: pane-right;
+    background-color: var(--cpr-background-box);
+
+    display: flex;
+    height: auto;
+
+    .right-content {
+      min-width: 46.875rem;
+      width: 100%;
+      overflow-y: scroll;
+    }
+  }
+}

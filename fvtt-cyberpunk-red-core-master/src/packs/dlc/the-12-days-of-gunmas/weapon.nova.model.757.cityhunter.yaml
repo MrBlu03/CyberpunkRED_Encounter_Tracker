@@ -1,0 +1,55 @@
+_id: qL9B85FSo6cYhTBL
+_key: "!items!qL9B85FSo6cYhTBL"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/weapons/heavyPistol.svg
+name: Nova Model 757 Cityhunter
+system:
+  ammoVariety:
+    - custom
+  attackmod: 0
+  brand: Nova Arms
+  concealable:
+    concealable: true
+    isConcealed: false
+  critFailEffect: jammed
+  damage: 3d6
+  description:
+    value: >
+      <p>
+        This pistol fires it's own custom rounds bought in packs of 18, though they
+        cost the same as a pack of 10. Comes with a Smartgun Link*.
+      </p>
+
+      <p><em>*Smartgun Link must be manually added after acquiring the
+      weapon</em></p>
+  dvTable: DV Pistol
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 1
+  installedItems:
+    allowed: true
+    allowedTypes: []
+    list: []
+    slots: 2
+    usedSlots: 0
+  isRanged: true
+  magazine:
+    max: 18
+    value: 0
+  price:
+    market: 1000
+  quality: standard
+  revealed: true
+  rof: 2
+  source:
+    book: 12DoG
+    page: 5
+  unarmedAutomaticCalculation: true
+  usage: equipped
+  usesType: magazine
+  weaponSkill: Handgun
+  weaponType: heavyPistol
+type: weapon

@@ -1,0 +1,35 @@
+_id: us01uD7Iko8X91G8
+_key: "!items!us01uD7Iko8X91G8"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/default/cyberdeck.svg
+name: Hummingbird
+system:
+  brand: Raven Microcybernetics
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>No frills, just raw processing power.</p>
+      <p>2 slots only for Hardware</p>
+      <p>+1 to NET Actions each turn.</p>
+  equipped: owned
+  favorite: false
+  installLocation: mall
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 2
+    usedSlots: 0
+  isElectronic: true
+  price:
+    market: 1000
+  providesHardening: false
+  quality: standard
+  size: 1
+  source:
+    book: MwtU
+    page: 3
+type: cyberdeck

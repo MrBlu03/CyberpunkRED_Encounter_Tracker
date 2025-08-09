@@ -1,0 +1,33 @@
+_id: YBkdTQgnZDOhRq90
+_key: "!items!YBkdTQgnZDOhRq90"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/gear/kibble.svg
+name: Kibble Pack
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>One meal.</p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: false
+  price:
+    market: 10
+  providesHardening: false
+  revealed: true
+  source:
+    book: Core
+    page: 354
+  usage: toggled
+type: gear

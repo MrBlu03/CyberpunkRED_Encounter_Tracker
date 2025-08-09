@@ -1,0 +1,26 @@
+{
+  "label": "Elflines Online le jeu de cartes à collectionner",
+  "mapping": {
+    "dvTable": "system.tableSD"
+  },
+  "entries": {
+    "Elflines Online Playing Cards": {
+      "name": "Cartes de jeu Elflines Online",
+      "description": "<p>Cartes destinées à être utilisées dans le cadre du jeu de cartes à collectionner Elfines Online.</p>\n"
+    },
+    "Duel Caster": {
+      "name": "Duel Caster",
+      "description": "<p>Un boîtier en plastique et un lanceur de cartes pour les cartes ELO. 3 ATT/tour si c'est la seule arme que vous utilisez sur votre tour. Peut également être chargé avec des cartes de jeu normales mais rend l'arme de mauvaise qualité.</p>",
+      "dvTable": "SD Pistolet"
+    },
+    "Scarlet Blackbow": {
+      "name": "Scarlet Blackbow",
+      "description": "<p>Un arc revisité qui doit être rechargé après chaque attaque. Si vous lancez 1 lors de l'attaque (échec critique), l'arc est détruit. Il est livré avec un carquois et 6 flèches en caoutchouc.</p>",
+      "dvTable": "SD Arcs et arbalètes"
+    },
+    "Sword of Arvish": {
+      "name": "Épée d'Arvish",
+      "description": "<p>Une épée. Si vous lancez 1 en attaque (échec critique) l'arme inflige la Blessure critique Doigts écrasés au porteur.</p>"
+    }
+  }
+}

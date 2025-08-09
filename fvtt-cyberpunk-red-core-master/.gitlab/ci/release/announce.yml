@@ -1,0 +1,25 @@
+# Announces a new release via Discord
+#
+# Does not work atm
+
+announce:
+  stage: post-release
+  before_script:
+    - apt-get update
+    - apt-get install curl jq -y
+  script:
+    # This doesn't work atm, just run /bin/true for now
+    - /bin/true
+    #- npm run build
+    #- ./.gitlab/pipeline_utils/discord-release.sh
+  needs:
+    - job: init
+      artifacts: true
+    - job: build-artifacts
+    - job: publish
+  rules:
+    # Don't run if we're in the cleanup-dev schedule
+    - if: $CPR_SCHEDULE == "cleanup-dev"
+      when: never
+    # Run on git tag
+    - if: $CI_COMMIT_TAG

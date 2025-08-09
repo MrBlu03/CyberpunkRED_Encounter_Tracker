@@ -1,0 +1,12 @@
+_id: xkhT1oZHM1csCCb0
+_key: "!tables.results!McQc33tLYAp7djIV.xkhT1oZHM1csCCb0"
+documentCollection: cyberpunk-red-core.black-chrome_weapons
+documentId: MVZoOzbbPrkBkj53
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/weapons/CombatKnife.svg
+range:
+  - 6
+  - 6
+text: White Hornet Tanto
+type: 2
+weight: 1

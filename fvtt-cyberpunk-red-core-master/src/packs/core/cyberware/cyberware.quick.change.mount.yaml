@@ -1,0 +1,59 @@
+_id: 1GPXBuKIodbM3O0I
+_key: "!items!1GPXBuKIodbM3O0I"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/cyberware/quick_change_mount.svg
+name: Quick Change Mount
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  core: false
+  damage: 1d6
+  description:
+    value: |
+      <p>
+        Your cyberarm can be detached and re-attached (and swapped) using your open
+        socket. Keep an arm for every occasion.
+      </p>
+  dvTable: ""
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  humanityLoss:
+    roll: 2d6
+    static: 7
+  installLocation: clinic
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: true
+  isFoundational: false
+  isRanged: false
+  isWeapon: false
+  magazine:
+    max: 0
+    value: 0
+  price:
+    market: 100
+  providesHardening: false
+  revealed: true
+  rof: 1
+  size: 1
+  source:
+    book: Core
+    page: 365
+  type: cyberArm
+  unarmedAutomaticCalculation: true
+  usage: toggled
+  usesType: magazine
+  weaponSkill: Archery
+  weaponType: assaultRifle
+type: cyberware

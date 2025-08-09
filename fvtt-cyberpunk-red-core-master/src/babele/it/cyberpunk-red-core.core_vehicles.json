@@ -1,0 +1,62 @@
+{
+  "label": "Veicoli",
+  "mapping": {},
+  "entries": {
+    "Aerozep": {
+      "name": "Aerozep",
+      "description": "<p>Un moderno dirigibile cargo. Richiede un minimo di due cabine personalizzate. </p>"
+    },
+    "AV-4 Multipurpose Aerodyne": {
+      "name": "AV-4 Aerodyne Multiruolo",
+      "description": "<p>Un velivolo multiuso in grado di inserirsi rapidamente grazie a propulsori verticali. Utilizzato comunemente dai Trauma Team. </p>"
+    },
+    "AV-9 Super Aerodyne": {
+      "name": "AV-9 Super-Aerodyne",
+      "description": "<p>Un AV piccolo ma altamente avanzato con posti limitati. Puoi viaggiare fino a 483 km/h. </p>"
+    },
+    "Cabin Cruiser": {
+      "name": "Cabinato",
+      "description": "<p>Un motoscafo lussuoso molto veloce. Richiede un minimo di due per cabina per pochi personalizzata. </p>"
+    },
+    "Compact Groundcar": {
+      "name": "Utilitaria",
+      "description": "<p>Una macchina normale alimentata da CHOOH2. Molto comune con alcune decine di produttori che offrono modelli simili. </p>"
+    },
+    "Gyrocopter": {
+      "name": "Girocottero",
+      "description": "<p>Un piccolo elicottero a CHOOH2 popolare tra gli hobbisti. </p>"
+    },
+    "Helicopter": {
+      "name": "Elicottero",
+      "description": "<p>Un elicottero a CHOOH2 con quattro posti capace di alte velocità e voli lunghi. </p>"
+    },
+    "High Performance Groundcar": {
+      "name": "Auto Sportiva",
+      "description": "<p>Un'Auto sportiva a CHOOH2 creata per le prestazioni sportive. </p>"
+    },
+    "Jetski": {
+      "name": "Moto d'Acqua",
+      "description": "<p>Una comune moto d'acqua alimentata a CHOOH2 che può ospitare due persone. </p>"
+    },
+    "Roadbike": {
+      "name": "Motocicletta",
+      "description": "<p>Una moto comune a CHOOH2 avvistata durante il periodo del Rosso.</p>"
+    },
+    "Speedboat": {
+      "name": "Motoscafo",
+      "description": "<p>Un veloce motoscafo a CHOOH2. </p>"
+    },
+    "Super Groundcar": {
+      "name": "Superauto",
+      "description": "<p>Un'auto sportiva costosa ed esotica a CHOOH2. È capace di velocità molto elevate. </p>"
+    },
+    "Superbike": {
+      "name": "Supermoto",
+      "description": "<p>Una versione migliorata di una moto, capace di velocità molto elevate. </p>"
+    },
+    "Yacht": {
+      "name": "Yacht",
+      "description": "<p>Un motoscafo di lusso con ambienti per il divertimento e per i tuoi amici. Richiede un minimo di 4 per cabina. </p>"
+    }
+  }
+}

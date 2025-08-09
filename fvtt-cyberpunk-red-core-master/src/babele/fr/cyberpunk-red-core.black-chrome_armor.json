@@ -1,0 +1,98 @@
+{
+  "label": "Armure",
+  "mapping": {},
+  "entries": {
+    "Corporate Island": {
+      "name": "Corporatiste sous les tropiques",
+      "description": "<p>Tenue pare-balles légère qui ressemble à des vêtements Cadre sup.</p>\n"
+    },
+    "Dirk Combat Jacket": {
+      "name": "Veste de combat Surineuse",
+      "description": "<p>Tenue pare-balle légère de style Décontracté avec la possibilité de cacher deux chargeurs standards sans jet de compétence.</p>\n"
+    },
+    "Executive Armor": {
+      "name": "Armure corporatiste",
+      "description": "<p>Tenue pare-balle légère qui ressemble à un vêtement Cadre sup. Restaure 1PA par jour où l'armure ne perd pas de PA.</p>\n"
+    },
+    "Fire Brand Bunker Gear": {
+      "name": "Tenue de protection ignifugée Fire Brand",
+      "description": "<p>Armure type Flak ignifugée, avec un masque à gaz intégré et 30 minutes d'oxygène dans un réservoir qui se recharge en une heure. -4 en REF, DEX et MOUV.</p>\n"
+    },
+    "Laser Light Street Jacket": {
+      "name": "Veste urbaine Laser Light",
+      "description": "<p>Tenue pare-balles légère de style Urbain Flash qui compte comme un tatouage lumineux quand elle est portée.</p>\n"
+    },
+    "Lotos Netsuit": {
+      "name": "Combinaison CitiNet Lotos",
+      "description": "<p>Une combinaison connectée offrant un emplacement matériel supplémentaire de cyberconsole installé directement à l'intérieur. Désinstallé si la combinaison est retirée. Livrée avec une cyberconsole de qualité excellente*. -2 au REF, DEX et MOUV.</p>\n<p><em>*Doit être ajoutée manuellement après l'acquisition de l'armure</em></p>\n"
+    },
+    "Masetto AirRider": {
+      "name": "AirRider Masetto",
+      "description": "<p>\n  Armure de corps en kevlar qui ignore la blessure critique Coup du lapin due à un accident de voiture tant que le réservoir de CO<sub>2</sub> de l'armure est plein*.\n</p>\n<p><em>*Doit être ajouté manuellement après l'acquisition de l'armure.</em></p>\n"
+    },
+    "MechaMan Motorcycle Helmet": {
+      "name": "Casque de moto MechaMan",
+      "description": "<p>Un casque de moto en kevlar avec lunettes connectées intégrées fournies avec Bandeau et Faible luminosité / IR / UV préinstallé*.</p>\n<p><em>*Les lunettes connectées et les options associées doivent être ajoutées manuellement et installées après avoir acquis l'armure.</em></p>\n"
+    },
+    "Mimic Clothing (Asia Pop)": {
+      "name": "Kit de blindage de vêtements (Pop asiatique)",
+      "description": "<p>Tenue pare-balles légère faite à partir d'un Kit de blindage de vêtements \"Pop asiatique\".</p>\n"
+    },
+    "Mimic Clothing (Bag Lady Chic)": {
+      "name": "Kit de blindage de vêtements (Vagabond)",
+      "description": "<p>Tenue pare-balles légère faite à partir d'un Kit de blindage de vêtements \"Vagabond\".</p>\n"
+    },
+    "Mimic Clothing (Bohemian)": {
+      "name": "Kit de blindage de vêtements (Bohème)",
+      "description": "<p>Tenue pare-balles légère faite à partir d'un Kit de blindage de vêtements \"Bohème\".</p>\n"
+    },
+    "Mimic Clothing (Businesswear)": {
+      "name": "Kit de blindage de vêtements (Cadre sup)",
+      "description": "<p>Tenue pare-balles légère faite à partir d'un Kit de blindage de vêtements \"Cadre sup\".</p>\n"
+    },
+    "Mimic Clothing (Gang Colors)": {
+      "name": "Kit de blindage de vêtements (Couleurs du gang)",
+      "description": "<p>Tenue pare-balles légère faite à partir d'un Kit de blindage de vêtements \"Couleurs du gang\".</p>\n"
+    },
+    "Mimic Clothing (Generic Chic)": {
+      "name": "Kit de blindage de vêtements (Générique)",
+      "description": "<p>Tenue pare-balles légère faite à partir d'un Kit de blindage de vêtements \"Générique\".</p>\n"
+    },
+    "Mimic Clothing (High Fashion)": {
+      "name": "Kit de blindage de vêtements (Haute couture)",
+      "description": "<p>Tenue pare-balles légère faite à partir d'un Kit de blindage de vêtements \"Haute couture\".</p>\n"
+    },
+    "Mimic Clothing (Leisurewear)": {
+      "name": "Kit de blindage de vêtements (Décontracté)",
+      "description": "<p>Tenue pare-balles légère faite à partir d'un Kit de blindage de vêtements \"Décontracté\".</p>\n"
+    },
+    "Mimic Clothing (Nomad Leathers)": {
+      "name": "Kit de blindage de vêtements (Âme nomade)",
+      "description": "<p>Tenue pare-balles légère faite à partir d'un Kit de blindage de vêtements \"Âme nomade\".</p>\n"
+    },
+    "Mimic Clothing (Urban Flash)": {
+      "name": "Kit de blindage de vêtements (Urbain flash)",
+      "description": "<p>Tenue pare-balles légère faite à partir d'un Kit de blindage de vêtements \"Urbain flash\".</p>\n"
+    },
+    "Montage Variable Clothing Line": {
+      "name": "Ligne de vêtements variables Montage",
+      "description": "<p>Tenue pare-balles légère qui peut changer entre les styles \"Générique\" et \"Couleurs du gang\" en une action avec une palette achetée (20eb par couleur/modèle) et installée sur un Agent. Fourni avec une couleur ou un modèle au choix.</p>\n"
+    },
+    "Shock Armor": {
+      "name": "Armure taser",
+      "description": "<p>Une armure de Kevlar qui foudroie toute personne qui vous saisit.</p>\n"
+    },
+    "Skid Row Trench": {
+      "name": "Trench-coat SkidRow",
+      "description": "<p>Armure de corps type Flak qui ressemble à un trench-coat en échange d'une protection réduite. -4 en REF, DEX et MOUV.</p>\n"
+    },
+    "Street Viper Riding Suit": {
+      "name": "Combinaison de moto Street Viper",
+      "description": "<p>Armure de corps en kevlar qui est livrée avec deux armes de mêlée intermédiaires préinstallées* toujours considérées comme sorties tant que l'armure est portée.</p>\n<p><em>*Doivent être ajoutés manuellement après l'acquisition de l'armure.</em></p>\n"
+    },
+    "Tactical Smart Armor": {
+      "name": "Armure tactique intelligente",
+      "description": "<p>Une tenue complète d'armure pare-balles moyenne avec des lunettes connectées intégrées*. -2 au REF, DEX et MOUV.</p>\n<p><em>*Les lunettes connectées doivent être ajoutées manuellement après l'acquisition de l'armure.</em></p>\n"
+    }
+  }
+}

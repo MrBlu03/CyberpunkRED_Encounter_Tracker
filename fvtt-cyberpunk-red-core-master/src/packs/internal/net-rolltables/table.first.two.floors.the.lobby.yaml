@@ -1,0 +1,17 @@
+_id: v3vCdxx4cB2cpQRz
+_key: "!tables!v3vCdxx4cB2cpQRz"
+description: >-
+  Table for rolling for the first two floors of a NET architecture, as detailed
+  on page 211.
+displayRoll: false
+formula: 1d6
+img: systems/cyberpunk-red-core/icons/compendium/default/Default_Dice.svg
+name: First Two Floors (The Lobby)
+replacement: true
+results:
+  - 4YivN2GxxMcEqbgg
+  - FpwuD8HqL7vOlAWa
+  - tYTXoUQbjehYaI3x
+  - LkWlmvoF1VzQGvjk
+  - nJbRxD9bzSS0gPje
+  - Lj9LliNyTtYbMUI1

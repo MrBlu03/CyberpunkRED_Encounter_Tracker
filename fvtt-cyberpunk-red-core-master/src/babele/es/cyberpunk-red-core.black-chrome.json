@@ -1,0 +1,761 @@
+{
+  "label": "Cromo Negro",
+  "entries": {
+    "Arachnid Grenade": {
+      "name": "Granada Arácnida",
+      "description": "<p>Una granada muy pegajosa, cuyos detalles se pueden encontrar en la página 86.</p>"
+    },
+    "Arasaka Acid": {
+      "name": "Ácido de Arasaka",
+      "description": "<p>Recubrimiento para la Katana \"Atracador Llorón\" de Arasaka.</p>"
+    },
+    "Arasaka Fire": {
+      "name": "Fuego de Arasaka",
+      "description": "<p>Recubrimiento para la Katana \"Atracador Llorón\" de Arasaka.</p>\n<p>Puede poner el objetivo en llamas, detalles de los cuales se pueden encontrar en la página 91.</p>"
+    },
+    "Arasaka Wound Salt": {
+      "name": "Sal de Herida de Arasaka",
+      "description": "<p>Recubrimiento para la Katana \"Atracador Llorón\" de Arasaka.</p>\n<p>Capaz de aplicar un segundo una segunda lesión crítica, cuyos detalles se pueden encontrar en la página 91.</p>"
+    },
+    "Doberman 500 Marking Scent": {
+      "name": "Doberman 500 Perfume Marcador",
+      "description": "<p>Tipo de munición especial para la Pistola del Aire. Para obtener más información, consulte la página del Cromo Negro 44.</p>"
+    },
+    "Net": {
+      "name": "Red",
+      "description": "<p>Red para el lanzador de redes que atrapa al objetivo al golpear. (Ver Cromo Negro Pg. 20-21 para más detalles)</p>"
+    },
+    "Rocks": {
+      "name": "Rocas",
+      "description": "<p>Munición para el Lanza-Rocas Nómada.</p>"
+    },
+    "Security Grenade": {
+      "name": "Granada de Seguridad",
+      "description": "<p>Granada perforadora de armadura que no daña la cobertura. Puede encontrar reglas completas en la página 89.</p>"
+    },
+    "Shuriken Tornado Grenade": {
+      "name": "Granada de Tornado de Shuriken",
+      "description": "<p>Una explosión literal de shurikens. Puede aplicar una segunda lesión crítica, detalles de los cuales se pueden encontrar en la página 87.</p>"
+    },
+    "AirRider": {
+      "name": "AirRider",
+      "description": "<p>Armadura corporal de Kevlar que ignora la herida crítica de Latigazo de los choques de los coches siempre y cuando el tanque de CO2 de la armadura esté lleno*. Consulte la descripción completa del artículo en el pg. 33.</p>\n<p><em>*Debe añadirse manualmente después de adquirir la armadura.</em></p>"
+    },
+    "Bunker Gear": {
+      "name": "Equipo de Bunker",
+      "description": "<p>Armadura antiincendios con una máscara de gas construida y 30 minutos de oxígeno en un tanque que se rellena después de una hora. -4 a REF, DES y MOV. Consulte la descripción completa del artículo en BC pg. 29.</p>"
+    },
+    "Corporate Island": {
+      "name": "Isla Corporativa",
+      "description": "<p>Armadura ligera que parece una Ropa de Negocios. Consulte la descripción completa del artículo en pg. 35.</p>"
+    },
+    "Dirk Combat Jacket": {
+      "name": "Chaqueta de Combate Dirk",
+      "description": "<p>Armadura corporal ligera con Estilo Informal y la capacidad de ocultar dos cargadores estándar sin un chequeo. Consulte la descripción completa del artículo en el pg. 28.</p>"
+    },
+    "Executive Armor": {
+      "name": "Armadura Ejecutiva",
+      "description": "<p>Armadura ligera que parece una Ropa de Negocios. Restaura 1CP cada día que no se pierda CP en la armadura. Consulte la descripción completa del artículo en BC pg. 34.</p>"
+    },
+    "Laser Light Street Jacket": {
+      "name": "Chaqueta callejera ligera Laser",
+      "description": "<p>Armadura ligera de Estilo Urbano que cuenta con un tatuaje luminoso mientras se usa. Consulte la descripción completa del objeto en el pg. 31.</p>"
+    },
+    "Lotos Netsuit": {
+      "name": "Traje de Red Lotos",
+      "description": "<p>Un traje de red que permite una ranura de hardware adicional de ciberterminal que está instalada directamente en el traje y que se desinstala si se quita el traje. Viene estándar con una Ciberterminal de Calidad Excelente*. -2 a REF, DES, y MOV. Consulte la descripción completa del artículo en BC pg. 31.</p>\n<p><em>*Debe ser añadido manualmente después de adquirir la armadura</em></p>"
+    },
+    "MechaMan Motorcycle Helmet": {
+      "name": "Casco de Motocicleta MechaMan",
+      "description": "<p>Un casco para motocicletas de Kevlar con vidrios inteligentes integrados que vienen con Chyron y Vision Nocturna / IR / UV preinstalado*. Consulte la descripción completa del artículo en BC pg. 37.</p>\n<p><em>*Los vidrios inteligentes y el ciberware asociado deben ser añadidos e instalados manualmente después de adquirir la armadura.</em></p>"
+    },
+    "Mimic Clothing (Asia Pop)": {
+      "name": "Ropa Mímica (Estilo Asia Pop)",
+      "description": "<p>Armadura Ligera fabricada con un Kit de Ropa Mímica y \"Estilo Asia Pop\". Consulte la descripción completa del objeto en la página 33.</p>"
+    },
+    "Mimic Clothing (Bag Lady Chic)": {
+      "name": "Ropa Mímica (Estilo Dama Chic)",
+      "description": "<p>Armadura ligera fabricada con un Kit de Ropa Mímica y Ropa \"Estilo Dama Chic\". Consulte la descripción completa del artículo en la página 33.</p>"
+    },
+    "Mimic Clothing (Bohemian)": {
+      "name": "Ropa Mímica (Estilo Bohemio)",
+      "description": "<p>Armadura Ligera hecha de un Kit de Ropa Mímica y Ropa \"Estilo Bohemio\". Consulte la descripción completa del objeto en la página 33.</p>"
+    },
+    "Mimic Clothing (Businesswear)": {
+      "name": "Ropa Mímica (Estilo Ropa de Negocios)",
+      "description": "<p>Armadura Ligera hecha de un Kit de Ropa Mímica y Ropa \"Estilo Ropa de Negocios\". Consulte la descripción completa del objeto en la página 33.</p>"
+    },
+    "Mimic Clothing (Gang Colors)": {
+      "name": "Ropa Mímica (Estilo Colores de Pandillas)",
+      "description": "<p>Armadura Ligera fabricada con un Kit de Ropa Mímica y \"Estilo Colores de Pandillas\". Consulte la descripción completa del objeto en la página 33.</p>"
+    },
+    "Mimic Clothing (Generic Chic)": {
+      "name": "Ropa Mímica (Estilo Chic Genérico)",
+      "description": "<p>Armadura ligera fabricada con un Kit de Ropa Mímica y Ropa \"Estilo Chic Genérico\". Consulte la descripción completa del artículo en la página 33.</p>"
+    },
+    "Mimic Clothing (High Fashion)": {
+      "name": "Ropa Mímica (Estilo Alta Moda)",
+      "description": "<p>Armadura Ligera hecha de un Kit de Ropa Mímica y Ropa \"Estilo Alta Moda\". Consulte la descripción completa del objeto en la página 33.</p>"
+    },
+    "Mimic Clothing (Leisurewear)": {
+      "name": "Ropa Mímica (Estilo Ropa Informal)",
+      "description": "<p>Armadura Ligera hecha de un Kit de Ropa Mímica y Ropa \"Estilo Ropa Informal\". Consulte la descripción completa del objeto en la página 33.</p>"
+    },
+    "Mimic Clothing (Nomad Leathers)": {
+      "name": "Ropa Mímica (Cueros Nomadas)",
+      "description": "<p>Armadura Ligera hecha de un Kit de Ropa Mímica y Ropa \"Cueros Nomadas\". Consulte la descripción completa del objeto en la página 33.</p>"
+    },
+    "Mimic Clothing (Urban Flash)": {
+      "name": "Ropa Mímica (Flash Urbano)",
+      "description": "<p>Armadura Ligera hecha de un Kit de Ropa Mímica y Ropa \"Flash Urbano\". Consulte la descripción completa del objeto en la página 33.</p>"
+    },
+    "Montage Variable Clothing Line": {
+      "name": "Línea de Ropa Variable de Montage",
+      "description": "<p>Armadura Ligera que puede cambiar entre los estilos \"Genérico Chic\" y \"Colores de Pandilla\" con una acción de una paleta comprada (20eb por color/patrón) e instalada en un agente. Viene con un color o patrón de elección. Consulte la descripción completa del artículo en pg. 32</p>"
+    },
+    "Shock Armor": {
+      "name": "Armadura Shock",
+      "description": "<p>Armadura de Kevlar que electrocuta a cualquiera que te esté agarrando. Consulta la descripción completa del objeto en la página 29.</p>"
+    },
+    "Skid Row Trench": {
+      "name": "Abrigo de Barrio Bajo",
+      "description": "<p>Armadura Corporal que parece un Abrigo de los Barrios Bajos a cambio de menos protección. -4 a REF, DES y MOV. Consulte la descripción completa del artículo en BC pg. 33.</p>"
+    },
+    "Street Viper Riding Suit": {
+      "name": "Traje de motociclista de Serpiente Callejera",
+      "description": "<p>Armadura Corporal de Kevlar que viene con dos armas medias preinstaladas* siempre consideradas equipadas mientras que la armadura esté equipada. Consulte la descripción completa del artículo en BC pg. 36.</p>\n<p><em>*Debe añadirse manualmente después de adquirir la armadura.</em></p>"
+    },
+    "Tactical Smart Armor": {
+      "name": "Armadura Táctica Inteligente",
+      "description": "<p>Un conjunto completo de armaduras medianas con gafas inteligentes integradas*. -2 a REF, DES, y MOV. Consulte la descripción completa del artículo en BC pg. 30.</p>\n<p><em>*Las Gafas Inteligentes deben ser añadidos manualmente después de adquirir la armadura.</em></p>"
+    },
+    "Holo-Wear": {
+      "name": "Holo-Vestido",
+      "description": "<p>Ropa holográfica que puede ser deshabilitada por explosiones de EMP por un minuto. Puede intercambiar estilos con una acción si se compra. Consulte la descripción completa del objeto en pg. 35.</p>"
+    },
+    "Airhypo Cyberfinger": {
+      "name": "Ciberdedo Airhypo",
+      "description": "<p>Ciberdedo que contiene un @UUID[Compendium.cyberpunk-red-core.gear.Th74cfC87RqEJKAb]{Airhypo}. Solo se puede instalar en dedo de una cibermano modular. (Ver Black Chrome pg. 24 para más detalles)</p>"
+    },
+    "Ballpoint Cyberfinger": {
+      "name": "Ciberdedo Birome",
+      "description": "<p>Ciberdedo con una birome. Solo se puede instalar en un dedo de una cibermano modular. (Vea la pg. 24 del Cromo Negro para más detalles)</p>"
+    },
+    "Budget Chipware Socket": {
+      "name": "Zócalo de Chips Implantado Barato",
+      "description": "<p>Un zócalo barato para una sola instalación de chipware. El daño a la cabeza envía el chipware instalado a 30 m/yds de distancia, potencialmente rompiéndolo (ver Black Chrome pg. 17 para más detalles).</p>"
+    },
+    "Bullet Storage Cyberfinger": {
+      "name": "Ciberdedo de Almacenamiento de Balas",
+      "description": "<p>Ciberdedo que se puede utilizar para ocultar dos rondas de munición de cualquier tipo. Solo se puede instalar en un dedo de una cibermano modular. (Ver Cromo Negro pg. 24 para más detalles)</p>"
+    },
+    "Dartgun Cyberfinger": {
+      "name": "Ciberdedo Lanzadardos",
+      "description": "<p>Ciberdedo oculto que contiene un @UUID[Compendium.cyberpunk-red-core.weapons.fSvkIl83Rsqd7O16]{Dartgun}. Solo se puede instalar en dedo de una cibermano modular. (Ver Cromo Negro pg. 24 para obtener más detalles)</p>"
+    },
+    "Discount Cyberaudio Suite": {
+      "name": "Ciberaudio Suite de Descuento",
+      "description": "<p>Interfaz barata y voluminosa para una mejora de audio. (ver Black Chrome pg. 17 para más detalles)</p>"
+    },
+    "Explicit Memory Stimulator": {
+      "name": "Estimulador de Memoria Explícita",
+      "description": "<p>Chipware. Mejora la memorización. +2 Concentración mientras está instalado. (Ver Cromo Negro pg. 18 para más detalles)</p>"
+    },
+    "Extra-Jointed Cyberarm Upgrade": {
+      "name": "Montura de Ciberbrazo Extra-Articulada",
+      "description": "<p>Mejora de articulación del ciberbrazo. +2 Contorsionista. (Ver Cromo Negro 18 para más detalles)</p>"
+    },
+    "Extra-Jointed Cyberleg Upgrade": {
+      "name": "Montura de Ciberpierna Extra-Articulada",
+      "description": "<p>Mejora de articulación de la ciberpierna. +2 Contorsionista. (Ver Cromo Negro 18 para más detalles)</p>"
+    },
+    "Flashbulb": {
+      "name": "Deslumbrante",
+      "description": "<p>Requiere ciberbrazo. El usuario puede intentar cegar a cualquier persona a menos de 25m/yds. (Ver Cromo Negro pg. 18 para más detalles)</p>"
+    },
+    "Flashlight Cyberfinger": {
+      "name": "Ciberdedo Linterna",
+      "description": "<p>Ciberdedo oculto que contiene un @UUID[Compendium.cyberpunk-red-core.gear.spgehgLv94vrH4Zo]{Flashlight}. Solo se puede instalar en dedo de una cibermano modular. (Ver Cromo Negro pg. 24 para obtener más detalles)</p>"
+    },
+    "Hardened Shielding (Borgware)": {
+      "name": "Escudo Endurecido (Borgware)",
+      "description": "<p>El Borgware para el que está instalado no se ve afectado por los efectos EMP. (ver Cromo Negro pg. 17 para más detalles.)</p>"
+    },
+    "Hardened Shielding (Cybereye)": {
+      "name": "Escudo Endurecido (Ciberóptico)",
+      "description": "<p>Las opciones de Ciberóptico e instalación no se ven afectadas por los efectos de EMP. (Ver Cromo Negro pg. 19 para más detalles)</p>"
+    },
+    "Hardened Shielding (Internal)": {
+      "name": "Escudo Endurecido (Interno)",
+      "description": "<p>Ciberware interno. Todo el ciberware interno no se ve afectado por los efectos EMP. (ver Cromo Negro pg. 20 para más detalles).</p>"
+    },
+    "Heuristic Health Monitor": {
+      "name": "Seguidor Heurístico de la Salud",
+      "description": "<p>Requiere Biomonitor. Puede conocer PV de un vistazo. (Vea el Cromo Negro 19 para más detalles)</p>"
+    },
+    "Homing Tracer Cyberfinger": {
+      "name": "Ciberdedo Rastreador",
+      "description": "<p>Ciberdedo que funciona como un @UUID[Compendium.cyberpunk-red-core.gear.QIHx5oQOirtTlAaD]{Homing Tracer}. Solo se puede instalar en dedo de una cibermano modular. (Ver Cromo Negro pg. 25 para obtener más detalles)</p>"
+    },
+    "Implanted Fūma Kotarō Linear Frame": {
+      "name": "Implante de Armazón Lineal Fūma Kotarō",
+      "description": "<ul>\n<li>Requiere 2 Conectores de Interface</li>\n<li>Aumenta TCO a 12 mientras estás enchufado</li>\n<li>No afecta a PV ni a Tirada de Salvacion</li>\n<li>Sigilo +2</li>\n</ul>\n<p>Viene con dos armas cuerpo a cuerpo pesadas exóticas de calidad excelente y una arma cuerpo a cuerpo ligera exótica de excelente calidad*.</p>\n<p>Consulte la página de Cromo Negro 52 para más detalles.</p>\n<p><em>* Debe ser añadido manualmente.</em></p>"
+    },
+    "Implanted LF-001 SWAT Linear Frame": {
+      "name": "Implante de Armazón Lineal LF-001 SWAT",
+      "description": "<p>Aumenta tu estadística TCO a 12 (ajustando tu PV y Nivel de Heridas y Salvación contra la muerte). Elimina la penalización de movimiento por la escalada y la natación. (Ver Cromo Negro pg. 53 para más detalles.)</p>"
+    },
+    "Implanted Vermilion Linear Frame": {
+      "name": "Implante de Armazón Lineal Bermellón",
+      "description": "<p>Aumenta tu estadística TCO a 12 (ajustando tu PV y Nivel de Heridas y Salvación contra la muerte). Elimina la penalización por salto a la vez que tu movimiento se incrementa a 6m/yds. mientras corres. (Ver Cromo Negro, pg. 54 para más detalles.)</p>"
+    },
+    "Integrated Cyberdeck Upgrade": {
+      "name": "Actualización de Ciberterminal Integrada",
+      "description": "<p>Requiere Ciberterminal (Cableada), añade una ranura extra a la ciberterminal (ver Cromo Negro, pg. 19 para más detalles)</p>"
+    },
+    "Laser Pointer Cyberfinger": {
+      "name": "Ciberdedo Puntero Láser",
+      "description": "<p>Ciberdedo con un puntero láser oculto. Solo se puede instalar en dedo de una cibermano modular. (Ver Cromo Negro, pg. 25 para más detalles)</p>"
+    },
+    "Lighter Cyberfinger": {
+      "name": "Ciberdedo Encendedor",
+      "description": "<p>Ciberdedo con un encendedor oculto. Solo se puede instalar en un dedo de una cibermano modular. (Ver Cromo Negro, pg. 25 para más detalles)</p>"
+    },
+    "Lockpick Cyberfinger": {
+      "name": "Ciberdedo Ganzúa",
+      "description": "<p>Ciberdedo que contiene un @UUID[Compendium.cyberpunk-red-core.gear.vlhGpguIMioeA8fe]{Lock Picking Set}. Solo se puede instalar en dedo de una cibermano modular. (Ver Cromo Negro, pg. 25 para más detalles)</p>"
+    },
+    "MechaMan Smart Glove": {
+      "name": "Guante Inteligente de MechaMan",
+      "description": "<p>Un guante de motocicleta que viene con una empuñadura subdérmica preinstalada* que requiere un enlace neuronal para usar. Tiene 1 ranura de opción de ciberbrazo. Consulte la descripción completa del artículo en Cromo Negro, pg. 37.<br><em>*La empuñadura subdérmica debe ser añadido e instalado manualmente después de adquirir el guante</em></p>"
+    },
+    "Microphone Cyberfinger": {
+      "name": "Ciberdedo Micrófono",
+      "description": "<p>Ciberdedo con un dispositivo de grabación oculto. Solo se puede instalar en un dedo de una cibermano modular. (Ver Cromo Negro, pg. 25 para más detalles)</p>"
+    },
+    "Mini Air Supply Cyberfinger": {
+      "name": "Ciberdedo con Mini Suministro de Aire",
+      "description": "<p>Ciberdedo con un tanque de aire integrado. Solo se puede instalar en un dedo de una cibermano modular. (Ver Cromo Negro, pg. 26 para más detalles)</p>"
+    },
+    "Modular Finger Cyberhand": {
+      "name": "Cibermano con Dedos Modulares",
+      "description": "<p>Requiere ciberbrazo. Viene con 5 ciberdedos*. (ver la pg. 20 del Cromo Negro para más detalles)</p>\n<p>*Los dedos deben ser añadidos después de la instalación</p>"
+    },
+    "Modular Finger Enthusiast Cyberhand": {
+      "name": "Cibermano de Entusiastas con Dedos Modulares",
+      "description": "<p>Borgware. Requiere ciberbrazo. Viene con 8 ciberdedos*. (ver Cromo Negro, pg. 18 para más detalles)</p>\n<p>*Los ciberdedos deben ser añadidos después de la instalación</p>"
+    },
+    "Neo-Soviet Cyberarm": {
+      "name": "Ciberbrazo Neo-Soviet",
+      "description": "<p>Un brazo de sustitución cibernético soviético. Viene con una mano preinstalada. -1 a las tiradas que requieran brazos sin TCO 8+. (Ver Cromo Negro, pg. 20 para más detalles)</p>"
+    },
+    "One Shot Special Cyberfinger": {
+      "name": "Ciberdedo Especial 1 Tiro",
+      "description": "<p>Ciberdedo oculto que contiene un @UUID[Compendium.cyberpunk-red-core.weapons.Y433cjlB1uVHPysk]{Heavy Pistol}. Solo se puede instalar en dedo de una cibermano modular. (Ver Cromo Negro, pg. 26 para obtener más detalles)</p>"
+    },
+    "Popup Net Launcher": {
+      "name": "Lanzador de Red Popup",
+      "description": "<p>Un lanzador de red exótico oculto. No puede contener nada con esta mano mientras está activado. (Ver páginas de Cromo Negro. 20-21 para más detalles)</p>"
+    },
+    "Popup Shotgun": {
+      "name": "Escopeta Popup",
+      "description": "<p>Una escopeta oculta. Viene con un enlace de arma inteligente preinstalado. No se puede sostener nada con esta mano mientras está activada. (Ver Cromo Negro, pg. 21 para más detalles)</p>"
+    },
+    "RacerBracer": {
+      "name": "CubreCorredor",
+      "description": "<p>Ciberimplante interno. Otorga inmunidad al Latigazo. (Ver Cromo Negro pg. 22 para más detalles)</p>"
+    },
+    "Reflex Co-Processor": {
+      "name": "Co-Procesador Reflex",
+      "description": "<p>Implante Neuronal. Niega el requisito de REF para esquivar balas. (Ver cromo negro pg. 21 para más detalles)</p>"
+    },
+    "Reinforced Cyberarm Upgrade": {
+      "name": "Mejora Reforzada de Ciberbrazo",
+      "description": "<p>Requiere ciberbrazo. El ciberbrazo en el que sea instalado no se puede romper. (Ver pg Cromo Negro 21-22 para más detalles)</p>"
+    },
+    "Reinforced Cyberleg Upgrade": {
+      "name": "Mejora Reforzada de Ciberpierna",
+      "description": "<p>Requiere ciberpierna. La ciberpierna en la que sea instalado no se puede romper. (Ver pg Cromo Negro 21-22 para más detalles)</p>"
+    },
+    "Sponsored Cybereye": {
+      "name": "Ciberojo Patrocinado",
+      "description": "<p>Un ojo de reemplazo. Chyron viene preinstalado*. El usuario al azar experimenta anuncios aleatorios. (Ver página de Chrome negro. 22 para más detalles)</p>\n<p>*Chyron debe ser añadido después de la instalación</p>"
+    },
+    "Spray Paint Cyberfinger": {
+      "name": "Ciberdedo de Pintura en Aerosol",
+      "description": "<p>El ciberdedo funciona como una lata de pintura en aerosol. Solo se puede instalar en un dedo de una cibermano modular. (Vea el Cromo Negro, pg. 26 para más detalles)</p>"
+    },
+    "Squirt Cyberfinger": {
+      "name": "Ciberdedo de Chorros",
+      "description": "<p>Ciberdedo que puede contener y rociar varios líquidos. Solo se puede instalar en un dedo de una cibermano modular. (Ver Cromo Negro, pg. 26 para más detalles)</p>"
+    },
+    "Standard Cyberfinger": {
+      "name": "Ciberdedo Estándar",
+      "description": "<p>Ciberdedo. Solo se puede instalar en una cibermano modular. (Ver Cromo Negro, pg. 26 para más detalles)</p>"
+    },
+    "Trauma Response Nanomatrix": {
+      "name": "Nanomatriz de Respuesta al Trauma",
+      "description": "<p>Puede reparar completamente el Blindaje Subcutáneo o Tejido Dérmico una vez al día. (Vea el cromo negro en la página 22 para más detalles.)</p>"
+    },
+    "Wirecutter/Scissors Cyberfingers": {
+      "name": "Ciberdedo Tijeras/Corta Cables",
+      "description": "<p>Un ciberdedo que puede servir como tijeras o corta cables. Solo se puede instalar en un dedo de una cibermano modular. (Ver Cromo Negro, pg. 26 para más detalles)</p>"
+    },
+    "AirWell 50": {
+      "name": "PozoAire 50",
+      "description": "<p>Produce suficiente agua para sustentar a una persona. Para obtener más información, consulte la página de Cromo Negro 48.</p>"
+    },
+    "Banshee Microphone": {
+      "name": "Micrófono Banshee",
+      "description": "<p>Auricular del micrófono inalámbrico da al usuario una bonificación +2 para Tocar Instrumento (Cantar) mientras se usa. No se acumula con otros bonos para Tocar Instrumento. Para obtener información adicional, consulte la página de Cromo Negro 40.</p>"
+    },
+    "ChipVault": {
+      "name": "BóvedaChip",
+      "description": "<p>Puede contener hasta 8 piezas de Chipware. El Chipware almacenado en el interior es inmune a los efectos EMP. Para obtener más información, consulte la página de Cromo Negro 44.</p>"
+    },
+    "CO2 Tank": {
+      "name": "Tanque de CO2",
+      "description": "<p>Un tanque de CO2 diseñado para su uso con la armadura Masetto AirRider. Debe ser reemplazado después de cada uso. Consulte la descripción completa del artículo en el pg. 33.</p>"
+    },
+    "Doberman 500": {
+      "name": "Doberman 500",
+      "description": "<p>Dron Personal Canino que puede ser vinculado a un agente.&nbsp;<br>Consulte sus reglas en la página 46 del Cromo Negro.</p>"
+    },
+    "Drink Master 3000": {
+      "name": "Bebe Master 3000",
+      "description": "<p>Puedes hacer 10 bebidas de una biblioteca de 3000 bebidas antes de tener que ser rellenadas. También puede hacer Smash. Para obtener más información, consulte la página de Cromo Negro 42.</p>"
+    },
+    "EL-F4-NT Linear Frame": {
+      "name": "Armazón Lineal EL-F4-NT",
+      "description": "<p>Exosqueleto. Aumenta el TCO a 12 mientras está equipado. Sin cambios en tu PV o Tirada de Salvación. Tiene herramientas técnicas preinstaladas. (Vea Cromo Negro, pg. 55 para más detalles.)</p>"
+    },
+    "Fūma Kotarō Linear Frame": {
+      "name": "Armazón Lineal Fūma Kotarō",
+      "description": "<p>Exosqueleto.</p>\n<ul>\n<li>Requiere 2 Conectores de Interface</li>\n<li>Aumenta TCO a 12 mientras estás enchufado</li>\n<li>No afecta a PV ni a Tirada de Salvación</li>\n<li>Sigilo +2</li>\n</ul>\n<p>Viene con dos armas cuerpo a cuerpo pesadas exóticas de calidad excelente y una arma cuerpo a cuerpo ligera exótica de excelente calidad*.</p>\n<p>Consulte la página de Cromo Negro 52 para más detalles.</p>\n<p><em>* Debe ser añadido manualmente.</em></p>"
+    },
+    "Jeeves Executive Garment Bag": {
+      "name": "Bolsa de Prendas Ejecutiva Jeeves",
+      "description": "<p>Bolsa que puede reparar una pieza de ropa o armadura a la vez. Para obtener más información, consulte la página de Cromo Negro 43.</p>"
+    },
+    "Laser Light Electric Guitar": {
+      "name": "Guitarra eléctrica Ligera Láser",
+      "description": "<p>Guitarra eléctrica que le da al usuario +1 a Tocar Instrumento (Guitara). Esta guitarra también cuenta como una instalación de Tatuaje Luminoso Fashionware mientras se usa. Para obtener más información, consulte el Cromo Negro, pg. 41.</p>"
+    },
+    "LF-001 SWAT Linear Frame": {
+      "name": "Armazón Lineal LF-001 SWAT",
+      "description": "<p>Exosqueleto. Requiere 2 conectores de interfaz. Aumenta TCO a 12 mientras estás conectado. Sin cambios en tu PV o Tirada de Salvación. Ignora la penalización normal de movimiento por la escalada y la natación. (Ver Cromo Negro, pg. 53 para más detalles.)</p>"
+    },
+    "Mr. Biscuit Multi-Food Processor": {
+      "name": "Sr. Biscuit Procesador Multi-Alimentos",
+      "description": "<p>Puedes sustentar a un grupo de hasta 10 personas en las afueras de la ciudad. Para obtener más información, consulta la página de Cromo Negro 49.</p>"
+    },
+    "Nitro Ultra9": {
+      "name": "Nitro Ultra9",
+      "description": "<p>Se puede verter en el tanque de un vehículo para rellenarlo como una acción. Da bonificaciones para moverse a expensas de la seguridad. Para obtener más información, consulte la página de Cromo Negro 49.</p>"
+    },
+    "One Touch Habitat": {
+      "name": "Hábitat Un Toque",
+      "description": "<p>Proporciona protección contra la exposición. Cuenta como dormir en la naturaleza o dormir en las calles. Para obtener más información, consulte la página de Cromo Negro 48.</p>"
+    },
+    "Porta-Printer": {
+      "name": "Impresora Porta",
+      "description": "<p>Taller de Miniatura. Permite a un Técnico usar Mejoras y Fabricación en cualquier lugar, siempre y cuando tengan herramientas técnicas. Para obtener más información, consulte la página de Cromo Negro 43.</p>"
+    },
+    "RapiDeploy Sheath": {
+      "name": "Vaina RapiDesplegable",
+      "description": "<p>Da al usuario una bonificación de +2 a Ocultar/Revelar si se utiliza para ocultar un arma ya capaz de esconderse. Para obtener más información, consulte la página de Cromo Negro 47.</p>"
+    },
+    "Shower•in•a•Can": {
+      "name": "Ducha-en-Lata",
+      "description": "<p>Desodorante de Spray. Desinfecta y desodoriza. Un uso por lata. Para obtener más información, consulte la página 38 de Cromo Negro.</p>"
+    },
+    "Sonic Boom Amp": {
+      "name": "Amplificador de Sonido Boom",
+      "description": "<p>Mientras está vinculado a un instrumento, el usuario puede tomar una acción para hacer que todo el que esté cerca haga una comprobación de Resistir Torturas/Drogas. Para obtener más información, consulte la página 40 de Cromo Negro.</p>"
+    },
+    "SovOil Industrial Lubricant": {
+      "name": "Lubricante Industrial de SovOil",
+      "description": "<p>Lubricante en una lata de buen tamaño. Para obtener más información, consulte la página de Cromo Negro 56.</p>"
+    },
+    "SovOil Medical Lubricant": {
+      "name": "Lubricante Médico de SovOil",
+      "description": "<p>Lubricante en una lata de buen tamaño. Para obtener más información, consulte la página de Cromo Negro 56.</p>"
+    },
+    "SovOil Personal Lubricant": {
+      "name": "Lubricante Personal de SovOil",
+      "description": "<p>Lubricante en una lata de buen tamaño. Para obtener más información, consulte la página de Cromo Negro 56.</p>"
+    },
+    "Streetcase": {
+      "name": "Maletín Callejero",
+      "description": "<p>Puede llevar muchos objetos de fácil acceso que USTED necesita para estar a salvo. Para obtener más información, consulte la página de Cromo Negro 47.</p>"
+    },
+    "Triti-Fizz": {
+      "name": "Triti-Fizz",
+      "description": "<p>Bebida favorita de Norteamérica. Para obtener más información, consulte la página 124 del Cromo Negro.</p>"
+    },
+    "Typhoid Speaker": {
+      "name": "Altavoz Typhoid",
+      "description": "<p>Cuando está vinculado a un Amplificador de Sonido Boom de KillStrom, incrementa el VD para Resistir Torturas/Drogas. Para obtener más información, consulte la página 41 de Cromo Negro.</p>"
+    },
+    "Universal Aqualung": {
+      "name": "Pulmón Acuático Universal",
+      "description": "<p>Cuando está instalado, el usuario puede respirar bajo el agua mientras esté dentro de 10 m/yardas de la superficie. Para obtener más información, consulte la página de Cromo Negro 42.</p>"
+    },
+    "Vermilion Linear Frame": {
+      "name": "Armazón Lineal Bermellón",
+      "description": "<p>Exoesqueleto. Requiere 2 conectores de Interfaz. Aumenta tu TCO a 12 sin cambios a tu PV y Tirada de Salvación. &nbsp; Elimina la penalización por salto a la vez que tu movimiento se incrementa a 6m/yds. mientras corres. (Ver Cromo Negro, pg. 54 para más detalles.)</p>"
+    },
+    "WorldSat Aerial Sphere": {
+      "name": "Esfera Aérea de WorldSat",
+      "description": "<p>Cuando esté configurado, proporciona acceso a un Citinet cuando se encuentra a menos de 50 millas de la ciudad o de otra esfera Aérea de WorldSat que esté conectada al Citinet. Para obtener más información, consulte la página 50 de Cromo Negro.</p>"
+    },
+    "4Tify": {
+      "name": "4Tificar",
+      "description": "<p>Una aplicación para tu agente. Puedes ver puntos débiles escaneando tu casa. O una sección de la cobertura...</p>\n<p>Reglas completas se pueden encontrar en la página 13.</p>"
+    },
+    "City Database": {
+      "name": "Base de Datos de Ciudad",
+      "description": "<p>Una aplicación para tu agente. Encuentra las mejores direcciones de la ciudad con esta guía. Reglas completas en la página 14.</p>"
+    },
+    "Digital Gladiator": {
+      "name": "Gladiador Digital",
+      "description": "<p>Una aplicación para tu agente. ¡Crea un Mercenario Virtual que lucha por ti en el reino digital!</p>\n<p>Reglas para peleas se pueden encontrar en la página 12.</p>"
+    },
+    "MedScan": {
+      "name": "Escáner-Médico",
+      "description": "<p>Una aplicación para tu agente. Videoconferencias médicas, que te ayudan a mejorar los primeros auxilios, por un precio. Las reglas completas se pueden encontrar en la página 14.</p>"
+    },
+    "NCPD Crime Database": {
+      "name": "Base de Datos del Crimen de NCPD",
+      "description": "<p>Una aplicación para tu agente. Permite al usuario buscar información criminal pública. Las reglas completas para el uso se pueden encontrar en la página 13.</p>\n<p>&nbsp;</p>"
+    },
+    "AeroCop": {
+      "name": "AeroPatrulla",
+      "description": "<p>AV4 tipo Aerodyne. Versión de la policía.</p>\n<p>Estadísticas completas pueden encontrarse en la página 61.</p>"
+    },
+    "AeroVox": {
+      "name": "AeroVox",
+      "description": "<p>AV4 tipo Aerodyne. Versión Civil.</p>\n<p>Estadísticas completas pueden encontrarse en la página 61.</p>"
+    },
+    "Badger Corporate Bus": {
+      "name": "Bus Corporativo Tejón",
+      "description": "<p>Un autobús de lujo para viajes de negocios. Equipado para reuniones de trabajo y bebidas después de las reuniones.</p>\n<p>Los detalles completos se pueden encontrar en la página 80.</p>"
+    },
+    "Bellhop": {
+      "name": "Bellhop",
+      "description": "<p>Un Girocóptero de un asiento que puede plegarse al tamaño de una maleta grande.</p>\n<p>Las estadísticas completas se pueden encontrar en la página 60.</p>"
+    },
+    "Chupacabra": {
+      "name": "Chupacabra",
+      "description": "<p>Coche compacto construido a partir de piezas recicladas de vehículos más antiguos. Tecnología baja, pero de alta potencia.</p>\n<p>Detalles completos se pueden encontrar en la página 66.</p>"
+    },
+    "Destination": {
+      "name": "Destino",
+      "description": "<p>AV4 tipo Aerodyne. Versión Civil.</p>\n<p>Estadísticas completas pueden encontrarse en la página 62.</p>"
+    },
+    "Ebi": {
+      "name": "Ebi",
+      "description": "<p>Pequeño pero bien pensado coche compacto.</p>\n<p>Puede encontrar todos los detalles en la página 72.</p>"
+    },
+    "EconoCompact": {
+      "name": "EconoCompacto",
+      "description": "<p>Pequeño y barato coche compacto.</p>\n<p>Puede encontrar todos los detalles en la página 64.</p>"
+    },
+    "Family Star Van": {
+      "name": "Furgoneta Estrella Familiar",
+      "description": "<p>Confortable coche familiar.</p>\n<p>Puede encontrar todos los detalles en la página 65.</p>"
+    },
+    "Gorgon Security Van": {
+      "name": "Furgoneta de Seguridad de Gorgon",
+      "description": "<p>Una furgoneta blindada monstruosa.</p>\n<p>Puede encontrar todos los detalles en la página 73.</p>"
+    },
+    "Grundy": {
+      "name": "Grundy",
+      "description": "<p>Coche compacto de aspecto industrial blindado con arado de combate.</p>\n<p>Detalles completos pueden encontrarse en la página 68.</p>"
+    },
+    "Harriet 100": {
+      "name": "Harriet 100",
+      "description": "<p>Una motocicleta clásica con un aspecto más femenino.</p>\n<p>Puede encontrar todos los detalles en la página 69.</p>"
+    },
+    "Harvey 100": {
+      "name": "Harvey 100",
+      "description": "<p>Una motocicleta de ruta clásica.</p>\n<p>Puede encontrar todos los detalles en la página 69.</p>"
+    },
+    "Harvey Merc": {
+      "name": "Harvey Merc",
+      "description": "<p>Una motocicleta de ruta clásica, esta vez con armas montadas.</p>\n<p>Puede encontrar todos los detalles en la página 69.</p>"
+    },
+    "Herakles": {
+      "name": "Herakles",
+      "description": "<p>Transporte de tropas tipo AV4, armado y blindado.</p>\n<p>Las estadísticas completas se pueden encontrar en la página 63.</p>"
+    },
+    "Highway Master Artemis": {
+      "name": "Artemis Maestro de las Carreteras",
+      "description": "<p>Una motocicleta de carretera de tipo Low-Rider con cubierta de cristal retráctil. Tiene un modo de sobrecarga que no viene con garantía de seguridad.</p>\n<p>Los detalles completos se pueden encontrar en la página 70.</p>"
+    },
+    "JetBoy Hoverboard": {
+      "name": "JetBoy Hoverboard",
+      "description": "<p>Un hoverboard conducido con habilidad de Atletismo. No se puede actualizar.</p>\n<p>Puede encontrar todos los detalles en la página 78.</p>"
+    },
+    "MegaHauler": {
+      "name": "MegaHauler",
+      "description": "<p>Camión de Transporte con armadura. Más bien parecido a un tren.</p>\n<p>Puede encontrar todos los detalles en la página 79.</p>"
+    },
+    "Molly 1K": {
+      "name": "Molly 1K",
+      "description": "<p>Todo Terreno Compacto</p>\n<p>Puede encontrar todos los detalles en la página 82.</p>"
+    },
+    "Paladin 500": {
+      "name": "Paladín 500",
+      "description": "<p>Un coche de alto rendimiento. Ahora puedes ser MadMax. Con dos ametralladoras montadas.</p>\n<p>Puede encontrar todos los detalles en la página 75.</p>"
+    },
+    "Parallax Cybercycle": {
+      "name": "Ciberciclo Parallax",
+      "description": "<p>Supermoto Tope de Gama.</p>\n<p>Puede encontrar todos los detalles en la página 83.</p>"
+    },
+    "Range Trike": {
+      "name": "Ranger Trike",
+      "description": "<p>Motocicleta de tres ruedas.</p>\n<p>Puede encontrar todos los detalles en la página 67.</p>"
+    },
+    "SH-45 Patroller Law": {
+      "name": "SH-45 Patrullero",
+      "description": "<p>Girocóptero de un asiento. Versión de la policía, con ametralladora montada.</p>\n<p>Estadísticas completas pueden encontrarse en la página 58.</p>"
+    },
+    "SH-45 Patroller": {
+      "name": "SH-45 Patrullero",
+      "description": "<p>Girocóptero de un asiento. Versión Civil.</p>\n<p>Estadísticas completas pueden encontrarse en la página 58.</p>"
+    },
+    "Sliver": {
+      "name": "Plata",
+      "description": "<p>Una motocicleta de carretera con todos los aparatos que nunca necesitarías.</p>\n<p>Puede encontrar todos los detalles en la página 84.</p>"
+    },
+    "Street King Combat Vehicle": {
+      "name": "Vehículo de Combate Rey Callejero",
+      "description": "<p>Un vehículo de alto rendimiento que es grande, armado y tiene un aspecto militar.</p>\n<p>Los detalles completos se pueden encontrar en la página 77.</p>"
+    },
+    "TDT 004": {
+      "name": "TDT 004",
+      "description": "<p>Helicóptero de transporte de tropas.</p>\n<p>Puede encontrar todos los detalles en la página 59.</p>"
+    },
+    "The Zacatzontli Pickup Truck": {
+      "name": "La Camioneta Zacatzontli",
+      "description": "<p>Un coche compacto equipado para todo tipo de viajes.</p>\n<p>Puede encontrar todos los detalles en la página 74.</p>"
+    },
+    "Thunder-X": {
+      "name": "Trueno-X",
+      "description": "<p>Un vehículo de alto rendimiento tope de gama.</p>\n<p>Detalles completos se pueden encontrar en la página 76.</p>"
+    },
+    "Volkhov": {
+      "name": "Volkhov",
+      "description": "<p>Un vehículo compacto tipo camioneta blindada con ametralladora montada. Viene con una botella de vodka.</p>\n<p>Los detalles completos se pueden encontrar en la página 71.</p>"
+    },
+    "Yang's Wheels Rickshaw": {
+      "name": "Ruedas Rickshaw de Yang",
+      "description": "<p>Moto de carretera con tráiler acoplado para pasajeros.</p>\n<p>Puede encontrar todos los detalles en la página 81.</p>"
+    },
+    "Arasaka Prototype Variable Assault Rifle": {
+      "name": "Prototipo de Rifle de Asalto Variable de Arasaka",
+      "description": "<p>El Prototipo de Rifle de Asalto Variable de Arasaka es un Rifle de Asalto Exótico de excelente calidad. Asumiendo que tienes todas las partes, puede usar un modo único alternativo de cañón de raíl. Reglas completas se pueden encontrar en Cromo Negro en la página 102.</p>"
+    },
+    "Beast Shotgun": {
+      "name": "Escopeta Bestia",
+      "description": "<p>La Escopeta Bestia de Midnight Arms es una Escopeta Exótica. Su cargador contiene 40 rondas. Requiere TCO 10 o superior (a menos que sea montada) cuando sea disparada o el usuario sufrirá las consecuencias. Reglas completas se pueden encontrar en Cromo Negro en la página 111.</p>"
+    },
+    "BMG-500": {
+      "name": "BMG-500",
+      "description": "<p>La Techtronika Rusia BMG-500 es un rifle de asalto exótico con un cargador de 500 rondas y un bípode. Requiere TCO 11 o superior (a menos que sea montada). Las reglas completas se pueden encontrar en Cromo Negro en la página 122.<br><br></p>"
+    },
+    "Bubba Buster": {
+      "name": "Bubba Buster",
+      "description": "<p>El Bubba Buster de GunMart es una escopeta exótica de calidad pobre. Se destruye a sí mismo si se dispara más de 3 veces en un minuto. Las reglas completas se pueden encontrar en el Cromo Negro en la página 106.</p>"
+    },
+    "Crowd Buster": {
+      "name": "Destructor de Multitudes",
+      "description": "<p>El Destructor de Multitudes de Pursuit Security Inc. es un Rifle de Asalto Exótico con un modo de tiro alternativo único. Viene con un par de protectores auriculares de nivel automático*. Reglas completas se pueden encontrar en Cromo Negro en la página 116.</p>\n<p><em>*Debe ser aplicado manualmente después de la compra</em></p>"
+    },
+    "Door Cracker": {
+      "name": "Tira Puertas",
+      "description": "<p>Artículo explosivo barato, área de efecto pequeña. Puede encontrar reglas completas en la página 87.</p>"
+    },
+    "E-TACK Public Defender": {
+      "name": "E-TACK Defensor Público",
+      "description": "<p>Viene con un adjunto de Conector de Arma Inteligente*. El usuario necesita un Conector Subdermal para operarlo. Tiene un modo letal y no letal.</p>\n<p>Las reglas completas se pueden encontrar en el Cromo Negro en la página 115.</p>\n<p><em>* Esta actualización necesita ser añadida manualmente.</em></p>"
+    },
+    "Engage Rocket Launcher": {
+      "name": "Lanzacohetes Compromiso",
+      "description": "<p>El Lanzacohetes Compromiso de GunMart es un lanzador de cohetes exótico de mala calidad. Explota en un fallo crítico o al descargar el arma. Puedes encontrar reglas completas en el Cromo Negro en la página 107.</p>"
+    },
+    "Faisal's Dead or Alive": {
+      "name": "Vivo o Muerto de Faisal",
+      "description": "<p>El Vivo o Muerto de Faisal es una escopeta exótica de mala calidad con un lanzador integrado de red de baja calidad. Reglas completas se pueden encontrar en Cromo Negro en la página 104.</p>"
+    },
+    "FangFist": {
+      "name": "Puño Colmillo",
+      "description": "<p>Arma cuerpo a cuerpo mediana exótica de una mano de excelente calidad.</p>\n<p>Guante con hoja corta retráctil.</p>\n<p>Los detalles completos se pueden encontrar en la página 98 de Cromo Negro.</p>"
+    },
+    "Fox Dual Ammo Pistol": {
+      "name": "Pistola de Munición Dual Zorro",
+      "description": "<p>La Pistola de Munición Dual Zorro de Militech es una Pistola Pesada Exótica. Las reglas completas se pueden encontrar en Cromo Negro en la página 113.</p>"
+    },
+    "GunMart Smart Special": {
+      "name": "GunMart Especial Inteligente",
+      "description": "<p>El GunMart Especial Inteligente es una Pistola Pesada Exótica de Calidad Pobre con un enlace de Arma Inteligente integrado. Reglas completas se pueden encontrar en Cromo Negro en la página 108.</p>"
+    },
+    "GunMart Special": {
+      "name": "Especial de GunMart",
+      "description": "<p>El GunMart Especial es una Pistola Pesada Exótica de Pobre Calidad. Las reglas completas se pueden encontrar en el Cromo Negro en la página 108.</p>"
+    },
+    "Hades Multipurpose Assault Shotgun": {
+      "name": "Escopeta de Asalto Multipropósito Hades",
+      "description": "<p>La Escopeta de Asalto Multipropósito Hades es una Escopeta Exótica. El cargador tiene 16 tiros. Las reglas completas se pueden encontrar en el Cromo Negro en la página 109.</p>"
+    },
+    "Hello Cutie Ultra-K8 Assault Pistol": {
+      "name": "Hola Preciosa Pistola de Asalto Ultra-K8",
+      "description": "<p>La Hola Preciosa Pistola de Asalto Ultra-K8 de Sanroo es una pistola exótica y muy pesada de calidad excelente con un modo SMG pesado de excelente calidad. Las reglas completas se pueden encontrar en Cromo Negro en la página 118.</p>"
+    },
+    "KillChip 100 Micro-Bomb": {
+      "name": "Micro-Bomba KillChip 100",
+      "description": "<p>Tarjeta de memoria, pero explosiva cuando se conecta a Neuralware. Puede encontrar reglas completas en la página 88 de Cromo Negro.</p>"
+    },
+    "M-04 Variable Assault": {
+      "name": "Asalto Variable M-04",
+      "description": "<p>El Asalto Variable M-04 de Sternmeyer es un Rifle de Asalto Exótico de Calidad Pobre con un Lanzador de Granada personalizado. Las reglas completas se pueden encontrar en Cromo Negro en la página 119.</p>"
+    },
+    "Magna Knuckles": {
+      "name": "Nudillos Magna",
+      "description": "<p>Un arma cuerpo a cuerpo exótico de una mano. Efecto EMP propulsado por una batería que puede desactivar el ciberware, se pueden encontrar todos los detalles en la página 96.</p>"
+    },
+    "Mastiff SMG": {
+      "name": "SMG de Mastiff",
+      "description": "<p>El Militech Mastiff SMG es un SMG y escopeta exótica de dos manos. Puede encontrar reglas completas en Cromo Negro en la página 113.</p>"
+    },
+    "Matchmaker": {
+      "name": "Emparejador",
+      "description": "<p>El Emparejador de Georgia Arms es una Escopeta Exótica de mala calidad que solo tiene un tiro en el cargador. Reglas completas se pueden encontrar en Cromo Negro en la página 105.</p>"
+    },
+    "Micro Hydrogen Combustor": {
+      "name": "Combustor de Micro Hydrogen",
+      "description": "<p> Un pequeño explosivo que detona después de ser sumergido en un líquido. Es a la vez perforante y crea una gran nube de humo. </p> <p> Las reglas completas se pueden encontrar en la página 88. </p>"
+    },
+    "ModFire 10X (Pistol)": {
+      "name": "ModFire 10X (Pistola)",
+      "description": "<p>El ModFire 10X es una Pistola Pesada Exótica. También se puede transformar en un SMG exótico o en un Rifle de Asalto Exótico, asumiendo que el usuario tiene todas las partes necesarias. Reglas completas se pueden encontrar en Cromo Negro en la página 114.</p>"
+    },
+    "ModFire 10X (Rifle)": {
+      "name": "ModFire 10X (Rífle)",
+      "description": "<p>El ModFire 10X es una Pistola Pesada Exótica. También se puede transformar en un SMG exótico o en un Rifle de Asalto Exótico, asumiendo que el usuario tiene todas las partes necesarias. Reglas completas se pueden encontrar en Cromo Negro en la página 114.</p>"
+    },
+    "ModFire 10X (SMG)": {
+      "name": "ModFire 10X (SMG)",
+      "description": "<p>El ModFire 10X es una Pistola Pesada Exótica. También se puede transformar en un SMG exótico o en un Rifle de Asalto Exótico, asumiendo que el usuario tiene todas las partes necesarias. Reglas completas se pueden encontrar en Cromo Negro en la página 114.</p>"
+    },
+    "Mono-Guard": {
+      "name": "Mono-Guardia",
+      "description": "<p>Monoalambre, arma cuerpo a cuerpo pesada exótica de una mano.</p>\n<p>Puede aplicar múltiples lesiones críticas, cuyos detalles se pueden encontrar en la página 96.</p>"
+    },
+    "Mono-Katana Solo Wolf and Bot": {
+      "name": "Mono-Katana Solo Lobo y Bot",
+      "description": "<p>Arma exótica cuerpo a cuerpo muy pesada a dos manos de calidad pobre.</p>\n<p>Mono-Katana de aspecto barato. Las reglas pueden encontrarse en la página 92.</p>"
+    },
+    "Mono-Katana": {
+      "name": "Mono-Katana",
+      "description": "<p>Arma exótica cuerpo a cuerpo muy pesado a dos manos Cuando sea manejado por el usuario correcto, el arma ignora la armadura de menos de 7 CP, detalles completos en la página 92.</p>"
+    },
+    "Mono-Star": {
+      "name": "Mono-Estrella",
+      "description": "<p>Mono-Shuriken cuyo orbe central contiene un motor cinético y solar que permite a la estrella girarse sobre sí misma y vibrar.</p>\n<p>Se puede utilizar como arma cuerpo a cuerpo y a distancia, reglas para las que se puede encontrar en la página 101.</p>"
+    },
+    "Mono-Wakizashi": {
+      "name": "Mono-Wakizashi",
+      "description": "<p>Un arma cuerpo a cuerpo pesado exótica de una mano Cuando sea manejado por el usuario correcto, el arma ignora la armadura de menos de 7 CP, detalles completos en la página 93.</p>"
+    },
+    "Nomad Rocker": {
+      "name": "Lanzarocas Nómada",
+      "description": "<p>El Lanzarocas Nómada es una Pistola Exótica Muy Pesada de mala calidad que dispara rocas. La munición es gratuita para esta arma. Puede encontrar reglas completas en el Cromo Negro en la página 115.</p>"
+    },
+    "OUTLet Explosive": {
+      "name": "OUTLet Explosivo",
+      "description": "<p>Explosivo con aspecto de un adaptador de enchufe eléctrico. Puede encontrar reglas completas en la página 89.</p>"
+    },
+    "Overlord Handcannon": {
+      "name": "Cañón del Soberano Supremo",
+      "description": "<p>El cañón del Soberano Supremo es una Pistola Pesada Exótica de Mala Calidad con una velocidad de disparo de 1. Puede dar una bonificación +1 a Intimidar en ciertas situaciones. Las reglas completas se pueden encontrar en Cromo Negro en la página 106.</p>"
+    },
+    "Pepper Shaker": {
+      "name": "Agitador de Pimienta",
+      "description": "<p>El Agitador de Pimienta de Federated Arms es un SMG exótico incapaz de disparos individuales o dirigidos. Autodisparo solo usa 6 balas para esta arma. Puedes encontrar reglas completas en el Cromo Negro en la página 105.</p>"
+    },
+    "Perseus": {
+      "name": "Perseus",
+      "description": "<p>El Perseus de Militech es una pistola exótica muy pesada de excelente calidad. Las reglas se pueden encontrar en el Cromo Negro en la página 112.</p>"
+    },
+    "Pursuit Security Bouncer": {
+      "name": "Rebotador de Pursuit Security",
+      "description": "<p>Guante que funciona a baterías.</p>\n<p>Una combinación Exótica de Bastón Aturdidor y Microondas.</p>\n<p>Los detalles completos se pueden encontrar en la página 97.</p>"
+    },
+    "Ranger Combat Boomerang": {
+      "name": "Boomerang de Ranger Combat",
+      "description": "<p>Funciona como un arma pesada a una mano, pero a pesar de ser arrojada reduce a la mitad la CP</p>\n<p>Contiene un sistema de guía incorporado, cuyos detalles se pueden encontrar en la página 100.</p>"
+    },
+    "Rhinocefist": {
+      "name": "Rinopuño",
+      "description": "<p>Guante blindado que funciona como un cincel de piedra grande, que cubre desde la mano hasta el hombro. Requiere conector de interfaz. Se puede usar tanto para demolición como para peleas, el detalle se puede encontrar en la página 95.</p>"
+    },
+    "Rostović Kleaver": {
+      "name": "Cuchilla Rostović",
+      "description": "<p>Arma cuerpo a cuerpo muy pesada exótica a dos manos. Puede usar una batería para aumentar el daño, cuyos detalles se pueden encontrar en la página 94.</p>\n<p>Necesita TCO 11 o más para usarlo.</p>"
+    },
+    "Superchrome® Glam Rifle": {
+      "name": "Rifle Superchrome®️ Glam",
+      "description": "<p>El Rifle Superchrome®️ Glam es un Rifle de Asalto Exótico. Da al usuario un bono de +2 a Vestuario y Estilo cuando esté equipado. Reglas completas se pueden encontrar en Cromo Negro en la página 120.</p>"
+    },
+    "Superchrome® Javelin": {
+      "name": "Superchrome®️ Javelin",
+      "description": "<p>El Superchrome®️ Javelin es un Rifle de Francotirador exótico. Da al usuario una bonificación de +2 a Vestuario y Estilo cuando esté equipado. Las reglas completas se pueden encontrar en Cromo Negro en la página 120.</p>"
+    },
+    "Superchrome® Sidearm": {
+      "name": "Superchrome® Sidearm",
+      "description": "<p>La Superchrome® Sidearm es una pistola exótica muy pesada. Da al usuario una bonificación de +2 a Vestuario y Estilo cuando esté equipado. Las reglas completas se pueden encontrar en Cromo Negro en la página 121.</p>"
+    },
+    "Survivalist": {
+      "name": "Superviviente",
+      "description": "<p>El Superviviente de Eagletech es un arma 2-en-1, una ballesta y un rifle de asalto. Es incapaz de autodisparar. Viene con una mira de francotirador integrada*. Reglas completas se pueden encontrar en Cromo Negro en la página 103.</p>\n<p><em>*Debe ser aplicado manualmente después de la compra</em></p>"
+    },
+    "Tasmanskiy Klô": {
+      "name": "Tasmanskiy Klô",
+      "description": "<p>Grandes cuchillas retráctiles en un guante de combate.&nbsp;</p>\n<p>Arma cuerpo a cuerpo exótica muy pesada de excelente calidad.</p>\n<p>Los detalles completos se pueden encontrar en la página 99.</p>"
+    },
+    "TechHammer": {
+      "name": "MartilloTécnico",
+      "description": "<p>El MartilloTécnico de KTech es una escopeta/lanzador de cohetes. Las reglas completas se pueden encontrar en Cromo Negro en la página 110.</p>"
+    },
+    "Tommyknocker": {
+      "name": "Tommyknocker",
+      "description": "<p>El Tommyknocker es una Pistola Exótica Muy Pesada y una Escopeta de Calidad Pobre. Requiere TCO 10 o que se mantenga en dos manos al disparar, de lo contrario el usuario suelta el arma al suelo. Reglas completas se pueden encontrar en Cromo Negro en la página 123.</p>"
+    },
+    "TR-4 Detonator Fluid": {
+      "name": "Fluido Detonador TR-4",
+      "description": "<p>Debe verterse en el tanque de combustible de un vehículo para que explote. Las reglas completas se pueden encontrar en la página 90.</p>"
+    },
+    "Ulični Uništitelj (Street Destroyer)": {
+      "name": "Ulični Uništitelj (Destructor Callejero)",
+      "description": "<p>El Ulični Uništitelj (Destructor Callejero) de Rostović es una escopeta exótica de calidad pobre. El cargador solo tiene 3 tiros. Solo puede disparar cartuchos de escopeta. Las reglas completas se pueden encontrar en el Cromo Negro en la página 117.</p>"
+    },
+    "Utility Tomahawk": {
+      "name": "Tomahawk Utilitario",
+      "description": "<p>Hoja y pica, este piolet de acero y material compuesto puede ayudarte a escalar paredes de hielo mientras causa daños graves en una pelea.</p>\n<p>Se puede usar tanto como arma cuerpo a cuerpo como a distancia, cuyas reglas se pueden encontrar en la página 101.</p>"
+    },
+    "Weeping Reaver Katana": {
+      "name": "Katana Segador Llorón",
+      "description": "<p>Arma cuerpo a cuerpo muy pesada exótica de dos manos de excelente calidad. Contiene tres dosis de fluidos específicos para el recubrimiento del filo:</p>\n<ul>\n<li>Fuego de Arasaka (puede encender el objetivo)</li>\n<li>Ácido de Arasaka (ablación de armadura)</li>\n<li>Sal para heridas de Arasaka (aplica una segunda herida crítica)</li>\n</ul>\n<p>Las reglas completas se pueden encontrar en la página 91.</p>"
+    },
+    "Westwood": {
+      "name": "Westwood",
+      "description": "<p>La Westwood es una pistola muy pesada. Con una capacidad de 6 tiros que no se pueden actualizar con mejoras de cargador. Reglas completas se pueden encontrar en Cromo Negro en la página 121.</p>"
+    },
+    "White Hornet Tanto": {
+      "name": "Tanto de Avispón Blanco",
+      "description": "<p>Un arma cuerpo a cuerpo exótica a mano. Puede dejar al objetivo inconsciente en lugar de muerto, con reglas completas encontradas en la página 93.</p>"
+    }
+  }
+}

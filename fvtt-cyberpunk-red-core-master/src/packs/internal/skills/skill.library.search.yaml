@@ -1,0 +1,20 @@
+_id: cUIOleVPNLHP9y3i
+_key: "!items!cUIOleVPNLHP9y3i"
+effects: []
+img: icons/svg/item-bag.svg
+name: Library Search
+system:
+  basic: false
+  category: educationSkills
+  core: true
+  description:
+    value: ""
+  difficulty: typical
+  favorite: false
+  level: 0
+  skillType: generic
+  source:
+    book: Core
+    page: 135
+  stat: int
+type: skill

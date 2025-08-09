@@ -1,0 +1,27 @@
+{{#if (cprCompare item.type "!==" "cyberware") }}
+  <div class="item-summary-line">
+    <span class="summary-name text-semi">
+      {{localize "CPR.itemSheet.itemUpgrade.usedSlots"}}:
+    </span>
+    <span class="summary-value">
+      {{item.system.installedItems.usedSlots~}}
+      /
+      {{~cprApplyUpgrade item item.system.installedItems.slots "slots"}}
+    </span>
+  </div>
+{{else}}
+  {{#unless item.system.installedItems.allowed}}
+    {{#if (cprCompare item.system.installedItems.slots ">" 0) }}
+      <div class="item-summary-line">
+        <span class="summary-name test-semi">
+          {{localize "CPR.itemSheet.itemUpgrade.usedSlots"}}:
+        </span>
+        <span class="summary-value">
+          {{item.system.installedItems.usedSlots~}}
+          /
+          {{~cprApplyUpgrade item item.system.installedItems.slots "slots"}}
+        </span>
+      </div>
+    {{/if}}
+  {{/unless}}
+{{/if}}

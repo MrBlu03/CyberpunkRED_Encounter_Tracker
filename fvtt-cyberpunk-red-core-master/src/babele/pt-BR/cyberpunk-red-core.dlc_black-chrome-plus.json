@@ -1,0 +1,98 @@
+{
+  "label": "Black Chrome Plus",
+  "mapping": {
+    "dvTable": "system.dvTable"
+  },
+  "entries": {
+    "Arrow (Junk)": {
+      "name": "Arrow (Junk)",
+      "description": "<p>Junk ammo; cheap but deals 1d6 less damage against anyone with 1SP or more.</p>"
+    },
+    "Big Dreem Rounds": {
+      "name": "Big Dreem Rounds",
+      "description": "<p>Custom Ammo for the Teen Dreem.</p>"
+    },
+    "Heavy Pistol (Junk)": {
+      "name": "Heavy Pistol (Junk)",
+      "description": "<p>Junk ammo; cheap but deals 1d6 less damage against anyone with more than 1SP.</p>"
+    },
+    "Heavy Pistol (Small Game)": {
+      "name": "Heavy Pistol (Small Game)",
+      "description": "<p>Small game ammo; not great for people. Deals 2d6 less damage.</p>"
+    },
+    "Medium Pistol (Junk)": {
+      "name": "Medium Pistol (Junk)",
+      "description": "<p>Junk ammo; cheap but deals 1d6 less damage against anyone with 1SP or more.</p>"
+    },
+    "Medium Pistol (Small Game)": {
+      "name": "Medium Pistol (Small Game)",
+      "description": "<p>Small game ammo; not great for people. Deals 2d6 less damage.</p>"
+    },
+    "Rifle (Junk)": {
+      "name": "Rifle (Junk)",
+      "description": "<p>Junk ammo; cheap but deals 1d6 less damage against anyone with 1SP or more.</p>"
+    },
+    "Rifle (Small Game)": {
+      "name": "Rifle (Small Game)",
+      "description": "<p>Small game ammo; not great for people. Deals 2d6 less damage.</p>"
+    },
+    "Shotgun Slug (Junk)": {
+      "name": "Shotgun Slug (Junk)",
+      "description": "<p>Junk ammo; cheap but deals 1d6 less damage against anyone with 1SP or more.</p>"
+    },
+    "Very Heavy Pistol (Junk)": {
+      "name": "Very Heavy Pistol (Junk)",
+      "description": "<p>Junk ammo; cheap but deals 1d6 less damage against anyone with 1SP or more.</p>"
+    },
+    "Very Heavy Pistol (Small Game)": {
+      "name": "Very Heavy Pistol (Small Game)",
+      "description": "<p>Small game ammo; not great for people. Deals 2d6 less damage.</p>"
+    },
+    "Scavenged Armor": {
+      "name": "Scavenged Armor",
+      "description": "<p>A scavenged set of Light Armorjack body armor that is unable to be repaired. Refer to full item description on BC+ pg. 4.</p>"
+    },
+    "Piranha Smash": {
+      "name": "Piranha Smash",
+      "description": "<p>Looks like smash but it's smash with a lime flavor. And a lower risk of addiction.</p>\n<p><strong>Primary Effect</strong></p>\n<p>Dose lasts 4 hours.</p>\n<p>The user feels happy and satisfied, receiving a temporary modifier of +2 to the following skills</p>\n<ul>\n<li>Acting</li>\n<li>Dance</li>\n<li>Contortionist</li>\n<li>Conversation</li>\n<li>Human Perception</li>\n<li>Persuasion</li>\n</ul>\n<p><strong>Secondary Effect (DV9)</strong></p>\n<p>When the dose wears off, the user rolls WILL + Resist Torture/Drugs + 1d10 against Secondary DV.</p>\n<p>If this fails, they take a -2 to the following skills</p>\n<ul>\n<li>Acting</li>\n<li>Dance</li>\n<li>Contortionist</li>\n<li>Conversation</li>\n<li>Human Perception</li>\n<li>Persuasion</li>\n</ul>"
+    },
+    "Bullet To Slug Adapter Casings": {
+      "name": "Bullet To Slug Adapter Casings",
+      "description": "<p>Make any bullet able to be fired as a shotgun slug.</p>\n<p>A box of Bullet to Slug Adapter Casings comes with 10 casings.</p>\n<p>You can load 10 bullets into 10 adapters using the included jig in an Action. If loading by hand it takes an Action to load 1 bullet.</p>"
+    },
+    "Solo of Fortune Bodypillow": {
+      "name": "Solo of Fortune Bodypillow",
+      "description": "<p>Bodypillow with the image of a famous Solo from the 2020s (such as Morgan Blackhand, BoaBoa Weyland, or Adam Smasher).</p>\n<p>20 inches x 54 inches (50.8 cm x 137.16 cm), except for the Adam Smasher pillow which is considerably larger.</p>"
+    },
+    "Big Dreem": {
+      "name": "Big Dreem",
+      "description": "<p>Exotic SMG. Autofire only. Even if you drop the weapon, it will continue to Autofire.</p>",
+      "dvTable": "DV SMG (Auto)"
+    },
+    "Hello Cutie 1TruLuv": {
+      "name": "Hello Cutie 1TruLuv",
+      "description": "<p>Exotic Sniper Rifle. Can load non basic ammunition.</p>\n<p>Equipped with a Sniping Scope and Infrared Night Vision Scope*, and built-in Agent which includes a pseudo AI girlfriend who can recognize and talk to the owner.</p>\n<p>Take good care of it/her and use it/her regularly and the weapon improves. Neglect it/her and you'll have to apologize...</p>\n<p><em>* These upgrades need to be installed manually after adding to an actor<br></em></p>",
+      "dvTable": "DV Fuzil de Precisão"
+    },
+    "Molotov Cocktail": {
+      "name": "Molotov Cocktail",
+      "description": "<p>Fragile Incendiary Grenade. Set a target Deadly on Fire (see CP:R p.180)</p>",
+      "dvTable": "DV Arma de Arremesso"
+    },
+    "SportMaster": {
+      "name": "SportMaster",
+      "description": "<p>A sport rifle, for fun, not people. Can only load Small Game Ammunition and is incapable of Autofire and Suppressive Fire.</p>",
+      "dvTable": "DV Rifle de Assalto"
+    },
+    "SurvivalMaster": {
+      "name": "SurvivalMaster",
+      "description": "<p>Exotic Assault Rifle, no Autofire, no Suppressive Fire.</p>",
+      "dvTable": "DV Rifle de Assalto"
+    },
+    "Timeless WW1 Rifle to Pistol Conversion": {
+      "name": "Timeless WW1 Rifle to Pistol Conversion",
+      "description": "<p>Poor Quality Very Heavy Pistol.</p>\n<p>Manual rearming of the bolt between each shot (one Action).</p>",
+      "dvTable": "DV Pistola"
+    }
+  }
+}

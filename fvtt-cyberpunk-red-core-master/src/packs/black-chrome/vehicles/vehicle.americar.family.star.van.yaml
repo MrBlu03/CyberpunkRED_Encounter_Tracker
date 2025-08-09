@@ -1,0 +1,31 @@
+_id: gGfQhTIQwjSoLeOX
+_key: "!items!gGfQhTIQwjSoLeOX"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/black-chrome/family-star-van.svg
+name: AmeriCar Family Star Van
+system:
+  brand: AmeriCar
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>Comfortable family Compact Groundcar.</p>
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  price:
+    market: 31000
+  sdp: 50
+  seats: 6
+  source:
+    book: BC
+    page: 65
+  speedCombat: 20
+  speedNarrative: 100 MPH / 161 KPH
+type: vehicle

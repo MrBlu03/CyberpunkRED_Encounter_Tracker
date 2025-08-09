@@ -25,6 +25,7 @@
     "files": [
       "src/**/*",
       "assets/**/*",
+  "packs/**/*",
       "main.js",
       "preload.js",
       "package.json"
@@ -43,6 +44,7 @@
     }
   },
   "dependencies": {
-    "electron-squirrel-startup": "^1.0.1"
+  "electron-squirrel-startup": "^1.0.1",
+  "js-yaml": "^4.1.0"
   }
 }

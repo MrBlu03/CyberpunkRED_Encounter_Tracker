@@ -1,0 +1,81 @@
+{
+  "label": "Armeria di Elflines Online",
+  "mapping": {
+    "dvTable": "system.dvTable"
+  },
+  "entries": {
+    "Arrow": {
+      "name": "Freccia",
+      "description": "<p>Munizioni di base, niente di speciale.</p>"
+    },
+    "Poison Arrow": {
+      "name": "Freccia Avvelenata",
+      "description": "<p>Nessun danno immediato. Se il bersaglio è colpito sulla carne, una prova di Resistere alla Tortura/Controllo delle Droghe. In caso di falliento 2d6 PF. Nessun Ablazione. </p>"
+    },
+    "Chainmail Armor (Body)": {
+      "name": "Cotta di Maglia (Corpo)",
+      "description": "<p>Armor made up of innumerable metal rings. -2 to REF, DEX, and MOVE.</p>"
+    },
+    "Chainmail Armor (Head)": {
+      "name": "Cotta di Maglia (Testa)",
+      "description": "<p>Armor made up of innumerable metal rings for your head. -2 to REF, DEX, and MOVE.</p>"
+    },
+    "Full Plate Armor (Body)": {
+      "name": "Armatura di Piastre (Corpo)",
+      "description": "<p>Armatura placcata in metallo per resistere ai colpi più potenti. -4 a RIF, DES e VEL.</p>"
+    },
+    "Full Plate Armor (Head)": {
+      "name": "Armatura di Piastre (Testa)",
+      "description": "<p>Armatura placcata in metallo per resistere ai colpi più potenti sulla testa. -4 a RIF, DES e VEL.</p>"
+    },
+    "Leather Armor (Body)": {
+      "name": "Armatura di Cuoio (Corpo)",
+      "description": "<p>Armatura in pelle semplice. Nessuna penalità.</p>"
+    },
+    "Leather Armor (Head)": {
+      "name": "Armatura di Cuoio (Testa)",
+      "description": "<p>Armatura in pelle semplice per la tua testa. Nessuna penalità.</p>"
+    },
+    "Shield": {
+      "name": "Scudo",
+      "description": "<p>Richiede l'utilizzo di un braccio e ha 10 HP ridotti dai danni subiti.</p>"
+    },
+    "Studded Leather Armor (Body)": {
+      "name": "Armatura di Cuoio Borchiato (Corpo)",
+      "description": "<p>Standard Studded Leather Armor. No armor penalty.</p>"
+    },
+    "Studded Leather Armor (Head)": {
+      "name": "Armatura di Cuoio Borchiato (Testa)",
+      "description": "<p>Standard Studded Leather Armor for your head. No armor penalty.</p>"
+    },
+    "Sacred Herbs": {
+      "name": "Erbe Sacre",
+      "description": "<p>Ingesting Sacred Herbs immediately heals HP equal to the user's BODY plus their WILL.</p>"
+    },
+    "Vial of Poison": {
+      "name": "Fiala di Veleno",
+      "description": "<p>Una fiala di veleno può essere applicata su un’Arma da Mischia Leggera usando un’Azione. Per i 30 minuti seguenti, l’arma non infligge il normale danno, ma costringe chi viene colpito a effettuare una Prova di Resistere a Tortura/Droghe VD 13. Se fallisce, subisce 3d6 danni diretti ai PF. L’armatura non viene ablata, poiché non viene influenzata.</p>"
+    },
+    "Bow": {
+      "name": "Arco",
+      "description": "<p>Un arco rivitalizzato, ricaricato come parte di un'azione di attacco.</p>",
+      "dvTable": "VD Arco e Balestro"
+    },
+    "Dagger": {
+      "name": "Pugnale",
+      "description": "<p>A knife fit for a hunter.</p>"
+    },
+    "Greataxe": {
+      "name": "Ascia a Due Mani",
+      "description": "<p>A wooden pole with a curved blade on each side. Favoured by raid parties for close engagements. Requires 2 hands to wield even by a wielder with Body 8 or higher.</p>"
+    },
+    "Longsword": {
+      "name": "Spada Lunga (Cf1 a meno di impugnarne due)",
+      "description": "<p>A bladed, hilted weapon. Specifically designed for cutting or thrusting. 2 ROF if wielding two longswords.</p>"
+    },
+    "Shortsword": {
+      "name": "Spada Corta",
+      "description": "<p>A short bladed, hilted weapon. Specifically designed for cutting or thrusting.</p>"
+    }
+  }
+}

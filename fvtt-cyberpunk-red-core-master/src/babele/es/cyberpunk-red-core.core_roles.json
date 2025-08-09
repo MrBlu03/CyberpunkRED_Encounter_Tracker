@@ -1,0 +1,46 @@
+{
+  "label": "Roles",
+  "mapping": {},
+  "entries": {
+    "Exec": {
+      "name": "Ejecutivo",
+      "description": "<p>Ejecutivos de negocios y defensores de peces gordos dispuestos a arriesgarlo todo para trepar la escalera corporativa y realizar el nuevo sueño americano.</p>"
+    },
+    "Fixer": {
+      "name": "Arreglador",
+      "description": "<p>Pueden conseguir cualquier cosa a cualquier persona, siempre y cuando el precio sea correcto. Utilizando su encanto y sus habilidades de comercio, hacen los tratos que mantienen la economía del futuro oscuro.</p>"
+    },
+    "Lawman": {
+      "name": "Policía",
+      "description": "<p>Renegados defensores, equipos de ataque corporativo o los últimos restos de una fuerza policial del gobierno. Patrullan las calles para imponer cierto orden en un mundo por lo demás sin ley.</p>"
+    },
+    "Media": {
+      "name": "Reportero",
+      "description": "<p>Gente de noticias, influencers y fenómenos del mundo cultural, están listos para exponer la verdad por cualquier medio necesario.</p>"
+    },
+    "Medtech": {
+      "name": "Tecnomédico",
+      "description": "<p>Médicos de callejón y mecánicos del cyberware, utilizando sus habilidades para mantener a sus compañeros en buena forma y a tope cibernético, a menudo a un precio.</p>"
+    },
+    "Netrunner": {
+      "name": "Netrunner",
+      "description": "<p>Maestros hackers que se ponen en riesgo a medida que se conectan al ciberespacio para descargar secretos e infiltrar redes.</p>"
+    },
+    "Nomad": {
+      "name": "Nómada",
+      "description": "<p>Automovilistas, camioneros, aficionados del transporte, piratas aéreos, son los únicos transportistas de productos de todo el mundo, manteniendo las cadenas de transporte y suministro en los tiempos de RED.</p>"
+    },
+    "Rockerboy": {
+      "name": "Rockero",
+      "description": "<p>Rebeldes artistas que utilizan su arte para influir en los fans/multitudes y luchar contra el sistema.</p>"
+    },
+    "Solo": {
+      "name": "Mercenario",
+      "description": "<p>Los expertos en el combate que utilizan su destreza para predominar en el tiempo sin ley del RED.</p>"
+    },
+    "Tech": {
+      "name": "Técnico",
+      "description": "<p>La comprensión superior de la tecnología de todas las cosas les permite inventar, actualizar y reparar para mantener el futuro oscuro.</p>"
+    }
+  }
+}

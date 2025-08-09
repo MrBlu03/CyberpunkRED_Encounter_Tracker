@@ -1,0 +1,23 @@
+<a class="name item installable changeable item-view"
+   tabindex="0"
+   data-tooltip="{{localize "CPR.mookSheet.items.clickToViewItem"}}
+                 <br/>
+                 {{localize "CPR.actorSheets.commonActions.ctrlClickToSendToChat"}}
+                 <br/>
+                 {{localize "CPR.mookSheet.items.shiftClickToInstallorUninstall"}}"
+   data-item-id="{{cyberware._id}}"
+   data-foundational-id="{{cyberware.system.installedIn.[0]}}">
+  {{~cyberware.name}}{{#unless @last}},{{/unless~}}
+</a>
+{{~#if (cprCompare cyberware.type "===" "cyberware")}}
+  {{~#if (cprCompare cyberware.system.hasInstalled)~}}
+    (
+  {{/if~}}
+  {{~#each cyberware.system.installedItems.list as |id|~}}
+    {{> "systems/cyberpunk-red-core/templates/actor/mook/cpr-mook-cyberware-optional.hbs" (cprMergeForPartialArg "actor,cyberware" ../actor (cprGetOwnedItem ../actor id))}}
+  {{~/each}}
+  {{~#if (cprCompare cyberware.system.hasInstalled)~}}
+    )
+    {{~#unless @last}},{{~/unless}}
+  {{~/if}}
+{{/if}}

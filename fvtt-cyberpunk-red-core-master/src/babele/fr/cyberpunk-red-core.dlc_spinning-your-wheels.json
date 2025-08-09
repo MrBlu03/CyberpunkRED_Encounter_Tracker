@@ -1,0 +1,74 @@
+{
+  "label": "Spinning Your Wheels",
+  "mapping": {},
+  "entries": {
+    "Inline Skates": {
+      "name": "Rollers",
+      "description": "<p>Ce sont des patins à roulettes, ma gueule ! Augmente le mouvement de 4 m/yds lorsque vous utilisez l'Action de Course, mais empêche l'utilisation de toutes les options dans les jambes de l'utilisateur. Peut imposer aux tâches physiques un modificateur de -2.</p>"
+    },
+    "Skateboard": {
+      "name": "Skateboard",
+      "description": "<p>Les roues les plus cools dans le coin. Augmente le mouvement de 4m/yds lorsque vous utilisez l'action Courir sur terrain plat ou en descente. Peut imposer aux tâches physiques un modificateur de -2.</p>"
+    },
+    "Bottle Dynamo": {
+      "name": "Dynamo de roue",
+      "description": "<p>Une dynamo sur la roue de votre vélo pour convertir l'énergie mécanique en électricité. Charge une batterie (comme utilisée pour les armes) en une heure.</p>"
+    },
+    "Bulletproof Glass": {
+      "name": "Verre pare-balles",
+      "description": "<p>Le verre du carénage est désormais considéré comme un couvert fin avec 7 PS. Se référer aux règles dans CP:R p. 182</p>\n<p>Le vélo nécessite d'abord l'amélioration Carénage pour installer cette mise à niveau.</p>\n"
+    },
+    "Cycle Armor": {
+      "name": "Blindé",
+      "description": "<p>Vélo blindé de 7 PS.</p>\n<p>Le vélo nécessite d'abord l'amélioration Cadre renforcé pour installer cette amélioration.</p>"
+    },
+    "Electric Pedal Assist": {
+      "name": "Assistance pédalage électrique",
+      "description": "<p>Système motorisé électrique permettant de pédaler plus facilement, d'augmenter la vitesse, de diminuer la fatigue.</p>\n<p>Augmente la vitesse (narrative) au niveau COR suivant, ou +5MPH (8KPH) si le pilote est déjà au niveau maximum.</p>\n<p>Le cycliste gagne un bonus de +4 aux tests d'endurance lors de son trajet pour résister à la fatigue.</p>\n"
+    },
+    "Enclosure": {
+      "name": "Carénage",
+      "description": "<p>Le vélo devient un trike avec un corps recouvert de fibre de verre et de plastique.</p>\n<p>Cette amélioration ne peut pas être installée avec l'amélioration Cadre pliant.</p>"
+    },
+    "Extended Seat": {
+      "name": "Selle longue",
+      "description": "<p>Une selle rallongée, ajoutant une place pour un passager supplémentaire.</p>"
+    },
+    "Folding Frame": {
+      "name": "Cadre pliant",
+      "description": "<p>Vous pouvez désormais plier votre vélo à la taille d'une grande valise pour faciliter le transport et l'entreposage.</p>\n<p>Vous ne pouvez pas installer cette amélioration avec les améliorations Compartiment caché, Cadre renforcé ou Carénage.</p>"
+    },
+    "Gun Mount": {
+      "name": "Support d'arme",
+      "description": "<p>Un système pour monter un fusil d'assaut, un pistolet-mitrailleur lourd ou un fusil à pompe sur le guidon, ainsi qu'un bouton de tir.</p>\n<p>Tire seulement vers l'avant.</p>\n<p>Le montage et le détachement nécessitent une action.</p>\n"
+    },
+    "Neon Lightning": {
+      "name": "Éclairage néon",
+      "description": "<p>Éclairages en fibre optique sur le cadre et les roues du vélo.</p>\n<p>Considéré comme un Tatouage lumineux quand on est sur ou à proximité du vélo (bonus de +2 en Habillement et Style).</p>\n"
+    },
+    "Reinforced Frame": {
+      "name": "Cadre renforcé",
+      "description": "<p>Le vélo est maintenant plus résistant : +5 PS et le cycliste peut avoir COR 11 ou plus.</p>\n<p>Impossible d'installer cette amélioration avec l'amélioration Cadre pliant.</p>\n"
+    },
+    "Security System": {
+      "name": "Système de sécurité",
+      "description": "<p>Lié à votre Agent pour électrifier votre vélo. Un voleur doit résister à un jet de <strong>Résistance à la torture/drogues SD13</strong> ou lâcher le vélo.</p>\n<p>Le vélo est enregistré avec d'un Nano-Numéro d'Identification de Véhicule.</p>\n"
+    },
+    "Smuggling Compartment": {
+      "name": "Compartiment caché",
+      "description": "<p>Ajoute un petit espace de stockage caché dans le cadre.</p>\n<p>1 pouce x 6 pouces (2,54cm x 15,24cm)</p>\n<p> Jet de <strong>Dissimuler/Révéler objet SD 17</strong> pour le découvrir.</p>\n<p>Impossible d'installer cette amélioration avec Cadre pliant.</p>\n"
+    },
+    "Stunt Frame": {
+      "name": "Cadre Freestyle",
+      "description": "<p>Le vélo perd du poids et gagne en manœuvrabilité.</p>\n<p>Le cycliste obtient un bonus de +2 aux tests de compétence Athlétisme lors de sa conduite et de ses manœuvres.</p>"
+    },
+    "Trailer": {
+      "name": "Remorque",
+      "description": "<p>Crochet avec une petite remorque de chargement</p>\n<p>1,5 m x 0,46m.</p>\n<p>Une action est nécessaire pour attacher et détacher la remorque.</p>"
+    },
+    "Bicycle": {
+      "name": "Vélo",
+      "description": "<p>Un simple vélo. Sa vitesse est basée sur le COR du cycliste.</p>\n<table style=\"width: 100%; height: 76px\" border=\"1\">\n  <colgroup>\n    <col style=\"width: 14.0725%\" />\n    <col style=\"width: 42.4307%\" />\n    <col style=\"width: 43.4968%\" />\n  </colgroup>\n  <tbody>\n    <tr style=\"height: 19px\">\n      <td style=\"height: 19px\"><strong>COR</strong></td>\n      <td style=\"height: 19px\"><strong>Vitesse (Combat)</strong></td>\n      <td style=\"height: 19px\"><strong>Vitesse(Narative)</strong></td>\n    </tr>\n    <tr style=\"height: 19px\">\n      <td style=\"height: 19px\">&lt;4</td>\n      <td style=\"height: 19px\">8 MOUV</td>\n      <td style=\"height: 19px\">19 KPH / 12 MPH</td>\n    </tr>\n    <tr style=\"height: 19px\">\n      <td style=\"height: 19px\">4 - 7</td>\n      <td style=\"height: 19px\">10 MOUV</td>\n      <td style=\"height: 19px\">32 KPH / 20 MPH</td>\n    </tr>\n    <tr style=\"height: 19px\">\n      <td style=\"height: 19px\">8+</td>\n      <td style=\"height: 19px\">15 MOUV</td>\n      <td style=\"height: 19px\"><p>48 KPH / 30 MPH</p></td>\n    </tr>\n  </tbody>\n</table>\n<ul>\n<li>Un cycliste avec COR &gt; 10 a besoin de l'amélioration Cadre renforcé</li>\n<li>Les vélos utilisent la compétence Athlétisme</li>\n<li>Contrôle manuel seulement</li>\n<li>Être sur un vélo ne vous fait pas monter en haut de la file d'Initiative</li>\n<li>Les dégâts d'impact sont de 3d6 avec le cycliste éjecté du vélo et subissant la blessure critique Coup du lapin</li>\n<li>Les défenseurs ne peuvent pas atterrir sur le vélo lors d'une Esquive</li>\n</ul>\n"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "label": "Tarot de Night City",
+  "mapping": {},
+  "entries": {
+    "Tarot Cards": {
+      "name": "Cartas de Tarot",
+      "results": [
+        {
+          "1-1": "El Tonto. Todo el software cibernético del objetivo es inoperable durante 1 hora. Sus Controles ganan el modificador \"Oscurecido por la Oscuridad\" si eso les dejaría sin forma de sentir a un enemigo. Las extremidades cibernéticas afectadas actuarán como su contraparte de carne desmembrada, pero aún estarán unidas al cuerpo del objetivo. Si el objetivo no tiene ningún ciberware, se le inflige daño crítico por objeto extraño y recibe 3d6 pérdidas de humanidad en su lugar. (Consulte la página 3 del Tarot de Night City).",
+          "2-2": "El mago. El DJ debe seleccionar uno de los ciberware del objetivo. Luego se destruye. El objetivo ahora también Está en Llamas a nivel letal (CP:R página 180). (Consulte la página 3 del Tarot de Night City).",
+          "3-3": "La Suma Sacerdotisa. El objetivo recibe la lesión crítica por objeto extraño. Cuando se mueven más de 4 m/yardas, en lugar de recibir la bonificación de daño por daño crítico, deben superar una tirada VD 15 de Resistir Tortura/Drogas o recibir 3d6 de daño directamente en su PV. (Consulte la página 3 del Tarot de Night City).",
+          "4-4": "La Emperatriz. Los próximos 3 Ataques que golpean al objetivo de esta carta infligen automáticamente una Herida Crítica, sin importar los resultados de la Tirada de Daño. Esto no funciona con armas incapaces de causar una lesión crítica, a excepción de las armas cuerpo a cuerpo ligeras. (Consulte la página 3 del Tarot de Night City).",
+          "5-5": "El emperador. El DJ debe seleccionar un jugador. Este jugador luego selecciona una lesión crítica de la tabla de lesiones críticas en la cabeza (CPR: página 188) y de la tabla de lesiones críticas en el cuerpo (CP:R página 187). El objetivo recibe ambas Heridas Críticas. (Consulte la página 3 del Tarot de Night City).",
+          "6-6": "El Hierofante. Duplica el daño que el Ataque habría infligido después de la armadura y los modificadores. (Al igual que duplicarías el daño en un Disparo de puntería en la cabeza). Si el Ataque se realizó con un arma, esa arma ahora está Destruida sin posibilidad de reparación. (Consulte la página 3 del Tarot de Night City).",
+          "7-7": "Los Amantes. El Ataque ahora se trata como un Disparo de Puntería a la Cabeza. Si el Ataque fue un Ataque cuerpo a cuerpo, el Atacante ahora agarra al objetivo. (Consulte la página 3 del Tarot de Night City).",
+          "8-8": "La Máquina de Guerra. La ubicación de la armadura del objetivo se reduce en otros 5 puntos, incluso si la tirada de daño no superó el CP de la armadura del objetivo. (Consulte la página 4 del Tarot de Night City).",
+          "9-9": "Fortaleza. El Ataque inflige 25 puntos más de daño. Ese daño se agrega antes que cualquier armadura o multiplicador. (Consulte la página 4 del Tarot de Night City).",
+          "10-10": "El Ermitaño. El objetivo recibe la lesión crítica del ojo perdido dos veces y solo recibe la penalización una vez. Sus Controles ganan el modificador \"Oscurecido por la Oscuridad\" si eso les dejaría sin forma de sentir a un enemigo. (Consulte la página 4 del Tarot de Night City).",
+          "11-11": "Rueda de la Fortuna. Si el Ataque fue un Ataque a Distancia, el DJ selecciona aleatoriamente un nuevo objetivo. Si fue un Ataque cuerpo a cuerpo, el Atacante cae boca abajo y el Ataque falla. El arma utilizada para el Ataque funciona mal y requiere que se use una Acción para revertir el mal funcionamiento antes de volver a usarse. (Consulte la página 4 del Tarot de Night City).",
+          "12-12": "Justicia. Durante los siguientes 5 minutos, el objetivo sufre una penalización de -5 en las pruebas de habilidad de evasión y no puede esquivar los ataques a distancia. (Consulte la página 4 del Tarot de Night City).",
+          "13-13": "El Ahorcado. El objetivo es derribado y recibe las lesiones críticas de lesión espinal y latigazo cervical. (Consulte la página 4 del Tarot de Night City).",
+          "14-14": "Muerte. El objetivo debe realizar una tirada de Salvación contra la Muerte independientemente de su PV. Fallar significa que se reducen a 0 PV y se consideran inconscientes durante un minuto. Cuando recuperan la conciencia, recuperan 3d6 Puntos de Humanidad hasta su Máxima Humanidad. (Consulte la página 4 del Tarot de Night City).",
+          "15-15": "Templanza. El objetivo elige una de sus extremidades para recibir la lesión crítica de miembro desmembrado y otra para recibir la lesión crítica de miembro roto. (Consulte la página 5 del Tarot de Night City).",
+          "16-16": "El Diablo. El Ataque ahora se considera un Disparo de Puntería a la Cabeza. El objetivo recibe la lesión cerebral y las lesiones críticas del oído perdido. (Consulte la página 5 del Tarot de Night City).",
+          "17-17": "La Torre. El objetivo recibe las lesiones críticas de cráneo agrietado, tráquea aplastada y latigazo cervical, pero sin recibir su daño adicional. El objetivo no puede sentir dolor e ignora el estado de herida grave durante 1 hora. (Consulte la página 5 del Tarot de Night City).",
+          "18-18": "La Estrella. Si el Ataque fue un Ataque a distancia, golpea al objetivo y golpea a un segundo objetivo dentro de los 20 m/yds elegido por el DJ. Si no hay un segundo objetivo válido, golpea el primer objetivo en otro momento. El segundo golpe golpea el cuerpo. Tiras una nueva Tirada de Daño para el segundo golpe. Si el Ataque fue un Ataque Cuerpo a Cuerpo, el objetivo recibe las Lesiones Críticas de Costillas Rotas y Pulmón Colapsado. (Consulte la página 5 del Tarot de Night City).",
+          "19-19": "La Luna. El objetivo recibe la lesión crítica por objeto extraño dos veces, una en el cuerpo y otra en la cabeza. Si el Ataque fue un Ataque cuerpo a cuerpo con un arma cuerpo a cuerpo, el arma queda atrapada en el cuerpo del objetivo y el Atacante queda desarmado. (Consulte la página 5 del Tarot de Night City).",
+          "20-20": "El Sol. Si el objetivo lleva algún explosivo, el DJ debe elegir uno. Explota Si el objetivo no llevaba ninguno, el DJ debe elegir un equipo que no sea un arma en el objetivo. Está destruido sin posibilidad de reparación. (Consulte la página 5 del Tarot de Night City).",
+          "21-21": "Juicio. El objetivo recibe la lesión crítica de dedos aplastados en una mano. La otra mano recibe la lesión crítica de mano desmembrada. (Consulte la página 5 del Tarot de Night City).",
+          "22-22": "El Mundo. El Atacante toma un turno adicional después de este. Obtienen una bonificación de +5 en cualquiera de sus pruebas de habilidad, ignoran sus efectos de estado de herida y no realizan una salvación por muerte si son heridos de muerte durante el siguiente turno. (Consulte la página 5 del Tarot de Night City)."
+        }
+      ]
+    }
+  }
+}

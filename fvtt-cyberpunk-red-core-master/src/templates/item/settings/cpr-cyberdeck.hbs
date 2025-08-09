@@ -1,0 +1,33 @@
+{{!-- Cyberdeck Item Settings--}}
+{{!-- Cyberdeck Installed Programs Settings--}}
+<li class="item flexrow">
+  <div class="item flexrow setting-name text-nowrap text-semi">
+    <a class="manage-installed-programs"
+       data-item-prop="manage-installed-programs">
+      {{localize "CPR.itemSheet.cyberdeck.configureInstalledPrograms"}}
+      <i class="text-smallest text-super fas fa-wrench"></i>
+    </a>
+  </div>
+</li>
+<div class="installed-programs"></div>
+{{#each item.system.installedPrograms as |program| }}
+  <li class="item flexrow">
+    <div class="item flexrow setting-name text-nowrap text-padding-left-small">
+      {{#if (cprListContains "speed,attack,defense" program.system.class) }}
+        {{program.name}} ({{localize program.system.class}})
+        <a class="uninstall-single-item text-padding-left-normal"
+           data-item-id="{{program.id}}">
+          <i class="fas fa-folder-minus"
+             data-tooltip="{{localize "CPR.itemSheet.cyberdeck.eraseProgram"}}"></i>
+        </a>
+      {{else}}
+        {{program.name}} ({{localize (cprFindConfigValue "programClassList" program.system.class)}})
+        <a class="uninstall-single-item text-padding-left-smaller"
+           data-item-id="{{program.id}}">
+          <i class="fas fa-folder-minus"
+             data-tooltip="{{localize "CPR.itemSheet.cyberdeck.eraseProgram"}}"></i>
+        </a>
+      {{/if}}
+    </div>
+  </li>
+{{/each}}

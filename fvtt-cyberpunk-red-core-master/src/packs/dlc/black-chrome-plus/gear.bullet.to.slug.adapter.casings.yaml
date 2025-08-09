@@ -1,0 +1,39 @@
+_id: bDif9oZ2gb46jAx3
+_key: "!items!bDif9oZ2gb46jAx3"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/black-chrome-plus/bullet-to-slug-adapter-casings.svg
+name: Bullet To Slug Adapter Casings
+system:
+  amount: 10
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>Make any bullet able to be fired as a shotgun slug.</p>
+      <p>A box of Bullet to Slug Adapter Casings comes with 10 casings.</p>
+      <p>
+        You can load 10 bullets into 10 adapters using the included jig in an Action.
+        If loading by hand it takes an Action to load 1 bullet.
+      </p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 0
+    usedSlots: 0
+  isElectronic: false
+  price:
+    market: 100
+  providesHardening: false
+  revealed: true
+  source:
+    book: BC+
+    page: 3
+  usage: toggled
+type: gear

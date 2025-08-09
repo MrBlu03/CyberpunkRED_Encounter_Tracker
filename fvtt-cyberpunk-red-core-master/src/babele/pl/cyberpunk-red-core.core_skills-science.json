@@ -1,0 +1,38 @@
+{
+  "label": "Umiejętność (Nauka)",
+  "mapping": {},
+  "entries": {
+    "Science (Anthropology)": {
+      "name": "Nauka (Antropologia)",
+      "description": ""
+    },
+    "Science (Biology)": {
+      "name": "Nauka (Biologia)",
+      "description": ""
+    },
+    "Science (Chemistry)": {
+      "name": "Nauka (Chemia)",
+      "description": ""
+    },
+    "Science (Geology)": {
+      "name": "Nauka (Geologia)",
+      "description": ""
+    },
+    "Science (History)": {
+      "name": "Nauka (Historia)",
+      "description": ""
+    },
+    "Science (Mathematics)": {
+      "name": "Nauka (Matematyka)",
+      "description": ""
+    },
+    "Science (Physics)": {
+      "name": "Nauka (Fizyka)",
+      "description": ""
+    },
+    "Science (Zoology)": {
+      "name": "Science (Zoology)",
+      "description": ""
+    }
+  }
+}

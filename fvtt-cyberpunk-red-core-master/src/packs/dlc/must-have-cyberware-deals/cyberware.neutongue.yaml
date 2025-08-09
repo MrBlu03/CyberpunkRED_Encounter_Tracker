@@ -1,0 +1,61 @@
+_id: mTL4ZsBLRd6dO7Hv
+_key: "!items!mTL4ZsBLRd6dO7Hv"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/must_have_cyberware_deals/neutongue.svg
+name: NeuTongue
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  core: false
+  damage: 1d6
+  description:
+    value: |
+      <p>
+        Simulates flavor sensations. Use a linked Agent to customize flavor profiles.
+        Can be deactivated without an Action. No sense of taste when deactivated.
+      </p>
+      <p>Replaces Meat tongue.</p>
+  dvTable: ""
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  humanityLoss:
+    roll: 2d6
+    static: 7
+  installLocation: hospital
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 0
+    usedSlots: 0
+  isElectronic: true
+  isFoundational: false
+  isRanged: false
+  isWeapon: false
+  magazine:
+    max: 0
+    value: 0
+  price:
+    market: 100
+  providesHardening: false
+  revealed: true
+  rof: 1
+  size: 1
+  source:
+    book: MHCD
+    page: 3
+  type: cyberwareInternal
+  unarmedAutomaticCalculation: true
+  usage: toggled
+  usesType: magazine
+  weaponSkill: ""
+  weaponType: ""
+type: cyberware

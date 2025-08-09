@@ -1,0 +1,16 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "autoFire": {
+      "type": "integer"
+    },
+    "suppressiveFire": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "autoFire",
+    "suppressiveFire"
+  ]
+}

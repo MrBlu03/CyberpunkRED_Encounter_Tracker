@@ -1,0 +1,149 @@
+{
+  "label": "Armas con Marca Básico",
+  "entries": {
+    "Avenger": {
+      "name": "Vengadora",
+      "description": "<p>Una pistola media ocultable. +1 al ataque.</p>"
+    },
+    "Bearcat": {
+      "name": "Manturón",
+      "description": "<p>Arco revitalizado, recargado como parte de una Acción de Ataque.</p>\n<p>+1 al Ataque.</p>"
+    },
+    "Boomer Buster": {
+      "name": "Destructor de Boomers",
+      "description": "<p>Una Pistola Muy Pesada. No se puede ocultar. +1 para Atacar.</p>"
+    },
+    "Bulldog": {
+      "name": "Bulldog",
+      "description": "<p>Una escopeta para todos los propósitos. +1 al Ataque. </p>"
+    },
+    "City Reaper": {
+      "name": "Segador de Ciudad",
+      "description": "<p>Un SMG pesado. Debido a su tamaño, no puede ser ocultado. Si tira 1 en el Ataque (pifia) el arma se atasca y requiere una acción para desatascar. </p>"
+    },
+    "Cityhunter": {
+      "name": "Cazador de Ciudad",
+      "description": "<p>Una Pistola Pesada ocultable. +1 al Ataque.</p>"
+    },
+    "Dragon": {
+      "name": "Dragón",
+      "description": "<p>Un rifle de asalto estándar. +1 para Atacar.</p>"
+    },
+    "Home Defender": {
+      "name": "Defensor de Casa",
+      "description": "<p>Una escopeta para todos los propósitos. Si tira 1 en el Ataque (pifia) el arma se atasca y requiere una acción para desatascar. </p>"
+    },
+    "Hotshot": {
+      "name": "Tiro Caliente",
+      "description": "<p>Saca los cañones grandes. Este lanzador de cohetes causará algún daño. +1 al ataque.</p>"
+    },
+    "Hunter": {
+      "name": "Cazador",
+      "description": "<p>Una ballesta que debe recargarse después de cada ataque. Si tira 1 en el ataque (pifia) la cuerda se suelta y requiere una acción para volver a colocarla. </p>"
+    },
+    "Jungle Reaper": {
+      "name": "Segador de la Jungla",
+      "description": "<p>Un rifle de asalto estándar. Si tira 1 en Ataque (pifia) el rifle se atasca y requiere una acción para desatascar. </p>"
+    },
+    "Long Rifle": {
+      "name": "Rifle Largo",
+      "description": "<p>Un rifle de francotirador de larga distancia. Carga 4 balas en un cargador. </p>"
+    },
+    "Magnum": {
+      "name": "Magnum",
+      "description": "<p>Una Pistola Pesada ocultable. Si tira 1 en el Ataque (pifia) el arma se atasca y requiere una acción para desatascar. </p>"
+    },
+    "Mark III": {
+      "name": "Mark III",
+      "description": "<p>Una Pistola Pesada ocultable.</p>"
+    },
+    "Minami 10": {
+      "name": "Minami 10",
+      "description": "<p>Un SMG ocultable. +1 para Atacar.</p>"
+    },
+    "Mini-Gat": {
+      "name": "Mini-Gat",
+      "description": "<p>Un SMG ocultable. </p>"
+    },
+    "Mini-Grenade": {
+      "name": "Mini-Granada",
+      "description": "<p>Un lanzador de granadas de alto impacto. Puedes usar una variedad de granadas con esto. </p>"
+    },
+    "P-35": {
+      "name": "P-35",
+      "description": "<p>Una Pistola Muy Pesada. No se puede ocultar.</p>"
+    },
+    "Rapid Assault": {
+      "name": "Asalto Rápido",
+      "description": "<p>Una escopeta para todos los propósitos. </p>"
+    },
+    "Ronin": {
+      "name": "Ronin",
+      "description": "<p>Un rifle de asalto estándar. </p>"
+    },
+    "Scorpion": {
+      "name": "Escorpión",
+      "description": "<p>Una Ballesta, recargada como parte de una acción de Ataque.</p>\n<p>+1 para Ataque.</p>"
+    },
+    "Sherwood": {
+      "name": "Sherwood",
+      "description": "<p>Un arco revitalizado que debe recargarse después de cada ataque. Si tira 1 en ataque (pifia) la cuerda se suelta y requiere una acción para volver a colocarla. </p>"
+    },
+    "SMG-21": {
+      "name": "SMG-21",
+      "description": "<p>Un SMG pesado. Debido a su tamaño, no puede ser ocultado. </p>"
+    },
+    "Snipe-Star": {
+      "name": "Francotirador-Estrella",
+      "description": "<p>Un rifle de francotirador de larga distancia. Carga 4 balas en un cargador. Si tira 1 en el ataque (pifia) el rifle se atasca y requiere una acción para desatascar. </p>"
+    },
+    "Streetmaster": {
+      "name": "Maestro Callejero",
+      "description": "<p>Una Pistola Media ocultable. Si tira 1 en el Ataque (pifia) el arma se atasca y requiere una acción para desatascar. </p>"
+    },
+    "Striker": {
+      "name": "Golpeador",
+      "description": "<p>Una Ballesta, recargada como parte de una acción de Ataque.</p>"
+    },
+    "Super Chief": {
+      "name": "Super Jefe",
+      "description": "<p>Una Pistola Muy Pesada. No se puede ocultar. Si tira 1 en el Ataque (pifia) el arma se atasca y requiere una acción para desatascar. </p>"
+    },
+    "Tech-Assault III": {
+      "name": "Tech-Asalto III",
+      "description": "<p>Un SMG ocultable. Si tira 1 en el Ataque (pifia) el arma se atasca y requiere una acción para desatascar. </p>"
+    },
+    "Tomcat": {
+      "name": "Tomcat",
+      "description": "<p>Arco revitalizado, recargado como parte de una acción de Ataque.</p>"
+    },
+    "Type-18": {
+      "name": "Type-18",
+      "description": "<p>Un lanzador de granadas de alto impacto. Puedes usar una variedad de granadas con esto. +1 para Atacar.</p>"
+    },
+    "Type-G": {
+      "name": "Type-G",
+      "description": "<p>Un lanzador de granadas de alto impacto. Puedes usar una variedad de granadas con esto. Si tira 1 en el Ataque (pifia) el arma se atasca y requiere una acción para desatascar. </p>"
+    },
+    "Type-R": {
+      "name": "Type-R",
+      "description": "<p>Saca los cañones grandes. Este lanzador de cohetes causará algún daño. Si tira 1 en el Ataque (pifia) el arma se atasca y requiere una acción para desatascar. </p>"
+    },
+    "Urban": {
+      "name": "Urbano",
+      "description": "<p>Saca los cañones grandes. Este lanzador de cohetes causará algún daño. </p>"
+    },
+    "Viper": {
+      "name": "Víbora",
+      "description": "<p>Un SMG pesado. Debido a su tamaño, no puede ser ocultado. +1 para Atacar.</p>"
+    },
+    "WSSA Sniper System": {
+      "name": "Sistema de Francotirador WSSA",
+      "description": "<p>Un rifle de francotirador de larga distancia. Carga 4 balas en un cargador. +1 al ataque. </p>"
+    },
+    "X-9mm": {
+      "name": "X-9mm",
+      "description": "<p>Una Pistola Media ocultable.</p>"
+    }
+  }
+}

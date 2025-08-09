@@ -1,0 +1,17 @@
+<a class="equip" data-item-prop="system.equipped">
+  {{#if (cprCompare system.equipped "===" "equipped") }}
+    <i class="fas fa-hand text-left"
+       data-tooltip="{{localize "CPR.global.equipState.equipped"}}">
+    </i>
+  {{/if}}
+  {{#if (cprCompare system.equipped "===" "carried") }}
+    <i class="fas fa-suitcase text-left"
+       data-tooltip="{{localize "CPR.global.equipState.carried"}}">
+    </i>
+  {{/if}}
+  {{#if (cprCompare system.equipped "===" "owned") }}
+    <i class="fas fa-circle-notch text-left"
+       data-tooltip="{{localize "CPR.global.equipState.owned"}}">
+    </i>
+  {{/if}}
+</a>

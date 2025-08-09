@@ -1,0 +1,42 @@
+{
+  "label": "Tabelle Ferite Critiche",
+  "mapping": {},
+  "entries": {
+    "Critical Injuries (Body)": {
+      "name": "Ferite Critiche (Corpo)",
+      "results": [
+        {
+          "2-2": "Braccio Smembrato",
+          "3-3": "Mano Smembrata",
+          "4-4": "Polmone Collassato",
+          "5-5": "Costole Rotte",
+          "6-6": "Braccio Rotto",
+          "7-7": "Corpo Estraneo",
+          "8-8": "Gamba Rotta",
+          "9-9": "Strappo Muscolare",
+          "10-10": "Lesione Spinale",
+          "11-11": "Dita Schiacciate",
+          "12-12": "Gamba Smembrata"
+        }
+      ]
+    },
+    "Critical Injuries (Head)": {
+      "name": "Ferite Critiche (Testa)",
+      "results": [
+        {
+          "2-2": "Occhio Perso",
+          "3-3": "Commozione Celebrale",
+          "4-4": "Occhio Danneggiato",
+          "5-5": "Trauma Cranico",
+          "6-6": "Mascella Rotta",
+          "7-7": "Corpo Estraneo (H)",
+          "8-8": "Colpo di Frusta",
+          "9-9": "Teschio Incrinato",
+          "10-10": "Orecchio Danneggiato",
+          "11-11": "Laringe Schiacciata",
+          "12-12": "Orecchio Perso"
+        }
+      ]
+    }
+  }
+}

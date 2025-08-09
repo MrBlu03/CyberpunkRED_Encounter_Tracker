@@ -1,0 +1,35 @@
+{
+  "label": "Tarot de Night City",
+  "mapping": {},
+  "entries": {
+    "Tarot Cards": {
+      "name": "Cartes de Tarot",
+      "results": [
+        {
+          "1-1": "Le Fou. Tous les cyberimplants de la cible sont inutilisables pendant 1 heure. Leurs jets gagnent le modificateur \"Vision brouillée par l'obscurité\" si cela le laisserait sans possibilité de sentir un ennemi. Les cybermembres restent attachés au corp mais pendent librement. Si la cible ne possède pas de cyberimplant, elle reçoit la blessure critique Plaie avec corp étranger ainsi qu'une perte d'Humanité de 3d6 à la place. (Voir le Tarot de NightCity page 3).",
+          "2-2": "Le Magicien. Le GM doit sélectionner l'un des cyberimplants de la cible. Il est ensuite détruit. La cible subit également un Feu d'intensité Mortelle (CP:R Page 180) (voir la page 3 du Tarot de NightCity).",
+          "3-3": "La Grande Prêtresse. La cible subit la blessure critique Plaie avec corps étranger. Lorsque vous vous déplacez de plus de 4 m, au lieu de prendre le bonus de dégâts aux blessures critiques, vous devez réussir un test de Résistance à la torture/drogues ou subir 3d6 de dégâts directement à vos PS. (Voir le Tarot de NightCity page 3).",
+          "4-4": "L'Impératrice. Les 3 prochains jets d'attaque qui touchent la cible de cette carte infligent automatiquement des blessures critiques, peu importe le résultat du jet de dégâts. Cela ne fonctionne pas avec les armes incapables de causer des blessures critiques, à l'exception des armes de mêlée légères. (Voir page 3 du Tarot de NightCity).",
+          "5-5": "L'Empereur. Le MJ doit sélectionner un Joueur. Ce joueur choisit ensuite une blessure critique pour la tête à partir de la table (CPR : Page 188) et une blessure critique pour le corps de la table (CPR : Page 187). La cible reçoit les deux blessures critiques (voir la page 3 du Tarot de NightCity).",
+          "6-6": "L'Hiérophante. Double les dégâts infligés par l'Attaque après armure et modificateurs. (Tout comme la façon dont vous doubleriez les dégâts d'un Tir ciblé à la tête). Si l'Attaque a été faite avec une arme, cette arme est maintenant détruite au-delà de la réparation (voir la page 3 du Tarot de NightCity).",
+          "7-7": "Les Amoureux. L'attaque est maintenant considérée comme un tir ciblé à la tête. Si l'attaque était une attaque de mêlée, la cible est maintenant agrippée par l'attaquant (voir page 3 du Tarot de NightCity).",
+          "8-8": "Le Chariot. L''armure de la cible est perforée de 5 points supplémentaires, même si le jet de dégâts n'a pas battu le PA de l'armure de la cible. (Voir le Tarot de NightCity page 4).",
+          "9-9": "Force. L'attaque inflige 25 points de dégâts supplémentaires. Ces dégâts sont ajoutés avant n'importe quelle armure ou multiplicateur. (Voir page 4 du Tarot de NightCity).",
+          "10-10": "L'Ermite. La cible reçoit la blessure critique Oeil crevé deux fois, mais ne subit le malus qu'une seule fois. La victime est alors incapable de détecter la présence d'un adversaire, tous ses jets subissent le modificateur -4 \"Vision brouillée par la fumée ou l'obscurité\". (Voir le Tarot de NightCity page 4).",
+          "11-11": "La Roue de Fortune. Si l'attaque était une attaque à distance, le MJ choisit aléatoirement une nouvelle cible. S'il s'agissait d'une attaque de mêlée, l'attaquant tombe au sol et l'attaque rate. L'arme utilisée fonctionne mal et nécessite une action pour remédier au dysfonctionnement avant de pouvoir être utilisée à nouveau. (Voir le Tarot de NightCity page 4).",
+          "12-12": "Justice. Pendant les 5 prochaines minutes, la cible subit un malus de -5 aux jets d'Esquive en mêlée et ne peut pas esquiver les attaques à distance. (Voir le Tarot de NightCity page 4).",
+          "13-13": "Le Pendu. La cible se retrouve au sol et subit les blessures critiques \"Vertèbre endommagée\" et \"Coup du lapin\" (voir la page 4 du Tarot de NightCity).",
+          "14-14": "La Mort. La cible doit lancer un jet de sauvegarde contre la Mort indépendamment de ses PS. L'échec signifie qu'elle est réduite à 0 PS et est considérée comme inconsciente pendant une minute. Quand elle reprend conscience, elle récupère 3d6 points d'humanité sans dépasser son Humanité Max (voir page 4 du Tarot de NightCity).",
+          "15-15": "Tempérance. La cible choisit l'un de ses membres pour recevoir la blessure critique \"Démembré\", puis un membre différent recevant la blessure critique \"Cassé\". (Voir le Tarot de la ville nocturne page 5).",
+          "16-16": "Le Diable. L'attaque est maintenant considérée comme un tir ciblé sur la tête. La cible reçoit la blessure critique \"Lésion cérébrale\" et \"Oreille endommagée\" (voir la page 5 du Tarot de NightCity).",
+          "17-17": "La Tour. La cible subit la blessure critique \"Fracture du crâne\", \"Trachée écrasée\" et \"Coup du lapin\" mais sans prendre leurs dégâts bonus. Pendant 1 heure La cible ne ressent plus la douleur et ignore les effets de Blessure Grave. (Voir Page 5 du Tarot de NightCity).",
+          "18-18": "L'Étoile. Si l'attaque était une attaque à distance, elle frappe la cible et frappe une seconde cible dans un rayon de 20 m qui est choisie par le MJ. S'il n'y a pas de seconde cible valide, elle frappe la première cible une fois de plus. Le deuxième coup touche le corps. Vous lancez un nouveau jet de dégâts pour le deuxième coup. Si l'attaque était une attaque de mêlée, la cible reçoit la blessure critique \"Côtes cassées\" et \"Poumon affaissé\" (voir la page 6 du Tarot de NightCity).",
+          "19-19": "La Lune. La cible reçoit deux fois la blessure critique Plaie avec corps étranger, une fois sur le corps et une fois sur la tête. Si l'attaque était une attaque de mêlée, l'arme est bloquée dans le corps de la cible et l'attaquant est désarmé. (Voir le Tarot de NightCity page 6).",
+          "20-20": "Le Soleil. Si la cible porte des explosifs, le MJ doit en choisir un. Il explose. Si la cible ne portait aucun explosif, le MJ doit choisir un équipement autre, porté par la cible. Il est détruit au-delà de la réparation (voir page 6 du Tarot de NightCity).",
+          "21-21": "Le Jugement. La cible reçoit la blessure critique \"Doigts écrasés\" à l'une de ses mains. L'autre main reçoit la blessure critique \"Main arrachée\" (voir la page 6 du Tarot de NightCity).",
+          "22-22": "Le Monde. Le personnage qui a tiré cette carte peut rejouer un tour supplémentaire après celui-ci. Il gagne un bonus de +5 à n'importe lequel de ses jets de compétence, ignore les effets négatifs de tous les Etats de Blessure et n'a pas à faire de Sauvegarde contre la Mort s'il est mortellement blessé lors de ce tour supplémentaire. (Voir le Tarot de NightCity page 5)."
+        }
+      ]
+    }
+  }
+}

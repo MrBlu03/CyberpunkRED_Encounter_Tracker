@@ -1,0 +1,47 @@
+<li class="item flexrow{{#if item.system.favorite }} favorite{{else }}{{#if (cprListContains sheet.options.collapsedSections "gearTab-armor") }} hide{{/if }}{{/if }}"
+    data-item-id="{{item._id}}"
+    data-item-category="{{item.type}}"
+    draggable="true">
+  <div class="item-name gear-name text-nowrap flexrow">
+    <a class="name item-edit flex-center">
+      <div class="item-thumb">
+        <img src="{{item.img}}"/>
+        {{#if item.system.isUpgraded }}
+          <i class="fa-solid fa-square-caret-up fa-xs" data-tooltip="{{localize "CPR.global.generic.upgraded"}}"></i>
+        {{/if}}
+      </div>
+      {{ item.name }}
+    </a>
+    {{#if item.system.installedItems.list }}
+      <a class="toggle-installed-visibility">
+        <i class="fa-solid fa-chevron-up fa-sm {{#unless (cprGetProp actor.flags.cyberpunk-red-core.showInstalled item.id) }}fa-flip-vertical{{/unless}}"></i>
+      </a>
+    {{/if}}
+  </div>
+  <div class="item-detail gear-amount">
+    {{~#if item.system.isHeadLocation}}
+    <span data-tooltip="{{localize "CPR.global.location.head"}} {{localize "CPR.characterSheet.rightPange.armor.sp"}}">
+      {{cprMath "subtract" (cprApplyUpgrade item item.system.headLocation.sp "headSp") item.system.headLocation.ablation}}/{{cprApplyUpgrade item item.system.headLocation.sp "headSp"}}
+    </span>
+    </br>
+    {{/if}}
+    {{~#if item.system.isBodyLocation}}
+    <span data-tooltip="{{localize "CPR.global.location.body"}} {{localize "CPR.characterSheet.rightPange.armor.sp"}}">
+      {{cprMath "subtract" (cprApplyUpgrade item item.system.bodyLocation.sp "bodySp") item.system.bodyLocation.ablation}}/{{cprApplyUpgrade item item.system.bodyLocation.sp "bodySp"}}
+    </span>
+    {{/if}}
+    {{~#if item.system.isShield}}
+    <span data-tooltip="{{localize "CPR.global.generic.shield"}} {{localize "CPR.global.generic.hitpointsShort"}}">
+      {{item.system.shieldHitPoints.value}}/{{cprApplyUpgrade item item.system.shieldHitPoints.max "shieldHp"}}
+    </span>
+    {{/if}}
+  </div>
+  <div class="item-detail gear-data text-nowrap"
+       data-tooltip="{{cprSanitizeText item.system.description.value}}">
+    {{cprSanitizeText item.system.description.value}}
+  </div>
+  <div class="item-detail gear-actions text-nowrap">
+    {{> "systems/cyberpunk-red-core/templates/actor/mixin/actions/cpr-actions.hbs" item}}
+  </div>
+  {{cprNestedInstalledGearTab item}}
+</li>

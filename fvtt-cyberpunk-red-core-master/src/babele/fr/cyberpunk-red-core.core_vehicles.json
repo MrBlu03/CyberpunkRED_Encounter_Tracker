@@ -1,0 +1,62 @@
+{
+  "label": "Véhicules",
+  "mapping": {},
+  "entries": {
+    "Aerozep": {
+      "name": "Aérozep",
+      "description": "<p>Un dirigeable de fret moderne. Requiert un minimum de deux pièces. Le prix est pour chaque pièce sous le pont.</p>"
+    },
+    "AV-4 Multipurpose Aerodyne": {
+      "name": "Aérodyne polyvalent AV-4",
+      "description": "<p>Un véhicule volant muni d'un moteur à poussée verticale. Communément utilisé par la Trauma Team.</p>"
+    },
+    "AV-9 Super Aerodyne": {
+      "name": "Super-aérodyne AV-9",
+      "description": "<p>Un AV hautement avancé avec des places limitées. Peux voyager jusqu'à 483 km/h.</p>\n"
+    },
+    "Cabin Cruiser": {
+      "name": "Bateau de plaisance",
+      "description": "<p>Un hors-bord extrêmement rapide. Requiert un minimum de deux pièces. Le prix est pour chaque pièce sous le pont.</p>"
+    },
+    "Compact Groundcar": {
+      "name": "Voiture terrestre compacte",
+      "description": "<p>Voiture ordinaire alimentée au CHOOH<sup>2</sup>. Très commune, avec une petite douzaine de constructeurs produisant des modèles similaires.</p>"
+    },
+    "Gyrocopter": {
+      "name": "Gyrocoptère",
+      "description": "<p>Un minuscule giravion deux places.</p>"
+    },
+    "Helicopter": {
+      "name": "Hélicoptère",
+      "description": "<p>Un hélicoptère quatre places capable de grandes vitesses et de longs vols.</p>"
+    },
+    "High Performance Groundcar": {
+      "name": "Voiture terrestre à haute performance",
+      "description": "<p>Une voiture spécialisée designée pour les performances sportives.</p>"
+    },
+    "Jetski": {
+      "name": "Jet ski",
+      "description": "<p>Un jet ski alimenté au CHOOH<sup>2</sup> pouvant accueillir deux personnes.</p>"
+    },
+    "Roadbike": {
+      "name": "Moto de route",
+      "description": "<p>Moto ordinaire alimentée au CHOOH<sup>2</sup> vue pendant l'Ère du Rouge.</p>"
+    },
+    "Speedboat": {
+      "name": "Hors-bord",
+      "description": "<p>Un bateau rapide alimenté au CHOOH<sup>2</sup>.</p>"
+    },
+    "Super Groundcar": {
+      "name": "Supervoiture terrestre",
+      "description": "<p>Une voiture de sport onéreuse et exotique alimentée au CHOOH<sup>2</sup>, capable de pointes de vitesses extrêmes.</p>"
+    },
+    "Superbike": {
+      "name": "Supermoto",
+      "description": "<p>Une moto de rue boostée, capable de pointes de vitesses extrêmes.</p>"
+    },
+    "Yacht": {
+      "name": "Yacht",
+      "description": "<p>Bateau de plaisance de luxe. Requiert un minimum de deux pièces. Le prix est pour chaque pièce sous le pont.</p>"
+    }
+  }
+}
