@@ -68,7 +68,10 @@ function ShopGenerator() {
     type: 'all',
     priceRange: 'all',
     quality: 'all',
-    search: ''
+    search: '',
+    sortBy: 'name',
+    sortOrder: 'asc',
+    hideZeroPrice: false
   });
   const [nightMarketMode, setNightMarketMode] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
@@ -142,6 +145,16 @@ function ShopGenerator() {
     }
   };
 
+  const seededRandom = (seedStr: string): number => {
+    let seed = 0;
+    for (let i = 0; i < seedStr.length; i++) {
+      seed = (seed * 31 + seedStr.charCodeAt(i)) >>> 0;
+    }
+    // LCG
+    seed = (1103515245 * seed + 12345) % 0x80000000;
+    return seed / 0x80000000;
+  };
+
   const applyFilters = () => {
     let filtered = [...allItems];
     
@@ -174,15 +187,20 @@ function ShopGenerator() {
         }
       });
     }
-    
-    // Quality filter
-    if (filters.quality !== 'all') {
-      filtered = filtered.filter(item => item.system.quality === filters.quality);
+
+    // Hide €$0 items if selected
+    if (filters.hideZeroPrice) {
+      filtered = filtered.filter(item => (getItemPrice(item) || 0) > 0);
     }
     
-    // Night Market mode - randomly show only 30% of items
+    // Quality filter (normalize values to handle casing variants)
+    if (filters.quality !== 'all') {
+      filtered = filtered.filter(item => (item.system.quality || '').toLowerCase() === String(filters.quality).toLowerCase());
+    }
+    
+    // Night Market mode - deterministically show only 30% of items based on ID
     if (nightMarketMode) {
-      filtered = filtered.filter(() => Math.random() < 0.3);
+      filtered = filtered.filter(item => seededRandom(`nightmarket-${item._id}`) < 0.3);
     }
     
     // Vendor filter - filter by vendor specialties and availability
@@ -211,7 +229,74 @@ function ShopGenerator() {
       });
     }
     
+    // Apply sorting
+    filtered = applySorting(filtered);
+    
     setFilteredItems(filtered);
+  };
+
+  const normalizeQuality = (q?: string): number => {
+    if (!q) return 1; // default to Standard
+    const normalized = q.toLowerCase();
+    const order = ['poor', 'standard', 'excellent', 'superior'];
+    const idx = order.indexOf(normalized);
+    return idx === -1 ? 1 : idx;
+  };
+
+  const applySorting = (items: ShopItem[]): ShopItem[] => {
+    const sorted = [...items];
+    
+    sorted.sort((a, b) => {
+      let compareValue = 0;
+      
+      switch (filters.sortBy) {
+        case 'name':
+          const nameA = a.name || 'Unknown';
+          const nameB = b.name || 'Unknown';
+          compareValue = nameA.localeCompare(nameB);
+          break;
+          
+         case 'price':
+          const priceA = Number(getItemPrice(a) || 0);
+          const priceB = Number(getItemPrice(b) || 0);
+          if (isNaN(priceA) && isNaN(priceB)) compareValue = 0;
+          else if (isNaN(priceA)) compareValue = 1; // push NaN to end
+          else if (isNaN(priceB)) compareValue = -1;
+          else if (priceA === 0 && priceB > 0) compareValue = 1; // push €$0 to end
+          else if (priceB === 0 && priceA > 0) compareValue = -1;
+          else compareValue = priceA - priceB;
+          break;
+          
+        case 'type':
+          const typeA = a.type || 'unknown';
+          const typeB = b.type || 'unknown';
+          compareValue = typeA.localeCompare(typeB);
+          break;
+          
+        case 'quality':
+          const qA = normalizeQuality(a.system?.quality);
+          const qB = normalizeQuality(b.system?.quality);
+          compareValue = qA - qB;
+          break;
+          
+        default:
+          const defaultNameA = a.name || 'Unknown';
+          const defaultNameB = b.name || 'Unknown';
+          compareValue = defaultNameA.localeCompare(defaultNameB);
+      }
+      
+      // Ensure we always return a consistent comparison
+      if (compareValue === 0) {
+        // Secondary sort by name for consistent ordering
+        const nameA = a.name || 'Unknown';
+        const nameB = b.name || 'Unknown';
+        compareValue = nameA.localeCompare(nameB);
+      }
+      
+      return filters.sortOrder === 'desc' ? -compareValue : compareValue;
+    });
+    
+    return sorted;
   };
 
   const generateRandomVendor = (type?: keyof typeof vendorTypes, location?: keyof typeof locations) => {
@@ -282,7 +367,26 @@ function ShopGenerator() {
   };
 
   const getItemPrice = (item: ShopItem) => {
-    const basePrice = item.system.price?.market || item.system.cost || item.system.value || 0;
+    if (!item || !item.system) return 0;
+    
+    let basePrice = 0;
+    
+    // Try multiple price fields in order of preference
+    if (item.system.price?.market !== undefined && item.system.price.market !== null) {
+      basePrice = item.system.price.market;
+    } else if (item.system.cost !== undefined && item.system.cost !== null) {
+      basePrice = item.system.cost;
+    } else if (item.system.value !== undefined && item.system.value !== null) {
+      basePrice = item.system.value;
+    } else if (item.system.price !== undefined && item.system.price !== null) {
+      basePrice = typeof item.system.price === 'number' ? item.system.price : 0;
+    }
+    
+    // Ensure we have a valid number
+    if (isNaN(basePrice) || basePrice < 0) {
+      basePrice = 0;
+    }
+    
     return currentVendor ? Math.round(basePrice * currentVendor.markup) : basePrice;
   };
 
@@ -398,7 +502,7 @@ function ShopGenerator() {
   };
 
   return (
-    <div className="shop-generator">
+    <div className="shop-generator-enhanced">
       {isLoading && (
         <div className="loading-message">
           <h3>Loading Night City Shop...</h3>
@@ -415,8 +519,8 @@ function ShopGenerator() {
       )}
       
       {!isLoading && !loadError && (
-        <div className="shop-layout">
-          <div className="shop-content">
+        <div className="shop-content-enhanced">
+          <div className="shop-items-section-enhanced">
             {/* Vendor Generator Section */}
             <div className="section">
               <h2>Vendor Generator</h2>
@@ -459,7 +563,7 @@ function ShopGenerator() {
               </div>
             </div>
 
-            <div className="shop-filters">
+            <div className="shop-filters-enhanced section">
               <h2>{currentVendor ? currentVendor.name : 'Night City Shop'}</h2>
               <p className="data-summary">
                 {allItems.length} items loaded from data packs 
@@ -532,6 +636,30 @@ function ShopGenerator() {
                     placeholder="Search items..."
                   />
                 </div>
+
+                <div className="filter-group">
+                  <label>Sort by:</label>
+                  <select 
+                    value={filters.sortBy} 
+                    onChange={(e) => setFilters(prev => ({ ...prev, sortBy: e.target.value }))}
+                  >
+                    <option value="name">Name</option>
+                    <option value="price">Price</option>
+                    <option value="type">Type</option>
+                    <option value="quality">Quality</option>
+                  </select>
+                </div>
+
+                <div className="filter-group">
+                  <label>Order:</label>
+                  <select 
+                    value={filters.sortOrder} 
+                    onChange={(e) => setFilters(prev => ({ ...prev, sortOrder: e.target.value }))}
+                  >
+                    <option value="asc">Ascending</option>
+                    <option value="desc">Descending</option>
+                  </select>
+                </div>
               </div>
 
               <div className="mode-toggle">
@@ -543,28 +671,40 @@ function ShopGenerator() {
                   />
                   Night Market Mode (Random Availability)
                 </label>
+                <label style={{ marginLeft: '16px' }}>
+                  <input
+                    type="checkbox"
+                    checked={filters.hideZeroPrice}
+                    onChange={(e) => setFilters(prev => ({ ...prev, hideZeroPrice: e.target.checked }))}
+                  />
+                  Hide €$0 items
+                </label>
               </div>
             </div>
 
-            <div className="shop-items">
+            <div className="section">
               <h3>Available Items ({filteredItems.length})</h3>
-              <div className="items-grid">
-                {filteredItems.map(item => (
-                  <div key={item._id} className="shop-item">
-                    <div className="item-header">
-                      <h4>{item.name}</h4>
-                      <span className="item-type">{item.type}</span>
-                    </div>
-                    <div className="item-details">
-                      <div className="item-price">
-                        €${getItemPrice(item).toLocaleString() || 'N/A'}
-                        {currentVendor && currentVendor.markup !== 1 && (
-                          <span className="markup-indicator">
-                            ({Math.round((currentVendor.markup - 1) * 100)}% markup)
-                          </span>
-                        )}
+              <div className="items-grid-enhanced">
+              {filteredItems.map(item => (
+                <div key={item._id} className="shop-item-enhanced">
+                  <div className="shop-item-header">
+                    <h4 className="shop-item-title">{item.name || 'Unknown Item'}</h4>
+                    <div className="shop-item-price">
+                        €${getItemPrice(item).toLocaleString() || '0'}
                       </div>
-                      
+                    </div>
+                    
+                    <div className="shop-item-meta">
+                      <span className="meta-badge type">{item.type || 'unknown'}</span>
+                      {item.system?.quality && (
+                        <span className="meta-badge quality">{item.system.quality}</span>
+                      )}
+                      {item.system?.brand && (
+                        <span className="meta-badge">{item.system.brand}</span>
+                      )}
+                    </div>
+
+                    <div className="item-description-full">
                       {showDetailedStats && (
                         <div className="item-stats">
                           {getItemStats(item).map((stat, index) => (
@@ -573,33 +713,49 @@ function ShopGenerator() {
                         </div>
                       )}
                       
-                      {!showDetailedStats && (
-                        <>
-                          {item.system.quality && (
-                            <div className="item-quality">{item.system.quality}</div>
-                          )}
-                          {item.system.brand && (
-                            <div className="item-brand">{item.system.brand}</div>
-                          )}
-                        </>
-                      )}
-                      
-                      {item.system.description?.value && (
-                        <div className="item-description" dangerouslySetInnerHTML={{ 
+                      {item.system?.description?.value ? (
+                        <div dangerouslySetInnerHTML={{ 
                           __html: item.system.description.value 
                         }} />
+                      ) : (
+                        <p>No description available.</p>
+                      )}
+                      
+                      {currentVendor && currentVendor.markup !== 1 && (
+                        <div className="markup-info">
+                          Vendor markup: {Math.round((currentVendor.markup - 1) * 100)}%
+                        </div>
                       )}
                     </div>
-                    <button onClick={() => addToCart(item)} className="add-to-cart-btn">
-                      Add to Cart
-                    </button>
+
+                    <div className="add-to-cart-section">
+                      <input 
+                        type="number" 
+                        min="1" 
+                        defaultValue="1" 
+                        className="quantity-input"
+                        id={`qty-${item._id}`}
+                      />
+                      <button 
+                        onClick={() => {
+                          const qtyInput = document.getElementById(`qty-${item._id}`) as HTMLInputElement;
+                          const quantity = parseInt(qtyInput?.value || '1');
+                          for (let i = 0; i < quantity; i++) {
+                            addToCart(item);
+                          }
+                        }} 
+                        className="add-to-cart-btn"
+                      >
+                        Add to Cart
+                      </button>
+                    </div>
                   </div>
                 ))}
               </div>
             </div>
           </div>
 
-          <div className="shopping-cart">
+          <div className="shopping-cart-enhanced section">
             <h3>Shopping Cart ({cart.length} items)</h3>
             
             {cart.length === 0 ? (

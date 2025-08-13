@@ -87,15 +87,44 @@ interface NPC {
 
 interface NPCGeneratorProps {
   onAddToEncounter?: (npc: NPC) => void;
+  onSaveNPC?: (npc: NPC) => void;
 }
 
-export default function NPCGenerator({ onAddToEncounter }: NPCGeneratorProps) {
+export default function NPCGenerator({ onAddToEncounter, onSaveNPC }: NPCGeneratorProps) {
   const [availableSkills, setAvailableSkills] = useState<Skill[]>([]);
   const [availableWeapons, setAvailableWeapons] = useState<Weapon[]>([]);
   const [availableArmor, setAvailableArmor] = useState<Armor[]>([]);
+  const [shieldSp, setShieldSp] = useState<number>(0);
   const [generatedNPCs, setGeneratedNPCs] = useState<NPC[]>([]);
   const [selectedDifficulty, setSelectedDifficulty] = useState<string>('mook');
   const [guaranteeArmor, setGuaranteeArmor] = useState<boolean>(false);
+  
+  // Custom equipment editors
+  const [showCustomWeaponEditor, setShowCustomWeaponEditor] = useState<boolean>(false);
+  const [showCustomArmorEditor, setShowCustomArmorEditor] = useState<boolean>(false);
+  const [customWeapon, setCustomWeapon] = useState<Weapon>({
+    _id: 'custom-weapon',
+    name: '',
+    system: {
+      damage: '2d6',
+      weaponSkill: 'Handgun',
+      attackmod: 0,
+      concealable: { concealable: true }
+    }
+  });
+  const [customArmor, setCustomArmor] = useState<Armor>({
+    _id: 'custom-armor',
+    name: '',
+    system: {
+      bodyLocation: { ablation: 0, sp: 11 },
+      headLocation: { ablation: 0, sp: 0 },
+      isBodyLocation: true,
+      isHeadLocation: false,
+      penalty: 0,
+      price: { market: 100 },
+      description: { value: 'Custom armor piece' }
+    }
+  });
   
   const [currentNPC, setCurrentNPC] = useState<Partial<NPC>>({
     name: '',
@@ -341,7 +370,9 @@ export default function NPCGenerator({ onAddToEncounter }: NPCGeneratorProps) {
       guaranteeArmor,
       armorChance: preset.armorChance,
       shouldHaveArmor,
-      availableArmorCount: availableArmor.length
+      availableArmorCount: availableArmor.length,
+      armorPiecesGenerated: armorPieces.length,
+      armorPieces: armorPieces.map(p => p.name)
     });
     
     if (shouldHaveArmor && availableArmor.length > 0) {
@@ -381,6 +412,41 @@ export default function NPCGenerator({ onAddToEncounter }: NPCGeneratorProps) {
       }
     }
 
+    // Convert armorPieces array into a single armor object for compatibility
+    let combinedArmor: Armor | undefined = undefined;
+    if (armorPieces.length > 0) {
+      // Create a combined armor object from all pieces
+      let headSP = 0;
+      let bodySP = 0;
+      let totalPenalty = 0;
+      let armorNames: string[] = [];
+
+      armorPieces.forEach(piece => {
+        if (piece.system.headLocation?.sp > 0) {
+          headSP = Math.max(headSP, piece.system.headLocation.sp);
+        }
+        if (piece.system.bodyLocation?.sp > 0) {
+          bodySP = Math.max(bodySP, piece.system.bodyLocation.sp);
+        }
+        totalPenalty += piece.system.penalty || 0;
+        armorNames.push(piece.name);
+      });
+
+      combinedArmor = {
+        _id: `combined-${Date.now()}`,
+        name: armorNames.join(' + '),
+        system: {
+          bodyLocation: { ablation: 0, sp: bodySP },
+          headLocation: { ablation: 0, sp: headSP },
+          isBodyLocation: bodySP > 0,
+          isHeadLocation: headSP > 0,
+          penalty: totalPenalty,
+          price: { market: 0 },
+          description: { value: armorNames.join(' + ') }
+        }
+      };
+    }
+
     const maxHP = (randomStats.body + Math.floor(randomStats.will / 2)) * 5;
 
     setCurrentNPC({
@@ -389,6 +455,7 @@ export default function NPCGenerator({ onAddToEncounter }: NPCGeneratorProps) {
       skills: randomSkills,
       equipment: { 
         weapons: selectedWeapons,
+        armor: combinedArmor,
         armorPieces: armorPieces
       },
       hitPoints: { max: maxHP, current: maxHP },
@@ -400,10 +467,10 @@ export default function NPCGenerator({ onAddToEncounter }: NPCGeneratorProps) {
   const saveNPC = () => {
     if (!currentNPC.name) return;
     
-    const npc: NPC = {
-      ...currentNPC as NPC,
-      id: Date.now().toString()
-    };
+    const base: NPC = { ...(currentNPC as NPC), id: Date.now().toString() };
+    const npc: NPC = shieldSp > 0
+      ? { ...base, equipment: { ...base.equipment, armor: { ...(base.equipment?.armor || { head: 0, body: 0 }), shield: shieldSp } } as any }
+      : base;
     
     setGeneratedNPCs(prev => [...prev, npc]);
     
@@ -419,6 +486,7 @@ export default function NPCGenerator({ onAddToEncounter }: NPCGeneratorProps) {
       hitPoints: { max: 40, current: 40 },
       woundState: 'Not Wounded'
     });
+    setShieldSp(0);
   };
 
   const deleteNPC = (id: string) => {
@@ -435,6 +503,89 @@ export default function NPCGenerator({ onAddToEncounter }: NPCGeneratorProps) {
     const statValue = npcStats[skill.system.stat] || 6;
     const skillLevel = currentNPC.skills?.[skill._id] || 2;
     return statValue + skillLevel;
+  };
+
+  const addCustomWeapon = () => {
+    if (customWeapon.name.trim()) {
+      const weapon = { ...customWeapon, _id: `custom-weapon-${Date.now()}` };
+      setCurrentNPC(prev => ({
+        ...prev,
+        equipment: {
+          ...prev.equipment!,
+          weapons: [...(prev.equipment?.weapons || []), weapon]
+        }
+      }));
+      setCustomWeapon({
+        _id: 'custom-weapon',
+        name: '',
+        system: {
+          damage: '2d6',
+          weaponSkill: 'Handgun',
+          attackmod: 0,
+          concealable: { concealable: true }
+        }
+      });
+      setShowCustomWeaponEditor(false);
+    }
+  };
+
+  const addCustomArmor = () => {
+    if (customArmor.name.trim()) {
+      const armor = { ...customArmor, _id: `custom-armor-${Date.now()}` };
+      if (customArmor.system.isBodyLocation && customArmor.system.isHeadLocation) {
+        // Full body armor
+        setCurrentNPC(prev => ({
+          ...prev,
+          equipment: {
+            ...prev.equipment!,
+            armor: armor
+          }
+        }));
+      } else {
+        // Piece armor
+        setCurrentNPC(prev => ({
+          ...prev,
+          equipment: {
+            ...prev.equipment!,
+            armorPieces: [...(prev.equipment?.armorPieces || []), armor]
+          }
+        }));
+      }
+      setCustomArmor({
+        _id: 'custom-armor',
+        name: '',
+        system: {
+          bodyLocation: { ablation: 0, sp: 11 },
+          headLocation: { ablation: 0, sp: 0 },
+          isBodyLocation: true,
+          isHeadLocation: false,
+          penalty: 0,
+          price: { market: 100 },
+          description: { value: 'Custom armor piece' }
+        }
+      });
+      setShowCustomArmorEditor(false);
+    }
+  };
+
+  const removeArmorPiece = (armorId: string) => {
+    setCurrentNPC(prev => ({
+      ...prev,
+      equipment: {
+        ...prev.equipment!,
+        armorPieces: prev.equipment?.armorPieces?.filter(armor => armor._id !== armorId) || []
+      }
+    }));
+  };
+
+  const removeFullArmor = () => {
+    setCurrentNPC(prev => ({
+      ...prev,
+      equipment: {
+        ...prev.equipment!,
+        armor: undefined
+      }
+    }));
   };
 
   return (
@@ -565,6 +716,63 @@ export default function NPCGenerator({ onAddToEncounter }: NPCGeneratorProps) {
                   </div>
                 ))}
               </div>
+              
+              <button 
+                onClick={() => setShowCustomWeaponEditor(true)} 
+                className="custom-weapon-btn"
+              >
+                Create Custom Weapon
+              </button>
+              
+              {showCustomWeaponEditor && (
+                <div className="custom-weapon-editor">
+                  <h5>Custom Weapon</h5>
+                  <div className="custom-weapon-form">
+                    <input
+                      type="text"
+                      placeholder="Weapon name"
+                      value={customWeapon.name}
+                      onChange={(e) => setCustomWeapon(prev => ({ ...prev, name: e.target.value }))}
+                    />
+                    <input
+                      type="text"
+                      placeholder="Damage (e.g., 2d6+2)"
+                      value={customWeapon.system.damage}
+                      onChange={(e) => setCustomWeapon(prev => ({ 
+                        ...prev, 
+                        system: { ...prev.system, damage: e.target.value }
+                      }))}
+                    />
+                    <select
+                      value={customWeapon.system.weaponSkill}
+                      onChange={(e) => setCustomWeapon(prev => ({ 
+                        ...prev, 
+                        system: { ...prev.system, weaponSkill: e.target.value }
+                      }))}
+                    >
+                      <option value="Handgun">Handgun</option>
+                      <option value="Shoulder Arms">Shoulder Arms</option>
+                      <option value="Heavy Weapons">Heavy Weapons</option>
+                      <option value="Melee Weapons">Melee Weapons</option>
+                      <option value="Brawling">Brawling</option>
+                      <option value="Archery">Archery</option>
+                    </select>
+                    <input
+                      type="number"
+                      placeholder="Attack modifier"
+                      value={customWeapon.system.attackmod}
+                      onChange={(e) => setCustomWeapon(prev => ({ 
+                        ...prev, 
+                        system: { ...prev.system, attackmod: parseInt(e.target.value) || 0 }
+                      }))}
+                    />
+                    <div className="custom-weapon-actions">
+                      <button onClick={addCustomWeapon} className="add-btn">Add</button>
+                      <button onClick={() => setShowCustomWeaponEditor(false)} className="cancel-btn">Cancel</button>
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
 
             <div className="armor-section">
@@ -580,11 +788,116 @@ export default function NPCGenerator({ onAddToEncounter }: NPCGeneratorProps) {
                   </option>
                 ))}
               </select>
+              <div className="weapon-add" style={{ marginTop: 8 }}>
+                <label>Shield SP (optional)</label>
+                <input type="number" value={shieldSp} onChange={(e) => setShieldSp(parseInt(e.target.value) || 0)} />
+              </div>
               {currentNPC.equipment?.armor && (
                 <div className="armor-details">
                   <span>Head: {currentNPC.equipment.armor.system.headLocation.sp}</span>
                   <span>Body: {currentNPC.equipment.armor.system.bodyLocation.sp}</span>
                   <span>Penalty: -{currentNPC.equipment.armor.system.penalty || 0}</span>
+                  <button onClick={removeFullArmor} className="remove-armor-btn">Remove</button>
+                </div>
+              )}
+              
+              {currentNPC.equipment?.armorPieces && currentNPC.equipment.armorPieces.length > 0 && (
+                <div className="armor-pieces">
+                  <h5>Armor Pieces</h5>
+                  {currentNPC.equipment.armorPieces.map((armor, index) => (
+                    <div key={armor._id + index} className="armor-piece-item">
+                      <span>{armor.name}</span>
+                      <span>SP: {armor.system.bodyLocation.sp || armor.system.headLocation.sp}</span>
+                      <button onClick={() => removeArmorPiece(armor._id)} className="remove-btn">×</button>
+                    </div>
+                  ))}
+                </div>
+              )}
+              
+              <button 
+                onClick={() => setShowCustomArmorEditor(true)} 
+                className="custom-armor-btn"
+              >
+                Create Custom Armor
+              </button>
+              
+              {showCustomArmorEditor && (
+                <div className="custom-armor-editor">
+                  <h5>Custom Armor</h5>
+                  <div className="custom-armor-form">
+                    <input
+                      type="text"
+                      placeholder="Armor name"
+                      value={customArmor.name}
+                      onChange={(e) => setCustomArmor(prev => ({ ...prev, name: e.target.value }))}
+                    />
+                    <div className="armor-locations">
+                      <label>
+                        <input
+                          type="checkbox"
+                          checked={customArmor.system.isBodyLocation}
+                          onChange={(e) => setCustomArmor(prev => ({ 
+                            ...prev, 
+                            system: { ...prev.system, isBodyLocation: e.target.checked }
+                          }))}
+                        />
+                        Body Armor
+                      </label>
+                      {customArmor.system.isBodyLocation && (
+                        <input
+                          type="number"
+                          placeholder="Body SP"
+                          value={customArmor.system.bodyLocation.sp}
+                          onChange={(e) => setCustomArmor(prev => ({ 
+                            ...prev, 
+                            system: { 
+                              ...prev.system, 
+                              bodyLocation: { ...prev.system.bodyLocation, sp: parseInt(e.target.value) || 0 }
+                            }
+                          }))}
+                        />
+                      )}
+                      
+                      <label>
+                        <input
+                          type="checkbox"
+                          checked={customArmor.system.isHeadLocation}
+                          onChange={(e) => setCustomArmor(prev => ({ 
+                            ...prev, 
+                            system: { ...prev.system, isHeadLocation: e.target.checked }
+                          }))}
+                        />
+                        Head Armor
+                      </label>
+                      {customArmor.system.isHeadLocation && (
+                        <input
+                          type="number"
+                          placeholder="Head SP"
+                          value={customArmor.system.headLocation.sp}
+                          onChange={(e) => setCustomArmor(prev => ({ 
+                            ...prev, 
+                            system: { 
+                              ...prev.system, 
+                              headLocation: { ...prev.system.headLocation, sp: parseInt(e.target.value) || 0 }
+                            }
+                          }))}
+                        />
+                      )}
+                    </div>
+                    <input
+                      type="number"
+                      placeholder="Penalty (0-4)"
+                      value={customArmor.system.penalty}
+                      onChange={(e) => setCustomArmor(prev => ({ 
+                        ...prev, 
+                        system: { ...prev.system, penalty: parseInt(e.target.value) || 0 }
+                      }))}
+                    />
+                    <div className="custom-armor-actions">
+                      <button onClick={addCustomArmor} className="add-btn">Add</button>
+                      <button onClick={() => setShowCustomArmorEditor(false)} className="cancel-btn">Cancel</button>
+                    </div>
+                  </div>
                 </div>
               )}
             </div>
@@ -609,6 +922,11 @@ export default function NPCGenerator({ onAddToEncounter }: NPCGeneratorProps) {
                   {onAddToEncounter && (
                     <button onClick={() => addToEncounter(npc)} className="add-encounter-btn">
                       Add to Encounter
+                    </button>
+                  )}
+                  {onSaveNPC && (
+                    <button onClick={() => onSaveNPC(npc)} className="save-npc-btn">
+                      Save as Template
                     </button>
                   )}
                   <button onClick={() => deleteNPC(npc.id)} className="delete-btn">×</button>

@@ -1,241 +1,275 @@
-/* Override any global styles with higher specificity */
-.encounter-sidebar .dice-roller {
-  display: block !important;
-  flex-direction: column !important;
-  gap: 0 !important;
-  min-height: auto !important;
-  padding: 20px;
-  max-width: 800px;
-  margin: 0 auto;
-  background: transparent !important;
-  border: none !important;
-  border-radius: 0 !important;
+/* Compact Dice Roller - Designed for 300px sidebar */
+.dice-roller-compact {
+  padding: 15px;
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.encounter-sidebar .dice-roller h3 {
-  margin: 0 0 20px 0 !important;
-  color: #ff003c !important;
-  font-size: 24px !important;
+.dice-roller-compact h3 {
+  margin: 0 0 15px 0;
+  color: #ff003c;
+  font-size: 18px;
   text-align: center;
-  border-bottom: 2px solid #ff003c !important;
-  padding-bottom: 10px !important;
+  border-bottom: 2px solid #ff003c;
+  padding-bottom: 8px;
 }
 
-.encounter-sidebar .dice-roller h4 {
-  margin: 0 0 15px 0 !important;
-  color: #00d4ff !important;
-  font-size: 18px !important;
-  border-left: 3px solid #00d4ff;
-  padding-left: 10px;
-  border-bottom: none !important;
+/* Custom Roll Input */
+.custom-roll {
+  margin-bottom: 15px;
 }
 
-.encounter-sidebar .custom-dice-section {
-  background: rgba(0, 0, 0, 0.3) !important;
-  border: 2px solid #00d4ff !important;
-  border-radius: 10px !important;
-  padding: 20px !important;
-  margin-bottom: 20px !important;
+.custom-roll input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 8px;
+  background: #2a2a2a;
+  border: 1px solid #555;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 12px;
+  box-sizing: border-box;
 }
 
-.encounter-sidebar .custom-dice-controls {
-  display: flex !important;
-  gap: 10px !important;
-  align-items: center !important;
-  margin-bottom: 10px !important;
-  flex-wrap: wrap !important;
+.custom-roll input::placeholder {
+  color: #888;
 }
 
-.encounter-sidebar .dice-input {
-  flex: 1 !important;
-  min-width: 200px !important;
-  padding: 12px 15px !important;
-  border: 2px solid #666 !important;
-  border-radius: 8px !important;
-  background: rgba(0, 0, 0, 0.5) !important;
-  color: #fff !important;
-  font-size: 16px !important;
+.custom-roll button {
+  width: 100%;
+  padding: 8px;
+  background: #ff003c;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
 }
 
-.encounter-sidebar .dice-input:focus {
-  outline: none !important;
-  border-color: #00d4ff !important;
-  box-shadow: 0 0 10px rgba(0, 212, 255, 0.3) !important;
+.custom-roll button:hover {
+  background: #cc0032;
 }
 
-.encounter-sidebar .roll-button {
-  padding: 12px 25px !important;
-  background: linear-gradient(135deg, #ff003c, #ff4d6d) !important;
-  color: white !important;
-  border: none !important;
-  border-radius: 8px !important;
-  cursor: pointer !important;
-  font-size: 16px !important;
-  font-weight: bold !important;
-  transition: all 0.3s ease !important;
+/* Quick Preset Buttons */
+.quick-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 6px;
+  margin-bottom: 15px;
 }
 
-.encounter-sidebar .roll-button:hover {
-  background: linear-gradient(135deg, #ff4d6d, #ff003c) !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 5px 15px rgba(255, 0, 60, 0.3) !important;
+.quick-buttons button {
+  padding: 6px 4px;
+  background: #00d4ff;
+  border: none;
+  border-radius: 3px;
+  color: #000;
+  font-size: 11px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
 }
 
-.encounter-sidebar .dice-examples {
-  color: #aaa !important;
-  font-size: 14px !important;
-  font-style: italic !important;
-  width: 100% !important;
+.quick-buttons button:hover {
+  background: #00a6cc;
+  transform: translateY(-1px);
 }
 
-.encounter-sidebar .quick-rolls-section {
-  background: rgba(0, 0, 0, 0.3) !important;
-  border: 2px solid #ffcc00 !important;
-  border-radius: 10px !important;
-  padding: 20px !important;
-  margin-bottom: 20px !important;
+/* Current Result Display */
+.current-result {
+  background: rgba(255, 107, 53, 0.2);
+  border: 2px solid #ff6b35;
+  border-radius: 6px;
+  padding: 12px;
+  margin-bottom: 15px;
+  text-align: center;
 }
 
-.encounter-sidebar .dice-presets {
-  display: grid !important;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)) !important;
-  gap: 10px !important;
-  margin-bottom: 15px !important;
+.result-total {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ff6b35;
+  margin-bottom: 4px;
 }
 
-.encounter-sidebar .preset-button {
-  padding: 12px 15px !important;
-  background: linear-gradient(135deg, #00d4ff, #0099cc) !important;
-  color: white !important;
-  border: none !important;
-  border-radius: 8px !important;
-  cursor: pointer !important;
-  font-size: 14px !important;
-  font-weight: bold !important;
-  transition: all 0.3s ease !important;
+.result-breakdown {
+  font-size: 12px;
+  color: #ccc;
+  word-break: break-all;
 }
 
-.encounter-sidebar .preset-button:hover {
-  background: linear-gradient(135deg, #0099cc, #00d4ff) !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3) !important;
+/* Enhanced dice breakdown with individual dice highlighting */
+.dice-breakdown {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: 14px;
+  margin-top: 8px;
 }
 
-.encounter-sidebar .clear-results-btn {
-  padding: 10px 20px !important;
-  background: linear-gradient(135deg, #666, #444) !important;
-  color: white !important;
-  border: none !important;
-  border-radius: 8px !important;
-  cursor: pointer !important;
-  font-size: 14px !important;
-  transition: all 0.3s ease !important;
+.dice-value {
+  background: #2a2a2a;
+  border: 1px solid #555;
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-weight: bold;
+  color: #fff;
+  min-width: 20px;
+  text-align: center;
 }
 
-.encounter-sidebar .clear-results-btn:hover {
-  background: linear-gradient(135deg, #444, #666) !important;
-  transform: translateY(-2px) !important;
+.dice-value.critical {
+  background: #28a745;
+  border-color: #34ce57;
+  color: white;
+  box-shadow: 0 0 8px rgba(40, 167, 69, 0.5);
 }
 
-/* Dice result and history styling with proper specificity */
-.encounter-sidebar .dice-roller .dice-result {
-  background: rgba(255, 0, 60, 0.1) !important;
-  border: 2px solid #ff003c !important;
-  border-radius: 10px !important;
-  padding: 20px !important;
-  margin-bottom: 20px !important;
-  text-align: center !important;
+.dice-value.fail {
+  background: #dc3545;
+  border-color: #ff4757;
+  color: white;
+  box-shadow: 0 0 8px rgba(220, 53, 69, 0.5);
 }
 
-.encounter-sidebar .dice-roller .dice-result h4 {
-  margin: 0 0 15px 0 !important;
-  color: #ff003c !important;
-  font-size: 18px !important;
-  border-left: none !important;
-  padding-left: 0 !important;
+.modifier {
+  color: #00d4ff;
+  font-weight: bold;
+  margin: 0 2px;
 }
 
-.encounter-sidebar .dice-roller .dice-result .total {
-  font-size: 36px !important;
-  font-weight: bold !important;
-  color: #ff003c !important;
-  margin-bottom: 10px !important;
+.equals {
+  color: #ff6b35;
+  font-weight: bold;
+  margin: 0 4px;
 }
 
-.encounter-sidebar .dice-roller .dice-result .breakdown {
-  color: #ccc !important;
-  font-size: 16px !important;
+.total-value {
+  color: #ff6b35;
+  font-weight: bold;
+  font-size: 16px;
 }
 
-.encounter-sidebar .dice-roller .dice-history {
-  background: rgba(0, 0, 0, 0.3) !important;
-  border: 2px solid #666 !important;
-  border-radius: 10px !important;
-  padding: 20px !important;
-  margin-bottom: 20px !important;
+/* Roll History */
+.roll-history {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid #333;
+  border-radius: 4px;
+  padding: 10px;
 }
 
-.encounter-sidebar .dice-roller .dice-history h4 {
-  margin: 0 0 15px 0 !important;
-  color: #00d4ff !important;
-  font-size: 18px !important;
-  border-left: 3px solid #00d4ff !important;
-  padding-left: 10px !important;
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #00d4ff;
 }
 
-.encounter-sidebar .dice-roller .history-list {
-  max-height: 300px !important;
-  overflow-y: auto !important;
+.clear-btn {
+  background: #ff003c;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  padding: 2px 6px;
+  font-size: 10px;
+  cursor: pointer;
 }
 
-.encounter-sidebar .dice-roller .history-item {
-  display: flex !important;
-  justify-content: space-between !important;
-  align-items: center !important;
-  padding: 8px 12px !important;
-  margin-bottom: 5px !important;
-  background: rgba(255, 255, 255, 0.05) !important;
-  border-radius: 5px !important;
-  border-left: 3px solid #00d4ff !important;
+.clear-btn:hover {
+  background: #cc0032;
 }
 
-.encounter-sidebar .dice-roller .history-item:hover {
-  background: rgba(255, 255, 255, 0.1) !important;
+.history-list {
+  max-height: 150px;
+  overflow-y: auto;
 }
 
-.encounter-sidebar .dice-roller .roll-expression {
-  color: #00d4ff !important;
-  font-weight: bold !important;
+.no-history {
+  text-align: center;
+  color: #666;
+  font-style: italic;
+  font-size: 12px;
+  padding: 10px;
 }
 
-.encounter-sidebar .dice-roller .roll-result {
-  color: #ff003c !important;
-  font-weight: bold !important;
-  font-size: 18px !important;
+.history-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 0;
+  border-bottom: 1px solid #444;
+  font-size: 12px;
+  gap: 8px;
 }
 
-.encounter-sidebar .dice-roller .no-results {
-  text-align: center !important;
-  color: #666 !important;
-  font-style: italic !important;
-  padding: 20px !important;
+.history-item:last-child {
+  border-bottom: none;
 }
 
-@media (max-width: 600px) {
-  .encounter-sidebar .dice-roller {
-    padding: 15px !important;
-  }
-  
-  .encounter-sidebar .custom-dice-controls {
-    flex-direction: column !important;
-  }
-  
-  .encounter-sidebar .dice-input {
-    width: 100% !important;
-    min-width: auto !important;
-  }
-  
-  .encounter-sidebar .dice-presets {
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)) !important;
-  }
+.history-type {
+  color: #ccc;
+  flex-shrink: 0;
+  min-width: 60px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.history-dice {
+  display: flex;
+  gap: 2px;
+  flex: 1;
+  justify-content: center;
+}
+
+.history-dice-value {
+  background: #333;
+  border-radius: 2px;
+  padding: 1px 3px;
+  font-size: 10px;
+  min-width: 14px;
+  text-align: center;
+  color: #ccc;
+}
+
+.history-dice-value.critical {
+  background: #28a745;
+  color: #fff;
+  box-shadow: 0 0 6px rgba(40,167,69,0.6);
+}
+
+.history-dice-value.fail {
+  background: #dc3545;
+  color: white;
+}
+
+.history-result {
+  color: #ff6b35;
+  font-weight: bold;
+  margin-left: 8px;
+  flex-shrink: 0;
+}
+
+/* Scrollbar styling for history */
+.history-list::-webkit-scrollbar {
+  width: 4px;
+}
+
+.history-list::-webkit-scrollbar-track {
+  background: #2a2a2a;
+}
+
+.history-list::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 2px;
+}
+
+.history-list::-webkit-scrollbar-thumb:hover {
+  background: #777;
 }

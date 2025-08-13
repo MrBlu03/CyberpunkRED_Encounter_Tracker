@@ -13,6 +13,52 @@ interface Weapon {
   };
 }
 
+interface Armor {
+  _id: string;
+  name: string;
+  system: {
+    bodyLocation: {
+      ablation: number;
+      sp: number;
+    };
+    headLocation: {
+      ablation: number;
+      sp: number;
+    };
+    isBodyLocation: boolean;
+    isHeadLocation: boolean;
+    penalty: number;
+    price: {
+      market: number;
+    };
+    description: {
+      value: string;
+    };
+  };
+}
+
+interface EncounterParameters {
+  enemyCount: { min: number; max: number };
+  difficulty: 'easy' | 'moderate' | 'hard' | 'very-hard';
+  includeTurrets: boolean;
+  turretCount: number;
+  includeDrones: boolean;
+  droneCount: number;
+  enemyTypes: string[];
+  location: string;
+  specialRules: string[];
+}
+
+interface ManualParticipant {
+  name: string;
+  type: 'enemy' | 'turret' | 'drone';
+  count: number;
+  difficulty: 'easy' | 'moderate' | 'hard' | 'very-hard';
+  hp?: number;
+  ref?: number;
+  initiative?: number;
+}
+
 interface EncounterTemplate {
   id: string;
   name: string;
@@ -122,17 +168,42 @@ const difficultyPresets = {
 
 interface EncounterGeneratorProps {
   onAddToEncounter: (npcs: any[]) => void;
+  onSaveEncounter?: (encounter: GeneratedEncounter) => void;
 }
 
-export default function EncounterGenerator({ onAddToEncounter }: EncounterGeneratorProps) {
+export default function EncounterGenerator({ onAddToEncounter, onSaveEncounter }: EncounterGeneratorProps) {
   const [selectedDifficulty, setSelectedDifficulty] = useState<'easy' | 'moderate' | 'hard' | 'very-hard'>('moderate');
   const [selectedLocation, setSelectedLocation] = useState<string>('any');
   const [selectedEnemyType, setSelectedEnemyType] = useState<string>('any');
   const [generatedEncounters, setGeneratedEncounters] = useState<GeneratedEncounter[]>([]);
   const [availableWeapons, setAvailableWeapons] = useState<Weapon[]>([]);
+  const [availableArmor, setAvailableArmor] = useState<Armor[]>([]);
+  
+  // Enhanced encounter parameters
+  const [encounterParams, setEncounterParams] = useState<EncounterParameters>({
+    enemyCount: { min: 1, max: 6 },
+    difficulty: 'moderate',
+    includeTurrets: false,
+    turretCount: 1,
+    includeDrones: false,
+    droneCount: 1,
+    enemyTypes: [],
+    location: 'any',
+    specialRules: []
+  });
+  
+  // Manual encounter creation
+  const [isManualMode, setIsManualMode] = useState(false);
+  const [manualEncounter, setManualEncounter] = useState<ManualParticipant[]>([]);
+  const [newParticipant, setNewParticipant] = useState<ManualParticipant>({
+    name: '',
+    type: 'enemy',
+    count: 1,
+    difficulty: 'moderate'
+  });
 
   useEffect(() => {
-    // Load weapons data
+    // Load weapons and armor data
     fetch('/data/core.json')
       .then(response => response.json())
       .then(data => {
@@ -154,13 +225,33 @@ export default function EncounterGenerator({ onAddToEncounter }: EncounterGenera
             }
           }));
           
+          // Filter armor
+          const armor = data.filter((item: any) => 
+            item.type === 'armor' && 
+            (item.system?.bodyLocation?.sp > 0 || item.system?.headLocation?.sp > 0)
+          ).map((armor: any) => ({
+            _id: armor._id,
+            name: armor.name,
+            system: {
+              bodyLocation: armor.system.bodyLocation || { ablation: 0, sp: 0 },
+              headLocation: armor.system.headLocation || { ablation: 0, sp: 0 },
+              isBodyLocation: armor.system.isBodyLocation || false,
+              isHeadLocation: armor.system.isHeadLocation || false,
+              penalty: armor.system.penalty || 0,
+              price: armor.system.price || { market: 100 },
+              description: armor.system.description || { value: '' }
+            }
+          }));
+          
           console.log('EncounterGenerator loaded weapons:', weapons.length);
+          console.log('EncounterGenerator loaded armor:', armor.length);
           setAvailableWeapons(weapons);
+          setAvailableArmor(armor);
         } catch (error) {
-          console.error('Error parsing weapon data:', error);
+          console.error('Error parsing weapon/armor data:', error);
         }
       })
-      .catch(error => console.error('Error loading weapons:', error));
+      .catch(error => console.error('Error loading weapons/armor:', error));
   }, []);
 
   // Load saved encounters on component mount
@@ -204,14 +295,16 @@ export default function EncounterGenerator({ onAddToEncounter }: EncounterGenera
     }
 
     const template = availableTemplates[Math.floor(Math.random() * availableTemplates.length)];
-    const groupSize = Math.floor(Math.random() * (template.groupSize[1] - template.groupSize[0] + 1)) + template.groupSize[0];
+    
+    // Use enhanced enemy count parameters
+    const enemyCount = Math.floor(Math.random() * (encounterParams.enemyCount.max - encounterParams.enemyCount.min + 1)) + encounterParams.enemyCount.min;
     
     const enemies = [];
     const mainEnemyType = template.enemyTypes[0];
     const leaderType = template.enemyTypes[1] || mainEnemyType;
     
     // Add main enemies
-    const mainCount = Math.max(1, groupSize - 1);
+    const mainCount = Math.max(1, enemyCount - 1);
     enemies.push({
       name: mainEnemyType,
       type: mainEnemyType,
@@ -220,11 +313,31 @@ export default function EncounterGenerator({ onAddToEncounter }: EncounterGenera
     });
     
     // Add leader if group is large enough
-    if (groupSize > 2 && template.enemyTypes.length > 1) {
+    if (enemyCount > 2 && template.enemyTypes.length > 1) {
       enemies.push({
         name: leaderType,
         type: leaderType,
         count: 1,
+        difficulty: template.difficulty
+      });
+    }
+    
+    // Add turrets if enabled
+    if (encounterParams.includeTurrets && encounterParams.turretCount > 0) {
+      enemies.push({
+        name: 'Security Turret',
+        type: 'turret',
+        count: encounterParams.turretCount,
+        difficulty: template.difficulty
+      });
+    }
+    
+    // Add drones if enabled
+    if (encounterParams.includeDrones && encounterParams.droneCount > 0) {
+      enemies.push({
+        name: 'Combat Drone',
+        type: 'drone',
+        count: encounterParams.droneCount,
         difficulty: template.difficulty
       });
     }
@@ -246,6 +359,47 @@ export default function EncounterGenerator({ onAddToEncounter }: EncounterGenera
     };
 
     setGeneratedEncounters(prev => [encounter, ...prev.slice(0, 4)]); // Keep last 5 encounters
+  };
+
+  const addManualParticipant = () => {
+    if (newParticipant.name.trim()) {
+      setManualEncounter(prev => [...prev, { ...newParticipant }]);
+      setNewParticipant({
+        name: '',
+        type: 'enemy',
+        count: 1,
+        difficulty: 'moderate'
+      });
+    }
+  };
+
+  const removeManualParticipant = (index: number) => {
+    setManualEncounter(prev => prev.filter((_, i) => i !== index));
+  };
+
+  const createManualEncounter = () => {
+    if (manualEncounter.length === 0) return;
+
+    const enemies = manualEncounter.map(participant => ({
+      name: participant.name,
+      type: participant.type,
+      count: participant.count,
+      difficulty: participant.difficulty
+    }));
+
+    const encounter: GeneratedEncounter = {
+      id: Date.now().toString(),
+      name: `Manual Encounter - ${selectedLocation}`,
+      enemies,
+      difficulty: selectedDifficulty,
+      location: selectedLocation,
+      description: 'Manually created encounter',
+      tacticalNotes: []
+    };
+
+    setGeneratedEncounters(prev => [encounter, ...prev.slice(0, 4)]);
+    setManualEncounter([]);
+    setIsManualMode(false);
   };
 
   const generateTacticalNotes = (template: EncounterTemplate, location: string): string[] => {
@@ -280,24 +434,81 @@ export default function EncounterGenerator({ onAddToEncounter }: EncounterGenera
     
     for (const enemy of encounter.enemies) {
       for (let i = 0; i < enemy.count; i++) {
-        const npc = {
-          id: `${encounter.id}-${enemy.type}-${i}`,
-          name: `${enemy.name} #${i + 1}`,
-          type: enemy.type,
-          difficulty: enemy.difficulty,
-          // These would be properly generated based on difficulty
-          stats: generateStatsForDifficulty(enemy.difficulty),
-          hitPoints: { max: 40, current: 40 }, // Placeholder
-          woundState: 'Not Wounded',
-          equipment: { 
-            weapons: assignWeapons(enemy.type, enemy.difficulty)
-          }
-        };
+        let npc;
+        
+        if (enemy.type === 'turret') {
+          npc = {
+            id: `${encounter.id}-${enemy.type}-${i}`,
+            name: `${enemy.name} #${i + 1}`,
+            type: enemy.type,
+            difficulty: enemy.difficulty,
+            stats: { ref: 8, dex: 8, int: 6, tech: 8, cool: 8, will: 6, luck: 6, move: 0, body: 10, emp: 0 },
+            hitPoints: { max: 50, current: 50 },
+            woundState: 'Not Wounded',
+            equipment: { 
+              weapons: [{ 
+                _id: 'turret-gun', 
+                name: 'Mounted Gun', 
+                system: { 
+                  damage: '4d6', 
+                  weaponSkill: 'AutoFire', 
+                  attackmod: 2,
+                  concealable: { concealable: false }
+                }
+              }]
+            }
+          };
+        } else if (enemy.type === 'drone') {
+          npc = {
+            id: `${encounter.id}-${enemy.type}-${i}`,
+            name: `${enemy.name} #${i + 1}`,
+            type: enemy.type,
+            difficulty: enemy.difficulty,
+            stats: { ref: 10, dex: 10, int: 8, tech: 6, cool: 8, will: 6, luck: 6, move: 12, body: 6, emp: 0 },
+            hitPoints: { max: 30, current: 30 },
+            woundState: 'Not Wounded',
+            equipment: { 
+              weapons: [{ 
+                _id: 'drone-weapon', 
+                name: 'Drone Weapon', 
+                system: { 
+                  damage: '2d6+2', 
+                  weaponSkill: 'Handgun', 
+                  attackmod: 1,
+                  concealable: { concealable: false }
+                }
+              }]
+            }
+          };
+        } else {
+          // Regular enemy
+          const assignedArmor = assignArmor(enemy.type, enemy.difficulty);
+          npc = {
+            id: `${encounter.id}-${enemy.type}-${i}`,
+            name: `${enemy.name} #${i + 1}`,
+            type: enemy.type,
+            difficulty: enemy.difficulty,
+            stats: generateStatsForDifficulty(enemy.difficulty),
+            hitPoints: { max: 40, current: 40 },
+            woundState: 'Not Wounded',
+            equipment: { 
+              weapons: assignWeapons(enemy.type, enemy.difficulty),
+              armor: assignedArmor
+            }
+          };
+        }
+        
         npcs.push(npc);
       }
     }
     
     onAddToEncounter(npcs);
+  };
+
+  const removeEncounter = (encounterId: string) => {
+    if (confirm('Are you sure you want to remove this encounter?')) {
+      setGeneratedEncounters(prev => prev.filter(encounter => encounter.id !== encounterId));
+    }
   };
 
   const assignWeapons = (enemyType: string, difficulty: string): Weapon[] => {
@@ -355,6 +566,55 @@ export default function EncounterGenerator({ onAddToEncounter }: EncounterGenera
     return weapons;
   };
 
+  const assignArmor = (enemyType: string, difficulty: string): Armor | undefined => {
+    if (availableArmor.length === 0) return undefined;
+    
+    // Determine armor chance based on difficulty and enemy type
+    let armorChance = 0;
+    if (difficulty === 'easy') armorChance = 0.3;
+    else if (difficulty === 'moderate') armorChance = 0.5;
+    else if (difficulty === 'hard') armorChance = 0.7;
+    else if (difficulty === 'very-hard') armorChance = 0.8;
+    
+    // Adjust based on enemy type
+    if (enemyType.toLowerCase().includes('corpo') || enemyType.toLowerCase().includes('security')) {
+      armorChance += 0.2; // Corporate security more likely to have armor
+    } else if (enemyType.toLowerCase().includes('scav')) {
+      armorChance -= 0.2; // Scavengers less likely to have good armor
+    }
+    
+    // Roll for armor
+    if (Math.random() > armorChance) return undefined;
+    
+    // Select appropriate armor based on enemy type and difficulty
+    let preferredArmor: Armor[] = [];
+    
+    if (difficulty === 'easy') {
+      // Basic armor, lower SP
+      preferredArmor = availableArmor.filter(a => 
+        (a.system.bodyLocation.sp <= 11 && a.system.bodyLocation.sp > 0) ||
+        (a.system.headLocation.sp <= 11 && a.system.headLocation.sp > 0)
+      );
+    } else if (difficulty === 'moderate') {
+      // Medium armor
+      preferredArmor = availableArmor.filter(a => 
+        (a.system.bodyLocation.sp <= 15 && a.system.bodyLocation.sp > 0) ||
+        (a.system.headLocation.sp <= 15 && a.system.headLocation.sp > 0)
+      );
+    } else {
+      // High-end armor for hard/very-hard
+      preferredArmor = availableArmor.filter(a => 
+        a.system.bodyLocation.sp > 0 || a.system.headLocation.sp > 0
+      );
+    }
+    
+    if (preferredArmor.length === 0) {
+      preferredArmor = availableArmor; // Fallback to any armor
+    }
+    
+    return preferredArmor[Math.floor(Math.random() * preferredArmor.length)];
+  };
+
   const generateStatsForDifficulty = (difficulty: string) => {
     const preset = difficultyPresets[difficulty as keyof typeof difficultyPresets];
     const statRange = preset.statRange;
@@ -376,61 +636,237 @@ export default function EncounterGenerator({ onAddToEncounter }: EncounterGenera
   return (
     <div className="encounter-generator">
       <div className="generator-controls">
-        <h2>Random Encounter Generator</h2>
+        <h2>Encounter Generator</h2>
         
-        <div className="control-row">
-          <div className="control-group">
-            <label>Difficulty:</label>
-            <select 
-              value={selectedDifficulty} 
-              onChange={(e) => setSelectedDifficulty(e.target.value as any)}
-            >
-              {Object.entries(difficultyPresets).map(([key, preset]) => (
-                <option key={key} value={key}>
-                  {preset.name} - {preset.description}
-                </option>
-              ))}
-            </select>
-          </div>
-
-          <div className="control-group">
-            <label>Location:</label>
-            <select 
-              value={selectedLocation} 
-              onChange={(e) => setSelectedLocation(e.target.value)}
-            >
-              <option value="any">Any Location</option>
-              <option value="Street">Street</option>
-              <option value="Corporate Plaza">Corporate Plaza</option>
-              <option value="Combat Zone">Combat Zone</option>
-              <option value="Gang Territory">Gang Territory</option>
-              <option value="Underground">Underground</option>
-              <option value="Industrial Zone">Industrial Zone</option>
-              <option value="Residential">Residential</option>
-              <option value="Market">Market</option>
-            </select>
-          </div>
-
-          <div className="control-group">
-            <label>Enemy Type:</label>
-            <select 
-              value={selectedEnemyType} 
-              onChange={(e) => setSelectedEnemyType(e.target.value)}
-            >
-              <option value="any">Any Enemy</option>
-              <option value="gang">Gang Members</option>
-              <option value="corpo">Corporate</option>
-              <option value="scav">Scavengers</option>
-              <option value="solo">Solo</option>
-              <option value="netwatch">NetWatch</option>
-              <option value="street">Street Punks</option>
-            </select>
-          </div>
+        <div className="generator-mode">
+          <label>
+            <input
+              type="radio"
+              name="generatorMode"
+              checked={!isManualMode}
+              onChange={() => setIsManualMode(false)}
+            />
+            Random Generation
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="generatorMode"
+              checked={isManualMode}
+              onChange={() => setIsManualMode(true)}
+            />
+            Manual Creation
+          </label>
         </div>
 
-        <button onClick={generateRandomEncounter} className="generate-btn">
-          Generate Random Encounter
-        </button>
+        {!isManualMode ? (
+          <div className="random-generation">
+            <div className="control-row">
+              <div className="control-group">
+                <label>Difficulty:</label>
+                <select 
+                  value={selectedDifficulty} 
+                  onChange={(e) => setSelectedDifficulty(e.target.value as any)}
+                >
+                  {Object.entries(difficultyPresets).map(([key, preset]) => (
+                    <option key={key} value={key}>
+                      {preset.name} - {preset.description}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              <div className="control-group">
+                <label>Location:</label>
+                <select 
+                  value={selectedLocation} 
+                  onChange={(e) => setSelectedLocation(e.target.value)}
+                >
+                  <option value="any">Any Location</option>
+                  <option value="Street">Street</option>
+                  <option value="Corporate Plaza">Corporate Plaza</option>
+                  <option value="Combat Zone">Combat Zone</option>
+                  <option value="Gang Territory">Gang Territory</option>
+                  <option value="Underground">Underground</option>
+                  <option value="Industrial Zone">Industrial Zone</option>
+                  <option value="Residential">Residential</option>
+                  <option value="Market">Market</option>
+                </select>
+              </div>
+
+              <div className="control-group">
+                <label>Enemy Type:</label>
+                <select 
+                  value={selectedEnemyType} 
+                  onChange={(e) => setSelectedEnemyType(e.target.value)}
+                >
+                  <option value="any">Any Enemy</option>
+                  <option value="gang">Gang Members</option>
+                  <option value="corpo">Corporate</option>
+                  <option value="scav">Scavengers</option>
+                  <option value="solo">Solo</option>
+                  <option value="netwatch">NetWatch</option>
+                  <option value="street">Street Punks</option>
+                </select>
+              </div>
+            </div>
+
+            <div className="encounter-params">
+              <h3>Encounter Parameters</h3>
+              
+              <div className="param-row">
+                <div className="param-group">
+                  <label>Enemy Count:</label>
+                  <div className="number-range">
+                    <input
+                      type="number"
+                      min="1"
+                      max="20"
+                      value={encounterParams.enemyCount.min}
+                      onChange={(e) => setEncounterParams(prev => ({
+                        ...prev,
+                        enemyCount: { ...prev.enemyCount, min: parseInt(e.target.value) || 1 }
+                      }))}
+                    />
+                    <span>to</span>
+                    <input
+                      type="number"
+                      min="1"
+                      max="20"
+                      value={encounterParams.enemyCount.max}
+                      onChange={(e) => setEncounterParams(prev => ({
+                        ...prev,
+                        enemyCount: { ...prev.enemyCount, max: parseInt(e.target.value) || 6 }
+                      }))}
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="param-row">
+                <div className="param-group">
+                  <label>
+                    <input
+                      type="checkbox"
+                      checked={encounterParams.includeTurrets}
+                      onChange={(e) => setEncounterParams(prev => ({
+                        ...prev,
+                        includeTurrets: e.target.checked
+                      }))}
+                    />
+                    Include Turrets
+                  </label>
+                  {encounterParams.includeTurrets && (
+                    <input
+                      type="number"
+                      min="1"
+                      max="5"
+                      value={encounterParams.turretCount}
+                      onChange={(e) => setEncounterParams(prev => ({
+                        ...prev,
+                        turretCount: parseInt(e.target.value) || 1
+                      }))}
+                    />
+                  )}
+                </div>
+
+                <div className="param-group">
+                  <label>
+                    <input
+                      type="checkbox"
+                      checked={encounterParams.includeDrones}
+                      onChange={(e) => setEncounterParams(prev => ({
+                        ...prev,
+                        includeDrones: e.target.checked
+                      }))}
+                    />
+                    Include Drones
+                  </label>
+                  {encounterParams.includeDrones && (
+                    <input
+                      type="number"
+                      min="1"
+                      max="5"
+                      value={encounterParams.droneCount}
+                      onChange={(e) => setEncounterParams(prev => ({
+                        ...prev,
+                        droneCount: parseInt(e.target.value) || 1
+                      }))}
+                    />
+                  )}
+                </div>
+              </div>
+            </div>
+
+            <button onClick={generateRandomEncounter} className="generate-btn">
+              Generate Random Encounter
+            </button>
+          </div>
+        ) : (
+          <div className="manual-encounter">
+            <h3>Manual Encounter Creation</h3>
+            
+            <div className="manual-participant-form">
+              <div className="form-row">
+                <input
+                  type="text"
+                  placeholder="Participant Name"
+                  value={newParticipant.name}
+                  onChange={(e) => setNewParticipant(prev => ({ ...prev, name: e.target.value }))}
+                />
+                
+                <select
+                  value={newParticipant.type}
+                  onChange={(e) => setNewParticipant(prev => ({ ...prev, type: e.target.value as any }))}
+                >
+                  <option value="enemy">Enemy</option>
+                  <option value="turret">Turret</option>
+                  <option value="drone">Drone</option>
+                </select>
+                
+                <input
+                  type="number"
+                  min="1"
+                  max="10"
+                  value={newParticipant.count}
+                  onChange={(e) => setNewParticipant(prev => ({ ...prev, count: parseInt(e.target.value) || 1 }))}
+                />
+                
+                <select
+                  value={newParticipant.difficulty}
+                  onChange={(e) => setNewParticipant(prev => ({ ...prev, difficulty: e.target.value as any }))}
+                >
+                  <option value="easy">Easy</option>
+                  <option value="moderate">Moderate</option>
+                  <option value="hard">Hard</option>
+                  <option value="very-hard">Very Hard</option>
+                </select>
+                
+                <button onClick={addManualParticipant} className="add-participant-btn">
+                  Add
+                </button>
+              </div>
+            </div>
+
+            {manualEncounter.length > 0 && (
+              <div className="manual-participants">
+                <h4>Encounter Participants:</h4>
+                {manualEncounter.map((participant, index) => (
+                  <div key={index} className="participant-item">
+                    <span>{participant.count}x {participant.name} ({participant.type}, {participant.difficulty})</span>
+                    <button onClick={() => removeManualParticipant(index)} className="remove-btn">
+                      Remove
+                    </button>
+                  </div>
+                ))}
+                
+                <button onClick={createManualEncounter} className="create-encounter-btn">
+                  Create Encounter
+                </button>
+              </div>
+            )}
+          </div>
+        )}
       </div>
 
       <div className="generated-encounters">
@@ -455,6 +891,8 @@ export default function EncounterGenerator({ onAddToEncounter }: EncounterGenera
                   {encounter.enemies.map((enemy, index) => (
                     <li key={index}>
                       {enemy.count}x {enemy.name} ({enemy.difficulty})
+                      {enemy.type === 'turret' && <span className="enemy-type"> [TURRET]</span>}
+                      {enemy.type === 'drone' && <span className="enemy-type"> [DRONE]</span>}
                     </li>
                   ))}
                 </ul>
@@ -478,6 +916,22 @@ export default function EncounterGenerator({ onAddToEncounter }: EncounterGenera
                 className="add-encounter-btn"
               >
                 Add to Initiative Tracker
+              </button>
+              {onSaveEncounter && (
+                <button 
+                  onClick={() => onSaveEncounter(encounter)} 
+                  className="save-encounter-btn"
+                  title="Save this encounter as template"
+                >
+                  Save as Template
+                </button>
+              )}
+              <button 
+                onClick={() => removeEncounter(encounter.id)} 
+                className="remove-encounter-btn"
+                title="Remove this encounter"
+              >
+                Remove
               </button>
             </div>
           </div>

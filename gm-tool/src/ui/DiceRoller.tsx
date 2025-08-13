@@ -1,32 +1,33 @@
 import React, { useState } from 'react';
 import './DiceRoller.css';
 
-interface DiceResult {
+interface DiceRoll {
   value: number;
-  isMax: boolean;
-  isCriticalFail: boolean;
-  isCriticalSuccess: boolean;
+  sides: number;
+  isCritical: boolean;
+  isFail: boolean;
 }
 
 interface RollResult {
   type: string;
-  dice: DiceResult[];
-  modifier: number;
   total: number;
+  breakdown: string;
   timestamp: string;
-  description?: string;
+  rolls: DiceRoll[];
+  modifier: number;
 }
 
 export default function DiceRoller() {
   const [customInput, setCustomInput] = useState('');
-  const [modifier, setModifier] = useState(0);
   const [results, setResults] = useState<RollResult[]>([]);
+  const [currentResult, setCurrentResult] = useState<RollResult | null>(null);
+  const critMode = (localStorage.getItem('crit-mode') ?? 'raw') as 'raw' | 'tarot';
+  const rawCritEnabled = critMode === 'raw';
+  const tarotCritEnabled = critMode === 'tarot';
+  const [tarotWindowOpen, setTarotWindowOpen] = useState(false);
 
   const parseDiceExpression = (expression: string): { count: number, sides: number, modifier: number } | null => {
-    // Remove spaces and convert to lowercase
     const cleaned = expression.replace(/\s/g, '').toLowerCase();
-    
-    // Match patterns like "2d6+3", "1d20-2", "3d10", etc.
     const match = cleaned.match(/^(\d+)d(\d+)([+-]\d+)?$/);
     
     if (!match) return null;
@@ -38,146 +39,138 @@ export default function DiceRoller() {
     return { count, sides, modifier: mod };
   };
 
-  const rollDice = (count: number, sides: number, mod: number = 0, description: string = '') => {
-    const dice: DiceResult[] = [];
+  const rollDice = (count: number, sides: number, mod: number = 0, type: string = '') => {
+    const rolls: DiceRoll[] = [];
+    let total = 0;
     
     for (let i = 0; i < count; i++) {
-      const value = Math.floor(Math.random() * sides) + 1;
-      const isMax = value === sides;
-      const isCriticalFail = value === 1;
-      const isCriticalSuccess = (sides === 6 && value === 6) || (sides >= 10 && isMax);
-      
-      dice.push({
-        value,
-        isMax,
-        isCriticalFail,
-        isCriticalSuccess
-      });
+      const roll = Math.floor(Math.random() * sides) + 1;
+      const diceRoll: DiceRoll = {
+        value: roll,
+        sides: sides,
+        isCritical: (sides === 6 && roll === 6) || (sides === 10 && roll === 10) || (sides === 20 && roll === 20),
+        isFail: roll === 1
+      };
+      rolls.push(diceRoll);
+      total += roll;
     }
     
-    const total = dice.reduce((sum, die) => sum + die.value, 0) + mod;
+    total += mod;
+
+    // RAW crit injury detection: 2 or more sixes on damage dice (2d6 typical); we highlight dice in history
+    const numSixes = rolls.filter(r => r.sides === 6 && r.value === 6).length;
+    const isRawCrit = rawCritEnabled && numSixes >= 2;
+
+    // Tarot crit: user-governed toggle; if enabled, treat a d10 roll of 10 as “tarot crit trigger” in this generic roller
+    const hasTarotTrigger = tarotCritEnabled && rolls.some(r => r.sides === 10 && r.value === 10);
     
+    const rollValues = rolls.map(r => r.value).join('+');
+    const breakdown = `${rollValues}${mod !== 0 ? ` ${mod > 0 ? '+' : ''}${mod}` : ''} = ${total}`;
     const result: RollResult = {
-      type: `${count}d${sides}${mod !== 0 ? (mod > 0 ? `+${mod}` : `${mod}`) : ''}`,
-      dice,
-      modifier: mod,
+      type: type || `${count}d${sides}${mod !== 0 ? (mod > 0 ? '+' : '') + mod : ''}`,
       total,
+      breakdown,
       timestamp: new Date().toLocaleTimeString(),
-      description
+      rolls,
+      modifier: mod
     };
     
-    setResults(prev => [result, ...prev]);
-    return result;
+    setCurrentResult(result);
+    setResults(prev => [result, ...prev.slice(0, 9)]); // Keep last 10 results
   };
 
   const rollCustomDice = () => {
     if (!customInput.trim()) return;
     
     const parsed = parseDiceExpression(customInput);
-    if (!parsed) {
-      alert('Invalid dice format. Use format like "2d6+3" or "1d20"');
-      return;
+    if (parsed) {
+      rollDice(parsed.count, parsed.sides, parsed.modifier, customInput);
+    } else {
+      alert('Invalid dice expression. Use format like: 2d6+3, 1d20, 3d10-1');
     }
-    
-    rollDice(parsed.count, parsed.sides, parsed.modifier, `Custom: ${customInput}`);
-  };
-
-  const rollQuick = (count: number, sides: number, mod: number = 0, desc: string = '') => {
-    rollDice(count, sides, mod, desc);
   };
 
   const clearResults = () => {
     setResults([]);
-  };
-
-  const renderDieResult = (die: DiceResult, index: number) => {
-    let className = 'die-result';
-    if (die.isCriticalFail) className += ' critical-fail';
-    else if (die.isCriticalSuccess) className += ' critical-success';
-    
-    return (
-      <div key={index} className={className}>
-        {die.value}
-      </div>
-    );
+    setCurrentResult(null);
   };
 
   return (
-    <div className="dice-roller">
+    <div className="dice-roller-compact">
       <h3>Dice Roller</h3>
       
-      {/* Custom Dice Section */}
-      <div className="custom-dice-section">
-        <h4>Custom Roll</h4>
-        <div className="custom-dice-controls">
-          <input
-            type="text"
-            className="dice-input"
-            value={customInput}
-            onChange={(e) => setCustomInput(e.target.value)}
-            placeholder="e.g., 2d6+3, 1d20, 3d10-1"
-            onKeyPress={(e) => e.key === 'Enter' && rollCustomDice()}
-          />
-          <button onClick={rollCustomDice} className="roll-button">
-            Roll
-          </button>
-        </div>
-        <div className="dice-examples">
-          Examples: 2d6+3, 1d20, 3d10-2, 4d6
-        </div>
+      {/* Custom Roll Input */}
+      <div className="custom-roll">
+        <input
+          type="text"
+          value={customInput}
+          onChange={(e) => setCustomInput(e.target.value)}
+          placeholder="2d6+3, 1d20, etc."
+          onKeyPress={(e) => e.key === 'Enter' && rollCustomDice()}
+        />
+        <button onClick={rollCustomDice}>Roll</button>
       </div>
 
-      {/* Quick Rolls Section */}
-      <div className="quick-rolls-section">
-        <h4>Quick Rolls</h4>
-        <div className="dice-presets">
-          <button onClick={() => rollQuick(1, 6, 0, 'D6')} className="preset-button">
-            1d6
-          </button>
-          <button onClick={() => rollQuick(2, 6, 0, '2D6')} className="preset-button">
-            2d6
-          </button>
-          <button onClick={() => rollQuick(1, 10, 0, 'D10')} className="preset-button">
-            1d10
-          </button>
-          <button onClick={() => rollQuick(1, 6, 0, 'Initiative')} className="preset-button">
-            Initiative
-          </button>
-          <button onClick={() => rollQuick(2, 6, 0, 'Crit Injury')} className="preset-button">
-            Crit Injury
-          </button>
-          <button onClick={() => rollQuick(1, 10, 0, 'Death Save')} className="preset-button">
-            Death Save
-          </button>
-        </div>
-        <button onClick={clearResults} className="clear-results-btn">
-          Clear History
-        </button>
+      {/* Quick Preset Buttons */}
+      <div className="quick-buttons">
+        <button onClick={() => rollDice(1, 6, 0, '1d6')}>1d6</button>
+        <button onClick={() => rollDice(2, 6, 0, '2d6')}>2d6</button>
+        <button onClick={() => rollDice(1, 10, 0, '1d10')}>1d10</button>
+        <button onClick={() => rollDice(1, 10, 7, 'Initiative')}>Init</button>
+        <button onClick={() => rollDice(2, 6, 0, 'Crit')}>Crit</button>
+        <button onClick={() => rollDice(1, 10, 0, 'Death')}>Death</button>
       </div>
 
-      {/* Current Result Display */}
-      {results.length > 0 && (
-        <div className="dice-result">
-          <h4>Latest Roll</h4>
-          <div className="total">{results[0].total}</div>
-          <div className="breakdown">
-            {results[0].type} = {results[0].dice.map(d => d.value).join(' + ')}
-            {results[0].modifier !== 0 && ` ${results[0].modifier > 0 ? '+' : ''}${results[0].modifier}`}
+      {/* Current Result */}
+      {currentResult && (
+        <div className="current-result">
+          <div className="result-total">{currentResult.total}</div>
+          <div className="dice-breakdown">
+            {currentResult.rolls.map((dice, index) => (
+              <span 
+                key={index}
+                className={`dice-value ${dice.isCritical ? 'critical' : ''} ${dice.isFail ? 'fail' : ''}`}
+              >
+                {dice.value}
+              </span>
+            ))}
+            {currentResult.modifier !== 0 && (
+              <span className="modifier">
+                {currentResult.modifier > 0 ? '+' : ''}{currentResult.modifier}
+              </span>
+            )}
+            <span className="equals">=</span>
+            <span className="total-value">{currentResult.total}</span>
           </div>
         </div>
       )}
 
       {/* Roll History */}
-      <div className="dice-history">
-        <h4>Roll History</h4>
+      <div className="roll-history">
+        <div className="history-header">
+          <span>History</span>
+          {results.length > 0 && (
+            <button onClick={clearResults} className="clear-btn">Clear</button>
+          )}
+        </div>
         <div className="history-list">
           {results.length === 0 ? (
-            <div className="no-results">No rolls yet</div>
+            <div className="no-history">No rolls yet</div>
           ) : (
-            results.slice(0, 10).map((result, index) => (
+            results.map((result, index) => (
               <div key={index} className="history-item">
-                <span className="roll-expression">{result.type}</span>
-                <span className="roll-result">{result.total}</span>
+                <span className="history-type">{result.type}</span>
+                <div className="history-dice">
+            {result.rolls.map((dice, diceIndex) => (
+                    <span 
+                      key={diceIndex}
+                className={`history-dice-value ${dice.isCritical ? 'critical' : ''} ${dice.isFail ? 'fail' : ''} ${rawCritEnabled && dice.sides===6 && dice.value===6 ? 'critical' : ''} ${tarotCritEnabled && dice.sides===10 && dice.value===10 ? 'critical' : ''}`}
+                    >
+                      {dice.value}
+                    </span>
+                  ))}
+                </div>
+                <span className="history-result">{result.total}</span>
               </div>
             ))
           )}
