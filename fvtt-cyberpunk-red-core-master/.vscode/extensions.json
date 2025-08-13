@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "DavidAnson.vscode-markdownlint",
+    "PascalReitermann93.vscode-yaml-sort",
+    "editorconfig.editorconfig",
+    "esbenp.prettier-vscode",
+    "mkhl.shfmt"
+  ],
+  "unwantedRecommendations": []
+}
