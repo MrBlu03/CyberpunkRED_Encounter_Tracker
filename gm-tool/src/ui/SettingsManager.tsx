@@ -21,6 +21,8 @@ export default function SettingsManager() {
 
   useEffect(() => {
     localStorage.setItem('crit-mode', critMode);
+    // Dispatch custom event for App component
+    window.dispatchEvent(new CustomEvent('critModeChanged'));
   }, [critMode]);
 
   const exportAll = () => {
@@ -77,25 +79,15 @@ export default function SettingsManager() {
           <label>Critical Hit Mode</label>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12, background: 'var(--surface-2)', padding: '8px 12px', borderRadius: 6, border: '1px solid var(--border)' }}>
             <span style={{ color: critMode === 'raw' ? 'var(--accent)' : 'var(--text-muted)', fontWeight: critMode === 'raw' ? 'bold' : 'normal' }}>RAW (2+ sixes)</span>
-            <label style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}>
-              <input 
-                type="checkbox" 
-                checked={critMode === 'tarot'} 
-                onChange={() => setCritMode(critMode === 'raw' ? 'tarot' : 'raw')}
-                style={{ appearance: 'none', width: 44, height: 20, background: critMode === 'tarot' ? 'var(--accent)' : 'var(--text-muted)', borderRadius: 10, position: 'relative', cursor: 'pointer', transition: 'background 0.2s' }}
-              />
-              <div style={{ 
-                position: 'absolute', 
-                width: 16, 
-                height: 16, 
-                background: 'white', 
-                borderRadius: '50%', 
-                top: 2, 
-                left: critMode === 'tarot' ? 26 : 2, 
-                transition: 'left 0.2s',
-                pointerEvents: 'none'
-              }} />
-            </label>
+            <div 
+              className="toggle-switch"
+              onClick={() => setCritMode(critMode === 'raw' ? 'tarot' : 'raw')}
+              data-active={critMode === 'tarot'}
+            >
+              <div className="toggle-slider">
+                <div className="toggle-knob"></div>
+              </div>
+            </div>
             <span style={{ color: critMode === 'tarot' ? 'var(--accent)' : 'var(--text-muted)', fontWeight: critMode === 'tarot' ? 'bold' : 'normal' }}>Tarot</span>
           </div>
         </div>

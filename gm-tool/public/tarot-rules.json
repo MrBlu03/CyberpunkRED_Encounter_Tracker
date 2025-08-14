@@ -1,0 +1,166 @@
+{
+    "source": "Cyberpunk RED — Night City Tarot (RTG DLC v1.1)",
+    "deck_rules": {
+      "trigger": "When 3+ damage dice rolled for a Melee or Ranged Attack show 6s, draw the top Tarot card and apply it instead of a normal Critical Injury.",
+      "single_target_only": true,
+      "no_aoe": true,
+      "both_can_suffer_crits": true,
+      "multi_injury_bonus_damage": "If a card inflicts multiple Critical Injuries, each Injury also deals +5 HP damage unless the card says otherwise.",
+      "post_resolution": "After resolving, place the card on the bottom of the deck. Only one card can be pulled per game session.",
+      "campaign_shuffle_rule": "After the first pull, don’t shuffle until every card has appeared once."
+    },
+    "alternate_numbering": {
+      "strength": ["VIII", "XI"],
+      "justice": ["XI", "VIII"]
+    },
+    "cards": [
+      {
+        "number": 0,
+        "roman": "0",
+        "name": "The Fool",
+        "effect": "All of the victim’s cyberware is inoperable for 1 hour. Cyberlimbs hang limp and behave like dismembered meat limbs.",
+        "additional_penalty": "If the victim cannot sense opponents, they take an extra −4 to Checks (as if in smoke/darkness).",
+        "no_cyberware_case": "Suffer Foreign Object Critical Injury and 3d6 Humanity Loss."
+      },
+      {
+        "number": 1,
+        "roman": "I",
+        "name": "The Magician",
+        "effect": "GM chooses one piece of the victim’s cyberware; it is destroyed (repairable). Victim is Deadly On Fire.",
+        "no_cyberware_case": "Victim is Deadly On Fire and one worn/held weapon malfunctions (Action to clear)."
+      },
+      {
+        "number": 2,
+        "roman": "II",
+        "name": "The High Priestess",
+        "effect": "Victim suffers Foreign Object Critical Injury, but instead of move-triggered bonus damage they must beat DV 15 Resist Torture/Drugs or take 3d6 HP damage."
+      },
+      {
+        "number": 3,
+        "roman": "III",
+        "name": "The Empress",
+        "effect": "The next three successful Attacks against one opponent in this combat automatically cause Critical Injuries.",
+        "notes": "Applies to Light Melee Weapons; not to Poisons/Biotoxins/Stun Batons or other weapons that normally can’t crit."
+      },
+      {
+        "number": 4,
+        "roman": "IV",
+        "name": "The Emperor",
+        "effect": "GM selects a Player. That Player chooses one Head crit and one Body crit; the victim suffers both."
+      },
+      {
+        "number": 5,
+        "roman": "V",
+        "name": "The Hierophant",
+        "effect": "Attack deals double its post-armor, post-multiplier damage.",
+        "cost": "If a weapon made the Attack, that weapon is destroyed beyond repair."
+      },
+      {
+        "number": 6,
+        "roman": "VI",
+        "name": "The Lovers",
+        "effect": "Attack hits the head regardless of aim.",
+        "melee_bonus": "If Melee, the victim becomes the defender in a grapple with the attacker."
+      },
+      {
+        "number": 7,
+        "roman": "VII",
+        "name": "The Chariot",
+        "effect": "Armor at the hit location is further ablated by 5, even if the Attack didn’t penetrate."
+      },
+      {
+        "number": 8,
+        "roman": "VIII",
+        "alt_roman": "XI",
+        "name": "Strength",
+        "effect": "Attack deals +25 damage, added before armor SP subtraction and before multipliers."
+      },
+      {
+        "number": 9,
+        "roman": "IX",
+        "name": "The Hermit",
+        "effect": "Victim suffers Lost Eye twice (penalty applied once).",
+        "additional_penalty": "If left with no way to sense opponents, they take −4 to all Skill Checks (as if obscured)."
+      },
+      {
+        "number": 10,
+        "roman": "X",
+        "name": "Wheel of Fortune",
+        "ranged_case": "GM randomly selects a new target; the Attack hits that target instead.",
+        "melee_case": "Attacker immediately falls prone and the Attack misses.",
+        "weapon_side_effect": "Weapon used malfunctions (Action to clear)."
+      },
+      {
+        "number": 11,
+        "roman": "XI",
+        "alt_roman": "VIII",
+        "name": "Justice",
+        "effect": "For 1 minute, victim suffers −5 Evasion vs Melee and cannot dodge Ranged Attacks."
+      },
+      {
+        "number": 12,
+        "roman": "XII",
+        "name": "The Hanged Man",
+        "effect": "Victim is knocked prone and suffers Spinal Injury and Whiplash."
+      },
+      {
+        "number": 13,
+        "roman": "XIII",
+        "name": "Death",
+        "effect": "Victim immediately rolls one Death Save. On a fail, they drop to 0 HP and are unconscious for 1 minute.",
+        "aftereffect": "On regaining consciousness, they regain 3d6 Humanity (up to max)."
+      },
+      {
+        "number": 14,
+        "roman": "XIV",
+        "name": "Temperance",
+        "effect": "Victim chooses one limb to be Dismembered and a different limb to be Broken."
+      },
+      {
+        "number": 15,
+        "roman": "XV",
+        "name": "The Devil",
+        "effect": "Attack hits the head. Victim suffers Brain Injury and Lost Ear."
+      },
+      {
+        "number": 16,
+        "roman": "XVI",
+        "name": "The Tower",
+        "effect": "Victim suffers Cracked Skull, Crushed Windpipe, and Whiplash; these cause no bonus damage.",
+        "buff": "For 1 hour, victim ignores the effects of the Seriously Wounded state (can’t feel pain)."
+      },
+      {
+        "number": 17,
+        "roman": "XVII",
+        "name": "The Star",
+        "ranged_case": "Attack hits the first target, then automatically hits a second enemy within 20 m (GM’s choice); if none, it hits the original target again in the body. Roll new damage for the second hit.",
+        "melee_case": "Victim suffers Broken Ribs and Collapsed Lung."
+      },
+      {
+        "number": 18,
+        "roman": "XVIII",
+        "name": "The Moon",
+        "effect": "Victim suffers Foreign Object twice (once head, once body).",
+        "melee_weapon_rider": "If drawn by a melee weapon Attack, the weapon is stuck in the victim and the attacker is disarmed."
+      },
+      {
+        "number": 19,
+        "roman": "XIX",
+        "name": "The Sun",
+        "effect": "If the victim carries explosives, one explodes immediately (GM chooses). Otherwise, GM selects a non-weapon item on the victim to be destroyed beyond repair."
+      },
+      {
+        "number": 20,
+        "roman": "XX",
+        "name": "Judgement",
+        "effect": "Victim suffers Crushed Fingers on one hand and Dismembered Hand on another."
+      },
+      {
+        "number": 21,
+        "roman": "XXI",
+        "name": "The World",
+        "effect": "The attacker takes an extra Turn immediately after this one; during it they get +5 to any Skill Check, ignore all Wound State penalties, and don’t roll Death Saves if Mortally Wounded."
+      }
+    ]
+  }
+  

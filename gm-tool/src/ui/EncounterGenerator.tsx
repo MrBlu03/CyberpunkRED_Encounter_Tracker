@@ -51,12 +51,13 @@ interface EncounterParameters {
 
 interface ManualParticipant {
   name: string;
-  type: 'enemy' | 'turret' | 'drone';
+  type: 'enemy' | 'turret' | 'drone' | 'saved-npc';
   count: number;
   difficulty: 'easy' | 'moderate' | 'hard' | 'very-hard';
   hp?: number;
   ref?: number;
   initiative?: number;
+  savedNpcId?: string;
 }
 
 interface EncounterTemplate {
@@ -77,6 +78,7 @@ interface GeneratedEncounter {
     type: string;
     count: number;
     difficulty: string;
+    savedNpcId?: string;
   }>;
   difficulty: string;
   location: string;
@@ -166,6 +168,26 @@ const difficultyPresets = {
   'very-hard': { name: 'Very Hard', statRange: [7, 10], skillRange: [6, 10], description: 'Elite opponents' }
 };
 
+interface SavedNPC {
+  id: string;
+  name: string;
+  stats: { [key: string]: number };
+  skills: { [key: string]: number };
+  equipment: {
+    weapons: Weapon[];
+    armor?: Armor;
+    armorPieces?: Armor[];
+    gear?: any[];
+  };
+  hitPoints: {
+    max: number;
+    current: number;
+  };
+  woundState: 'Not Wounded' | 'Lightly Wounded' | 'Seriously Wounded' | 'Mortally Wounded' | 'Dead';
+  initiative?: number;
+  difficultyRating?: string;
+}
+
 interface EncounterGeneratorProps {
   onAddToEncounter: (npcs: any[]) => void;
   onSaveEncounter?: (encounter: GeneratedEncounter) => void;
@@ -178,6 +200,7 @@ export default function EncounterGenerator({ onAddToEncounter, onSaveEncounter }
   const [generatedEncounters, setGeneratedEncounters] = useState<GeneratedEncounter[]>([]);
   const [availableWeapons, setAvailableWeapons] = useState<Weapon[]>([]);
   const [availableArmor, setAvailableArmor] = useState<Armor[]>([]);
+  const [savedNPCs, setSavedNPCs] = useState<SavedNPC[]>([]);
   
   // Enhanced encounter parameters
   const [encounterParams, setEncounterParams] = useState<EncounterParameters>({
@@ -199,7 +222,8 @@ export default function EncounterGenerator({ onAddToEncounter, onSaveEncounter }
     name: '',
     type: 'enemy',
     count: 1,
-    difficulty: 'moderate'
+    difficulty: 'moderate',
+    savedNpcId: undefined
   });
 
   useEffect(() => {
@@ -266,6 +290,21 @@ export default function EncounterGenerator({ onAddToEncounter, onSaveEncounter }
       }
     } catch (error) {
       console.error('Error loading saved encounters:', error);
+    }
+  }, []);
+
+  // Load saved NPCs on component mount
+  useEffect(() => {
+    try {
+      const savedNPCsData = localStorage.getItem('cyberpunk-generated-npcs');
+      if (savedNPCsData) {
+        const parsed = JSON.parse(savedNPCsData);
+        if (Array.isArray(parsed)) {
+          setSavedNPCs(parsed);
+        }
+      }
+    } catch (error) {
+      console.error('Error loading saved NPCs:', error);
     }
   }, []);
 
@@ -362,15 +401,31 @@ export default function EncounterGenerator({ onAddToEncounter, onSaveEncounter }
   };
 
   const addManualParticipant = () => {
-    if (newParticipant.name.trim()) {
+    if (newParticipant.type === 'saved-npc') {
+      if (newParticipant.savedNpcId) {
+        const savedNpc = savedNPCs.find(npc => npc.id === newParticipant.savedNpcId);
+        if (savedNpc) {
+          setManualEncounter(prev => [...prev, { 
+            ...newParticipant, 
+            name: savedNpc.name 
+          }]);
+        }
+      } else {
+        return; // Don't add if no saved NPC selected
+      }
+    } else if (newParticipant.name.trim()) {
       setManualEncounter(prev => [...prev, { ...newParticipant }]);
-      setNewParticipant({
-        name: '',
-        type: 'enemy',
-        count: 1,
-        difficulty: 'moderate'
-      });
+    } else {
+      return; // Don't add if no name provided
     }
+    
+    setNewParticipant({
+      name: '',
+      type: 'enemy',
+      count: 1,
+      difficulty: 'moderate',
+      savedNpcId: undefined
+    });
   };
 
   const removeManualParticipant = (index: number) => {
@@ -384,7 +439,8 @@ export default function EncounterGenerator({ onAddToEncounter, onSaveEncounter }
       name: participant.name,
       type: participant.type,
       count: participant.count,
-      difficulty: participant.difficulty
+      difficulty: participant.difficulty,
+      savedNpcId: participant.savedNpcId
     }));
 
     const encounter: GeneratedEncounter = {
@@ -436,7 +492,21 @@ export default function EncounterGenerator({ onAddToEncounter, onSaveEncounter }
       for (let i = 0; i < enemy.count; i++) {
         let npc;
         
-        if (enemy.type === 'turret') {
+        if (enemy.type === 'saved-npc') {
+          // Find the saved NPC by ID first, then fall back to name
+          const savedNpc = enemy.savedNpcId 
+            ? savedNPCs.find(s => s.id === enemy.savedNpcId)
+            : savedNPCs.find(s => s.name === enemy.name);
+          
+          if (savedNpc) {
+            npc = {
+              ...savedNpc,
+              id: `${encounter.id}-saved-${savedNpc.id}-${i}`,
+              name: `${savedNpc.name} #${i + 1}`,
+              hitPoints: { ...savedNpc.hitPoints }
+            };
+          }
+        } else if (enemy.type === 'turret') {
           npc = {
             id: `${encounter.id}-${enemy.type}-${i}`,
             name: `${enemy.name} #${i + 1}`,
@@ -808,21 +878,38 @@ export default function EncounterGenerator({ onAddToEncounter, onSaveEncounter }
             
             <div className="manual-participant-form">
               <div className="form-row">
-                <input
-                  type="text"
-                  placeholder="Participant Name"
-                  value={newParticipant.name}
-                  onChange={(e) => setNewParticipant(prev => ({ ...prev, name: e.target.value }))}
-                />
+                {newParticipant.type !== 'saved-npc' && (
+                  <input
+                    type="text"
+                    placeholder="Participant Name"
+                    value={newParticipant.name}
+                    onChange={(e) => setNewParticipant(prev => ({ ...prev, name: e.target.value }))}
+                  />
+                )}
                 
                 <select
                   value={newParticipant.type}
-                  onChange={(e) => setNewParticipant(prev => ({ ...prev, type: e.target.value as any }))}
+                  onChange={(e) => setNewParticipant(prev => ({ ...prev, type: e.target.value as any, savedNpcId: undefined }))}
                 >
                   <option value="enemy">Enemy</option>
                   <option value="turret">Turret</option>
                   <option value="drone">Drone</option>
+                  <option value="saved-npc">Saved NPC</option>
                 </select>
+                
+                {newParticipant.type === 'saved-npc' && (
+                  <select
+                    value={newParticipant.savedNpcId || ''}
+                    onChange={(e) => setNewParticipant(prev => ({ ...prev, savedNpcId: e.target.value }))}
+                  >
+                    <option value="">Select Saved NPC...</option>
+                    {savedNPCs.map(npc => (
+                      <option key={npc.id} value={npc.id}>
+                        {npc.name} ({npc.difficultyRating || 'Unknown'})
+                      </option>
+                    ))}
+                  </select>
+                )}
                 
                 <input
                   type="number"

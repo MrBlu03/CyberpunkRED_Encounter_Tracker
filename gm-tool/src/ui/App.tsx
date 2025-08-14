@@ -27,7 +27,16 @@ function initializeTheme() {
         surface2: '#2a2a2a',
         text: '#e0e0e0', 
         textMuted: '#888',
-        border: '#333' 
+        border: '#333',
+        success: '#4caf50',
+        warning: '#ff9800',
+        error: '#f44336',
+        info: '#2196f3',
+        woundLight: 'rgba(255, 255, 0, 0.2)',
+        woundSerious: 'rgba(255, 165, 0, 0.3)',
+        woundMortal: 'rgba(255, 69, 0, 0.4)',
+        woundDead: 'rgba(128, 0, 0, 0.5)',
+        contrastText: '#fff'
       }
     : { 
         bg: '#f8f9fa', 
@@ -35,7 +44,16 @@ function initializeTheme() {
         surface2: '#f1f3f4',
         text: '#212529', 
         textMuted: '#6c757d',
-        border: '#dee2e6' 
+        border: '#dee2e6',
+        success: '#2e7d32',
+        warning: '#ed6c02',
+        error: '#d32f2f',
+        info: '#1976d2',
+        woundLight: 'rgba(255, 235, 59, 0.4)',
+        woundSerious: 'rgba(255, 152, 0, 0.5)',
+        woundMortal: 'rgba(244, 67, 54, 0.6)',
+        woundDead: 'rgba(183, 28, 28, 0.7)',
+        contrastText: '#000'
       };
 
   const palettes = {
@@ -69,6 +87,15 @@ function initializeTheme() {
   r.style.setProperty('--text', bases.text, 'important');
   r.style.setProperty('--text-muted', bases.textMuted, 'important');
   r.style.setProperty('--border', bases.border, 'important');
+  r.style.setProperty('--success', bases.success, 'important');
+  r.style.setProperty('--warning', bases.warning, 'important');
+  r.style.setProperty('--error', bases.error, 'important');
+  r.style.setProperty('--info', bases.info, 'important');
+  r.style.setProperty('--wound-light', bases.woundLight, 'important');
+  r.style.setProperty('--wound-serious', bases.woundSerious, 'important');
+  r.style.setProperty('--wound-mortal', bases.woundMortal, 'important');
+  r.style.setProperty('--wound-dead', bases.woundDead, 'important');
+  r.style.setProperty('--contrast-text', bases.contrastText, 'important');
   r.style.setProperty('--accent', p.accent, 'important');
   r.style.setProperty('--accent-alt', p.accentAlt, 'important');
   r.style.setProperty('--accent-subtle', p.subtle, 'important');
@@ -137,11 +164,31 @@ export function App() {
   const [activeTab, setActiveTab] = useState('encounter');
   const [participants, setParticipants] = useState<Participant[]>([])
   const [encounter, setEncounter] = useState<EncounterState>({ active: false, round: 0, turnIndex: 0, archived: false })
+  const [critMode, setCritMode] = useState<'raw' | 'tarot'>(() => (localStorage.getItem('crit-mode') as 'raw' | 'tarot') ?? 'raw')
 
   // Initialize theme on app load
   useEffect(() => {
     initializeTheme();
   }, []);
+  
+  // Update critMode when it changes and handle tab switching
+  useEffect(() => {
+    const handleCritModeChange = () => {
+      const newMode = (localStorage.getItem('crit-mode') as 'raw' | 'tarot') ?? 'raw';
+      setCritMode(newMode);
+      
+      // Switch tabs if current tab becomes invalid
+      if (activeTab === 'crit' && newMode === 'tarot') {
+        setActiveTab('tarot');
+      } else if (activeTab === 'tarot' && newMode === 'raw') {
+        setActiveTab('crit');
+      }
+    };
+    
+    // Listen for custom event from SettingsManager
+    window.addEventListener('critModeChanged', handleCritModeChange);
+    return () => window.removeEventListener('critModeChanged', handleCritModeChange);
+  }, [activeTab]);
   const [name, setName] = useState('')
   const [ref, setRef] = useState<number>(6)
   const [initiativeSkill, setInitiativeSkill] = useState<number>(0)
@@ -831,7 +878,20 @@ export function App() {
 
   return (
     <div className="app-container">
-      <h1 style={{ marginBottom: '24px', fontSize: '28px', color: 'var(--accent)' }}>Cyberpunk RED GM Tool</h1>
+      <div className="app-header">
+        <button 
+          className="settings-button"
+          onClick={() => setActiveTab('settings')}
+          title="Settings"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19.14,12.94c0.04-0.3,0.06-0.61,0.06-0.94c0-0.32-0.02-0.64-0.07-0.94l2.03-1.58c0.18-0.14,0.23-0.41,0.12-0.61 l-1.92-3.32c-0.12-0.22-0.37-0.29-0.59-0.22l-2.39,0.96c-0.5-0.38-1.03-0.7-1.62-0.94L14.4,2.81c-0.04-0.24-0.24-0.41-0.48-0.41 h-3.84c-0.24,0-0.43,0.17-0.47,0.41L9.25,5.35C8.66,5.59,8.12,5.92,7.63,6.29L5.24,5.33c-0.22-0.08-0.47,0-0.59,0.22L2.74,8.87 C2.62,9.08,2.66,9.34,2.86,9.48l2.03,1.58C4.84,11.36,4.82,11.69,4.82,12s0.02,0.64,0.07,0.94l-2.03,1.58 c-0.18,0.14-0.23,0.41-0.12,0.61l1.92,3.32c0.12,0.22,0.37,0.29,0.59,0.22l2.39-0.96c0.5,0.38,1.03,0.7,1.62,0.94l0.36,2.54 c0.05,0.24,0.24,0.41,0.48,0.41h3.84c0.24,0,0.44-0.17,0.47-0.41l0.36-2.54c0.59-0.24,1.13-0.56,1.62-0.94l2.39,0.96 c0.22,0.08,0.47,0,0.59-0.22l1.92-3.32c0.12-0.22,0.07-0.47-0.12-0.61L19.14,12.94z M12,15.6c-1.98,0-3.6-1.62-3.6-3.6 s1.62-3.6,3.6-3.6s3.6,1.62,3.6,3.6S13.98,15.6,12,15.6z"/>
+          </svg>
+          <span>Settings</span>
+        </button>
+        <h1 style={{ flex: '1', textAlign: 'center', margin: '0', fontSize: '28px', color: 'var(--accent)' }}>Cyberpunk RED GM Tool</h1>
+        <div style={{ width: '100px' }}></div> {/* Spacer for centering */}
+      </div>
       
       <div className="tabs">
         <button 
@@ -841,10 +901,10 @@ export function App() {
           Encounters
         </button>
         <button 
-          className={`tab ${activeTab === 'damage' ? 'active' : ''}`}
-          onClick={() => setActiveTab('damage')}
+          className={`tab ${activeTab === 'pcs' ? 'active' : ''}`}
+          onClick={() => setActiveTab('pcs')}
         >
-          Damage
+          PCs
         </button>
         <button 
           className={`tab ${activeTab === 'npc' ? 'active' : ''}`}
@@ -853,11 +913,33 @@ export function App() {
           NPCs
         </button>
         <button 
-          className={`tab ${activeTab === 'shop' ? 'active' : ''}`}
-          onClick={() => setActiveTab('shop')}
+          className={`tab ${activeTab === 'encounter-gen' ? 'active' : ''}`}
+          onClick={() => setActiveTab('encounter-gen')}
         >
-          Shop
+          Encounter Creator
         </button>
+        <button 
+          className={`tab ${activeTab === 'damage' ? 'active' : ''}`}
+          onClick={() => setActiveTab('damage')}
+        >
+          Damage
+        </button>
+        {critMode === 'raw' && (
+          <button 
+            className={`tab ${activeTab === 'crit' ? 'active' : ''}`}
+            onClick={() => setActiveTab('crit')}
+          >
+            Criticals
+          </button>
+        )}
+        {critMode === 'tarot' && (
+          <button 
+            className={`tab ${activeTab === 'tarot' ? 'active' : ''}`}
+            onClick={() => setActiveTab('tarot')}
+          >
+            Tarot
+          </button>
+        )}
         <button 
           className={`tab ${activeTab === 'time' ? 'active' : ''}`}
           onClick={() => setActiveTab('time')}
@@ -865,34 +947,10 @@ export function App() {
           Time
         </button>
         <button 
-          className={`tab ${activeTab === 'crit' ? 'active' : ''}`}
-          onClick={() => setActiveTab('crit')}
+          className={`tab ${activeTab === 'shop' ? 'active' : ''}`}
+          onClick={() => setActiveTab('shop')}
         >
-          Criticals
-        </button>
-        <button 
-          className={`tab ${activeTab === 'tarot' ? 'active' : ''}`}
-          onClick={() => setActiveTab('tarot')}
-        >
-          Tarot
-        </button>
-        <button 
-          className={`tab ${activeTab === 'pcs' ? 'active' : ''}`}
-          onClick={() => setActiveTab('pcs')}
-        >
-          PCs
-        </button>
-        <button 
-          className={`tab ${activeTab === 'settings' ? 'active' : ''}`}
-          onClick={() => setActiveTab('settings')}
-        >
-          Settings
-        </button>
-        <button 
-          className={`tab ${activeTab === 'encounter-gen' ? 'active' : ''}`}
-          onClick={() => setActiveTab('encounter-gen')}
-        >
-          Random Encounters
+          Shop
         </button>
       </div>
 

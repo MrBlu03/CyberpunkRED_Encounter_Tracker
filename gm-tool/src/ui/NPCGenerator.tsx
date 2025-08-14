@@ -660,26 +660,6 @@ export default function NPCGenerator({ onAddToEncounter, onSaveNPC }: NPCGenerat
             </div>
           </div>
 
-          <div className="skills-section">
-            <h3>Key Skills</h3>
-            <div className="skills-list">
-              {availableSkills.slice(0, 10).map(skill => (
-                <div key={skill._id} className="skill-input">
-                  <label>{skill.name}:</label>
-                  <input 
-                    type="number" 
-                    min="2" 
-                    max="10" 
-                    value={currentNPC.skills?.[skill._id] || 2}
-                    onChange={(e) => updateSkill(skill._id, parseInt(e.target.value))}
-                  />
-                  <span className="skill-total">
-                    Total: {getSkillTotal(skill, currentNPC.stats)}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
 
         <div className="builder-row">
