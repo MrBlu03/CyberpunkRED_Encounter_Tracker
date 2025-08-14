@@ -14,6 +14,68 @@ import SettingsManager from './SettingsManager'
 
 export type WoundState = 'not-wounded' | 'lightly-wounded' | 'seriously-wounded' | 'mortally-wounded' | 'dead'
 
+// Apply theme on app load
+function initializeTheme() {
+  const mode = (localStorage.getItem('theme-mode') as 'light' | 'dark') || 'dark';
+  const palette = (localStorage.getItem('theme-palette') as 'orange' | 'blue' | 'red') || 'orange';
+  
+  const r = document.documentElement;
+  const bases = mode === 'dark'
+    ? { 
+        bg: '#0a0a0a', 
+        surface: '#1a1a1a', 
+        surface2: '#2a2a2a',
+        text: '#e0e0e0', 
+        textMuted: '#888',
+        border: '#333' 
+      }
+    : { 
+        bg: '#f8f9fa', 
+        surface: '#ffffff', 
+        surface2: '#f1f3f4',
+        text: '#212529', 
+        textMuted: '#6c757d',
+        border: '#dee2e6' 
+      };
+
+  const palettes = {
+    orange: { 
+      accent: mode === 'dark' ? '#ff6b35' : '#dc5222', 
+      accentAlt: mode === 'dark' ? '#ff8c42' : '#f56500', 
+      subtle: mode === 'dark' ? 'rgba(255,107,53,0.1)' : 'rgba(220,82,34,0.1)', 
+      textAccent: mode === 'dark' ? '#ff6b35' : '#dc5222',
+      hover: mode === 'dark' ? '#ff5722' : '#c44a1d'
+    },
+    blue: { 
+      accent: mode === 'dark' ? '#4a9eff' : '#0d6efd', 
+      accentAlt: mode === 'dark' ? '#6bb6ff' : '#3d8bfd', 
+      subtle: mode === 'dark' ? 'rgba(74,158,255,0.12)' : 'rgba(13,110,253,0.1)', 
+      textAccent: mode === 'dark' ? '#4a9eff' : '#0d6efd',
+      hover: mode === 'dark' ? '#357abd' : '#0b5ed7'
+    },
+    red: { 
+      accent: mode === 'dark' ? '#ff4757' : '#e74c3c', 
+      accentAlt: mode === 'dark' ? '#ff6b7a' : '#ec7063', 
+      subtle: mode === 'dark' ? 'rgba(255,71,87,0.15)' : 'rgba(231,76,60,0.12)', 
+      textAccent: mode === 'dark' ? '#ff7675' : '#e74c3c',
+      hover: mode === 'dark' ? '#ff3742' : '#cb4335'
+    },
+  };
+
+  const p = palettes[palette];
+  r.style.setProperty('--bg', bases.bg, 'important');
+  r.style.setProperty('--surface', bases.surface, 'important');
+  r.style.setProperty('--surface-2', bases.surface2, 'important');
+  r.style.setProperty('--text', bases.text, 'important');
+  r.style.setProperty('--text-muted', bases.textMuted, 'important');
+  r.style.setProperty('--border', bases.border, 'important');
+  r.style.setProperty('--accent', p.accent, 'important');
+  r.style.setProperty('--accent-alt', p.accentAlt, 'important');
+  r.style.setProperty('--accent-subtle', p.subtle, 'important');
+  r.style.setProperty('--text-accent', p.textAccent, 'important');
+  r.style.setProperty('--accent-hover', p.hover, 'important');
+}
+
 export type Participant = {
   id: string
   name: string
@@ -31,6 +93,7 @@ export type Participant = {
     head: number
     body: number
     shield?: number
+    shieldEquipped?: boolean
   }
   cover?: {
     type: 'light' | 'medium' | 'heavy' | 'human-shield'
@@ -74,6 +137,11 @@ export function App() {
   const [activeTab, setActiveTab] = useState('encounter');
   const [participants, setParticipants] = useState<Participant[]>([])
   const [encounter, setEncounter] = useState<EncounterState>({ active: false, round: 0, turnIndex: 0, archived: false })
+
+  // Initialize theme on app load
+  useEffect(() => {
+    initializeTheme();
+  }, []);
   const [name, setName] = useState('')
   const [ref, setRef] = useState<number>(6)
   const [initiativeSkill, setInitiativeSkill] = useState<number>(0)
@@ -231,7 +299,8 @@ export function App() {
       armor: npc.equipment?.armor ? {
         head: npc.equipment.armor.system.headLocation.sp,
         body: npc.equipment.armor.system.bodyLocation.sp,
-        shield: 0
+        shield: (npc.equipment.armor as any).shield || 0,
+        shieldEquipped: true // NPCs always have shields equipped
       } : undefined
     };
     setParticipants(prev => [...prev, participant]);
@@ -252,7 +321,8 @@ export function App() {
       armor: npc.equipment?.armor ? {
         head: npc.equipment.armor.system?.headLocation?.sp || 0,
         body: npc.equipment.armor.system?.bodyLocation?.sp || 0,
-        shield: 0
+        shield: (npc.equipment.armor as any).shield || 0,
+        shieldEquipped: true // NPCs always have shields equipped
       } : undefined
     }));
     
@@ -349,8 +419,8 @@ export function App() {
             const currentArmor = p.armor || { head: 0, body: 0, shield: 0 };
             let armorSP = location === 'head' ? currentArmor.head : currentArmor.body;
             
-            // Add shield SP to body armor (RAW: shields only protect body)
-            if (location === 'body' && currentArmor.shield) {
+            // Add shield SP to body armor (RAW: shields only protect body, and only when equipped)
+            if (location === 'body' && currentArmor.shield && currentArmor.shieldEquipped) {
               armorSP += currentArmor.shield;
             }
             
@@ -375,8 +445,8 @@ export function App() {
                 newArmor.head = Math.max(0, newArmor.head - ablationAmount);
               } else {
                 newArmor.body = Math.max(0, newArmor.body - ablationAmount);
-                // Also ablate shield if present
-                if (newArmor.shield) {
+                // Also ablate shield if present and equipped
+                if (newArmor.shield && newArmor.shieldEquipped) {
                   newArmor.shield = Math.max(0, newArmor.shield - ablationAmount);
                 }
               }
@@ -625,16 +695,31 @@ export function App() {
 
   // Armor and cover management
   const toggleArmorEditor = (participantId: string) => {
-    const headSP = prompt('Enter Head Armor SP:', '0');
-    const bodySP = prompt('Enter Body Armor SP:', '0');
-    const shieldSP = prompt('Enter Shield SP (optional):', '0');
+    const participant = participants.find(p => p.id === participantId);
+    const currentArmor = participant?.armor;
+    
+    const headSP = prompt('Enter Head Armor SP:', currentArmor?.head?.toString() || '0');
+    const bodySP = prompt('Enter Body Armor SP:', currentArmor?.body?.toString() || '0');
+    const shieldSP = prompt('Enter Shield SP (optional):', currentArmor?.shield?.toString() || '0');
     
     if (headSP !== null && bodySP !== null) {
+      const isPC = participant?.isPC;
+      const hasShield = shieldSP && parseInt(shieldSP) > 0;
+      
+      // For PCs with shields, ask about shield equipped status
+      let shieldEquipped = !isPC; // NPCs always have shields equipped
+      if (isPC && hasShield) {
+        const currentlyEquipped = currentArmor?.shieldEquipped;
+        const equipChoice = confirm(`Shield equipped? Current: ${currentlyEquipped ? 'Equipped' : 'Unequipped'}\n\nClick OK to equip shield, Cancel to unequip`);
+        shieldEquipped = equipChoice;
+      }
+      
       updateParticipant(participantId, {
         armor: {
           head: parseInt(headSP) || 0,
           body: parseInt(bodySP) || 0,
-          shield: shieldSP && parseInt(shieldSP) > 0 ? parseInt(shieldSP) : undefined
+          shield: hasShield ? parseInt(shieldSP) : undefined,
+          shieldEquipped: hasShield ? shieldEquipped : undefined
         }
       });
     }
@@ -746,7 +831,7 @@ export function App() {
 
   return (
     <div className="app-container">
-      <h1 style={{ marginBottom: '24px', fontSize: '28px', color: '#ff6b35' }}>Cyberpunk RED GM Tool</h1>
+      <h1 style={{ marginBottom: '24px', fontSize: '28px', color: 'var(--accent)' }}>Cyberpunk RED GM Tool</h1>
       
       <div className="tabs">
         <button 
@@ -927,7 +1012,7 @@ export function App() {
                           <td>{p.name}</td>
                           <td style={{ textAlign: 'center' }}>
                             {p.ref}
-                            {p.isPC && <span style={{ marginLeft: 6, fontSize: 10, color: '#4a9eff' }}>(PC)</span>}
+                            {p.isPC && <span style={{ marginLeft: 6, fontSize: 10, color: 'var(--accent)' }}>(PC)</span>}
                           </td>
                           <td style={{ textAlign: 'center' }}>{p.initiativeSkill ?? 0}</td>
                           <td style={{ textAlign: 'center' }}>{p.rolled ?? (p.isPC ? '-' : '-')}</td>
@@ -948,13 +1033,32 @@ export function App() {
                             /{p.maxHp ?? 0}
                           </td>
                           <td style={{ textAlign: 'center', fontSize: '12px' }}>
-                            <button 
-                              onClick={() => toggleArmorEditor(p.id)} 
-                              className="small-btn"
-                              title="Add/Edit Armor"
-                            >
-                              {p.armor ? 'Edit Armor' : '+Armor'}
-                            </button>
+                            {p.armor ? (
+                              <div className="armor-display">
+                                <div>H:{p.armor.head} B:{p.armor.body}</div>
+                                {p.armor.shield && (
+                                  <div style={{ fontSize: 10, marginTop: 2 }}>
+                                    Shield:{p.armor.shield} {p.isPC && (p.armor.shieldEquipped ? '🛡️' : '🚫')}
+                                  </div>
+                                )}
+                                <button 
+                                  onClick={() => toggleArmorEditor(p.id)} 
+                                  className="small-btn"
+                                  style={{ marginTop: 2, fontSize: 8 }}
+                                  title="Edit Armor"
+                                >
+                                  Edit
+                                </button>
+                              </div>
+                            ) : (
+                              <button 
+                                onClick={() => toggleArmorEditor(p.id)} 
+                                className="small-btn"
+                                title="Add Armor"
+                              >
+                                +Armor
+                              </button>
+                            )}
                           </td>
                           <td style={{ textAlign: 'center', fontSize: '12px' }}>
                             {p.cover ? (
@@ -983,7 +1087,7 @@ export function App() {
                             {p.woundState?.replace('-', ' ') || 'unknown'}
                           </td>
                           <td style={{ textAlign: 'center' }}>
-                            {!canAct(p) && <span style={{ color: '#ff6b35' }}>Skip Turn</span>}
+                            {!canAct(p) && <span style={{ color: 'var(--accent)' }}>Skip Turn</span>}
                             <button 
                               onClick={() => openDamageDialog(p.id, p.name)} 
                               className="small-btn damage-btn"
@@ -1073,6 +1177,35 @@ export function App() {
                                     <div className="armor-piece-expanded">
                                       <span className="armor-location">Shield:</span>
                                       <span className="armor-sp">{p.armor.shield} SP</span>
+                                      {p.isPC && (
+                                        <div className="shield-controls" style={{ marginLeft: 10, display: 'flex', alignItems: 'center', gap: 8 }}>
+                                          <button
+                                            onClick={() => updateParticipant(p.id, { 
+                                              armor: { ...p.armor!, shieldEquipped: !p.armor!.shieldEquipped } 
+                                            })}
+                                            className={`shield-toggle-btn ${p.armor.shieldEquipped ? 'equipped' : 'unequipped'}`}
+                                            style={{ 
+                                              padding: '4px 8px',
+                                              fontSize: '12px',
+                                              backgroundColor: p.armor.shieldEquipped ? 'var(--accent)' : 'var(--text-muted)',
+                                              color: p.armor.shieldEquipped ? 'white' : 'var(--surface)',
+                                              border: 'none',
+                                              borderRadius: '4px',
+                                              cursor: 'pointer'
+                                            }}
+                                            title={p.armor.shieldEquipped ? 'Click to unequip shield' : 'Click to equip shield'}
+                                          >
+                                            {p.armor.shieldEquipped ? '🛡️ Equipped' : '🚫 Unequipped'}
+                                          </button>
+                                          <span style={{ 
+                                            fontSize: '10px', 
+                                            color: p.armor.shieldEquipped ? 'var(--accent)' : 'var(--text-muted)',
+                                            fontStyle: 'italic'
+                                          }}>
+                                            {p.armor.shieldEquipped ? 'Protecting' : 'Not protecting'}
+                                          </span>
+                                        </div>
+                                      )}
                                     </div>
                                   )}
                                 </div>
@@ -1087,7 +1220,7 @@ export function App() {
                 </table>
               </div>
 
-              <p style={{ marginTop: 16, color: '#888', fontSize: 14 }}>
+              <p style={{ marginTop: 16, color: 'var(--text-muted)', fontSize: 14 }}>
                 RAW: Initiative = 1d10 + REF + Initiative skill (p. 168). 
                 Rounds = 10 seconds. Auto-skips Seriously Wounded/Dead participants.
               </p>
@@ -1173,7 +1306,7 @@ export function App() {
           maxHp: pc.maxHp,
           woundState: getWoundState(pc.hp, pc.maxHp),
           isPC: true,
-          armor: { head: pc.armorHead, body: pc.armorBody, shield: pc.shieldSp }
+          armor: { head: pc.armorHead, body: pc.armorBody, shield: pc.shieldSp, shieldEquipped: false }
         }])
       }} />}
       {activeTab === 'settings' && <SettingsManager />}

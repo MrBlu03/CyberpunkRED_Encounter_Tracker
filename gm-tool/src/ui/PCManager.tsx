@@ -10,20 +10,21 @@ type PC = {
   armorHead: number;
   armorBody: number;
   shieldSp: number;
+  notes?: string;
 };
 
 export default function PCManager({ onAddToEncounter }: { onAddToEncounter?: (pc: PC) => void } ) {
   const [pcs, setPcs] = useState<PC[]>(() => {
     try { const raw = localStorage.getItem('gm-pcs'); return raw ? JSON.parse(raw) : []; } catch { return []; }
   });
-  const [form, setForm] = useState<Omit<PC, 'id'>>({ name: '', ref: 6, initiative: 0, hp: 35, maxHp: 35, armorHead: 0, armorBody: 0, shieldSp: 0 });
+  const [form, setForm] = useState<Omit<PC, 'id'>>({ name: '', ref: 6, initiative: 0, hp: 35, maxHp: 35, armorHead: 0, armorBody: 0, shieldSp: 0, notes: '' });
 
   useEffect(() => { localStorage.setItem('gm-pcs', JSON.stringify(pcs)); }, [pcs]);
 
   const addPC = () => {
     if (!form.name.trim()) return;
     setPcs(prev => [...prev, { id: crypto.randomUUID(), ...form }]);
-    setForm({ name: '', ref: 6, initiative: 0, hp: 35, maxHp: 35, armorHead: 0, armorBody: 0, shieldSp: 0 });
+    setForm({ name: '', ref: 6, initiative: 0, hp: 35, maxHp: 35, armorHead: 0, armorBody: 0, shieldSp: 0, notes: '' });
   };
 
   const updatePC = (id: string, patch: Partial<PC>) => setPcs(prev => prev.map(p => p.id === id ? { ...p, ...patch } : p));
@@ -42,6 +43,7 @@ export default function PCManager({ onAddToEncounter }: { onAddToEncounter?: (pc
         <label><div>Head SP</div><input type="number" value={form.armorHead} onChange={e => setForm({ ...form, armorHead: Number(e.target.value) })} /></label>
         <label><div>Body SP</div><input type="number" value={form.armorBody} onChange={e => setForm({ ...form, armorBody: Number(e.target.value) })} /></label>
         <label><div>Shield SP</div><input type="number" value={form.shieldSp} onChange={e => setForm({ ...form, shieldSp: Number(e.target.value) })} /></label>
+        <label style={{ gridColumn: 'span 2' }}><div>Notes</div><input value={form.notes} onChange={e => setForm({ ...form, notes: e.target.value })} placeholder="PC notes..." /></label>
         <button onClick={addPC}>Add PC</button>
       </div>
 
@@ -56,6 +58,7 @@ export default function PCManager({ onAddToEncounter }: { onAddToEncounter?: (pc
               <th>Initiative</th>
               <th>HP</th>
               <th>Armor (Head/Body/Shield)</th>
+              <th>Notes</th>
               <th>Actions</th>
             </tr>
           </thead>
@@ -69,6 +72,14 @@ export default function PCManager({ onAddToEncounter }: { onAddToEncounter?: (pc
                   <input type="number" value={pc.hp} onChange={e => updatePC(pc.id, { hp: Number(e.target.value) })} style={{ width: 70 }} /> / {pc.maxHp}
                 </td>
                 <td>{pc.armorHead} / {pc.armorBody} / {pc.shieldSp}</td>
+                <td>
+                  <textarea
+                    value={pc.notes || ''}
+                    onChange={e => updatePC(pc.id, { notes: e.target.value })}
+                    placeholder="Notes..."
+                    style={{ width: 200, height: 60 }}
+                  />
+                </td>
                 <td>
                   {onAddToEncounter && (
                     <button className="small-btn add-encounter-btn" onClick={() => onAddToEncounter(pc)}>Add to Encounter</button>

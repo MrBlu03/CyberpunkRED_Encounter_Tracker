@@ -4,9 +4,16 @@ type TarotCard = { name: string; text: string };
 
 export default function Tarot() {
   const [cards, setCards] = useState<TarotCard[] | null>(null);
-  const [deck, setDeck] = useState<TarotCard[]>([]);
-  const [drawn, setDrawn] = useState<{ card: TarotCard; time: string }[]>([]);
-  const [allowReshuffle, setAllowReshuffle] = useState(false);
+  const [deck, setDeck] = useState<TarotCard[]>(() => {
+    try { const raw = localStorage.getItem('cpr-tarot-deck'); return raw ? JSON.parse(raw) : []; } catch { return []; }
+  });
+  const [drawn, setDrawn] = useState<{ card: TarotCard; time: string }[]>(() => {
+    try { const raw = localStorage.getItem('cpr-tarot-drawn'); return raw ? JSON.parse(raw) : []; } catch { return []; }
+  });
+  const [allowReshuffle, setAllowReshuffle] = useState<boolean>(() => {
+    try { const raw = localStorage.getItem('cpr-tarot-reshuffle'); return raw ? JSON.parse(raw) : false; } catch { return false; }
+  });
+  const [rules, setRules] = useState<any | null>(null);
 
   const remaining = useMemo(() => deck.length, [deck]);
 
@@ -32,7 +39,8 @@ export default function Tarot() {
         }
         if (loaded.length > 0) {
           setCards(loaded);
-          setDeck(shuffle(loaded));
+          // If we had a persisted deck, keep it; otherwise seed it
+          setDeck(prev => (prev && prev.length > 0 ? prev : shuffle(loaded)));
           return;
         }
       } catch (_) {}
@@ -62,7 +70,7 @@ export default function Tarot() {
         { name: 'The World', text: 'Attacker takes an extra turn immediately with +5 and no wound effects.' },
       ];
       setCards(fallback);
-      setDeck(shuffle(fallback));
+      setDeck(prev => (prev && prev.length > 0 ? prev : shuffle(fallback)));
     }
 
     function findFileForId(id: string): string {
@@ -98,6 +106,15 @@ export default function Tarot() {
     setDrawn([]);
   };
 
+  // Persist across navigation
+  useEffect(() => {
+    try {
+      localStorage.setItem('cpr-tarot-deck', JSON.stringify(deck));
+      localStorage.setItem('cpr-tarot-drawn', JSON.stringify(drawn));
+      localStorage.setItem('cpr-tarot-reshuffle', JSON.stringify(allowReshuffle));
+    } catch {}
+  }, [deck, drawn, allowReshuffle]);
+
   return (
     <div className="section">
       <h2>Night City Tarot (Optional Rule)</h2>
@@ -118,8 +135,8 @@ export default function Tarot() {
           drawn.map((d, i) => (
             <div key={i} className="result-item" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               <div style={{ fontWeight: 600 }}>{d.card.name}</div>
-              <div style={{ color: '#aaa', maxWidth: 600 }}>{d.card.text}</div>
-              <div style={{ color: '#888' }}>{d.time}</div>
+              <div style={{ color: 'var(--text-muted)', maxWidth: 600 }}>{d.card.text}</div>
+              <div style={{ color: 'var(--text-muted)' }}>{d.time}</div>
             </div>
           ))
         )}

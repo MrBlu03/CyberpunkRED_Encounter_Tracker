@@ -6,8 +6,7 @@ type Palette = 'orange' | 'blue' | 'red';
 export default function SettingsManager() {
   const [mode, setMode] = useState<Mode>(() => (localStorage.getItem('theme-mode') as Mode) || 'dark');
   const [palette, setPalette] = useState<Palette>(() => (localStorage.getItem('theme-palette') as Palette) || 'orange');
-  const [enableRawCrit, setEnableRawCrit] = useState<boolean>(() => (localStorage.getItem('crit-mode') ?? 'raw') === 'raw');
-  const [enableTarotCrit, setEnableTarotCrit] = useState<boolean>(() => (localStorage.getItem('crit-mode') ?? 'raw') === 'tarot');
+  const [critMode, setCritMode] = useState<'raw' | 'tarot'>(() => (localStorage.getItem('crit-mode') as 'raw' | 'tarot') ?? 'raw');
 
   useEffect(() => {
     applyTheme(mode, palette);
@@ -15,10 +14,14 @@ export default function SettingsManager() {
     localStorage.setItem('theme-palette', palette);
   }, [mode, palette]);
 
+  // Apply theme on mount
   useEffect(() => {
-    const mode = enableTarotCrit ? 'tarot' : 'raw';
-    localStorage.setItem('crit-mode', mode);
-  }, [enableRawCrit, enableTarotCrit]);
+    applyTheme(mode, palette);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('crit-mode', critMode);
+  }, [critMode]);
 
   const exportAll = () => {
     const data = {
@@ -70,15 +73,31 @@ export default function SettingsManager() {
             <option value="red">Darker Red</option>
           </select>
         </label>
-        <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
-          <label style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-            <input type="radio" name="crit-mode" checked={enableRawCrit} onChange={() => { setEnableRawCrit(true); setEnableTarotCrit(false); }} />
-            RAW Critical Injuries (2+ sixes on damage)
-          </label>
-          <label style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-            <input type="radio" name="crit-mode" checked={enableTarotCrit} onChange={() => { setEnableRawCrit(false); setEnableTarotCrit(true); }} />
-            Tarot Criticals (optional rule)
-          </label>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+          <label>Critical Hit Mode</label>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 12, background: 'var(--surface-2)', padding: '8px 12px', borderRadius: 6, border: '1px solid var(--border)' }}>
+            <span style={{ color: critMode === 'raw' ? 'var(--accent)' : 'var(--text-muted)', fontWeight: critMode === 'raw' ? 'bold' : 'normal' }}>RAW (2+ sixes)</span>
+            <label style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}>
+              <input 
+                type="checkbox" 
+                checked={critMode === 'tarot'} 
+                onChange={() => setCritMode(critMode === 'raw' ? 'tarot' : 'raw')}
+                style={{ appearance: 'none', width: 44, height: 20, background: critMode === 'tarot' ? 'var(--accent)' : 'var(--text-muted)', borderRadius: 10, position: 'relative', cursor: 'pointer', transition: 'background 0.2s' }}
+              />
+              <div style={{ 
+                position: 'absolute', 
+                width: 16, 
+                height: 16, 
+                background: 'white', 
+                borderRadius: '50%', 
+                top: 2, 
+                left: critMode === 'tarot' ? 26 : 2, 
+                transition: 'left 0.2s',
+                pointerEvents: 'none'
+              }} />
+            </label>
+            <span style={{ color: critMode === 'tarot' ? 'var(--accent)' : 'var(--text-muted)', fontWeight: critMode === 'tarot' ? 'bold' : 'normal' }}>Tarot</span>
+          </div>
         </div>
         <button onClick={exportAll}>Export All</button>
         <label className="file-input-label">
@@ -87,32 +106,68 @@ export default function SettingsManager() {
         </label>
         <button className="danger-btn" onClick={() => { if (confirm('Clear all local data?')) { localStorage.clear(); location.reload(); } }}>Clear All</button>
       </div>
-      <p style={{ color: '#888' }}>Themes apply CSS variables; text maintains readable contrast across palettes.</p>
+      <p style={{ color: 'var(--text-muted)' }}>Themes apply CSS variables; text maintains readable contrast across palettes.</p>
     </div>
   );
 }
 
 function applyTheme(mode: Mode, palette: Palette) {
   const r = document.documentElement;
+  
   const bases = mode === 'dark'
-    ? { bg: '#0a0a0a', surface: '#1a1a1a', text: '#e0e0e0', border: '#333' }
-    : { bg: '#fafafa', surface: '#ffffff', text: '#1a1a1a', border: '#ddd' };
+    ? { 
+        bg: '#0a0a0a', 
+        surface: '#1a1a1a', 
+        surface2: '#2a2a2a',
+        text: '#e0e0e0', 
+        textMuted: '#888',
+        border: '#333' 
+      }
+    : { 
+        bg: '#f8f9fa', 
+        surface: '#ffffff', 
+        surface2: '#f1f3f4',
+        text: '#212529', 
+        textMuted: '#6c757d',
+        border: '#dee2e6' 
+      };
 
-  const palettes: Record<Palette, { accent: string; accentAlt: string; subtle: string; textAccent: string }> = {
-    orange: { accent: '#ff6b35', accentAlt: '#ff8c42', subtle: 'rgba(255,107,53,0.1)', textAccent: '#ff6b35' },
-    blue:   { accent: '#4a9eff', accentAlt: '#6bb6ff', subtle: 'rgba(74,158,255,0.12)', textAccent: '#4a9eff' },
-    red:    { accent: '#b33939', accentAlt: '#e55039', subtle: 'rgba(179,57,57,0.12)', textAccent: '#d96e6e' },
+  const palettes: Record<Palette, { accent: string; accentAlt: string; subtle: string; textAccent: string; hover: string }> = {
+    orange: { 
+      accent: mode === 'dark' ? '#ff6b35' : '#dc5222', 
+      accentAlt: mode === 'dark' ? '#ff8c42' : '#f56500', 
+      subtle: mode === 'dark' ? 'rgba(255,107,53,0.1)' : 'rgba(220,82,34,0.1)', 
+      textAccent: mode === 'dark' ? '#ff6b35' : '#dc5222',
+      hover: mode === 'dark' ? '#ff5722' : '#c44a1d'
+    },
+    blue: { 
+      accent: mode === 'dark' ? '#4a9eff' : '#0d6efd', 
+      accentAlt: mode === 'dark' ? '#6bb6ff' : '#3d8bfd', 
+      subtle: mode === 'dark' ? 'rgba(74,158,255,0.12)' : 'rgba(13,110,253,0.1)', 
+      textAccent: mode === 'dark' ? '#4a9eff' : '#0d6efd',
+      hover: mode === 'dark' ? '#357abd' : '#0b5ed7'
+    },
+    red: { 
+      accent: mode === 'dark' ? '#ff4757' : '#e74c3c', 
+      accentAlt: mode === 'dark' ? '#ff6b7a' : '#ec7063', 
+      subtle: mode === 'dark' ? 'rgba(255,71,87,0.15)' : 'rgba(231,76,60,0.12)', 
+      textAccent: mode === 'dark' ? '#ff7675' : '#e74c3c',
+      hover: mode === 'dark' ? '#ff3742' : '#cb4335'
+    },
   };
 
   const p = palettes[palette];
-  r.style.setProperty('--bg', bases.bg);
-  r.style.setProperty('--surface', bases.surface);
-  r.style.setProperty('--text', bases.text);
-  r.style.setProperty('--border', bases.border);
-  r.style.setProperty('--accent', p.accent);
-  r.style.setProperty('--accent-alt', p.accentAlt);
-  r.style.setProperty('--accent-subtle', p.subtle);
-  r.style.setProperty('--text-accent', p.textAccent);
+  r.style.setProperty('--bg', bases.bg, 'important');
+  r.style.setProperty('--surface', bases.surface, 'important');
+  r.style.setProperty('--surface-2', bases.surface2, 'important');
+  r.style.setProperty('--text', bases.text, 'important');
+  r.style.setProperty('--text-muted', bases.textMuted, 'important');
+  r.style.setProperty('--border', bases.border, 'important');
+  r.style.setProperty('--accent', p.accent, 'important');
+  r.style.setProperty('--accent-alt', p.accentAlt, 'important');
+  r.style.setProperty('--accent-subtle', p.subtle, 'important');
+  r.style.setProperty('--text-accent', p.textAccent, 'important');
+  r.style.setProperty('--accent-hover', p.hover, 'important');
 }
 
 

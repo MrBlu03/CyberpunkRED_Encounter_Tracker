@@ -41,15 +41,15 @@
 }
 
 .shop-filters-enhanced label {
-  color: #ccc;
+  color: var(--text-muted);
   font-size: 12px;
 }
 
 .shop-filters-enhanced select,
 .shop-filters-enhanced input {
-  background: #1a1a1a;
-  border: 1px solid #333;
-  color: #e0e0e0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
   padding: 8px 12px;
   border-radius: 6px;
 }
@@ -60,11 +60,26 @@
   align-items: center;
 }
 
+:root {
+  /* Default theme variables - will be overridden by JavaScript */
+  --bg: #0a0a0a;
+  --surface: #1a1a1a;
+  --surface-2: #2a2a2a;
+  --text: #e0e0e0;
+  --text-muted: #888;
+  --border: #333;
+  --accent: #ff6b35;
+  --accent-alt: #ff8c42;
+  --accent-subtle: rgba(255,107,53,0.1);
+  --text-accent: #ff6b35;
+  --accent-hover: #ff5722;
+}
+
 body {
   margin: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-  background: #0a0a0a;
-  color: #e0e0e0;
+  background: var(--bg);
+  color: var(--text);
   line-height: 1.6;
 }
 
@@ -89,30 +104,30 @@ input, button, select {
   font-family: inherit;
   font-size: 14px;
   padding: 8px 12px;
-  border: 1px solid #333;
+  border: 1px solid var(--border);
   border-radius: 6px;
-  background: #1a1a1a;
-  color: #e0e0e0;
+  background: var(--surface);
+  color: var(--text);
   margin: 4px;
 }
 
 input:focus, select:focus {
   outline: none;
-  border-color: #ff6b35;
+  border-color: var(--accent);
 }
 
 button {
   cursor: pointer;
-  background: #2a2a2a;
+  background: var(--surface-2, #2a2a2a);
   transition: background 0.2s;
 }
 
 button:hover {
-  background: #3a3a3a;
+  background: var(--accent-hover, #3a3a3a);
 }
 
 button:active {
-  background: #1a1a1a;
+  background: var(--surface);
 }
 
 table {
@@ -121,26 +136,26 @@ table {
   margin-top: 16px;
   border-radius: 8px;
   overflow: hidden;
-  border: 1px solid #333;
+  border: 1px solid var(--border);
 }
 
 th, td {
   padding: 12px 16px;
   text-align: left;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid var(--border);
 }
 
 th {
-  background: #2a2a2a;
+  background: var(--surface-2, #2a2a2a);
   font-weight: 600;
-  color: #ff6b35;
+  color: var(--accent);
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
 tr:hover {
-  background: rgba(255, 107, 53, 0.1);
+  background: var(--accent-subtle);
 }
 
 .wound-lightly { background: rgba(255, 255, 0, 0.2); }
@@ -149,8 +164,8 @@ tr:hover {
 .wound-dead { background: rgba(128, 0, 0, 0.5); text-decoration: line-through; }
 
 .current-turn {
-  background: rgba(255, 107, 53, 0.3) !important;
-  border-left: 4px solid #ff6b35;
+  background: var(--accent-subtle) !important;
+  border-left: 4px solid var(--accent);
 }
 
 .grid {
@@ -172,30 +187,30 @@ tr:hover {
 }
 
 .section {
-  background: #1a1a1a;
+  background: var(--surface);
   padding: 24px;
   border-radius: 8px;
   margin-bottom: 24px;
-  border: 1px solid #333;
+  border: 1px solid var(--border);
 }
 
 .section h2 {
   margin: 0 0 16px 0;
-  color: #ff6b35;
+  color: var(--accent);
   font-size: 20px;
   font-weight: 600;
 }
 
 .section h3 {
   margin: 16px 0 12px 0;
-  color: #e0e0e0;
+  color: var(--text);
   font-size: 16px;
   font-weight: 500;
 }
 
 .tabs {
   display: flex;
-  border-bottom: 2px solid #333;
+  border-bottom: 2px solid var(--border);
   margin-bottom: 16px;
 }
 
@@ -204,17 +219,17 @@ tr:hover {
   background: none;
   border: none;
   border-bottom: 2px solid transparent;
-  color: #888;
+  color: var(--text-muted, #888);
   cursor: pointer;
 }
 
 .tab.active {
-  color: #ff6b35;
-  border-bottom-color: #ff6b35;
+  color: var(--accent);
+  border-bottom-color: var(--accent);
 }
 
 .tab:hover {
-  color: #e0e0e0;
+  color: var(--text);
 }
 
 /* NPC Generator Styles */
@@ -226,7 +241,7 @@ tr:hover {
 
 .npc-builder {
   flex: 1;
-  background: #1a1a1a;
+  background: var(--surface);
   padding: 20px;
   border-radius: 8px;
   overflow-y: auto;
@@ -234,7 +249,7 @@ tr:hover {
 
 .npc-roster {
   flex: 1;
-  background: #1a1a1a;
+  background: var(--surface);
   padding: 20px;
   border-radius: 8px;
   overflow-y: auto;
@@ -259,14 +274,14 @@ tr:hover {
 }
 
 .random-btn {
-  background: #ff6b35;
+  background: var(--accent);
   color: white;
   border: none;
   white-space: nowrap;
 }
 
 .random-btn:hover {
-  background: #ff5722;
+  background: var(--accent-hover);
 }
 
 .stats-section {
@@ -297,7 +312,7 @@ tr:hover {
 
 .hp-display {
   padding: 10px;
-  background: #2a2a2a;
+  background: var(--surface-2, #2a2a2a);
   border-radius: 4px;
   margin-top: 10px;
 }
@@ -305,7 +320,7 @@ tr:hover {
 .hp-formula {
   display: block;
   font-size: 12px;
-  color: #888;
+  color: var(--text-muted, #888);
   margin-top: 4px;
 }
 
@@ -336,7 +351,7 @@ tr:hover {
 
 .skill-total {
   font-size: 12px;
-  color: #ff6b35;
+  color: var(--accent);
   font-weight: bold;
 }
 
@@ -362,17 +377,17 @@ tr:hover {
   display: flex;
   gap: 15px;
   font-size: 12px;
-  color: #888;
+  color: var(--text-muted, #888);
 }
 
 .builder-actions {
   text-align: center;
   padding-top: 20px;
-  border-top: 1px solid #333;
+  border-top: 1px solid var(--border);
 }
 
 .save-btn {
-  background: #4caf50;
+  background: var(--accent);
   color: white;
   border: none;
   padding: 10px 20px;
@@ -380,12 +395,12 @@ tr:hover {
 }
 
 .save-btn:hover {
-  background: #45a049;
+  background: var(--accent-hover);
 }
 
 .save-btn:disabled {
-  background: #333;
-  color: #666;
+  background: var(--text-muted);
+  color: var(--surface);
   cursor: not-allowed;
 }
 
@@ -396,10 +411,10 @@ tr:hover {
 }
 
 .npc-card {
-  background: #2a2a2a;
+  background: var(--surface-2, #2a2a2a);
   padding: 15px;
   border-radius: 6px;
-  border-left: 4px solid #ff6b35;
+  border-left: 4px solid var(--accent);
 }
 
 .npc-header {
@@ -416,7 +431,7 @@ tr:hover {
 }
 
 .add-encounter-btn {
-  background: #2196f3;
+  background: var(--accent-alt);
   color: white;
   border: none;
   padding: 4px 8px;
@@ -425,12 +440,12 @@ tr:hover {
 }
 
 .add-encounter-btn:hover {
-  background: #1976d2;
+  background: var(--accent-hover);
 }
 
 .npc-header h4 {
   margin: 0;
-  color: #ff6b35;
+  color: var(--accent);
 }
 
 .delete-btn {
@@ -457,7 +472,7 @@ tr:hover {
   display: flex;
   gap: 15px;
   margin-bottom: 8px;
-  color: #ccc;
+  color: var(--text-muted, #ccc);
 }
 
 .npc-weapon {
@@ -465,14 +480,14 @@ tr:hover {
 }
 
 .npc-weapon strong {
-  color: #ff6b35;
+  color: var(--accent);
   margin-right: 8px;
 }
 
 .npc-skills {
   display: flex;
   gap: 15px;
-  color: #888;
+  color: var(--text-muted, #888);
 }
 
 /* Shop Generator Styles */
@@ -504,24 +519,26 @@ tr:hover {
 
 .shopping-cart-enhanced {
   flex: 1;
-  background: #1a1a1a;
+  background: var(--surface);
   padding: 15px;
   border-radius: 8px;
   overflow-y: auto;
   min-width: 250px;
   max-width: 300px;
+  border: 1px solid var(--border);
 }
 
 .shopping-cart {
   flex: 1;
-  background: #1a1a1a;
+  background: var(--surface);
   padding: 20px;
   border-radius: 8px;
+  border: 1px solid var(--border);
   overflow-y: auto;
 }
 
 .shop-filters {
-  background: #1a1a1a;
+  background: var(--surface);
   padding: 20px;
   border-radius: 8px;
   margin-bottom: 20px;
@@ -543,13 +560,13 @@ tr:hover {
 
 .filter-group label {
   font-size: 12px;
-  color: #ccc;
+  color: var(--text-muted, #ccc);
 }
 
 .mode-toggle {
   margin-top: 15px;
   padding-top: 15px;
-  border-top: 1px solid #333;
+  border-top: 1px solid var(--border);
 }
 
 .mode-toggle label {
@@ -560,13 +577,13 @@ tr:hover {
 }
 
 .shop-items-enhanced {
-  background: #1a1a1a;
+  background: var(--surface);
   padding: 20px;
   border-radius: 8px;
 }
 
 .shop-items {
-  background: #1a1a1a;
+  background: var(--surface);
   padding: 20px;
   border-radius: 8px;
 }
@@ -631,10 +648,10 @@ tr:hover {
 }
 
 .shop-item {
-  background: #2a2a2a;
+  background: var(--surface-2, #2a2a2a);
   padding: 15px;
   border-radius: 6px;
-  border-left: 3px solid #ff6b35;
+  border-left: 3px solid var(--accent);
   display: flex;
   flex-direction: column;
   height: 280px; /* Fixed height for consistency */
@@ -651,7 +668,7 @@ tr:hover {
 
 .item-header h4 {
   margin: 0;
-  color: #ff6b35;
+  color: var(--accent);
   font-size: 14px;
   line-height: 1.3;
   font-weight: 600;
@@ -665,8 +682,8 @@ tr:hover {
 }
 
 .item-type {
-  background: #333;
-  color: #ccc;
+  background: var(--surface-2, #333);
+  color: var(--text-muted, #ccc);
   padding: 2px 6px;
   border-radius: 3px;
   font-size: 11px;
@@ -708,14 +725,14 @@ tr:hover {
 
 .stat-line {
   font-size: 12px;
-  color: #ccc;
+  color: var(--text-muted, #ccc);
   margin-bottom: 2px;
   line-height: 1.2;
 }
 
 .item-quality, .item-brand {
   font-size: 12px;
-  color: #888;
+  color: var(--text-muted, #888);
   margin-bottom: 4px;
 }
 
@@ -733,7 +750,7 @@ tr:hover {
 }
 
 .add-to-cart-btn {
-  background: #ff6b35;
+  background: var(--accent);
   color: white;
   border: none;
   width: 100%;
@@ -747,11 +764,11 @@ tr:hover {
 }
 
 .add-to-cart-btn:hover {
-  background: #ff5722;
+  background: var(--accent-hover);
 }
 
 .empty-cart {
-  color: #888;
+  color: var(--text-muted, #888);
   text-align: center;
   padding: 40px 20px;
 }
@@ -761,7 +778,7 @@ tr:hover {
 }
 
 .cart-item {
-  background: #2a2a2a;
+  background: var(--surface-2, #2a2a2a);
   padding: 12px;
   border-radius: 4px;
   margin-bottom: 8px;
@@ -773,13 +790,13 @@ tr:hover {
 
 .cart-item-info h5 {
   margin: 0 0 4px 0;
-  color: #ff6b35;
+  color: var(--accent);
   font-size: 13px;
 }
 
 .cart-item-price {
   font-size: 11px;
-  color: #888;
+  color: var(--text-muted, #888);
 }
 
 .cart-item-controls {
@@ -817,7 +834,7 @@ tr:hover {
 }
 
 .cart-summary {
-  border-top: 2px solid #333;
+  border-top: 2px solid var(--border);
   padding-top: 15px;
 }
 
@@ -1081,9 +1098,10 @@ tr:hover {
 }
 
 .time-display, .time-controls, .events-section {
-  background: #1a1a1a;
+  background: var(--surface);
   padding: 20px;
   border-radius: 8px;
+  border: 1px solid var(--border);
 }
 
 .time-display {
@@ -1094,21 +1112,21 @@ tr:hover {
   text-align: center;
   margin: 20px 0;
   padding: 20px;
-  background: #2a2a2a;
+  background: var(--surface-2);
   border-radius: 8px;
-  border-left: 4px solid #ff6b35;
+  border-left: 4px solid var(--accent);
 }
 
 .current-time .date {
   font-size: 18px;
-  color: #ccc;
+  color: var(--text-muted);
   margin-bottom: 10px;
 }
 
 .current-time .time {
   font-size: 36px;
   font-weight: bold;
-  color: #ff6b35;
+  color: var(--accent);
   margin-bottom: 8px;
 }
 
@@ -1129,26 +1147,26 @@ tr:hover {
   gap: 8px;
   margin-bottom: 15px;
   padding: 15px;
-  background: #2a2a2a;
+  background: var(--surface-2);
   border-radius: 6px;
 }
 
 .weather-info .condition {
   font-weight: bold;
-  color: #4caf50;
+  color: var(--accent-alt);
 }
 
 .weather-info .temperature {
-  color: #ff9800;
+  color: var(--text-accent);
 }
 
 .weather-info .visibility {
-  color: #888;
+  color: var(--text-muted);
   font-size: 12px;
 }
 
 .weather-btn {
-  background: #2196f3;
+  background: var(--accent-alt);
   color: white;
   border: none;
   padding: 8px 12px;
@@ -1156,7 +1174,7 @@ tr:hover {
 }
 
 .weather-btn:hover {
-  background: #1976d2;
+  background: var(--accent-hover);
 }
 
 .increment-controls {
@@ -1173,7 +1191,7 @@ tr:hover {
 }
 
 .advance-btn {
-  background: #ff6b35;
+  background: var(--accent);
   color: white;
   border: none;
   padding: 12px;
@@ -1181,12 +1199,12 @@ tr:hover {
 }
 
 .advance-btn:hover {
-  background: #ff5722;
+  background: var(--accent-hover);
 }
 
 .auto-weather {
   padding-top: 15px;
-  border-top: 1px solid #333;
+  border-top: 1px solid var(--border);
 }
 
 .auto-weather label {
@@ -1208,14 +1226,14 @@ tr:hover {
 }
 
 .add-btn {
-  background: #4caf50;
+  background: var(--accent);
   color: white;
   border: none;
   padding: 10px;
 }
 
 .add-btn:hover {
-  background: #45a049;
+  background: var(--accent-hover);
 }
 
 .quick-recovery {
@@ -1537,8 +1555,8 @@ tr:hover {
 }
 
 .encounter-sidebar {
-  background: #1a1a1a;
-  border: 1px solid #333;
+  background: var(--surface);
+  border: 1px solid var(--border);
   border-radius: 8px;
   padding: 15px;
   overflow-y: auto;
@@ -1550,7 +1568,7 @@ tr:hover {
 }
 
 .quick-tools-section h3 {
-  color: #ff6b35;
+  color: var(--accent);
   margin: 0 0 15px 0;
   font-size: 14px;
   text-transform: uppercase;
@@ -1566,9 +1584,9 @@ tr:hover {
 }
 
 .quick-dice-btn {
-  background: #2a2a2a;
-  border: 1px solid #444;
-  color: #fff;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--text);
   padding: 8px 4px;
   border-radius: 4px;
   cursor: pointer;
@@ -1579,8 +1597,8 @@ tr:hover {
 }
 
 .quick-dice-btn:hover {
-  background: #ff6b35;
-  border-color: #ff6b35;
+  background: var(--accent);
+  border-color: var(--accent);
 }
 
 .quick-dice-btn small {
@@ -1591,15 +1609,15 @@ tr:hover {
 }
 
 .quick-roll-result {
-  background: #333;
-  border: 1px solid #555;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
   border-radius: 4px;
   padding: 8px;
   font-size: 12px;
 }
 
 .location-result {
-  color: #ff6b35;
+  color: var(--accent);
   font-size: 11px;
   margin-top: 4px;
 }
@@ -2029,14 +2047,14 @@ tr:hover {
 
 .weapons-section, .armor-section {
   margin-bottom: 20px;
-  background: #1a1a1a;
-  border: 1px solid #333;
+  background: var(--surface);
+  border: 1px solid var(--border);
   border-radius: 6px;
   padding: 15px;
 }
 
 .weapons-section h4, .armor-section h4 {
-  color: #ff6b35;
+  color: var(--accent);
   margin: 0 0 10px 0;
   font-size: 14px;
 }
@@ -2048,9 +2066,9 @@ tr:hover {
 .weapon-add select {
   width: 100%;
   padding: 8px;
-  background: #2a2a2a;
-  border: 1px solid #444;
-  color: #fff;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--text);
   border-radius: 4px;
 }
 
@@ -2064,27 +2082,27 @@ tr:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #2a2a2a;
-  border: 1px solid #444;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
   border-radius: 4px;
   padding: 8px 12px;
   font-size: 12px;
 }
 
 .weapon-name {
-  color: #fff;
+  color: var(--text);
   font-weight: bold;
   flex: 1;
 }
 
 .weapon-damage {
-  color: #ff6b35;
+  color: var(--accent);
   margin: 0 10px;
   font-weight: bold;
 }
 
 .weapon-skill {
-  color: #888;
+  color: var(--text-muted);
   font-size: 11px;
   margin-right: 10px;
 }
@@ -2110,9 +2128,9 @@ tr:hover {
 .armor-section select {
   width: 100%;
   padding: 8px;
-  background: #2a2a2a;
-  border: 1px solid #444;
-  color: #fff;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--text);
   border-radius: 4px;
   margin-bottom: 10px;
 }
@@ -2121,14 +2139,14 @@ tr:hover {
   display: flex;
   gap: 15px;
   font-size: 12px;
-  color: #ccc;
+  color: var(--text);
 }
 
 .armor-details span {
-  background: #2a2a2a;
+  background: var(--surface-2);
   padding: 4px 8px;
   border-radius: 3px;
-  border: 1px solid #444;
+  border: 1px solid var(--border);
 }
 
 .npc-weapons, .npc-armor {
@@ -2137,7 +2155,7 @@ tr:hover {
 }
 
 .npc-weapons strong, .npc-armor strong {
-  color: #ff6b35;
+  color: var(--accent);
   margin-right: 8px;
 }
 
@@ -2291,9 +2309,9 @@ tr:hover {
 
 /* Initiative Tracker Enhanced Styles */
 .weapons-row {
-  background: #1a1a1a !important;
-  border-top: 2px solid #ff6b35 !important;
-  border-left: 4px solid #ff6b35 !important;
+  background: var(--surface) !important;
+  border-top: 2px solid var(--accent) !important;
+  border-left: 4px solid var(--accent) !important;
   border-right: 2px solid #ff6b35 !important;
   margin-top: -2px !important;
   position: relative;
@@ -2316,21 +2334,21 @@ tr:hover {
 
 /* Highlight weapons row when its NPC has the current turn */
 .weapons-row.current-turn {
-  background: rgba(255, 107, 53, 0.3) !important;
-  border-left: 6px solid #ff6b35 !important;
-  border-top: 3px solid #ff6b35 !important;
-  border-right: 3px solid #ff6b35 !important;
+  background: var(--accent-subtle) !important;
+  border-left: 6px solid var(--accent) !important;
+  border-top: 3px solid var(--accent) !important;
+  border-right: 3px solid var(--accent) !important;
 }
 
 .weapons-row.current-turn::before {
-  background: rgba(255, 107, 53, 0.3);
-  border-color: #ff6b35;
+  background: var(--accent-subtle);
+  border-color: var(--accent);
 }
 
 .weapons-cell {
   padding: 12px 16px !important;
-  background: linear-gradient(90deg, rgba(255, 107, 53, 0.1) 0%, rgba(255, 107, 53, 0.05) 100%) !important;
-  border-left: 4px solid #ff6b35;
+  background: var(--surface) !important;
+  border-left: 4px solid var(--accent);
   position: relative;
 }
 
@@ -2341,7 +2359,7 @@ tr:hover {
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, #ff6b35, #ff8c42);
+  background: var(--accent);
 }
 
 .weapons-display-expanded {
@@ -2352,7 +2370,7 @@ tr:hover {
 }
 
 .weapons-display-expanded strong {
-  color: #ff6b35;
+  color: var(--accent);
   margin-right: 8px;
   font-size: 14px;
   text-transform: uppercase;
@@ -2363,36 +2381,36 @@ tr:hover {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: #2a2a2a;
+  background: var(--surface-2);
   padding: 6px 12px;
   border-radius: 4px;
-  border: 1px solid #444;
+  border: 1px solid var(--border);
 }
 
 .weapon-name-expanded {
-  color: #e0e0e0;
+  color: var(--text);
   font-weight: 500;
   font-size: 13px;
 }
 
 .weapon-damage-expanded {
-  color: #ff6b35;
+  color: var(--accent);
   font-weight: 600;
   font-size: 12px;
 }
 
 .weapon-skill-expanded {
-  color: #888;
+  color: var(--text-muted);
   font-size: 11px;
   font-style: italic;
 }
 
 /* Armor Row Styles */
 .armor-row {
-  background: #1a1a1a !important;
-  border-top: 2px solid #4a9eff !important;
-  border-left: 4px solid #4a9eff !important;
-  border-right: 2px solid #4a9eff !important;
+  background: var(--surface) !important;
+  border-top: 2px solid var(--accent) !important;
+  border-left: 4px solid var(--accent) !important;
+  border-right: 2px solid var(--accent) !important;
   margin-top: -2px !important;
   position: relative;
 }
@@ -2402,33 +2420,33 @@ tr:hover {
   position: absolute;
   top: -20px;
   left: 8px;
-  color: #4a9eff;
+  color: var(--accent);
   font-size: 10px;
   font-weight: bold;
-  background: #1a1a1a;
+  background: var(--surface);
   padding: 0 8px;
   border-radius: 4px 4px 0 0;
-  border: 1px solid #4a9eff;
+  border: 1px solid var(--accent);
   border-bottom: none;
 }
 
 /* Highlight armor row when its NPC has the current turn */
 .armor-row.current-turn {
-  background: rgba(74, 158, 255, 0.3) !important;
-  border-left: 6px solid #4a9eff !important;
-  border-top: 3px solid #4a9eff !important;
-  border-right: 3px solid #4a9eff !important;
+  background: var(--accent-subtle) !important;
+  border-left: 6px solid var(--accent) !important;
+  border-top: 3px solid var(--accent) !important;
+  border-right: 3px solid var(--accent) !important;
 }
 
 .armor-row.current-turn::before {
-  background: rgba(74, 158, 255, 0.3);
-  border-color: #4a9eff;
+  background: var(--accent-subtle);
+  border-color: var(--accent);
 }
 
 .armor-cell {
   padding: 12px 16px !important;
-  background: linear-gradient(90deg, rgba(74, 158, 255, 0.1) 0%, rgba(74, 158, 255, 0.05) 100%) !important;
-  border-left: 4px solid #4a9eff;
+  background: var(--surface) !important;
+  border-left: 4px solid var(--accent);
   position: relative;
 }
 
@@ -2439,7 +2457,7 @@ tr:hover {
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, #4a9eff, #6bb6ff);
+  background: var(--accent);
 }
 
 .armor-display-expanded {
@@ -2450,7 +2468,7 @@ tr:hover {
 }
 
 .armor-display-expanded strong {
-  color: #4a9eff;
+  color: var(--accent);
   margin-right: 8px;
   font-size: 14px;
   text-transform: uppercase;
@@ -2467,20 +2485,20 @@ tr:hover {
   display: flex;
   align-items: center;
   gap: 6px;
-  background: #2a2a2a;
+  background: var(--surface-2);
   padding: 6px 12px;
   border-radius: 4px;
-  border: 1px solid #444;
+  border: 1px solid var(--border);
 }
 
 .armor-location {
-  color: #e0e0e0;
+  color: var(--text);
   font-weight: 500;
   font-size: 13px;
 }
 
 .armor-sp {
-  color: #4a9eff;
+  color: var(--accent);
   font-weight: 600;
   font-size: 12px;
 }
@@ -2526,18 +2544,18 @@ tr:hover {
 .encounter-sidebar {
   min-width: 320px;
   max-width: 400px;
-  background: #1a1a1a;
-  border: 1px solid #333;
+  background: var(--surface);
+  border: 1px solid var(--border);
   border-radius: 8px;
   padding: 20px;
   height: fit-content;
 }
 
 .encounter-sidebar h3 {
-  color: #ff6b35;
+  color: var(--accent);
   margin: 0 0 16px 0;
   font-size: 18px;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid var(--border);
   padding-bottom: 8px;
 }
 
@@ -2942,20 +2960,20 @@ tr:hover {
 }
 
 .npc-details > div, .encounter-details > div {
-  color: #ccc;
+  color: var(--text);
   line-height: 1.4;
 }
 
 .npc-details strong, .encounter-details strong {
-  color: #4a90e2;
+  color: var(--accent);
 }
 
 .npc-created, .encounter-created {
-  color: #888 !important;
+  color: var(--text-muted) !important;
   font-size: 0.9em;
   margin-top: 10px;
   padding-top: 10px;
-  border-top: 1px solid #444;
+  border-top: 1px solid var(--border);
 }
 
 .encounter-enemies ul, .encounter-tactics ul {
@@ -2964,7 +2982,7 @@ tr:hover {
 }
 
 .encounter-enemies li, .encounter-tactics li {
-  color: #ddd;
+  color: var(--text);
   margin-bottom: 3px;
 }
 
@@ -3130,7 +3148,7 @@ tr:hover {
 }
 
 .add-to-cart-btn {
-  background: #4a9eff;
+  background: var(--accent-alt);
   color: white;
   border: none;
   padding: 8px 16px;
@@ -3141,11 +3159,11 @@ tr:hover {
 }
 
 .add-to-cart-btn:hover {
-  background: #3a8eef;
+  background: var(--accent-hover);
 }
 
 .shopping-cart-enhanced {
-  background: #1a1a1a;
+  background: var(--surface);
   border-radius: 8px;
   padding: 0;
   max-width: 350px;
@@ -3153,7 +3171,7 @@ tr:hover {
 }
 
 .cart-header {
-  background: #ff6b35;
+  background: var(--accent);
   color: white;
   padding: 16px 20px;
   border-radius: 8px 8px 0 0;
@@ -3167,8 +3185,8 @@ tr:hover {
 }
 
 .cart-item {
-  background: #2a2a2a;
-  border: 1px solid #444;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
   border-radius: 6px;
   padding: 12px;
   margin-bottom: 12px;
@@ -3182,13 +3200,13 @@ tr:hover {
 }
 
 .cart-item-name {
-  color: #e0e0e0;
+  color: var(--text);
   font-weight: 500;
   font-size: 14px;
 }
 
 .cart-item-price {
-  color: #ff6b35;
+  color: var(--accent);
   font-weight: 600;
 }
 
@@ -3199,9 +3217,9 @@ tr:hover {
 }
 
 .quantity-control {
-  background: #333;
-  color: #e0e0e0;
-  border: 1px solid #444;
+  background: var(--surface-2);
+  color: var(--text);
+  border: 1px solid var(--border);
   padding: 4px 8px;
   border-radius: 3px;
   cursor: pointer;
@@ -3209,12 +3227,12 @@ tr:hover {
 }
 
 .quantity-control:hover {
-  background: #444;
+  background: var(--accent-subtle);
 }
 
 .cart-total {
-  background: #2a2a2a;
-  border: 1px solid #444;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
   border-radius: 6px;
   padding: 16px;
   margin-top: 16px;
@@ -3222,13 +3240,13 @@ tr:hover {
 }
 
 .cart-total-label {
-  color: #ccc;
+  color: var(--text-muted);
   font-size: 14px;
   margin-bottom: 8px;
 }
 
 .cart-total-amount {
-  color: #ff6b35;
+  color: var(--accent);
   font-size: 24px;
   font-weight: 700;
 }
@@ -3250,27 +3268,27 @@ tr:hover {
 }
 
 .export-btn {
-  background: #4a9eff;
+  background: var(--accent-alt);
   color: white;
 }
 
 .export-btn:hover {
-  background: #3a8eef;
+  background: var(--accent-hover);
 }
 
 .clear-cart-btn {
-  background: #666;
-  color: white;
+  background: var(--text-muted);
+  color: var(--surface);
 }
 
 .clear-cart-btn:hover {
-  background: #777;
+  background: var(--accent-hover);
 }
 
 /* Encounter Generator Styles */
 .encounter-generator {
-  background: #1a1a1a;
-  border: 1px solid #333;
+  background: var(--surface);
+  border: 1px solid var(--border);
   border-radius: 8px;
   padding: 24px;
   max-width: 1200px;
@@ -3278,15 +3296,15 @@ tr:hover {
 }
 
 .generator-controls {
-  background: #2a2a2a;
-  border: 1px solid #444;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
   border-radius: 6px;
   padding: 20px;
   margin-bottom: 24px;
 }
 
 .generator-controls h2 {
-  color: #ff6b35;
+  color: var(--accent);
   margin: 0 0 20px 0;
   font-size: 24px;
 }
@@ -3305,15 +3323,15 @@ tr:hover {
 }
 
 .control-group label {
-  color: #e0e0e0;
+  color: var(--text);
   font-weight: 500;
   font-size: 14px;
 }
 
 .control-group select {
-  background: #333;
-  border: 1px solid #444;
-  color: #e0e0e0;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--text);
   padding: 8px 12px;
   border-radius: 4px;
   font-size: 14px;
@@ -3321,11 +3339,11 @@ tr:hover {
 
 .control-group select:focus {
   outline: none;
-  border-color: #ff6b35;
+  border-color: var(--accent);
 }
 
 .generate-btn {
-  background: #ff6b35;
+  background: var(--accent);
   color: white;
   border: none;
   padding: 12px 24px;
@@ -3338,7 +3356,7 @@ tr:hover {
 }
 
 .generate-btn:hover {
-  background: #e55a2b;
+  background: var(--accent-hover);
 }
 
 .generated-encounters {
@@ -3346,7 +3364,7 @@ tr:hover {
 }
 
 .generated-encounters h3 {
-  color: #ff6b35;
+  color: var(--accent);
   font-size: 20px;
   margin: 0 0 16px 0;
   border-bottom: 1px solid #333;
@@ -3354,8 +3372,8 @@ tr:hover {
 }
 
 .encounter-card {
-  background: #2a2a2a;
-  border: 1px solid #444;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
   border-radius: 8px;
   padding: 20px;
   margin-bottom: 16px;
@@ -3376,7 +3394,7 @@ tr:hover {
 }
 
 .encounter-header h4 {
-  color: #e0e0e0;
+  color: var(--text);
   font-size: 18px;
   margin: 0;
 }
@@ -3415,18 +3433,18 @@ tr:hover {
 
 .encounter-details p {
   margin: 8px 0;
-  color: #ccc;
+  color: var(--text);
   line-height: 1.4;
 }
 
 .encounter-details strong {
-  color: #ff6b35;
+  color: var(--accent);
 }
 
 .encounter-enemies ul,
 .tactical-notes ul {
   margin: 8px 0 0 20px;
-  color: #ccc;
+  color: var(--text);
 }
 
 .encounter-enemies li,
@@ -3646,15 +3664,15 @@ tr:hover {
 /* Persistence and Save/Load Styles */
 .saved-items {
   margin-top: 20px;
-  background: #262626;
-  border: 1px solid #444;
+  background: var(--surface);
+  border: 1px solid var(--border);
   border-radius: 6px;
   padding: 16px;
 }
 
 .saved-items h3 {
   margin: 0 0 16px 0;
-  color: #ff6b35;
+  color: var(--accent);
   font-size: 16px;
 }
 
@@ -3668,15 +3686,15 @@ tr:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #1a1a1a;
-  border: 1px solid #333;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
   border-radius: 4px;
   padding: 12px 16px;
   transition: border-color 0.2s ease;
 }
 
 .saved-item:hover {
-  border-color: #ff6b35;
+  border-color: var(--accent);
 }
 
 .saved-item-info {
@@ -3684,14 +3702,14 @@ tr:hover {
 }
 
 .saved-item-name {
-  color: #e0e0e0;
+  color: var(--text);
   font-weight: 600;
   font-size: 14px;
   margin-bottom: 4px;
 }
 
 .saved-item-details {
-  color: #888;
+  color: var(--text-muted);
   font-size: 12px;
 }
 
@@ -3745,15 +3763,15 @@ tr:hover {
 }
 
 .param-group {
-  background: #262626;
-  border: 1px solid #444;
+  background: var(--surface);
+  border: 1px solid var(--border);
   border-radius: 6px;
   padding: 16px;
 }
 
 .param-group h4 {
   margin: 0 0 12px 0;
-  color: #ff6b35;
+  color: var(--accent);
   font-size: 14px;
 }
 
@@ -3767,7 +3785,7 @@ tr:hover {
 
 .param-control label {
   display: block;
-  color: #ccc;
+  color: var(--text);
   font-size: 12px;
   margin-bottom: 4px;
 }
@@ -3776,10 +3794,10 @@ tr:hover {
 .param-control select {
   width: 100%;
   padding: 6px 8px;
-  background: #1a1a1a;
-  border: 1px solid #333;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
   border-radius: 4px;
-  color: #e0e0e0;
+  color: var(--text);
   font-size: 12px;
 }
 
@@ -3863,8 +3881,8 @@ tr:hover {
 
 /* Manual Encounter Creation Styles */
 .manual-encounter {
-  background: #262626;
-  border: 1px solid #444;
+  background: var(--surface);
+  border: 1px solid var(--border);
   border-radius: 6px;
   padding: 16px;
   margin-bottom: 20px;
@@ -3872,7 +3890,7 @@ tr:hover {
 
 .manual-encounter h3 {
   margin: 0 0 16px 0;
-  color: #ff6b35;
+  color: var(--accent);
 }
 
 .manual-participants {
@@ -3887,19 +3905,19 @@ tr:hover {
   grid-template-columns: 2fr 1fr 1fr 1fr auto;
   gap: 8px;
   align-items: center;
-  background: #1a1a1a;
+  background: var(--surface);
   padding: 8px;
   border-radius: 4px;
-  border: 1px solid #333;
+  border: 1px solid var(--border);
 }
 
 .manual-participant input,
 .manual-participant select {
   padding: 4px 6px;
-  background: #2a2a2a;
-  border: 1px solid #444;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
   border-radius: 3px;
-  color: #e0e0e0;
+  color: var(--text);
   font-size: 12px;
 }
 

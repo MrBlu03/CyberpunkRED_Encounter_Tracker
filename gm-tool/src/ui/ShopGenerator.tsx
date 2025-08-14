@@ -91,7 +91,8 @@ function ShopGenerator() {
     setLoadError(null);
     try {
       console.log('Loading shop data...');
-      const coreResponse = await fetch('/data/core.json');
+      const base = (import.meta as any).env?.BASE_URL || '/';
+      const coreResponse = await fetch(base + 'data/core.json');
       
       if (!coreResponse.ok) {
         throw new Error(`Failed to load core data: ${coreResponse.status}`);
@@ -106,7 +107,7 @@ function ShopGenerator() {
       
       for (const pack of packs) {
         try {
-          const response = await fetch(`/data/${pack}.json`);
+          const response = await fetch(base + `data/${pack}.json`);
           if (response.ok) {
             const data = await response.json();
             if (Array.isArray(data)) {

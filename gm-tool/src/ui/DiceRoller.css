@@ -1,16 +1,16 @@
 /* Compact Dice Roller - Designed for 300px sidebar */
 .dice-roller-compact {
   padding: 15px;
-  color: #fff;
+  color: var(--text, #fff);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .dice-roller-compact h3 {
   margin: 0 0 15px 0;
-  color: #ff003c;
+  color: var(--accent, #ff003c);
   font-size: 18px;
   text-align: center;
-  border-bottom: 2px solid #ff003c;
+  border-bottom: 2px solid var(--accent, #ff003c);
   padding-bottom: 8px;
 }
 
@@ -23,22 +23,22 @@
   width: 100%;
   padding: 8px;
   margin-bottom: 8px;
-  background: #2a2a2a;
-  border: 1px solid #555;
+  background: var(--surface-2, #2a2a2a);
+  border: 1px solid var(--border, #555);
   border-radius: 4px;
-  color: #fff;
+  color: var(--text, #fff);
   font-size: 12px;
   box-sizing: border-box;
 }
 
 .custom-roll input::placeholder {
-  color: #888;
+  color: var(--text-muted, #888);
 }
 
 .custom-roll button {
   width: 100%;
   padding: 8px;
-  background: #ff003c;
+  background: var(--accent, #ff003c);
   border: none;
   border-radius: 4px;
   color: white;
@@ -48,7 +48,7 @@
 }
 
 .custom-roll button:hover {
-  background: #cc0032;
+  background: var(--accent-hover, #cc0032);
 }
 
 /* Quick Preset Buttons */
@@ -61,10 +61,10 @@
 
 .quick-buttons button {
   padding: 6px 4px;
-  background: #00d4ff;
+  background: var(--accent-alt);
   border: none;
   border-radius: 3px;
-  color: #000;
+  color: var(--bg);
   font-size: 11px;
   font-weight: bold;
   cursor: pointer;
@@ -72,30 +72,38 @@
 }
 
 .quick-buttons button:hover {
-  background: #00a6cc;
+  background: var(--accent-hover);
   transform: translateY(-1px);
 }
 
 /* Current Result Display */
 .current-result {
-  background: rgba(255, 107, 53, 0.2);
-  border: 2px solid #ff6b35;
+  background: var(--accent-subtle, rgba(255, 107, 53, 0.2));
+  border: 2px solid var(--accent, #ff6b35);
   border-radius: 6px;
   padding: 12px;
   margin-bottom: 15px;
   text-align: center;
+  transition: all 0.3s ease;
+}
+
+.current-result.crit-highlight {
+  border: 2px solid #ffeb3b;
+  background: rgba(255, 235, 59, 0.15);
+  box-shadow: 0 0 15px rgba(255, 235, 59, 0.4);
+  animation: critGlow 1s ease-in-out;
 }
 
 .result-total {
   font-size: 24px;
   font-weight: bold;
-  color: #ff6b35;
+  color: var(--accent, #ff6b35);
   margin-bottom: 4px;
 }
 
 .result-breakdown {
   font-size: 12px;
-  color: #ccc;
+  color: var(--text-muted, #ccc);
   word-break: break-all;
 }
 
@@ -111,12 +119,12 @@
 }
 
 .dice-value {
-  background: #2a2a2a;
-  border: 1px solid #555;
+  background: var(--surface-2, #2a2a2a);
+  border: 1px solid var(--border, #555);
   border-radius: 4px;
   padding: 2px 6px;
   font-weight: bold;
-  color: #fff;
+  color: var(--text, #fff);
   min-width: 20px;
   text-align: center;
 }
@@ -148,9 +156,40 @@
 }
 
 .total-value {
-  color: #ff6b35;
+  color: var(--accent, #ff6b35);
   font-weight: bold;
   font-size: 16px;
+}
+
+.crit-result-text {
+  margin-top: 8px;
+  text-align: center;
+  color: #ffeb3b;
+  font-weight: bold;
+  font-size: 14px;
+  text-shadow: 0 0 4px rgba(255, 235, 59, 0.8);
+  animation: critText 0.8s ease-in-out;
+  letter-spacing: 1px;
+}
+
+@keyframes critGlow {
+  0% { box-shadow: 0 0 0 rgba(255, 235, 59, 0); }
+  50% { box-shadow: 0 0 20px rgba(255, 235, 59, 0.6); }
+  100% { box-shadow: 0 0 15px rgba(255, 235, 59, 0.4); }
+}
+
+@keyframes critText {
+  0% { 
+    opacity: 0; 
+    transform: translateY(10px) scale(0.8); 
+  }
+  50% {
+    transform: translateY(-2px) scale(1.1);
+  }
+  100% { 
+    opacity: 1; 
+    transform: translateY(0) scale(1); 
+  }
 }
 
 /* Roll History */
@@ -250,7 +289,7 @@
 }
 
 .history-result {
-  color: #ff6b35;
+  color: var(--accent, #ff6b35);
   font-weight: bold;
   margin-left: 8px;
   flex-shrink: 0;
@@ -262,14 +301,14 @@
 }
 
 .history-list::-webkit-scrollbar-track {
-  background: #2a2a2a;
+  background: var(--surface-2);
 }
 
 .history-list::-webkit-scrollbar-thumb {
-  background: #555;
+  background: var(--text-muted);
   border-radius: 2px;
 }
 
 .history-list::-webkit-scrollbar-thumb:hover {
-  background: #777;
+  background: var(--accent-hover);
 }

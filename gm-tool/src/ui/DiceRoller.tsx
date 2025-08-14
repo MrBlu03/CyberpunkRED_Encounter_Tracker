@@ -57,12 +57,12 @@ export default function DiceRoller() {
     
     total += mod;
 
-    // RAW crit injury detection: 2 or more sixes on damage dice (2d6 typical); we highlight dice in history
+    // RAW crit injury detection: 2 or more sixes on damage dice
     const numSixes = rolls.filter(r => r.sides === 6 && r.value === 6).length;
     const isRawCrit = rawCritEnabled && numSixes >= 2;
 
-    // Tarot crit: user-governed toggle; if enabled, treat a d10 roll of 10 as “tarot crit trigger” in this generic roller
-    const hasTarotTrigger = tarotCritEnabled && rolls.some(r => r.sides === 10 && r.value === 10);
+    // Tarot crit: 3 or more sixes on d6s triggers Tarot draw
+    const isTarotCrit = tarotCritEnabled && numSixes >= 3;
     
     const rollValues = rolls.map(r => r.value).join('+');
     const breakdown = `${rollValues}${mod !== 0 ? ` ${mod > 0 ? '+' : ''}${mod}` : ''} = ${total}`;
@@ -122,28 +122,40 @@ export default function DiceRoller() {
       </div>
 
       {/* Current Result */}
-      {currentResult && (
-        <div className="current-result">
-          <div className="result-total">{currentResult.total}</div>
-          <div className="dice-breakdown">
-            {currentResult.rolls.map((dice, index) => (
-              <span 
-                key={index}
-                className={`dice-value ${dice.isCritical ? 'critical' : ''} ${dice.isFail ? 'fail' : ''}`}
-              >
-                {dice.value}
-              </span>
-            ))}
-            {currentResult.modifier !== 0 && (
-              <span className="modifier">
-                {currentResult.modifier > 0 ? '+' : ''}{currentResult.modifier}
-              </span>
+      {currentResult && (() => {
+        const resultSixes = currentResult.rolls.filter(r => r.sides === 6 && r.value === 6).length;
+        const isRawCritResult = rawCritEnabled && resultSixes >= 2;
+        const isTarotCritResult = tarotCritEnabled && resultSixes >= 3;
+        const hasCrit = isRawCritResult || isTarotCritResult;
+        
+        return (
+          <div className={`current-result ${hasCrit ? 'crit-highlight' : ''}`}>
+            <div className="result-total">{currentResult.total}</div>
+            <div className="dice-breakdown">
+              {currentResult.rolls.map((dice, index) => (
+                <span 
+                  key={index}
+                  className={`dice-value ${dice.isCritical ? 'critical' : ''} ${dice.isFail ? 'fail' : ''} ${((isRawCritResult || isTarotCritResult) && dice.sides===6 && dice.value===6) ? 'critical' : ''}`}
+                >
+                  {dice.value}
+                </span>
+              ))}
+              {currentResult.modifier !== 0 && (
+                <span className="modifier">
+                  {currentResult.modifier > 0 ? '+' : ''}{currentResult.modifier}
+                </span>
+              )}
+              <span className="equals">=</span>
+              <span className="total-value">{currentResult.total}</span>
+            </div>
+            {hasCrit && (
+              <div className="crit-result-text">
+                {isRawCritResult ? '⚡ RAW CRITICAL!' : '🃏 TAROT CRITICAL!'}
+              </div>
             )}
-            <span className="equals">=</span>
-            <span className="total-value">{currentResult.total}</span>
           </div>
-        </div>
-      )}
+        );
+      })()}
 
       {/* Roll History */}
       <div className="roll-history">
@@ -157,22 +169,29 @@ export default function DiceRoller() {
           {results.length === 0 ? (
             <div className="no-history">No rolls yet</div>
           ) : (
-            results.map((result, index) => (
-              <div key={index} className="history-item">
-                <span className="history-type">{result.type}</span>
-                <div className="history-dice">
-            {result.rolls.map((dice, diceIndex) => (
-                    <span 
-                      key={diceIndex}
-                className={`history-dice-value ${dice.isCritical ? 'critical' : ''} ${dice.isFail ? 'fail' : ''} ${rawCritEnabled && dice.sides===6 && dice.value===6 ? 'critical' : ''} ${tarotCritEnabled && dice.sides===10 && dice.value===10 ? 'critical' : ''}`}
-                    >
-                      {dice.value}
-                    </span>
-                  ))}
+            results.map((result, index) => {
+              const resultSixes = result.rolls.filter(r => r.sides === 6 && r.value === 6).length;
+              const isRawCritResult = rawCritEnabled && resultSixes >= 2;
+              const isTarotCritResult = tarotCritEnabled && resultSixes >= 3;
+              
+              return (
+                <div key={index} className="history-item">
+                  <span className="history-type">{result.type}</span>
+                  <div className="history-dice">
+                    {result.rolls.map((dice, diceIndex) => (
+                      <span 
+                        key={diceIndex}
+                        className={`history-dice-value ${dice.isCritical ? 'critical' : ''} ${dice.isFail ? 'fail' : ''} ${((isRawCritResult || isTarotCritResult) && dice.sides===6 && dice.value===6) ? 'critical' : ''}`}
+                      >
+                        {dice.value}
+                      </span>
+                    ))}
+
+                  </div>
+                  <span className="history-result">{result.total}</span>
                 </div>
-                <span className="history-result">{result.total}</span>
-              </div>
-            ))
+              );
+            })
           )}
         </div>
       </div>

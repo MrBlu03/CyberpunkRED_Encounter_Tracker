@@ -1,39 +1,73 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
 
-type Injury = { key: string; name: string; location: 'head' | 'body'; brief: string };
-
-const HEAD_INJURIES: Injury[] = [
-  { key: 'brain-injury', name: 'Brain Injury', location: 'head', brief: 'INT, REF, DEX -2; death save +1.' },
-  { key: 'cracked-skull', name: 'Cracked Skull', location: 'head', brief: 'Stunned; move halved; DV +2 to actions.' },
-  { key: 'concussion', name: 'Concussion', location: 'head', brief: 'Dazed; -2 to actions; cannot sprint.' },
-  { key: 'damaged-eye', name: 'Damaged Eye', location: 'head', brief: '-2 to sight-based checks; aim penalties.' },
-  { key: 'lost-eye', name: 'Lost Eye', location: 'head', brief: 'Blind in one eye; significant sight penalties.' },
-  { key: 'damaged-ear', name: 'Damaged Ear', location: 'head', brief: '-2 to hearing checks; comms issues.' },
-  { key: 'lost-ear', name: 'Lost Ear', location: 'head', brief: 'One ear gone; hearing penalties.' },
-  { key: 'whiplash', name: 'Whiplash', location: 'head', brief: 'Move -2; -2 to some checks.' },
-  { key: 'crushed-windpipe', name: 'Crushed Windpipe', location: 'head', brief: 'Can’t speak; penalties to actions.' },
-  { key: 'foreign-object', name: 'Foreign Object', location: 'head', brief: 'Ongoing impairment until removed.' },
-];
-
-const BODY_INJURIES: Injury[] = [
-  { key: 'broken-arm', name: 'Broken Arm', location: 'body', brief: 'One arm unusable; -2 to actions using it.' },
-  { key: 'broken-leg', name: 'Broken Leg', location: 'body', brief: 'Move halved; -2 to move checks.' },
-  { key: 'broken-ribs', name: 'Broken Ribs', location: 'body', brief: 'Breathing pain; -2 to many actions.' },
-  { key: 'collapsed-lung', name: 'Collapsed Lung', location: 'body', brief: 'Death save +1; stamina penalties.' },
-  { key: 'spinal-injury', name: 'Spinal Injury', location: 'body', brief: 'Severe penalties; movement impaired.' },
-  { key: 'foreign-object', name: 'Foreign Object', location: 'body', brief: 'Bleeding; penalties until removed.' },
-  { key: 'crushed-fingers', name: 'Crushed Fingers', location: 'body', brief: '-2 to fine motor actions.' },
-  { key: 'dismembered-hand', name: 'Dismembered Hand', location: 'body', brief: 'Hand lost.' },
-  { key: 'dismembered-arm', name: 'Dismembered Arm', location: 'body', brief: 'Arm lost.' },
-  { key: 'dismembered-leg', name: 'Dismembered Leg', location: 'body', brief: 'Leg lost.' },
-];
+type Injury = { 
+  key: string; 
+  name: string; 
+  location: 'head' | 'body'; 
+  description: string;
+  deathSaveIncrease: boolean;
+  quickFix: any;
+  treatment: any;
+  source: any;
+};
 
 export default function CriticalInjuryRoller() {
   const [location, setLocation] = useState<'head' | 'body'>('body');
   const [lastRoll, setLastRoll] = useState<{ injury: Injury; roll: number } | null>(null);
   const [history, setHistory] = useState<Array<{ injury: Injury; roll: number; time: string }>>([]);
+  const [criticalInjuries, setCriticalInjuries] = useState<{ head: Injury[], body: Injury[] } | null>(null);
 
-  const table = useMemo(() => (location === 'head' ? HEAD_INJURIES : BODY_INJURIES), [location]);
+  useEffect(() => {
+    // Rehydrate persisted state first
+    try {
+      const savedLast = localStorage.getItem('cpr-critical-last');
+      const savedHist = localStorage.getItem('cpr-critical-history');
+      if (savedLast) setLastRoll(JSON.parse(savedLast));
+      if (savedHist) setHistory(JSON.parse(savedHist));
+    } catch {}
+
+    // Load critical injuries from JSON file
+    const base = (import.meta as any).env?.BASE_URL || '/';
+    const tryPaths = [base + 'data/critical-injuries.json', './data/critical-injuries.json', '/data/critical-injuries.json'];
+    (async () => {
+      for (const url of tryPaths) {
+        try {
+          const res = await fetch(new URL(url, window.location.href).toString(), { cache: 'no-store' });
+          if (res.ok) {
+            const json = await res.json();
+            setCriticalInjuries(json);
+            return;
+          }
+        } catch {}
+      }
+      console.warn('Could not load critical injuries data from any path. Falling back to minimal set.');
+      
+        // Fallback to simplified data
+        setCriticalInjuries({
+          head: [
+            { key: 'brain-injury', name: 'Brain Injury', location: 'head', description: 'INT, REF, DEX -2; death save +1.', deathSaveIncrease: true, quickFix: {}, treatment: {}, source: {} },
+            { key: 'concussion', name: 'Concussion', location: 'head', description: 'Dazed; -2 to actions; cannot sprint.', deathSaveIncrease: false, quickFix: {}, treatment: {}, source: {} },
+          ],
+          body: [
+            { key: 'broken-arm', name: 'Broken Arm', location: 'body', description: 'One arm unusable; -2 to actions using it.', deathSaveIncrease: false, quickFix: {}, treatment: {}, source: {} },
+            { key: 'collapsed-lung', name: 'Collapsed Lung', location: 'body', description: 'Death save +1; stamina penalties.', deathSaveIncrease: true, quickFix: {}, treatment: {}, source: {} },
+          ]
+        });
+    })();
+  }, []);
+
+  // Persist across tab changes
+  useEffect(() => {
+    try {
+      if (lastRoll) localStorage.setItem('cpr-critical-last', JSON.stringify(lastRoll));
+      localStorage.setItem('cpr-critical-history', JSON.stringify(history));
+    } catch {}
+  }, [lastRoll, history]);
+
+  const table = useMemo(() => {
+    if (!criticalInjuries) return [];
+    return location === 'head' ? criticalInjuries.head : criticalInjuries.body;
+  }, [location, criticalInjuries]);
 
   const rollInjury = () => {
     // RAW uses 2d6 tables; for now select uniformly from curated entries
@@ -68,8 +102,28 @@ export default function CriticalInjuryRoller() {
         <div className="section" style={{ marginTop: 12 }}>
           <h3>Result</h3>
           <div style={{ fontSize: 18, fontWeight: 600 }}>{lastRoll.injury.name} ({lastRoll.injury.location})</div>
-          <div style={{ color: '#ccc', marginTop: 6 }}>2d6: {lastRoll.roll}</div>
-          <div style={{ marginTop: 8 }}>{lastRoll.injury.brief}</div>
+          <div style={{ color: 'var(--text-muted)', marginTop: 6 }}>2d6: {lastRoll.roll}</div>
+          <div style={{ marginTop: 8 }}>{lastRoll.injury.description}</div>
+          {lastRoll.injury.deathSaveIncrease && (
+            <div style={{ marginTop: 6, color: 'var(--accent)', fontWeight: 'bold' }}>⚠️ Death Save increased by +1</div>
+          )}
+          {lastRoll.injury.treatment && (
+            <div style={{ marginTop: 8 }}>
+              <strong>Treatment:</strong>
+              {lastRoll.injury.treatment.type === 'surgery' && ` Surgery DV ${lastRoll.injury.treatment.dvSurgery}`}
+              {lastRoll.injury.treatment.type === 'quickFix' && ' Quick Fix only'}
+              {lastRoll.injury.treatment.type === 'paramedic' && ` Paramedic DV ${lastRoll.injury.treatment.dvParamedic}`}
+              {lastRoll.injury.treatment.type === 'paramedicSurgery' && ` Paramedic DV ${lastRoll.injury.treatment.dvParamedic} or Surgery DV ${lastRoll.injury.treatment.dvSurgery}`}
+            </div>
+          )}
+          {lastRoll.injury.quickFix && lastRoll.injury.quickFix.type !== 'notApplicable' && (
+            <div style={{ marginTop: 6, fontSize: 14, color: 'var(--text-muted)' }}>
+              <strong>Quick Fix:</strong>
+              {lastRoll.injury.quickFix.type === 'firstAid' && ` First Aid DV ${lastRoll.injury.quickFix.dvFirstAid}`}
+              {lastRoll.injury.quickFix.type === 'paramedic' && ` Paramedic DV ${lastRoll.injury.quickFix.dvParamedic}`}
+              {lastRoll.injury.quickFix.type === 'firstAidParamedic' && ` First Aid DV ${lastRoll.injury.quickFix.dvFirstAid} or Paramedic DV ${lastRoll.injury.quickFix.dvParamedic}`}
+            </div>
+          )}
         </div>
       )}
 
@@ -82,10 +136,10 @@ export default function CriticalInjuryRoller() {
             {history.map((h, i) => (
               <div key={i} className="result-item" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <div>
-                  <strong>{h.injury.name}</strong> <span style={{ color: '#888' }}>({h.injury.location})</span>
+                <strong>{h.injury.name}</strong> <span style={{ color: 'var(--text-muted)' }}>({h.injury.location})</span>
                 </div>
                 <div style={{ color: 'var(--accent)' }}>2d6: {h.roll}</div>
-                <div style={{ color: '#888' }}>{h.time}</div>
+              <div style={{ color: 'var(--text-muted)' }}>{h.time}</div>
               </div>
             ))}
           </div>

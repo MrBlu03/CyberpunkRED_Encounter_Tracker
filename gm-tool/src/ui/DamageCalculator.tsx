@@ -82,25 +82,25 @@ export function DamageCalculator({ onApplyDamage }: DamageCalculatorProps) {
       </div>
 
       {result && (
-        <div style={{ marginTop: 16, padding: 12, background: '#2a2a2a', borderRadius: 4 }}>
-          <h3 style={{ margin: '0 0 8px 0', color: '#ff6b35' }}>Damage Result</h3>
+        <div style={{ marginTop: 16, padding: 12, background: 'var(--surface-2)', borderRadius: 4, border: '1px solid var(--border)' }}>
+          <h3 style={{ margin: '0 0 8px 0', color: 'var(--accent)' }}>Damage Result</h3>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 8, fontSize: 14 }}>
             <div>Total Damage: <strong>{result.totalDamage}</strong></div>
             <div>Cover SP Applied: <strong>{result.coverSPApplied}</strong></div>
             <div>Armor SP Applied: <strong>{result.armorSPApplied}</strong></div>
             <div>Armor Ablation: <strong>-{result.armorAblation} SP</strong></div>
-            <div>HP Damage: <strong style={{ color: '#ff6b35' }}>{result.damageToHP}</strong></div>
+            <div>HP Damage: <strong style={{ color: 'var(--accent)' }}>{result.damageToHP}</strong></div>
             <div>Headshot: <strong>{result.isHeadshot ? 'Yes (x2)' : 'No'}</strong></div>
           </div>
           {result.criticalDamage > 0 && (
-            <div style={{ marginTop: 8, color: '#ff6b35' }}>
+            <div style={{ marginTop: 8, color: 'var(--accent)' }}>
               Critical hit detected! +{result.criticalDamage} damage applied.
             </div>
           )}
         </div>
       )}
 
-      <p style={{ fontSize: 12, color: '#888', marginTop: 12 }}>
+      <p style={{ fontSize: 12, color: 'var(--text-muted)', marginTop: 12 }}>
         RAW Order: Cover SP → Armor SP → HP → Headshot x2 → Critical +5. 
         Ablation: -1 SP (normal), -2 SP (AP) when penetrated.
       </p>
