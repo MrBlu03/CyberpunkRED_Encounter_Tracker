@@ -42,6 +42,7 @@ jobs:
         run: |
           cd gm-tool
           npm run build
+          echo "" > dist/.nojekyll
           ls -la dist/
           cat dist/index.html
       
