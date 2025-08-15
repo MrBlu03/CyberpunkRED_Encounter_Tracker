@@ -146,6 +146,125 @@ export type EncounterState = {
 }
 
 function d10() { return Math.floor(Math.random() * 10) + 1 }
+function d6() { return Math.floor(Math.random() * 6) + 1 }
+
+// Utility function to roll dice notation
+function rollDiceNotation(diceString: string): number {
+  const dicePattern = /(\d*)d(\d+)(?:\+(\d+))?(?:\-(\d+))?/gi;
+  let totalResult = 0;
+  let match;
+  
+  while ((match = dicePattern.exec(diceString)) !== null) {
+    const count = parseInt(match[1]) || 1;
+    const sides = parseInt(match[2]);
+    const plus = parseInt(match[3]) || 0;
+    const minus = parseInt(match[4]) || 0;
+    
+    let diceTotal = 0;
+    for (let i = 0; i < count; i++) {
+      diceTotal += Math.floor(Math.random() * sides) + 1;
+    }
+    
+    totalResult += diceTotal + plus - minus;
+  }
+  
+  // If no dice pattern found, try to parse as a simple number
+  if (totalResult === 0) {
+    const num = parseInt(diceString);
+    return isNaN(num) ? 0 : num;
+  }
+  
+  return totalResult;
+}
+
+// Component to render clickable dice notation
+function DiceNotationText({ text, className = "", onDiceRoll }: { text: string; className?: string; onDiceRoll?: (expression: string) => void }) {
+  const dicePattern = /(\d*d\d+(?:\+\d+)?(?:\-\d+)?)/gi;
+  const [rollResults, setRollResults] = useState<{[key: string]: number}>({});
+  
+  const handleDiceClick = (diceNotation: string) => {
+    if (onDiceRoll) {
+      onDiceRoll(diceNotation);
+    } else {
+      // Fallback to the old notification system if no dice roller is provided
+      const result = rollDiceNotation(diceNotation);
+      setRollResults(prev => ({ ...prev, [diceNotation]: result }));
+      
+      // Create a temporary notification
+      const notification = document.createElement('div');
+      notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: var(--accent);
+        color: var(--contrast-text);
+        padding: 8px 16px;
+        border-radius: 4px;
+        z-index: 10000;
+        font-weight: bold;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      `;
+      notification.textContent = `${diceNotation} = ${result}`;
+      document.body.appendChild(notification);
+      
+      setTimeout(() => {
+        document.body.removeChild(notification);
+      }, 2000);
+    }
+  };
+  
+  const parts = text.split(dicePattern);
+  
+  return (
+    <span className={className}>
+      {parts.map((part, index) => {
+        if (dicePattern.test(part)) {
+          dicePattern.lastIndex = 0; // Reset regex
+          const lastRoll = rollResults[part];
+          return (
+            <button
+              key={index}
+              onClick={() => handleDiceClick(part)}
+              className="dice-notation-btn"
+              style={{
+                background: lastRoll ? 'var(--accent)' : 'none',
+                border: '1px solid var(--accent)',
+                color: lastRoll ? 'var(--contrast-text)' : 'var(--accent)',
+                padding: '2px 4px',
+                margin: '0 2px',
+                borderRadius: '3px',
+                cursor: 'pointer',
+                fontSize: 'inherit',
+                fontFamily: 'inherit',
+                position: 'relative'
+              }}
+              title={`Click to roll ${part}${onDiceRoll ? ' in dice roller' : ''}${lastRoll ? ` (last: ${lastRoll})` : ''}`}
+            >
+              {part}
+              {lastRoll && (
+                <span style={{
+                  position: 'absolute',
+                  top: '-8px',
+                  right: '-8px',
+                  background: 'var(--accent-alt)',
+                  color: 'var(--contrast-text)',
+                  fontSize: '10px',
+                  padding: '1px 3px',
+                  borderRadius: '2px',
+                  minWidth: '16px',
+                  textAlign: 'center'
+                }}>
+                  {lastRoll}
+                </span>
+              )}
+            </button>
+          );
+        }
+        return part;
+      })}
+    </span>
+  );
+}
 
 function getWoundState(hp: number, maxHp: number): WoundState {
   if (hp <= 0) return 'dead'
@@ -165,6 +284,14 @@ export function App() {
   const [participants, setParticipants] = useState<Participant[]>([])
   const [encounter, setEncounter] = useState<EncounterState>({ active: false, round: 0, turnIndex: 0, archived: false })
   const [critMode, setCritMode] = useState<'raw' | 'tarot'>(() => (localStorage.getItem('crit-mode') as 'raw' | 'tarot') ?? 'raw')
+  const [diceRollerRef, setDiceRollerRef] = useState<{ rollCustomDice: (expression: string) => void } | null>(null)
+
+  // Function to handle dice notation clicks - rolls dice in the main dice roller
+  const handleDiceNotationClick = (expression: string) => {
+    if (diceRollerRef && diceRollerRef.rollCustomDice) {
+      diceRollerRef.rollCustomDice(expression);
+    }
+  };
 
   // Initialize theme on app load
   useEffect(() => {
@@ -1204,7 +1331,9 @@ export function App() {
                                 {p.weapons.map((weapon: any, index: number) => (
                                   <div key={weapon._id + index} className="weapon-item-expanded">
                                     <span className="weapon-name-expanded">{weapon.name}</span>
-                                    <span className="weapon-damage-expanded">({weapon.system.damage})</span>
+                                    <span className="weapon-damage-expanded">
+                                      (<DiceNotationText text={weapon.system.damage} onDiceRoll={handleDiceNotationClick} />)
+                                    </span>
                                     <span className="weapon-skill-expanded">{weapon.system.weaponSkill}</span>
                                   </div>
                                 ))}
@@ -1286,7 +1415,7 @@ export function App() {
 
             {/* Sidebar with quick tools */}
             <div className="encounter-sidebar">
-              <DiceRoller />
+              <DiceRoller onMount={(rollFn) => setDiceRollerRef({ rollCustomDice: rollFn })} />
             </div>
           </div>
         </div>

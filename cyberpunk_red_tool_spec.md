@@ -5,7 +5,7 @@ A multi-platform GM utility (browser-based & Electron desktop) for Cyberpunk RED
 - Encounter & Initiative Tracking
 - NPC/Goon Generation (RAW-compliant & Custom)
 - Combat, Damage, Armor, Critical Injuries
-- Netrunning Interface
+
 - Time/Event Tracking
 - Night City Tarot Integration (optional rule)
 - Player Character Management
@@ -135,12 +135,7 @@ A multi-platform GM utility (browser-based & Electron desktop) for Cyberpunk RED
 
 ---
 
-## 8. Netrunning Interface
-- Build Architectures (RAW p. 200–211).
-- Node types with correct DVs & ICE stats.
-- Net Actions = Interface.
-- Black ICE auto-attacks & damage resolution.
-- Random architecture generator.
+
 
 ---
 

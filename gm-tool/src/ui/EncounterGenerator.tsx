@@ -194,36 +194,106 @@ interface EncounterGeneratorProps {
 }
 
 export default function EncounterGenerator({ onAddToEncounter, onSaveEncounter }: EncounterGeneratorProps) {
-  const [selectedDifficulty, setSelectedDifficulty] = useState<'easy' | 'moderate' | 'hard' | 'very-hard'>('moderate');
-  const [selectedLocation, setSelectedLocation] = useState<string>('any');
-  const [selectedEnemyType, setSelectedEnemyType] = useState<string>('any');
+  // Load selections from localStorage
+  const [selectedDifficulty, setSelectedDifficulty] = useState<'easy' | 'moderate' | 'hard' | 'very-hard'>(() => {
+    try {
+      const saved = localStorage.getItem('encounter-generator-difficulty');
+      return (saved ? JSON.parse(saved) : 'moderate') as 'easy' | 'moderate' | 'hard' | 'very-hard';
+    } catch {
+      return 'moderate';
+    }
+  });
+  
+  const [selectedLocation, setSelectedLocation] = useState<string>(() => {
+    try {
+      const saved = localStorage.getItem('encounter-generator-location');
+      return saved ? JSON.parse(saved) : 'any';
+    } catch {
+      return 'any';
+    }
+  });
+  
+  const [selectedEnemyType, setSelectedEnemyType] = useState<string>(() => {
+    try {
+      const saved = localStorage.getItem('encounter-generator-enemy-type');
+      return saved ? JSON.parse(saved) : 'any';
+    } catch {
+      return 'any';
+    }
+  });
   const [generatedEncounters, setGeneratedEncounters] = useState<GeneratedEncounter[]>([]);
   const [availableWeapons, setAvailableWeapons] = useState<Weapon[]>([]);
   const [availableArmor, setAvailableArmor] = useState<Armor[]>([]);
   const [savedNPCs, setSavedNPCs] = useState<SavedNPC[]>([]);
   
-  // Enhanced encounter parameters
-  const [encounterParams, setEncounterParams] = useState<EncounterParameters>({
-    enemyCount: { min: 1, max: 6 },
-    difficulty: 'moderate',
-    includeTurrets: false,
-    turretCount: 1,
-    includeDrones: false,
-    droneCount: 1,
-    enemyTypes: [],
-    location: 'any',
-    specialRules: []
+  // Enhanced encounter parameters - load from localStorage
+  const [encounterParams, setEncounterParams] = useState<EncounterParameters>(() => {
+    try {
+      const saved = localStorage.getItem('encounter-generator-params');
+      return saved ? JSON.parse(saved) : {
+        enemyCount: { min: 1, max: 6 },
+        difficulty: 'moderate',
+        includeTurrets: false,
+        turretCount: 1,
+        includeDrones: false,
+        droneCount: 1,
+        enemyTypes: [],
+        location: 'any',
+        specialRules: []
+      };
+    } catch {
+      return {
+        enemyCount: { min: 1, max: 6 },
+        difficulty: 'moderate',
+        includeTurrets: false,
+        turretCount: 1,
+        includeDrones: false,
+        droneCount: 1,
+        enemyTypes: [],
+        location: 'any',
+        specialRules: []
+      };
+    }
   });
   
-  // Manual encounter creation
-  const [isManualMode, setIsManualMode] = useState(false);
-  const [manualEncounter, setManualEncounter] = useState<ManualParticipant[]>([]);
-  const [newParticipant, setNewParticipant] = useState<ManualParticipant>({
-    name: '',
-    type: 'enemy',
-    count: 1,
-    difficulty: 'moderate',
-    savedNpcId: undefined
+  // Manual encounter creation - load from localStorage
+  const [isManualMode, setIsManualMode] = useState(() => {
+    try {
+      const saved = localStorage.getItem('encounter-generator-manual-mode');
+      return saved ? JSON.parse(saved) : false;
+    } catch {
+      return false;
+    }
+  });
+  
+  const [manualEncounter, setManualEncounter] = useState<ManualParticipant[]>(() => {
+    try {
+      const saved = localStorage.getItem('encounter-generator-manual-encounter');
+      return saved ? JSON.parse(saved) : [];
+    } catch {
+      return [];
+    }
+  });
+  
+  const [newParticipant, setNewParticipant] = useState<ManualParticipant>(() => {
+    try {
+      const saved = localStorage.getItem('encounter-generator-new-participant');
+      return saved ? JSON.parse(saved) : {
+        name: '',
+        type: 'enemy',
+        count: 1,
+        difficulty: 'moderate',
+        savedNpcId: undefined
+      };
+    } catch {
+      return {
+        name: '',
+        type: 'enemy',
+        count: 1,
+        difficulty: 'moderate',
+        savedNpcId: undefined
+      };
+    }
   });
 
   useEffect(() => {
@@ -296,13 +366,86 @@ export default function EncounterGenerator({ onAddToEncounter, onSaveEncounter }
   // Load saved NPCs on component mount
   useEffect(() => {
     try {
-      const savedNPCsData = localStorage.getItem('cyberpunk-generated-npcs');
-      if (savedNPCsData) {
-        const parsed = JSON.parse(savedNPCsData);
-        if (Array.isArray(parsed)) {
-          setSavedNPCs(parsed);
+      let allNPCs: any[] = [];
+
+      // Load NPCs from the NPC Generator (cyberpunk-generated-npcs)
+      const generatedNPCsData = localStorage.getItem('cyberpunk-generated-npcs');
+      console.log('Raw generated NPCs data:', generatedNPCsData);
+      if (generatedNPCsData) {
+        const generatedNPCs = JSON.parse(generatedNPCsData);
+        console.log('Parsed generated NPCs:', generatedNPCs);
+        if (Array.isArray(generatedNPCs)) {
+          // Convert generated NPCs to the format expected by encounter generator
+          const convertedGeneratedNPCs = generatedNPCs.map((npc: any) => ({
+            id: npc.id,
+            name: npc.name,
+            stats: npc.stats || {
+              ref: 6, dex: 6, int: 6, tech: 6, cool: 6,
+              will: 6, luck: 6, move: 6, body: 6, emp: 6
+            },
+            skills: npc.skills || {},
+            equipment: npc.equipment || { weapons: [] },
+            hitPoints: npc.hitPoints || { max: 25, current: 25 },
+            woundState: npc.woundState || 'Not Wounded',
+            difficultyRating: npc.difficultyRating || 'generated'
+          }));
+          allNPCs = [...allNPCs, ...convertedGeneratedNPCs];
         }
       }
+
+      // Load NPCs saved from encounters (cyberpunk-saved-npcs)
+      const savedNPCsData = localStorage.getItem('cyberpunk-saved-npcs');
+      if (savedNPCsData) {
+        const savedNPCs = JSON.parse(savedNPCsData);
+        if (Array.isArray(savedNPCs)) {
+          // Convert saved NPCs to the format expected by encounter generator
+          const convertedSavedNPCs = savedNPCs.map((savedNPC: any) => ({
+            id: savedNPC.id + '_saved',
+            name: savedNPC.name + ' (Saved)',
+            stats: {
+              ref: savedNPC.npc.ref || 6,
+              dex: 6,
+              int: 6,
+              tech: 6,
+              cool: 6,
+              will: 6,
+              luck: 6,
+              move: 6,
+              body: 6,
+              emp: 6
+            },
+            skills: {
+              initiative: savedNPC.npc.initiativeSkill || 0
+            },
+            equipment: {
+              weapons: savedNPC.npc.weapons || [],
+              armor: savedNPC.npc.armor ? {
+                _id: 'saved-armor',
+                name: 'Saved Armor',
+                system: {
+                  bodyLocation: { ablation: 0, sp: savedNPC.npc.armor.body || 0 },
+                  headLocation: { ablation: 0, sp: savedNPC.npc.armor.head || 0 },
+                  isBodyLocation: true,
+                  isHeadLocation: true,
+                  penalty: 0,
+                  price: { market: 100 },
+                  description: { value: 'Armor from saved NPC' }
+                }
+              } : undefined
+            },
+            hitPoints: {
+              max: savedNPC.npc.maxHp || 25,
+              current: savedNPC.npc.hp || 25
+            },
+            woundState: savedNPC.npc.woundState || 'Not Wounded',
+            difficultyRating: 'saved-npc'
+          }));
+          allNPCs = [...allNPCs, ...convertedSavedNPCs];
+        }
+      }
+
+      setSavedNPCs(allNPCs);
+      console.log('EncounterGenerator loaded NPCs:', allNPCs.length, allNPCs);
     } catch (error) {
       console.error('Error loading saved NPCs:', error);
     }
@@ -316,6 +459,119 @@ export default function EncounterGenerator({ onAddToEncounter, onSaveEncounter }
       console.error('Error saving encounters:', error);
     }
   }, [generatedEncounters]);
+
+  // Save state when selections change
+  useEffect(() => {
+    try {
+      localStorage.setItem('encounter-generator-difficulty', JSON.stringify(selectedDifficulty));
+    } catch (error) {
+      console.error('Error saving difficulty:', error);
+    }
+  }, [selectedDifficulty]);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem('encounter-generator-location', JSON.stringify(selectedLocation));
+    } catch (error) {
+      console.error('Error saving location:', error);
+    }
+  }, [selectedLocation]);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem('encounter-generator-enemy-type', JSON.stringify(selectedEnemyType));
+    } catch (error) {
+      console.error('Error saving enemy type:', error);
+    }
+  }, [selectedEnemyType]);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem('encounter-generator-params', JSON.stringify(encounterParams));
+    } catch (error) {
+      console.error('Error saving encounter params:', error);
+    }
+  }, [encounterParams]);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem('encounter-generator-manual-mode', JSON.stringify(isManualMode));
+    } catch (error) {
+      console.error('Error saving manual mode:', error);
+    }
+  }, [isManualMode]);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem('encounter-generator-manual-encounter', JSON.stringify(manualEncounter));
+    } catch (error) {
+      console.error('Error saving manual encounter:', error);
+    }
+  }, [manualEncounter]);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem('encounter-generator-new-participant', JSON.stringify(newParticipant));
+    } catch (error) {
+      console.error('Error saving new participant:', error);
+    }
+  }, [newParticipant]);
+
+  // Listen for localStorage changes to update NPCs list when new ones are added
+  useEffect(() => {
+    const handleStorageChange = (e: StorageEvent) => {
+      if (e.key === 'cyberpunk-generated-npcs' || e.key === 'cyberpunk-saved-npcs') {
+        // Reload NPCs
+        try {
+          let allNPCs: any[] = [];
+
+          const generatedNPCsData = localStorage.getItem('cyberpunk-generated-npcs');
+          if (generatedNPCsData) {
+            const generatedNPCs = JSON.parse(generatedNPCsData);
+            if (Array.isArray(generatedNPCs)) {
+              const convertedGeneratedNPCs = generatedNPCs.map((npc: any) => ({
+                id: npc.id,
+                name: npc.name,
+                stats: npc.stats || { ref: 6, dex: 6, int: 6, tech: 6, cool: 6, will: 6, luck: 6, move: 6, body: 6, emp: 6 },
+                skills: npc.skills || {},
+                equipment: npc.equipment || { weapons: [] },
+                hitPoints: npc.hitPoints || { max: 25, current: 25 },
+                woundState: npc.woundState || 'Not Wounded',
+                difficultyRating: npc.difficultyRating || 'generated'
+              }));
+              allNPCs = [...allNPCs, ...convertedGeneratedNPCs];
+            }
+          }
+
+          const savedNPCsData = localStorage.getItem('cyberpunk-saved-npcs');
+          if (savedNPCsData) {
+            const savedNPCs = JSON.parse(savedNPCsData);
+            if (Array.isArray(savedNPCs)) {
+              const convertedSavedNPCs = savedNPCs.map((savedNPC: any) => ({
+                id: savedNPC.id + '_saved',
+                name: savedNPC.name + ' (Saved)',
+                stats: { ref: savedNPC.npc.ref || 6, dex: 6, int: 6, tech: 6, cool: 6, will: 6, luck: 6, move: 6, body: 6, emp: 6 },
+                skills: { initiative: savedNPC.npc.initiativeSkill || 0 },
+                equipment: { weapons: savedNPC.npc.weapons || [], armor: savedNPC.npc.armor ? { _id: 'saved-armor', name: 'Saved Armor', system: { bodyLocation: { ablation: 0, sp: savedNPC.npc.armor.body || 0 }, headLocation: { ablation: 0, sp: savedNPC.npc.armor.head || 0 }, isBodyLocation: true, isHeadLocation: true, penalty: 0, price: { market: 100 }, description: { value: 'Armor from saved NPC' } } } : undefined },
+                hitPoints: { max: savedNPC.npc.maxHp || 25, current: savedNPC.npc.hp || 25 },
+                woundState: savedNPC.npc.woundState || 'Not Wounded',
+                difficultyRating: 'saved-npc'
+              }));
+              allNPCs = [...allNPCs, ...convertedSavedNPCs];
+            }
+          }
+
+          setSavedNPCs(allNPCs);
+          console.log('Reloaded NPCs after storage change:', allNPCs.length, allNPCs);
+        } catch (error) {
+          console.error('Error reloading NPCs:', error);
+        }
+      }
+    };
+
+    window.addEventListener('storage', handleStorageChange);
+    return () => window.removeEventListener('storage', handleStorageChange);
+  }, []);
 
   const generateRandomEncounter = () => {
     // Filter templates based on difficulty and location
@@ -876,78 +1132,257 @@ export default function EncounterGenerator({ onAddToEncounter, onSaveEncounter }
           <div className="manual-encounter">
             <h3>Manual Encounter Creation</h3>
             
-            <div className="manual-participant-form">
-              <div className="form-row">
-                {newParticipant.type !== 'saved-npc' && (
-                  <input
-                    type="text"
-                    placeholder="Participant Name"
-                    value={newParticipant.name}
-                    onChange={(e) => setNewParticipant(prev => ({ ...prev, name: e.target.value }))}
-                  />
-                )}
-                
-                <select
-                  value={newParticipant.type}
-                  onChange={(e) => setNewParticipant(prev => ({ ...prev, type: e.target.value as any, savedNpcId: undefined }))}
-                >
-                  <option value="enemy">Enemy</option>
-                  <option value="turret">Turret</option>
-                  <option value="drone">Drone</option>
-                  <option value="saved-npc">Saved NPC</option>
-                </select>
-                
-                {newParticipant.type === 'saved-npc' && (
+            <div className="manual-participant-form" style={{
+              background: 'var(--surface-2)',
+              padding: '1rem',
+              borderRadius: '0.5rem',
+              marginBottom: '1rem'
+            }}>
+              <div className="form-row" style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))',
+                gap: '1rem',
+                alignItems: 'end'
+              }}>
+                <div className="form-group">
+                  <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '600' }}>Type:</label>
                   <select
-                    value={newParticipant.savedNpcId || ''}
-                    onChange={(e) => setNewParticipant(prev => ({ ...prev, savedNpcId: e.target.value }))}
+                    value={newParticipant.type}
+                    onChange={(e) => {
+                      setNewParticipant(prev => ({ ...prev, type: e.target.value as any, savedNpcId: undefined }));
+                    }}
+                    style={{
+                      width: '100%',
+                      padding: '0.5rem',
+                      borderRadius: '0.25rem',
+                      border: '1px solid var(--border)',
+                      background: 'var(--surface)'
+                    }}
                   >
-                    <option value="">Select Saved NPC...</option>
-                    {savedNPCs.map(npc => (
-                      <option key={npc.id} value={npc.id}>
-                        {npc.name} ({npc.difficultyRating || 'Unknown'})
-                      </option>
-                    ))}
+                    <option value="enemy">Enemy</option>
+                    <option value="turret">Turret</option>
+                    <option value="drone">Drone</option>
+                    <option value="saved-npc">Saved NPC</option>
                   </select>
+                </div>
+
+                {newParticipant.type === 'saved-npc' ? (
+                  <div className="form-group">
+                    <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '600' }}>NPC:</label>
+                    <select
+                      value={newParticipant.savedNpcId || ''}
+                      onChange={(e) => setNewParticipant(prev => ({ ...prev, savedNpcId: e.target.value }))}
+                      style={{
+                        width: '100%',
+                        padding: '0.5rem',
+                        borderRadius: '0.25rem',
+                        border: '1px solid var(--border)',
+                        background: 'var(--surface)'
+                      }}
+                    >
+                      <option value="">Select Saved NPC...</option>
+                      {savedNPCs.map(npc => (
+                        <option key={npc.id} value={npc.id}>
+                          {npc.name} ({npc.difficultyRating || 'Unknown'})
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                ) : (
+                  <div className="form-group">
+                    <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '600' }}>Name:</label>
+                    <input
+                      type="text"
+                      placeholder="Participant Name"
+                      value={newParticipant.name}
+                      onChange={(e) => setNewParticipant(prev => ({ ...prev, name: e.target.value }))}
+                      style={{
+                        width: '100%',
+                        padding: '0.5rem',
+                        borderRadius: '0.25rem',
+                        border: '1px solid var(--border)',
+                        background: 'var(--surface)'
+                      }}
+                    />
+                  </div>
                 )}
                 
-                <input
-                  type="number"
-                  min="1"
-                  max="10"
-                  value={newParticipant.count}
-                  onChange={(e) => setNewParticipant(prev => ({ ...prev, count: parseInt(e.target.value) || 1 }))}
-                />
+                <div className="form-group">
+                  <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '600' }}>Count:</label>
+                  <input
+                    type="number"
+                    min="1"
+                    max="10"
+                    value={newParticipant.count}
+                    onChange={(e) => setNewParticipant(prev => ({ ...prev, count: parseInt(e.target.value) || 1 }))}
+                    style={{
+                      width: '100%',
+                      padding: '0.5rem',
+                      borderRadius: '0.25rem',
+                      border: '1px solid var(--border)',
+                      background: 'var(--surface)'
+                    }}
+                  />
+                </div>
                 
-                <select
-                  value={newParticipant.difficulty}
-                  onChange={(e) => setNewParticipant(prev => ({ ...prev, difficulty: e.target.value as any }))}
-                >
-                  <option value="easy">Easy</option>
-                  <option value="moderate">Moderate</option>
-                  <option value="hard">Hard</option>
-                  <option value="very-hard">Very Hard</option>
-                </select>
+                <div className="form-group">
+                  <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '600' }}>Difficulty:</label>
+                  <select
+                    value={newParticipant.difficulty}
+                    onChange={(e) => setNewParticipant(prev => ({ ...prev, difficulty: e.target.value as any }))}
+                    style={{
+                      width: '100%',
+                      padding: '0.5rem',
+                      borderRadius: '0.25rem',
+                      border: '1px solid var(--border)',
+                      background: 'var(--surface)'
+                    }}
+                  >
+                    <option value="easy">Easy</option>
+                    <option value="moderate">Moderate</option>
+                    <option value="hard">Hard</option>
+                    <option value="very-hard">Very Hard</option>
+                  </select>
+                </div>
                 
-                <button onClick={addManualParticipant} className="add-participant-btn">
-                  Add
-                </button>
+                <div className="form-group">
+                  <button 
+                    onClick={addManualParticipant} 
+                    className="add-participant-btn"
+                    style={{
+                      padding: '0.5rem 1rem',
+                      background: 'var(--accent)',
+                      color: 'var(--contrast-text)',
+                      border: 'none',
+                      borderRadius: '0.25rem',
+                      cursor: 'pointer',
+                      fontWeight: '600'
+                    }}
+                  >
+                    Add
+                  </button>
+                </div>
               </div>
+              
             </div>
 
             {manualEncounter.length > 0 && (
-              <div className="manual-participants">
-                <h4>Encounter Participants:</h4>
-                {manualEncounter.map((participant, index) => (
-                  <div key={index} className="participant-item">
-                    <span>{participant.count}x {participant.name} ({participant.type}, {participant.difficulty})</span>
-                    <button onClick={() => removeManualParticipant(index)} className="remove-btn">
-                      Remove
-                    </button>
-                  </div>
-                ))}
+              <div className="manual-participants" style={{
+                background: 'var(--surface-2)',
+                padding: '1rem',
+                borderRadius: '0.5rem',
+                marginBottom: '1rem'
+              }}>
+                <h4 style={{ marginBottom: '1rem', color: 'var(--text-accent)' }}>Encounter Participants:</h4>
+                <div className="participants-list" style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '0.5rem'
+                }}>
+                  {manualEncounter.map((participant, index) => (
+                    <div key={index} className="participant-item" style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                      background: 'var(--surface)',
+                      padding: '0.75rem',
+                      borderRadius: '0.5rem',
+                      border: '1px solid var(--border)'
+                    }}>
+                      <div className="participant-info" style={{ flex: 1 }}>
+                        <div className="participant-main" style={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: '0.5rem',
+                          marginBottom: '0.25rem'
+                        }}>
+                          <span className="participant-count" style={{
+                            background: 'var(--accent)',
+                            color: 'var(--contrast-text)',
+                            padding: '0.25rem 0.5rem',
+                            borderRadius: '0.25rem',
+                            fontSize: '0.875rem',
+                            fontWeight: '600',
+                            minWidth: '2rem',
+                            textAlign: 'center'
+                          }}>
+                            {participant.count}x
+                          </span>
+                          <span className="participant-name" style={{
+                            fontSize: '1rem',
+                            fontWeight: '600',
+                            color: 'var(--text-primary)'
+                          }}>
+                            {participant.name}
+                          </span>
+                        </div>
+                        <div className="participant-details" style={{
+                          display: 'flex',
+                          gap: '1rem',
+                          fontSize: '0.875rem',
+                          color: 'var(--text-muted)',
+                          marginLeft: '3rem'
+                        }}>
+                          <span className="participant-type" style={{
+                            background: 'var(--accent-subtle)',
+                            padding: '0.125rem 0.5rem',
+                            borderRadius: '0.25rem',
+                            textTransform: 'capitalize'
+                          }}>
+                            {participant.type.replace('-', ' ')}
+                          </span>
+                          <span className="participant-difficulty" style={{
+                            background: 'var(--accent-subtle)',
+                            padding: '0.125rem 0.5rem',
+                            borderRadius: '0.25rem',
+                            textTransform: 'capitalize'
+                          }}>
+                            {participant.difficulty.replace('-', ' ')}
+                          </span>
+                        </div>
+                      </div>
+                      <button 
+                        onClick={() => removeManualParticipant(index)} 
+                        className="remove-btn"
+                        style={{
+                          background: 'var(--error)',
+                          color: 'var(--contrast-text)',
+                          border: 'none',
+                          borderRadius: '0.25rem',
+                          padding: '0.5rem',
+                          cursor: 'pointer',
+                          fontSize: '1rem',
+                          lineHeight: 1,
+                          minWidth: '2rem',
+                          height: '2rem',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center'
+                        }}
+                        title="Remove participant"
+                      >
+                        ✕
+                      </button>
+                    </div>
+                  ))}
+                </div>
                 
-                <button onClick={createManualEncounter} className="create-encounter-btn">
+                <button 
+                  onClick={createManualEncounter} 
+                  className="create-encounter-btn"
+                  style={{
+                    marginTop: '1rem',
+                    padding: '0.75rem 1.5rem',
+                    background: 'var(--accent)',
+                    color: 'var(--contrast-text)',
+                    border: 'none',
+                    borderRadius: '0.5rem',
+                    cursor: 'pointer',
+                    fontWeight: '600',
+                    fontSize: '1rem',
+                    width: '100%'
+                  }}
+                >
                   Create Encounter
                 </button>
               </div>

@@ -91,12 +91,7 @@
 
 ### ❌ **MISSING FEATURES**
 
-#### 1. **Netrunning Interface** (Priority: Medium)
-- Architecture builder (RAW p. 200-211)
-- Node types with DVs & ICE stats
-- Net Actions interface
-- Black ICE auto-attacks
-- Random architecture generator
+
 
 #### 2. **Player Character Manager** (Priority: Medium) 
 - Full PC sheets with all stats/skills

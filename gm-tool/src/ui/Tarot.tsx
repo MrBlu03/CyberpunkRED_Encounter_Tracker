@@ -40,13 +40,28 @@ type TarotRules = {
 export default function Tarot() {
   const [tarotData, setTarotData] = useState<TarotRules | null>(null);
   const [deck, setDeck] = useState<TarotCard[]>(() => {
-    try { const raw = localStorage.getItem('cpr-tarot-deck'); return raw ? JSON.parse(raw) : []; } catch { return []; }
+    try { 
+      const raw = localStorage.getItem('cpr-tarot-deck'); 
+      return raw ? JSON.parse(raw) : []; 
+    } catch { 
+      return []; 
+    }
   });
   const [drawn, setDrawn] = useState<{ card: TarotCard; time: string }[]>(() => {
-    try { const raw = localStorage.getItem('cpr-tarot-drawn'); return raw ? JSON.parse(raw) : []; } catch { return []; }
+    try { 
+      const raw = localStorage.getItem('cpr-tarot-drawn'); 
+      return raw ? JSON.parse(raw) : []; 
+    } catch { 
+      return []; 
+    }
   });
   const [allowReshuffle, setAllowReshuffle] = useState<boolean>(() => {
-    try { const raw = localStorage.getItem('cpr-tarot-reshuffle'); return raw ? JSON.parse(raw) : false; } catch { return false; }
+    try { 
+      const raw = localStorage.getItem('cpr-tarot-reshuffle'); 
+      return raw ? JSON.parse(raw) : false; 
+    } catch { 
+      return false; 
+    }
   });
   const [showRules, setShowRules] = useState<boolean>(false);
 
@@ -60,8 +75,9 @@ export default function Tarot() {
         const data: TarotRules = await response.json();
         setTarotData(data);
         
-        // If we had a persisted deck, keep it; otherwise seed it with official cards
+        // Only initialize deck if it's empty or invalid
         setDeck(prev => {
+          // If we have a persisted deck with cards, validate and keep it
           if (prev && prev.length > 0) {
             // Validate that the persisted deck uses the current card structure
             const isValidDeck = prev.every(card => 
@@ -69,9 +85,16 @@ export default function Tarot() {
               typeof card.name === 'string' && 
               typeof card.effect === 'string'
             );
-            return isValidDeck ? prev : shuffle(data.cards);
+            if (isValidDeck) {
+              // Check if the deck contains cards from the current ruleset
+              const hasValidCards = prev.some(card => 
+                data.cards.some(officialCard => officialCard.number === card.number)
+              );
+              return hasValidCards ? prev : shuffle(data.cards);
+            }
           }
-          return shuffle(data.cards);
+          // Only create a new shuffled deck if we don't have a valid persisted one
+          return prev.length === 0 ? shuffle(data.cards) : prev;
         });
       } catch (error) {
         console.error('Failed to load official tarot rules:', error);
@@ -100,6 +123,7 @@ export default function Tarot() {
     setDeck(rest);
     setDrawn(prev => [{ card, time: new Date().toLocaleTimeString() }, ...prev].slice(0, 20));
   };
+
 
   const resetDeck = () => {
     if (tarotData) setDeck(shuffle(tarotData.cards));

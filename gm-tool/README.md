@@ -66,6 +66,5 @@ Visit http://localhost:5173/ to use the tool.
 
 1. **NPC Generator**: Stats, skills, gear dropdowns from packs
 2. **Shop System**: Filter by category, legality, Night Market mode
-3. **Netrunning Interface**: Architecture builder, ICE automation
-4. **Time Tracker**: Recovery, events, day/night cycle
-5. **Settings**: House rules, theme, import/export
+3. **Time Tracker**: Recovery, events, day/night cycle
+4. **Settings**: House rules, theme, import/export

@@ -80,7 +80,6 @@ The following data files are available:
 - Responsive design works on different screen sizes
 
 ## Known Limitations:
-- Netrunning interface not yet implemented (planned)
 - Player Character Manager interface not built (data layer ready)
 - Advanced armor/cyberware UI integration pending
 - Night City Tarot system not implemented

@@ -17,7 +17,13 @@ interface RollResult {
   modifier: number;
 }
 
-export default function DiceRoller() {
+interface DiceRollerProps {
+  externalRoll?: string;
+  onExternalRollComplete?: () => void;
+  onMount?: (rollFn: (expression: string) => void) => void;
+}
+
+export default function DiceRoller({ externalRoll, onExternalRollComplete, onMount }: DiceRollerProps = {}) {
   const [customInput, setCustomInput] = useState('');
   const [results, setResults] = useState<RollResult[]>([]);
   const [currentResult, setCurrentResult] = useState<RollResult | null>(null);
@@ -94,6 +100,20 @@ export default function DiceRoller() {
     setResults([]);
     setCurrentResult(null);
   };
+
+  const rollCustomDiceFromInput = (expression: string) => {
+    const parsed = parseDiceExpression(expression);
+    if (parsed) {
+      rollDice(parsed.count, parsed.sides, parsed.modifier, expression);
+    }
+  };
+
+  // Expose rollCustomDice function to parent
+  React.useEffect(() => {
+    if (onMount) {
+      onMount(rollCustomDiceFromInput);
+    }
+  }, [onMount]);
 
   return (
     <div className="dice-roller-compact">
