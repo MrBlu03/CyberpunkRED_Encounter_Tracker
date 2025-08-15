@@ -1,6 +1,6 @@
 [build]
   # Build command
-  command = "cd gm-tool && npm run build"
+  command = "cd gm-tool && npm ci && npm run build"
   
   # Directory to publish
   publish = "gm-tool/dist"
