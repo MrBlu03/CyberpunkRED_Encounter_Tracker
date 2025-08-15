@@ -55,7 +55,7 @@
     "win": {
       "target": "nsis",
       "icon": "public/favicon.ico",
-      "sign": false
+      "forceCodeSigning": false
     },
     "mac": {
       "target": "dmg",
