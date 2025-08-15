@@ -17,7 +17,7 @@
     "preview": "vite preview --port 5173",
     "generate-data": "node scripts/extract-packs.mjs",
     "electron": "electron .",
-    "electron-dev": "concurrently \"npm run dev\" \"wait-on http://localhost:5173 && electron .\"",
+    "electron-dev": "concurrently \"npm run dev\" \"wait-on http://localhost:5173 && cross-env NODE_ENV=development electron .\"",
     "build-electron": "npm run generate-data && npm run build && electron .",
     "dist": "npm run generate-data && npm run build && electron-builder",
     "dist-all": "npm run generate-data && npm run build && electron-builder -mwl"

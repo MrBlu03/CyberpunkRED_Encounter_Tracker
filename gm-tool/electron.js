@@ -1,6 +1,10 @@
-const { app, BrowserWindow, Menu } = require('electron')
+const { app, BrowserWindow } = require('electron')
 const path = require('path')
-const isDev = process.env.NODE_ENV === 'development'
+const fs = require('fs')
+
+// Check if we're in development mode or if dist folder exists
+const distPath = path.join(__dirname, 'dist/index.html')
+const isDev = process.env.NODE_ENV === 'development' || !fs.existsSync(distPath)
 
 function createWindow() {
   const mainWindow = new BrowserWindow({
@@ -22,7 +26,7 @@ function createWindow() {
     mainWindow.loadURL('http://localhost:5173')
     mainWindow.webContents.openDevTools()
   } else {
-    mainWindow.loadFile(path.join(__dirname, 'dist/index.html'))
+    mainWindow.loadFile(distPath)
   }
 
   // Show window when ready to prevent visual flash
