@@ -3,11 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
+  "main": "electron.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview --port 5173",
-    "generate-data": "node scripts/extract-packs.mjs"
+    "generate-data": "node scripts/extract-packs.mjs",
+    "electron": "electron .",
+    "electron-dev": "concurrently \"npm run dev\" \"wait-on http://localhost:5173 && electron .\"",
+    "build-electron": "npm run generate-data && npm run build && electron .",
+    "dist": "npm run generate-data && npm run build && electron-builder",
+    "dist-all": "npm run generate-data && npm run build && electron-builder -mwl"
   },
   "dependencies": {
     "js-yaml": "^4.1.0",
@@ -18,8 +24,37 @@
     "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.1",
+    "concurrently": "^9.2.0",
+    "cross-env": "^10.0.0",
+    "electron": "^37.3.0",
+    "electron-builder": "^26.0.12",
     "typescript": "^5.5.4",
     "vite": "^5.4.1",
+    "wait-on": "^8.0.4",
     "yaml": "^2.5.0"
+  },
+  "build": {
+    "appId": "com.cyberpunk.gm-tool",
+    "productName": "Cyberpunk RED GM Tool",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "electron.js",
+      "package.json"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "public/favicon.ico"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "public/favicon.ico"
+    },
+    "linux": {
+      "target": "AppImage",
+      "icon": "public/favicon.ico"
+    }
   }
 }
