@@ -1,9 +1,16 @@
 {
   "name": "cyberpunk-red-gm-tool",
-  "version": "0.1.0",
+  "version": "2.0.0",
+  "description": "A comprehensive GM tool for Cyberpunk RED tabletop RPG sessions",
+  "author": "Cyberpunk RED Community",
   "private": true,
   "type": "module",
   "main": "electron.js",
+  "homepage": "https://github.com/MrBlu03/CyberpunkRED_Encounter_Tracker",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MrBlu03/CyberpunkRED_Encounter_Tracker.git"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -44,17 +51,21 @@
       "electron.js",
       "package.json"
     ],
+    "publish": null,
     "win": {
       "target": "nsis",
-      "icon": "public/favicon.ico"
+      "icon": "public/favicon.ico",
+      "sign": false
     },
     "mac": {
       "target": "dmg",
-      "icon": "public/favicon.ico"
+      "icon": "public/favicon.ico",
+      "category": "public.app-category.utilities"
     },
     "linux": {
       "target": "AppImage",
-      "icon": "public/favicon.ico"
+      "icon": "public/favicon.ico",
+      "category": "Utility"
     }
   }
 }
