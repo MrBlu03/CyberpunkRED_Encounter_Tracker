@@ -7,6 +7,8 @@ on:
       - 'gm-tool/package.json'
   pull_request:
     branches: [ V2 ]
+    paths:
+      - 'gm-tool/package.json'
 
 permissions:
   contents: write
@@ -19,10 +21,22 @@ jobs:
     strategy:
       matrix:
         os: [windows-latest, macos-latest, ubuntu-latest]
+        include:
+          - os: windows-latest
+            platform: win
+            artifact_pattern: "*.exe"
+          - os: macos-latest
+            platform: mac
+            artifact_pattern: "*.{dmg,zip}"
+          - os: ubuntu-latest
+            platform: linux
+            artifact_pattern: "*.{AppImage,deb,rpm}"
     
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -40,6 +54,16 @@ jobs:
           echo "tag=v$VERSION" >> $GITHUB_OUTPUT
         shell: bash
       
+      - name: Check if tag exists
+        id: check_tag
+        run: |
+          if git rev-parse "v${{ steps.version.outputs.version }}" >/dev/null 2>&1; then
+            echo "exists=true" >> $GITHUB_OUTPUT
+          else
+            echo "exists=false" >> $GITHUB_OUTPUT
+          fi
+        shell: bash
+      
       - name: Install dependencies
         run: |
           cd gm-tool
@@ -55,56 +79,28 @@ jobs:
           cd gm-tool
           npm run build
       
-      - name: Build Electron app (Windows)
-        if: matrix.os == 'windows-latest'
+      - name: Build Electron app
         run: |
           cd gm-tool
-          npx electron-builder --win --publish=never
+          npx electron-builder --${{ matrix.platform }} --publish=never
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CSC_IDENTITY_AUTO_DISCOVERY: ${{ matrix.os == 'macos-latest' && 'false' || '' }}
       
-      - name: Build Electron app (macOS)
-        if: matrix.os == 'macos-latest'
+      - name: List built files (debug)
         run: |
-          cd gm-tool
-          npx electron-builder --mac --publish=never
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          CSC_IDENTITY_AUTO_DISCOVERY: false
+          echo "Contents of gm-tool/release:"
+          ls -la gm-tool/release/ || echo "Release directory not found"
+        shell: bash
       
-      - name: Build Electron app (Linux)
-        if: matrix.os == 'ubuntu-latest'
-        run: |
-          cd gm-tool
-          npx electron-builder --linux --publish=never
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      
-      - name: Upload Windows artifacts
-        if: matrix.os == 'windows-latest'
+      - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: windows-build-${{ steps.version.outputs.version }}
-          path: gm-tool/release/*.exe
+          name: ${{ matrix.platform }}-build-${{ steps.version.outputs.version }}
+          path: gm-tool/release/
           retention-days: 30
-      
-      - name: Upload macOS artifacts
-        if: matrix.os == 'macos-latest'
-        uses: actions/upload-artifact@v4
-        with:
-          name: macos-build-${{ steps.version.outputs.version }}
-          path: gm-tool/release/*.dmg
-          retention-days: 30
-      
-      - name: Upload Linux artifacts
-        if: matrix.os == 'ubuntu-latest'
-        uses: actions/upload-artifact@v4
-        with:
-          name: linux-build-${{ steps.version.outputs.version }}
-          path: gm-tool/release/*.AppImage
-          retention-days: 30
+          if-no-files-found: error
 
-  # Create release when package.json changes
   release:
     if: github.event_name == 'push' && github.ref == 'refs/heads/V2'
     needs: build
@@ -113,6 +109,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       
       - name: Get version from package.json
         id: version
@@ -123,32 +121,57 @@ jobs:
           echo "tag=v$VERSION" >> $GITHUB_OUTPUT
         shell: bash
       
+      - name: Check if release exists
+        id: check_release
+        run: |
+          if gh release view "v${{ steps.version.outputs.version }}" >/dev/null 2>&1; then
+            echo "exists=true" >> $GITHUB_OUTPUT
+            echo "Release v${{ steps.version.outputs.version }} already exists, skipping"
+          else
+            echo "exists=false" >> $GITHUB_OUTPUT
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
       - name: Download all artifacts
+        if: steps.check_release.outputs.exists == 'false'
         uses: actions/download-artifact@v4
         with:
           path: ./artifacts
       
+      - name: Prepare release files
+        if: steps.check_release.outputs.exists == 'false'
+        run: |
+          mkdir -p ./release-files
+          find ./artifacts -type f \( -name "*.exe" -o -name "*.dmg" -o -name "*.zip" -o -name "*.AppImage" -o -name "*.deb" -o -name "*.rpm" \) -exec cp {} ./release-files/ \;
+          
+          echo "Files prepared for release:"
+          ls -la ./release-files/
+        shell: bash
+      
       - name: Create Release
+        if: steps.check_release.outputs.exists == 'false'
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ steps.version.outputs.tag }}
           name: Release ${{ steps.version.outputs.version }}
-          files: |
-            ./artifacts/windows-build-${{ steps.version.outputs.version }}/*
-            ./artifacts/macos-build-${{ steps.version.outputs.version }}/*
-            ./artifacts/linux-build-${{ steps.version.outputs.version }}/*
+          files: ./release-files/*
           draft: false
           prerelease: false
           generate_release_notes: true
           body: |
             ## Cyberpunk RED GM Tool v${{ steps.version.outputs.version }}
             
-            ### What's New
-            - Updated version to ${{ steps.version.outputs.version }}
-            
             ### Downloads
-            - **Windows**: `.exe` installer
-            - **macOS**: `.dmg` disk image
-            - **Linux**: `.AppImage` portable executable
+            Choose the appropriate file for your operating system:
+            
+            - **Windows**: Download the `.exe` file
+            - **macOS**: Download the `.dmg` file  
+            - **Linux**: Download the `.AppImage` file (or `.deb`/`.rpm` if preferred)
+            
+            ### Installation
+            - **Windows**: Run the `.exe` installer
+            - **macOS**: Open the `.dmg` and drag to Applications folder
+            - **Linux**: Make the `.AppImage` executable and run it
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
