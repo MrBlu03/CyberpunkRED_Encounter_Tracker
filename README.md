@@ -4,8 +4,8 @@ A web-based tool for Game Masters running Cyberpunk RED tabletop RPG sessions. T
 
 ## 🚀 Live Demo
 
-The application is deployed on GitHub Pages and can be accessed at:
-**https://mrblu03.github.io/CyberpunkRED_Encounter_Tracker/**
+The application is deployed on Netlify and can be accessed at:
+**https://cyberpunkred-gm-tool.netlify.app/gm-tool/**
 
 ## ✨ Features
 
