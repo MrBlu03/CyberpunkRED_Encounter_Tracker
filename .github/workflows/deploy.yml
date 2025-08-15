@@ -42,9 +42,15 @@ jobs:
         run: |
           cd gm-tool
           npm run build
-          echo "" > dist/.nojekyll
-          ls -la dist/
-          cat dist/index.html
+          cd ..
+          mkdir -p deploy/gm-tool
+          cp -r gm-tool/dist/* deploy/gm-tool/
+          cp -r gm-tool/dist/. deploy/gm-tool/
+          cp index.html deploy/
+          echo "" > deploy/.nojekyll
+          ls -la deploy/
+          ls -la deploy/gm-tool/
+          cat deploy/gm-tool/index.html
       
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -52,7 +58,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: gm-tool/dist
+          path: deploy
           retention-days: 1
 
   # Deployment job
