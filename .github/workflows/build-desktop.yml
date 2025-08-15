@@ -38,6 +38,7 @@ jobs:
           VERSION=$(node -p "require('./package.json').version")
           echo "version=$VERSION" >> $GITHUB_OUTPUT
           echo "tag=v$VERSION" >> $GITHUB_OUTPUT
+        shell: bash
       
       - name: Install dependencies
         run: |
@@ -120,6 +121,7 @@ jobs:
           VERSION=$(node -p "require('./package.json').version")
           echo "version=$VERSION" >> $GITHUB_OUTPUT
           echo "tag=v$VERSION" >> $GITHUB_OUTPUT
+        shell: bash
       
       - name: Download all artifacts
         uses: actions/download-artifact@v4
