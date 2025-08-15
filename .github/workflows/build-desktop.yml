@@ -3,7 +3,8 @@ name: Build Desktop App
 on:
   push:
     branches: [ V2 ]
-    tags: [ 'v*' ]
+    paths:
+      - 'gm-tool/package.json'
   pull_request:
     branches: [ V2 ]
 
@@ -12,8 +13,54 @@ permissions:
   packages: write
 
 jobs:
+  # Check for version changes and create tag if needed
+  check-version:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/V2'
+    outputs:
+      should-release: ${{ steps.check.outputs.should-release }}
+      new-version: ${{ steps.check.outputs.new-version }}
+      tag-name: ${{ steps.check.outputs.tag-name }}
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Check for version changes
+        id: check
+        run: |
+          # Get current version from package.json
+          CURRENT_VERSION=$(node -p "require('./gm-tool/package.json').version")
+          echo "Current version in package.json: $CURRENT_VERSION"
+          
+          # Check if this version tag already exists
+          if git tag -l "v$CURRENT_VERSION" | grep -q "v$CURRENT_VERSION"; then
+            echo "Tag v$CURRENT_VERSION already exists, skipping release"
+            echo "should-release=false" >> $GITHUB_OUTPUT
+          else
+            echo "New version detected: v$CURRENT_VERSION"
+            echo "should-release=true" >> $GITHUB_OUTPUT
+            echo "new-version=$CURRENT_VERSION" >> $GITHUB_OUTPUT
+            echo "tag-name=v$CURRENT_VERSION" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Create and push tag
+        if: steps.check.outputs.should-release == 'true'
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git tag ${{ steps.check.outputs.tag-name }}
+          git push origin ${{ steps.check.outputs.tag-name }}
+
   build:
     runs-on: ${{ matrix.os }}
+    needs: check-version
+    if: |
+      github.event_name == 'pull_request' ||
+      (github.event_name == 'push' && needs.check-version.outputs.should-release == 'true') ||
+      startsWith(github.ref, 'refs/tags/')
     
     strategy:
       matrix:
