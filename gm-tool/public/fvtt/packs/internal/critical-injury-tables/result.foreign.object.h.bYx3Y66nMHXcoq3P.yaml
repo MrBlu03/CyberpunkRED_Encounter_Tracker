@@ -1,0 +1,13 @@
+_id: bYx3Y66nMHXcoq3P
+_key: "!tables.results!QiwaqQtocypL0FXG.bYx3Y66nMHXcoq3P"
+documentCollection: cyberpunk-red-core.core_critical-injuries-head
+documentId: xfzYp9N5c6jEKiBR
+drawn: false
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/critical_injuries/foreign_object_head.svg
+range:
+  - 7
+  - 7
+text: Foreign Object (H)
+type: 2
+weight: 1

@@ -1,0 +1,12 @@
+_id: P3mRnto1pVz4bs9R
+_key: "!tables.results!QiwaqQtocypL0FXG.P3mRnto1pVz4bs9R"
+documentCollection: cyberpunk-red-core.core_critical-injuries-head
+documentId: q7yxRKUMzOf9o5qO
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/critical_injuries/lost_ear.svg
+range:
+  - 12
+  - 12
+text: Lost Ear
+type: 2
+weight: 1

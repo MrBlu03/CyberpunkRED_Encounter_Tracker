@@ -1,0 +1,37 @@
+_id: bRHD97cVlO7rcie7
+_key: "!items!bRHD97cVlO7rcie7"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/cargo-containers-and-cube-hotels/smart-vanity.svg
+name: Smart Vanity
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        Smart grooming station. Comes fully equipped with any tools and makeup you'll
+        need.
+      </p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 0
+    usedSlots: 0
+  isElectronic: true
+  price:
+    market: 500
+  providesHardening: false
+  revealed: true
+  source:
+    book: CCaCH
+    page: 6
+  usage: toggled
+type: gear

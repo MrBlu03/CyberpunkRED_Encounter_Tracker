@@ -1,0 +1,20 @@
+_id: puWDSgyEiCY5qwVp
+_key: "!items!puWDSgyEiCY5qwVp"
+effects: []
+img: icons/svg/item-bag.svg
+name: Pick Lock
+system:
+  basic: false
+  category: techniqueSkills
+  core: true
+  description:
+    value: ""
+  difficulty: typical
+  favorite: false
+  level: 0
+  skillType: generic
+  source:
+    book: Core
+    page: 142
+  stat: tech
+type: skill

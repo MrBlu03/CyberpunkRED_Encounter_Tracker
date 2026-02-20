@@ -1,0 +1,59 @@
+_id: yoTV7C3y1qXrXklA
+_key: "!items!yoTV7C3y1qXrXklA"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/exotics-of-2045/combat-jaw.svg
+name: Combat Jaw
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: ""
+  canIgnoreArmor: true
+  concealable:
+    concealable: true
+    isConcealed: false
+  core: false
+  damage: 4d6
+  description:
+    value: |
+      <p>Implanted Very Heavy Melee Weapon.</p>
+  dvTable: ""
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  humanityLoss:
+    roll: 4d6
+    static: 14
+  ignoreArmorPercent: 50
+  ignoreBelowSP: 0
+  installLocation: hospital
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 0
+    usedSlots: 0
+  isElectronic: false
+  isFoundational: false
+  isRanged: false
+  isWeapon: true
+  magazine:
+    max: 0
+    value: 0
+  price:
+    market: 500
+  providesHardening: false
+  revealed: true
+  rof: 1
+  size: 2
+  source:
+    book: IRv2
+    page: 72
+  type: cyberwareExternal
+  unarmedAutomaticCalculation: true
+  usage: toggled
+  usesType: magazine
+  weaponSkill: Melee Weapon
+  weaponType: vHeavyMelee
+type: cyberware

@@ -1,0 +1,34 @@
+_id: AUMkHYqfODTjgtMD
+_key: "!items!AUMkHYqfODTjgtMD"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/gear/cyberdeck_excellent.svg
+name: Cyberdeck (Excellent)
+system:
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>Netrunner deck. 9 slots.</p>
+  equipped: owned
+  favorite: false
+  installLocation: mall
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+      - program
+    list: []
+    slots: 9
+    usedSlots: 0
+  isElectronic: true
+  price:
+    market: 1000
+  providesHardening: false
+  quality: excellent
+  size: 1
+  source:
+    book: Core
+    page: 353
+type: cyberdeck

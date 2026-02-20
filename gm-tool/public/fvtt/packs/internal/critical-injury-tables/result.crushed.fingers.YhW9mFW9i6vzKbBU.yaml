@@ -1,0 +1,13 @@
+_id: YhW9mFW9i6vzKbBU
+_key: "!tables.results!n7IlIvMfg7yW1OoE.YhW9mFW9i6vzKbBU"
+documentCollection: cyberpunk-red-core.core_critical-injuries-body
+documentId: IKKcCgHU1lBJ4wVd
+drawn: false
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/critical_injuries/crushed_fingers.svg
+range:
+  - 11
+  - 11
+text: Crushed Fingers
+type: 2
+weight: 1

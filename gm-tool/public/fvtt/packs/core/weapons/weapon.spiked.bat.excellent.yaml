@@ -1,0 +1,56 @@
+_id: sh57bxMsMkSVx2cA
+_key: "!items!sh57bxMsMkSVx2cA"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/weapons/SpikedBat_excellent.svg
+name: Spiked Bat (Excellent)
+system:
+  ammoVariety: []
+  attackmod: 1
+  brand: ""
+  canIgnoreArmor: true
+  concealable:
+    concealable: false
+    isConcealed: false
+  critFailEffect: jammed
+  damage: 3d6
+  description:
+    value: |
+      <p>
+        An advancement over a regular bat. A number of nails have been hammered
+        through towards the tip. +1 to Attack.
+      </p>
+  dvTable: ""
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 2
+  ignoreArmorPercent: 50
+  ignoreBelowSP: 0
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+      - ammo
+    list: []
+    slots: 3
+    usedSlots: 0
+  isRanged: false
+  magazine:
+    max: 0
+    value: 0
+  price:
+    market: 500
+  quality: excellent
+  revealed: true
+  rof: 2
+  source:
+    book: Core
+    page: 340
+  unarmedAutomaticCalculation: true
+  usage: equipped
+  usesType: magazine
+  weaponSkill: Melee Weapon
+  weaponType: heavyMelee
+type: weapon

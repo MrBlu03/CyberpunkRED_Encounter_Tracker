@@ -1,0 +1,12 @@
+_id: pUmneVMNecBD6xLc
+_key: "!tables.results!bOtq937SNIahmbeK.pUmneVMNecBD6xLc"
+documentCollection: cyberpunk-red-core.core_ammo
+documentId: qA9wmNHuGLsxBtRB
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/ammo/rifle_rubber.png
+range:
+  - 4
+  - 4
+text: Rifle (Rubber)
+type: 2
+weight: 1

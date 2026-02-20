@@ -1,0 +1,39 @@
+_id: exv56SDpa0UW3rxp
+_key: "!items.effects!qoegLCfpEOQifeZq.exv56SDpa0UW3rxp"
+changes:
+  - key: bonuses.ranged
+    mode: 2
+    priority: null
+    value: "-2"
+  - key: bonuses.perceptionSight
+    mode: 2
+    priority: null
+    value: "-2"
+description: ""
+disabled: false
+duration:
+  combat: null
+  rounds: null
+  seconds: null
+  startRound: null
+  startTime: null
+  startTurn: null
+  turns: null
+flags:
+  cyberpunk-red-core:
+    changes:
+      cats:
+        "0": combat
+        "1": skill
+      situational:
+        "0":
+          isSituational: false
+          onByDefault: false
+        "1":
+          isSituational: true
+          onByDefault: true
+icon: systems/cyberpunk-red-core/icons/compendium/critical_injuries/damaged_eye.svg
+name: Damaged Eye
+statuses: []
+tint: null
+transfer: true

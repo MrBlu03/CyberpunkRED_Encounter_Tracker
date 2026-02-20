@@ -1,0 +1,12 @@
+_id: sMGT5QJTr2JoaHgO
+_key: "!tables.results!EVPuZ21eNOpEycGQ.sMGT5QJTr2JoaHgO"
+documentCollection: cyberpunk-red-core.black-chrome_weapons
+documentId: DroG3PMwgQcJ3hmk
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/weapons/heavyPistol_poor.svg
+range:
+  - 2
+  - 2
+text: Overlord Handcannon
+type: 2
+weight: 1

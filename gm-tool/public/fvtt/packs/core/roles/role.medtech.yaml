@@ -1,0 +1,81 @@
+_id: 8wRoRsRQnpt3Je00
+_key: "!items!8wRoRsRQnpt3Je00"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/default/Default_Role.svg
+name: Medtech
+system:
+  abilities:
+    - bonusRatio: 1
+      bonuses: []
+      description: ""
+      hasRoll: true
+      index: 0
+      isSituational: false
+      multiplier: 0.5
+      name: Surgery
+      onByDefault: false
+      rank: 0
+      skill: "--"
+      stat: tech
+      universalBonuses: []
+    - bonusRatio: 1
+      bonuses: []
+      description: ""
+      hasRoll: false
+      index: 2
+      isSituational: false
+      multiplier: 1
+      name: Medical Tech (Pharmaceuticals)
+      onByDefault: false
+      rank: 0
+      skill: "--"
+      stat: "--"
+      universalBonuses: []
+    - bonusRatio: 1
+      bonuses: []
+      description: ""
+      hasRoll: false
+      index: 3
+      isSituational: false
+      multiplier: 1
+      name: Medical Tech (Cryosystem Operation)
+      onByDefault: false
+      rank: 0
+      skill: "--"
+      stat: "--"
+      universalBonuses: []
+    - bonusRatio: 1
+      bonuses: []
+      description: ""
+      hasRoll: true
+      index: 1
+      isSituational: false
+      multiplier: 1
+      name: Medical Tech
+      onByDefault: false
+      rank: 0
+      skill: "--"
+      stat: tech
+      universalBonuses: []
+  addRoleAbilityRank: true
+  bonusRatio: 1
+  bonuses: []
+  description:
+    value: |
+      <p>
+        Backalley doctors and mechanics of cyberware, using their skills to keep
+        fellow edgerunners in good shape and cybered up, often at a price.
+      </p>
+  favorite: false
+  hasRoll: false
+  isSituational: false
+  mainRoleAbility: Medicine
+  onByDefault: false
+  rank: 4
+  skill: "--"
+  source:
+    book: Core
+    page: 149
+  stat: "--"
+  universalBonuses: []
+type: role

@@ -1,0 +1,20 @@
+_id: fIq8FZsb8QgBN0sG
+_key: "!items!fIq8FZsb8QgBN0sG"
+effects: []
+img: icons/svg/item-bag.svg
+name: Personal Grooming
+system:
+  basic: false
+  category: socialSkills
+  core: true
+  description:
+    value: ""
+  difficulty: typical
+  favorite: false
+  level: 0
+  skillType: generic
+  source:
+    book: Core
+    page: 139
+  stat: cool
+type: skill

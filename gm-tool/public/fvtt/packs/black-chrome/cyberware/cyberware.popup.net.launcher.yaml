@@ -1,0 +1,62 @@
+_id: oYcEZ8R8qVoalhyI
+_key: "!items!oYcEZ8R8qVoalhyI"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/black-chrome/popup-net.svg
+name: Popup Net Launcher
+system:
+  ammoVariety:
+    - custom
+  attackmod: 0
+  brand: Pursuit Security Inc.
+  concealable:
+    concealable: false
+    isConcealed: false
+  core: false
+  critFailEffect: jammed
+  damage: "0"
+  description:
+    value: |
+      <p>
+        A concealable exotic net launcher. Can't hold anything with this hand while
+        activated.
+      </p>
+  dvTable: DV Shotgun (Slug)
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  humanityLoss:
+    roll: 2d6
+    static: 7
+  installLocation: clinic
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+      - ammo
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: true
+  isFoundational: false
+  isRanged: true
+  isWeapon: true
+  magazine:
+    max: 1
+    value: 0
+  price:
+    market: 500
+  providesHardening: false
+  revealed: true
+  rof: 1
+  size: 3
+  source:
+    book: BC
+    page: 20
+  type: cyberArm
+  unarmedAutomaticCalculation: true
+  usage: toggled
+  usesType: magazine
+  weaponSkill: Shoulder Arms
+  weaponType: grenadeLauncher
+type: cyberware

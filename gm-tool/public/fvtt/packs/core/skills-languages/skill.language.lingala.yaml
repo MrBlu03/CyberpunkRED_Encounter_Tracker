@@ -1,0 +1,20 @@
+_id: exEJpFxH0ABHCF9k
+_key: "!items!exEJpFxH0ABHCF9k"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/default/Default_Skill.svg
+name: Language (Lingala)
+system:
+  basic: false
+  category: educationSkills
+  core: false
+  description:
+    value: ""
+  difficulty: typical
+  favorite: false
+  level: 4
+  skillType: language
+  source:
+    book: Core
+    page: 45
+  stat: int
+type: skill

@@ -1,0 +1,33 @@
+_id: Ed0JaqTO1JyAUa47
+_key: "!items!Ed0JaqTO1JyAUa47"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/gear/braindance_viewer.svg
+name: Braindance Viewer
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>Braindance viewing device.</p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: true
+  price:
+    market: 1000
+  providesHardening: false
+  revealed: true
+  source:
+    book: Core
+    page: 352
+  usage: toggled
+type: gear

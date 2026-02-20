@@ -1,0 +1,58 @@
+_id: Iu2wDz9q6Ov0UAKo
+_key: "!items!Iu2wDz9q6Ov0UAKo"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/cyberware/multioptic_mount.svg
+name: MultiOptic Mount
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  core: false
+  damage: 1d6
+  description:
+    value: >
+      <p>Allows you to install up to 5 more cybereyes. Cybereyes sold
+      separately.</p>
+  dvTable: ""
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  humanityLoss:
+    roll: 4d6
+    static: 14
+  installLocation: hospital
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+      - cyberware
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: true
+  isFoundational: true
+  isRanged: false
+  isWeapon: false
+  magazine:
+    max: 0
+    value: 0
+  price:
+    market: 1000
+  providesHardening: false
+  revealed: true
+  rof: 1
+  size: 0
+  source:
+    book: Core
+    page: 367
+  type: borgware
+  unarmedAutomaticCalculation: true
+  usage: toggled
+  usesType: magazine
+  weaponSkill: Archery
+  weaponType: assaultRifle
+type: cyberware

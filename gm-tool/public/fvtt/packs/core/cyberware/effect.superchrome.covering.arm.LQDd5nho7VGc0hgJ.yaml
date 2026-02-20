@@ -1,0 +1,31 @@
+_id: LQDd5nho7VGc0hgJ
+_key: "!items.effects!CHQVWD2VlDiWJSzf.LQDd5nho7VGc0hgJ"
+changes:
+  - key: bonuses.wardrobeAndStyle
+    mode: 2
+    priority: null
+    value: "2"
+description: ""
+disabled: false
+duration:
+  combat: null
+  rounds: null
+  seconds: null
+  startRound: null
+  startTime: null
+  startTurn: null
+  turns: null
+flags:
+  cyberpunk-red-core:
+    changes:
+      cats:
+        "0": skill
+      situational:
+        "0":
+          isSituational: false
+          onByDefault: false
+icon: systems/cyberpunk-red-core/icons/compendium/cyberware/superchrome_covering.svg
+name: Superchrome® Covering (Arm)
+statuses: []
+tint: null
+transfer: true

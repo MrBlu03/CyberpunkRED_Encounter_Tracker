@@ -1,0 +1,72 @@
+_id: z8NN97JkdZUUFYud
+_key: "!macros!z8NN97JkdZUUFYud"
+command: |-
+  /*
+   * Get EMP'd Items Macro
+   *
+   * Description:
+   *   Compiles a list of Installed Cyberware, Carried Cyberdecks
+   *   Carried Electronic Gear. Then selects 2 at random and outputs
+   *   the results to chat.
+   *
+   * Usage:
+   *   Select 1 or more tokens in a Scene then run the Macro
+   */
+
+  /*
+   * Helper functions
+   */
+
+  // Shuffle an array's items
+  function shuffle(array) {
+    let currentIndex = array.length,
+      randomIndex;
+    while (currentIndex != 0) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex],
+        array[currentIndex],
+      ];
+    }
+    return array;
+  }
+
+  // Get all selected tokens
+  const allTokens = canvas.tokens.controlled;
+
+  if (allTokens.length === 0) {
+    return ui.notifications.warn(game.i18n.localize("CPR.macro.noTokenSelected"));
+  }
+
+  for (const token of allTokens) {
+    let actor = token.actor;
+
+    const items = await game.cpr.api.actor.getEMPableItems(actor);
+
+    let empItems = shuffle(items).slice(0, 2);
+    let become = empItems.length > 1 ? "become" : "becomes";
+
+    let message;
+    if (empItems.length === 2) {
+      message = game.i18n.format("CPR.macro.emp.hasMultipleItems", {
+        actor: token.document.name,
+        item1: empItems[0],
+        item2: empItems[1],
+      });
+    } else if (empItems.length === 1) {
+      message = game.i18n.format("CPR.macro.emp.hasSingleItem", {
+        actor: token.document.name,
+        item: empItems[0],
+      });
+    } else {
+      message = game.i18n.format("CPR.macro.emp.hasNoItems", {
+        actor: token.document.name,
+      });
+    }
+    ChatMessage.create({ content: message });
+  }
+img: systems/cyberpunk-red-core/icons/macros/get-empd.svg
+name: Get EMP'd Items
+scope: global
+type: script

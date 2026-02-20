@@ -1,0 +1,12 @@
+_id: Nzy48k6l0ISVynhn
+_key: "!tables.results!4S3emhUCIIDNoTAg.Nzy48k6l0ISVynhn"
+documentCollection: cyberpunk-red-core.core_ammo
+documentId: wTLwxLUvBBoM3yhM
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/ammo/pistolmedium_incendiary.png
+range:
+  - 3
+  - 3
+text: Medium Pistol (Incendiary)
+type: 2
+weight: 1

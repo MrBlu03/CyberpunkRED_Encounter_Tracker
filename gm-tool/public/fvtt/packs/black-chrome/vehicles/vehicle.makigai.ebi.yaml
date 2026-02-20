@@ -1,0 +1,31 @@
+_id: rUOr6Yn2r6AZ91XW
+_key: "!items!rUOr6Yn2r6AZ91XW"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/black-chrome/makagai-ebi.svg
+name: Makigai Ebi
+system:
+  brand: Makigai
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>Small but well thought out Compact Groundcar.</p>
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  price:
+    market: 23000
+  sdp: 35
+  seats: 4
+  source:
+    book: BC
+    page: 72
+  speedCombat: 20
+  speedNarrative: 100 MPH / 161 KPH
+type: vehicle

@@ -1,0 +1,31 @@
+_id: cBI5wVXww67hC4qx
+_key: "!items.effects!YM2dXOMEhmYn3LKy.cBI5wVXww67hC4qx"
+changes:
+  - key: system.stats.move.value
+    mode: 5
+    priority: null
+    value: "5"
+description: ""
+disabled: false
+duration:
+  combat: null
+  rounds: null
+  seconds: null
+  startRound: null
+  startTime: null
+  startTurn: null
+  turns: null
+flags:
+  cyberpunk-red-core:
+    changes:
+      cats:
+        "0": stat
+      situational:
+        "0":
+          isSituational: false
+          onByDefault: false
+icon: systems/cyberpunk-red-core/icons/compendium/cyberchairs/cyberchair.svg
+name: Spider Cyberchair
+statuses: []
+tint: null
+transfer: true

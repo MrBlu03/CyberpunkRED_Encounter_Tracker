@@ -1,0 +1,37 @@
+_id: 5I7hkCleUNdrgRoI
+_key: "!items!5I7hkCleUNdrgRoI"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/spinning_your_wheels/skateboard.svg
+name: Skateboard
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        The coolest wheels around. Increases moment by 4 m/yds when using the Run
+        Action on level or downwards ground. May cause physical tasks to be done at
+        -2.
+      </p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: false
+    allowedTypes: []
+    list: []
+    slots: 0
+    usedSlots: 0
+  isElectronic: false
+  price:
+    market: 50
+  providesHardening: false
+  revealed: true
+  source:
+    book: SYW
+    page: 5
+  usage: toggled
+type: gear

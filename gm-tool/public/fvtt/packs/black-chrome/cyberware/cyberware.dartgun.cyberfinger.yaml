@@ -1,0 +1,62 @@
+_id: Vvi8yU2On6338ALX
+_key: "!items!Vvi8yU2On6338ALX"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/black-chrome/cyberfinger.svg
+name: Dartgun Cyberfinger
+system:
+  ammoVariety:
+    - arrow
+  attackmod: 0
+  brand: Dynalar Technologies
+  concealable:
+    concealable: true
+    isConcealed: false
+  core: false
+  critFailEffect: jammed
+  damage: 4d6
+  description:
+    value: |
+      <p>
+        Cyberfinger that holds a concealed Dartgun. Can only be installed on a modular
+        finger cyberhand.
+      </p>
+  dvTable: DV Pistol
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  humanityLoss:
+    roll: 2d6
+    static: 7
+  installLocation: mall
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+      - ammo
+    list: []
+    slots: 0
+    usedSlots: 0
+  isElectronic: true
+  isFoundational: false
+  isRanged: true
+  isWeapon: true
+  magazine:
+    max: 1
+    value: 0
+  price:
+    market: 500
+  providesHardening: false
+  revealed: true
+  rof: 1
+  size: 1
+  source:
+    book: BC
+    page: 24
+  type: cyberArm
+  unarmedAutomaticCalculation: true
+  usage: toggled
+  usesType: magazine
+  weaponSkill: Handgun
+  weaponType: vHeavyPistol
+type: cyberware

@@ -1,0 +1,45 @@
+_id: DbASrTymPy4wHNpX
+_key: "!items!DbASrTymPy4wHNpX"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/armor/kevlar_body.svg
+name: Kevlar® (Body)
+system:
+  bodyLocation:
+    ablation: 0
+    sp: 7
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>Standard Kevlar clothing. No armor penalty.</p>
+  equipped: owned
+  favorite: false
+  headLocation:
+    ablation: 0
+    sp: 0
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isBodyLocation: true
+  isElectronic: false
+  isHeadLocation: false
+  isShield: false
+  penalty: 0
+  price:
+    market: 50
+  providesHardening: false
+  revealed: true
+  shieldHitPoints:
+    max: 0
+    value: 0
+  source:
+    book: Core
+    page: 350
+  usage: equipped
+type: armor

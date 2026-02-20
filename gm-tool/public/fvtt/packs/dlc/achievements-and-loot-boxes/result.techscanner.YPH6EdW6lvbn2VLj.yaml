@@ -1,0 +1,12 @@
+_id: YPH6EdW6lvbn2VLj
+_key: "!tables.results!WmWdGRlhzhA2ZcmV.YPH6EdW6lvbn2VLj"
+documentCollection: cyberpunk-red-core.core_cyberware
+documentId: 2EvWIW0HXwoBK6xq
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/cyberware/techscanner.svg
+range:
+  - 6
+  - 6
+text: Techscanner
+type: 2
+weight: 1

@@ -1,0 +1,55 @@
+_id: C1u6clpJPtn9DAWo
+_key: "!items!C1u6clpJPtn9DAWo"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/weapons/heavyPistol_poor.svg
+name: E-TACK Public Defender
+system:
+  ammoVariety:
+    - heavyPistol
+  attackmod: 0
+  brand: Pursuit Security Inc.
+  concealable:
+    concealable: true
+    isConcealed: false
+  critFailEffect: jammed
+  damage: 3d6
+  description:
+    value: |
+      <p>
+        Comes with a Smartgun Link attachment*. The User needs a Subdermal Grip to
+        operate it. It has a Lethal and Non-lethal mode.
+      </p>
+      <p><em>* This Upgrade needs to be added manually.</em></p>
+  dvTable: DV Pistol
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 1
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+      - ammo
+    list: []
+    slots: 0
+    usedSlots: 0
+  isRanged: true
+  magazine:
+    max: 8
+    value: 0
+  price:
+    market: 500
+  quality: standard
+  revealed: true
+  rof: 2
+  source:
+    book: BC
+    page: 115
+  unarmedAutomaticCalculation: true
+  usage: equipped
+  usesType: magazine
+  weaponSkill: Handgun
+  weaponType: heavyPistol
+type: weapon

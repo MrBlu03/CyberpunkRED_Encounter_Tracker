@@ -1,0 +1,20 @@
+_id: wQZ4N3RJXfcAY5hR
+_key: "!items!wQZ4N3RJXfcAY5hR"
+effects: []
+img: icons/svg/item-bag.svg
+name: Pilot Air Vehicle
+system:
+  basic: false
+  category: controlSkills
+  core: true
+  description:
+    value: ""
+  difficulty: difficult
+  favorite: false
+  level: 0
+  skillType: generic
+  source:
+    book: Core
+    page: 132
+  stat: ref
+type: skill

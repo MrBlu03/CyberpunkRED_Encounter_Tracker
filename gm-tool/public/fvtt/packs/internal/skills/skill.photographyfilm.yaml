@@ -1,0 +1,20 @@
+_id: MRodaB3wlDzSQJl8
+_key: "!items!MRodaB3wlDzSQJl8"
+effects: []
+img: icons/svg/item-bag.svg
+name: Photography/Film
+system:
+  basic: false
+  category: techniqueSkills
+  core: true
+  description:
+    value: ""
+  difficulty: typical
+  favorite: false
+  level: 0
+  skillType: generic
+  source:
+    book: Core
+    page: 141
+  stat: tech
+type: skill

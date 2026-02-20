@@ -1,0 +1,115 @@
+_id: Ige6zeGaInYghHM1
+_key: "!items!Ige6zeGaInYghHM1"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/upgrades/onboard_machine_gun.svg
+name: Onboard Machine Gun
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: ""
+  concealable:
+    concealable: true
+    isConcealed: false
+  damage: 1d6
+  description:
+    value: |
+      <p>
+        Can be applied to all vehicles. An <strong>Assault Rifle</strong> with a 30
+        round capacity and only capable of Autofire, that can be mounted facing the
+        front of the vehicle. The driver may fire it using an Action, cannot be
+        reloaded while driving and cannot accept weapon attachments.
+      </p>
+      <p>You may install this upgrade multiple times.</p>
+  dvTable: ""
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 0
+  installLocation: mall
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: false
+  isRanged: false
+  magazine:
+    max: 0
+    value: 0
+  modifiers:
+    Wardrobe & Style:
+      isSituational: false
+      onByDefault: false
+      value: null
+    attackmod:
+      isSituational: false
+      onByDefault: false
+      type: modifier
+      value: null
+    bodySp:
+      isSituational: false
+      onByDefault: false
+      value: null
+    cool:
+      isSituational: false
+      onByDefault: false
+      value: null
+    damage:
+      isSituational: false
+      onByDefault: false
+      type: modifier
+      value: null
+    headSp:
+      isSituational: false
+      onByDefault: false
+      value: null
+    magazine:
+      isSituational: false
+      onByDefault: false
+      type: modifier
+      value: null
+    rof:
+      isSituational: false
+      onByDefault: false
+      type: modifier
+      value: null
+    sdp:
+      isSituational: false
+      onByDefault: false
+      type: modifier
+      value: null
+    seats:
+      isSituational: false
+      onByDefault: false
+      type: modifier
+      value: null
+    secondaryWeapon:
+      configured: false
+    shieldHp:
+      isSituational: false
+      onByDefault: false
+      value: null
+    slots:
+      isSituational: false
+      onByDefault: false
+      value: null
+    speedCombat:
+      type: modifier
+      value: null
+  price:
+    market: 1000
+  providesHardening: false
+  rof: 1
+  size: 0
+  source:
+    book: Core
+    page: 163
+  type: vehicle
+  unarmedAutomaticCalculation: true
+  usesType: magazine
+  weaponSkill: ""
+  weaponType: ""
+type: itemUpgrade

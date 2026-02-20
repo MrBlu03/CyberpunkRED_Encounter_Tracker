@@ -1,0 +1,43 @@
+_id: RZ7P9nSOB21pfiaI
+_key: "!items!RZ7P9nSOB21pfiaI"
+effects:
+  - 1dgpY8OTKpsl4vq9
+  - cDOJ0bvvt3q79G8y
+img: systems/cyberpunk-red-core/icons/compendium/hornets_pharmacy/prime_time.svg
+name: Prime Time
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  consumed: Prime Time
+  description:
+    value: |
+      <p><strong>Primary Effect</strong></p>
+      <p>Dose last 4 Hours.</p>
+      <ul>
+        <li>Sharpens focus and willpower at the cost of dampened emotions</li>
+        <li>-4d6 Humanity until dose wears off*</li>
+        <li>+2 to COOL and WILL stats. User's max HP not affected by the +2 WILL</li>
+      </ul>
+      <p><em>* Humanity can not fall under 0 from taking Prime Time</em></p>
+      <p><strong>Secondary (DV17)</strong></p>
+      <p>
+        When the dose wears off, the user rolls
+        <strong>WILL + Resist Torture/Drugs + 1d10 against Secondary DV</strong>.
+      </p>
+      <ul>
+        <li>-1 Humanity Loss</li>
+        <li>-2 to COOL while addicted and not currently dosed with Prime Time.</li>
+      </ul>
+  equipped: owned
+  favorite: false
+  price:
+    market: 50
+  revealed: true
+  source:
+    book: HP
+    page: 3
+  usage: snorted
+type: drug

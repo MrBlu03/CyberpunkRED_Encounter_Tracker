@@ -1,0 +1,56 @@
+_id: TIIsI6khCIZE4iip
+_key: "!items!TIIsI6khCIZE4iip"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/weapons/Chainsaw_excellent.svg
+name: Chainsaw (Excellent)
+system:
+  ammoVariety: []
+  attackmod: 1
+  brand: ""
+  canIgnoreArmor: true
+  concealable:
+    concealable: false
+    isConcealed: false
+  critFailEffect: jammed
+  damage: 4d6
+  description:
+    value: |
+      <p>
+        A portable, refuellable saw that runs on CHOOH<sup>2</sup>. Lasts about 2-3
+        hours on one tank. +1 to Attack.
+      </p>
+  dvTable: ""
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 2
+  ignoreArmorPercent: 50
+  ignoreBelowSP: 0
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+      - ammo
+    list: []
+    slots: 3
+    usedSlots: 0
+  isRanged: false
+  magazine:
+    max: 0
+    value: 0
+  price:
+    market: 1000
+  quality: excellent
+  revealed: true
+  rof: 1
+  source:
+    book: Core
+    page: 340
+  unarmedAutomaticCalculation: true
+  usage: equipped
+  usesType: magazine
+  weaponSkill: Melee Weapon
+  weaponType: vHeavyMelee
+type: weapon

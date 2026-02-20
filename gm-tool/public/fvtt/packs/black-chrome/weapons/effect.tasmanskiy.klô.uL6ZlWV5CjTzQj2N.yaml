@@ -1,0 +1,31 @@
+_id: uL6ZlWV5CjTzQj2N
+_key: "!items.effects!Aq3Fim1KykSIjtXU.uL6ZlWV5CjTzQj2N"
+changes:
+  - key: bonuses.interrogation
+    mode: 2
+    priority: null
+    value: "2"
+description: ""
+disabled: false
+duration:
+  combat: null
+  rounds: null
+  seconds: null
+  startRound: null
+  startTime: null
+  startTurn: null
+  turns: null
+flags:
+  cyberpunk-red-core:
+    changes:
+      cats:
+        "0": skill
+      situational:
+        "0":
+          isSituational: false
+          onByDefault: false
+icon: systems/cyberpunk-red-core/icons/compendium/cyberweapons/wolvers.svg
+name: Tasmanskiy Klô
+statuses: []
+tint: null
+transfer: true

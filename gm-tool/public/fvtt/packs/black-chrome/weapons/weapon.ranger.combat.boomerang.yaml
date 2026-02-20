@@ -1,0 +1,58 @@
+_id: sOsNx7YCfB7Z1c6D
+_key: "!items!sOsNx7YCfB7Z1c6D"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/black-chrome/ranger-combat-boomerang.svg
+name: Ranger Combat Boomerang
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: Everest VentureWare
+  canIgnoreArmor: true
+  concealable:
+    concealable: false
+    isConcealed: false
+  critFailEffect: jammed
+  damage: 3d6
+  description:
+    value: |
+      <p>
+        Acts like a one Handed Exotic Heavy Melee, though halves SP despite being
+        thrown.
+      </p>
+      <p>Contains a built in guidance system.</p>
+  dvTable: DV Thrown Weapon
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 1
+  ignoreArmorPercent: 50
+  ignoreBelowSP: 0
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+      - ammo
+    list: []
+    slots: 3
+    usedSlots: 0
+  isRanged: true
+  magazine:
+    max: 0
+    value: 0
+  price:
+    market: 1000
+  quality: standard
+  revealed: true
+  rof: 2
+  source:
+    book: BC
+    page: 100
+  unarmedAutomaticCalculation: true
+  usage: toggled
+  usesType: magazine
+  weaponSkill: Athletics
+  weaponType: thrownWeapon
+type: weapon

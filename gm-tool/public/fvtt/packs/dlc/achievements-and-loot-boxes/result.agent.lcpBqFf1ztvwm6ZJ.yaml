@@ -1,0 +1,12 @@
+_id: lcpBqFf1ztvwm6ZJ
+_key: "!tables.results!T6pocp9VStxtFPzP.lcpBqFf1ztvwm6ZJ"
+documentCollection: cyberpunk-red-core.core_gear
+documentId: GqYz689ddSKQHMen
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/gear/agent.svg
+range:
+  - 5
+  - 5
+text: Agent
+type: 2
+weight: 1

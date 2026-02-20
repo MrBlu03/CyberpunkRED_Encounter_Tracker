@@ -1,0 +1,46 @@
+_id: ReNlsir0b9jmxnPi
+_key: "!items!ReNlsir0b9jmxnPi"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/armor/medium-armorjack_head.svg
+name: Medium Armorjack (Head)
+system:
+  bodyLocation:
+    ablation: 0
+    sp: 0
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: >
+      <p>Medium version of an Armorjack for your head. -2 to REF, DEX, and
+      MOVE.</p>
+  equipped: owned
+  favorite: false
+  headLocation:
+    ablation: 0
+    sp: 12
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isBodyLocation: false
+  isElectronic: false
+  isHeadLocation: true
+  isShield: false
+  penalty: 2
+  price:
+    market: 100
+  providesHardening: false
+  revealed: true
+  shieldHitPoints:
+    max: 0
+    value: 0
+  source:
+    book: Core
+    page: 350
+  usage: equipped
+type: armor

@@ -1,0 +1,39 @@
+_id: omSuV3gSqbIedBhs
+_key: "!items!omSuV3gSqbIedBhs"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/default/cyberdeck.svg
+name: Verdant Knight
+system:
+  brand: SGI Technologies
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        The classic sword-and-board Cyberdeck build is highly effective against Black
+        ICE. Just don&rsquo;t plan on going toe-to-toe with a hostile Netrunner.
+      </p>
+      <p>9 slots only for Programs.</p>
+      <p>Slots only accept Sword or Shield Programs.</p>
+  equipped: owned
+  favorite: false
+  installLocation: mall
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+      - program
+    list: []
+    slots: 9
+    usedSlots: 0
+  isElectronic: true
+  price:
+    market: 500
+  providesHardening: false
+  quality: standard
+  size: 1
+  source:
+    book: MwtU
+    page: 4
+type: cyberdeck

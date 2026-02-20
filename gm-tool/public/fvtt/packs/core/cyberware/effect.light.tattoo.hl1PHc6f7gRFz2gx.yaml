@@ -1,0 +1,31 @@
+_id: hl1PHc6f7gRFz2gx
+_key: "!items.effects!VbMY2fs3im1sP2dJ.hl1PHc6f7gRFz2gx"
+changes:
+  - key: bonuses.wardrobeAndStyle
+    mode: 2
+    priority: null
+    value: "2"
+description: ""
+disabled: false
+duration:
+  combat: null
+  rounds: null
+  seconds: null
+  startRound: null
+  startTime: null
+  startTurn: null
+  turns: null
+flags:
+  cyberpunk-red-core:
+    changes:
+      cats:
+        "0": skill
+      situational:
+        "0":
+          isSituational: false
+          onByDefault: false
+icon: systems/cyberpunk-red-core/icons/compendium/cyberware/light_tattoo.svg
+name: Light Tattoo
+statuses: []
+tint: null
+transfer: true

@@ -1,0 +1,33 @@
+_id: clCxd7qkp2olsKii
+_key: "!items!clCxd7qkp2olsKii"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/gear/video_camera.svg
+name: Video Camera
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>12hr per memory chip.</p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: true
+  price:
+    market: 100
+  providesHardening: false
+  revealed: true
+  source:
+    book: Core
+    page: 355
+  usage: toggled
+type: gear

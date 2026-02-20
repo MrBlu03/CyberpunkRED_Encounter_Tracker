@@ -1,0 +1,66 @@
+_id: maC7pXPwRqULiTPF
+_key: "!items!maC7pXPwRqULiTPF"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/weapons/mediumPistol_excellent.svg
+name: MicroCutie by HelloCutie
+system:
+  ammoVariety:
+    - medPistol
+  attackmod: 1
+  brand: Sanroo
+  concealable:
+    concealable: true
+    isConcealed: false
+  critFailEffect: jammed
+  damage: 2d6
+  description:
+    value: |
+      <p>
+        An excellent quality pistol with a unique Hypurrburst™ mode fire mode*. The
+        weapon purrs when used. Hypurrburst™ is disabled if less than 4 bullets are in
+        the clip.
+      </p>
+      <p>When in Hypurrburst™ mode, the following applies</p>
+      <ul>
+        <li>MicroCutie is ROF 1</li>
+        <li>Purrs audibly</li>
+        <li>Fires a single shot, drains clip, and does 4d6 damage</li>
+        <li>Cannot be used to make aimed shots</li>
+      </ul>
+      <p>
+        <em
+          >*Special fire mode not currently supported; will need to be manually
+          applied</em
+        >
+      </p>
+  dvTable: DV Pistol
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 1
+  installedItems:
+    allowed: true
+    allowedTypes: []
+    list: []
+    slots: 0
+    usedSlots: 0
+  isRanged: true
+  magazine:
+    max: 10
+    value: 0
+  price:
+    market: 1000
+  quality: excellent
+  revealed: true
+  rof: 2
+  source:
+    book: MC
+    page: 1
+  unarmedAutomaticCalculation: true
+  usage: equipped
+  usesType: magazine
+  weaponSkill: Handgun
+  weaponType: medPistol
+type: weapon

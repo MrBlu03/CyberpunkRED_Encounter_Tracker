@@ -1,0 +1,57 @@
+_id: gR3ICJgM9CtZnGlr
+_key: "!items!gR3ICJgM9CtZnGlr"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/black-chrome/racer-bracer.svg
+name: RacerBracer
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: Rocklin Augmentics
+  concealable:
+    concealable: false
+    isConcealed: false
+  core: false
+  damage: 1d6
+  description:
+    value: |
+      <p>Internal cyberware. Grants immunity to whiplash.</p>
+  dvTable: ""
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  humanityLoss:
+    roll: 2d6
+    static: 7
+  installLocation: hospital
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+      - ammo
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: true
+  isFoundational: false
+  isRanged: false
+  isWeapon: false
+  magazine:
+    max: 0
+    value: 0
+  price:
+    market: 500
+  providesHardening: false
+  revealed: true
+  rof: 1
+  size: 1
+  source:
+    book: BC
+    page: 22
+  type: cyberwareInternal
+  unarmedAutomaticCalculation: true
+  usage: installed
+  usesType: magazine
+  weaponSkill: Archery
+  weaponType: assaultRifle
+type: cyberware

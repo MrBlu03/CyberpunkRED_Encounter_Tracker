@@ -1,0 +1,55 @@
+_id: IxXIb9gFdbjUCPZW
+_key: "!items!IxXIb9gFdbjUCPZW"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/weapons/Shotgun_poor.svg
+name: GunMart Bubba Buster
+system:
+  ammoVariety:
+    - shotgunShell
+    - shotgunSlug
+  attackmod: 0
+  brand: GunMart
+  concealable:
+    concealable: false
+    isConcealed: false
+  critFailEffect: jammed
+  damage: 5d6
+  description:
+    value: |
+      <p>
+        The GunMart Bubba Buster is a Poor Quality Exotic Shotgun. It destroys itself
+        if fired more than 3 times in a minute.
+      </p>
+  dvTable: DV Shotgun (Slug)
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 2
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+      - ammo
+    list: []
+    slots: 0
+    usedSlots: 0
+  isRanged: true
+  magazine:
+    max: 4
+    value: 0
+  price:
+    market: 50
+  quality: poor
+  revealed: true
+  rof: 1
+  source:
+    book: BC
+    page: 106
+  unarmedAutomaticCalculation: true
+  usage: equipped
+  usesType: magazine
+  weaponSkill: Shoulder Arms
+  weaponType: shotgun
+type: weapon

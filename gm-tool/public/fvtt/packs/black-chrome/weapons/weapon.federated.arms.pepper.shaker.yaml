@@ -1,0 +1,54 @@
+_id: yPKIpu75TmOHSXWi
+_key: "!items!yPKIpu75TmOHSXWi"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/weapons/SMG.svg
+name: Federated Arms Pepper Shaker
+system:
+  ammoVariety:
+    - medPistol
+  attackmod: 0
+  brand: Federated Arms
+  concealable:
+    concealable: true
+    isConcealed: false
+  critFailEffect: jammed
+  damage: "0"
+  description:
+    value: |
+      <p>
+        The Federated Arms Pepper Shaker is an Exotic SMG incapable of single shot or
+        aimed shots. Autofire only use 6 bullets for this weapon.
+      </p>
+  dvTable: DV SMG (Autofire)
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 3
+    suppressiveFire: true
+  handsReq: 1
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+      - ammo
+    list: []
+    slots: 0
+    usedSlots: 0
+  isRanged: true
+  magazine:
+    max: 30
+    value: 0
+  price:
+    market: 500
+  quality: standard
+  revealed: true
+  rof: 1
+  source:
+    book: BC
+    page: 105
+  unarmedAutomaticCalculation: true
+  usage: equipped
+  usesType: magazine
+  weaponSkill: Handgun
+  weaponType: smg
+type: weapon

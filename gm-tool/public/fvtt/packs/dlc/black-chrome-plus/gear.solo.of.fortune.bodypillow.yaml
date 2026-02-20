@@ -1,0 +1,41 @@
+_id: myBn6xsxyEKDcoYc
+_key: "!items!myBn6xsxyEKDcoYc"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/black-chrome-plus/solo-of-fortune-body-pillow.svg
+name: Solo of Fortune Bodypillow
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        Bodypillow with the image of a famous Solo from the 2020s (such as Morgan
+        Blackhand, BoaBoa Weyland, or Adam Smasher).
+      </p>
+      <p>
+        20 inches x 54 inches (50.8 cm x 137.16 cm), except for the Adam Smasher
+        pillow which is considerably larger.
+      </p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 0
+    usedSlots: 0
+  isElectronic: false
+  price:
+    market: 100
+  providesHardening: false
+  revealed: true
+  source:
+    book: BC+
+    page: 5
+  usage: toggled
+type: gear

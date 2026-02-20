@@ -1,0 +1,84 @@
+_id: h8e6qjzoo0JLaNOe
+_key: "!items!h8e6qjzoo0JLaNOe"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/spinning_your_wheels/electric_pedal_assist.svg
+name: Electric Pedal Assist
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  damage: 1d6
+  description:
+    value: |
+      <p>
+        Electric motorised system helping to pedal, increasing speed, lowering
+        tiredness.
+      </p>
+      <p>
+        Increases the bicycle's Speed (narrative) to the next BODY tier or adds
+        5MPH/8KPH to Speed (narrative) if already at the highest BODY tier.
+      </p>
+      <p>
+        Rider get +4 bonus to Endurance Checks to resisting exhaustion when riding.
+      </p>
+  dvTable: ""
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 0
+  installLocation: mall
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: true
+  isRanged: false
+  magazine:
+    max: 0
+    value: 0
+  modifiers:
+    attackmod:
+      type: modifier
+      value: null
+    damage:
+      type: modifier
+      value: null
+    magazine:
+      type: modifier
+      value: null
+    rof:
+      type: modifier
+      value: null
+    sdp:
+      type: modifier
+      value: null
+    seats:
+      type: modifier
+      value: null
+    secondaryWeapon:
+      configured: false
+    speedCombat:
+      type: modifier
+      value: null
+  price:
+    market: 100
+  providesHardening: false
+  rof: 1
+  size: 1
+  source:
+    book: SYW
+    page: 4
+  type: vehicle
+  unarmedAutomaticCalculation: true
+  usesType: magazine
+  weaponSkill: ""
+  weaponType: ""
+type: itemUpgrade

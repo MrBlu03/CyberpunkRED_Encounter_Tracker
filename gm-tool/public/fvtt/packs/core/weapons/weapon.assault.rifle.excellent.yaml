@@ -1,0 +1,51 @@
+_id: Ew9qfNB7omExalEu
+_key: "!items!Ew9qfNB7omExalEu"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/weapons/AssaultRifle_excellent.svg
+name: Assault Rifle (Excellent)
+system:
+  ammoVariety:
+    - rifle
+  attackmod: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  critFailEffect: jammed
+  damage: 5d6
+  description:
+    value: |
+      <p>A standard-issue assault rifle. +1 to Attack.</p>
+  dvTable: DV Assault Rifle
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 4
+    suppressiveFire: true
+  handsReq: 2
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+      - ammo
+    list: []
+    slots: 3
+    usedSlots: 0
+  isRanged: true
+  magazine:
+    max: 25
+    value: 0
+  price:
+    market: 1000
+  quality: excellent
+  revealed: true
+  rof: 1
+  source:
+    book: Core
+    page: 341
+  unarmedAutomaticCalculation: true
+  usage: equipped
+  usesType: magazine
+  weaponSkill: Shoulder Arms
+  weaponType: assaultRifle
+type: weapon

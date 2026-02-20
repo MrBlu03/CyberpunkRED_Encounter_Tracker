@@ -1,0 +1,28 @@
+_id: fRtXPlBcWvtgtNTf
+_key: "!items!fRtXPlBcWvtgtNTf"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/drugs/rapidetox.svg
+name: Rapidetox
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  consumed: None
+  description:
+    value: |
+      <p>
+        Injecting a target with Rapidetox will eliminate the effects of any drugs,
+        poisons, or intoxicants they are currently affected by.
+      </p>
+  equipped: owned
+  favorite: false
+  price:
+    market: 0
+  revealed: true
+  source:
+    book: Core
+    page: 150
+  usage: toggled
+type: drug

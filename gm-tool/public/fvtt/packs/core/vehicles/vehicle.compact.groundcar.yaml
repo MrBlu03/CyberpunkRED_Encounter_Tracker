@@ -1,0 +1,34 @@
+_id: jR1AReHKQFieIdWD
+_key: "!items!jR1AReHKQFieIdWD"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/default/Default_Vehicle.svg
+name: Compact Groundcar
+system:
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        A CHOOH<sup>2</sup>-powered ground car. Very common with a few dozen
+        manufacturers producing similar models.
+      </p>
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  price:
+    market: 30000
+  sdp: 50
+  seats: 4
+  source:
+    book: Core
+    page: 190
+  speedCombat: 20
+  speedNarrative: 100 MPH / 161 KPH
+type: vehicle

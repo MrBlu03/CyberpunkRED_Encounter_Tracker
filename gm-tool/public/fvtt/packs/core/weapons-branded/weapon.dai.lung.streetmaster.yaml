@@ -1,0 +1,54 @@
+_id: 4G6k62Kr5KWaEYoi
+_key: "!items!4G6k62Kr5KWaEYoi"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/weapons/mediumPistol_poor.svg
+name: Dai Lung Streetmaster
+system:
+  ammoVariety:
+    - medPistol
+  attackmod: 0
+  brand: Dai Lung
+  concealable:
+    concealable: true
+    isConcealed: false
+  critFailEffect: jammed
+  damage: 2d6
+  description:
+    value: |
+      <p>
+        A concealable, medium-sized pistol. If you roll 1 on Attack (Crit fail) the
+        gun jams and requires using an action to clear.
+      </p>
+  dvTable: DV Pistol
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 1
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+      - ammo
+    list: []
+    slots: 3
+    usedSlots: 0
+  isRanged: true
+  magazine:
+    max: 12
+    value: 0
+  price:
+    market: 20
+  quality: standard
+  revealed: true
+  rof: 2
+  source:
+    book: Core
+    page: 341
+  unarmedAutomaticCalculation: true
+  usage: equipped
+  usesType: magazine
+  weaponSkill: Handgun
+  weaponType: medPistol
+type: weapon

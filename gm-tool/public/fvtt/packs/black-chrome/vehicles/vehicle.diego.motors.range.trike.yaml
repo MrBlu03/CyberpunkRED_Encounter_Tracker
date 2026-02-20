@@ -1,0 +1,31 @@
+_id: Q8XG4TMqvwqMfaZK
+_key: "!items!Q8XG4TMqvwqMfaZK"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/black-chrome/range-trike.svg
+name: Diego Motors Range Trike
+system:
+  brand: Diego Motors
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>Three wheeled Roadbike.</p>
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  price:
+    market: 31000
+  sdp: 55
+  seats: 3
+  source:
+    book: BC
+    page: 67
+  speedCombat: 20
+  speedNarrative: 100 MPH / 161 KPH
+type: vehicle

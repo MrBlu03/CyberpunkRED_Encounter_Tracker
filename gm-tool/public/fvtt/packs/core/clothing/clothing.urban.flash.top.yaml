@@ -1,0 +1,38 @@
+_id: 7RWqk1fmaZdfddaT
+_key: "!items!7RWqk1fmaZdfddaT"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/clothing/generic_top.svg
+name: Urban Flash Top
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        The most technological and flashy clothing you can find in the Time of the
+        Red.
+      </p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: false
+  price:
+    market: 20
+  providesHardening: false
+  revealed: true
+  source:
+    book: Core
+    page: 356
+  style: urbanFlash
+  type: top
+  usage: equipped
+type: clothing

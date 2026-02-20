@@ -1,0 +1,15 @@
+_id: 8tPYFbdWUb2tb3mH
+_key: "!tables.results!bEeDgE9CfongXFAR.8tPYFbdWUb2tb3mH"
+documentCollection: ""
+documentId: null
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/night_city_tarot/the_lovers.svg
+range:
+  - 7
+  - 7
+text: >-
+  The Lovers. The Attack is now treated as an Aimed Shot to the Head. If the
+  Attack was a Melee Attack, the target is now grappled by the Attacker. (See
+  Night City Tarot Page 3).
+type: 0
+weight: 1

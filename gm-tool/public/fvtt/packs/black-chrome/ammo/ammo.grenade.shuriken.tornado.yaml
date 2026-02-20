@@ -1,0 +1,38 @@
+_id: KPSBX2Ns6cj6JC4v
+_key: "!items!KPSBX2Ns6cj6JC4v"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/ammo/grenade_armorpiercing.png
+name: Grenade (Shuriken Tornado)
+system:
+  ablationValue: 2
+  amount: 1
+  brand: Great Lakes Cutlery
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        A literal explosion of shurikens. Armor Piercing grenade. Each shuriken from
+        explosion deals individual damage.
+      </p>
+  favorite: false
+  installLocation: mall
+  overrides:
+    autofire:
+      minimum: 3
+      mode: none
+      value: -1
+    damage:
+      minimum: 1d6
+      mode: none
+      value: 3d6
+  price:
+    market: 100
+  size: 0
+  source:
+    book: BC
+    page: 87
+  type: special
+  variety: grenade
+type: ammo

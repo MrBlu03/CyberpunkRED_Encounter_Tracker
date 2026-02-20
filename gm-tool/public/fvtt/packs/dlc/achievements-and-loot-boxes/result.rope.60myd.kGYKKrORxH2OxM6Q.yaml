@@ -1,0 +1,12 @@
+_id: kGYKKrORxH2OxM6Q
+_key: "!tables.results!uq1cseo3a1hAx7Pg.kGYKKrORxH2OxM6Q"
+documentCollection: cyberpunk-red-core.core_gear
+documentId: i0xmIJjhcMKIWJ0M
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/gear/rope.svg
+range:
+  - 1
+  - 1
+text: Rope (60m/yd)
+type: 2
+weight: 1

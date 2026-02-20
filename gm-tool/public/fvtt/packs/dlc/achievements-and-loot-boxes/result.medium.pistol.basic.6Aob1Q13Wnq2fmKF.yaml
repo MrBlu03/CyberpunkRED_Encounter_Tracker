@@ -1,0 +1,12 @@
+_id: 6Aob1Q13Wnq2fmKF
+_key: "!tables.results!4S3emhUCIIDNoTAg.6Aob1Q13Wnq2fmKF"
+documentCollection: cyberpunk-red-core.core_ammo
+documentId: 6OdC9uNTwgQLFdto
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/ammo/pistolmedium_basic.png
+range:
+  - 3
+  - 3
+text: Medium Pistol (Basic)
+type: 2
+weight: 1

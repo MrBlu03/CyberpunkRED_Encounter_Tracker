@@ -1,0 +1,55 @@
+_id: LrmIgdYrPbDUw2mw
+_key: "!items!LrmIgdYrPbDUw2mw"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/weapons/AssaultRifle_poor.svg
+name: Sternmeyer M-04 Variable Assault
+system:
+  ammoVariety:
+    - rifle
+  attackmod: 0
+  brand: Sternmeyer
+  concealable:
+    concealable: false
+    isConcealed: false
+  critFailEffect: jammed
+  damage: 5d6
+  description:
+    value: |
+      <p>
+        The Sternmeyer M-04 Variable Assault is a Poor Quality Exotic Assault Rifle
+        with a custom Grenade Launcher underbarrel*.
+      </p>
+      <p><em>*Grenade Launcher must be manually added.</em></p>
+  dvTable: DV Assault Rifle
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 4
+    suppressiveFire: true
+  handsReq: 2
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+      - ammo
+    list: []
+    slots: 0
+    usedSlots: 0
+  isRanged: true
+  magazine:
+    max: 20
+    value: 0
+  price:
+    market: 500
+  quality: poor
+  revealed: true
+  rof: 1
+  source:
+    book: BC
+    page: 119
+  unarmedAutomaticCalculation: true
+  usage: toggled
+  usesType: magazine
+  weaponSkill: Shoulder Arms
+  weaponType: assaultRifle
+type: weapon

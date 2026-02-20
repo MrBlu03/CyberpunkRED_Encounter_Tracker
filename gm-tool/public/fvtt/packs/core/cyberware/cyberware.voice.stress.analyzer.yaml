@@ -1,0 +1,61 @@
+_id: 5PWjp9rOnZuhYPPu
+_key: "!items!5PWjp9rOnZuhYPPu"
+effects:
+  - teuelimTBgI5OKAx
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/cyberware/voice_stress_analyzer.svg
+name: Voice Stress Analyzer
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  core: false
+  damage: 1d6
+  description:
+    value: |
+      <p>
+        Provides +2 to Human Perception and Interrogation checks. Can activate a
+        special lie-detecting mode.
+      </p>
+  dvTable: ""
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  humanityLoss:
+    roll: 1d6
+    static: 3
+  installLocation: mall
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: true
+  isFoundational: false
+  isRanged: false
+  isWeapon: false
+  magazine:
+    max: 0
+    value: 0
+  price:
+    market: 100
+  providesHardening: false
+  revealed: true
+  rof: 1
+  size: 1
+  source:
+    book: Core
+    page: 362
+  type: cyberAudioSuite
+  unarmedAutomaticCalculation: true
+  usage: installed
+  usesType: magazine
+  weaponSkill: Archery
+  weaponType: assaultRifle
+type: cyberware

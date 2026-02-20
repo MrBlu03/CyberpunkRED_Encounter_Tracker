@@ -1,0 +1,33 @@
+_id: tr7G2kdlPBTvyTON
+_key: "!items!tr7G2kdlPBTvyTON"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/gear/vial_biotoxin.svg
+name: Vial of Biotoxin
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>3d6 damage unless Resist Torture/Drugs. Armor does not apply.</p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: false
+  price:
+    market: 500
+  providesHardening: false
+  revealed: true
+  source:
+    book: Core
+    page: 355
+  usage: toggled
+type: gear

@@ -1,0 +1,13 @@
+_id: fQTbhhUcSlRuNsSf
+_key: "!tables.results!uq1cseo3a1hAx7Pg.fQTbhhUcSlRuNsSf"
+documentCollection: cyberpunk-red-core.dlc_the-12-days-of-cybermas
+documentId: U8SdGzK5sIdWHaQ1
+drawn: false
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/the_12_days_of_cybermas/cybermatrix_gang_jazzler.svg
+range:
+  - 6
+  - 6
+text: Gang Jazzler
+type: 2
+weight: 1

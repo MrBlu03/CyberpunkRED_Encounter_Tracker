@@ -1,0 +1,31 @@
+_id: mnBXoGrgbAV7arAE
+_key: "!items!mnBXoGrgbAV7arAE"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/black-chrome/jetboy-hoverboard.svg
+name: Tanson JetBoy Hoverboard
+system:
+  brand: Tanson Group
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>A hoverboard driven with Athletics Skill. Can't be upgraded.</p>
+  favorite: false
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  price:
+    market: 1000
+  sdp: 10
+  seats: 1
+  source:
+    book: BC
+    page: 78
+  speedCombat: 15
+  speedNarrative: 30 MPH / 48 KPH
+type: vehicle

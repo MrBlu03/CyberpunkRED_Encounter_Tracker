@@ -1,0 +1,31 @@
+_id: kB6GUQnlCqmGRO71
+_key: "!items.effects!iNxJ842m5FbiSAjs.kB6GUQnlCqmGRO71"
+changes:
+  - key: bonuses.allActions
+    mode: 2
+    priority: null
+    value: "-4"
+description: ""
+disabled: true
+duration:
+  combat: null
+  rounds: null
+  seconds: null
+  startRound: null
+  startTime: null
+  startTurn: null
+  turns: null
+flags:
+  cyberpunk-red-core:
+    changes:
+      cats:
+        "0": misc
+      situational:
+        "0":
+          isSituational: false
+          onByDefault: false
+icon: systems/cyberpunk-red-core/icons/compendium/status/deathtrance.svg
+name: Deathtrance
+statuses: []
+tint: null
+transfer: true

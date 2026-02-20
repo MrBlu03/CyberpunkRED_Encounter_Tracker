@@ -1,0 +1,38 @@
+_id: rjTyO2vXdd4T19Me
+_key: "!items!rjTyO2vXdd4T19Me"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/ammo/grenade_sleep.png
+name: Grenade (Sleep)
+system:
+  ablationValue: 1
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: true
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        Deals no damage. If meat target hit
+        <strong>DV13 Resist Torture/Drugs</strong>. On fail falls Prone (see pg. 169)
+        and unconscious for 1 minute. Can be woken by damage or another person using
+        an action to touch/shake them.
+      </p>
+  favorite: false
+  overrides:
+    autofire:
+      minimum: 3
+      mode: none
+      value: -1
+    damage:
+      minimum: 1d6
+      mode: set
+      value: "0"
+  price:
+    market: 500
+  source:
+    book: Core
+    page: 346
+  type: sleep
+  variety: grenade
+type: ammo

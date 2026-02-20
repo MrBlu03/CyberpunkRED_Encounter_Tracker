@@ -1,0 +1,168 @@
+_id: E2NkaEAx8Rv4nqWQ
+_key: "!items!E2NkaEAx8Rv4nqWQ"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/default/Default_Role.svg
+name: Nomad
+system:
+  abilities: []
+  addRoleAbilityRank: true
+  bonusRatio: 1
+  bonuses:
+    - _id: xCyXnO8NSdMnYm6c
+      data:
+        basic: false
+        category: techniqueSkills
+        core: true
+        description: ""
+        difficulty: typical
+        favorite: false
+        level: 0
+        skillmod: 0
+        source: ""
+        stat: tech
+        tags: []
+      effects: []
+      flags: {}
+      folder: null
+      img: icons/svg/item-bag.svg
+      name: Air Vehicle Tech
+      permission:
+        default: 0
+        pcvDIRHcQv6CtHpF: 3
+      sort: 0
+      type: skill
+    - _id: ayx5mTjklowR3B4J
+      data:
+        basic: false
+        category: controlSkills
+        core: true
+        description: ""
+        difficulty: typical
+        favorite: false
+        level: 0
+        skillmod: 0
+        source: ""
+        stat: ref
+        tags: []
+      effects: []
+      flags: {}
+      folder: null
+      img: icons/svg/item-bag.svg
+      name: Drive Land Vehicle
+      permission:
+        default: 0
+        pcvDIRHcQv6CtHpF: 3
+      sort: 0
+      type: skill
+    - _id: RIhcoX2EgZ4wRCVs
+      data:
+        basic: false
+        category: techniqueSkills
+        core: true
+        description: ""
+        difficulty: typical
+        favorite: false
+        level: 0
+        skillmod: 0
+        source: ""
+        stat: tech
+        tags: []
+      effects: []
+      flags: {}
+      folder: null
+      img: icons/svg/item-bag.svg
+      name: Land Vehicle Tech
+      permission:
+        default: 0
+        pcvDIRHcQv6CtHpF: 3
+      sort: 0
+      type: skill
+    - _id: bLotkju6LpFfhpNf
+      data:
+        basic: false
+        category: controlSkills
+        core: true
+        description: ""
+        difficulty: difficult
+        favorite: false
+        level: 0
+        skillmod: 0
+        source: ""
+        stat: ref
+        tags: []
+      effects: []
+      flags: {}
+      folder: null
+      img: icons/svg/item-bag.svg
+      name: Pilot Air Vehicle
+      permission:
+        default: 0
+        pcvDIRHcQv6CtHpF: 3
+      sort: 0
+      type: skill
+    - _id: 3G9eUcoDGZibVRiK
+      data:
+        basic: false
+        category: controlSkills
+        core: true
+        description: ""
+        difficulty: typical
+        favorite: false
+        level: 0
+        skillmod: 0
+        source: ""
+        stat: ref
+        tags: []
+      effects: []
+      flags: {}
+      folder: null
+      img: icons/svg/item-bag.svg
+      name: Pilot Sea Vehicle
+      permission:
+        default: 0
+        pcvDIRHcQv6CtHpF: 3
+      sort: 0
+      type: skill
+    - _id: sFIKboefPAy7yAxD
+      data:
+        basic: false
+        category: techniqueSkills
+        core: true
+        description: ""
+        difficulty: typical
+        favorite: false
+        level: 0
+        skillmod: 0
+        source: ""
+        stat: tech
+        tags: []
+      effects: []
+      flags: {}
+      folder: null
+      img: icons/svg/item-bag.svg
+      name: Sea Vehicle Tech
+      permission:
+        default: 0
+        pcvDIRHcQv6CtHpF: 3
+      sort: 0
+      type: skill
+  description:
+    value: |
+      <p>
+        Car people, truckers, transportation afficionados, air-pirates, they are the
+        sole carriers of product across the world, maintaining the transport and
+        supply chains in the time of the Red.
+      </p>
+  favorite: false
+  hasRoll: false
+  isSituational: false
+  mainRoleAbility: Moto
+  onByDefault: false
+  rank: 4
+  skill: "--"
+  source:
+    book: Core
+    page: 161
+  stat: "--"
+  universalBonuses: []
+type: role

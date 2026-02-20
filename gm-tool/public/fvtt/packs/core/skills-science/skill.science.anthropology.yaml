@@ -1,0 +1,20 @@
+_id: vWmXf2JovI68Gxcu
+_key: "!items!vWmXf2JovI68Gxcu"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/default/Default_Skill.svg
+name: Science (Anthropology)
+system:
+  basic: false
+  category: educationSkills
+  core: false
+  description:
+    value: ""
+  difficulty: typical
+  favorite: false
+  level: 0
+  skillType: science
+  source:
+    book: Core
+    page: 83
+  stat: int
+type: skill

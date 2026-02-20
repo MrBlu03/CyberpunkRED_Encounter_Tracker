@@ -1,0 +1,56 @@
+_id: 2BgF22RoBRIYCQcz
+_key: "!items!2BgF22RoBRIYCQcz"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/weapons/Machete.svg
+name: Kendachi Mono-Wakizashi
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: Kendachi
+  canIgnoreArmor: true
+  concealable:
+    concealable: false
+    isConcealed: false
+  critFailEffect: jammed
+  damage: 3d6
+  description:
+    value: |
+      <p>
+        One Handed Exotic Heavy Melee Weapon. When wielded by the correct user the
+        weapon ignores armor less than 7 SP.
+      </p>
+  dvTable: ""
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 1
+  ignoreArmorPercent: 50
+  ignoreBelowSP: 7
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+      - ammo
+    list: []
+    slots: 0
+    usedSlots: 0
+  isRanged: false
+  magazine:
+    max: 0
+    value: 0
+  price:
+    market: 1000
+  quality: standard
+  revealed: true
+  rof: 2
+  source:
+    book: BC
+    page: 93
+  unarmedAutomaticCalculation: true
+  usage: toggled
+  usesType: magazine
+  weaponSkill: Melee Weapon
+  weaponType: heavyMelee
+type: weapon

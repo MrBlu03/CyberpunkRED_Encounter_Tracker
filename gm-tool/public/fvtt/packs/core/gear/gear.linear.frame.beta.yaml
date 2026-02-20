@@ -1,0 +1,39 @@
+_id: xH9lmDC4oWAt9l4P
+_key: "!items!xH9lmDC4oWAt9l4P"
+effects:
+  - fby6eAZaHGBFcK1v
+img: systems/cyberpunk-red-core/icons/compendium/gear/linearframe_beta.svg
+name: Linear Frame β (Beta)
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>Exoskeleton.</p>
+      <ul>
+        <li>Requires 2 Interface Plugs</li>
+        <li>Increases BODY to 14 while plugged in</li>
+        <li>Does not affect HP or Deathsave due to BODY increase</li>
+      </ul>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: true
+  price:
+    market: 5000
+  providesHardening: false
+  revealed: true
+  source:
+    book: Core
+    page: 351
+  usage: equipped
+type: gear

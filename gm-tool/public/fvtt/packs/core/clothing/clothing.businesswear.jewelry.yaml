@@ -1,0 +1,38 @@
+_id: J0OQweZ1zPP9Izdc
+_key: "!items!J0OQweZ1zPP9Izdc"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/clothing/generic_jewelry.svg
+name: Businesswear Jewelry
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        Your typical corporative clothing. Show everyone that you're here and you mean
+        business.
+      </p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: false
+  price:
+    market: 5000
+  providesHardening: false
+  revealed: true
+  source:
+    book: Core
+    page: 356
+  style: businesswear
+  type: jewelry
+  usage: equipped
+type: clothing

@@ -1,0 +1,81 @@
+_id: f815HiiDpThbd7eY
+_key: "!items!f815HiiDpThbd7eY"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/default/Default_Role.svg
+name: Tech
+system:
+  abilities:
+    - bonusRatio: 1
+      bonuses: []
+      description: ""
+      hasRoll: true
+      index: 0
+      isSituational: false
+      multiplier: 0.5
+      name: Field Expertise
+      onByDefault: false
+      rank: 0
+      skill: varying
+      stat: tech
+      universalBonuses: []
+    - bonusRatio: 1
+      bonuses: []
+      description: ""
+      hasRoll: true
+      index: 1
+      isSituational: false
+      multiplier: 0.5
+      name: Upgrade Expertise
+      onByDefault: false
+      rank: 0
+      skill: varying
+      stat: tech
+      universalBonuses: []
+    - bonusRatio: 1
+      bonuses: []
+      description: ""
+      hasRoll: true
+      index: 2
+      isSituational: false
+      multiplier: 0.5
+      name: Fabrication Expertise
+      onByDefault: false
+      rank: 0
+      skill: varying
+      stat: tech
+      universalBonuses: []
+    - bonusRatio: 1
+      bonuses: []
+      description: ""
+      hasRoll: true
+      index: 3
+      isSituational: false
+      multiplier: 0.5
+      name: Invention Expertise
+      onByDefault: false
+      rank: 0
+      skill: varying
+      stat: tech
+      universalBonuses: []
+  addRoleAbilityRank: true
+  bonusRatio: 1
+  bonuses: []
+  description:
+    value: |
+      <p>
+        Superior understanding of all-things tech allow them to invent, upgrade, and
+        repair to keep the Dark Future functioning.
+      </p>
+  favorite: false
+  hasRoll: false
+  isSituational: false
+  mainRoleAbility: Maker
+  onByDefault: false
+  rank: 4
+  skill: "--"
+  source:
+    book: Core
+    page: 147
+  stat: "--"
+  universalBonuses: []
+type: role

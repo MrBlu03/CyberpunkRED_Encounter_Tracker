@@ -1,0 +1,20 @@
+_id: l7gW0F5MaWg9I7tC
+_key: "!items!l7gW0F5MaWg9I7tC"
+effects: []
+img: icons/svg/item-bag.svg
+name: Handgun
+system:
+  basic: false
+  category: rangedweaponSkills
+  core: true
+  description:
+    value: ""
+  difficulty: typical
+  favorite: false
+  level: 0
+  skillType: generic
+  source:
+    book: Core
+    page: 137
+  stat: ref
+type: skill

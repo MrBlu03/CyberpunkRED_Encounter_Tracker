@@ -1,0 +1,12 @@
+_id: lVprHXowLxjCn19x
+_key: "!tables.results!EVPuZ21eNOpEycGQ.lVprHXowLxjCn19x"
+documentCollection: cyberpunk-red-core.core_ammo
+documentId: mkI1KpjAOUz9PxRM
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/ammo/shotgun_shell_basic.png
+range:
+  - 1
+  - 1
+text: Shotgun Shell (Basic)
+type: 2
+weight: 1

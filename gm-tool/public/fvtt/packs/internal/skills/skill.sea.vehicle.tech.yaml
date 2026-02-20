@@ -1,0 +1,20 @@
+_id: ON66k91XPD6e3uby
+_key: "!items!ON66k91XPD6e3uby"
+effects: []
+img: icons/svg/item-bag.svg
+name: Sea Vehicle Tech
+system:
+  basic: false
+  category: techniqueSkills
+  core: true
+  description:
+    value: ""
+  difficulty: typical
+  favorite: false
+  level: 0
+  skillType: generic
+  source:
+    book: Core
+    page: 142
+  stat: tech
+type: skill

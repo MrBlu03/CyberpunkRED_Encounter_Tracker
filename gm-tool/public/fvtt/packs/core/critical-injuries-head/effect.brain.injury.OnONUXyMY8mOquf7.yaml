@@ -1,0 +1,31 @@
+_id: OnONUXyMY8mOquf7
+_key: "!items.effects!oi3MEn9Y8zdbooNe.OnONUXyMY8mOquf7"
+changes:
+  - key: bonuses.allActions
+    mode: 2
+    priority: null
+    value: "-2"
+description: ""
+disabled: false
+duration:
+  combat: null
+  rounds: null
+  seconds: null
+  startRound: null
+  startTime: null
+  startTurn: null
+  turns: null
+flags:
+  cyberpunk-red-core:
+    changes:
+      cats:
+        "0": misc
+      situational:
+        "0":
+          isSituational: false
+          onByDefault: false
+icon: systems/cyberpunk-red-core/icons/compendium/critical_injuries/brain_injury.svg
+name: Brain Injury
+statuses: []
+tint: null
+transfer: true

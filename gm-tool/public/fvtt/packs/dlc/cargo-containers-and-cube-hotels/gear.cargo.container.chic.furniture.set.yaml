@@ -1,0 +1,37 @@
+_id: bN0IlqYtNMj0uF0B
+_key: "!items!bN0IlqYtNMj0uF0B"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/cargo-containers-and-cube-hotels/furniture-set.svg
+name: Cargo Container Chic Furniture Set
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        It might be cheap, but it is real furniture. This is the starting Furniture
+        Set for most cargo containers.
+      </p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 0
+    usedSlots: 0
+  isElectronic: false
+  price:
+    market: 100
+  providesHardening: false
+  revealed: true
+  source:
+    book: CCaCH
+    page: 6
+  usage: toggled
+type: gear

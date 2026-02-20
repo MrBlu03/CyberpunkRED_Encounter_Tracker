@@ -1,0 +1,51 @@
+_id: KDulu2DdWVzPwKuv
+_key: "!items!KDulu2DdWVzPwKuv"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/weapons/heavyPistol.svg
+name: Militech Fox Dual Ammo Pistol
+system:
+  ammoVariety:
+    - heavyPistol
+  attackmod: 0
+  brand: Militech
+  concealable:
+    concealable: true
+    isConcealed: false
+  critFailEffect: jammed
+  damage: 3d6
+  description:
+    value: |
+      <p>The Militech Fox Dual Ammo Pistol is an Exotic Heavy Pistol.</p>
+  dvTable: DV Pistol
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 1
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+      - ammo
+    list: []
+    slots: 0
+    usedSlots: 0
+  isRanged: true
+  magazine:
+    max: 10
+    value: 0
+  price:
+    market: 1000
+  quality: standard
+  revealed: true
+  rof: 2
+  source:
+    book: BC
+    page: 113
+  unarmedAutomaticCalculation: true
+  usage: equipped
+  usesType: magazine
+  weaponSkill: Handgun
+  weaponType: heavyPistol
+type: weapon

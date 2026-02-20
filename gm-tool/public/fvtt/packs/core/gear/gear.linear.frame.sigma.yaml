@@ -1,0 +1,39 @@
+_id: 0begTrdCOQcRyLMN
+_key: "!items!0begTrdCOQcRyLMN"
+effects:
+  - tdnkWa1CRu3vQO0N
+img: systems/cyberpunk-red-core/icons/compendium/gear/linearframe_sigma.svg
+name: Linear Frame ∑ (Sigma)
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>Exoskeleton.</p>
+      <ul>
+        <li>Requires 1 Interface Plug</li>
+        <li>Increases BODY to 12 while plugged in</li>
+        <li>Does not affect HP or Deathsave due to BODY increase</li>
+      </ul>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: true
+  price:
+    market: 1000
+  providesHardening: false
+  revealed: true
+  source:
+    book: Core
+    page: 351
+  usage: equipped
+type: gear

@@ -1,0 +1,12 @@
+_id: gEL1jssG8BYFCbEN
+_key: "!tables.results!uq1cseo3a1hAx7Pg.gEL1jssG8BYFCbEN"
+documentCollection: cyberpunk-red-core.core_gear
+documentId: ECoCsPyfIEBCSggM
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/gear/virtuality_goggles.svg
+range:
+  - 2
+  - 2
+text: Virtuality Goggles
+type: 2
+weight: 1

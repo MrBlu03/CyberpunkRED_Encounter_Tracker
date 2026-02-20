@@ -1,0 +1,20 @@
+_id: A6EB0kOrqg2QwCXg
+_key: "!items!A6EB0kOrqg2QwCXg"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/default/Default_Skill.svg
+name: Local Expert (Old Combat Zone)
+system:
+  basic: false
+  category: educationSkills
+  core: false
+  description:
+    value: ""
+  difficulty: typical
+  favorite: false
+  level: 0
+  skillType: localExpert
+  source:
+    book: Core
+    page: 135
+  stat: int
+type: skill

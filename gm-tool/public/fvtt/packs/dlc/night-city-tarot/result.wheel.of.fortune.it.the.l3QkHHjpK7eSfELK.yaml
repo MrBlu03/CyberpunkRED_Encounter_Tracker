@@ -1,0 +1,18 @@
+_id: l3QkHHjpK7eSfELK
+_key: "!tables.results!bEeDgE9CfongXFAR.l3QkHHjpK7eSfELK"
+documentCollection: ""
+documentId: null
+drawn: false
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/night_city_tarot/wheel_of_fortune.svg
+range:
+  - 11
+  - 11
+text: >-
+  Wheel of Fortune. It the Attack was a Ranged Attack, the GM randomly selects a
+  new target. If it was a Melee Attack, the Attacker falls prone and the Attack
+  misses. The weapon used for the Attack malfunctions and requires an Action to
+  be used to reverse the malfunction before being used again. (See Night City
+  Tarot Page 4).
+type: 0
+weight: 1

@@ -1,0 +1,31 @@
+_id: fuvMhn0ZVMzPG1d8
+_key: "!items.effects!VWmTqmsW6S5v51FO.fuvMhn0ZVMzPG1d8"
+changes:
+  - key: bonuses.allActionsSpeech
+    mode: 2
+    priority: null
+    value: "-4"
+description: ""
+disabled: false
+duration:
+  combat: null
+  rounds: null
+  seconds: null
+  startRound: null
+  startTime: null
+  startTurn: null
+  turns: null
+flags:
+  cyberpunk-red-core:
+    changes:
+      cats:
+        "0": misc
+      situational:
+        "0":
+          isSituational: true
+          onByDefault: false
+icon: systems/cyberpunk-red-core/icons/compendium/critical_injuries/broken_jaw.svg
+name: Broken Jaw
+statuses: []
+tint: null
+transfer: true

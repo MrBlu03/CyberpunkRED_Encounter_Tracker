@@ -1,0 +1,36 @@
+_id: swKwgrj4QbNn5EvW
+_key: "!items!swKwgrj4QbNn5EvW"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/black-chrome/one-touch-habitat.svg
+name: Everest VentureWare One Touch Habitat
+system:
+  amount: 1
+  brand: Everest VentureWare
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        Provides protection from Exposure. Counts as Sleeping in the Wilderness or as
+        Sleeping on the Streets.
+      </p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 0
+    usedSlots: 0
+  isElectronic: false
+  price:
+    market: 100
+  providesHardening: false
+  revealed: true
+  source:
+    book: BC
+    page: 48
+  usage: toggled
+type: gear

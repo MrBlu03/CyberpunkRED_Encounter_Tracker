@@ -1,0 +1,34 @@
+_id: pnc2jyjtjTNDZKCT
+_key: "!items!pnc2jyjtjTNDZKCT"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/vehicles/blimp.svg
+name: Aerozep
+system:
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        A modern-day cargo blimp. Requires a minimum of two rooms. The price is for
+        each room below deck.
+      </p>
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  price:
+    market: 30000
+  sdp: 100
+  seats: 2
+  source:
+    book: Core
+    page: 191
+  speedCombat: 20
+  speedNarrative: 100 MPH / 161 KPH
+type: vehicle

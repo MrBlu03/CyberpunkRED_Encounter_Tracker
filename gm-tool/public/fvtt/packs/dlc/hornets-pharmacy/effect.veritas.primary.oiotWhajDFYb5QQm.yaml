@@ -1,0 +1,71 @@
+_id: oiotWhajDFYb5QQm
+_key: "!items.effects!2ea71NL50IBcCcJZ.oiotWhajDFYb5QQm"
+changes:
+  - key: bonuses.acting
+    mode: 2
+    priority: null
+    value: "-5"
+  - key: bonuses.concentration
+    mode: 2
+    priority: null
+    value: "-5"
+  - key: bonuses.conversation
+    mode: 2
+    priority: null
+    value: "-5"
+  - key: bonuses.deduction
+    mode: 2
+    priority: null
+    value: "-5"
+  - key: bonuses.humanPerception
+    mode: 2
+    priority: null
+    value: "-5"
+  - key: bonuses.persuasion
+    mode: 2
+    priority: null
+    value: "-5"
+description: ""
+disabled: true
+duration:
+  combat: null
+  rounds: null
+  seconds: null
+  startRound: null
+  startTime: null
+  startTurn: null
+  turns: null
+flags:
+  cyberpunk-red-core:
+    changes:
+      cats:
+        "0": skill
+        "1": skill
+        "2": skill
+        "3": skill
+        "4": skill
+        "5": skill
+      situational:
+        "0":
+          isSituational: false
+          onByDefault: false
+        "1":
+          isSituational: false
+          onByDefault: false
+        "2":
+          isSituational: false
+          onByDefault: false
+        "3":
+          isSituational: false
+          onByDefault: false
+        "4":
+          isSituational: false
+          onByDefault: false
+        "5":
+          isSituational: false
+          onByDefault: false
+icon: systems/cyberpunk-red-core/icons/compendium/status/veritas.svg
+name: Veritas Primary
+statuses: []
+tint: null
+transfer: true

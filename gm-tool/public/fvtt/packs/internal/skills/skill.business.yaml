@@ -1,0 +1,20 @@
+_id: iiYgc3iNOIzMG0fO
+_key: "!items!iiYgc3iNOIzMG0fO"
+effects: []
+img: icons/svg/item-bag.svg
+name: Business
+system:
+  basic: false
+  category: educationSkills
+  core: true
+  description:
+    value: ""
+  difficulty: typical
+  favorite: false
+  level: 0
+  skillType: generic
+  source:
+    book: Core
+    page: 134
+  stat: int
+type: skill

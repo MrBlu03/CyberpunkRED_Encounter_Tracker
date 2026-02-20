@@ -1,0 +1,41 @@
+_id: LUc8nYLERP5vhxyT
+_key: "!items!LUc8nYLERP5vhxyT"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/cargo-containers-and-cube-hotels/koff-popper.svg
+name: Koff Popper
+system:
+  amount: 1
+  brand: Continental Brands
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        The Continental Brands Koff Popper is the only specialty thermos you'll need.
+      </p>
+      <ul>
+        <li>Thermos with built in Kof Pop brewer</li>
+        <li>Holds 237ml/8oz</li>
+        <li>Can only be purchased at an Oasis store</li>
+      </ul>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 0
+    usedSlots: 0
+  isElectronic: true
+  price:
+    market: 50
+  providesHardening: false
+  revealed: true
+  source:
+    book: CCaCH
+    page: 6
+  usage: toggled
+type: gear

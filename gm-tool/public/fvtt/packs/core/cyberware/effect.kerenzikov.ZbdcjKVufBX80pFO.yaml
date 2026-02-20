@@ -1,0 +1,31 @@
+_id: ZbdcjKVufBX80pFO
+_key: "!items.effects!nSdoCKRscSOeaZUH.ZbdcjKVufBX80pFO"
+changes:
+  - key: bonuses.initiative
+    mode: 2
+    priority: null
+    value: "2"
+description: ""
+disabled: false
+duration:
+  combat: null
+  rounds: null
+  seconds: null
+  startRound: null
+  startTime: null
+  startTurn: null
+  turns: null
+flags:
+  cyberpunk-red-core:
+    changes:
+      cats:
+        "0": combat
+      situational:
+        "0":
+          isSituational: false
+          onByDefault: false
+icon: systems/cyberpunk-red-core/icons/compendium/cyberware/kerenzikov.svg
+name: Kerenzikov
+statuses: []
+tint: null
+transfer: true

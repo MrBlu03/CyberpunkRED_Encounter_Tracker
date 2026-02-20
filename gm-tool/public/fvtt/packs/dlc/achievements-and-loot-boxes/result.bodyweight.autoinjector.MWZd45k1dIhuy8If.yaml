@@ -1,0 +1,12 @@
+_id: MWZd45k1dIhuy8If
+_key: "!tables.results!zRHyYnlEqNlTA4l5.MWZd45k1dIhuy8If"
+documentCollection: cyberpunk-red-core.dlc_hornets-pharmacy
+documentId: 9rKtuQcxsOmHjKyT
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/default/Default_Cyberware.svg
+range:
+  - 3
+  - 3
+text: Bodyweight AutoInjector
+type: 2
+weight: 1

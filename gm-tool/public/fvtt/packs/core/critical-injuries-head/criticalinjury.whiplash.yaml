@@ -1,0 +1,27 @@
+_id: e5wyX6r4Tem6bNwQ
+_key: "!items!e5wyX6r4Tem6bNwQ"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/critical_injuries/whiplash.svg
+name: Whiplash
+system:
+  deathSaveIncrease: true
+  description:
+    value: >
+      <p>No other effects beyond increasing the base Death Save Penalty by
+      1.</p>
+  favorite: false
+  location: head
+  quickFix:
+    dvFirstAid: 0
+    dvParamedic: 13
+    type: paramedic
+  revealed: true
+  source:
+    book: Core
+    page: 188
+  treatment:
+    dvParamedic: 13
+    dvSurgery: 13
+    type: paramedicSurgery
+  usage: toggled
+type: criticalInjury

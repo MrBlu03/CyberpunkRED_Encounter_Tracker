@@ -1,0 +1,34 @@
+_id: sFmW1uCXb2hsP7Dy
+_key: "!items!sFmW1uCXb2hsP7Dy"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/vehicles/super_car.svg
+name: Super Groundcar
+system:
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        An expensive, exotic CHOOH<sup>2</sup>-powered sportscar. It is capable of
+        very high speeds.
+      </p>
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  price:
+    market: 100000
+  sdp: 50
+  seats: 2
+  source:
+    book: Core
+    page: 190
+  speedCombat: 60
+  speedNarrative: 300 MPH / 483 KPH
+type: vehicle

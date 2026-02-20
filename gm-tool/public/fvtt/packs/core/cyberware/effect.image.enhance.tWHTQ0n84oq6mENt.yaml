@@ -1,0 +1,47 @@
+_id: tWHTQ0n84oq6mENt
+_key: "!items.effects!YRR8D6hUfq55KnoR.tWHTQ0n84oq6mENt"
+changes:
+  - key: bonuses.lipReading
+    mode: 2
+    priority: null
+    value: "2"
+  - key: bonuses.concealOrRevealObject
+    mode: 2
+    priority: null
+    value: "2"
+  - key: bonuses.perceptionSight
+    mode: 2
+    priority: null
+    value: "2"
+description: ""
+disabled: false
+duration:
+  combat: null
+  rounds: null
+  seconds: null
+  startRound: null
+  startTime: null
+  startTurn: null
+  turns: null
+flags:
+  cyberpunk-red-core:
+    changes:
+      cats:
+        "0": skill
+        "1": skill
+        "2": skill
+      situational:
+        "0":
+          isSituational: true
+          onByDefault: false
+        "1":
+          isSituational: true
+          onByDefault: false
+        "2":
+          isSituational: true
+          onByDefault: false
+icon: systems/cyberpunk-red-core/icons/compendium/cyberware/image_enhance.svg
+name: Image Enhance
+statuses: []
+tint: null
+transfer: true

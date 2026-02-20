@@ -1,0 +1,32 @@
+_id: 1fWLaLfOgxS4KuFZ
+_key: "!items.effects!jSq3PCutxWhieWDS.1fWLaLfOgxS4KuFZ"
+changes:
+  - key: bonuses.wardrobeAndStyle
+    mode: 2
+    priority: null
+    value: "2"
+description: ""
+disabled: false
+duration:
+  combat: null
+  rounds: null
+  seconds: null
+  startRound: null
+  startTime: null
+  startTurn: null
+  turns: null
+flags:
+  cyberpunk-red-core:
+    changes:
+      cats:
+        "0": skill
+      situational:
+        "0":
+          isSituational: false
+          onByDefault: false
+icon: >-
+  systems/cyberpunk-red-core/icons/compendium/must_have_cyberware_deals/kill_display.svg
+name: Kill Display
+statuses: []
+tint: null
+transfer: true

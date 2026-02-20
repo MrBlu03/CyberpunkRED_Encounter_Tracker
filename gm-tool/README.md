@@ -1,70 +1,73 @@
-# Cyberpunk RED GM Tool
+# React + TypeScript + Vite
 
-A RAW-compliant GM utility for Cyberpunk RED, built with React + Vite using the FVTT Cyberpunk RED core data.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Features Implemented
+Currently, two official plugins are available:
 
-### ✅ Encounters & Initiative
-- Add participants with name, REF, Initiative skill, and HP
-- Roll 1d10 + REF + Initiative for all participants
-- Auto-sort by initiative total
-- Start encounters with round/turn tracking
-- Auto-skip Seriously Wounded/Dead participants
-- Real-time wound state calculation based on HP/Max HP ratio
-- Visual indicators for current turn and wound states
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-### ✅ RAW Damage System
-- Complete damage pipeline: Cover SP → Armor SP → HP → Headshot x2 → Critical +5
-- Support for all damage types: Normal, Armor-Piercing, Half Armor (Melee), Ignore Armor
-- Armor ablation: -1 SP (normal), -2 SP (AP) when penetrated
-- Headshot detection and x2 damage multiplier
-- Critical hit detection (+5 damage)
-- Interactive damage calculator with step-by-step breakdown
+## React Compiler
 
-### 🚧 In Progress
-- NPC/Goon Generator (using FVTT pack data)
-- Shop Generator (weapons, armor, gear from packs)
-- Cover system implementation
-- Critical injury tables integration
-- Death saves automation
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Data Sources
+## Expanding the ESLint configuration
 
-The app extracts and uses data from `fvtt-cyberpunk-red-core-master/src/packs/`:
-- Core weapons, armor, cyberware, skills, roles
-- Black Chrome, DLC items
-- Critical injury tables, NET architecture data
-- Language files for proper labels
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-## Development
+```js
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
 
-```bash
-# Install dependencies
-npm install
+      // Remove tseslint.configs.recommended and replace with this
+      tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      tseslint.configs.stylisticTypeChecked,
 
-# Generate JSON data from FVTT YAML packs
-npm run generate-data
-
-# Start development server
-npm run dev
-
-# Build for production
-npm run build
+      // Other configs...
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
 ```
 
-Visit http://localhost:5173/ to use the tool.
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-## Architecture
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
 
-- **React + TypeScript**: Modern, type-safe UI
-- **Vite**: Fast development and builds
-- **YAML → JSON converter**: Extracts FVTT pack data to `public/data/`
-- **RAW-compliant logic**: Faithful implementation of core rule mechanics
-- **Modular design**: Each feature (encounters, damage, NPCs) in separate modules
-
-## Next Steps
-
-1. **NPC Generator**: Stats, skills, gear dropdowns from packs
-2. **Shop System**: Filter by category, legality, Night Market mode
-3. **Time Tracker**: Recovery, events, day/night cycle
-4. **Settings**: House rules, theme, import/export
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```

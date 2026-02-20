@@ -1,0 +1,49 @@
+_id: D4kiUBYevT8JBVz2
+_key: "!items!D4kiUBYevT8JBVz2"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/black-chrome/masetto-airrider.svg
+name: Masetto AirRider
+system:
+  bodyLocation:
+    ablation: 0
+    sp: 7
+  brand: Masetto Tech Clothing
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        Kevlar Body Armor that ignores the Whiplash critical injury from car crashes
+        as long as the armor's CO<sub>2</sub> tank is full*.
+      </p>
+      <p><em>*Must be manually added after acquiring the armor.</em></p>
+  equipped: owned
+  favorite: false
+  headLocation:
+    ablation: 0
+    sp: 0
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 0
+    usedSlots: 0
+  isBodyLocation: true
+  isElectronic: false
+  isHeadLocation: false
+  isShield: false
+  penalty: 0
+  price:
+    market: 100
+  providesHardening: false
+  revealed: true
+  shieldHitPoints:
+    max: 0
+    value: 0
+  source:
+    book: BC
+    page: 33
+  usage: toggled
+type: armor

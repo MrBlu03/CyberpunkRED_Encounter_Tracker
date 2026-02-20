@@ -1,0 +1,20 @@
+_id: sAQCgDP3EyJMIKP3
+_key: "!items!sAQCgDP3EyJMIKP3"
+effects: []
+img: icons/svg/item-bag.svg
+name: Air Vehicle Tech
+system:
+  basic: false
+  category: techniqueSkills
+  core: true
+  description:
+    value: ""
+  difficulty: typical
+  favorite: false
+  level: 0
+  skillType: generic
+  source:
+    book: Core
+    page: 140
+  stat: tech
+type: skill

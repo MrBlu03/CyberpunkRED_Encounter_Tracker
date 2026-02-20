@@ -1,0 +1,31 @@
+_id: ioMOVsyk9FRbs9EI
+_key: "!items.effects!q7yxRKUMzOf9o5qO.ioMOVsyk9FRbs9EI"
+changes:
+  - key: bonuses.perceptionHearing
+    mode: 2
+    priority: null
+    value: "-4"
+description: ""
+disabled: false
+duration:
+  combat: null
+  rounds: null
+  seconds: null
+  startRound: null
+  startTime: null
+  startTurn: null
+  turns: null
+flags:
+  cyberpunk-red-core:
+    changes:
+      cats:
+        "0": skill
+      situational:
+        "0":
+          isSituational: true
+          onByDefault: false
+icon: systems/cyberpunk-red-core/icons/compendium/critical_injuries/lost_ear.svg
+name: Lost Ear
+statuses: []
+tint: null
+transfer: true

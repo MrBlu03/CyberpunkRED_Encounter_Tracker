@@ -1,0 +1,112 @@
+_id: BC8S1sdK0QGdyHNC
+_key: "!items!BC8S1sdK0QGdyHNC"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/upgrades/smartgun_link.svg
+name: Smartgun Link
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  damage: 1d6
+  description:
+    value: |
+      <p>Turns weapon into a "Smartgun".</p>
+  dvTable: ""
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 0
+  installLocation: mall
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: true
+  isRanged: false
+  magazine:
+    max: 0
+    value: 0
+  modifiers:
+    Wardrobe & Style:
+      isSituational: false
+      onByDefault: false
+      type: modifier
+      value: null
+    attackmod:
+      isSituational: false
+      onByDefault: false
+      type: modifier
+      value: 1
+    bodySp:
+      isSituational: false
+      onByDefault: false
+      type: modifier
+      value: null
+    cool:
+      isSituational: false
+      onByDefault: false
+      type: modifier
+      value: null
+    damage:
+      isSituational: false
+      onByDefault: false
+      type: modifier
+      value: null
+    headSp:
+      isSituational: false
+      onByDefault: false
+      type: modifier
+      value: null
+    magazine:
+      isSituational: false
+      onByDefault: false
+      type: modifier
+      value: null
+    rof:
+      isSituational: false
+      onByDefault: false
+      type: modifier
+      value: null
+    sdp:
+      isSituational: false
+      onByDefault: false
+      type: modifier
+      value: null
+    seats:
+      isSituational: false
+      onByDefault: false
+      type: modifier
+      value: null
+    secondaryWeapon:
+      configured: false
+    shieldHp:
+      isSituational: false
+      onByDefault: false
+      type: modifier
+      value: null
+    slots:
+      isSituational: false
+      onByDefault: false
+      type: modifier
+      value: null
+  price:
+    market: 500
+  providesHardening: false
+  rof: 1
+  size: 2
+  source:
+    book: Core
+    page: 344
+  type: weapon
+  unarmedAutomaticCalculation: true
+  usesType: magazine
+  weaponSkill: ""
+  weaponType: ""
+type: itemUpgrade

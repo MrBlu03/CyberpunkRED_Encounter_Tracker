@@ -1,0 +1,37 @@
+_id: G7KBZHlRtEBGD6JY
+_key: "!items!G7KBZHlRtEBGD6JY"
+effects:
+  - g80WDTq4XGjrJgJc
+img: systems/cyberpunk-red-core/icons/compendium/black-chrome/rapideploy-sheath.svg
+name: RapiDeploy Sheath
+system:
+  amount: 1
+  brand: Gambler Workshop
+  concealable:
+    concealable: true
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        Gives the User a +2 bonus to their Conceal/Reveal Skill Check if used to
+        conceal a weapon already capable of concealment.
+      </p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 0
+    usedSlots: 0
+  isElectronic: false
+  price:
+    market: 500
+  providesHardening: false
+  revealed: true
+  source:
+    book: BC
+    page: 47
+  usage: equipped
+type: gear

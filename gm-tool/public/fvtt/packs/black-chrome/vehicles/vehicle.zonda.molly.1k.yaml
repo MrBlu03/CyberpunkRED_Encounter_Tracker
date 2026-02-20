@@ -1,0 +1,31 @@
+_id: 7QC1BGi63xrC3FpP
+_key: "!items!7QC1BGi63xrC3FpP"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/black-chrome/zonda-molly.svg
+name: Zonda Molly 1K
+system:
+  brand: Zonda
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>Off-road Compact Groundcar.</p>
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  price:
+    market: 15000
+  sdp: 50
+  seats: 2
+  source:
+    book: BC
+    page: 82
+  speedCombat: 20
+  speedNarrative: 60 MPH / 97 KPH
+type: vehicle

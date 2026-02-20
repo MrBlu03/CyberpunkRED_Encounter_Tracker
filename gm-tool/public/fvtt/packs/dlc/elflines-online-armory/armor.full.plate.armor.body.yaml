@@ -1,0 +1,46 @@
+_id: N2bk4F8YVgALbUH7
+_key: "!items!N2bk4F8YVgALbUH7"
+effects: []
+img: icons/equipment/chest/breastplate-banded-steel-gold.webp
+name: Full Plate Armor (Body)
+system:
+  bodyLocation:
+    ablation: 0
+    sp: 15
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        Metal plated armor to resist the most powerful hits. -4 to REF, DEX, and MOVE.
+      </p>
+  equipped: owned
+  favorite: false
+  headLocation:
+    ablation: 0
+    sp: 0
+  installedItems:
+    allowed: true
+    allowedTypes: []
+    list: []
+    slots: 0
+    usedSlots: 0
+  isBodyLocation: true
+  isElectronic: false
+  isHeadLocation: false
+  isShield: false
+  penalty: 4
+  price:
+    market: 500
+  providesHardening: false
+  revealed: true
+  shieldHitPoints:
+    max: 0
+    value: 0
+  source:
+    book: ELO
+    page: 3
+  usage: equipped
+type: armor

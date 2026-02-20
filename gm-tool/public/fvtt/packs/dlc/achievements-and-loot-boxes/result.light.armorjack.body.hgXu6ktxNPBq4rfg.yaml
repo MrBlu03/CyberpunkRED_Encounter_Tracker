@@ -1,0 +1,12 @@
+_id: hgXu6ktxNPBq4rfg
+_key: "!tables.results!4S3emhUCIIDNoTAg.hgXu6ktxNPBq4rfg"
+documentCollection: cyberpunk-red-core.core_armor
+documentId: uaN9WukkezPfcutU
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg
+range:
+  - 2
+  - 2
+text: Light Armorjack (Body)
+type: 2
+weight: 1

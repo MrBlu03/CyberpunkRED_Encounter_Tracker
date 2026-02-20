@@ -1,0 +1,31 @@
+_id: TsyueQcA4aeBN6xU
+_key: "!items!TsyueQcA4aeBN6xU"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/vehicles/helicopter.svg
+name: Gyrocopter
+system:
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>A small two-seater rotorcraft.</p>
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  price:
+    market: 20000
+  sdp: 35
+  seats: 2
+  source:
+    book: Core
+    page: 191
+  speedCombat: 20
+  speedNarrative: 100 MPH / 161 KPH
+type: vehicle

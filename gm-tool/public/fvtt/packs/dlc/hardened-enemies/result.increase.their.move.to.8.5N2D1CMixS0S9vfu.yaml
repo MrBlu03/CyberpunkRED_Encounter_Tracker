@@ -1,0 +1,12 @@
+_id: 5N2D1CMixS0S9vfu
+_key: "!tables.results!e1h7AitpGYGzwmHn.5N2D1CMixS0S9vfu"
+documentCollection: ""
+documentId: null
+drawn: false
+img: icons/svg/d20-black.svg
+range:
+  - 9
+  - 9
+text: Increase their MOVE to 8 or increase their Evasion Skill Base to 18.
+type: 0
+weight: 1

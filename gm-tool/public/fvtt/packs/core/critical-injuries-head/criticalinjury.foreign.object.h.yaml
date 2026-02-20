@@ -1,0 +1,28 @@
+_id: xfzYp9N5c6jEKiBR
+_key: "!items!xfzYp9N5c6jEKiBR"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/critical_injuries/foreign_object_head.svg
+name: Foreign Object (H)
+system:
+  deathSaveIncrease: false
+  description:
+    value: >
+      <p>Suffer Crit damage at end of turn if move more than 4m/yrds on
+      foot.</p>
+  favorite: false
+  location: head
+  quickFix:
+    dvFirstAid: 13
+    dvParamedic: 13
+    type: firstAidParamedic
+  revealed: true
+  source:
+    book: Core
+    page: 188
+  treatment:
+    dvParamedic: 0
+    dvSurgery: 0
+    type: quickFix
+  usage: toggled
+type: criticalInjury

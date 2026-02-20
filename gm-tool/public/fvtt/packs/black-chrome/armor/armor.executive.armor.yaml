@@ -1,0 +1,48 @@
+_id: 7Ki9v2iwMH8AZp8B
+_key: "!items!7Ki9v2iwMH8AZp8B"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/black-chrome/executive-armor.svg
+name: Executive Armor
+system:
+  bodyLocation:
+    ablation: 0
+    sp: 11
+  brand: Torrell and Chiang
+  concealable:
+    concealable: true
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        Light Armorjack that looks like businesswear. Restores 1SP every day SP isn't
+        lost on the armor.
+      </p>
+  equipped: owned
+  favorite: false
+  headLocation:
+    ablation: 0
+    sp: 0
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 0
+    usedSlots: 0
+  isBodyLocation: true
+  isElectronic: true
+  isHeadLocation: false
+  isShield: false
+  penalty: 0
+  price:
+    market: 1000
+  providesHardening: false
+  revealed: true
+  shieldHitPoints:
+    max: 0
+    value: 0
+  source:
+    book: BC
+    page: 34
+  usage: toggled
+type: armor

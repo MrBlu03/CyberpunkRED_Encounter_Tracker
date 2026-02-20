@@ -1,0 +1,37 @@
+_id: W9F58ETpCL2o1XYu
+_key: "!items!W9F58ETpCL2o1XYu"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/black-chrome/zetatech-porta-printer.svg
+name: Zetatech Porta-Printer
+system:
+  amount: 1
+  brand: Zetatech
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        Miniature Workshop. Allows a Tech to use Upgrade and Fabrication Expertise
+        anywhere as long as they have techtools.
+      </p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 0
+    usedSlots: 0
+  isElectronic: true
+  price:
+    market: 1000
+  providesHardening: false
+  revealed: true
+  source:
+    book: BC
+    page: 43
+  usage: toggled
+type: gear

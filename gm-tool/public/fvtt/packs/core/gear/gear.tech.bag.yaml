@@ -1,0 +1,33 @@
+_id: uRkSAWB6JW8LfUqI
+_key: "!items!uRkSAWB6JW8LfUqI"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/gear/tech_bag.svg
+name: Tech Bag
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>Tool bag.</p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: false
+  price:
+    market: 500
+  providesHardening: false
+  revealed: true
+  source:
+    book: Core
+    page: 354
+  usage: toggled
+type: gear

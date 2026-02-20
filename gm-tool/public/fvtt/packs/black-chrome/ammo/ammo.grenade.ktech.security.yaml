@@ -1,0 +1,35 @@
+_id: EBdbf1JaVGl0M7LJ
+_key: "!items!EBdbf1JaVGl0M7LJ"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/ammo/grenade_armorpiercing.png
+name: Grenade (KTech Security)
+system:
+  ablationValue: 2
+  amount: 1
+  brand: KTech
+  concealable:
+    concealable: true
+    isConcealed: false
+  description:
+    value: |
+      <p>Armor piercing Grenade. Deals damage to targets but not to cover.</p>
+  favorite: false
+  installLocation: mall
+  overrides:
+    autofire:
+      minimum: 3
+      mode: none
+      value: -1
+    damage:
+      minimum: 1d6
+      mode: none
+      value: 3d6
+  price:
+    market: 100
+  size: 0
+  source:
+    book: BC
+    page: 89
+  type: armorPiercing
+  variety: grenade
+type: ammo

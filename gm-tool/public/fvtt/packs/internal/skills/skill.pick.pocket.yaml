@@ -1,0 +1,20 @@
+_id: cjOJUX2Wlc5jpuYU
+_key: "!items!cjOJUX2Wlc5jpuYU"
+effects: []
+img: icons/svg/item-bag.svg
+name: Pick Pocket
+system:
+  basic: false
+  category: techniqueSkills
+  core: true
+  description:
+    value: ""
+  difficulty: typical
+  favorite: false
+  level: 0
+  skillType: generic
+  source:
+    book: Core
+    page: 142
+  stat: tech
+type: skill

@@ -1,0 +1,50 @@
+_id: xuxITCWhHzvdr7Yi
+_key: "!items!xuxITCWhHzvdr7Yi"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/black-chrome/door-cracker.svg
+name: GunMart Door Cracker
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: GunMart
+  concealable:
+    concealable: false
+    isConcealed: false
+  critFailEffect: jammed
+  damage: 6d6
+  description:
+    value: |
+      <p>Cheap explosive item, small area of effect.</p>
+  dvTable: ""
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 2
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+      - ammo
+    list: []
+    slots: 3
+    usedSlots: 0
+  isRanged: false
+  magazine:
+    max: 0
+    value: 0
+  price:
+    market: 50
+  quality: standard
+  revealed: true
+  rof: 1
+  source:
+    book: BC
+    page: 87
+  unarmedAutomaticCalculation: true
+  usage: toggled
+  usesType: magazine
+  weaponSkill: Brawling
+  weaponType: thrownWeapon
+type: weapon

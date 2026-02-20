@@ -1,0 +1,12 @@
+_id: UxRULDYLMrncy00U
+_key: "!tables.results!EVPuZ21eNOpEycGQ.UxRULDYLMrncy00U"
+documentCollection: cyberpunk-red-core.core_ammo
+documentId: jmia1vHSv6bdQEVP
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/ammo/pistolheavy_basic.png
+range:
+  - 2
+  - 2
+text: Heavy Pistol (Basic)
+type: 2
+weight: 1

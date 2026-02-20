@@ -1,0 +1,12 @@
+_id: a6fZu5y7jIoTN38p
+_key: "!tables.results!T6pocp9VStxtFPzP.a6fZu5y7jIoTN38p"
+documentCollection: cyberpunk-red-core.black-chrome_cyberware
+documentId: f9u0uhwRBcunP0gz
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/black-chrome/modular-hand.svg
+range:
+  - 3
+  - 3
+text: Modular Finger Cyberhand
+type: 2
+weight: 1

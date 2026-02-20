@@ -1,0 +1,12 @@
+_id: 3s2OYRZT5hkvMrQa
+_key: "!tables.results!QiwaqQtocypL0FXG.3s2OYRZT5hkvMrQa"
+documentCollection: cyberpunk-red-core.core_critical-injuries-head
+documentId: yyVVirrpH1O0DMYB
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/critical_injuries/concussion.svg
+range:
+  - 5
+  - 5
+text: Concussion
+type: 2
+weight: 1

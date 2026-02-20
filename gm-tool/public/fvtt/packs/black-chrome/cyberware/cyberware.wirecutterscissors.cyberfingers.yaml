@@ -1,0 +1,61 @@
+_id: GkcLdOzI3jhtTYPd
+_key: "!items!GkcLdOzI3jhtTYPd"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/black-chrome/cyberfinger.svg
+name: Wirecutter/Scissors Cyberfingers
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: Dynalar Technologies
+  concealable:
+    concealable: true
+    isConcealed: false
+  core: false
+  critFailEffect: jammed
+  damage: 1d6
+  description:
+    value: |
+      <p>
+        Cyberfinger pair that can serve as scissors or wirecutters. Can only be
+        installed on a modular finger cyberhand.
+      </p>
+  dvTable: ""
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  humanityLoss:
+    roll: 1d6
+    static: 3
+  installLocation: mall
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+      - ammo
+    list: []
+    slots: 0
+    usedSlots: 0
+  isElectronic: true
+  isFoundational: false
+  isRanged: false
+  isWeapon: true
+  magazine:
+    max: 0
+    value: 0
+  price:
+    market: 100
+  providesHardening: false
+  revealed: true
+  rof: 2
+  size: 2
+  source:
+    book: BC
+    page: 26
+  type: cyberArm
+  unarmedAutomaticCalculation: true
+  usage: toggled
+  usesType: magazine
+  weaponSkill: Melee Weapon
+  weaponType: lightMelee
+type: cyberware

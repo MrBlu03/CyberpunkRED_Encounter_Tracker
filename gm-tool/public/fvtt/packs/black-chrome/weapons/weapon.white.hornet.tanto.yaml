@@ -1,0 +1,54 @@
+_id: MVZoOzbbPrkBkj53
+_key: "!items!MVZoOzbbPrkBkj53"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/weapons/CombatKnife.svg
+name: White Hornet Tanto
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: Centurian Essentials
+  canIgnoreArmor: true
+  concealable:
+    concealable: true
+    isConcealed: false
+  critFailEffect: jammed
+  damage: 2d6
+  description:
+    value: |
+      <p>One Handed Exotic Medium Melee Weapon.</p>
+      <p>Can render target unconscious rather than dead.</p>
+  dvTable: ""
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 1
+  ignoreArmorPercent: 50
+  ignoreBelowSP: 0
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+      - ammo
+    list: []
+    slots: 0
+    usedSlots: 0
+  isRanged: false
+  magazine:
+    max: 0
+    value: 0
+  price:
+    market: 500
+  quality: standard
+  revealed: true
+  rof: 2
+  source:
+    book: BC
+    page: 93
+  unarmedAutomaticCalculation: true
+  usage: toggled
+  usesType: magazine
+  weaponSkill: Melee Weapon
+  weaponType: medMelee
+type: weapon

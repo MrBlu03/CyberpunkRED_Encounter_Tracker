@@ -1,0 +1,55 @@
+_id: YLYKK3N4631dbRwt
+_key: "!items!YLYKK3N4631dbRwt"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/black-chrome/pursuit-security-bouncer.svg
+name: Pursuit Security Bouncer
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: Pursuit Security Inc.
+  canIgnoreArmor: true
+  concealable:
+    concealable: false
+    isConcealed: false
+  critFailEffect: jammed
+  damage: 2d6
+  description:
+    value: |
+      <p>Battery powered glove.</p>
+      <p>One Handed Exotic Combination Stun Baton and Microwaver.</p>
+  dvTable: ""
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 1
+  ignoreArmorPercent: 50
+  ignoreBelowSP: 0
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+      - ammo
+    list: []
+    slots: 0
+    usedSlots: 0
+  isRanged: false
+  magazine:
+    max: 0
+    value: 0
+  price:
+    market: 500
+  quality: standard
+  revealed: true
+  rof: 2
+  source:
+    book: BC
+    page: 97
+  unarmedAutomaticCalculation: true
+  usage: toggled
+  usesType: magazine
+  weaponSkill: Melee Weapon
+  weaponType: medMelee
+type: weapon

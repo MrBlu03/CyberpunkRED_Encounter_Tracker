@@ -1,0 +1,12 @@
+_id: T2hNqzWfHWOwFkMu
+_key: "!tables.results!EVPuZ21eNOpEycGQ.T2hNqzWfHWOwFkMu"
+documentCollection: cyberpunk-red-core.core_ammo
+documentId: YFnV9OetCCRru5Ky
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/ammo/shotgun_slug_basic.png
+range:
+  - 1
+  - 1
+text: Shotgun Slug (Basic)
+type: 2
+weight: 1

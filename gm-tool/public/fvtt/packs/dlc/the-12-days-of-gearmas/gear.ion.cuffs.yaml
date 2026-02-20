@@ -1,0 +1,39 @@
+_id: QmbulrL80VvoK2Wk
+_key: "!items!QmbulrL80VvoK2Wk"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/the_12_days_of_gearmas/ion_cuffs.svg
+name: Ion Cuffs
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        Handcuffs meant for borgs. Disables any Non-Hardened Cyberware options
+        installed in the limb the cuffs are binding.
+        <span style="font-family: Jost">BODY</span><span class="hgKElc">≥</span
+        ><span style="font-family: Jost">13 can break.</span>
+      </p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 0
+    usedSlots: 0
+  isElectronic: true
+  price:
+    market: 500
+  providesHardening: false
+  revealed: true
+  source:
+    book: 12DoGear
+    page: 3
+  usage: toggled
+type: gear

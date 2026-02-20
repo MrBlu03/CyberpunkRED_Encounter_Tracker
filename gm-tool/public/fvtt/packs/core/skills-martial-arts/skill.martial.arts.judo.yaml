@@ -1,0 +1,20 @@
+_id: Z0DfRAPaaMfqUlcJ
+_key: "!items!Z0DfRAPaaMfqUlcJ"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/default/Default_Skill.svg
+name: Martial Arts (Judo)
+system:
+  basic: false
+  category: fightingSkills
+  core: false
+  description:
+    value: ""
+  difficulty: difficult
+  favorite: false
+  level: 0
+  skillType: martialArt
+  source:
+    book: Core
+    page: 83
+  stat: dex
+type: skill

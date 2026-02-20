@@ -1,0 +1,45 @@
+_id: NTD1wXId7S541HTe
+_key: "!items!NTD1wXId7S541HTe"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/the_12_days_of_gearmas/optitech_magviewer.svg
+name: MagViewer
+system:
+  amount: 1
+  brand: Optitech
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        Binoculars meant for spotting. Provides detail up to 800m/yds. Provides the
+        user with an additional +1 to an attack roll with a successful Complimentary
+        Skill Check to assist in attacking a target 51m/yds or farther away in
+        addition to any other Complimentary Skill Checks..
+      </p>
+      <p>
+        Does not stack with
+        @UUID[Compendium.cyberpunk-red-core.core_upgrades.Item.Ryex0KHeeDzPQwmN]{Sniping
+        Scope} or
+        @UUID[Compendium.cyberpunk-red-core.core_cyberware.Item.uApwuxpuIJMe47Vn]{TeleOptics}.
+      </p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 0
+    usedSlots: 0
+  isElectronic: false
+  price:
+    market: 500
+  providesHardening: false
+  revealed: true
+  source:
+    book: 12DoGear
+    page: 4
+  usage: carried
+type: gear

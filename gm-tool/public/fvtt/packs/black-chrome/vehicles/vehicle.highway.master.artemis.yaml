@@ -1,0 +1,34 @@
+_id: 3EVQOiwBjZNnKYjR
+_key: "!items!3EVQOiwBjZNnKYjR"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/black-chrome/artemis.svg
+name: Highway Master Artemis
+system:
+  brand: Brennan Cycles
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        A low-riding Roadbike with retractable glass cover. Has a surpercharge mode
+        that doesn't come with a safety guarantee.
+      </p>
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  price:
+    market: 60000
+  sdp: 35
+  seats: 2
+  source:
+    book: BC
+    page: 70
+  speedCombat: 20
+  speedNarrative: 100 MPH / 161 KPH
+type: vehicle

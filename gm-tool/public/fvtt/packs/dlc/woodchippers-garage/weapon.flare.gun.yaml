@@ -1,0 +1,59 @@
+_id: moqJ5beR4WqWCpZM
+_key: "!items!moqJ5beR4WqWCpZM"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/weapons/GrenadeLauncher.svg
+name: Flare Gun
+system:
+  ammoVariety:
+    - grenade
+  attackmod: 0
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  critFailEffect: jammed
+  damage: 6d6
+  description:
+    value: |
+      <p>
+        As well as normal Grenade Ammunition, this weapon can fire road flares*. They
+        don't deal any damage, but if fired into the air can be seen from 3 miles. You
+        cannot install this weapon in Pop-up Cyberware.
+      </p>
+      <p>
+        <em
+          >*Currently not supported so will need to manually delete a road flare from
+          actors inventory after firing</em
+        >
+      </p>
+  dvTable: DV Grenade Launcher
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 2
+  installedItems:
+    allowed: true
+    allowedTypes: []
+    list: []
+    slots: 0
+    usedSlots: 0
+  isRanged: true
+  magazine:
+    max: 1
+    value: 0
+  price:
+    market: 100
+  quality: standard
+  revealed: true
+  rof: 1
+  source:
+    book: WG
+    page: 3
+  unarmedAutomaticCalculation: true
+  usage: equipped
+  usesType: magazine
+  weaponSkill: Heavy Weapons
+  weaponType: grenadeLauncher
+type: weapon

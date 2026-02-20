@@ -1,0 +1,72 @@
+_id: OXYFhzH96WZkrAX7
+_key: "!items!OXYFhzH96WZkrAX7"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/weapons/Chainsaw_excellent.svg
+name: ChainRipp
+system:
+  ammoVariety: []
+  attackmod: 1
+  brand: ""
+  canIgnoreArmor: true
+  concealable:
+    concealable: false
+    isConcealed: false
+  core: false
+  damage: 4d6
+  description:
+    value: |
+      <p>
+        A popout Cyberarm chainsaw with integreated exhaust port. Can be deployed and
+        retracted without an Action. User can not use the hand on the ChainRipp's
+        Cyberarm when blade is drawn.
+      </p>
+      <p>
+        When deployed, ChainRipp can be revved as an Action and qualifies as an
+        Excellent Quality One-Handed Exotic Very Heavy Melee Weapon. ChainRipp remains
+        revved until deactivated as an Action.
+      </p>
+      <p>
+        In the deployed but un-revved state, the ChainRipp is a One-Handed Very Heavy
+        Melee Weapon.
+      </p>
+  dvTable: ""
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  humanityLoss:
+    roll: 4d6
+    static: 14
+  ignoreArmorPercent: 50
+  ignoreBelowSP: 0
+  installLocation: hospital
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 0
+    usedSlots: 0
+  isElectronic: true
+  isFoundational: false
+  isRanged: false
+  isWeapon: true
+  magazine:
+    max: 0
+    value: 0
+  price:
+    market: 500
+  providesHardening: false
+  revealed: true
+  rof: 1
+  size: 4
+  source:
+    book: 12DoC
+    page: 3
+  type: cyberArm
+  unarmedAutomaticCalculation: true
+  usage: toggled
+  usesType: magazine
+  weaponSkill: Melee Weapon
+  weaponType: vHeavyMelee
+type: cyberware

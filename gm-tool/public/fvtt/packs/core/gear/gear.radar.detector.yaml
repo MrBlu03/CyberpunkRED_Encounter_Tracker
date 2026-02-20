@@ -1,0 +1,33 @@
+_id: P8jFkXDk8eVKXhNJ
+_key: "!items!P8jFkXDk8eVKXhNJ"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/gear/radar_detector.svg
+name: Radar Detector
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>Detect radar beam. Range: 100m/yd</p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: true
+  price:
+    market: 500
+  providesHardening: false
+  revealed: true
+  source:
+    book: Core
+    page: 354
+  usage: toggled
+type: gear

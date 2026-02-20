@@ -1,0 +1,38 @@
+_id: gyknELQ6i5opCrix
+_key: "!items!gyknELQ6i5opCrix"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/clothing/generic_footwear.svg
+name: Bohemian Footwear
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        Channel your inner 70s hippy! Show everyone how much of a free spirit you are
+        with these clothes.
+      </p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: false
+  price:
+    market: 50
+  providesHardening: false
+  revealed: true
+  source:
+    book: Core
+    page: 356
+  style: bohemian
+  type: footwear
+  usage: equipped
+type: clothing

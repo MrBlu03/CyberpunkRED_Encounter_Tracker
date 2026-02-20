@@ -1,0 +1,34 @@
+_id: KwNqQrQpLzbhpDNR
+_key: "!items!KwNqQrQpLzbhpDNR"
+effects:
+  - kN8ZSjESSuKrUSfU
+img: systems/cyberpunk-red-core/icons/compendium/programs/see_ya.svg
+name: See Ya
+system:
+  atk: 0
+  blackIceType: antipersonnel
+  class: booster
+  damage:
+    blackIce: 1d6
+    standard: 1d6
+  def: 0
+  description:
+    value: |
+      <p>+2 to Pathfinder Checks while Rezzed.</p>
+  favorite: false
+  installLocation: mall
+  interface: 0
+  isRezzed: false
+  per: 0
+  price:
+    market: 20
+  prototypeActor: ""
+  revealed: true
+  rez: 7
+  size: 1
+  source:
+    book: Core
+    page: 368
+  spd: 0
+  usage: rezzed
+type: program

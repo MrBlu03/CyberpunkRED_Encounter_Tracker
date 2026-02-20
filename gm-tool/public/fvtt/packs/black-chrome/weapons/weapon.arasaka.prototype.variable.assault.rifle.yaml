@@ -1,0 +1,55 @@
+_id: kwurvxruvvm0VxRI
+_key: "!items!kwurvxruvvm0VxRI"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/weapons/AssaultRifle_excellent.svg
+name: Arasaka Prototype Variable Assault Rifle
+system:
+  ammoVariety:
+    - rifle
+  attackmod: 1
+  brand: Arasaka
+  concealable:
+    concealable: false
+    isConcealed: false
+  critFailEffect: jammed
+  damage: 5d6
+  description:
+    value: |
+      <p>
+        The Arasaka Prototype Variable Assault Rifle is an Excellent Quality Exotic
+        Assault Rifle. Assuming you have all the parts, it can use an alternate unique
+        railgun mode.
+      </p>
+  dvTable: DV Assault Rifle
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 4
+    suppressiveFire: false
+  handsReq: 2
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+      - ammo
+    list: []
+    slots: 0
+    usedSlots: 0
+  isRanged: true
+  magazine:
+    max: 25
+    value: 0
+  price:
+    market: 15000
+  quality: excellent
+  revealed: true
+  rof: 1
+  source:
+    book: BC
+    page: 102
+  unarmedAutomaticCalculation: true
+  usage: toggled
+  usesType: magazine
+  weaponSkill: Shoulder Arms
+  weaponType: assaultRifle
+type: weapon

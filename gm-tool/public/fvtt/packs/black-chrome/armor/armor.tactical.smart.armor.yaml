@@ -1,0 +1,51 @@
+_id: 5TCY5tMvyCOuzB6l
+_key: "!items!5TCY5tMvyCOuzB6l"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/black-chrome/smart-armor.svg
+name: Tactical Smart Armor
+system:
+  bodyLocation:
+    ablation: 0
+    sp: 12
+  brand: Gibson Battlegear
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: >
+      <p>
+        A full set of medium armorjack with integrated smart glasses*. -2 to REF, DEX,
+        and MOVE.
+      </p>
+
+      <p><em>*Smart Glasses must be manually added after acquiring the
+      armor.</em></p>
+  equipped: owned
+  favorite: false
+  headLocation:
+    ablation: 0
+    sp: 12
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 0
+    usedSlots: 0
+  isBodyLocation: true
+  isElectronic: true
+  isHeadLocation: true
+  isShield: false
+  penalty: 2
+  price:
+    market: 1000
+  providesHardening: false
+  revealed: true
+  shieldHitPoints:
+    max: 0
+    value: 0
+  source:
+    book: BC
+    page: 30
+  usage: toggled
+type: armor

@@ -1,0 +1,12 @@
+_id: Lgih56AQ2Ri3pdIp
+_key: "!tables.results!EVPuZ21eNOpEycGQ.Lgih56AQ2Ri3pdIp"
+documentCollection: cyberpunk-red-core.core_upgrades
+documentId: BC8S1sdK0QGdyHNC
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/upgrades/smartgun_link.svg
+range:
+  - 6
+  - 6
+text: Smartgun Link
+type: 2
+weight: 1

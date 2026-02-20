@@ -1,0 +1,67 @@
+_id: ELLIHejsxsklkxkC
+_key: "!items!ELLIHejsxsklkxkC"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/default/Default_Cyberware.svg
+name: Gas Jet
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: Pursuit Security Inc.
+  concealable:
+    concealable: false
+    isConcealed: false
+  core: false
+  damage: 1d6
+  description:
+    value: |
+      <p>Cyberarm Option. Takes 2 option slots.</p>
+      <p>
+        Gas Jet sprays a burst of 3 doses of a Street Drug or 3 Vials of
+        Poison/Biotoxin into a 3x3 square directly in front of the shooter (similar to
+        Shotgun Shell attack). Can be used one-handed and is virtually undetectable
+        even without a Conceal check.
+      </p>
+      <p>
+        All susceptible targets in range suffer the effects of the drug or poison.
+        Targets equipped with gear that neutralizes gas attacks (Nasal Filters &amp;
+        Anti-Smog Breathing Mask) are not affected. Gas Jet must be loaded with 3 more
+        doses after each shot before firing again.
+      </p>
+  dvTable: ""
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  humanityLoss:
+    roll: 2d6
+    static: 7
+  installLocation: clinic
+  installedItems:
+    allowed: true
+    allowedTypes: []
+    list: []
+    slots: 0
+    usedSlots: 0
+  isElectronic: true
+  isFoundational: false
+  isRanged: false
+  isWeapon: false
+  magazine:
+    max: 0
+    value: 0
+  price:
+    market: 500
+  providesHardening: false
+  revealed: true
+  rof: 1
+  size: 2
+  source:
+    book: HP
+    page: 5
+  type: cyberArm
+  unarmedAutomaticCalculation: true
+  usage: toggled
+  usesType: magazine
+  weaponSkill: Shoulder Arms
+  weaponType: shotgun
+type: cyberware

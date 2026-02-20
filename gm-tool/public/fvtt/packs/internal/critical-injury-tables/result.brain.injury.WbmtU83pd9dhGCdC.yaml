@@ -1,0 +1,12 @@
+_id: WbmtU83pd9dhGCdC
+_key: "!tables.results!QiwaqQtocypL0FXG.WbmtU83pd9dhGCdC"
+documentCollection: cyberpunk-red-core.core_critical-injuries-head
+documentId: oi3MEn9Y8zdbooNe
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/critical_injuries/brain_injury.svg
+range:
+  - 3
+  - 3
+text: Brain Injury
+type: 2
+weight: 1

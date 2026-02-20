@@ -1,0 +1,36 @@
+_id: DQ22OUTZiHGj8vWD
+_key: "!items!DQ22OUTZiHGj8vWD"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/black-chrome/drink-master-3000.svg
+name: Drink Master 3000
+system:
+  amount: 1
+  brand: Hammered Industries
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        Can make 10 beverages out of a 3000 beverages library before needing to be
+        refilled. Can also make Smash.
+      </p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: true
+  price:
+    market: 1000
+  providesHardening: false
+  revealed: true
+  source:
+    book: BC
+    page: 42
+  usage: toggled
+type: gear

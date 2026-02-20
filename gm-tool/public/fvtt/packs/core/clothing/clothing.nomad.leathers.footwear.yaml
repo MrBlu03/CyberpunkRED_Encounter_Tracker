@@ -1,0 +1,36 @@
+_id: CcIZ23rub5QtcOHJ
+_key: "!items!CcIZ23rub5QtcOHJ"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/clothing/generic_footwear.svg
+name: Nomad Leathers Footwear
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: >
+      <p>If you want to look like a chromed-up cowboy, this is perfect for
+      you.</p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: false
+  price:
+    market: 100
+  providesHardening: false
+  revealed: true
+  source:
+    book: Core
+    page: 356
+  style: nomadLeathers
+  type: footwear
+  usage: equipped
+type: clothing

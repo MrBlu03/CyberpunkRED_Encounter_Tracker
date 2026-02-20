@@ -1,0 +1,39 @@
+_id: yK1OjwJXiEvjPnS5
+_key: "!items!yK1OjwJXiEvjPnS5"
+effects:
+  - Gf4ERKzJBc62fK3p
+img: systems/cyberpunk-red-core/icons/compendium/gear/linearframe_sigma.svg
+name: EL-F4-NT Linear Frame
+system:
+  amount: 1
+  brand: Zhirafa
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>Exoskeleton.</p>
+      <ul>
+        <li>Increases BODY to 12 while equipped</li>
+        <li>Does not affect HP or Deathsave</li>
+        <li>Has pre-installed pair of Techtools</li>
+      </ul>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: true
+  price:
+    market: 5000
+  providesHardening: false
+  revealed: true
+  source:
+    book: BC
+    page: 55
+  usage: equipped
+type: gear

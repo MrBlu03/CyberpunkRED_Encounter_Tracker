@@ -1,0 +1,33 @@
+_id: QNPY6vNAFw8ugKH8
+_key: "!items!QNPY6vNAFw8ugKH8"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/gear/braindance_viewer.svg
+name: Rush Revolution
+system:
+  amount: 1
+  brand: Segotari
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>Braindance Headset. Required to play Elflines Online.</p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 0
+    usedSlots: 0
+  isElectronic: true
+  price:
+    market: 500
+  providesHardening: false
+  revealed: true
+  source:
+    book: ELO
+    page: 5
+  usage: toggled
+type: gear

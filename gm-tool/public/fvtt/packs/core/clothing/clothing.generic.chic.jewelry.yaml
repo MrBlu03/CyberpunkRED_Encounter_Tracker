@@ -1,0 +1,38 @@
+_id: dpOkYM9UIo4oQ0iy
+_key: "!items!dpOkYM9UIo4oQ0iy"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/clothing/generic_jewelry.svg
+name: Generic Chic Jewelry
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        The kind of clothing you find in the Mega-Plexes of the Dark Future. Perfect
+        if you don't want to stand out from a crowd.
+      </p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: false
+  price:
+    market: 50
+  providesHardening: false
+  revealed: true
+  source:
+    book: Core
+    page: 356
+  style: genericChic
+  type: jewelry
+  usage: equipped
+type: clothing

@@ -1,0 +1,12 @@
+_id: VQynxqPUN4ABRYGD
+_key: "!tables.results!uq1cseo3a1hAx7Pg.VQynxqPUN4ABRYGD"
+documentCollection: cyberpunk-red-core.core_clothing
+documentId: iwf7yiZyvmhW3rPj
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/clothing/generic_jewelry.svg
+range:
+  - 5
+  - 5
+text: Urban Flash Jewelry
+type: 2
+weight: 1

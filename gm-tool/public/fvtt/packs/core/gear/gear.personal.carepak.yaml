@@ -1,0 +1,33 @@
+_id: wbMrUpgWHROY24OC
+_key: "!items!wbMrUpgWHROY24OC"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/gear/personal_carepak.svg
+name: Personal CarePak
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>Toothbrush etc.</p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: false
+  price:
+    market: 20
+  providesHardening: false
+  revealed: true
+  source:
+    book: Core
+    page: 354
+  usage: toggled
+type: gear

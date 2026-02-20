@@ -1,0 +1,84 @@
+_id: YI3MVPWwjfWK4Woa
+_key: "!macros!YI3MVPWwjfWK4Woa"
+command: >-
+  // Set the following to the name of your character to be created
+
+  const actorName = "ElfLine";
+
+
+  // All Elf Online Skills
+
+  const skills = {
+    "Animal Handling": { stat: "emp", category: "performanceSkills", difficulty: "typical", },
+    "Language (Elven)": { stat: "int", category: "educationSkills", difficulty: "typical", },
+    "Archery": { stat: "ref", category: "rangedweaponSkills", difficulty: "difficult", },
+    "Melee Weapon": { stat: "dex", category: "fightingSkills", difficulty: "difficult", },
+    "Athletics/Contortionist": { stat: "dex", category: "bodySkills", difficulty: "typical", },
+    "Perception": { stat: "int", category: "awarenessSkills", difficulty: "typical", },
+    "Basic Tech/Weaponstech": { stat: "tech", category: "techniqueSkills", difficulty: "typical", },
+    "Persuasion/Trading": { stat: "cool", category: "socialSkills", difficulty: "typical", },
+    "Brawling": { stat: "dex", category: "fightingSkills", difficulty: "typical", },
+    "Pick Lock/Pick Pocket": { stat: "tech", category: "techniqueSkills", difficulty: "typical", },
+    "Conceal/Reveal Object": { stat: "int", category: "awarenessSkills", difficulty: "typical", },
+    "Pilot Sea Vehicle": { stat: "tech", category: "controlSkills", difficulty: "typical", },
+    "Composition/Education": { stat: "int", category: "educationSkills", difficulty: "typical", },
+    "Play Instrument": { stat: "tech", category: "performanceSkills", difficulty: "typical", },
+    "Concentration": { stat: "will", category: "awarenessSkills", difficulty: "typical", },
+    "Riding": { stat: "emp", category: "controlSkills", difficulty: "typical", },
+    "Endurance/Resist Torture/Drugs": { stat: "will", category: "bodySkills", difficulty: "typical", },
+    "Stealth": { stat: "dex", category: "bodySkills", difficulty: "typical", },
+    "Evasion/Dance": { stat: "dex", category: "fightingSkills", difficulty: "difficult", },
+    "Tracking": { stat: "int", category: "awarenessSkills", difficulty: "typical", },
+    "First Aid/Paramedic/Surgery": { stat: "tech", category: "techniqueSkills", difficulty: "difficult", },
+    "Wilderness Survival": { stat: "int", category: "educationSkills", difficulty: "typical", },
+  };
+
+
+  // Create Elf Online Character
+
+  const elfCharacter = await Actor.create({
+            name: actorName,
+            type: "character",
+  });
+
+
+  const skillList = [];
+
+  Object.keys(skills).forEach(async (name) => {
+    const stat = skills[name].stat;
+    const category = skills[name].category;
+    const difficulty = skills[name].difficulty;
+    const itemData = {
+      type: "skill",
+      name,
+      system: {
+        stat,
+        category,
+        difficulty,
+        core: false, // Set to false and update later otherwise Rules.lawyer prevents adding the skills
+      },
+    };
+    skillList.push(itemData);
+  });
+
+
+  // Create Elflines Online Skills
+
+  const createdSkills = await elfCharacter.createEmbeddedDocuments("Item",
+  skillList, { force: true });
+
+
+  // Update skills to be core skills
+
+  coreSkills = [];
+
+  createdSkills.forEach((skill) => {
+     coreSkills.push({ _id: skill.id, "system.core": true });
+  });
+
+
+  elfCharacter.updateEmbeddedDocuments("Item", coreSkills );
+img: systems/cyberpunk-red-core/icons/compendium/default/Default_Dice.svg
+name: Create an Elflines Online Character
+scope: global
+type: script

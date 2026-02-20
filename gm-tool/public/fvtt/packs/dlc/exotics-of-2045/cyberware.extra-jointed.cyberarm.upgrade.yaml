@@ -1,0 +1,58 @@
+_id: iQMwC5XITZSDn4mz
+_key: "!items!iQMwC5XITZSDn4mz"
+effects:
+  - 07oWqLTtRifNsjsz
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/exotics-of-2045/extra-joined-cyberarm.svg
+name: Extra-Jointed Cyberarm Upgrade
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  core: false
+  damage: 1d6
+  description:
+    value: |
+      <p>Enhances cyberarm articulation. +2 Contortionist.</p>
+  dvTable: ""
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  humanityLoss:
+    roll: 1d6
+    static: 3
+  installLocation: clinic
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 0
+    usedSlots: 0
+  isElectronic: true
+  isFoundational: false
+  isRanged: false
+  isWeapon: false
+  magazine:
+    max: 0
+    value: 0
+  price:
+    market: 500
+  providesHardening: false
+  revealed: true
+  rof: 1
+  size: 1
+  source:
+    book: IRv2
+    page: 73
+  type: cyberArm
+  unarmedAutomaticCalculation: true
+  usage: installed
+  usesType: magazine
+  weaponSkill: Archery
+  weaponType: assaultRifle
+type: cyberware

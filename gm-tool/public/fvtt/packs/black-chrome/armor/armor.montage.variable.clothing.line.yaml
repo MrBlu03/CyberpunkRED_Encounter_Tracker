@@ -1,0 +1,50 @@
+_id: ETPujR8m7tEoYFQW
+_key: "!items!ETPujR8m7tEoYFQW"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/black-chrome/variable-clothing-line.svg
+name: Montage Variable Clothing Line
+system:
+  bodyLocation:
+    ablation: 0
+    sp: 11
+  brand: Montage
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        Light Armorjack that can swap between "Generic Chic" and "Gang Colors" styles
+        with an action from a palette purchased (20eb per color/pattern) and installed
+        on an agent. Comes with one color or pattern of choice.
+      </p>
+  equipped: owned
+  favorite: false
+  headLocation:
+    ablation: 0
+    sp: 0
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isBodyLocation: true
+  isElectronic: false
+  isHeadLocation: false
+  isShield: false
+  penalty: 0
+  price:
+    market: 500
+  providesHardening: false
+  revealed: true
+  shieldHitPoints:
+    max: 0
+    value: 0
+  source:
+    book: BC
+    page: 32
+  usage: toggled
+type: armor

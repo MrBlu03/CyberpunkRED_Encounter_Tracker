@@ -1,0 +1,31 @@
+_id: r5x9bz7XA12gIiRY
+_key: "!items!r5x9bz7XA12gIiRY"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/vehicles/helicopter.svg
+name: Helicopter
+system:
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>A four-seater helicopter capable of high speeds and long flights.</p>
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  price:
+    market: 40000
+  sdp: 60
+  seats: 4
+  source:
+    book: Core
+    page: 191
+  speedCombat: 40
+  speedNarrative: 200 MPH / 322 KPH
+type: vehicle

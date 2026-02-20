@@ -1,0 +1,21 @@
+_id: zRHyYnlEqNlTA4l5
+_key: "!tables!zRHyYnlEqNlTA4l5"
+description: >-
+  Source: Achievements and Loot Boxes pg.5
+
+  All weapons come fully loaded with a compatible ammo type of the GM's
+  choosing.
+displayRoll: true
+formula: 1d6
+img: icons/containers/boxes/crate-wooden-beige-red.webp
+name: A Box Dripping Wet With Fluid
+replacement: true
+results:
+  - 0OxDAp5vfbStfplq
+  - qVtkRbxUNz2Mr1GB
+  - MWZd45k1dIhuy8If
+  - Bo75utxjeKLNgn1m
+  - oFcPdGyZZq79XTja
+  - u8xCSLXpmliqK5eZ
+  - hk0ZG2Yyj1OXXEQE
+  - xJR1fxROS011EkKi

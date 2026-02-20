@@ -1,0 +1,12 @@
+_id: rfMkakfZl1fgqRNA
+_key: "!tables.results!bOtq937SNIahmbeK.rfMkakfZl1fgqRNA"
+documentCollection: cyberpunk-red-core.core_ammo
+documentId: MdA5gBfCKbBuHGof
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/ammo/shotgun_shell_incendiary.png
+range:
+  - 6
+  - 6
+text: Shotgun Shell (Incendiary)
+type: 2
+weight: 1

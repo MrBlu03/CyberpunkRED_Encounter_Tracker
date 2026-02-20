@@ -1,0 +1,58 @@
+_id: Lx9FSNDEIxLZ7Pyh
+_key: "!items!Lx9FSNDEIxLZ7Pyh"
+effects:
+  - JoQ7dlYgAuJCSQr5
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/cyberware/grafted_muscle_and_bone_lace.svg
+name: Grafted Muscle and Bone Lace
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  core: false
+  damage: 1d6
+  description:
+    value: |
+      <p>Increase Body by 2 (and related stats). Stacks. Max at 10 Body.</p>
+  dvTable: ""
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  humanityLoss:
+    roll: 4d6
+    static: 14
+  installLocation: hospital
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: true
+  isFoundational: false
+  isRanged: false
+  isWeapon: false
+  magazine:
+    max: 0
+    value: 0
+  price:
+    market: 1000
+  providesHardening: false
+  revealed: true
+  rof: 1
+  size: 1
+  source:
+    book: Core
+    page: 363
+  type: cyberwareInternal
+  unarmedAutomaticCalculation: true
+  usage: installed
+  usesType: magazine
+  weaponSkill: Archery
+  weaponType: assaultRifle
+type: cyberware

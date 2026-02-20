@@ -1,0 +1,36 @@
+_id: MfuoJ69NL1FiP7B8
+_key: "!items!MfuoJ69NL1FiP7B8"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/ammo/battery.png
+name: Battery Pack
+system:
+  ablationValue: 1
+  amount: 8
+  brand: ""
+  concealable:
+    concealable: true
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        A rechargeable (1 hour) battery pack, commonly used with Exotic weapons.
+        Contains 8 shots and can be recharged.
+      </p>
+  favorite: false
+  overrides:
+    autofire:
+      minimum: 3
+      mode: none
+      value: -1
+    damage:
+      minimum: 1d6
+      mode: none
+      value: 3d6
+  price:
+    market: 50
+  source:
+    book: Core
+    page: 349
+  type: basic
+  variety: battery
+type: ammo

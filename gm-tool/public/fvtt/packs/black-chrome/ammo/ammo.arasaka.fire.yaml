@@ -1,0 +1,38 @@
+_id: 9diHOp9hSafmHRqC
+_key: "!items!9diHOp9hSafmHRqC"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/black-chrome/arasaka-fire.svg
+name: Arasaka Fire
+system:
+  ablationValue: 1
+  amount: 1
+  brand: Arasaka
+  concealable:
+    concealable: true
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        Coating for Arasaka Weeping Reaver Katana only. Ignites target. Multiple
+        effects do not stack.
+      </p>
+  favorite: false
+  installLocation: mall
+  overrides:
+    autofire:
+      minimum: 3
+      mode: none
+      value: -1
+    damage:
+      minimum: 1d6
+      mode: none
+      value: 3d6
+  price:
+    market: 100
+  size: 0
+  source:
+    book: BC
+    page: 91
+  type: incendiary
+  variety: custom
+type: ammo

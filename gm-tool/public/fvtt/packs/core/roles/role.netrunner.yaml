@@ -1,0 +1,29 @@
+_id: g5S5E8UG1QJ4yFsp
+_key: "!items!g5S5E8UG1QJ4yFsp"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/default/Default_Role.svg
+name: Netrunner
+system:
+  abilities: []
+  addRoleAbilityRank: true
+  bonusRatio: 1
+  bonuses: []
+  description:
+    value: |
+      <p>
+        Master hackers who put themselves at risk as they jack into cyberspace to
+        download secrets and infiltrate networks.
+      </p>
+  favorite: false
+  hasRoll: true
+  isSituational: false
+  mainRoleAbility: Interface
+  onByDefault: false
+  rank: 4
+  skill: "--"
+  source:
+    book: Core
+    page: 147
+  stat: "--"
+  universalBonuses: []
+type: role

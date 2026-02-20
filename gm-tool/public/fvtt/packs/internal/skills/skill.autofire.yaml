@@ -1,0 +1,20 @@
+_id: Xbk6aAKKUQtXRunw
+_key: "!items!Xbk6aAKKUQtXRunw"
+effects: []
+img: icons/svg/item-bag.svg
+name: Autofire
+system:
+  basic: false
+  category: rangedweaponSkills
+  core: true
+  description:
+    value: ""
+  difficulty: difficult
+  favorite: false
+  level: 0
+  skillType: generic
+  source:
+    book: Core
+    page: 138
+  stat: ref
+type: skill

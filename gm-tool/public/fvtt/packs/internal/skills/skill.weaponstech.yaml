@@ -1,0 +1,20 @@
+_id: Z41spNxYQPCAPXoC
+_key: "!items!Z41spNxYQPCAPXoC"
+effects: []
+img: icons/svg/item-bag.svg
+name: Weaponstech
+system:
+  basic: false
+  category: techniqueSkills
+  core: true
+  description:
+    value: ""
+  difficulty: typical
+  favorite: false
+  level: 0
+  skillType: generic
+  source:
+    book: Core
+    page: 142
+  stat: tech
+type: skill

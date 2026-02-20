@@ -1,0 +1,29 @@
+_id: Ek251OMdphcqzWPP
+_key: "!items!Ek251OMdphcqzWPP"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/default/Default_Role.svg
+name: Media
+system:
+  abilities: []
+  addRoleAbilityRank: true
+  bonusRatio: 1
+  bonuses: []
+  description:
+    value: |
+      <p>
+        Newspeople, influencers, and cultural phenomena, they are ready to expose the
+        truth by any means necessary.
+      </p>
+  favorite: false
+  hasRoll: true
+  isSituational: false
+  mainRoleAbility: Credibility
+  onByDefault: false
+  rank: 4
+  skill: "--"
+  source:
+    book: Core
+    page: 151
+  stat: "--"
+  universalBonuses: []
+type: role

@@ -1,0 +1,20 @@
+_id: ZHRsJQ6F8lWe4uUg
+_key: "!items!ZHRsJQ6F8lWe4uUg"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/default/Default_Skill.svg
+name: Language (Nepali)
+system:
+  basic: false
+  category: educationSkills
+  core: false
+  description:
+    value: ""
+  difficulty: typical
+  favorite: false
+  level: 4
+  skillType: language
+  source:
+    book: Core
+    page: 45
+  stat: int
+type: skill

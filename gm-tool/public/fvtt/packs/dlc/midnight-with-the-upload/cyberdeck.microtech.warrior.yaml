@@ -1,0 +1,38 @@
+_id: 6SLvZUo4JER4sFWn
+_key: "!items!6SLvZUo4JER4sFWn"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/default/cyberdeck.svg
+name: Microtech Warrior
+system:
+  brand: Microtech
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>7 Slots only for Programs.</p>
+      <p>
+        Netrunner can activate one Armor Program without a NET Action right after
+        Jacking In.
+      </p>
+  equipped: owned
+  favorite: false
+  installLocation: mall
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+      - program
+    list: []
+    slots: 7
+    usedSlots: 0
+  isElectronic: true
+  price:
+    market: 1000
+  providesHardening: false
+  quality: standard
+  size: 1
+  source:
+    book: MwtU
+    page: 3
+type: cyberdeck

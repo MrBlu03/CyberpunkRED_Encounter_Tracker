@@ -1,0 +1,67 @@
+_id: nr9onGjdx3SMLB64
+_key: "!items!nr9onGjdx3SMLB64"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/black-chrome/mechaman-smartglove.svg
+name: MechaMan Smart Glove
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: Tokyo Dynamics
+  concealable:
+    concealable: false
+    isConcealed: false
+  core: false
+  damage: 1d6
+  description:
+    value: |
+      <p>
+        A biking glove that comes with a subdermal grip pre-installed* which requires
+        a neural link to use. Has 1 additional cyberarm option slot. Any options
+        stored in the Cyberhand or meat hand are inaccessible while the Smart Glove is
+        being worn.<br /><em
+          >*Subdermal Grip must be added and installed manually after acquiring the
+          glove, this effectively consumes one of the option slots.</em
+        >
+      </p>
+  dvTable: ""
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  humanityLoss:
+    roll: "0"
+    static: 0
+  installLocation: notApplicable
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - cyberware
+      - itemUpgrade
+      - ammo
+    list: []
+    slots: 2
+    usedSlots: 0
+  isElectronic: true
+  isFoundational: true
+  isRanged: false
+  isWeapon: false
+  magazine:
+    max: 0
+    value: 0
+  price:
+    market: 500
+  providesHardening: false
+  revealed: true
+  rof: 1
+  size: 1
+  source:
+    book: BC
+    page: 37
+  type: cyberArm
+  unarmedAutomaticCalculation: true
+  usage: toggled
+  usesType: magazine
+  weaponSkill: Brawling
+  weaponType: assaultRifle
+type: cyberware

@@ -1,0 +1,33 @@
+_id: M9umYS7pNx7xVTvd
+_key: "!items!M9umYS7pNx7xVTvd"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/gear/chemical_analizer.svg
+name: Chemical Analyzer
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>Determine chemical composition using sample database.</p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: true
+  price:
+    market: 1000
+  providesHardening: false
+  revealed: true
+  source:
+    book: Core
+    page: 352
+  usage: toggled
+type: gear

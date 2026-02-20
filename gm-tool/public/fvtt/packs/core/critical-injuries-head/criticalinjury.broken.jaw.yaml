@@ -1,0 +1,27 @@
+_id: VWmTqmsW6S5v51FO
+_key: "!items!VWmTqmsW6S5v51FO"
+effects:
+  - fuvMhn0ZVMzPG1d8
+img: systems/cyberpunk-red-core/icons/compendium/critical_injuries/broken_jaw.svg
+name: Broken Jaw
+system:
+  deathSaveIncrease: false
+  description:
+    value: |
+      <p>-4 to Speech Actions.</p>
+  favorite: false
+  location: head
+  quickFix:
+    dvFirstAid: 0
+    dvParamedic: 13
+    type: paramedic
+  revealed: true
+  source:
+    book: Core
+    page: 188
+  treatment:
+    dvParamedic: 13
+    dvSurgery: 13
+    type: paramedicSurgery
+  usage: toggled
+type: criticalInjury

@@ -1,0 +1,37 @@
+_id: 1Uv3Sr204rM82du8
+_key: "!items!1Uv3Sr204rM82du8"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/spinning_your_wheels/inline_skates.svg
+name: Inline Skates
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        They're roller skates baby! Increases moment by 4 m/yds when using the Run
+        Action, though stopping the use of any options in the user's legs. May cause
+        physical tasks to be done at -2.
+      </p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: false
+    allowedTypes: []
+    list: []
+    slots: 0
+    usedSlots: 0
+  isElectronic: false
+  price:
+    market: 50
+  providesHardening: false
+  revealed: true
+  source:
+    book: SYW
+    page: 5
+  usage: toggled
+type: gear

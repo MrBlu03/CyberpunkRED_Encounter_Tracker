@@ -1,0 +1,36 @@
+_id: 2LaYl7hRn5V8cGUd
+_key: "!items!2LaYl7hRn5V8cGUd"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/black-chrome/chipvault.svg
+name: ChipVault by SecSystems
+system:
+  amount: 1
+  brand: SecSystems
+  concealable:
+    concealable: true
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        Can hold up to 8 pieces of Chipware. Chipware stored inside are immune to EMP
+        effects.
+      </p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 0
+    usedSlots: 0
+  isElectronic: false
+  price:
+    market: 100
+  providesHardening: false
+  revealed: true
+  source:
+    book: BC
+    page: 44
+  usage: toggled
+type: gear

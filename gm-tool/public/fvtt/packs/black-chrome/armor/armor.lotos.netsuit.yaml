@@ -1,0 +1,50 @@
+_id: 1oD47YLHJqb4V8aj
+_key: "!items!1oD47YLHJqb4V8aj"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/black-chrome/lotus-netsuit.svg
+name: Lotos Netsuit
+system:
+  bodyLocation:
+    ablation: 0
+    sp: 13
+  brand: Lotos Designs
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        A netsuit allowing an extra cyberdeck hardware slot that's installed directly
+        into the suit which is uninstalled if the suit is removed. Comes standard with
+        an Excellent Quality Cyberdeck*. -2 to REF, DEX, and MOVE.
+      </p>
+      <p><em>*Must be manually added after acquiring the armor</em></p>
+  equipped: owned
+  favorite: false
+  headLocation:
+    ablation: 0
+    sp: 13
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 1
+    usedSlots: 0
+  isBodyLocation: true
+  isElectronic: true
+  isHeadLocation: true
+  isShield: false
+  penalty: 2
+  price:
+    market: 5000
+  providesHardening: false
+  revealed: true
+  shieldHitPoints:
+    max: 0
+    value: 0
+  source:
+    book: BC
+    page: 31
+  usage: toggled
+type: armor

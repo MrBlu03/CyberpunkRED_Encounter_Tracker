@@ -1,5 +1,0 @@
-node_modules
-.vite
-.DS_Store
-dist
-public/data/*.json

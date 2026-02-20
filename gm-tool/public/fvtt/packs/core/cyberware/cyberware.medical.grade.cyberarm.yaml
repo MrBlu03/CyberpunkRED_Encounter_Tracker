@@ -1,0 +1,57 @@
+_id: 2Y63wKxk8P94YQUP
+_key: "!items!2Y63wKxk8P94YQUP"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/cyberware/cyberarm.svg
+name: Medical Grade Cyberarm
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  core: false
+  damage: 1d6
+  description:
+    value: |
+      <p>A medical grade cyberarm. Does not allow options to be installed.</p>
+  dvTable: ""
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  humanityLoss:
+    roll: "0"
+    static: 0
+  installLocation: notApplicable
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+      - cyberware
+    list: []
+    slots: 0
+    usedSlots: 0
+  isElectronic: true
+  isFoundational: true
+  isRanged: false
+  isWeapon: false
+  magazine:
+    max: 0
+    value: 0
+  price:
+    market: 0
+  providesHardening: false
+  revealed: true
+  rof: 1
+  size: 0
+  source:
+    book: Core
+    page: 226
+  type: cyberArm
+  unarmedAutomaticCalculation: true
+  usage: toggled
+  usesType: magazine
+  weaponSkill: Archery
+  weaponType: assaultRifle
+type: cyberware

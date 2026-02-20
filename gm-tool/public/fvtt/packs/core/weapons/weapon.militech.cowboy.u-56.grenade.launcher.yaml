@@ -1,0 +1,54 @@
+_id: IctYbE3ZOOR2yw5H
+_key: "!items!IctYbE3ZOOR2yw5H"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/weapons/GrenadeLauncher.svg
+name: Militech "Cowboy" U-56 Grenade Launcher
+system:
+  ammoVariety:
+    - grenade
+  attackmod: 0
+  brand: Militech
+  concealable:
+    concealable: false
+    isConcealed: false
+  critFailEffect: jammed
+  damage: 6d6
+  description:
+    value: |
+      <p>
+        An Exotic Grenade Launcher with 2 ROF. Holds four grenades. Requires BODY 11
+        or higher (unless mounted).
+      </p>
+  dvTable: DV Grenade Launcher
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 2
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+      - ammo
+    list: []
+    slots: 3
+    usedSlots: 0
+  isRanged: true
+  magazine:
+    max: 4
+    value: 0
+  price:
+    market: 5000
+  quality: standard
+  revealed: true
+  rof: 2
+  source:
+    book: Core
+    page: 349
+  unarmedAutomaticCalculation: true
+  usage: equipped
+  usesType: magazine
+  weaponSkill: Heavy Weapons
+  weaponType: grenadeLauncher
+type: weapon

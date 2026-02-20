@@ -1,0 +1,12 @@
+_id: O1dQcS4a7PmVCp5J
+_key: "!tables.results!n7IlIvMfg7yW1OoE.O1dQcS4a7PmVCp5J"
+documentCollection: cyberpunk-red-core.core_critical-injuries-body
+documentId: Y65igO9rtakP4qSs
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/critical_injuries/broken_arm.svg
+range:
+  - 6
+  - 6
+text: Broken Arm
+type: 2
+weight: 1

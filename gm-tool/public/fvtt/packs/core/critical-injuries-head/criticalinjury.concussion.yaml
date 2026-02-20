@@ -1,0 +1,27 @@
+_id: yyVVirrpH1O0DMYB
+_key: "!items!yyVVirrpH1O0DMYB"
+effects:
+  - OnONUXyMY8mOquf7
+img: systems/cyberpunk-red-core/icons/compendium/critical_injuries/concussion.svg
+name: Concussion
+system:
+  deathSaveIncrease: false
+  description:
+    value: |
+      <p>-2 to every action.</p>
+  favorite: false
+  location: head
+  quickFix:
+    dvFirstAid: 13
+    dvParamedic: 13
+    type: firstAidParamedic
+  revealed: true
+  source:
+    book: Core
+    page: 188
+  treatment:
+    dvParamedic: 0
+    dvSurgery: 0
+    type: quickFix
+  usage: toggled
+type: criticalInjury

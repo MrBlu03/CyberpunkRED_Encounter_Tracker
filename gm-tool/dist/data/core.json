@@ -1,0 +1,741 @@
+[
+  {
+    "_id": "w1",
+    "name": "Medium Pistol",
+    "type": "weapon",
+    "img": "systems/cyberpunk-red-core/icons/compendium/weapons/MediumPistol.svg",
+    "system": {
+      "price": { "market": 50 },
+      "damage": "2d6",
+      "rof": 2,
+      "weaponSkill": "Handgun",
+      "quality": "standard",
+      "description": { "value": "<p>A standard-issue medium pistol.</p>" },
+      "weaponType": "mediumPistol",
+      "magazine": { "max": 12 },
+      "attackmod": 0,
+      "isRanged": true,
+      "ranges": {
+        "pointBlank": { "range": 6, "dv": 13 },
+        "close": { "range": 12, "dv": 15 },
+        "medium": { "range": 25, "dv": 20 },
+        "long": { "range": 50, "dv": 25 },
+        "extreme": { "range": 100, "dv": 30 }
+      }
+    }
+  },
+  {
+    "_id": "w2",
+    "name": "Heavy Pistol",
+    "type": "weapon",
+    "img": "systems/cyberpunk-red-core/icons/compendium/weapons/HeavyPistol.svg",
+    "system": {
+      "price": { "market": 100 },
+      "damage": "3d6",
+      "rof": 2,
+      "weaponSkill": "Handgun",
+      "quality": "standard",
+      "description": { "value": "<p>A powerful heavy pistol for serious firepower.</p>" },
+      "weaponType": "heavyPistol",
+      "magazine": { "max": 8 },
+      "attackmod": 0,
+      "isRanged": true,
+      "ranges": {
+        "pointBlank": { "range": 6, "dv": 13 },
+        "close": { "range": 12, "dv": 15 },
+        "medium": { "range": 25, "dv": 20 },
+        "long": { "range": 50, "dv": 25 },
+        "extreme": { "range": 100, "dv": 30 }
+      }
+    }
+  },
+  {
+    "_id": "w3",
+    "name": "Very Heavy Pistol",
+    "type": "weapon",
+    "img": "systems/cyberpunk-red-core/icons/compendium/weapons/VeryHeavyPistol.svg",
+    "system": {
+      "price": { "market": 100 },
+      "damage": "4d6",
+      "rof": 1,
+      "weaponSkill": "Handgun",
+      "quality": "standard",
+      "description": { "value": "<p>Maximum stopping power in a handgun.</p>" },
+      "weaponType": "veryHeavyPistol",
+      "magazine": { "max": 8 },
+      "attackmod": 0,
+      "isRanged": true,
+      "ranges": {
+        "pointBlank": { "range": 6, "dv": 13 },
+        "close": { "range": 12, "dv": 15 },
+        "medium": { "range": 25, "dv": 20 },
+        "long": { "range": 50, "dv": 25 },
+        "extreme": { "range": 100, "dv": 30 }
+      }
+    }
+  },
+  {
+    "_id": "w4",
+    "name": "SMG",
+    "type": "weapon",
+    "img": "systems/cyberpunk-red-core/icons/compendium/weapons/SMG.svg",
+    "system": {
+      "price": { "market": 100 },
+      "damage": "2d6",
+      "rof": 3,
+      "weaponSkill": "Autofire",
+      "quality": "standard",
+      "description": { "value": "<p>Compact automatic weapon for close quarters.</p>" },
+      "weaponType": "smg",
+      "magazine": { "max": 30 },
+      "attackmod": 0,
+      "isRanged": true,
+      "ranges": {
+        "pointBlank": { "range": 6, "dv": 13 },
+        "close": { "range": 12, "dv": 15 },
+        "medium": { "range": 25, "dv": 20 },
+        "long": { "range": 50, "dv": 25 },
+        "extreme": { "range": 100, "dv": 30 }
+      }
+    }
+  },
+  {
+    "_id": "w5",
+    "name": "Heavy SMG",
+    "type": "weapon",
+    "img": "systems/cyberpunk-red-core/icons/compendium/weapons/HeavySMG.svg",
+    "system": {
+      "price": { "market": 100 },
+      "damage": "3d6",
+      "rof": 3,
+      "weaponSkill": "Autofire",
+      "quality": "standard",
+      "description": { "value": "<p>High rate of fire submachine gun.</p>" },
+      "weaponType": "heavySmg",
+      "magazine": { "max": 40 },
+      "attackmod": 0,
+      "isRanged": true,
+      "ranges": {
+        "pointBlank": { "range": 6, "dv": 13 },
+        "close": { "range": 12, "dv": 15 },
+        "medium": { "range": 25, "dv": 20 },
+        "long": { "range": 50, "dv": 25 },
+        "extreme": { "range": 100, "dv": 30 }
+      }
+    }
+  },
+  {
+    "_id": "w6",
+    "name": "Assault Rifle",
+    "type": "weapon",
+    "img": "systems/cyberpunk-red-core/icons/compendium/weapons/AssaultRifle.svg",
+    "system": {
+      "price": { "market": 500 },
+      "damage": "5d6",
+      "rof": 3,
+      "weaponSkill": "Shoulder Arms",
+      "quality": "standard",
+      "description": { "value": "<p>Military grade assault rifle.</p>" },
+      "weaponType": "assaultRifle",
+      "magazine": { "max": 25 },
+      "attackmod": 0,
+      "isRanged": true,
+      "ranges": {
+        "pointBlank": { "range": 6, "dv": 13 },
+        "close": { "range": 12, "dv": 15 },
+        "medium": { "range": 25, "dv": 20 },
+        "long": { "range": 50, "dv": 25 },
+        "extreme": { "range": 100, "dv": 30 }
+      }
+    }
+  },
+  {
+    "_id": "w7",
+    "name": "Sniper Rifle",
+    "type": "weapon",
+    "img": "systems/cyberpunk-red-core/icons/compendium/weapons/SniperRifle.svg",
+    "system": {
+      "price": { "market": 500 },
+      "damage": "5d6",
+      "rof": 1,
+      "weaponSkill": "Shoulder Arms",
+      "quality": "standard",
+      "description": { "value": "<p>Long range precision rifle.</p>" },
+      "weaponType": "sniperRifle",
+      "magazine": { "max": 4 },
+      "attackmod": 0,
+      "isRanged": true,
+      "ranges": {
+        "pointBlank": { "range": 6, "dv": 15 },
+        "close": { "range": 12, "dv": 17 },
+        "medium": { "range": 25, "dv": 20 },
+        "long": { "range": 50, "dv": 25 },
+        "extreme": { "range": 100, "dv": 30 }
+      }
+    }
+  },
+  {
+    "_id": "w8",
+    "name": "Shotgun",
+    "type": "weapon",
+    "img": "systems/cyberpunk-red-core/icons/compendium/weapons/Shotgun.svg",
+    "system": {
+      "price": { "market": 500 },
+      "damage": "5d6",
+      "rof": 1,
+      "weaponSkill": "Shoulder Arms",
+      "quality": "standard",
+      "description": { "value": "<p>Close quarters devastation.</p>" },
+      "weaponType": "shotgun",
+      "magazine": { "max": 4 },
+      "attackmod": 0,
+      "isRanged": true,
+      "ranges": {
+        "pointBlank": { "range": 6, "dv": 13 },
+        "close": { "range": 12, "dv": 15 },
+        "medium": { "range": 25, "dv": 20 },
+        "long": { "range": 50, "dv": 25 },
+        "extreme": { "range": 100, "dv": 30 }
+      }
+    }
+  },
+  {
+    "_id": "w9",
+    "name": "Heavy Melee Weapon",
+    "type": "weapon",
+    "img": "systems/cyberpunk-red-core/icons/compendium/weapons/HeavyMelee.svg",
+    "system": {
+      "price": { "market": 50 },
+      "damage": "1d6",
+      "rof": 2,
+      "weaponSkill": "Melee Weapon",
+      "quality": "standard",
+      "description": { "value": "<p>Baseball bat, crowbar, or similar heavy implement.</p>" },
+      "weaponType": "heavyMelee",
+      "attackmod": 0,
+      "isRanged": false
+    }
+  },
+  {
+    "_id": "w10",
+    "name": "Light Melee Weapon",
+    "type": "weapon",
+    "img": "systems/cyberpunk-red-core/icons/compendium/weapons/LightMelee.svg",
+    "system": {
+      "price": { "market": 10 },
+      "damage": "1d6",
+      "rof": 2,
+      "weaponSkill": "Melee Weapon",
+      "quality": "standard",
+      "description": { "value": "<p>Knife, baton, or similar light weapon.</p>" },
+      "weaponType": "lightMelee",
+      "attackmod": 0,
+      "isRanged": false
+    }
+  },
+  {
+    "_id": "a1",
+    "name": "Leathers",
+    "type": "armor",
+    "img": "systems/cyberpunk-red-core/icons/compendium/armor/Leathers.svg",
+    "system": {
+      "price": { "market": 20 },
+      "bodyLocation": { "sp": 4 },
+      "headLocation": { "sp": 0 },
+      "quality": "standard",
+      "description": { "value": "<p>Basic leather protection.</p>" }
+    }
+  },
+  {
+    "_id": "a2",
+    "name": "Kevlar",
+    "type": "armor",
+    "img": "systems/cyberpunk-red-core/icons/compendium/armor/Kevlar.svg",
+    "system": {
+      "price": { "market": 50 },
+      "bodyLocation": { "sp": 7 },
+      "headLocation": { "sp": 0 },
+      "quality": "standard",
+      "description": { "value": "<p>Bullet-resistant vest.</p>" }
+    }
+  },
+  {
+    "_id": "a3",
+    "name": "Light Armorjack",
+    "type": "armor",
+    "img": "systems/cyberpunk-red-core/icons/compendium/armor/LightArmorjack.svg",
+    "system": {
+      "price": { "market": 100 },
+      "bodyLocation": { "sp": 11 },
+      "headLocation": { "sp": 11 },
+      "quality": "standard",
+      "description": { "value": "<p>Reinforced jacket with head protection.</p>" }
+    }
+  },
+  {
+    "_id": "a4",
+    "name": "Bodyweight Suit",
+    "type": "armor",
+    "img": "systems/cyberpunk-red-core/icons/compendium/armor/BodyweightSuit.svg",
+    "system": {
+      "price": { "market": 1000 },
+      "bodyLocation": { "sp": 11 },
+      "headLocation": { "sp": 11 },
+      "quality": "standard",
+      "description": { "value": "<p>Full body protection suit.</p>" }
+    }
+  },
+  {
+    "_id": "a5",
+    "name": "Medium Armorjack",
+    "type": "armor",
+    "img": "systems/cyberpunk-red-core/icons/compendium/armor/MediumArmorjack.svg",
+    "system": {
+      "price": { "market": 100 },
+      "bodyLocation": { "sp": 12 },
+      "headLocation": { "sp": 12 },
+      "quality": "standard",
+      "description": { "value": "<p>Heavy duty protection.</p>" }
+    }
+  },
+  {
+    "_id": "a6",
+    "name": "Heavy Armorjack",
+    "type": "armor",
+    "img": "systems/cyberpunk-red-core/icons/compendium/armor/HeavyArmorjack.svg",
+    "system": {
+      "price": { "market": 500 },
+      "bodyLocation": { "sp": 13 },
+      "headLocation": { "sp": 13 },
+      "quality": "standard",
+      "description": { "value": "<p>Maximum conventional protection.</p>" }
+    }
+  },
+  {
+    "_id": "a7",
+    "name": "Flak",
+    "type": "armor",
+    "img": "systems/cyberpunk-red-core/icons/compendium/armor/Flak.svg",
+    "system": {
+      "price": { "market": 500 },
+      "bodyLocation": { "sp": 15 },
+      "headLocation": { "sp": 15 },
+      "quality": "standard",
+      "description": { "value": "<p>Military grade armor.</p>" }
+    }
+  },
+  {
+    "_id": "a8",
+    "name": "Metalgear",
+    "type": "armor",
+    "img": "systems/cyberpunk-red-core/icons/compendium/armor/Metalgear.svg",
+    "system": {
+      "price": { "market": 5000 },
+      "bodyLocation": { "sp": 18 },
+      "headLocation": { "sp": 18 },
+      "quality": "standard",
+      "description": { "value": "<p>Powered armor for maximum protection.</p>" }
+    }
+  },
+  {
+    "_id": "a9",
+    "name": "Bulletproof Shield",
+    "type": "armor",
+    "img": "systems/cyberpunk-red-core/icons/compendium/armor/Shield.svg",
+    "system": {
+      "price": { "market": 100 },
+      "bodyLocation": { "sp": 10 },
+      "headLocation": { "sp": 0 },
+      "quality": "standard",
+      "description": { "value": "<p>Portable ballistic shield.</p>" }
+    }
+  },
+  {
+    "_id": "c1",
+    "name": "Neural Link",
+    "type": "cyberware",
+    "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/NeuralLink.svg",
+    "system": {
+      "price": { "market": 500 },
+      "hlCost": 7,
+      "slots": 2,
+      "quality": "standard",
+      "description": { "value": "<p>Basic neural interface for cyberware connectivity.</p>" },
+      "category": "neuralware"
+    }
+  },
+  {
+    "_id": "c2",
+    "name": "Interface Plugs",
+    "type": "cyberware",
+    "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/InterfacePlugs.svg",
+    "system": {
+      "price": { "market": 500 },
+      "hlCost": 7,
+      "slots": 2,
+      "quality": "standard",
+      "description": { "value": "<p>Direct connection ports for linking to machines.</p>" },
+      "category": "neuralware"
+    }
+  },
+  {
+    "_id": "c3",
+    "name": "Chipware Socket",
+    "type": "cyberware",
+    "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/ChipwareSocket.svg",
+    "system": {
+      "price": { "market": 500 },
+      "hlCost": 7,
+      "slots": 2,
+      "quality": "standard",
+      "description": { "value": "<p>Socket for installing skill chips.</p>" },
+      "category": "neuralware"
+    }
+  },
+  {
+    "_id": "c4",
+    "name": "Cyberoptics",
+    "type": "cyberware",
+    "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/Cyberoptics.svg",
+    "system": {
+      "price": { "market": 100 },
+      "hlCost": 7,
+      "slots": 2,
+      "quality": "standard",
+      "description": { "value": "<p>Enhanced vision cyberoptics.</p>" },
+      "category": "cyberoptics"
+    }
+  },
+  {
+    "_id": "c5",
+    "name": "Cyberarm",
+    "type": "cyberware",
+    "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/Cyberarm.svg",
+    "system": {
+      "price": { "market": 500 },
+      "hlCost": 7,
+      "slots": 2,
+      "quality": "standard",
+      "description": { "value": "<p>Prosthetic arm replacement.</p>" },
+      "category": "cyberlimbs"
+    }
+  },
+  {
+    "_id": "c6",
+    "name": "Cyberleg",
+    "type": "cyberware",
+    "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/Cyberleg.svg",
+    "system": {
+      "price": { "market": 500 },
+      "hlCost": 7,
+      "slots": 2,
+      "quality": "standard",
+      "description": { "value": "<p>Prosthetic leg replacement.</p>" },
+      "category": "cyberlimbs"
+    }
+  },
+  {
+    "_id": "c7",
+    "name": "Subdermal Armor",
+    "type": "cyberware",
+    "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/SubdermalArmor.svg",
+    "system": {
+      "price": { "market": 1000 },
+      "hlCost": 7,
+      "slots": 2,
+      "quality": "standard",
+      "description": { "value": "<p>Under-skin armor plating.</p>" },
+      "category": "internal-body-cyberware"
+    }
+  },
+  {
+    "_id": "c8",
+    "name": "Scratchers",
+    "type": "cyberware",
+    "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/Scratchers.svg",
+    "system": {
+      "price": { "market": 100 },
+      "hlCost": 7,
+      "slots": 2,
+      "quality": "standard",
+      "description": { "value": "<p>Retractable claws in fingertips.</p>" },
+      "category": "external-body-cyberware"
+    }
+  },
+  {
+    "_id": "c9",
+    "name": "Rippers",
+    "type": "cyberware",
+    "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/Rippers.svg",
+    "system": {
+      "price": { "market": 500 },
+      "hlCost": 7,
+      "slots": 2,
+      "quality": "standard",
+      "description": { "value": "<p>Enhanced scratchers with greater damage.</p>" },
+      "category": "external-body-cyberware"
+    }
+  },
+  {
+    "_id": "c10",
+    "name": "Big Knucks",
+    "type": "cyberware",
+    "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/BigKnucks.svg",
+    "system": {
+      "price": { "market": 100 },
+      "hlCost": 7,
+      "slots": 2,
+      "quality": "standard",
+      "description": { "value": "<p>Reinforced knuckles for unarmed combat.</p>" },
+      "category": "external-body-cyberware"
+    }
+  },
+  {
+    "_id": "c11",
+    "name": "Slice n' Dice",
+    "type": "cyberware",
+    "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/SliceNDice.svg",
+    "system": {
+      "price": { "market": 1000 },
+      "hlCost": 7,
+      "slots": 2,
+      "quality": "standard",
+      "description": { "value": "<p>Monofilament whip in fingertip.</p>" },
+      "category": "external-body-cyberware"
+    }
+  },
+  {
+    "_id": "c12",
+    "name": "Wolvers",
+    "type": "cyberware",
+    "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/Wolvers.svg",
+    "system": {
+      "price": { "market": 1000 },
+      "hlCost": 7,
+      "slots": 2,
+      "quality": "standard",
+      "description": { "value": "<p>Retractable blades in forearms.</p>" },
+      "category": "external-body-cyberware"
+    }
+  },
+  {
+    "_id": "g1",
+    "name": "Agent",
+    "type": "gear",
+    "img": "systems/cyberpunk-red-core/icons/compendium/gear/Agent.svg",
+    "system": {
+      "price": { "market": 100 },
+      "quality": "standard",
+      "description": { "value": "<p>Personal AI assistant device.</p>" }
+    }
+  },
+  {
+    "_id": "g2",
+    "name": "Audio Recorder",
+    "type": "gear",
+    "img": "systems/cyberpunk-red-core/icons/compendium/gear/AudioRecorder.svg",
+    "system": {
+      "price": { "market": 50 },
+      "quality": "standard",
+      "description": { "value": "<p>Device for recording audio.</p>" }
+    }
+  },
+  {
+    "_id": "g3",
+    "name": "Binoculars",
+    "type": "gear",
+    "img": "systems/cyberpunk-red-core/icons/compendium/gear/Binoculars.svg",
+    "system": {
+      "price": { "market": 50 },
+      "quality": "standard",
+      "description": { "value": "<p>Enhanced vision binoculars.</p>" }
+    }
+  },
+  {
+    "_id": "g4",
+    "name": "Breathing Mask",
+    "type": "gear",
+    "img": "systems/cyberpunk-red-core/icons/compendium/gear/BreathingMask.svg",
+    "system": {
+      "price": { "market": 20 },
+      "quality": "standard",
+      "description": { "value": "<p>Mask that filters toxic air.</p>" }
+    }
+  },
+  {
+    "_id": "g5",
+    "name": "Carryall",
+    "type": "gear",
+    "img": "systems/cyberpunk-red-core/icons/compendium/gear/Carryall.svg",
+    "system": {
+      "price": { "market": 5 },
+      "quality": "standard",
+      "description": { "value": "<p>Large bag for carrying items.</p>" }
+    }
+  },
+  {
+    "_id": "g6",
+    "name": "Chemical Analyzer",
+    "type": "gear",
+    "img": "systems/cyberpunk-red-core/icons/compendium/gear/ChemicalAnalyzer.svg",
+    "system": {
+      "price": { "market": 1000 },
+      "quality": "standard",
+      "description": { "value": "<p>Device that identifies substances.</p>" }
+    }
+  },
+  {
+    "_id": "g7",
+    "name": "Computer",
+    "type": "gear",
+    "img": "systems/cyberpunk-red-core/icons/compendium/gear/Computer.svg",
+    "system": {
+      "price": { "market": 50 },
+      "quality": "standard",
+      "description": { "value": "<p>Laptop or cyberdeck computer.</p>" }
+    }
+  },
+  {
+    "_id": "g8",
+    "name": "First Aid Kit",
+    "type": "gear",
+    "img": "systems/cyberpunk-red-core/icons/compendium/gear/FirstAidKit.svg",
+    "system": {
+      "price": { "market": 10 },
+      "quality": "standard",
+      "description": { "value": "<p>Basic medical supplies.</p>" }
+    }
+  },
+  {
+    "_id": "g9",
+    "name": "Flashlight",
+    "type": "gear",
+    "img": "systems/cyberpunk-red-core/icons/compendium/gear/Flashlight.svg",
+    "system": {
+      "price": { "market": 5 },
+      "quality": "standard",
+      "description": { "value": "<p>Portable light source.</p>" }
+    }
+  },
+  {
+    "_id": "g10",
+    "name": "Grapple Gun",
+    "type": "gear",
+    "img": "systems/cyberpunk-red-core/icons/compendium/gear/GrappleGun.svg",
+    "system": {
+      "price": { "market": 100 },
+      "quality": "standard",
+      "description": { "value": "<p>Device that fires grappling hook.</p>" }
+    }
+  },
+  {
+    "_id": "g11",
+    "name": "Handcuffs",
+    "type": "gear",
+    "img": "systems/cyberpunk-red-core/icons/compendium/gear/Handcuffs.svg",
+    "system": {
+      "price": { "market": 10 },
+      "quality": "standard",
+      "description": { "value": "<p>Restraints for detaining subjects.</p>" }
+    }
+  },
+  {
+    "_id": "g12",
+    "name": "Homing Tracer",
+    "type": "gear",
+    "img": "systems/cyberpunk-red-core/icons/compendium/gear/HomingTracer.svg",
+    "system": {
+      "price": { "market": 500 },
+      "quality": "standard",
+      "description": { "value": "<p>Tracking device for following targets.</p>" }
+    }
+  },
+  {
+    "_id": "g13",
+    "name": "Inflatable Bed",
+    "type": "gear",
+    "img": "systems/cyberpunk-red-core/icons/compendium/gear/InflatableBed.svg",
+    "system": {
+      "price": { "market": 5 },
+      "quality": "standard",
+      "description": { "value": "<p>Portable sleeping arrangement.</p>" }
+    }
+  },
+  {
+    "_id": "g14",
+    "name": "Disposable Cell Phone",
+    "type": "gear",
+    "img": "systems/cyberpunk-red-core/icons/compendium/gear/CellPhone.svg",
+    "system": {
+      "price": { "market": 10 },
+      "quality": "standard",
+      "description": { "value": "<p>Burner phone for secure communication.</p>" }
+    }
+  },
+  {
+    "_id": "g15",
+    "name": "Glow Stick",
+    "type": "gear",
+    "img": "systems/cyberpunk-red-core/icons/compendium/gear/GlowStick.svg",
+    "system": {
+      "price": { "market": 5 },
+      "quality": "standard",
+      "description": { "value": "<p>Chemical light source.</p>" }
+    }
+  },
+  {
+    "_id": "g16",
+    "name": "Glow Paint",
+    "type": "gear",
+    "img": "systems/cyberpunk-red-core/icons/compendium/gear/GlowPaint.svg",
+    "system": {
+      "price": { "market": 10 },
+      "quality": "standard",
+      "description": { "value": "<p>Luminescent paint for marking.</p>" }
+    }
+  },
+  {
+    "_id": "g17",
+    "name": "Drones",
+    "type": "gear",
+    "img": "systems/cyberpunk-red-core/icons/compendium/gear/Drones.svg",
+    "system": {
+      "price": { "market": 500 },
+      "quality": "standard",
+      "description": { "value": "<p>Various types of drones available.</p>" }
+    }
+  },
+  {
+    "_id": "g18",
+    "name": "Electric Torch",
+    "type": "gear",
+    "img": "systems/cyberpunk-red-core/icons/compendium/gear/ElectricTorch.svg",
+    "system": {
+      "price": { "market": 5 },
+      "quality": "standard",
+      "description": { "value": "<p>Rechargeable flashlight.</p>" }
+    }
+  },
+  {
+    "_id": "g19",
+    "name": "Cryopump",
+    "type": "gear",
+    "img": "systems/cyberpunk-red-core/icons/compendium/gear/Cryopump.svg",
+    "system": {
+      "price": { "market": 1000 },
+      "quality": "standard",
+      "description": { "value": "<p>Medical device for emergency treatment.</p>" }
+    }
+  },
+  {
+    "_id": "g20",
+    "name": "Food Stick",
+    "type": "gear",
+    "img": "systems/cyberpunk-red-core/icons/compendium/gear/FoodStick.svg",
+    "system": {
+      "price": { "market": 5 },
+      "quality": "standard",
+      "description": { "value": "<p>Nutrition bar for sustenance.</p>" }
+    }
+  }
+]

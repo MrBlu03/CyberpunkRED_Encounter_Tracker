@@ -1,0 +1,33 @@
+_id: W6SZVj8BHHXbpPOz
+_key: "!items!W6SZVj8BHHXbpPOz"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/vehicles/airplane.svg
+name: AV-9 Super Aerodyne
+system:
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        A highly advanced AV with limited seats. Can travel up to 300 miles per hour.
+      </p>
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  price:
+    market: 100000
+  sdp: 60
+  seats: 2
+  source:
+    book: Core
+    page: 191
+  speedCombat: 60
+  speedNarrative: 300 MPH / 483 KPH
+type: vehicle

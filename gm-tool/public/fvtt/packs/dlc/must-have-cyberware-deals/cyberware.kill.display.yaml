@@ -1,0 +1,63 @@
+_id: jSq3PCutxWhieWDS
+_key: "!items!jSq3PCutxWhieWDS"
+effects:
+  - 1fWLaLfOgxS4KuFZ
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/must_have_cyberware_deals/kill_display.svg
+name: Kill Display
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  core: false
+  damage: 1d6
+  description:
+    value: |
+      <p>
+        Subdermal Alphanumeric display that shines clearly through the skin. Use a
+        linked Agent to customize the output. Commonly used as &ldquo;kill
+        counter.&rdquo;<br />Qualifies as a Light Tattoo. +2 Wardrobe and Style when
+        the user has 3 or more Light Tattoos.
+      </p>
+  dvTable: ""
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  humanityLoss:
+    roll: "0"
+    static: 0
+  installLocation: mall
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 0
+    usedSlots: 0
+  isElectronic: true
+  isFoundational: false
+  isRanged: false
+  isWeapon: false
+  magazine:
+    max: 0
+    value: 0
+  price:
+    market: 100
+  providesHardening: false
+  revealed: true
+  rof: 1
+  size: 1
+  source:
+    book: MHCD
+    page: 3
+  type: fashionware
+  unarmedAutomaticCalculation: true
+  usage: toggled
+  usesType: magazine
+  weaponSkill: ""
+  weaponType: ""
+type: cyberware

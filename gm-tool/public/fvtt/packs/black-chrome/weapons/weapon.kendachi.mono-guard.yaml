@@ -1,0 +1,55 @@
+_id: K97WPZL6SF5DnMoE
+_key: "!items!K97WPZL6SF5DnMoE"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/black-chrome/kenadachi-mono-guard.svg
+name: Kendachi Mono-Guard
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: Kendachi
+  canIgnoreArmor: true
+  concealable:
+    concealable: true
+    isConcealed: false
+  critFailEffect: jammed
+  damage: 3d6
+  description:
+    value: |
+      <p>Monowire, One Handed Exotic Heavy Melee Weapon.</p>
+      <p>Can apply multiple Critical Injuries.</p>
+  dvTable: ""
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 1
+  ignoreArmorPercent: 50
+  ignoreBelowSP: 0
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+      - ammo
+    list: []
+    slots: 0
+    usedSlots: 0
+  isRanged: false
+  magazine:
+    max: 0
+    value: 0
+  price:
+    market: 1000
+  quality: standard
+  revealed: true
+  rof: 2
+  source:
+    book: BC
+    page: 96
+  unarmedAutomaticCalculation: true
+  usage: toggled
+  usesType: magazine
+  weaponSkill: Melee Weapon
+  weaponType: heavyMelee
+type: weapon

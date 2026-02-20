@@ -1,0 +1,32 @@
+_id: JoQ7dlYgAuJCSQr5
+_key: "!items.effects!Lx9FSNDEIxLZ7Pyh.JoQ7dlYgAuJCSQr5"
+changes:
+  - key: system.stats.body.value
+    mode: 2
+    priority: null
+    value: "2"
+description: ""
+disabled: false
+duration:
+  combat: null
+  rounds: null
+  seconds: null
+  startRound: null
+  startTime: null
+  startTurn: null
+  turns: null
+flags:
+  cyberpunk-red-core:
+    changes:
+      cats:
+        "0": stat
+      situational:
+        "0":
+          isSituational: false
+          onByDefault: false
+icon: >-
+  systems/cyberpunk-red-core/icons/compendium/cyberware/grafted_muscle_and_bone_lace.svg
+name: Grafted Muscle & Bone Lace
+statuses: []
+tint: null
+transfer: true

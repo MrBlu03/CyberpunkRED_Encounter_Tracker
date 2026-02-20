@@ -1,0 +1,425 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Cyberpunk RED Dark Theme - Default */
+    --background: 0 0% 4%;
+    --foreground: 0 0% 88%;
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 88%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 88%;
+    --primary: 17 100% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 16%;
+    --secondary-foreground: 0 0% 88%;
+    --muted: 0 0% 16%;
+    --muted-foreground: 0 0% 53%;
+    --accent: 184 100% 50%;
+    --accent-foreground: 0 0% 0%;
+    --destructive: 348 100% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 120 100% 50%;
+    --success-foreground: 0 0% 0%;
+    --warning: 36 100% 50%;
+    --warning-foreground: 0 0% 0%;
+    --border: 0 0% 20%;
+    --input: 0 0% 16%;
+    --ring: 17 100% 60%;
+    --radius: 0.5rem;
+    
+    /* Custom Cyberpunk Properties */
+    --neon-orange: #ff6b35;
+    --neon-cyan: #00f0ff;
+    --neon-red: #ff003c;
+    --neon-green: #0aff00;
+    --void-black: #0a0a0a;
+    --dark-steel: #1a1a1a;
+    --ghost-gray: #888888;
+    --soft-white: #e0e0e0;
+    
+    /* Wound State Colors */
+    --wound-light: rgba(255, 255, 0, 0.2);
+    --wound-serious: rgba(255, 165, 0, 0.3);
+    --wound-mortal: rgba(255, 69, 0, 0.4);
+    --wound-dead: rgba(128, 0, 0, 0.5);
+    
+    /* Font Families */
+    --font-display: 'Orbitron', sans-serif;
+    --font-body: 'Rajdhani', sans-serif;
+    --font-mono: 'Share Tech Mono', monospace;
+  }
+
+  .light {
+    --background: 0 0% 97%;
+    --foreground: 0 0% 13%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 13%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 13%;
+    --primary: 17 80% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 94%;
+    --secondary-foreground: 0 0% 13%;
+    --muted: 0 0% 94%;
+    --muted-foreground: 0 0% 42%;
+    --accent: 184 80% 45%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 348 80% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 120 80% 35%;
+    --success-foreground: 0 0% 100%;
+    --warning: 36 80% 45%;
+    --warning-foreground: 0 0% 100%;
+    --border: 0 0% 87%;
+    --input: 0 0% 94%;
+    --ring: 17 80% 50%;
+    
+    --wound-light: rgba(255, 235, 59, 0.4);
+    --wound-serious: rgba(255, 152, 0, 0.5);
+    --wound-mortal: rgba(244, 67, 54, 0.6);
+    --wound-dead: rgba(183, 28, 28, 0.7);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-body);
+    overflow-x: hidden;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+  }
+  
+  code, pre, .mono {
+    font-family: var(--font-mono);
+  }
+}
+
+@layer components {
+  /* Glassmorphism Card */
+  .glass-card {
+    @apply backdrop-blur-xl bg-card/95 border border-border/70;
+    box-shadow: 
+      0 4px 30px rgba(0, 0, 0, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  }
+  
+  /* Neon Glow Effects */
+  .neon-glow-orange {
+    box-shadow: 
+      0 0 5px var(--neon-orange),
+      0 0 10px var(--neon-orange),
+      0 0 20px rgba(255, 107, 53, 0.3);
+  }
+  
+  .neon-glow-cyan {
+    box-shadow: 
+      0 0 5px var(--neon-cyan),
+      0 0 10px var(--neon-cyan),
+      0 0 20px rgba(0, 240, 255, 0.3);
+  }
+  
+  .neon-text-orange {
+    text-shadow: 
+      0 0 5px var(--neon-orange),
+      0 0 10px rgba(255, 107, 53, 0.5);
+  }
+  
+  .neon-text-cyan {
+    text-shadow: 
+      0 0 5px var(--neon-cyan),
+      0 0 10px rgba(0, 240, 255, 0.5);
+  }
+  
+  /* Cyberpunk Button - Uses primary color */
+  .cyber-btn {
+    @apply relative overflow-hidden px-6 py-3 font-semibold uppercase tracking-wider;
+    font-family: var(--font-display);
+    background: hsl(var(--primary));
+    clip-path: polygon(
+      0 0,
+      calc(100% - 10px) 0,
+      100% 10px,
+      100% 100%,
+      10px 100%,
+      0 calc(100% - 10px)
+    );
+    transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  
+  .cyber-btn:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.2);
+    box-shadow: 0 10px 30px hsl(var(--primary) / 0.4);
+  }
+  
+  .cyber-btn:active {
+    transform: translateY(0) scale(0.98);
+  }
+  
+  /* Secondary Button */
+  .cyber-btn-secondary {
+    @apply relative overflow-hidden px-6 py-3 font-semibold uppercase tracking-wider border-2;
+    font-family: var(--font-display);
+    border-color: var(--neon-cyan);
+    color: var(--neon-cyan);
+    background: transparent;
+    clip-path: polygon(
+      0 0,
+      calc(100% - 10px) 0,
+      100% 10px,
+      100% 100%,
+      10px 100%,
+      0 calc(100% - 10px)
+    );
+    transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  
+  .cyber-btn-secondary:hover {
+    background: rgba(0, 240, 255, 0.1);
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+  }
+  
+  /* Data Grid / Table Styling */
+  .data-grid {
+    @apply w-full border-collapse;
+  }
+  
+  .data-grid th {
+    @apply px-4 py-3 text-left text-xs uppercase tracking-widest;
+    font-family: var(--font-display);
+    background: linear-gradient(180deg, rgba(255,107,53,0.1) 0%, transparent 100%);
+    border-bottom: 2px solid var(--neon-orange);
+    color: var(--neon-orange);
+  }
+  
+  .data-grid td {
+    @apply px-4 py-3 border-b border-border/30;
+  }
+  
+  .data-grid tr:hover td {
+    background: rgba(255, 107, 53, 0.05);
+  }
+  
+  /* Scanline Effect */
+  .scanlines::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.03) 2px,
+      rgba(0, 0, 0, 0.03) 4px
+    );
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  /* CRT Flicker */
+  @keyframes flicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.98; }
+  }
+  
+  .crt-flicker {
+    animation: flicker 0.15s infinite;
+  }
+  
+  /* Glitch Effect */
+  @keyframes glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+    100% { transform: translate(0); }
+  }
+  
+  .glitch:hover {
+    animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+  }
+  
+  /* Pulse Animation */
+  @keyframes pulse-glow {
+    0%, 100% { 
+      box-shadow: 0 0 5px var(--neon-orange), 0 0 10px rgba(255, 107, 53, 0.3);
+    }
+    50% { 
+      box-shadow: 0 0 15px var(--neon-orange), 0 0 30px rgba(255, 107, 53, 0.5);
+    }
+  }
+  
+  .pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+  
+  /* HP Bar Animations */
+  @keyframes hp-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+  }
+  
+  .hp-bar-low {
+    animation: hp-pulse 1s ease-in-out infinite;
+  }
+  
+  /* Wound State Classes */
+  .wound-not-wounded {
+    @apply bg-transparent;
+  }
+  
+  .wound-lightly-wounded {
+    background: var(--wound-light);
+  }
+  
+  .wound-seriously-wounded {
+    background: var(--wound-serious);
+  }
+  
+  .wound-mortally-wounded {
+    background: var(--wound-mortal);
+  }
+  
+  .wound-dead {
+    background: var(--wound-dead);
+    @apply opacity-60;
+  }
+  
+  /* Scrollbar Styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: var(--void-black);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--neon-orange);
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #ff8c42;
+  }
+  
+  /* Input Styling */
+  .cyber-input {
+    @apply px-4 py-2 bg-secondary border border-border rounded;
+    font-family: var(--font-mono);
+    transition: all 0.3s ease;
+  }
+  
+  .cyber-input:focus {
+    @apply outline-none border-[var(--neon-orange)];
+    box-shadow: 0 0 10px rgba(255, 107, 53, 0.3);
+  }
+  
+  /* Tab Styling */
+  .cyber-tab {
+    @apply px-4 py-2 font-semibold uppercase tracking-wider text-sm;
+    font-family: var(--font-display);
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  
+  .cyber-tab::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--neon-orange);
+    transition: width 0.3s ease;
+  }
+  
+  .cyber-tab:hover::after,
+  .cyber-tab.active::after {
+    width: 100%;
+  }
+  
+  .cyber-tab.active {
+    color: var(--neon-orange);
+  }
+  
+  /* Background Grid */
+  .bg-grid {
+    background-image: 
+      linear-gradient(rgba(255, 107, 53, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 107, 53, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+  
+  /* Noise Texture Overlay - Subtle */
+  .noise-overlay::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    opacity: 0.015;
+    pointer-events: none;
+    z-index: 9999;
+  }
+  
+  /* Ensure content is visible */
+  .main-content {
+    min-height: 100vh;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .animate-in {
+    animation: animateIn 0.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  }
+  
+  @keyframes animateIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .slide-in-left {
+    animation: slideInLeft 0.6s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  }
+  
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}

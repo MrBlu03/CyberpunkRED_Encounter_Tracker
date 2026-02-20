@@ -1,0 +1,20 @@
+_id: dZ6CPPQLCGfFULo5
+_key: "!items!dZ6CPPQLCGfFULo5"
+effects: []
+img: icons/svg/item-bag.svg
+name: Archery
+system:
+  basic: false
+  category: rangedweaponSkills
+  core: true
+  description:
+    value: ""
+  difficulty: typical
+  favorite: false
+  level: 0
+  skillType: generic
+  source:
+    book: Core
+    page: 137
+  stat: ref
+type: skill

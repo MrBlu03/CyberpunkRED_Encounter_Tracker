@@ -1,0 +1,28 @@
+_id: RAZcouFe0FS1VN1o
+_key: "!items!RAZcouFe0FS1VN1o"
+effects:
+  - K5VZo8azU8QYk46R
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/critical_injuries/collapsed_lung.svg
+name: Collapsed Lung
+system:
+  deathSaveIncrease: true
+  description:
+    value: |
+      <p>-2 MOVE (minimum MOVE of 1).</p>
+  favorite: false
+  location: body
+  quickFix:
+    dvFirstAid: 0
+    dvParamedic: 15
+    type: paramedic
+  revealed: true
+  source:
+    book: Core
+    page: 187
+  treatment:
+    dvParamedic: 0
+    dvSurgery: 15
+    type: surgery
+  usage: toggled
+type: criticalInjury

@@ -1,0 +1,77 @@
+_id: l1MH4FAfpnKn3jsm
+_key: "!items!l1MH4FAfpnKn3jsm"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/upgrades/bulletproof_glass.svg
+name: Bulletproof Glass
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  damage: 1d6
+  description:
+    value: |
+      <p>
+        Enclosure glass is now considered thin cover with 7 HP. Refer to the cover
+        rules in CP:R, pg. 182.
+      </p>
+      <p>Bike first requires the Enclosure upgrade to install this upgrade.</p>
+  dvTable: ""
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 0
+  installLocation: mall
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: false
+  isRanged: false
+  magazine:
+    max: 0
+    value: 0
+  modifiers:
+    attackmod:
+      type: modifier
+      value: null
+    damage:
+      type: modifier
+      value: null
+    magazine:
+      type: modifier
+      value: null
+    rof:
+      type: modifier
+      value: null
+    sdp:
+      type: modifier
+      value: 0
+    seats:
+      type: modifier
+      value: null
+    secondaryWeapon:
+      configured: false
+    speedCombat:
+      type: modifier
+      value: null
+  price:
+    market: 50
+  providesHardening: false
+  rof: 1
+  size: 1
+  source:
+    book: SYW
+    page: 4
+  type: vehicle
+  unarmedAutomaticCalculation: true
+  usesType: magazine
+  weaponSkill: ""
+  weaponType: ""
+type: itemUpgrade

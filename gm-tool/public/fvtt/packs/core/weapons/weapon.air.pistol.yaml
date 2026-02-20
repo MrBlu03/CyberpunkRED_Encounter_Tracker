@@ -1,0 +1,54 @@
+_id: iSyf14qCf2US6im1
+_key: "!items!iSyf14qCf2US6im1"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/weapons/air_pistol.svg
+name: Air Pistol
+system:
+  ammoVariety:
+    - paintball
+  attackmod: 0
+  brand: ""
+  concealable:
+    concealable: true
+    isConcealed: false
+  critFailEffect: jammed
+  damage: "0"
+  description:
+    value: |
+      <p>
+        An Exotic Medium Pistol. Fires Paintballs. If loaded with acid it is able to
+        ablate armor by one with each hit.
+      </p>
+  dvTable: DV Pistol
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 1
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+      - ammo
+    list: []
+    slots: 3
+    usedSlots: 0
+  isRanged: true
+  magazine:
+    max: 12
+    value: 0
+  price:
+    market: 100
+  quality: standard
+  revealed: true
+  rof: 2
+  source:
+    book: Core
+    page: 347
+  unarmedAutomaticCalculation: true
+  usage: equipped
+  usesType: magazine
+  weaponSkill: Handgun
+  weaponType: medPistol
+type: weapon

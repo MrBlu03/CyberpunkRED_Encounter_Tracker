@@ -1,0 +1,31 @@
+_id: XTHPa35uHkTYBjq4
+_key: "!items!XTHPa35uHkTYBjq4"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/black-chrome/dayton-tdt-004.svg
+name: Dayton TDT 004
+system:
+  brand: Dayton Aeronautics
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>Troop transport Helicopter.</p>
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  price:
+    market: 43000
+  sdp: 80
+  seats: 8
+  source:
+    book: BC
+    page: 59
+  speedCombat: 40
+  speedNarrative: 200 MPH / 322 KPH
+type: vehicle

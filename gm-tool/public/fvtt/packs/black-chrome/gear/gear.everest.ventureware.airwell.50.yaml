@@ -1,0 +1,33 @@
+_id: Ogmb7zTfss6Kz54C
+_key: "!items!Ogmb7zTfss6Kz54C"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/black-chrome/airwell.svg
+name: Everest VentureWare AirWell 50
+system:
+  amount: 1
+  brand: Everest VentureWare
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>Produces enough water to sustain a person.</p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 0
+    usedSlots: 0
+  isElectronic: false
+  price:
+    market: 100
+  providesHardening: false
+  revealed: true
+  source:
+    book: BC
+    page: 48
+  usage: toggled
+type: gear

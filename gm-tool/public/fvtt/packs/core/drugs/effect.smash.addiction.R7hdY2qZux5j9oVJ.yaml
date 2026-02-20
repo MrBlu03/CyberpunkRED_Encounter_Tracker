@@ -1,0 +1,71 @@
+_id: R7hdY2qZux5j9oVJ
+_key: "!items.effects!PRLDaeBVeMuBBIeO.R7hdY2qZux5j9oVJ"
+changes:
+  - key: bonuses.acting
+    mode: 2
+    priority: null
+    value: "-2"
+  - key: bonuses.contortionist
+    mode: 2
+    priority: null
+    value: "-2"
+  - key: bonuses.conversation
+    mode: 2
+    priority: null
+    value: "-2"
+  - key: bonuses.dance
+    mode: 2
+    priority: null
+    value: "-2"
+  - key: bonuses.humanPerception
+    mode: 2
+    priority: null
+    value: "-2"
+  - key: bonuses.persuasion
+    mode: 2
+    priority: null
+    value: "-2"
+description: ""
+disabled: true
+duration:
+  combat: null
+  rounds: null
+  seconds: null
+  startRound: null
+  startTime: null
+  startTurn: null
+  turns: null
+flags:
+  cyberpunk-red-core:
+    changes:
+      cats:
+        "0": skill
+        "1": skill
+        "2": skill
+        "3": skill
+        "4": skill
+        "5": skill
+      situational:
+        "0":
+          isSituational: false
+          onByDefault: false
+        "1":
+          isSituational: false
+          onByDefault: false
+        "2":
+          isSituational: false
+          onByDefault: false
+        "3":
+          isSituational: false
+          onByDefault: false
+        "4":
+          isSituational: false
+          onByDefault: false
+        "5":
+          isSituational: false
+          onByDefault: false
+icon: systems/cyberpunk-red-core/icons/compendium/status/smash_addiciton.svg
+name: Smash Addiction
+statuses: []
+tint: null
+transfer: true

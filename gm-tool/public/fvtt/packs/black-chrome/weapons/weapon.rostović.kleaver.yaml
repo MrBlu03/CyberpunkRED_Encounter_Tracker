@@ -1,0 +1,57 @@
+_id: N3O9kYdqirfIbhNw
+_key: "!items!N3O9kYdqirfIbhNw"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/black-chrome/rostovic-kleaver.svg
+name: Rostović Kleaver
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: Rostović
+  canIgnoreArmor: true
+  concealable:
+    concealable: false
+    isConcealed: false
+  critFailEffect: jammed
+  damage: 4d6
+  description:
+    value: |
+      <p>
+        Two Handed Exotic Very Heavy Melee Weapon. Can use a battery pack to increase
+        damage.
+      </p>
+      <p>Need BODY 11 or more to use it.</p>
+  dvTable: ""
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 2
+  ignoreArmorPercent: 50
+  ignoreBelowSP: 11
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+      - ammo
+    list: []
+    slots: 0
+    usedSlots: 0
+  isRanged: false
+  magazine:
+    max: 0
+    value: 0
+  price:
+    market: 1000
+  quality: standard
+  revealed: true
+  rof: 1
+  source:
+    book: BC
+    page: 94
+  unarmedAutomaticCalculation: true
+  usage: toggled
+  usesType: magazine
+  weaponSkill: Melee Weapon
+  weaponType: vHeavyMelee
+type: weapon

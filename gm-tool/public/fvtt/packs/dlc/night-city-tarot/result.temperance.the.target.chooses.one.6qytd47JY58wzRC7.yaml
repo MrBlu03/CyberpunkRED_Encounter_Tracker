@@ -1,0 +1,15 @@
+_id: 6qytd47JY58wzRC7
+_key: "!tables.results!bEeDgE9CfongXFAR.6qytd47JY58wzRC7"
+documentCollection: ""
+documentId: null
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/night_city_tarot/temperance.svg
+range:
+  - 15
+  - 15
+text: >-
+  Temperance. The target chooses one of their limbs to be dealt the Dismembered
+  Limb Critical Injury and another one to be dealt the Broken Limb Critical
+  Injury. (See Night City Tarot Page 5).
+type: 0
+weight: 1

@@ -1,0 +1,31 @@
+_id: eIoxfi6GHKCnjAG5
+_key: "!items!eIoxfi6GHKCnjAG5"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/black-chrome/zacatzontil.svg
+name: Zacatzontli Pickup Truck
+system:
+  brand: Ortiz Automotives
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>A Compact Groundcar equipped for off-road travel.</p>
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  price:
+    market: 27000
+  sdp: 70
+  seats: 4
+  source:
+    book: BC
+    page: 74
+  speedCombat: 20
+  speedNarrative: 100 MPH / 161 KPH
+type: vehicle

@@ -1,0 +1,50 @@
+_id: OzfbjQ3nPCCf6BQQ
+_key: "!items!OzfbjQ3nPCCf6BQQ"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/black-chrome/street-viper-riding-suit.svg
+name: Street Viper Riding Suit
+system:
+  bodyLocation:
+    ablation: 0
+    sp: 7
+  brand: Zonda
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        Kevlar Body Armor that comes with two pre-installed medium melee weapons*
+        always considered drawn as long as the armor is equipped.
+      </p>
+      <p><em>*Must be manually added after acquiring the armor.</em></p>
+  equipped: owned
+  favorite: false
+  headLocation:
+    ablation: 0
+    sp: 0
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isBodyLocation: true
+  isElectronic: false
+  isHeadLocation: false
+  isShield: false
+  penalty: 0
+  price:
+    market: 100
+  providesHardening: false
+  revealed: true
+  shieldHitPoints:
+    max: 0
+    value: 0
+  source:
+    book: BC
+    page: 36
+  usage: toggled
+type: armor

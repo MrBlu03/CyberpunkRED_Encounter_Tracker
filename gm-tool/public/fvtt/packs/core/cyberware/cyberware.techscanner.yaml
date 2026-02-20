@@ -1,0 +1,60 @@
+_id: 2EvWIW0HXwoBK6xq
+_key: "!items!2EvWIW0HXwoBK6xq"
+effects:
+  - tVc7bM54Ej63Yv2E
+img: systems/cyberpunk-red-core/icons/compendium/cyberware/techscanner.svg
+name: Techscanner
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  core: false
+  damage: 1d6
+  description:
+    value: |
+      <p>
+        Contains a variety of built-in gadgets and tools. Provides a +2 bonus to
+        multiple skill checks.
+      </p>
+  dvTable: ""
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  humanityLoss:
+    roll: 2d6
+    static: 7
+  installLocation: clinic
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: true
+  isFoundational: false
+  isRanged: false
+  isWeapon: false
+  magazine:
+    max: 0
+    value: 0
+  price:
+    market: 500
+  providesHardening: false
+  revealed: true
+  rof: 1
+  size: 2
+  source:
+    book: Core
+    page: 366
+  type: cyberArm
+  unarmedAutomaticCalculation: true
+  usage: installed
+  usesType: magazine
+  weaponSkill: Archery
+  weaponType: assaultRifle
+type: cyberware

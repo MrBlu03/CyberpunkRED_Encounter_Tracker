@@ -1,0 +1,47 @@
+_id: bSalB1is9PwUW4HE
+_key: "!items.effects!ka6ccQeTt7ud3pFi.bSalB1is9PwUW4HE"
+changes:
+  - key: system.stats.move.value
+    mode: 2
+    priority: null
+    value: "-2"
+  - key: system.stats.ref.value
+    mode: 2
+    priority: null
+    value: "-2"
+  - key: bonuses.speed
+    mode: 2
+    priority: null
+    value: "2"
+description: ""
+disabled: true
+duration:
+  combat: null
+  rounds: null
+  seconds: null
+  startRound: null
+  startTime: null
+  startTurn: null
+  turns: null
+flags:
+  cyberpunk-red-core:
+    changes:
+      cats:
+        "0": stat
+        "1": stat
+        "2": netrun
+      situational:
+        "0":
+          isSituational: false
+          onByDefault: false
+        "1":
+          isSituational: false
+          onByDefault: false
+        "2":
+          isSituational: false
+          onByDefault: false
+icon: systems/cyberpunk-red-core/icons/compendium/status/sixgun.svg
+name: Sixgun Primary
+statuses: []
+tint: null
+transfer: true

@@ -1,0 +1,12 @@
+_id: CQ6soKGNpevqO25w
+_key: "!tables.results!4S3emhUCIIDNoTAg.CQ6soKGNpevqO25w"
+documentCollection: cyberpunk-red-core.core_ammo
+documentId: 6dwSiAhYho02ZtgL
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/ammo/pistolmedium_smart.png
+range:
+  - 3
+  - 3
+text: Medium Pistol (Smart)
+type: 2
+weight: 1

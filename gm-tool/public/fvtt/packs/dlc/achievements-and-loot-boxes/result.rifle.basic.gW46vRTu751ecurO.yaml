@@ -1,0 +1,12 @@
+_id: gW46vRTu751ecurO
+_key: "!tables.results!bOtq937SNIahmbeK.gW46vRTu751ecurO"
+documentCollection: cyberpunk-red-core.core_ammo
+documentId: J3NfMgRdqoUwFDDs
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/ammo/rifle_basic.png
+range:
+  - 4
+  - 4
+text: Rifle (Basic)
+type: 2
+weight: 1

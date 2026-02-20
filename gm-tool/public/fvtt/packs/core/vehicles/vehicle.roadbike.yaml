@@ -1,0 +1,33 @@
+_id: jQAAGVWOKKhzEIMK
+_key: "!items!jQAAGVWOKKhzEIMK"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/vehicles/motorbike.svg
+name: Roadbike
+system:
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        A common CHOOH<sup>2</sup>-powered roadbike seen during the time of the Red.
+      </p>
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  price:
+    market: 20000
+  sdp: 35
+  seats: 2
+  source:
+    book: Core
+    page: 190
+  speedCombat: 20
+  speedNarrative: 100 MPH / 161 KPH
+type: vehicle

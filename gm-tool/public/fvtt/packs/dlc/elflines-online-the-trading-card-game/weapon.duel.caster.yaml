@@ -1,0 +1,54 @@
+_id: dB1xFjNIIdZ536Km
+_key: "!items!dB1xFjNIIdZ536Km"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/weapons/mediumPistol.svg
+name: Duel Caster
+system:
+  ammoVariety:
+    - custom
+  attackmod: 0
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  critFailEffect: jammed
+  damage: 1d6
+  description:
+    value: |
+      <p>
+        A plastic housing and card launcher for ELO Cards. ROF 3 if only weapon fired
+        on your turn. Can also be loaded with normal playing cards but makes the
+        weapon Poor Quality.
+      </p>
+  dvTable: DV Pistol
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 1
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 0
+    usedSlots: 0
+  isRanged: true
+  magazine:
+    max: 26
+    value: 0
+  price:
+    market: 100
+  quality: poor
+  revealed: true
+  rof: 3
+  source:
+    book: ELO TCG
+    page: 9
+  unarmedAutomaticCalculation: true
+  usage: equipped
+  usesType: magazine
+  weaponSkill: Handgun
+  weaponType: medPistol
+type: weapon

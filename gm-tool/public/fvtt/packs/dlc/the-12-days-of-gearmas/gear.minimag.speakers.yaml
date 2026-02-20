@@ -1,0 +1,37 @@
+_id: AFb5xt7apNdhlLWp
+_key: "!items!AFb5xt7apNdhlLWp"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/the_12_days_of_gearmas/telectronics_minimag_speakers.svg
+name: MiniMag Speakers
+system:
+  amount: 1
+  brand: Telectronics
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        Small Magnetic Speakers. Can play audio from a connected Agent within
+        100m/yds.
+      </p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 0
+    usedSlots: 0
+  isElectronic: true
+  price:
+    market: 50
+  providesHardening: false
+  revealed: true
+  source:
+    book: 12DoGear
+    page: 4
+  usage: toggled
+type: gear

@@ -1,0 +1,20 @@
+_id: 2cEhxWWDwDYepIuJ
+_key: "!items!2cEhxWWDwDYepIuJ"
+effects: []
+img: icons/svg/item-bag.svg
+name: Athletics
+system:
+  basic: true
+  category: bodySkills
+  core: true
+  description:
+    value: ""
+  difficulty: typical
+  favorite: false
+  level: 2
+  skillType: generic
+  source:
+    book: Core
+    page: 131
+  stat: dex
+type: skill

@@ -1,0 +1,45 @@
+_id: DXavZyl7CTtgoZ6i
+_key: "!items!DXavZyl7CTtgoZ6i"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/cyberware/skin_weave.svg
+name: Skin Weave
+system:
+  bodyLocation:
+    ablation: 0
+    sp: 7
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>Armor Item for Skin Weave Cyberware.</p>
+  equipped: owned
+  favorite: false
+  headLocation:
+    ablation: 0
+    sp: 7
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 0
+    usedSlots: 0
+  isBodyLocation: true
+  isElectronic: false
+  isHeadLocation: true
+  isShield: false
+  penalty: 0
+  price:
+    market: 0
+  providesHardening: false
+  revealed: true
+  shieldHitPoints:
+    max: 0
+    value: 0
+  source:
+    book: Core
+    page: 364
+  usage: toggled
+type: armor

@@ -1,0 +1,13 @@
+_id: odZ5Yyt3WOrNSKzV
+_key: "!tables.results!n7IlIvMfg7yW1OoE.odZ5Yyt3WOrNSKzV"
+documentCollection: cyberpunk-red-core.core_critical-injuries-body
+documentId: xmlFB3X2q2NAklfn
+drawn: false
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/critical_injuries/dismembered_hand.svg
+range:
+  - 3
+  - 3
+text: Dismembered Hand
+type: 2
+weight: 1

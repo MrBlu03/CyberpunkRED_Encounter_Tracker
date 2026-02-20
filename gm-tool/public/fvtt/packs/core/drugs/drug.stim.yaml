@@ -1,0 +1,29 @@
+_id: r21n9rFplUOtnjHM
+_key: "!items!r21n9rFplUOtnjHM"
+effects:
+  - Tdev2grXyvKJvIhr
+img: systems/cyberpunk-red-core/icons/compendium/drugs/stim.svg
+name: Stim
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  consumed: Stim
+  description:
+    value: |
+      <p>
+        Injecting a target with Stim causes them to ignore all penalties from being
+        Seriously Wounded for one hour. It can only be used on a target once per day.
+      </p>
+  equipped: owned
+  favorite: false
+  price:
+    market: 0
+  revealed: true
+  source:
+    book: Core
+    page: 150
+  usage: snorted
+type: drug

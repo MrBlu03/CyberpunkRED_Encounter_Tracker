@@ -1,0 +1,39 @@
+_id: LumJXCKgGQTLZJWu
+_key: "!items!LumJXCKgGQTLZJWu"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/black-chrome/arasaka-wound-salt.svg
+name: Arasaka Wound Salt
+system:
+  ablationValue: 1
+  amount: 1
+  brand: Arasaka
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        Coating for Arasaka Weeping Reaver Katana only. Adds a second critical injury.
+        No additional damage.
+      </p>
+  favorite: false
+  installLocation: mall
+  overrides:
+    autofire:
+      minimum: 3
+      mode: none
+      value: -1
+    damage:
+      minimum: 1d6
+      mode: none
+      value: 3d6
+  price:
+    market: 100
+  size: 0
+  source:
+    book: BC
+    page: 91
+  type: basic
+  variety: heavyPistol
+type: ammo

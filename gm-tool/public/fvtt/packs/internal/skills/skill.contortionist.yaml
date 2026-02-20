@@ -1,0 +1,20 @@
+_id: F4QWNMT1koSiw4HL
+_key: "!items!F4QWNMT1koSiw4HL"
+effects: []
+img: icons/svg/item-bag.svg
+name: Contortionist
+system:
+  basic: false
+  category: bodySkills
+  core: true
+  description:
+    value: ""
+  difficulty: typical
+  favorite: false
+  level: 0
+  skillType: generic
+  source:
+    book: Core
+    page: 131
+  stat: dex
+type: skill

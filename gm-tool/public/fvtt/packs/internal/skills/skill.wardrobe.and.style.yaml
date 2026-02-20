@@ -1,0 +1,20 @@
+_id: P9WIrQR7Nrxxq682
+_key: "!items!P9WIrQR7Nrxxq682"
+effects: []
+img: icons/svg/item-bag.svg
+name: Wardrobe & Style
+system:
+  basic: false
+  category: socialSkills
+  core: true
+  description:
+    value: ""
+  difficulty: typical
+  favorite: false
+  level: 0
+  skillType: generic
+  source:
+    book: Core
+    page: 139
+  stat: cool
+type: skill

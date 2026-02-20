@@ -1,0 +1,20 @@
+_id: rIU0OZRG7RavocVV
+_key: "!items!rIU0OZRG7RavocVV"
+effects: []
+img: icons/svg/item-bag.svg
+name: Conceal/Reveal Object
+system:
+  basic: false
+  category: awarenessSkills
+  core: true
+  description:
+    value: ""
+  difficulty: typical
+  favorite: false
+  level: 0
+  skillType: generic
+  source:
+    book: Core
+    page: 131
+  stat: int
+type: skill
