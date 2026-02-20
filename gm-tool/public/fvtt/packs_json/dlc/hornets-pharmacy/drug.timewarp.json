@@ -1,0 +1,35 @@
+{
+  "_id": "8nOTvNR4qZP54nKy",
+  "_key": "!items!8nOTvNR4qZP54nKy",
+  "effects": [
+    "LAZqZygBveSMgiOG",
+    "vehnLbHCsPpLEcaK",
+    "2UFkxrs6fI3cmpNz"
+  ],
+  "img": "systems/cyberpunk-red-core/icons/compendium/hornets_pharmacy/timewarp.svg",
+  "name": "Timewarp",
+  "system": {
+    "amount": 1,
+    "brand": "",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "consumed": "Timewarp Primary",
+    "description": {
+      "value": "<p><strong>Primary Effect</strong></p>\n<p>Dose lasts 1 minute.</p>\n<ul>\n  <li>\n    +3 to any Initiative Rolls. If already in combat, +3 to current Initiative.\n  </li>\n</ul>\n<p><strong>Secondary (DV17)</strong></p>\n<p>\n  When the dose wears off, the user rolls\n  <strong>WILL + Resist Torture/Drugs + 1d10 against Secondary DV</strong>.\n</p>\n<ul>\n  <li>\n    -2 to Initiative Rolls while addicted if not currently dosed with TimeWarp.\n  </li>\n</ul>\n"
+    },
+    "equipped": "owned",
+    "favorite": false,
+    "price": {
+      "market": 100
+    },
+    "revealed": true,
+    "source": {
+      "book": "HP",
+      "page": 3
+    },
+    "usage": "snorted"
+  },
+  "type": "drug"
+}

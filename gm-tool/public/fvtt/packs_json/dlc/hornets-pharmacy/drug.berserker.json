@@ -1,0 +1,33 @@
+{
+  "_id": "lzmfwfxPjDjYE1nM",
+  "_key": "!items!lzmfwfxPjDjYE1nM",
+  "effects": [
+    "eBjRKSVNnIpbuFK5"
+  ],
+  "img": "systems/cyberpunk-red-core/icons/compendium/hornets_pharmacy/berserker.svg",
+  "name": "Berserker",
+  "system": {
+    "amount": 1,
+    "brand": "",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "consumed": "None",
+    "description": {
+      "value": "<p><strong>Primary Effect</strong></p>\n<p>Dose lasts for 10 Minutes.</p>\n<ul>\n  <li>Induces a state of frenzy and increased aggression</li>\n  <li>User takes no Bonus Damage for any Critical Injury</li>\n  <li>Wound State/Facedown penalties to Skill or Stat checks are halved*</li>\n</ul>\n<p><strong>Secondary Effect (DV17)</strong></p>\n<p>\n  When the dose wears off, the user rolls\n  <strong>WILL + Resist Torture/Drugs + 1d10 against Secondary DV</strong>.\n</p>\n<ul>\n  <li>-2 Humanity Loss.</li>\n  <li>\n    User is now addicted to Berserker if not already addicted. +1 to Base Death\n    Save Penalty while addicted.\n  </li>\n</ul>\n<p>\n  <em>*This is not supported by the system and must be manually adjusted.</em>\n</p>\n"
+    },
+    "equipped": "owned",
+    "favorite": false,
+    "price": {
+      "market": 100
+    },
+    "revealed": true,
+    "source": {
+      "book": "HP",
+      "page": 2
+    },
+    "usage": "toggled"
+  },
+  "type": "drug"
+}

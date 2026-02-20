@@ -1,0 +1,30 @@
+{
+  "_id": "ybQOwW3ICzHY7LiQ",
+  "_key": "!items!ybQOwW3ICzHY7LiQ",
+  "effects": [],
+  "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Role.svg",
+  "name": "Rockerboy",
+  "system": {
+    "abilities": [],
+    "addRoleAbilityRank": true,
+    "bonusRatio": 1,
+    "bonuses": [],
+    "description": {
+      "value": "<p>\n  Rebellious performance artists who use their craft to influence fans/crowds\n  and fight back.\n</p>\n"
+    },
+    "favorite": false,
+    "hasRoll": true,
+    "isSituational": false,
+    "mainRoleAbility": "Charismatic Impact",
+    "onByDefault": false,
+    "rank": 4,
+    "skill": "--",
+    "source": {
+      "book": "Core",
+      "page": 144
+    },
+    "stat": "--",
+    "universalBonuses": []
+  },
+  "type": "role"
+}

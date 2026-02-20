@@ -1,0 +1,42 @@
+{
+  "_id": "eRpD2JusdqIHCN7f",
+  "_key": "!items!eRpD2JusdqIHCN7f",
+  "effects": [],
+  "img": "systems/cyberpunk-red-core/icons/compendium/ammo/bow_incendiary.png",
+  "name": "Arrow (Incendiary)",
+  "system": {
+    "ablationValue": 1,
+    "amount": 10,
+    "brand": "",
+    "concealable": {
+      "concealable": true,
+      "isConcealed": false
+    },
+    "description": {
+      "value": "<p>\n  If damage dealt to target they are set alight. Target takes 2 damage to HP at\n  end of their turn unless they use action to extinguish flames. Does not stack.\n</p>\n"
+    },
+    "favorite": false,
+    "overrides": {
+      "autofire": {
+        "minimum": 3,
+        "mode": "none",
+        "value": -1
+      },
+      "damage": {
+        "minimum": "1d6",
+        "mode": "none",
+        "value": "3d6"
+      }
+    },
+    "price": {
+      "market": 100
+    },
+    "source": {
+      "book": "Core",
+      "page": 346
+    },
+    "type": "incendiary",
+    "variety": "arrow"
+  },
+  "type": "ammo"
+}

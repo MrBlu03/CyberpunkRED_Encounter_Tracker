@@ -1,0 +1,41 @@
+{
+  "_id": "YM2dXOMEhmYn3LKy",
+  "_key": "!items!YM2dXOMEhmYn3LKy",
+  "effects": [
+    "cBI5wVXww67hC4qx"
+  ],
+  "img": "systems/cyberpunk-red-core/icons/compendium/cyberchairs/cyberchair.svg",
+  "name": "Spider Cyberchair",
+  "system": {
+    "amount": 1,
+    "brand": "Rocklin Augmentics",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "description": {
+      "value": "<p>\n  The top of the line cyberchair, giving the premier user many options. While\n  using it the operator's base MOVE becomes 5, with all regular movement options\n  remaining available.\n</p>\n<p>\n  Additionally, this cyberchair has room for 4 cyberlimb options*. Any options\n  installed always count as being paired.\n</p>\n<p>\n  Operation of the cyberchair requires either a free hand, or interface plugs.\n</p>\n<p>\n  If the operator suffers a critical injury that reduces their MOVE, the MOVE of\n  the cyberchair is instead effected.\n</p>\n<p>\n  The cyberchair cannot be targeted specifically, nor can it be disabled via EMP\n  effects.\n</p>\n<p><em>*Installing cyberlimb options currently not supported</em></p>\n"
+    },
+    "equipped": "owned",
+    "favorite": false,
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [],
+      "list": [],
+      "slots": 0,
+      "usedSlots": 0
+    },
+    "isElectronic": false,
+    "price": {
+      "market": 1000
+    },
+    "providesHardening": false,
+    "revealed": true,
+    "source": {
+      "book": "CC",
+      "page": 2
+    },
+    "usage": "equipped"
+  },
+  "type": "gear"
+}

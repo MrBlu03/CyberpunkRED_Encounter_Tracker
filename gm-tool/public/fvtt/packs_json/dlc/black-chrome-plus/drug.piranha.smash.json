@@ -1,0 +1,34 @@
+{
+  "_id": "wAUReVQtYbe3TNSj",
+  "_key": "!items!wAUReVQtYbe3TNSj",
+  "effects": [
+    "Ns4hlbJVhX0j1thK",
+    "qSb9OyRqLojya1co"
+  ],
+  "img": "systems/cyberpunk-red-core/icons/compendium/black-chrome-plus/piranha-smash.svg",
+  "name": "Piranha Smash",
+  "system": {
+    "amount": 1,
+    "brand": "",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "consumed": "Piranha Smash Primary",
+    "description": {
+      "value": "<p>\n  Looks like smash but it's smash with a lime flavor. And a lower risk of\n  addiction.\n</p>\n<p><strong>Primary Effect</strong></p>\n<p>Dose lasts 4 hours.</p>\n<p>\n  The user feels happy and satisfied, receiving a temporary modifier of +2 to\n  the following skills\n</p>\n<ul>\n  <li>Acting</li>\n  <li>Dance</li>\n  <li>Contortionist</li>\n  <li>Conversation</li>\n  <li>Human Perception</li>\n  <li>Persuasion</li>\n</ul>\n<p><strong>Secondary Effect (DV9)</strong></p>\n<p>\n  When the dose wears off, the user rolls\n  <strong>WILL + Resist Torture/Drugs + 1d10 against Secondary DV</strong>.\n</p>\n<p>If this fails, they take a -2 to the following skills</p>\n<ul>\n  <li>Acting</li>\n  <li>Dance</li>\n  <li>Contortionist</li>\n  <li>Conversation</li>\n  <li>Human Perception</li>\n  <li>Persuasion</li>\n</ul>\n"
+    },
+    "equipped": "owned",
+    "favorite": false,
+    "price": {
+      "market": 10
+    },
+    "revealed": true,
+    "source": {
+      "book": "BC+",
+      "page": 4
+    },
+    "usage": "snorted"
+  },
+  "type": "drug"
+}

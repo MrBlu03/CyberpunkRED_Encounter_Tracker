@@ -1,0 +1,42 @@
+{
+  "_id": "Yzo60c2pXKZ88QzM",
+  "_key": "!items!Yzo60c2pXKZ88QzM",
+  "effects": [],
+  "img": "systems/cyberpunk-red-core/icons/compendium/ammo/bow_sleep.png",
+  "name": "Arrow (Sleep)",
+  "system": {
+    "ablationValue": 1,
+    "amount": 10,
+    "brand": "",
+    "concealable": {
+      "concealable": true,
+      "isConcealed": false
+    },
+    "description": {
+      "value": "<p>\n  Deals no damage. If meat target hit\n  <strong>DV13 Resist Torture/Drugs</strong>. On fail falls Prone (see pg. 169)\n  and unconscious for 1 minute. Can be woken by damage or another person using\n  an action to touch/shake them.\n</p>\n"
+    },
+    "favorite": false,
+    "overrides": {
+      "autofire": {
+        "minimum": 3,
+        "mode": "none",
+        "value": -1
+      },
+      "damage": {
+        "minimum": "1d6",
+        "mode": "set",
+        "value": "0"
+      }
+    },
+    "price": {
+      "market": 500
+    },
+    "source": {
+      "book": "Core",
+      "page": 346
+    },
+    "type": "sleep",
+    "variety": "arrow"
+  },
+  "type": "ammo"
+}

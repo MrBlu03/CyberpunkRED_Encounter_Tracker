@@ -1,0 +1,43 @@
+{
+  "_id": "TYQQDKiVA8NWE4Rp",
+  "_key": "!items!TYQQDKiVA8NWE4Rp",
+  "effects": [],
+  "img": "systems/cyberpunk-red-core/icons/compendium/clothing/generic_mirrorshades.svg",
+  "name": "High Fashion Mirrorshades",
+  "system": {
+    "amount": 1,
+    "brand": "",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "description": {
+      "value": "<p>\n  Made from the most expensive quality materials and by the most exclusive\n  producers, this is what you wear when you've made it. The kind of fashion you\n  see supermodels wearing in videos on the Citinet.\n</p>\n"
+    },
+    "equipped": "owned",
+    "favorite": false,
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade"
+      ],
+      "list": [],
+      "slots": 3,
+      "usedSlots": 0
+    },
+    "isElectronic": false,
+    "price": {
+      "market": 1000
+    },
+    "providesHardening": false,
+    "revealed": true,
+    "source": {
+      "book": "Core",
+      "page": 356
+    },
+    "style": "highFashion",
+    "type": "mirrorshades",
+    "usage": "equipped"
+  },
+  "type": "clothing"
+}

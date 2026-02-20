@@ -144,69 +144,28 @@ export function ShopGenerator() {
         return [];
       };
 
-      // Try to load JSON first
+      // Load all JSON files listed in the global manifest (all packs)
       try {
-        const fvttResponse = await fetch('/fvtt/packs/core.json');
-        if (fvttResponse.ok) {
-          const fvttData = await fvttResponse.json();
-          allData = [...allData, ...normalizeItems(fvttData)];
-        }
-      } catch (error) {
-        console.log('FVTT packs JSON not available:', error);
-      }
-
-      // If no JSON, try YAML files in /fvtt/packs/core/ (auto-discover all .yaml files in known subfolders)
-      if (allData.length === 0) {
-        try {
-          // List of subfolders to scan for YAML files
-          const subfolders = [
-            'weapons', 'armor', 'cyberware', 'gear', 'drugs', 'ammo', 'clothing', 'vehicles',
-            'critical-injuries-body', 'critical-injuries-head', 'upgrades', 'programs', 'roles',
-            'skills-languages', 'skills-local-expert', 'skills-martial-arts', 'skills-play-instrument', 'skills-science',
-            'weapons-branded'
-          ];
-          for (const sub of subfolders) {
-            // Try to fetch a manifest of files (if available), otherwise brute-force a list (could be improved)
-            // For now, try a fixed range of possible files (or you could generate this server-side)
-            for (let i = 0; i < 100; i++) {
-              // Try common file patterns
-              const patterns = [
-                `${sub}/`,
-                `${sub}/item`,
-                `${sub}/weapon`,
-                `${sub}/armor`,
-                `${sub}/cyberware`,
-                `${sub}/gear`,
-                `${sub}/drug`,
-                `${sub}/ammo`,
-                `${sub}/clothing`,
-                `${sub}/vehicle`,
-                `${sub}/upgrade`,
-                `${sub}/program`,
-                `${sub}/role`,
-                `${sub}/skill`,
-                `${sub}/critical-injury`,
-              ];
-              for (const pattern of patterns) {
-                const file = `${pattern}${i ? '.' + i : ''}.yaml`;
-                const url = `/fvtt/packs/core/${file}`;
-                try {
-                  const resp = await fetch(url);
-                  if (resp.ok) {
-                    const text = await resp.text();
-                    const parsed = yaml.load(text);
-                    allData = [...allData, ...normalizeItems(parsed)];
-                  }
-                } catch (e) {
-                  // Ignore 404s, continue
+        const manifestResp = await fetch('/fvtt/packs_json/manifest.json');
+        if (manifestResp.ok) {
+          const manifest = await manifestResp.json();
+          if (Array.isArray(manifest)) {
+            for (const relPath of manifest) {
+              const jsonFile = `/fvtt/packs_json/${relPath}`;
+              try {
+                const resp = await fetch(jsonFile);
+                if (resp.ok) {
+                  const data = await resp.json();
+                  allData = [...allData, ...normalizeItems(data)];
                 }
+              } catch (e) {
+                // Ignore errors, continue
               }
             }
-            // Also try to brute-force by reading all files in the folder (if you have a manifest, use it here)
           }
-        } catch (e) {
-          console.log('YAML loading error:', e);
         }
+      } catch (e) {
+        console.log('packs_json manifest loading error:', e);
       }
 
       // Load from public/data folder as fallback

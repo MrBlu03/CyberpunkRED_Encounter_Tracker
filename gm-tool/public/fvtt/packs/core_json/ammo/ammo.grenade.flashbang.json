@@ -1,0 +1,42 @@
+{
+  "_id": "e8gDMbdK1oPKwhqW",
+  "_key": "!items!e8gDMbdK1oPKwhqW",
+  "effects": [],
+  "img": "systems/cyberpunk-red-core/icons/compendium/ammo/grenade_flashbang.png",
+  "name": "Grenade (Flashbang)",
+  "system": {
+    "ablationValue": 1,
+    "amount": 1,
+    "brand": "",
+    "concealable": {
+      "concealable": true,
+      "isConcealed": false
+    },
+    "description": {
+      "value": "<p>\n  Deals no damage. If hit roll <strong>DV15 Resist Torture/Drugs</strong>. On a\n  fail take the Damaged Eye and Damaged Ear Critical injuries (see pg. 188) for\n  1 minute. No Crit damage dealt.\n</p>\n"
+    },
+    "favorite": false,
+    "overrides": {
+      "autofire": {
+        "minimum": 3,
+        "mode": "none",
+        "value": -1
+      },
+      "damage": {
+        "minimum": "1d6",
+        "mode": "set",
+        "value": "0"
+      }
+    },
+    "price": {
+      "market": 100
+    },
+    "source": {
+      "book": "Core",
+      "page": 346
+    },
+    "type": "flashbang",
+    "variety": "grenade"
+  },
+  "type": "ammo"
+}
