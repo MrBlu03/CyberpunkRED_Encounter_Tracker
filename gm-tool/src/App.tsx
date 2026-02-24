@@ -546,8 +546,6 @@ function App() {
                       onAddToEncounter={addNPCToEncounter}
                       savedNPCs={savedNPCs}
                       setSavedNPCs={setSavedNPCs}
-                      critMode={critMode}
-                      tarotDeck={tarotDeck}
                     />
                   )}
                 </div>
@@ -560,8 +558,6 @@ function App() {
                     setActiveTab('encounter');
                     toast.success(`${newParticipants.length} participants added to encounter!`);
                   }}
-                  critMode={critMode}
-                  tarotDeck={tarotDeck}
                 />
               )}
               
