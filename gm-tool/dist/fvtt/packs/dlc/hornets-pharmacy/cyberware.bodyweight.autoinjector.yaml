@@ -1,0 +1,61 @@
+_id: 9rKtuQcxsOmHjKyT
+_key: "!items!9rKtuQcxsOmHjKyT"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/default/Default_Cyberware.svg
+name: Bodyweight AutoInjector
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: Bodyweight
+  concealable:
+    concealable: false
+    isConcealed: false
+  core: false
+  damage: 1d6
+  description:
+    value: |
+      <p>Internal Body Cyberware.</p>
+      <p>
+        Use an Action to load one dose of Street Drug into a subdermal storage pod.
+        Optionally, one can configure a Biomonitor to automatically dose the user upon
+        entering combat, suffering a critical injury, or reaching a predetermined
+        Wound State threshold.
+      </p>
+  dvTable: ""
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  humanityLoss:
+    roll: 1d6
+    static: 3
+  installLocation: clinic
+  installedItems:
+    allowed: true
+    allowedTypes: []
+    list: []
+    slots: 0
+    usedSlots: 0
+  isElectronic: true
+  isFoundational: false
+  isRanged: false
+  isWeapon: false
+  magazine:
+    max: 0
+    value: 0
+  price:
+    market: 100
+  providesHardening: false
+  revealed: true
+  rof: 1
+  size: 1
+  source:
+    book: HP
+    page: 5
+  type: cyberwareInternal
+  unarmedAutomaticCalculation: true
+  usage: toggled
+  usesType: magazine
+  weaponSkill: ""
+  weaponType: ""
+type: cyberware

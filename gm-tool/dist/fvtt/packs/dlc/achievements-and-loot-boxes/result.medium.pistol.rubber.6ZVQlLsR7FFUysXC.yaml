@@ -1,0 +1,12 @@
+_id: 6ZVQlLsR7FFUysXC
+_key: "!tables.results!4S3emhUCIIDNoTAg.6ZVQlLsR7FFUysXC"
+documentCollection: cyberpunk-red-core.core_ammo
+documentId: n1vIKB6Mln9XgUXL
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/ammo/pistolmedium_rubber.png
+range:
+  - 3
+  - 3
+text: Medium Pistol (Rubber)
+type: 2
+weight: 1

@@ -1,0 +1,70 @@
+{
+  "_id": "nH3p5XdyArI2faqK",
+  "_key": "!items!nH3p5XdyArI2faqK",
+  "effects": [
+    "0kAtEuSpu0FoTiwE"
+  ],
+  "img": "systems/cyberpunk-red-core/icons/compendium/default/default-implanted-linearframe.svg",
+  "name": "Implanted Fūma Kotarō Linear Frame",
+  "system": {
+    "ammoVariety": [],
+    "attackmod": 1,
+    "brand": "",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "core": false,
+    "damage": "3d6",
+    "description": {
+      "value": "<ul>\n  <li>Requires BODY 8, 2 Grafted Muscle and Bone Lace</li>\n  <li>\n    Increases BODY stat to 12 (adjusting your HP, Wound Threshold, and Death\n    Save)\n  </li>\n  <li>Increase Stealth +2</li>\n  <li>Drawing and sheathing the frame's weapons does not require an Action</li>\n  <li>\n    A Conceal check is not required for the weapons concealed in the frame.\n  </li>\n  <li>\n    <p>Frame has one of two weapon options*:</p>\n    <ul>\n      <li>Two excellent quality exotic heavy melee weapons</li>\n      <li>\n        One excellent quality light melee weapon and one excellent quality\n        exotic very heavy melee weapon\n      </li>\n    </ul>\n  </li>\n</ul>\n<p><em>* Must be manually added.</em></p>\n"
+    },
+    "dvTable": "",
+    "favorite": false,
+    "fireModes": {
+      "autoFire": 0,
+      "suppressiveFire": false
+    },
+    "humanityLoss": {
+      "roll": "4d6",
+      "static": 14
+    },
+    "installLocation": "hospital",
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "cyberware",
+        "ammo"
+      ],
+      "list": [],
+      "slots": 2,
+      "usedSlots": 0
+    },
+    "isElectronic": true,
+    "isFoundational": true,
+    "isRanged": false,
+    "isWeapon": false,
+    "magazine": {
+      "max": 0,
+      "value": 0
+    },
+    "price": {
+      "market": 5000
+    },
+    "providesHardening": false,
+    "revealed": true,
+    "rof": 1,
+    "size": 1,
+    "source": {
+      "book": "BC",
+      "page": 52
+    },
+    "type": "borgware",
+    "unarmedAutomaticCalculation": true,
+    "usage": "installed",
+    "usesType": "magazine",
+    "weaponSkill": "Brawling",
+    "weaponType": "assaultRifle"
+  },
+  "type": "cyberware"
+}

@@ -1,0 +1,55 @@
+_id: iE4jKasWdZGtWdm9
+_key: "!items!iE4jKasWdZGtWdm9"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/weapons/RocketLauncher_excellent.svg
+name: Militech Hotshot
+system:
+  ammoVariety:
+    - rocket
+  attackmod: 1
+  brand: Militech
+  concealable:
+    concealable: false
+    isConcealed: false
+  critFailEffect: jammed
+  damage: 8d6
+  description:
+    value: |
+      <p>
+        Bring out the big guns. This rocket launcher will do some damage. +1 to
+        Attack.
+      </p>
+  dvTable: DV Rocket Launcher
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 2
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+      - ammo
+    list: []
+    slots: 3
+    usedSlots: 0
+  isRanged: true
+  magazine:
+    max: 1
+    value: 0
+  price:
+    market: 1000
+  quality: standard
+  revealed: true
+  rof: 1
+  source:
+    book: Core
+    page: 341
+  unarmedAutomaticCalculation: true
+  usage: equipped
+  usesType: magazine
+  weaponSkill: Heavy Weapons
+  weaponType: rocketLauncher
+type: weapon

@@ -1,0 +1,64 @@
+_id: A8TUvYw4Ysv7tqpL
+_key: "!items!A8TUvYw4Ysv7tqpL"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/black-chrome/popup-shotgun.svg
+name: Popup Shotgun
+system:
+  ammoVariety:
+    - shotgunShell
+    - shotgunSlug
+  attackmod: 0
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  core: false
+  critFailEffect: jammed
+  damage: 5d6
+  description:
+    value: |
+      <p>
+        A concealable shotgun. Comes with a smartgun link pre-installed*. Can't hold
+        anything with this hand while activated.
+      </p>
+      <p><em>* Smart Link must be manually added.</em></p>
+  dvTable: DV Shotgun (Slug)
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  humanityLoss:
+    roll: 2d6
+    static: 7
+  installLocation: clinic
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+      - ammo
+    list: []
+    slots: 0
+    usedSlots: 0
+  isElectronic: true
+  isFoundational: false
+  isRanged: true
+  isWeapon: true
+  magazine:
+    max: 2
+    value: 0
+  price:
+    market: 500
+  providesHardening: false
+  revealed: true
+  rof: 1
+  size: 3
+  source:
+    book: BC
+    page: 21
+  type: cyberArm
+  unarmedAutomaticCalculation: true
+  usage: toggled
+  usesType: magazine
+  weaponSkill: Shoulder Arms
+  weaponType: shotgun
+type: cyberware

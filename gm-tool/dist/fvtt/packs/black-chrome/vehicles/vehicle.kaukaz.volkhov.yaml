@@ -1,0 +1,34 @@
+_id: 7CayuDCC2lrf4LkR
+_key: "!items!7CayuDCC2lrf4LkR"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/black-chrome/volkhov.svg
+name: Kaukaz Volkhov
+system:
+  brand: Kaukaz
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        An armored pickup Compact Groundcar with mounted machine gun. Comes with a
+        bottle of vodka.
+      </p>
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  price:
+    market: 41000
+  sdp: 55
+  seats: 4
+  source:
+    book: BC
+    page: 71
+  speedCombat: 20
+  speedNarrative: 100 MPH / 161 KPH
+type: vehicle

@@ -1,0 +1,20 @@
+_id: f319Qi6jITQMATyG
+_key: "!items!f319Qi6jITQMATyG"
+effects: []
+img: icons/svg/item-bag.svg
+name: Concentration
+system:
+  basic: true
+  category: awarenessSkills
+  core: true
+  description:
+    value: ""
+  difficulty: typical
+  favorite: false
+  level: 2
+  skillType: generic
+  source:
+    book: Core
+    page: 131
+  stat: will
+type: skill

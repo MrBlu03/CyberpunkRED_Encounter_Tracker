@@ -1,0 +1,13 @@
+_id: 3TasXLmE9oieBVdw
+_key: "!tables.results!bOtq937SNIahmbeK.3TasXLmE9oieBVdw"
+documentCollection: cyberpunk-red-core.black-chrome_cyberware
+documentId: MfNQoF64u5w8cK7A
+drawn: false
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/black-chrome/neo-soviet-cyberarm.svg
+range:
+  - 3
+  - 3
+text: Neo-Soviet Cyberarm
+type: 2
+weight: 1

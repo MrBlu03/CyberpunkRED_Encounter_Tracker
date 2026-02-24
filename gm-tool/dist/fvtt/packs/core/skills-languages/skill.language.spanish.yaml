@@ -1,0 +1,20 @@
+_id: zHltVBiUHg5Qmi8y
+_key: "!items!zHltVBiUHg5Qmi8y"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/default/Default_Skill.svg
+name: Language (Spanish)
+system:
+  basic: false
+  category: educationSkills
+  core: false
+  description:
+    value: ""
+  difficulty: typical
+  favorite: false
+  level: 4
+  skillType: language
+  source:
+    book: Core
+    page: 45
+  stat: int
+type: skill

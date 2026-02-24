@@ -1,0 +1,34 @@
+_id: xW4PlIcWJ82QSfSh
+_key: "!items!xW4PlIcWJ82QSfSh"
+effects:
+  - bkUvyHxyT3K8vq1c
+img: systems/cyberpunk-red-core/icons/compendium/gear/medscanner.svg
+name: Medscanner
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>+2 First Aid or Paramedic checks.</p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: true
+  price:
+    market: 1000
+  providesHardening: false
+  revealed: true
+  source:
+    book: Core
+    page: 354
+  usage: equipped
+type: gear

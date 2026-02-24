@@ -1,0 +1,34 @@
+_id: DsO5c0MS5tZ0bh1B
+_key: "!items!DsO5c0MS5tZ0bh1B"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/gear/cyberdeck_poor.svg
+name: Cyberdeck (Poor)
+system:
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>Netrunner deck. 5 slots.</p>
+  equipped: owned
+  favorite: false
+  installLocation: mall
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+      - program
+    list: []
+    slots: 5
+    usedSlots: 0
+  isElectronic: true
+  price:
+    market: 100
+  providesHardening: false
+  quality: poor
+  size: 1
+  source:
+    book: Core
+    page: 353
+type: cyberdeck

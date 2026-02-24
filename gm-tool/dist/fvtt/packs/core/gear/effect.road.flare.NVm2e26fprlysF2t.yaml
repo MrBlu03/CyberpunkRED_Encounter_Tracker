@@ -1,0 +1,31 @@
+_id: NVm2e26fprlysF2t
+_key: "!items.effects!EUZBOSRdQWOqKVUg.NVm2e26fprlysF2t"
+changes:
+  - key: ATL.light.bright
+    mode: 2
+    priority: null
+    value: "50"
+description: ""
+disabled: true
+duration:
+  combat: null
+  rounds: null
+  seconds: null
+  startRound: null
+  startTime: null
+  startTurn: null
+  turns: null
+flags:
+  cyberpunk-red-core:
+    changes:
+      cats:
+        "0": custom
+      situational:
+        "0":
+          isSituational: false
+          onByDefault: false
+icon: systems/cyberpunk-red-core/icons/compendium/gear/roadflare.svg
+name: Road Flare
+statuses: []
+tint: null
+transfer: true

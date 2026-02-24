@@ -1,0 +1,41 @@
+{
+  "_id": "ELiFtgO54UTQ10gU",
+  "_key": "!items!ELiFtgO54UTQ10gU",
+  "effects": [],
+  "img": "systems/cyberpunk-red-core/icons/compendium/hornets_pharmacy/suzumebachi_assassin_drone.svg",
+  "name": "Suzumebachi Assassin Drone",
+  "system": {
+    "amount": 1,
+    "brand": "Arasaka",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "description": {
+      "value": "<p>A small wasp-shaped drone designed for silent assassinations.</p>\n<p>Stats: 6 MOVE - 7SP - 10HP.</p>\n<p>\n  Can be neutralized in 5 min with a\n  <strong>DV17 Electronic/Security Tech</strong> check.\n</p>\n<p>Default Programming:</p>\n<ol>\n  <li>Locate target using onboard camera.</li>\n  <li>\n    Attack target with dartgun until ammo is depleted or target's infrared\n    signature no longer detected\n  </li>\n  <li>Exfiltrate and return to operator</li>\n</ol>\n<p>Drone is commonly controlled with a NET Architecture.</p>\n<p>Range:</p>\n<p>\n  Perimeter of a NET Architecture-equipped building or 50m/yds away from a\n  portable NET Architecture.\n</p>\n<p>Loadout:</p>\n<ul>\n  <li>Camera with low Light, UV, Infrared modes</li>\n  <li>Dartgun with 8 Biotoxin Arrows</li>\n  <li>Airhypo</li>\n</ul>\n"
+    },
+    "equipped": "owned",
+    "favorite": false,
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade"
+      ],
+      "list": [],
+      "slots": 3,
+      "usedSlots": 0
+    },
+    "isElectronic": true,
+    "price": {
+      "market": 5000
+    },
+    "providesHardening": false,
+    "revealed": true,
+    "source": {
+      "book": "HP",
+      "page": 5
+    },
+    "usage": "toggled"
+  },
+  "type": "gear"
+}

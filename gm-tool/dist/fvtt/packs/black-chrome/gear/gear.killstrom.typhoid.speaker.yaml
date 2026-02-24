@@ -1,0 +1,37 @@
+_id: qVrAYOVvfBpIgEor
+_key: "!items!qVrAYOVvfBpIgEor"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/black-chrome/killstrom-typhoid-speaker.svg
+name: KillStrom Typhoid Speaker
+system:
+  amount: 1
+  brand: KillStrom Music
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        When linked to a KillStrom Sonic Boom Amp, increases the DV of the Resist
+        Torture/Drugs Check.
+      </p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 0
+    usedSlots: 0
+  isElectronic: false
+  price:
+    market: 500
+  providesHardening: false
+  revealed: true
+  source:
+    book: BC
+    page: 41
+  usage: toggled
+type: gear

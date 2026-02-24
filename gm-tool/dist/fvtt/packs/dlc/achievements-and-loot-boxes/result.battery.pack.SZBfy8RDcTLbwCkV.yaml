@@ -1,0 +1,12 @@
+_id: SZBfy8RDcTLbwCkV
+_key: "!tables.results!uq1cseo3a1hAx7Pg.SZBfy8RDcTLbwCkV"
+documentCollection: cyberpunk-red-core.core_ammo
+documentId: MfuoJ69NL1FiP7B8
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/ammo/battery.png
+range:
+  - 6
+  - 6
+text: Battery Pack
+type: 2
+weight: 1

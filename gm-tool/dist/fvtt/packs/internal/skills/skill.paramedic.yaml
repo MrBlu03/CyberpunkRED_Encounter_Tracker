@@ -1,0 +1,20 @@
+_id: zJA3lYQ47dmm55fd
+_key: "!items!zJA3lYQ47dmm55fd"
+effects: []
+img: icons/svg/item-bag.svg
+name: Paramedic
+system:
+  basic: false
+  category: techniqueSkills
+  core: true
+  description:
+    value: ""
+  difficulty: difficult
+  favorite: false
+  level: 0
+  skillType: generic
+  source:
+    book: Core
+    page: 141
+  stat: tech
+type: skill

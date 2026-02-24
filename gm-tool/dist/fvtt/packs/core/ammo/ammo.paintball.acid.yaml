@@ -1,0 +1,41 @@
+_id: CiskMOqNs2y5axDS
+_key: "!items!CiskMOqNs2y5axDS"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/ammo/paintball_acid.png
+name: Paintball (Acid)
+system:
+  ablationValue: 1
+  amount: 10
+  brand: ""
+  concealable:
+    concealable: true
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        Paintballs filled with acid. Deals no damage but ablates armour by 1 SP on
+        hit*.
+      </p>
+      <p>
+        <em
+          >*Not currently supported so will need to manually reduce armour on hit</em
+        >
+      </p>
+  favorite: false
+  overrides:
+    autofire:
+      minimum: 3
+      mode: none
+      value: -1
+    damage:
+      minimum: 1d6
+      mode: set
+      value: "0"
+  price:
+    market: 10
+  source:
+    book: Core
+    page: 347
+  type: acid
+  variety: paintball
+type: ammo

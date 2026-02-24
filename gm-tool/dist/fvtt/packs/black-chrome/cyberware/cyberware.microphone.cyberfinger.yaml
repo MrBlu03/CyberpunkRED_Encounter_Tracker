@@ -1,0 +1,60 @@
+_id: LY8v30DQnkuCOpIu
+_key: "!items!LY8v30DQnkuCOpIu"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/black-chrome/cyberfinger.svg
+name: Microphone Cyberfinger
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: Dynalar Technologies
+  concealable:
+    concealable: true
+    isConcealed: false
+  core: false
+  damage: 1d6
+  description:
+    value: |
+      <p>
+        Cyberfinger holding a concealed recording device. Can only be installed on a
+        modular finger cyberhand.
+      </p>
+  dvTable: ""
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  humanityLoss:
+    roll: 1d3
+    static: 2
+  installLocation: mall
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+      - ammo
+    list: []
+    slots: 0
+    usedSlots: 0
+  isElectronic: true
+  isFoundational: false
+  isRanged: false
+  isWeapon: false
+  magazine:
+    max: 0
+    value: 0
+  price:
+    market: 100
+  providesHardening: false
+  revealed: true
+  rof: 1
+  size: 1
+  source:
+    book: BC
+    page: 25
+  type: cyberArm
+  unarmedAutomaticCalculation: true
+  usage: toggled
+  usesType: magazine
+  weaponSkill: ""
+  weaponType: ""
+type: cyberware

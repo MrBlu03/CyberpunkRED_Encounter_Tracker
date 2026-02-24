@@ -1,0 +1,56 @@
+_id: vfITAP3Y0Hn1Ygjy
+_key: "!items!vfITAP3Y0Hn1Ygjy"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/weapons/Sledgehammer_excellent.svg
+name: Sledgehammer (Excellent)
+system:
+  ammoVariety: []
+  attackmod: 1
+  brand: ""
+  canIgnoreArmor: true
+  concealable:
+    concealable: false
+    isConcealed: false
+  critFailEffect: jammed
+  damage: 4d6
+  description:
+    value: |
+      <p>
+        A large mallet-like object with a flat metal head which distributes impacted
+        force over a wide area. +1 to Attack.
+      </p>
+  dvTable: ""
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 2
+  ignoreArmorPercent: 50
+  ignoreBelowSP: 0
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+      - ammo
+    list: []
+    slots: 3
+    usedSlots: 0
+  isRanged: false
+  magazine:
+    max: 0
+    value: 0
+  price:
+    market: 1000
+  quality: excellent
+  revealed: true
+  rof: 1
+  source:
+    book: Core
+    page: 340
+  unarmedAutomaticCalculation: true
+  usage: equipped
+  usesType: magazine
+  weaponSkill: Melee Weapon
+  weaponType: vHeavyMelee
+type: weapon

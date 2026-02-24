@@ -1,0 +1,33 @@
+_id: WAOq0nMUFwvnZpCr
+_key: "!items!WAOq0nMUFwvnZpCr"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/gear/duct_tape.svg
+name: Duct Tape
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>Use it to tape stuff.</p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 0
+    usedSlots: 0
+  isElectronic: false
+  price:
+    market: 20
+  providesHardening: false
+  revealed: true
+  source:
+    book: Core
+    page: 353
+  usage: toggled
+type: gear

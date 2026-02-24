@@ -1,0 +1,30 @@
+_id: q7yxRKUMzOf9o5qO
+_key: "!items!q7yxRKUMzOf9o5qO"
+effects:
+  - ioMOVsyk9FRbs9EI
+img: systems/cyberpunk-red-core/icons/compendium/critical_injuries/lost_ear.svg
+name: Lost Ear
+system:
+  deathSaveIncrease: true
+  description:
+    value: |
+      <p>
+        Ear is removed. If move more than 4m/yds in a Turn, cannot move next turn. -4
+        to hearing based Perception.
+      </p>
+  favorite: false
+  location: head
+  quickFix:
+    dvFirstAid: 0
+    dvParamedic: 0
+    type: notApplicable
+  revealed: true
+  source:
+    book: Core
+    page: 188
+  treatment:
+    dvParamedic: 0
+    dvSurgery: 17
+    type: surgery
+  usage: toggled
+type: criticalInjury

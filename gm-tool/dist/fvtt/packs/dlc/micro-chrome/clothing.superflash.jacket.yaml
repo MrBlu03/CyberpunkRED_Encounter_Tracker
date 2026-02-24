@@ -1,0 +1,37 @@
+_id: CJB0sTptAOnLoEfu
+_key: "!items!CJB0sTptAOnLoEfu"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/clothing/generic_jacket.svg
+name: Superflash Jacket
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        A nice jacket carrying a surprise; using an action anyone wearing this jacket
+        can consume a battery to let off a blinding light.
+      </p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes: []
+    list: []
+    slots: 0
+    usedSlots: 0
+  isElectronic: false
+  price:
+    market: 500
+  providesHardening: false
+  revealed: true
+  source:
+    book: MC
+    page: 1
+  style: urbanFlash
+  type: jacket
+  usage: equipped
+type: clothing

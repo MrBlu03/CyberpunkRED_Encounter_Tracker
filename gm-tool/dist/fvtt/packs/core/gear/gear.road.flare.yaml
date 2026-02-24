@@ -1,0 +1,34 @@
+_id: EUZBOSRdQWOqKVUg
+_key: "!items!EUZBOSRdQWOqKVUg"
+effects:
+  - NVm2e26fprlysF2t
+img: systems/cyberpunk-red-core/icons/compendium/gear/roadflare.svg
+name: Road Flare
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>Range: 100m/yd. Duration: 1h.</p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: false
+  price:
+    market: 10
+  providesHardening: false
+  revealed: true
+  source:
+    book: Core
+    page: 354
+  usage: toggled
+type: gear

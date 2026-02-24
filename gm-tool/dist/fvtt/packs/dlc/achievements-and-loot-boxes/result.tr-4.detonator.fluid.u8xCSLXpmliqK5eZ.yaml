@@ -1,0 +1,13 @@
+_id: u8xCSLXpmliqK5eZ
+_key: "!tables.results!zRHyYnlEqNlTA4l5.u8xCSLXpmliqK5eZ"
+documentCollection: cyberpunk-red-core.black-chrome_weapons
+documentId: my1ugVO4a5VjJSuH
+drawn: false
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/black-chrome/tr-4-detonator-fluid.svg
+range:
+  - 6
+  - 6
+text: TR-4 Detonator Fluid
+type: 2
+weight: 1

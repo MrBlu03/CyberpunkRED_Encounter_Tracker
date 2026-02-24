@@ -1,0 +1,36 @@
+_id: wkB34RhKmRQdjsxi
+_key: "!items!wkB34RhKmRQdjsxi"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/clothing/generic_contact_lenses.svg
+name: Gang Colors Contact Lenses
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>Show your allegiance with Gang colors!</p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: false
+  price:
+    market: 10
+  providesHardening: false
+  revealed: true
+  source:
+    book: Core
+    page: 356
+  style: gangColors
+  type: contactLenses
+  usage: equipped
+type: clothing

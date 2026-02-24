@@ -1,0 +1,33 @@
+_id: 3HWLPHE0VHMGgv48
+_key: "!items!3HWLPHE0VHMGgv48"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/gear/glow_paint.svg
+name: Glow Paint
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>Spraypaint with glow-in-the-dark effect.</p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 0
+    usedSlots: 0
+  isElectronic: false
+  price:
+    market: 20
+  providesHardening: false
+  revealed: true
+  source:
+    book: Core
+    page: 353
+  usage: toggled
+type: gear

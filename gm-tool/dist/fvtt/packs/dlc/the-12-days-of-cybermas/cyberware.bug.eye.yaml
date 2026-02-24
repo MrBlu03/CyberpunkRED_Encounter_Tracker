@@ -1,0 +1,57 @@
+_id: avqM5i0tzCS4kkF0
+_key: "!items!avqM5i0tzCS4kkF0"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/default/Default_Cyberware.svg
+name: Bug Eye
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: Cyclops International
+  concealable:
+    concealable: false
+    isConcealed: false
+  core: false
+  damage: 1d6
+  description:
+    value: |
+      <p>Large insectoid Cybereye packed with option slots. Borgware.</p>
+  dvTable: ""
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  humanityLoss:
+    roll: 4d6
+    static: 14
+  installLocation: hospital
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - cyberware
+      - itemUpgrade
+    list: []
+    slots: 5
+    usedSlots: 0
+  isElectronic: true
+  isFoundational: true
+  isRanged: false
+  isWeapon: false
+  magazine:
+    max: 0
+    value: 0
+  price:
+    market: 500
+  providesHardening: false
+  revealed: true
+  rof: 1
+  size: 1
+  source:
+    book: 12DoC
+    page: 3
+  type: cyberEye
+  unarmedAutomaticCalculation: true
+  usage: toggled
+  usesType: magazine
+  weaponSkill: ""
+  weaponType: ""
+type: cyberware

@@ -1,0 +1,31 @@
+_id: ooPd6s81jF5J1lpO
+_key: "!items.effects!QE785D3EE383knl6.ooPd6s81jF5J1lpO"
+changes:
+  - key: system.stats.body.value
+    mode: 5
+    priority: null
+    value: "12"
+description: ""
+disabled: false
+duration:
+  combat: null
+  rounds: null
+  seconds: null
+  startRound: null
+  startTime: null
+  startTurn: null
+  turns: null
+flags:
+  cyberpunk-red-core:
+    changes:
+      cats:
+        "0": stat
+      situational:
+        "0":
+          isSituational: false
+          onByDefault: false
+icon: systems/cyberpunk-red-core/icons/compendium/default/default-linearframe.svg
+name: Vermilion Linear Frame
+statuses: []
+tint: null
+transfer: true

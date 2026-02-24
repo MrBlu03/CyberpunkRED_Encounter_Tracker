@@ -1,0 +1,12 @@
+_id: wh6KYBkGZw27bFbm
+_key: "!tables.results!EVPuZ21eNOpEycGQ.wh6KYBkGZw27bFbm"
+documentCollection: cyberpunk-red-core.core_ammo
+documentId: qRKLIX7yU2n83JKJ
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/ammo/shotgun_slug_rubber.png
+range:
+  - 1
+  - 1
+text: Shotgun Slug (Rubber)
+type: 2
+weight: 1

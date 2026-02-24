@@ -1,0 +1,20 @@
+_id: 2YDWLi0oPsH3c7B6
+_key: "!items!2YDWLi0oPsH3c7B6"
+effects: []
+img: icons/svg/item-bag.svg
+name: Melee Weapon
+system:
+  basic: false
+  category: fightingSkills
+  core: true
+  description:
+    value: ""
+  difficulty: typical
+  favorite: false
+  level: 0
+  skillType: generic
+  source:
+    book: Core
+    page: 137
+  stat: dex
+type: skill

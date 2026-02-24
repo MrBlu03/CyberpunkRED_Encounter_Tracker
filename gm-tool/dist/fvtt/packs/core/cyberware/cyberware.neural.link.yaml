@@ -1,0 +1,57 @@
+_id: ju5Rq9rOe2lpDKKl
+_key: "!items!ju5Rq9rOe2lpDKKl"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/cyberware/neural_link.svg
+name: Neural Link
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  core: false
+  damage: 1d6
+  description:
+    value: |
+      <p>Access to nervous system.</p>
+  dvTable: ""
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  humanityLoss:
+    roll: 2d6
+    static: 7
+  installLocation: clinic
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+      - cyberware
+    list: []
+    slots: 5
+    usedSlots: 0
+  isElectronic: true
+  isFoundational: true
+  isRanged: false
+  isWeapon: false
+  magazine:
+    max: 0
+    value: 0
+  price:
+    market: 500
+  providesHardening: false
+  revealed: true
+  rof: 1
+  size: 0
+  source:
+    book: Core
+    page: 359
+  type: neuralWare
+  unarmedAutomaticCalculation: true
+  usage: toggled
+  usesType: magazine
+  weaponSkill: Archery
+  weaponType: assaultRifle
+type: cyberware

@@ -1,0 +1,23 @@
+_id: Wu14Pqln0Mi8tED5
+_key: "!tables!Wu14Pqln0Mi8tED5"
+description: >-
+  <p>***READ THIS WHEN CREATING CUSTOM ROLL TABLES*** This is a generic DV
+  table. For a DV table to work, it should be configured as follows: - The Table
+  Name name must begin with "DV ". - Roll Table Formula should be blank &amp;
+  both boxes unchecked - The "Result Type" must be Text - The DV should be in
+  "Result Details" - The weight should be "1" - The Range should be the start
+  distance to end distance, inclusive, in m/yds</p>
+displayRoll: false
+formula: ""
+img: systems/cyberpunk-red-core/icons/compendium/default/Default_DV_Table.svg
+name: DV Generic
+replacement: false
+results:
+  - YDQcg98eioRyU3eF
+  - 6WoZlJLFcZxWXUaw
+  - kZRmj4aVvGObIDTT
+  - 8ut6dGxpxJM73iIS
+  - KDSPu0zD3rYbwvom
+  - PhU6rtmbS6q7r4yn
+  - ESmJ9zsloGeUzGuS
+  - jrvIP11VLoftC2R3

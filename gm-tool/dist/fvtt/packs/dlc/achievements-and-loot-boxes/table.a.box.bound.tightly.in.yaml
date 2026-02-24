@@ -1,0 +1,21 @@
+_id: uq1cseo3a1hAx7Pg
+_key: "!tables!uq1cseo3a1hAx7Pg"
+description: >-
+  Source: Achievements and Loot Boxes pg.5
+
+  All weapons come fully loaded with a compatible ammo type of the GM's
+  choosing.
+displayRoll: true
+formula: 1d6
+img: icons/containers/boxes/box-gift-blue.webp
+name: A Box Bound Tightly in Rope
+replacement: true
+results:
+  - NYIH71JwbuArdM71
+  - gEL1jssG8BYFCbEN
+  - 1xJ62jbSbw9jlhRl
+  - uMEBOmKCPijSlR7T
+  - VQynxqPUN4ABRYGD
+  - fQTbhhUcSlRuNsSf
+  - kGYKKrORxH2OxM6Q
+  - SZBfy8RDcTLbwCkV

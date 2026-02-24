@@ -1,0 +1,12 @@
+_id: X7XamnHpkEyA1BOt
+_key: "!tables.results!T6pocp9VStxtFPzP.X7XamnHpkEyA1BOt"
+documentCollection: cyberpunk-red-core.core_gear
+documentId: it4Mfyti7WPpuuYE
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/gear/smart_glasses.svg
+range:
+  - 6
+  - 6
+text: Smart Glasses
+type: 2
+weight: 1

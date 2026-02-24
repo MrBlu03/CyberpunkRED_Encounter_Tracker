@@ -1,0 +1,12 @@
+_id: XFxM9lyMYSCxHQqS
+_key: "!tables.results!WmWdGRlhzhA2ZcmV.XFxM9lyMYSCxHQqS"
+documentCollection: cyberpunk-red-core.core_gear
+documentId: GPgc2QczR4H1rYPj
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/gear/tech_tool.svg
+range:
+  - 3
+  - 3
+text: Techtool
+type: 2
+weight: 1

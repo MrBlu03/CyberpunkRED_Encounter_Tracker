@@ -1,0 +1,34 @@
+_id: dy2LvajTiRM00UMo
+_key: "!items!dy2LvajTiRM00UMo"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/black-chrome-plus/pistolveryheavy_small.png
+name: Very Heavy Pistol (Small Game)
+system:
+  ablationValue: 1
+  amount: 100
+  brand: ""
+  concealable:
+    concealable: true
+    isConcealed: false
+  description:
+    value: |
+      <p>Small game ammo; not great for people. Deals 2d6 less damage.</p>
+  favorite: false
+  overrides:
+    autofire:
+      minimum: 3
+      mode: modify
+      value: -1
+    damage:
+      minimum: 1d6
+      mode: modify
+      value: "-2d6"
+  price:
+    market: 10
+  source:
+    book: BC+
+    page: 3
+  type: special
+  variety: vHeavyPistol
+type: ammo

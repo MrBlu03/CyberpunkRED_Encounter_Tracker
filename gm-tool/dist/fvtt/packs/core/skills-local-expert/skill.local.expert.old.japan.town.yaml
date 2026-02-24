@@ -1,0 +1,20 @@
+_id: azEjLCdsDiJjmn3W
+_key: "!items!azEjLCdsDiJjmn3W"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/default/Default_Skill.svg
+name: Local Expert (Old Japan Town)
+system:
+  basic: false
+  category: educationSkills
+  core: false
+  description:
+    value: ""
+  difficulty: typical
+  favorite: false
+  level: 0
+  skillType: localExpert
+  source:
+    book: Core
+    page: 135
+  stat: int
+type: skill

@@ -1,0 +1,12 @@
+_id: SvLnvAPXVREj9wYw
+_key: "!tables.results!EVPuZ21eNOpEycGQ.SvLnvAPXVREj9wYw"
+documentCollection: cyberpunk-red-core.core_ammo
+documentId: BEj2oUj2UOKgBFDz
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/ammo/rifle_armorpiercing.png
+range:
+  - 4
+  - 4
+text: Rifle (Armor-Piercing)
+type: 2
+weight: 1

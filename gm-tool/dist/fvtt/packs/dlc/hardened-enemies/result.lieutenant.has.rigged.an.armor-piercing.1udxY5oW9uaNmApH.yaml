@@ -1,0 +1,17 @@
+_id: 1udxY5oW9uaNmApH
+_key: "!tables.results!amZejGzbh9vPIYgD.1udxY5oW9uaNmApH"
+documentCollection: ""
+documentId: null
+drawn: false
+img: icons/svg/d20-black.svg
+range:
+  - 7
+  - 7
+text: >-
+  Lieutenant has rigged an Armor-Piercing Grenade (CP:R page 345) as a trap
+  before the combat, somewhere on the field. Noticing it requires a DV15
+  Perception Skill Check. Disarming it requires a DV9 Demolitions Skill Check.
+  The grenade goes off if any Character moves into the square in which it is
+  hidden.
+type: 0
+weight: 1

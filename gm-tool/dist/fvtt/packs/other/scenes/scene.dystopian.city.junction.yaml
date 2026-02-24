@@ -1,0 +1,51 @@
+_id: vTifY2SLaE82514t
+_key: "!scenes!vTifY2SLaE82514t"
+active: false
+background:
+  offsetX: 7
+  offsetY: 8
+  rotation: 0
+  scaleX: 1
+  scaleY: 1
+  src: systems/cyberpunk-red-core/maps/S0L-DCJunction-NOGRID1080.jpg
+  tint: null
+backgroundColor: "#999999"
+darkness: 0
+drawings: []
+fogExploration: true
+fogExploredColor: null
+fogOverlay: null
+fogReset: 1659831837776
+fogUnexploredColor: null
+foreground: null
+foregroundElevation: null
+globalLight: false
+globalLightThreshold: null
+grid:
+  alpha: 0.2
+  color: "#000000"
+  distance: 2
+  size: 56
+  type: 1
+  units: m
+height: 1080
+initial: {}
+journal: null
+lights: []
+name: Dystopian City Junction
+navName: ""
+navOrder: 100001
+navigation: true
+notes: []
+padding: 0
+playlist: null
+playlistSound: null
+sounds: []
+templates: []
+thumb: systems/cyberpunk-red-core/assets/scenes/Dystopian_City_Junction_thumb.webp
+tiles: []
+tokenVision: true
+tokens: []
+walls: []
+weather: ""
+width: 1920

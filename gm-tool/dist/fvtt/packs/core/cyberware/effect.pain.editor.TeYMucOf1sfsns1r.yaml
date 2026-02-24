@@ -1,0 +1,31 @@
+_id: TeYMucOf1sfsns1r
+_key: "!items.effects!umX2i9wlVcBG1lgv.TeYMucOf1sfsns1r"
+changes:
+  - key: bonuses.hasPainSuppression
+    mode: 5
+    priority: null
+    value: "1"
+description: ""
+disabled: false
+duration:
+  combat: null
+  rounds: null
+  seconds: null
+  startRound: null
+  startTime: null
+  startTurn: null
+  turns: null
+flags:
+  cyberpunk-red-core:
+    changes:
+      cats:
+        "0": misc
+      situational:
+        "0":
+          isSituational: false
+          onByDefault: false
+icon: systems/cyberpunk-red-core/icons/compendium/cyberware/pain_editor.svg
+name: Pain Editor
+statuses: []
+tint: null
+transfer: true

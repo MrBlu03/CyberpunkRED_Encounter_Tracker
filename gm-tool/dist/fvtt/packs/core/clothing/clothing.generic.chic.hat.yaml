@@ -1,0 +1,38 @@
+_id: HVP2iZPeOjhXbPrE
+_key: "!items!HVP2iZPeOjhXbPrE"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/clothing/generic_hat.svg
+name: Generic Chic Hat
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        The kind of clothing you find in the Mega-Plexes of the Dark Future. Perfect
+        if you don't want to stand out from a crowd.
+      </p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: false
+  price:
+    market: 10
+  providesHardening: false
+  revealed: true
+  source:
+    book: Core
+    page: 356
+  style: genericChic
+  type: hats
+  usage: equipped
+type: clothing

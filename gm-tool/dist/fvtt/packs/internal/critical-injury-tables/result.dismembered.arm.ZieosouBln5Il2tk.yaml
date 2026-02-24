@@ -1,0 +1,13 @@
+_id: ZieosouBln5Il2tk
+_key: "!tables.results!n7IlIvMfg7yW1OoE.ZieosouBln5Il2tk"
+documentCollection: cyberpunk-red-core.core_critical-injuries-body
+documentId: 9N6yHeVwiGg2MkeL
+drawn: false
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/critical_injuries/dismembered_arm.svg
+range:
+  - 2
+  - 2
+text: Dismembered Arm
+type: 2
+weight: 1

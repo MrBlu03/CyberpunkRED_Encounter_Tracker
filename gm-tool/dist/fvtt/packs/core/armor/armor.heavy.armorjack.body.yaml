@@ -1,0 +1,45 @@
+_id: vYzDZIbfJ1RfCvi9
+_key: "!items!vYzDZIbfJ1RfCvi9"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/armor/heavy-armorjack_body.svg
+name: Heavy Armorjack (Body)
+system:
+  bodyLocation:
+    ablation: 0
+    sp: 13
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>Heavier version of an Armorjack. -2 to REF, DEX, and MOVE.</p>
+  equipped: owned
+  favorite: false
+  headLocation:
+    ablation: 0
+    sp: 0
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isBodyLocation: true
+  isElectronic: false
+  isHeadLocation: false
+  isShield: false
+  penalty: 2
+  price:
+    market: 500
+  providesHardening: false
+  revealed: true
+  shieldHitPoints:
+    max: 0
+    value: 0
+  source:
+    book: Core
+    page: 350
+  usage: equipped
+type: armor

@@ -1,0 +1,20 @@
+_id: LsFm00AIool6DVwl
+_key: "!items!LsFm00AIool6DVwl"
+effects: []
+img: icons/svg/item-bag.svg
+name: Language (Streetslang)
+system:
+  basic: true
+  category: educationSkills
+  core: true
+  description:
+    value: ""
+  difficulty: typical
+  favorite: false
+  level: 2
+  skillType: generic
+  source:
+    book: Core
+    page: 135
+  stat: int
+type: skill

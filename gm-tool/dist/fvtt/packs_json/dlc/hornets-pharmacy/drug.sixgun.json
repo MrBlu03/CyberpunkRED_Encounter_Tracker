@@ -1,0 +1,35 @@
+{
+  "_id": "ka6ccQeTt7ud3pFi",
+  "_key": "!items!ka6ccQeTt7ud3pFi",
+  "effects": [
+    "bSalB1is9PwUW4HE",
+    "6eJSLpqij03VxIFa",
+    "nvBX8WcPBua5cUWL"
+  ],
+  "img": "systems/cyberpunk-red-core/icons/compendium/hornets_pharmacy/sixgun.svg",
+  "name": "Sixgun",
+  "system": {
+    "amount": 1,
+    "brand": "",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "consumed": "Sixgun Primary",
+    "description": {
+      "value": "<p>Leave meatspace behind and supercharge your synapses.</p>\n<p><strong>Primary Effect</strong></p>\n<p>Dose lasts 4 hours.</p>\n<ul>\n  <li>+2 to Speed while Netrunning</li>\n  <li>-2 To MOVE (Minimum 1)</li>\n  <li>-2 To REF to a (Minimum 1)</li>\n  <li>\n    User does not suffer the penalties of an Unsafe Jack Out unless forced to\n    Jack Out by a program.\n  </li>\n  <li>User can burn 1 Humanity for 1 additional NET Action once per turn.</li>\n</ul>\n<p><strong>Secondary (DV17)</strong></p>\n<p>Unless under Primary Effect</p>\n<ul>\n  <li>-2 to Speed while Netrunning</li>\n</ul>\n"
+    },
+    "equipped": "owned",
+    "favorite": false,
+    "price": {
+      "market": 100
+    },
+    "revealed": true,
+    "source": {
+      "book": "HP",
+      "page": 3
+    },
+    "usage": "snorted"
+  },
+  "type": "drug"
+}

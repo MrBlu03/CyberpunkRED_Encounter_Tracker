@@ -1,0 +1,39 @@
+_id: k4nLy56kpKLTctaO
+_key: "!items!k4nLy56kpKLTctaO"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/default/cyberdeck.svg
+name: Kestrel 2
+system:
+  brand: Raven Microcybernetics
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>Black ICE can&rsquo;t hit what they can&rsquo;t catch.</p>
+      <p>7 slots only for Programs.</p>
+      <p>
+        Right after Jacking In, Netrunner can activate a maximum of 2 installed Speedy
+        Gonzalvez Programs without a NET Action.
+      </p>
+  equipped: owned
+  favorite: false
+  installLocation: mall
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+      - program
+    list: []
+    slots: 7
+    usedSlots: 0
+  isElectronic: true
+  price:
+    market: 1000
+  providesHardening: false
+  quality: standard
+  size: 1
+  source:
+    book: MwtU
+    page: 3
+type: cyberdeck

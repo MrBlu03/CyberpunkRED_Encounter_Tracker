@@ -1,0 +1,12 @@
+_id: 1xJ62jbSbw9jlhRl
+_key: "!tables.results!uq1cseo3a1hAx7Pg.1xJ62jbSbw9jlhRl"
+documentCollection: cyberpunk-red-core.core_gear
+documentId: VrwVUEHuMCGjp8Fi
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/gear/grapple_gun.svg
+range:
+  - 3
+  - 3
+text: Grapple Gun
+type: 2
+weight: 1

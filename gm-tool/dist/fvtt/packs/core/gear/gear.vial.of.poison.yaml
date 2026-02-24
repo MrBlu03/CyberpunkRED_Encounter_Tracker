@@ -1,0 +1,33 @@
+_id: gaGUmTGViuxZ4mqR
+_key: "!items!gaGUmTGViuxZ4mqR"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/gear/vial_poison.svg
+name: Vial of Poison
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>2d6 damage unless Resist Torture/Drugs. Armor does not apply.</p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: false
+  price:
+    market: 100
+  providesHardening: false
+  revealed: true
+  source:
+    book: Core
+    page: 355
+  usage: toggled
+type: gear

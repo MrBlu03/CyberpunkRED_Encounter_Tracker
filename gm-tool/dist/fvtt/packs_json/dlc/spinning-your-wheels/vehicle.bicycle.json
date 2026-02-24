@@ -1,0 +1,39 @@
+{
+  "_id": "XIDIqcWCFJtzYeRw",
+  "_key": "!items!XIDIqcWCFJtzYeRw",
+  "effects": [],
+  "img": "systems/cyberpunk-red-core/icons/compendium/spinning_your_wheels/bicycle.svg",
+  "name": "Bicycle",
+  "system": {
+    "brand": "",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "description": {
+      "value": "<p>A simple bicycle. It's speed is based on the riders' BODY.</p>\n<table style=\"width: 100%; height: 76px\" border=\"1\">\n  <colgroup>\n    <col style=\"width: 14.0725%\" />\n    <col style=\"width: 42.4307%\" />\n    <col style=\"width: 43.4968%\" />\n  </colgroup>\n  <tbody>\n    <tr style=\"height: 19px\">\n      <td style=\"height: 19px\"><strong>Body</strong></td>\n      <td style=\"height: 19px\"><strong>Speed (Combat)</strong></td>\n      <td style=\"height: 19px\"><strong>Speed (Narative)</strong></td>\n    </tr>\n    <tr style=\"height: 19px\">\n      <td style=\"height: 19px\">&lt;4</td>\n      <td style=\"height: 19px\">8 MOVE</td>\n      <td style=\"height: 19px\">19 KPH / 12 MPH</td>\n    </tr>\n    <tr style=\"height: 19px\">\n      <td style=\"height: 19px\">4 - 7</td>\n      <td style=\"height: 19px\">10 MOVE</td>\n      <td style=\"height: 19px\">32 KPH / 20 MPH</td>\n    </tr>\n    <tr style=\"height: 19px\">\n      <td style=\"height: 19px\">8+</td>\n      <td style=\"height: 19px\">15 MOVE</td>\n      <td style=\"height: 19px\"><p>48 KPH / 30 MPH</p></td>\n    </tr>\n  </tbody>\n</table>\n<ul>\n  <li>Riders with a BODY &gt; 10 require a Reinforced Frame Upgrade</li>\n  <li>Bicycles use the Athletics Skill</li>\n  <li>Manual control only</li>\n  <li>\n    Getting on a bicycle does not move you to the top of the Initiative queue\n  </li>\n  <li>\n    Ramming damage is 3d6 with the rider being thrown from the bike and\n    suffering the Whiplash Critical Injury\n  </li>\n  <li>Defenders cannot land on the bike when dodging</li>\n</ul>\n"
+    },
+    "favorite": false,
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade"
+      ],
+      "list": [],
+      "slots": 3,
+      "usedSlots": 0
+    },
+    "price": {
+      "market": 100
+    },
+    "sdp": 15,
+    "seats": 1,
+    "source": {
+      "book": "SYW",
+      "page": 3
+    },
+    "speedCombat": 8,
+    "speedNarrative": "12 MPH / 19 KPH"
+  },
+  "type": "vehicle"
+}

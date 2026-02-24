@@ -1,0 +1,13 @@
+_id: RCLUsZLr404b5IcV
+_key: "!tables.results!n7IlIvMfg7yW1OoE.RCLUsZLr404b5IcV"
+documentCollection: cyberpunk-red-core.core_critical-injuries-body
+documentId: xTQ2T50UGNY8DrHl
+drawn: false
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/critical_injuries/foreign_object_body.svg
+range:
+  - 7
+  - 7
+text: Foreign Object
+type: 2
+weight: 1

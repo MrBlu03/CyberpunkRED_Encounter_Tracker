@@ -1,0 +1,20 @@
+_id: 4TnbLnA1TqSFnXtq
+_key: "!items!4TnbLnA1TqSFnXtq"
+effects: []
+img: icons/svg/item-bag.svg
+name: Electronics/Security Tech
+system:
+  basic: false
+  category: techniqueSkills
+  core: true
+  description:
+    value: ""
+  difficulty: difficult
+  favorite: false
+  level: 0
+  skillType: generic
+  source:
+    book: Core
+    page: 141
+  stat: tech
+type: skill

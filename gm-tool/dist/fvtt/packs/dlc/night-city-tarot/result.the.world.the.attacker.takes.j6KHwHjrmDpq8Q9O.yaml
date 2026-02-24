@@ -1,0 +1,16 @@
+_id: j6KHwHjrmDpq8Q9O
+_key: "!tables.results!bEeDgE9CfongXFAR.j6KHwHjrmDpq8Q9O"
+documentCollection: ""
+documentId: null
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/night_city_tarot/the_world.svg
+range:
+  - 22
+  - 22
+text: >-
+  The World. The Attacker takes an additional Turn right after this one. They
+  gain a +5 Bonus to any of their Skill Checks, ignore their Wound State effects
+  and do not make a Death Save if they are Mortally wounded during that next
+  turn. (See Night City Tarot Page 5).
+type: 0
+weight: 1

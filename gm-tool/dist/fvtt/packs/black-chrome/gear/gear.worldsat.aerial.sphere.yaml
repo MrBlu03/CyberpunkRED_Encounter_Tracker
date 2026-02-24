@@ -1,0 +1,37 @@
+_id: lZYITSx53rsxoNHz
+_key: "!items!lZYITSx53rsxoNHz"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/black-chrome/worldsat-aerial-sphere.svg
+name: WorldSat Aerial Sphere
+system:
+  amount: 1
+  brand: WorldSat
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        When set up, provides access to a Citinet when within 50 miles of the city or
+        of another set up WorldSat Aerial Sphere that is connected to the Citinet.
+      </p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 0
+    usedSlots: 0
+  isElectronic: false
+  price:
+    market: 1000
+  providesHardening: false
+  revealed: true
+  source:
+    book: BC
+    page: 50
+  usage: toggled
+type: gear

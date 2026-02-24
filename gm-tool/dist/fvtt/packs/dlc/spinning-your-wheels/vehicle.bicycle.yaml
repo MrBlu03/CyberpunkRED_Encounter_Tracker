@@ -1,0 +1,73 @@
+_id: XIDIqcWCFJtzYeRw
+_key: "!items!XIDIqcWCFJtzYeRw"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/spinning_your_wheels/bicycle.svg
+name: Bicycle
+system:
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>A simple bicycle. It's speed is based on the riders' BODY.</p>
+      <table style="width: 100%; height: 76px" border="1">
+        <colgroup>
+          <col style="width: 14.0725%" />
+          <col style="width: 42.4307%" />
+          <col style="width: 43.4968%" />
+        </colgroup>
+        <tbody>
+          <tr style="height: 19px">
+            <td style="height: 19px"><strong>Body</strong></td>
+            <td style="height: 19px"><strong>Speed (Combat)</strong></td>
+            <td style="height: 19px"><strong>Speed (Narative)</strong></td>
+          </tr>
+          <tr style="height: 19px">
+            <td style="height: 19px">&lt;4</td>
+            <td style="height: 19px">8 MOVE</td>
+            <td style="height: 19px">19 KPH / 12 MPH</td>
+          </tr>
+          <tr style="height: 19px">
+            <td style="height: 19px">4 - 7</td>
+            <td style="height: 19px">10 MOVE</td>
+            <td style="height: 19px">32 KPH / 20 MPH</td>
+          </tr>
+          <tr style="height: 19px">
+            <td style="height: 19px">8+</td>
+            <td style="height: 19px">15 MOVE</td>
+            <td style="height: 19px"><p>48 KPH / 30 MPH</p></td>
+          </tr>
+        </tbody>
+      </table>
+      <ul>
+        <li>Riders with a BODY &gt; 10 require a Reinforced Frame Upgrade</li>
+        <li>Bicycles use the Athletics Skill</li>
+        <li>Manual control only</li>
+        <li>
+          Getting on a bicycle does not move you to the top of the Initiative queue
+        </li>
+        <li>
+          Ramming damage is 3d6 with the rider being thrown from the bike and
+          suffering the Whiplash Critical Injury
+        </li>
+        <li>Defenders cannot land on the bike when dodging</li>
+      </ul>
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  price:
+    market: 100
+  sdp: 15
+  seats: 1
+  source:
+    book: SYW
+    page: 3
+  speedCombat: 8
+  speedNarrative: 12 MPH / 19 KPH
+type: vehicle

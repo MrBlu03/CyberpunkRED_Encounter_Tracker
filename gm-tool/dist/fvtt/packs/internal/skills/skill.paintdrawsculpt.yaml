@@ -1,0 +1,20 @@
+_id: 9CW2f27aYBUsNDXS
+_key: "!items!9CW2f27aYBUsNDXS"
+effects: []
+img: icons/svg/item-bag.svg
+name: Paint/Draw/Sculpt
+system:
+  basic: false
+  category: techniqueSkills
+  core: true
+  description:
+    value: ""
+  difficulty: typical
+  favorite: false
+  level: 0
+  skillType: generic
+  source:
+    book: Core
+    page: 141
+  stat: tech
+type: skill

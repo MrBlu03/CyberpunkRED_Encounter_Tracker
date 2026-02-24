@@ -1,0 +1,23 @@
+_id: xWZowpQzG7fpmoP7
+_key: "!tables!xWZowpQzG7fpmoP7"
+description: >-
+  Source: Achievements and Loot Boxes pg.5
+
+  All weapons come fully loaded with a compatible ammo type of the GM's
+  choosing.
+displayRoll: true
+formula: 1d6
+img: icons/containers/boxes/crate-reinforced-brown.webp
+name: A Box Covered in Chipped Paint
+replacement: true
+results:
+  - pXWJgAjL94Fgr83F
+  - kB1Uz1Ik3X5gbsgq
+  - j6zj2lwkNOsXUUPe
+  - Y8W7Mp8xVqTOTcDg
+  - HEpyqeyPVjaNh0Uf
+  - CLYP5a79aDXgfBJc
+  - JmBWc0G5bpw0tIC7
+  - csBVQiIWZ7TzP3ni
+  - srJ48dB0LAX4UuXl
+  - 8GiUMH48KDkiJc3c

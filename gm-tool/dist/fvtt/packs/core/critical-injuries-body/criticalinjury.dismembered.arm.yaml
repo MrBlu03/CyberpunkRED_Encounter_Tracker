@@ -1,0 +1,27 @@
+_id: 9N6yHeVwiGg2MkeL
+_key: "!items!9N6yHeVwiGg2MkeL"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/critical_injuries/dismembered_arm.svg
+name: Dismembered Arm
+system:
+  deathSaveIncrease: true
+  description:
+    value: |
+      <p>Arm removed, drop anything it was holding.</p>
+  favorite: false
+  location: body
+  quickFix:
+    dvFirstAid: 0
+    dvParamedic: 0
+    type: notApplicable
+  revealed: true
+  source:
+    book: Core
+    page: 187
+  treatment:
+    dvParamedic: 0
+    dvSurgery: 17
+    type: surgery
+  usage: toggled
+type: criticalInjury

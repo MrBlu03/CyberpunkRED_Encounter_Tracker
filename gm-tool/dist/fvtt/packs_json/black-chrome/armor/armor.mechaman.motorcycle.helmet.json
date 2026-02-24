@@ -1,0 +1,56 @@
+{
+  "_id": "r3uE9rEiOK1PQ9kr",
+  "_key": "!items!r3uE9rEiOK1PQ9kr",
+  "effects": [],
+  "img": "systems/cyberpunk-red-core/icons/compendium/black-chrome/mechaman-helmet.svg",
+  "name": "MechaMan Motorcycle Helmet",
+  "system": {
+    "bodyLocation": {
+      "ablation": 0,
+      "sp": 7
+    },
+    "brand": "Tokyo Dynamics",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "description": {
+      "value": "<p>\n  A Kevlar motorcycle helmet with integrated smart glasses that come with Chyron\n  and Low Light / IR / UV pre-installed*.\n</p>\n<p>\n  <em\n    >*Smart Glasses and associated cyberware must be manually added and\n    installed after acquring the armor.</em\n  >\n</p>\n"
+    },
+    "equipped": "owned",
+    "favorite": false,
+    "headLocation": {
+      "ablation": 0,
+      "sp": 7
+    },
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade"
+      ],
+      "list": [],
+      "slots": 3,
+      "usedSlots": 0
+    },
+    "isBodyLocation": false,
+    "isElectronic": true,
+    "isHeadLocation": true,
+    "isShield": false,
+    "penalty": 0,
+    "price": {
+      "market": 5000
+    },
+    "providesHardening": false,
+    "revealed": true,
+    "shieldHitPoints": {
+      "max": 0,
+      "value": 0
+    },
+    "source": {
+      "book": "BC",
+      "page": 37
+    },
+    "usage": "toggled"
+  },
+  "type": "armor"
+}

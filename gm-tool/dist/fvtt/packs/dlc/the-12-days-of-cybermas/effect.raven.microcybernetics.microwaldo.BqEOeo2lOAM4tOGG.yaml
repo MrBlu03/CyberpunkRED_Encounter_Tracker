@@ -1,0 +1,32 @@
+_id: BqEOeo2lOAM4tOGG
+_key: "!items.effects!dd2lvP5sNl3Qp7Qr.BqEOeo2lOAM4tOGG"
+changes:
+  - key: bonuses.surgery
+    mode: 2
+    priority: null
+    value: "1"
+description: ""
+disabled: false
+duration:
+  combat: null
+  rounds: null
+  seconds: null
+  startRound: null
+  startTime: null
+  startTurn: null
+  turns: null
+flags:
+  cyberpunk-red-core:
+    changes:
+      cats:
+        "0": role
+      situational:
+        "0":
+          isSituational: false
+          onByDefault: false
+icon: >-
+  systems/cyberpunk-red-core/icons/compendium/the_12_days_of_cybermas/raven_microcybernetics_microwaldo.svg
+name: Raven Microcybernetics MicroWaldo
+statuses: []
+tint: null
+transfer: true

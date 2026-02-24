@@ -1,0 +1,33 @@
+_id: yobTPhOaGRpfkjz8
+_key: "!items!yobTPhOaGRpfkjz8"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/gear/memory_chip.svg
+name: Elflines Online
+system:
+  amount: 1
+  brand: Segotari
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>A new in-box copy of the hit BDMMORPG Elflines Online.</p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 0
+    usedSlots: 0
+  isElectronic: true
+  price:
+    market: 50
+  providesHardening: false
+  revealed: true
+  source:
+    book: ELO
+    page: 5
+  usage: toggled
+type: gear

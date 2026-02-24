@@ -1,0 +1,39 @@
+_id: PJZmDEjwaM5RWguB
+_key: "!items!PJZmDEjwaM5RWguB"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/default/cyberdeck.svg
+name: Warlock's Book
+system:
+  brand: SGI Technologies
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        If you prefer sliding through NET Architectures avoiding Black ICE this is the
+        deck for you.
+      </p>
+      <p>9 slots to install either Programs or Hardware.</p>
+      <p><em>No Attacker or Black ICE Program may be installed.</em></p>
+  equipped: owned
+  favorite: false
+  installLocation: mall
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+      - program
+    list: []
+    slots: 9
+    usedSlots: 0
+  isElectronic: true
+  price:
+    market: 100
+  providesHardening: false
+  quality: standard
+  size: 1
+  source:
+    book: MwtU
+    page: 4
+type: cyberdeck

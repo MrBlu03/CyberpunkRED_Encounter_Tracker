@@ -1,0 +1,39 @@
+_id: 1dgpY8OTKpsl4vq9
+_key: "!items.effects!RZ7P9nSOB21pfiaI.1dgpY8OTKpsl4vq9"
+changes:
+  - key: system.stats.cool.value
+    mode: 2
+    priority: null
+    value: "2"
+  - key: system.stats.will.value
+    mode: 2
+    priority: null
+    value: "2"
+description: ""
+disabled: true
+duration:
+  combat: null
+  rounds: null
+  seconds: null
+  startRound: null
+  startTime: null
+  startTurn: null
+  turns: null
+flags:
+  cyberpunk-red-core:
+    changes:
+      cats:
+        "0": stat
+        "1": stat
+      situational:
+        "0":
+          isSituational: false
+          onByDefault: false
+        "1":
+          isSituational: false
+          onByDefault: false
+icon: systems/cyberpunk-red-core/icons/compendium/status/prime_time.svg
+name: Prime Time
+statuses: []
+tint: null
+transfer: true

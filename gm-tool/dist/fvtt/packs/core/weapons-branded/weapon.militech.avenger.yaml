@@ -1,0 +1,51 @@
+_id: luv1w6UcSC3xHg5j
+_key: "!items!luv1w6UcSC3xHg5j"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/weapons/mediumPistol_excellent.svg
+name: Militech Avenger
+system:
+  ammoVariety:
+    - medPistol
+  attackmod: 1
+  brand: Militech
+  concealable:
+    concealable: true
+    isConcealed: false
+  critFailEffect: jammed
+  damage: 2d6
+  description:
+    value: |
+      <p>A concealable, medium-sized pistol. +1 to Attack.</p>
+  dvTable: DV Pistol
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 1
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+      - ammo
+    list: []
+    slots: 3
+    usedSlots: 0
+  isRanged: true
+  magazine:
+    max: 12
+    value: 0
+  price:
+    market: 100
+  quality: standard
+  revealed: true
+  rof: 2
+  source:
+    book: Core
+    page: 341
+  unarmedAutomaticCalculation: true
+  usage: equipped
+  usesType: magazine
+  weaponSkill: Handgun
+  weaponType: medPistol
+type: weapon

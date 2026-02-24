@@ -1,0 +1,51 @@
+_id: eOsTEhtcRVyKxV7u
+_key: "!items!eOsTEhtcRVyKxV7u"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/weapons/heavyPistol_poor.svg
+name: GunMart Special
+system:
+  ammoVariety:
+    - heavyPistol
+  attackmod: 0
+  brand: GunMart
+  concealable:
+    concealable: true
+    isConcealed: false
+  critFailEffect: destroyedBeyondRepair
+  damage: 3d6
+  description:
+    value: |
+      <p>The GunMart Special is a Poor Quality Exotic Heavy Pistol.</p>
+  dvTable: DV Pistol
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 1
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+      - ammo
+    list: []
+    slots: 0
+    usedSlots: 0
+  isRanged: true
+  magazine:
+    max: 8
+    value: 0
+  price:
+    market: 20
+  quality: poor
+  revealed: true
+  rof: 2
+  source:
+    book: BC
+    page: 108
+  unarmedAutomaticCalculation: true
+  usage: equipped
+  usesType: magazine
+  weaponSkill: Handgun
+  weaponType: heavyPistol
+type: weapon

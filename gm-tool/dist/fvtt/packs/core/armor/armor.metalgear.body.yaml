@@ -1,0 +1,47 @@
+_id: ANkaTbBKgBXwJy1Q
+_key: "!items!ANkaTbBKgBXwJy1Q"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/armor/metalgear_body.svg
+name: Metalgear® (Body)
+system:
+  bodyLocation:
+    ablation: 0
+    sp: 18
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        Heaviest and most powerful armor in circulation. -4 to REF, DEX, and MOVE.
+      </p>
+  equipped: owned
+  favorite: false
+  headLocation:
+    ablation: 0
+    sp: 0
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isBodyLocation: true
+  isElectronic: false
+  isHeadLocation: false
+  isShield: false
+  penalty: 4
+  price:
+    market: 5000
+  providesHardening: false
+  revealed: true
+  shieldHitPoints:
+    max: 0
+    value: 0
+  source:
+    book: Core
+    page: 350
+  usage: equipped
+type: armor

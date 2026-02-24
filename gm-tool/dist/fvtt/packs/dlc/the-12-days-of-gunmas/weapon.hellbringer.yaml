@@ -1,0 +1,52 @@
+_id: YHhTX03AJFe0cS5N
+_key: "!items!YHhTX03AJFe0cS5N"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/weapons/veryHeavyPistol.svg
+name: Hellbringer
+system:
+  ammoVariety:
+    - vHeavyPistol
+  attackmod: 0
+  brand: Magnum Opus
+  concealable:
+    concealable: false
+    isConcealed: false
+  critFailEffect: jammed
+  damage: 5d6
+  description:
+    value: |
+      <p>
+        When this things shoots, you know about it. If fired by someone with less than
+        10 BODY, this pistol jams. An action is required to unjam it.
+      </p>
+  dvTable: DV Pistol
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 1
+  installedItems:
+    allowed: true
+    allowedTypes: []
+    list: []
+    slots: 0
+    usedSlots: 0
+  isRanged: true
+  magazine:
+    max: 3
+    value: 0
+  price:
+    market: 1000
+  quality: standard
+  revealed: true
+  rof: 1
+  source:
+    book: 12DoG
+    page: 4
+  unarmedAutomaticCalculation: true
+  usage: equipped
+  usesType: magazine
+  weaponSkill: Handgun
+  weaponType: vHeavyPistol
+type: weapon

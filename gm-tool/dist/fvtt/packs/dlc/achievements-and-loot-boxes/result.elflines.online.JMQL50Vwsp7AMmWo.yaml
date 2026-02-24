@@ -1,0 +1,12 @@
+_id: JMQL50Vwsp7AMmWo
+_key: "!tables.results!T6pocp9VStxtFPzP.JMQL50Vwsp7AMmWo"
+documentCollection: cyberpunk-red-core.dlc_elflines-online
+documentId: yobTPhOaGRpfkjz8
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/gear/memory_chip.svg
+range:
+  - 1
+  - 1
+text: Elflines Online
+type: 2
+weight: 1

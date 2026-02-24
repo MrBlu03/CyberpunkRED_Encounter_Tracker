@@ -1,0 +1,13 @@
+_id: ysFKhaP2wS8HHg8A
+_key: "!tables.results!n7IlIvMfg7yW1OoE.ysFKhaP2wS8HHg8A"
+documentCollection: cyberpunk-red-core.core_critical-injuries-body
+documentId: vRhxMWgOHYROHeHm
+drawn: false
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/critical_injuries/dismembered_leg.svg
+range:
+  - 12
+  - 12
+text: Dismembered Leg
+type: 2
+weight: 1

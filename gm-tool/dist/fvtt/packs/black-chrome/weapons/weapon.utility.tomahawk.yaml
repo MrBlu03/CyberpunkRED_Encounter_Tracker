@@ -1,0 +1,57 @@
+_id: 1VndXRKaCuKQp49H
+_key: "!items!1VndXRKaCuKQp49H"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/black-chrome/utility-tomahawk.svg
+name: Utility Tomahawk
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: Everest VentureWare
+  canIgnoreArmor: true
+  concealable:
+    concealable: false
+    isConcealed: false
+  critFailEffect: jammed
+  damage: 3d6
+  description:
+    value: |
+      <p>
+        Blade and pike, this steel and composite ice axe can help you climb ice walls
+        while also doing serious damage in a fight.
+      </p>
+      <p>Can be used as both a melee and ranged weapon.</p>
+  dvTable: DV Thrown Weapon
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 1
+  ignoreArmorPercent: 50
+  ignoreBelowSP: 0
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+      - ammo
+    list: []
+    slots: 3
+    usedSlots: 0
+  isRanged: false
+  magazine:
+    max: 0
+    value: 0
+  price:
+    market: 100
+  quality: standard
+  revealed: true
+  rof: 2
+  source:
+    book: BC
+    page: 101
+  unarmedAutomaticCalculation: true
+  usage: toggled
+  usesType: magazine
+  weaponSkill: Athletics
+  weaponType: thrownWeapon
+type: weapon

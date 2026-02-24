@@ -1,0 +1,20 @@
+_id: ENrWOKuCjjpJjCtl
+_key: "!items!ENrWOKuCjjpJjCtl"
+effects: []
+img: icons/svg/item-bag.svg
+name: Land Vehicle Tech
+system:
+  basic: false
+  category: techniqueSkills
+  core: true
+  description:
+    value: ""
+  difficulty: typical
+  favorite: false
+  level: 0
+  skillType: generic
+  source:
+    book: Core
+    page: 141
+  stat: tech
+type: skill

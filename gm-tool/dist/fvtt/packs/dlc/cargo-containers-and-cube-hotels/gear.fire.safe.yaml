@@ -1,0 +1,39 @@
+_id: jlic1cP0wr7DOwad
+_key: "!items!jlic1cP0wr7DOwad"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/cargo-containers-and-cube-hotels/fire-safe.svg
+name: Fire Safe
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>Small fireproof lockbox made of Thick Steel.</p>
+      <ul>
+        <li>50HP</li>
+        <li>30cm / 1ft</li>
+        <li>Can be picked with a <strong>DV15 Pick Lock</strong> Skill Check</li>
+      </ul>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 0
+    usedSlots: 0
+  isElectronic: false
+  price:
+    market: 100
+  providesHardening: false
+  revealed: true
+  source:
+    book: CCaCH
+    page: 6
+  usage: toggled
+type: gear

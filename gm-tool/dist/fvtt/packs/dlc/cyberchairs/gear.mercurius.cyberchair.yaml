@@ -1,0 +1,48 @@
+_id: XbKkA6CrI42pvdcz
+_key: "!items!XbKkA6CrI42pvdcz"
+effects:
+  - G7BqXlan9qseMytK
+img: systems/cyberpunk-red-core/icons/compendium/cyberchairs/cyberchair.svg
+name: Mercurius Cyberchair
+system:
+  amount: 1
+  brand: Rocklin Augmentics
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        An impressively affordable cyberchair, offering great features at this price
+        point. While using it the operator's base MOVE becomes 5, with all regular
+        movement options remaining available.
+      </p>
+      <p>
+        Operation of the cyberchair requires either a free hand, or interface plugs.
+      </p>
+      <p>
+        If the operator suffers a critical injury that reduces their MOVE, the MOVE of
+        the cyberchair is instead effected.
+      </p>
+      <p>
+        The cyberchair cannot be targeted specifically, nor can it be disabled via EMP
+        effects.
+      </p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes: []
+    list: []
+    slots: 0
+    usedSlots: 0
+  isElectronic: false
+  price:
+    market: 100
+  providesHardening: false
+  revealed: true
+  source:
+    book: CC
+    page: 2
+  usage: equipped
+type: gear

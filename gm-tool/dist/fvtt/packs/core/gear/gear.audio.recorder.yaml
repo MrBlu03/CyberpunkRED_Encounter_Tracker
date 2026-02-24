@@ -1,0 +1,33 @@
+_id: Lo7rXsc5ToQf2KlN
+_key: "!items!Lo7rXsc5ToQf2KlN"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/gear/audio_recorder.svg
+name: Audio Recorder
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>Record 24h of audio on a memory Chip.</p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: true
+  price:
+    market: 100
+  providesHardening: false
+  revealed: true
+  source:
+    book: Core
+    page: 352
+  usage: toggled
+type: gear

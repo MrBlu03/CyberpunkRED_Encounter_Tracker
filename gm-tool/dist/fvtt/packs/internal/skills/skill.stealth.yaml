@@ -1,0 +1,20 @@
+_id: y2oyHHPllOLVxiNJ
+_key: "!items!y2oyHHPllOLVxiNJ"
+effects: []
+img: icons/svg/item-bag.svg
+name: Stealth
+system:
+  basic: true
+  category: bodySkills
+  core: true
+  description:
+    value: ""
+  difficulty: typical
+  favorite: false
+  level: 2
+  skillType: generic
+  source:
+    book: Core
+    page: 132
+  stat: dex
+type: skill

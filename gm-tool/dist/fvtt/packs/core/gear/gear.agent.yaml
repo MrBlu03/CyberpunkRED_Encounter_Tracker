@@ -1,0 +1,37 @@
+_id: GqYz689ddSKQHMen
+_key: "!items!GqYz689ddSKQHMen"
+effects:
+  - OnONUXyMY8mOquf7
+img: systems/cyberpunk-red-core/icons/compendium/gear/agent.svg
+name: Agent
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        AI Smartphone. +2 Library Search, +2 Wardrobe & Style depending on
+        circumstance.
+      </p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: true
+  price:
+    market: 100
+  providesHardening: false
+  revealed: true
+  source:
+    book: Core
+    page: 352
+  usage: carried
+type: gear

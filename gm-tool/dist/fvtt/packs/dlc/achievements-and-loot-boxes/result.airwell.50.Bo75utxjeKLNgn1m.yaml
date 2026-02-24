@@ -1,0 +1,12 @@
+_id: Bo75utxjeKLNgn1m
+_key: "!tables.results!zRHyYnlEqNlTA4l5.Bo75utxjeKLNgn1m"
+documentCollection: cyberpunk-red-core.black-chrome_gear
+documentId: Ogmb7zTfss6Kz54C
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/black-chrome/airwell.svg
+range:
+  - 4
+  - 4
+text: AirWell 50
+type: 2
+weight: 1

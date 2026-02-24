@@ -1,0 +1,49 @@
+_id: hgYX1T8OCsSUL5zC
+_key: "!items!hgYX1T8OCsSUL5zC"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/armor/bodyweight_suit.svg
+name: Bodyweight Suit
+system:
+  bodyLocation:
+    ablation: 0
+    sp: 11
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        Netrunner armored skinsuit. Can store Cyberdeck and support Interface Plugs.
+        Can't be bought in two pieces. Always worn on both Head and Body Location.
+        Adds one Hardware only Option Slot to connected Cyberdeck. No armor penalty.
+      </p>
+  equipped: owned
+  favorite: false
+  headLocation:
+    ablation: 0
+    sp: 11
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isBodyLocation: true
+  isElectronic: false
+  isHeadLocation: true
+  isShield: false
+  penalty: 0
+  price:
+    market: 1000
+  providesHardening: false
+  revealed: true
+  shieldHitPoints:
+    max: 0
+    value: 0
+  source:
+    book: Core
+    page: 350
+  usage: equipped
+type: armor

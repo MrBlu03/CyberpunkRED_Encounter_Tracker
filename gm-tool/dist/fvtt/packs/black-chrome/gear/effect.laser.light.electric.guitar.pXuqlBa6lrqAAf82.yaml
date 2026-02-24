@@ -1,0 +1,32 @@
+_id: pXuqlBa6lrqAAf82
+_key: "!items.effects!GMouAyDuNb6QJ4a4.pXuqlBa6lrqAAf82"
+changes:
+  - key: bonuses.playInstrument
+    mode: 2
+    priority: null
+    value: "1"
+description: ""
+disabled: false
+duration:
+  combat: null
+  rounds: null
+  seconds: null
+  startRound: null
+  startTime: null
+  startTurn: null
+  turns: null
+flags:
+  cyberpunk-red-core:
+    changes:
+      cats:
+        "0": skill
+      situational:
+        "0":
+          isSituational: true
+          onByDefault: false
+icon: >-
+  systems/cyberpunk-red-core/icons/compendium/black-chrome/laser-light-electric-guitar.svg
+name: Laser Light Electric Guitar
+statuses: []
+tint: null
+transfer: true

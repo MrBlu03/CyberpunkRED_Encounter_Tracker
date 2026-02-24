@@ -1,0 +1,51 @@
+_id: MKvKCHCgl6UCaj7V
+_key: "!items!MKvKCHCgl6UCaj7V"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/weapons/heavySMG_excellent.svg
+name: Militech Viper
+system:
+  ammoVariety:
+    - heavyPistol
+  attackmod: 1
+  brand: Militech
+  concealable:
+    concealable: false
+    isConcealed: false
+  critFailEffect: jammed
+  damage: 3d6
+  description:
+    value: |
+      <p>A heavy SMG. Due to its size it can't be concealed. +1 to Attack.</p>
+  dvTable: DV SMG
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 3
+    suppressiveFire: true
+  handsReq: 1
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+      - ammo
+    list: []
+    slots: 3
+    usedSlots: 0
+  isRanged: true
+  magazine:
+    max: 40
+    value: 0
+  price:
+    market: 500
+  quality: standard
+  revealed: true
+  rof: 1
+  source:
+    book: Core
+    page: 341
+  unarmedAutomaticCalculation: true
+  usage: equipped
+  usesType: magazine
+  weaponSkill: Handgun
+  weaponType: smg
+type: weapon

@@ -1,0 +1,12 @@
+_id: dpYAJWeQ1uDXPo0S
+_key: "!tables.results!n7IlIvMfg7yW1OoE.dpYAJWeQ1uDXPo0S"
+documentCollection: cyberpunk-red-core.core_critical-injuries-body
+documentId: Z3iVuSFtma3Bx7SX
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/critical_injuries/torn_muscle.svg
+range:
+  - 9
+  - 9
+text: Torn Muscle
+type: 2
+weight: 1

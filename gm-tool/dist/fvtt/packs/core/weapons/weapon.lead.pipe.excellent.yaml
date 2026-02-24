@@ -1,0 +1,56 @@
+_id: XhMHJrLaYsmrK3J9
+_key: "!items!XhMHJrLaYsmrK3J9"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/weapons/LeadPipe_excellent.svg
+name: Lead Pipe (Excellent)
+system:
+  ammoVariety: []
+  attackmod: 1
+  brand: ""
+  canIgnoreArmor: true
+  concealable:
+    concealable: false
+    isConcealed: false
+  critFailEffect: jammed
+  damage: 3d6
+  description:
+    value: |
+      <p>
+        A hollow cylinder, typically made of metal or fiberglass. It may have conveyed
+        fluids once. +1 to Attack.
+      </p>
+  dvTable: ""
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 2
+  ignoreArmorPercent: 50
+  ignoreBelowSP: 0
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+      - ammo
+    list: []
+    slots: 3
+    usedSlots: 0
+  isRanged: false
+  magazine:
+    max: 0
+    value: 0
+  price:
+    market: 500
+  quality: excellent
+  revealed: true
+  rof: 2
+  source:
+    book: Core
+    page: 340
+  unarmedAutomaticCalculation: true
+  usage: equipped
+  usesType: magazine
+  weaponSkill: Melee Weapon
+  weaponType: heavyMelee
+type: weapon

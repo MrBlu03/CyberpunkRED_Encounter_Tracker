@@ -1,0 +1,20 @@
+_id: RI5M0MhWRVNFwUKm
+_key: "!items!RI5M0MhWRVNFwUKm"
+effects: []
+img: icons/svg/item-bag.svg
+name: Cryptography
+system:
+  basic: false
+  category: educationSkills
+  core: true
+  description:
+    value: ""
+  difficulty: typical
+  favorite: false
+  level: 0
+  skillType: generic
+  source:
+    book: Core
+    page: 134
+  stat: int
+type: skill

@@ -1,0 +1,31 @@
+_id: 6I91wpBkczPpDkZt
+_key: "!items!6I91wpBkczPpDkZt"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/black-chrome/zetatech-aerocop.svg
+name: Zetatech AeroCop
+system:
+  brand: Zetatech
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>AV4 type Aerodyne. Police version.</p>
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  price:
+    market: 58000
+  sdp: 120
+  seats: 6
+  source:
+    book: BC
+    page: 61
+  speedCombat: 40
+  speedNarrative: 200 MPH / 322 KPH
+type: vehicle

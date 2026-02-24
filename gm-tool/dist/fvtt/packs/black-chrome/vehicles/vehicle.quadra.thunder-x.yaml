@@ -1,0 +1,31 @@
+_id: F3jEryfSWKmPUmpB
+_key: "!items!F3jEryfSWKmPUmpB"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/black-chrome/thunder-x.svg
+name: Quadra Thunder-X
+system:
+  brand: Quadra
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>A top of the line High Performance Groundcar.</p>
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  price:
+    market: 57000
+  sdp: 50
+  seats: 4
+  source:
+    book: BC
+    page: 76
+  speedCombat: 40
+  speedNarrative: 200 MPH / 322 KPH
+type: vehicle

@@ -1,0 +1,34 @@
+_id: 1OX1HUFSyeKUbvoo
+_key: "!items!1OX1HUFSyeKUbvoo"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/black-chrome/paladin-500.svg
+name: Paladin 500
+system:
+  brand: Turbo Neon Motors
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        A High Performance Groundcar. Now you can be MadMax. In town. With two mounted
+        Machine Guns.
+      </p>
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  price:
+    market: 59000
+  sdp: 50
+  seats: 4
+  source:
+    book: BC
+    page: 75
+  speedCombat: 40
+  speedNarrative: 200 MPH / 322 KPH
+type: vehicle

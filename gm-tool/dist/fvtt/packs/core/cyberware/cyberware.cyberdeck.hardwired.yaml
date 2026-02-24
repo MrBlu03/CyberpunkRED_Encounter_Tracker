@@ -1,0 +1,57 @@
+_id: eZg3gGGEJ7r2K9ng
+_key: "!items!eZg3gGGEJ7r2K9ng"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/cyberware/cyberdeck.svg
+name: Cyberdeck (Hardwired)
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  core: false
+  damage: 1d6
+  description:
+    value: |
+      <p>A built-in cyberdeck. Always available.</p>
+  dvTable: ""
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  humanityLoss:
+    roll: 1d6
+    static: 3
+  installLocation: clinic
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+      - cyberdeck
+    list: []
+    slots: 1
+    usedSlots: 0
+  isElectronic: true
+  isFoundational: false
+  isRanged: false
+  isWeapon: false
+  magazine:
+    max: 0
+    value: 0
+  price:
+    market: 500
+  providesHardening: false
+  revealed: true
+  rof: 1
+  size: 3
+  source:
+    book: Core
+    page: 364
+  type: cyberArm
+  unarmedAutomaticCalculation: true
+  usage: toggled
+  usesType: magazine
+  weaponSkill: Archery
+  weaponType: assaultRifle
+type: cyberware

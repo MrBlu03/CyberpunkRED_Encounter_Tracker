@@ -1,0 +1,20 @@
+_id: dai7lskmxzohcpZS
+_key: "!items!dai7lskmxzohcpZS"
+effects: []
+img: icons/svg/item-bag.svg
+name: Endurance
+system:
+  basic: false
+  category: bodySkills
+  core: true
+  description:
+    value: ""
+  difficulty: typical
+  favorite: false
+  level: 0
+  skillType: generic
+  source:
+    book: Core
+    page: 132
+  stat: will
+type: skill

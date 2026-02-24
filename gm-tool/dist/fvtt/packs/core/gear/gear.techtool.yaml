@@ -1,0 +1,33 @@
+_id: GPgc2QczR4H1rYPj
+_key: "!items!GPgc2QczR4H1rYPj"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/gear/tech_tool.svg
+name: Techtool
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>Multi-purpose tool.</p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: false
+  price:
+    market: 100
+  providesHardening: false
+  revealed: true
+  source:
+    book: Core
+    page: 355
+  usage: toggled
+type: gear

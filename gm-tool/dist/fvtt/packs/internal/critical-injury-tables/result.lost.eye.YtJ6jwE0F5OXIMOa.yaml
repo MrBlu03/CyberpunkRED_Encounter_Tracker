@@ -1,0 +1,12 @@
+_id: YtJ6jwE0F5OXIMOa
+_key: "!tables.results!QiwaqQtocypL0FXG.YtJ6jwE0F5OXIMOa"
+documentCollection: cyberpunk-red-core.core_critical-injuries-head
+documentId: vysFvuTpuG2aDDIz
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/critical_injuries/lost_eye.svg
+range:
+  - 2
+  - 2
+text: Lost Eye
+type: 2
+weight: 1

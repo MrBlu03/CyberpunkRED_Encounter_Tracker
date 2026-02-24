@@ -1,0 +1,42 @@
+_id: WyKK67Ii0oOYOS3d
+_key: "!items!WyKK67Ii0oOYOS3d"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/default/cyberdeck.svg
+name: MicroMate
+system:
+  brand: Zetatech
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        Perfect for Netrunners who only know one speed: All offense, all the time.
+        Just don't get hit, it's going to hurt. A lot.
+      </p>
+      <p>9 slots for Programs or Hardware.</p>
+      <p>
+        Slots will not accept Defender Programs. All brain damage from NET combat is
+        doubled.
+      </p>
+  equipped: owned
+  favorite: false
+  installLocation: mall
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+      - program
+    list: []
+    slots: 9
+    usedSlots: 0
+  isElectronic: true
+  price:
+    market: 500
+  providesHardening: false
+  quality: standard
+  size: 1
+  source:
+    book: MwtU
+    page: 4
+type: cyberdeck

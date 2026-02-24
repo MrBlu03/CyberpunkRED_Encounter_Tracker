@@ -1,0 +1,32 @@
+_id: 07oWqLTtRifNsjsz
+_key: "!items.effects!iQMwC5XITZSDn4mz.07oWqLTtRifNsjsz"
+changes:
+  - key: bonuses.contortionist
+    mode: 2
+    priority: null
+    value: "2"
+description: ""
+disabled: false
+duration:
+  combat: null
+  rounds: null
+  seconds: null
+  startRound: null
+  startTime: null
+  startTurn: null
+  turns: null
+flags:
+  cyberpunk-red-core:
+    changes:
+      cats:
+        "0": skill
+      situational:
+        "0":
+          isSituational: false
+          onByDefault: false
+icon: >-
+  systems/cyberpunk-red-core/icons/compendium/exotics-of-2045/extra-joined-cyberarm.svg
+name: Extra-Jointed Cyberarm
+statuses: []
+tint: null
+transfer: true

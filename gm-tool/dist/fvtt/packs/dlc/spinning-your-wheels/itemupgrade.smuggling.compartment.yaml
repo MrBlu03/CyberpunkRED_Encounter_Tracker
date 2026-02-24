@@ -1,0 +1,76 @@
+_id: 81qxDB83rnxGNjdK
+_key: "!items!81qxDB83rnxGNjdK"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/upgrades/smuggling_upgrade.svg
+name: Smuggling Compartment
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  damage: 1d6
+  description:
+    value: |
+      <p>Adds a small hidden storage space in the frame.</p>
+      <p>1 inch x 6 inches (2.54cm x 15.24cm)</p>
+      <p><strong>DV17 Conceal/Reveal Object</strong> check to discover.</p>
+      <p>Can't install this Upgrade with Folding Frame.</p>
+  dvTable: ""
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 0
+  installLocation: mall
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: false
+  isRanged: false
+  magazine:
+    max: 0
+    value: 0
+  modifiers:
+    attackmod:
+      type: modifier
+      value: null
+    damage:
+      type: modifier
+      value: null
+    magazine:
+      type: modifier
+      value: null
+    rof:
+      type: modifier
+      value: null
+    sdp:
+      type: modifier
+      value: null
+    seats:
+      type: modifier
+      value: null
+    secondaryWeapon:
+      configured: false
+    speedCombat:
+      type: modifier
+      value: null
+  price:
+    market: 50
+  providesHardening: false
+  rof: 1
+  size: 1
+  source:
+    book: SYW
+    page: 5
+  type: vehicle
+  unarmedAutomaticCalculation: true
+  usesType: magazine
+  weaponSkill: ""
+  weaponType: ""
+type: itemUpgrade

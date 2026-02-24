@@ -1,0 +1,12 @@
+_id: kS0gv3dhDDFIavj5
+_key: "!tables.results!EVPuZ21eNOpEycGQ.kS0gv3dhDDFIavj5"
+documentCollection: cyberpunk-red-core.core_ammo
+documentId: n3AunwSvl6L44MRF
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/ammo/rifle_smart.png
+range:
+  - 4
+  - 4
+text: Rifle (Smart)
+type: 2
+weight: 1

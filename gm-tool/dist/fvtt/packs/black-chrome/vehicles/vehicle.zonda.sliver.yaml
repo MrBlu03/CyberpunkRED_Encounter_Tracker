@@ -1,0 +1,31 @@
+_id: qWIFkeCnwb0AVuPK
+_key: "!items!qWIFkeCnwb0AVuPK"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/black-chrome/zonda-sliver.svg
+name: Zonda Sliver
+system:
+  brand: Zonda
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>A Roadbike with all the gadgets you'd ever need.</p>
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  price:
+    market: 27000
+  sdp: 35
+  seats: 2
+  source:
+    book: BC
+    page: 84
+  speedCombat: 20
+  speedNarrative: 100 MPH / 161 KPH
+type: vehicle

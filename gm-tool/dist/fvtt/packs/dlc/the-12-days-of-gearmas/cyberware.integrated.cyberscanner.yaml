@@ -1,0 +1,62 @@
+_id: wNBD9RPisrschAMX
+_key: "!items!wNBD9RPisrschAMX"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/the_12_days_of_gearmas/cyberscanner_cyberware.svg
+name: Integrated Cyberscanner
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: ""
+  concealable:
+    concealable: true
+    isConcealed: false
+  core: false
+  damage: 1d6
+  description:
+    value: |
+      <p>
+        Can scan an individual within 2m/yds and provide a list of all installed
+        Cyberware, takes 1 minute. Spits out an error if a Hardened, Tech Upgraded, or
+        Unique piece of Cyberware is detected.
+      </p>
+  dvTable: ""
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  humanityLoss:
+    roll: 2d6
+    static: 7
+  installLocation: clinic
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+      - ammo
+    list: []
+    slots: 0
+    usedSlots: 0
+  isElectronic: true
+  isFoundational: false
+  isRanged: false
+  isWeapon: false
+  magazine:
+    max: 0
+    value: 0
+  price:
+    market: 500
+  providesHardening: false
+  revealed: true
+  rof: 1
+  size: 2
+  source:
+    book: 12DoGear
+    page: 2
+  type: cyberArm
+  unarmedAutomaticCalculation: true
+  usage: toggled
+  usesType: magazine
+  weaponSkill: ""
+  weaponType: ""
+type: cyberware

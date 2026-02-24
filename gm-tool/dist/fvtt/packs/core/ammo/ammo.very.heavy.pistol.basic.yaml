@@ -1,0 +1,33 @@
+_id: NQP4I9heyv9fXj46
+_key: "!items!NQP4I9heyv9fXj46"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/ammo/pistolveryheavy_basic.png
+name: Very Heavy Pistol (Basic)
+system:
+  ablationValue: 1
+  amount: 10
+  brand: ""
+  concealable:
+    concealable: true
+    isConcealed: false
+  description:
+    value: |
+      <p>Basic ammo, nothing special.</p>
+  favorite: false
+  overrides:
+    autofire:
+      minimum: 3
+      mode: none
+      value: -1
+    damage:
+      minimum: 1d6
+      mode: none
+      value: 3d6
+  price:
+    market: 10
+  source:
+    book: Core
+    page: 345
+  type: basic
+  variety: vHeavyPistol
+type: ammo

@@ -1,0 +1,20 @@
+_id: rWMTfz2YfmPPetNd
+_key: "!items!rWMTfz2YfmPPetNd"
+effects: []
+img: icons/svg/item-bag.svg
+name: Acting
+system:
+  basic: false
+  category: performanceSkills
+  core: true
+  description:
+    value: ""
+  difficulty: typical
+  favorite: false
+  level: 0
+  skillType: generic
+  source:
+    book: Core
+    page: 137
+  stat: cool
+type: skill

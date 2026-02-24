@@ -1,0 +1,33 @@
+_id: ccLHU1Ym4K4mnOds
+_key: "!items!ccLHU1Ym4K4mnOds"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/programs/banhammer.svg
+name: Banhammer
+system:
+  atk: 1
+  blackIceType: antipersonnel
+  class: antiprogramattacker
+  damage:
+    blackIce: 2d6
+    standard: 3d6
+  def: 0
+  description:
+    value: |
+      <p>Deals 3d6 REZ to non-Black ICE or 2d6 Rez damage to Black ICE.</p>
+  favorite: false
+  installLocation: mall
+  interface: 0
+  isRezzed: false
+  per: 0
+  price:
+    market: 50
+  prototypeActor: ""
+  revealed: true
+  rez: 0
+  size: 1
+  source:
+    book: Core
+    page: 369
+  spd: 0
+  usage: toggled
+type: program

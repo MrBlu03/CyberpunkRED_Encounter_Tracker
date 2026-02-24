@@ -1,0 +1,51 @@
+_id: t32KOdX9C9oavu9X
+_key: "!items!t32KOdX9C9oavu9X"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/weapons/heavyPistol.svg
+name: Mustang Arms Mark III
+system:
+  ammoVariety:
+    - heavyPistol
+  attackmod: 0
+  brand: Mustang Arms
+  concealable:
+    concealable: true
+    isConcealed: false
+  critFailEffect: jammed
+  damage: 3d6
+  description:
+    value: |
+      <p>A concealable, heavy pistol.</p>
+  dvTable: DV Pistol
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 1
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+      - ammo
+    list: []
+    slots: 3
+    usedSlots: 0
+  isRanged: true
+  magazine:
+    max: 8
+    value: 0
+  price:
+    market: 100
+  quality: standard
+  revealed: true
+  rof: 2
+  source:
+    book: Core
+    page: 341
+  unarmedAutomaticCalculation: true
+  usage: equipped
+  usesType: magazine
+  weaponSkill: Handgun
+  weaponType: heavyPistol
+type: weapon

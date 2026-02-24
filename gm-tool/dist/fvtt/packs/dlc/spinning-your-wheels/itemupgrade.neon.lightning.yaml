@@ -1,0 +1,78 @@
+_id: PtsNxe8ZldUu1hRm
+_key: "!items!PtsNxe8ZldUu1hRm"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/spinning_your_wheels/neon_lighting.svg
+name: Neon Lightning
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  damage: 1d6
+  description:
+    value: |
+      <p>Fiber-optic lights on bike's frame and wheels.</p>
+      <p>
+        Considered as a Light Tattoo when on or near the bike (gaining +2 Wardrobe
+        &amp; Style bonus)
+      </p>
+  dvTable: ""
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 0
+  installLocation: mall
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: true
+  isRanged: false
+  magazine:
+    max: 0
+    value: 0
+  modifiers:
+    attackmod:
+      type: modifier
+      value: null
+    damage:
+      type: modifier
+      value: null
+    magazine:
+      type: modifier
+      value: null
+    rof:
+      type: modifier
+      value: null
+    sdp:
+      type: modifier
+      value: null
+    seats:
+      type: modifier
+      value: null
+    secondaryWeapon:
+      configured: false
+    speedCombat:
+      type: modifier
+      value: null
+  price:
+    market: 20
+  providesHardening: false
+  rof: 1
+  size: 1
+  source:
+    book: SYW
+    page: 5
+  type: vehicle
+  unarmedAutomaticCalculation: true
+  usesType: magazine
+  weaponSkill: ""
+  weaponType: ""
+type: itemUpgrade

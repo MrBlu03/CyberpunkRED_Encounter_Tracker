@@ -1,0 +1,36 @@
+_id: TitGVNMfgm6fsYsT
+_key: "!items!TitGVNMfgm6fsYsT"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/hornets_pharmacy/delaying_compound.svg
+name: Delaying Compound
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        This additive delays the effects of a Poison or Biotoxin Vial by a minute or
+        an hour. Mixing multiple Delaying Compounds does not increase delay period.
+      </p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes: []
+    list: []
+    slots: 0
+    usedSlots: 0
+  isElectronic: false
+  price:
+    market: 50
+  providesHardening: false
+  revealed: true
+  source:
+    book: HP
+    page: 4
+  usage: toggled
+type: gear

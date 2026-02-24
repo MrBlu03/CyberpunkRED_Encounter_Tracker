@@ -1,0 +1,33 @@
+_id: OCEWvjde4ZKq78ao
+_key: "!items!OCEWvjde4ZKq78ao"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/ammo/pistolheavy_basic.png
+name: Big Dreem Rounds
+system:
+  ablationValue: 1
+  amount: 10
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>Custom Ammo for the Teen Dreem.</p>
+  favorite: false
+  overrides:
+    autofire:
+      minimum: 3
+      mode: none
+      value: -1
+    damage:
+      minimum: 1d6
+      mode: none
+      value: 3d6
+  price:
+    market: 100
+  source:
+    book: BC+
+    page: 3
+  type: basic
+  variety: custom
+type: ammo

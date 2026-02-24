@@ -1,0 +1,74 @@
+_id: mqxZ6A9U0LhaDwJm
+_key: "!items!mqxZ6A9U0LhaDwJm"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/the_12_days_of_cybermas/radline_blitzkrieg-arc-thrower_cyberarm.svg
+name: Blitzkrieg Arc-Thrower Cyberarm
+system:
+  ammoVariety:
+    - custom
+  attackmod: 0
+  brand: Radline Laboratories
+  concealable:
+    concealable: false
+    isConcealed: false
+  core: false
+  critFailEffect: jammed
+  damage: 4d6
+  description:
+    value: |
+      <p>
+        An "arm" in name only, the Arc-Thrower is a massive electricity cannon. 0
+        option slots.
+      </p>
+      <p>
+        The Arc-Thrower is One-Handed Exotic Poor Quality Shotgun that uses Heavy
+        Weapons Skill. Fires "Shotgun Shell" electricity blast with 4d6 damage.
+        Critical Injuries are not possible. Armor is not ablated. If target goes under
+        1HP from the blast, target has 1HP and is Unconscious.
+      </p>
+      <p>
+        Firing the Arc-Thrower consumes a charge from the included Radline MagnaSlot
+        BatteryBrick (100eb). BatteryBrick has a 32 shot capacity and can be recharged
+        in 1 hour. Use an Action to swap in a fresh battery pack even if user has no
+        free hands available. Arc-Thrower does not have a hand attachment.
+      </p>
+  dvTable: ""
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  humanityLoss:
+    roll: 4d6
+    static: 14
+  installLocation: hospital
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 0
+    usedSlots: 0
+  isElectronic: true
+  isFoundational: true
+  isRanged: true
+  isWeapon: true
+  magazine:
+    max: 32
+    value: 0
+  price:
+    market: 1000
+  providesHardening: false
+  revealed: true
+  rof: 1
+  size: 1
+  source:
+    book: 12DoC
+    page: 4
+  type: cyberArm
+  unarmedAutomaticCalculation: true
+  usage: toggled
+  usesType: magazine
+  weaponSkill: Heavy Weapons
+  weaponType: shotgun
+type: cyberware

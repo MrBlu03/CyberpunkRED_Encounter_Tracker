@@ -1,0 +1,60 @@
+_id: gUvoOayETJInctg8
+_key: "!items!gUvoOayETJInctg8"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/cyberware/popup_ranged_weapon.svg
+name: Popup Ranged Weapon
+system:
+  ammoVariety:
+    - medPistol
+  attackmod: 0
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  core: false
+  damage: 2d6
+  description:
+    value: |
+      <p>
+        A concealable one-handed Ranged Weapon. Can't hold anything with this hand
+        while activated.
+      </p>
+  dvTable: ""
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  humanityLoss:
+    roll: 2d6
+    static: 7
+  installLocation: clinic
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: true
+  isFoundational: false
+  isRanged: true
+  isWeapon: true
+  magazine:
+    max: 0
+    value: 0
+  price:
+    market: 500
+  providesHardening: false
+  revealed: true
+  rof: 1
+  size: 2
+  source:
+    book: Core
+    page: 365
+  type: cyberArm
+  unarmedAutomaticCalculation: true
+  usage: toggled
+  usesType: magazine
+  weaponSkill: Handgun
+  weaponType: medPistol
+type: cyberware

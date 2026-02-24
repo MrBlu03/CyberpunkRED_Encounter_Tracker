@@ -1,0 +1,57 @@
+_id: O1brHdazB6mqbVp1
+_key: "!items!O1brHdazB6mqbVp1"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/weapons/BaseballBat.svg
+name: Stun Baton
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: ""
+  canIgnoreArmor: true
+  concealable:
+    concealable: false
+    isConcealed: false
+  critFailEffect: jammed
+  damage: 2d6
+  description:
+    value: |
+      <p>
+        An Exotic, One-handed Medium Melee Weapon. Target is knocked unconscious if
+        damage dealt would reduce them to under 1 HP. Doesn't cause Critical Injuries
+        or ablate armor.
+      </p>
+  dvTable: ""
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 1
+  ignoreArmorPercent: 50
+  ignoreBelowSP: 0
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+      - ammo
+    list: []
+    slots: 3
+    usedSlots: 0
+  isRanged: false
+  magazine:
+    max: 0
+    value: 0
+  price:
+    market: 100
+  quality: standard
+  revealed: true
+  rof: 2
+  source:
+    book: Core
+    page: 349
+  unarmedAutomaticCalculation: true
+  usage: equipped
+  usesType: magazine
+  weaponSkill: Melee Weapon
+  weaponType: medMelee
+type: weapon

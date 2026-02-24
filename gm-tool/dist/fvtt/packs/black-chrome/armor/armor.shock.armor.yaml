@@ -1,0 +1,45 @@
+_id: 592mTHSG05w0qS0W
+_key: "!items!592mTHSG05w0qS0W"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/black-chrome/shock-armor.svg
+name: Shock Armor
+system:
+  bodyLocation:
+    ablation: 0
+    sp: 7
+  brand: Gibson Battlegear
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>Kevlar armor that shocks anyone who is grappling you.</p>
+  equipped: owned
+  favorite: false
+  headLocation:
+    ablation: 0
+    sp: 0
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isBodyLocation: true
+  isElectronic: false
+  isHeadLocation: false
+  isShield: false
+  penalty: 0
+  price:
+    market: 500
+  providesHardening: false
+  revealed: true
+  shieldHitPoints:
+    max: 0
+    value: 0
+  source:
+    book: BC
+    page: 29
+  usage: toggled
+type: armor

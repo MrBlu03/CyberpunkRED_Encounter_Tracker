@@ -1,0 +1,14 @@
+_id: c2b8pwHJcBrPlA7R
+_key: "!tables.results!bEeDgE9CfongXFAR.c2b8pwHJcBrPlA7R"
+documentCollection: ""
+documentId: null
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/night_city_tarot/strength.svg
+range:
+  - 9
+  - 9
+text: >-
+  Strength. The Attack deals 25 more points of damage. That damage is added
+  before any armor or multipliers. (See Night City Tarot Page 4).
+type: 0
+weight: 1

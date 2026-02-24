@@ -1,0 +1,58 @@
+_id: k9wdC3XNapYdQq4m
+_key: "!items!k9wdC3XNapYdQq4m"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/black-chrome/modular-hand.svg
+name: Dynalar Modular Finger Enthusiast Cyberhand
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: Dynalar Technologies
+  concealable:
+    concealable: false
+    isConcealed: false
+  core: false
+  damage: 1d6
+  description:
+    value: |
+      <p>Borgware. Requires cyberarm. Comes with 8 cyberfingers*.</p>
+      <p>*Fingers must be added after installation</p>
+  dvTable: ""
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  humanityLoss:
+    roll: 4d6
+    static: 14
+  installLocation: hospital
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - cyberware
+      - ammo
+    list: []
+    slots: 8
+    usedSlots: 0
+  isElectronic: true
+  isFoundational: false
+  isRanged: false
+  isWeapon: false
+  magazine:
+    max: 0
+    value: 0
+  price:
+    market: 500
+  providesHardening: false
+  revealed: true
+  rof: 1
+  size: 2
+  source:
+    book: BC
+    page: 18
+  type: cyberArm
+  unarmedAutomaticCalculation: true
+  usage: toggled
+  usesType: magazine
+  weaponSkill: Archery
+  weaponType: assaultRifle
+type: cyberware

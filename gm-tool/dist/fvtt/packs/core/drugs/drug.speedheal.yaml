@@ -1,0 +1,29 @@
+_id: 3xF0I3J9RnSxf4Ux
+_key: "!items!3xF0I3J9RnSxf4Ux"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/drugs/speedheal.svg
+name: Speedheal
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  consumed: None
+  description:
+    value: |
+      <p>
+        Injecting a target with Speedheal immediately causes them to heal HP equal to
+        their BODY plus their WILL. This effect does not work on Mortally Wounded
+        targets, and can only be used on a target once per day.
+      </p>
+  equipped: owned
+  favorite: false
+  price:
+    market: 0
+  revealed: true
+  source:
+    book: Core
+    page: 150
+  usage: toggled
+type: drug

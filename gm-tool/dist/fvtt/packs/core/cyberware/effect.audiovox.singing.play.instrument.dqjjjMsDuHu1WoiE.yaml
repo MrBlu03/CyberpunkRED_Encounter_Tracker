@@ -1,0 +1,31 @@
+_id: dqjjjMsDuHu1WoiE
+_key: "!items.effects!oSCkXo6VZXIwjWhL.dqjjjMsDuHu1WoiE"
+changes:
+  - key: bonuses.playInstrument
+    mode: 2
+    priority: null
+    value: "2"
+description: ""
+disabled: false
+duration:
+  combat: null
+  rounds: null
+  seconds: null
+  startRound: null
+  startTime: null
+  startTurn: null
+  turns: null
+flags:
+  cyberpunk-red-core:
+    changes:
+      cats:
+        "0": skill
+      situational:
+        "0":
+          isSituational: false
+          onByDefault: false
+icon: systems/cyberpunk-red-core/icons/compendium/cyberware/audiovox.svg
+name: AudioVox Singing (Play Instrument)
+statuses: []
+tint: null
+transfer: true

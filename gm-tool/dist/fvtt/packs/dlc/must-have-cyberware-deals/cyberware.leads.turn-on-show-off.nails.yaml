@@ -1,0 +1,62 @@
+_id: 37RCGTuozpxgA9EN
+_key: "!items!37RCGTuozpxgA9EN"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/must_have_cyberware_deals/leads_turn_on_show_off_nails.svg
+name: Lead's Turn-On-Show-Off Nails
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: Lead
+  concealable:
+    concealable: false
+    isConcealed: false
+  core: false
+  damage: 1d6
+  description:
+    value: |
+      <p>
+        Customizable illuminated nail for each fingertip. Includes pen tools for
+        creating custom patterns. Nail patterns can be downloaded from the CitiNet and
+        synced with a linked Agent.<br />Qualifies as a Light Tattoo. +2 Wardrobe and
+        Style when the user has 3 or more Light Tattoos.
+      </p>
+  dvTable: ""
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  humanityLoss:
+    roll: "0"
+    static: 0
+  installLocation: mall
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 0
+    usedSlots: 0
+  isElectronic: true
+  isFoundational: false
+  isRanged: false
+  isWeapon: false
+  magazine:
+    max: 0
+    value: 0
+  price:
+    market: 100
+  providesHardening: false
+  revealed: true
+  rof: 1
+  size: 1
+  source:
+    book: MHCD
+    page: 3
+  type: fashionware
+  unarmedAutomaticCalculation: true
+  usage: toggled
+  usesType: magazine
+  weaponSkill: ""
+  weaponType: ""
+type: cyberware

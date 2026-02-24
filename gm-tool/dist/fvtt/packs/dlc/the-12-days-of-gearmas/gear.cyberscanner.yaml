@@ -1,0 +1,38 @@
+_id: JMYvZfk6ZBgt6tK0
+_key: "!items!JMYvZfk6ZBgt6tK0"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/the_12_days_of_gearmas/cyberscanner_gear.svg
+name: Cyberscanner
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        Can scan an individual within 2m/yds and provide a list of all installed
+        Cyberware, takes 1 minute. Spits out an error if a Hardened, Tech Upgraded, or
+        Unique piece of Cyberware is detected.
+      </p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 0
+    usedSlots: 0
+  isElectronic: true
+  price:
+    market: 1000
+  providesHardening: false
+  revealed: true
+  source:
+    book: 12DoGear
+    page: 2
+  usage: toggled
+type: gear

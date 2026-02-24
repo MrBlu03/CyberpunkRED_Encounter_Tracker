@@ -1,0 +1,51 @@
+_id: sG2H0phlu5j7iQYl
+_key: "!scenes!sG2H0phlu5j7iQYl"
+active: false
+background:
+  offsetX: 0
+  offsetY: 0
+  rotation: 0
+  scaleX: 1
+  scaleY: 1
+  src: systems/cyberpunk-red-core/maps/S0L-DCStreets-NOGRID1080.jpg
+  tint: null
+backgroundColor: "#999999"
+darkness: 0
+drawings: []
+fogExploration: true
+fogExploredColor: null
+fogOverlay: null
+fogReset: 1659831837774
+fogUnexploredColor: null
+foreground: null
+foregroundElevation: null
+globalLight: false
+globalLightThreshold: null
+grid:
+  alpha: 0.2
+  color: "#000000"
+  distance: 2
+  size: 56
+  type: 1
+  units: m
+height: 1080
+initial: {}
+journal: null
+lights: []
+name: Dystopian City Streets
+navName: ""
+navOrder: 100001
+navigation: true
+notes: []
+padding: 0
+playlist: null
+playlistSound: null
+sounds: []
+templates: []
+thumb: systems/cyberpunk-red-core/assets/scenes/Dystopian_City_Streets_thumb.webp
+tiles: []
+tokenVision: true
+tokens: []
+walls: []
+weather: ""
+width: 1920

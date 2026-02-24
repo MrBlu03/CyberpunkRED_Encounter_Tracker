@@ -1,0 +1,29 @@
+_id: ags0aoY9ViaGvTIb
+_key: "!items!ags0aoY9ViaGvTIb"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/drugs/antibiotics.svg
+name: Antibiotic
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  consumed: None
+  description:
+    value: |
+      <p>
+        If a target has started the natural healing process injecting them with
+        Antibiotic will cause them to heal an additional 2 Hit Points per day for a
+        week. This effect does not stack.
+      </p>
+  equipped: owned
+  favorite: false
+  price:
+    market: 0
+  revealed: true
+  source:
+    book: Core
+    page: 150
+  usage: toggled
+type: drug

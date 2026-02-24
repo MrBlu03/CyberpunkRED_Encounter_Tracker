@@ -1,0 +1,49 @@
+_id: 6iTkyK9JSQHM2IqU
+_key: "!items!6iTkyK9JSQHM2IqU"
+effects: []
+img: icons/weapons/bows/shortbow-recurve-red.webp
+name: Bow
+system:
+  ammoVariety:
+    - arrow
+  attackmod: 0
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  critFailEffect: jammed
+  damage: 4d6
+  description:
+    value: |
+      <p>A revitalized bow, reloaded as part of an Attack Action.</p>
+  dvTable: DV Bows & Crossbows
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 2
+  installedItems:
+    allowed: true
+    allowedTypes: []
+    list: []
+    slots: 0
+    usedSlots: 0
+  isRanged: true
+  magazine:
+    max: 1
+    value: 0
+  price:
+    market: 100
+  quality: standard
+  revealed: true
+  rof: 1
+  source:
+    book: ELO
+    page: 3
+  unarmedAutomaticCalculation: true
+  usage: equipped
+  usesType: magazine
+  weaponSkill: Archery
+  weaponType: bow
+type: weapon

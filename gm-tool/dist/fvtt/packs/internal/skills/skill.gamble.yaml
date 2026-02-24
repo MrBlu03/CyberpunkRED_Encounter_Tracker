@@ -1,0 +1,20 @@
+_id: AZiaiaTsX7p69VeW
+_key: "!items!AZiaiaTsX7p69VeW"
+effects: []
+img: icons/svg/item-bag.svg
+name: Gamble
+system:
+  basic: false
+  category: educationSkills
+  core: true
+  description:
+    value: ""
+  difficulty: typical
+  favorite: false
+  level: 0
+  skillType: generic
+  source:
+    book: Core
+    page: 135
+  stat: int
+type: skill

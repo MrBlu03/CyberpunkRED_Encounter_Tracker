@@ -1,0 +1,12 @@
+_id: 1luj1hZCHHXcW6eT
+_key: "!tables.results!VszxZ4TJjQ8FGuoc.1luj1hZCHHXcW6eT"
+documentCollection: cyberpunk-red-core.dlc_hornets-pharmacy
+documentId: RZ7P9nSOB21pfiaI
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/hornets_pharmacy/prime_time.svg
+range:
+  - 5
+  - 5
+text: Prime Time
+type: 2
+weight: 1

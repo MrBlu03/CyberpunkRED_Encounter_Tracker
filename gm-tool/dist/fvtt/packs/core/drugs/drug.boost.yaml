@@ -1,0 +1,35 @@
+_id: ut8jpew6V3q58ivX
+_key: "!items!ut8jpew6V3q58ivX"
+effects:
+  - HkOd5iFmWn6v0bKK
+  - ptnwPRaryJxNVOQf
+img: systems/cyberpunk-red-core/icons/compendium/drugs/boost.svg
+name: Boost
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  consumed: Boost Primary
+  description:
+    value: |
+      <p><strong>Primary Effect</strong></p>
+      <p>Dose lasts 24 hours.</p>
+      <ul>
+        <li>The user has INT +2 for the duration</li>
+      </ul>
+      <p><strong>Secondary Effect (DV17)</strong></p>
+      <ul>
+        <li>INT -2</li>
+      </ul>
+  equipped: owned
+  favorite: false
+  price:
+    market: 50
+  revealed: true
+  source:
+    book: Core
+    page: 357
+  usage: snorted
+type: drug

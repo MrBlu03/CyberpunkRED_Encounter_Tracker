@@ -1,0 +1,33 @@
+_id: 67GcScXFPCzIGi4s
+_key: "!items!67GcScXFPCzIGi4s"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/ammo/pistolheavy_armorpiercing.png
+name: Heavy Pistol (Armor-Piercing)
+system:
+  ablationValue: 2
+  amount: 10
+  brand: ""
+  concealable:
+    concealable: true
+    isConcealed: false
+  description:
+    value: |
+      <p>Double ablation to armor.</p>
+  favorite: false
+  overrides:
+    autofire:
+      minimum: 3
+      mode: none
+      value: -1
+    damage:
+      minimum: 1d6
+      mode: none
+      value: 3d6
+  price:
+    market: 100
+  source:
+    book: Core
+    page: 345
+  type: armorPiercing
+  variety: heavyPistol
+type: ammo

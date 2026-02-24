@@ -1,0 +1,31 @@
+_id: rw9YMhZaP2AQcYJw
+_key: "!items.effects!CyYpPh89G7IYyryM.rw9YMhZaP2AQcYJw"
+changes:
+  - key: system.stats.ref.value
+    mode: 2
+    priority: null
+    value: "3"
+description: ""
+disabled: true
+duration:
+  combat: null
+  rounds: null
+  seconds: null
+  startRound: null
+  startTime: null
+  startTurn: null
+  turns: null
+flags:
+  cyberpunk-red-core:
+    changes:
+      cats:
+        "0": stat
+      situational:
+        "0":
+          isSituational: false
+          onByDefault: false
+icon: systems/cyberpunk-red-core/icons/compendium/status/synthcoke_addiciton.svg
+name: Synthcoke Addicted Primary
+statuses: []
+tint: null
+transfer: true

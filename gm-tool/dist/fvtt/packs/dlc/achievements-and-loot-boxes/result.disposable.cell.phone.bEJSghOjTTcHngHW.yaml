@@ -1,0 +1,12 @@
+_id: bEJSghOjTTcHngHW
+_key: "!tables.results!T6pocp9VStxtFPzP.bEJSghOjTTcHngHW"
+documentCollection: cyberpunk-red-core.core_gear
+documentId: OjMJ2SyoMr4VWmnm
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/gear/disposable_cellphone.svg
+range:
+  - 2
+  - 2
+text: Disposable Cell Phone
+type: 2
+weight: 1

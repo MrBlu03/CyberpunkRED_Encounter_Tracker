@@ -1,0 +1,31 @@
+_id: cDOJ0bvvt3q79G8y
+_key: "!items.effects!RZ7P9nSOB21pfiaI.cDOJ0bvvt3q79G8y"
+changes:
+  - key: system.stats.cool.value
+    mode: 2
+    priority: null
+    value: "-2"
+description: ""
+disabled: true
+duration:
+  combat: null
+  rounds: null
+  seconds: null
+  startRound: null
+  startTime: null
+  startTurn: null
+  turns: null
+flags:
+  cyberpunk-red-core:
+    changes:
+      cats:
+        "0": stat
+      situational:
+        "0":
+          isSituational: false
+          onByDefault: false
+icon: systems/cyberpunk-red-core/icons/compendium/status/prime_time_addiction.svg
+name: Prime Time Addiction
+statuses: []
+tint: null
+transfer: true

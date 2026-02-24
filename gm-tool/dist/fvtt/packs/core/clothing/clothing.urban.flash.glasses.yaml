@@ -1,0 +1,38 @@
+_id: lNAutq2C1if6vjlT
+_key: "!items!lNAutq2C1if6vjlT"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/clothing/generic_glasses.svg
+name: Urban Flash Glasses
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        The most technological and flashy clothing you can find in the Time of the
+        Red.
+      </p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: false
+  price:
+    market: 100
+  providesHardening: false
+  revealed: true
+  source:
+    book: Core
+    page: 356
+  style: urbanFlash
+  type: glasses
+  usage: equipped
+type: clothing

@@ -1,0 +1,53 @@
+_id: dnfLVJnDKlEdLkpy
+_key: "!items!dnfLVJnDKlEdLkpy"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/weapons/SMG.svg
+name: Big Dreem
+system:
+  ammoVariety:
+    - custom
+  attackmod: 0
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  critFailEffect: jammed
+  damage: 2d6
+  description:
+    value: |
+      <p>
+        Exotic SMG. Autofire only. Even if you drop the weapon, it will continue to
+        Autofire.
+      </p>
+  dvTable: DV SMG (Autofire)
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 3
+    suppressiveFire: false
+  handsReq: 1
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 0
+    usedSlots: 0
+  isRanged: true
+  magazine:
+    max: 30
+    value: 0
+  price:
+    market: 10
+  quality: standard
+  revealed: true
+  rof: 1
+  source:
+    book: BC+
+    page: 3
+  unarmedAutomaticCalculation: true
+  usage: toggled
+  usesType: magazine
+  weaponSkill: Autofire
+  weaponType: smg
+type: weapon

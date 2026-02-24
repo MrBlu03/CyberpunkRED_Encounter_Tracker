@@ -1,0 +1,57 @@
+_id: WanZL37uS6qD7acP
+_key: "!items!WanZL37uS6qD7acP"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/black-chrome/mono-star.svg
+name: Kendachi Mono-Star
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: Kendachi
+  canIgnoreArmor: true
+  concealable:
+    concealable: true
+    isConcealed: false
+  critFailEffect: jammed
+  damage: 2d6
+  description:
+    value: |
+      <p>
+        Mono-Shuriken whose orb center contains a kinetic and solar motor allowing the
+        star to spin on itself and vibrate.
+      </p>
+      <p>Can be used as both a melee and ranged weapon.</p>
+  dvTable: DV Thrown Weapon
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 1
+  ignoreArmorPercent: 50
+  ignoreBelowSP: 0
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+      - ammo
+    list: []
+    slots: 3
+    usedSlots: 0
+  isRanged: false
+  magazine:
+    max: 0
+    value: 0
+  price:
+    market: 500
+  quality: standard
+  revealed: true
+  rof: 2
+  source:
+    book: BC
+    page: 101
+  unarmedAutomaticCalculation: true
+  usage: toggled
+  usesType: magazine
+  weaponSkill: Athletics
+  weaponType: thrownWeapon
+type: weapon

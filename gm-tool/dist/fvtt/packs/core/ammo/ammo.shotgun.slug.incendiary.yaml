@@ -1,0 +1,36 @@
+_id: yxGinCJXUJjdsK0g
+_key: "!items!yxGinCJXUJjdsK0g"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/ammo/shotgun_slug_incendiary.png
+name: Shotgun Slug (Incendiary)
+system:
+  ablationValue: 1
+  amount: 10
+  brand: ""
+  concealable:
+    concealable: true
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        If damage dealt to target they are set alight. Target takes 2 damage to HP at
+        end of their turn unless they use action to extinguish flames. Does not stack.
+      </p>
+  favorite: false
+  overrides:
+    autofire:
+      minimum: 3
+      mode: none
+      value: -1
+    damage:
+      minimum: 1d6
+      mode: none
+      value: 3d6
+  price:
+    market: 100
+  source:
+    book: Core
+    page: 346
+  type: incendiary
+  variety: shotgunSlug
+type: ammo

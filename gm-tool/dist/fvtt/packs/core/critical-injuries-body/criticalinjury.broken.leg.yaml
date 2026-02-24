@@ -1,0 +1,27 @@
+_id: yBy9rlhgZeaWGtHh
+_key: "!items!yBy9rlhgZeaWGtHh"
+effects:
+  - eHYkX8X9NklKx02I
+img: systems/cyberpunk-red-core/icons/compendium/critical_injuries/broken_leg.svg
+name: Broken Leg
+system:
+  deathSaveIncrease: false
+  description:
+    value: |
+      <p>-4 MOVE (minimum MOVE of 1).</p>
+  favorite: false
+  location: body
+  quickFix:
+    dvFirstAid: 0
+    dvParamedic: 13
+    type: paramedic
+  revealed: true
+  source:
+    book: Core
+    page: 187
+  treatment:
+    dvParamedic: 15
+    dvSurgery: 13
+    type: paramedicSurgery
+  usage: toggled
+type: criticalInjury

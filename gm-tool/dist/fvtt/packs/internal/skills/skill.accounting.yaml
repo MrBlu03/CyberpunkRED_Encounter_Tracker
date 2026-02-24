@@ -1,0 +1,20 @@
+_id: NafrVs2glkn6Ud82
+_key: "!items!NafrVs2glkn6Ud82"
+effects: []
+img: icons/svg/item-bag.svg
+name: Accounting
+system:
+  basic: false
+  category: educationSkills
+  core: true
+  description:
+    value: ""
+  difficulty: typical
+  favorite: false
+  level: 0
+  skillType: generic
+  source:
+    book: Core
+    page: 133
+  stat: int
+type: skill

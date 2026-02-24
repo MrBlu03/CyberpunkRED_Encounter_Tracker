@@ -1,0 +1,30 @@
+_id: L4P56fOWGjVT82ES
+_key: "!items.effects!6BM5WFyCyIM8lZib.L4P56fOWGjVT82ES"
+changes:
+  - key: system.stats.ref.value
+    mode: 2
+    value: "-2"
+description: ""
+disabled: true
+duration:
+  combat: null
+  rounds: null
+  seconds: null
+  startRound: null
+  startTime: null
+  startTurn: null
+  turns: null
+flags:
+  cyberpunk-red-core:
+    changes:
+      cats:
+        "0": stat
+      situational:
+        "0":
+          isSituational: false
+          onByDefault: false
+icon: systems/cyberpunk-red-core/icons/compendium/status/black_lace_addiction.svg
+name: Black Lace Addiction
+statuses: []
+tint: null
+transfer: true

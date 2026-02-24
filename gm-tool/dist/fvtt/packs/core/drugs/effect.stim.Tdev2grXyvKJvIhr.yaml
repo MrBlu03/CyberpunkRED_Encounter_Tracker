@@ -1,0 +1,31 @@
+_id: Tdev2grXyvKJvIhr
+_key: "!items.effects!r21n9rFplUOtnjHM.Tdev2grXyvKJvIhr"
+changes:
+  - key: bonuses.hasPainSuppression
+    mode: 5
+    priority: null
+    value: "1"
+description: ""
+disabled: true
+duration:
+  combat: null
+  rounds: null
+  seconds: null
+  startRound: null
+  startTime: null
+  startTurn: null
+  turns: null
+flags:
+  cyberpunk-red-core:
+    changes:
+      cats:
+        "0": misc
+      situational:
+        "0":
+          isSituational: false
+          onByDefault: false
+icon: systems/cyberpunk-red-core/icons/compendium/drugs/stim.svg
+name: Stim
+statuses: []
+tint: null
+transfer: true

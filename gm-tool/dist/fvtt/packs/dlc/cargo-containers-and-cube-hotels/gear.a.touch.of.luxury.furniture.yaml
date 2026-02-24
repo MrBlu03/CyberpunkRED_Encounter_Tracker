@@ -1,0 +1,35 @@
+_id: hBZ1Wwu7nw2foURO
+_key: "!items!hBZ1Wwu7nw2foURO"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/cargo-containers-and-cube-hotels/furniture-set.svg
+name: A Touch of Luxury Furniture Set
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: >
+      <p>This Furniture Set makes your Cargo Container almost feel like a
+      home.</p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 0
+    usedSlots: 0
+  isElectronic: false
+  price:
+    market: 500
+  providesHardening: false
+  revealed: true
+  source:
+    book: CCaCH
+    page: 6
+  usage: toggled
+type: gear

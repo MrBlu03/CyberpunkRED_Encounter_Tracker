@@ -1,0 +1,16 @@
+_id: QnWnZKAtoiskLnnC
+_key: "!tables.results!bEeDgE9CfongXFAR.QnWnZKAtoiskLnnC"
+documentCollection: ""
+documentId: null
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/night_city_tarot/the_empress.svg
+range:
+  - 4
+  - 4
+text: >-
+  The Empress. The next 3 Attack Checks that hit the target of this card
+  automatically deal a Critical Injury, no matter the Damage Roll results. This
+  doesn't work with weapons incapable of causing a Critical Injury, with
+  exception of Light Melee Weapons. (See Night City Tarot Page 3).
+type: 0
+weight: 1

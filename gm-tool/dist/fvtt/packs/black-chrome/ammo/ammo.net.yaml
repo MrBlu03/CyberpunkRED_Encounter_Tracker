@@ -1,0 +1,41 @@
+_id: etGQrEprF1AboZmt
+_key: "!items!etGQrEprF1AboZmt"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/black-chrome/capsule_tied.png
+name: Net
+system:
+  ablationValue: 0
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: true
+    isConcealed: false
+  description:
+    value: |
+      <p>Net for the net launcher that grapples the target on hit.</p>
+      <p>
+        On hit, grapples target. Target can escape with a
+        <strong>DV13 Contortionist Check</strong> (net victim only) or a
+        <strong>DV13 Brawling Check</strong> which can be attempted by anyone. Net can
+        also be destroyed.
+      </p>
+  favorite: false
+  installLocation: mall
+  overrides:
+    autofire:
+      minimum: 3
+      mode: none
+      value: -1
+    damage:
+      minimum: 1d6
+      mode: set
+      value: "0"
+  price:
+    market: 50
+  size: 0
+  source:
+    book: BC
+    page: 20
+  type: special
+  variety: custom
+type: ammo

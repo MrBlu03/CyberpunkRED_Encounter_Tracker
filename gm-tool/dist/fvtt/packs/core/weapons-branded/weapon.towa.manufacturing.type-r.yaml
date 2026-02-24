@@ -1,0 +1,54 @@
+_id: QrQ9bDFkwQTJstPK
+_key: "!items!QrQ9bDFkwQTJstPK"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/weapons/RocketLauncher_poor.svg
+name: Towa Manufacturing Type-R
+system:
+  ammoVariety:
+    - rocket
+  attackmod: 0
+  brand: Towa Manufacturing
+  concealable:
+    concealable: false
+    isConcealed: false
+  critFailEffect: jammed
+  damage: 8d6
+  description:
+    value: |
+      <p>
+        Bring out the big guns. This rocket launcher will do some damage. If you roll
+        1 on Attack (Crit fail) the gun jams and requires using an action to clear.
+      </p>
+  dvTable: DV Rocket Launcher
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 2
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+      - ammo
+    list: []
+    slots: 3
+    usedSlots: 0
+  isRanged: true
+  magazine:
+    max: 1
+    value: 0
+  price:
+    market: 100
+  quality: standard
+  revealed: true
+  rof: 1
+  source:
+    book: Core
+    page: 341
+  unarmedAutomaticCalculation: true
+  usage: equipped
+  usesType: magazine
+  weaponSkill: Heavy Weapons
+  weaponType: rocketLauncher
+type: weapon

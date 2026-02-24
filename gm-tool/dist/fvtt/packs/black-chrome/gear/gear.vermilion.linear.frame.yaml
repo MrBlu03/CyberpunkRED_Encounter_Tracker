@@ -1,0 +1,41 @@
+_id: QE785D3EE383knl6
+_key: "!items!QE785D3EE383knl6"
+effects:
+  - ooPd6s81jF5J1lpO
+img: systems/cyberpunk-red-core/icons/compendium/default/default-linearframe.svg
+name: Vermilion Linear Frame
+system:
+  amount: 1
+  brand: Wyzard Technologies
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>Exoskeleton.</p>
+      <ul>
+        <li>Requires 2 Interface Plugs</li>
+        <li>Increases BODY to 12 while plugged in</li>
+        <li>No changes to your HP or Deathsave</li>
+        <li>No movement penalty for jumping</li>
+        <li>Operates as if paired Skate Feet are installed</li>
+      </ul>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: false
+  price:
+    market: 5000
+  providesHardening: false
+  revealed: true
+  source:
+    book: BC
+    page: 54
+  usage: equipped
+type: gear

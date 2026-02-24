@@ -1,0 +1,62 @@
+_id: Iz2e2ZpOnShK6PBJ
+_key: "!items!Iz2e2ZpOnShK6PBJ"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/default/Default_Cyberware.svg
+name: Sponsored Covering (Cyberarm)
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  core: false
+  damage: 1d6
+  description:
+    value: |
+      <p>
+        Earn 20eb monthly by sporting a light-up advertisement on your Cyberarm. User
+        may be responsible for paying the installation fee. Corporate sponsorship may
+        be revoked if the terms are violated, such as obscuring the advertisement with
+        clothing or engaging in &ldquo;off-brand&rdquo; activities.
+      </p>
+      <p>Can not be installed in Meat arm.</p>
+  dvTable: ""
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  humanityLoss:
+    roll: "0"
+    static: 0
+  installLocation: mall
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: false
+  isFoundational: false
+  isRanged: false
+  isWeapon: false
+  magazine:
+    max: 0
+    value: 0
+  price:
+    market: 50
+  providesHardening: false
+  revealed: true
+  rof: 1
+  size: 0
+  source:
+    book: MHCD
+    page: 4
+  type: cyberArm
+  unarmedAutomaticCalculation: true
+  usage: toggled
+  usesType: magazine
+  weaponSkill: ""
+  weaponType: ""
+type: cyberware

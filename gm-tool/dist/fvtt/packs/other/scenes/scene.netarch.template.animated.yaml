@@ -1,0 +1,51 @@
+_id: 6ubX3xSJvgYxPKsW
+_key: "!scenes!6ubX3xSJvgYxPKsW"
+active: false
+background:
+  offsetX: -2
+  offsetY: 1
+  rotation: 0
+  scaleX: 1
+  scaleY: 1
+  src: systems/cyberpunk-red-core/tiles/netarch/S0L-BlankNetMap-VTT.webm
+  tint: null
+backgroundColor: "#999999"
+darkness: 0
+drawings: []
+fogExploration: true
+fogExploredColor: null
+fogOverlay: null
+fogReset: 1659831837775
+fogUnexploredColor: null
+foreground: null
+foregroundElevation: null
+globalLight: false
+globalLightThreshold: null
+grid:
+  alpha: 0.2
+  color: "#000000"
+  distance: 8
+  size: 110
+  type: 1
+  units: bit
+height: 2160
+initial: {}
+journal: null
+lights: []
+name: Netarch Template - Animated
+navName: ""
+navOrder: 0
+navigation: false
+notes: []
+padding: 0
+playlist: null
+playlistSound: null
+sounds: []
+templates: []
+thumb: systems/cyberpunk-red-core/assets/scenes/Netarch_Template_thumb.webp
+tiles: []
+tokenVision: true
+tokens: []
+walls: []
+weather: ""
+width: 3840

@@ -1,0 +1,50 @@
+_id: 5boGB9jFKUJ9cSMR
+_key: "!items!5boGB9jFKUJ9cSMR"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/weapons/AssaultRifle.svg
+name: SurvivalMaster
+system:
+  ammoVariety:
+    - rifle
+  attackmod: 0
+  brand: Everest VentureWare
+  concealable:
+    concealable: true
+    isConcealed: false
+  critFailEffect: jammed
+  damage: 5d6
+  description:
+    value: |
+      <p>Exotic Assault Rifle, no Autofire, no Suppressive Fire.</p>
+  dvTable: DV Assault Rifle
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 2
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 0
+    usedSlots: 0
+  isRanged: true
+  magazine:
+    max: 5
+    value: 0
+  price:
+    market: 100
+  quality: standard
+  revealed: true
+  rof: 1
+  source:
+    book: BC+
+    page: 3
+  unarmedAutomaticCalculation: true
+  usage: toggled
+  usesType: magazine
+  weaponSkill: Shoulder Arms
+  weaponType: assaultRifle
+type: weapon

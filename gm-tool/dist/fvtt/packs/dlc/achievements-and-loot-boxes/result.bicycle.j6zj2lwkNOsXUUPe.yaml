@@ -1,0 +1,12 @@
+_id: j6zj2lwkNOsXUUPe
+_key: "!tables.results!xWZowpQzG7fpmoP7.j6zj2lwkNOsXUUPe"
+documentCollection: cyberpunk-red-core.dlc_spinning-your-wheels
+documentId: XIDIqcWCFJtzYeRw
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/spinning_your_wheels/bicycle.svg
+range:
+  - 3
+  - 3
+text: Bicycle
+type: 2
+weight: 1

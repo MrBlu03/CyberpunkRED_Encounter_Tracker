@@ -1,0 +1,33 @@
+_id: y2a4HDhIl7FlJyD7
+_key: "!items!y2a4HDhIl7FlJyD7"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/gear/carryall.svg
+name: Carryall
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>Bag.</p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: false
+  price:
+    market: 20
+  providesHardening: false
+  revealed: true
+  source:
+    book: Core
+    page: 352
+  usage: toggled
+type: gear

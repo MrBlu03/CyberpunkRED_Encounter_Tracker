@@ -1,0 +1,12 @@
+_id: Y8W7Mp8xVqTOTcDg
+_key: "!tables.results!xWZowpQzG7fpmoP7.Y8W7Mp8xVqTOTcDg"
+documentCollection: cyberpunk-red-core.dlc_woodchippers-garage
+documentId: moqJ5beR4WqWCpZM
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/weapons/GrenadeLauncher.svg
+range:
+  - 4
+  - 4
+text: Flare Gun
+type: 2
+weight: 1

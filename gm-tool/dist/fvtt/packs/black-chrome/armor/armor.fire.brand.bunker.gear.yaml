@@ -1,0 +1,48 @@
+_id: nTasr1dMu9uE62BS
+_key: "!items!nTasr1dMu9uE62BS"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/black-chrome/bunker-gear.svg
+name: Fire Brand Bunker Gear
+system:
+  bodyLocation:
+    ablation: 0
+    sp: 15
+  brand: Fire Brand
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        Fireproof flak armor with a built in gas mask and 30 minutes of oxygen in a
+        tank that refills itself after an hour. -4 to REF, DEX, and MOVE.
+      </p>
+  equipped: owned
+  favorite: false
+  headLocation:
+    ablation: 0
+    sp: 15
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 0
+    usedSlots: 0
+  isBodyLocation: true
+  isElectronic: false
+  isHeadLocation: true
+  isShield: false
+  penalty: 4
+  price:
+    market: 1000
+  providesHardening: false
+  revealed: true
+  shieldHitPoints:
+    max: 0
+    value: 0
+  source:
+    book: BC
+    page: 29
+  usage: toggled
+type: armor

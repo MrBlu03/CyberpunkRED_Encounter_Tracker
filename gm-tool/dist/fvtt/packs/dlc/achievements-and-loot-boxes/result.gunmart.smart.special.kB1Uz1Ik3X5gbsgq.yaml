@@ -1,0 +1,12 @@
+_id: kB1Uz1Ik3X5gbsgq
+_key: "!tables.results!xWZowpQzG7fpmoP7.kB1Uz1Ik3X5gbsgq"
+documentCollection: cyberpunk-red-core.black-chrome_weapons
+documentId: RwZUbGdbyp5KTEc5
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/weapons/heavyPistol_poor.svg
+range:
+  - 2
+  - 2
+text: GunMart Smart Special
+type: 2
+weight: 1

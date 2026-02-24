@@ -1,0 +1,60 @@
+_id: Kgs5sQHSRjKHZIMN
+_key: "!items!Kgs5sQHSRjKHZIMN"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/the_12_days_of_cybermas/kiroshi_optishield.svg
+name: OptiShield
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: Kiroshi Optics
+  concealable:
+    concealable: false
+    isConcealed: false
+  core: false
+  damage: 1d6
+  description:
+    value: |
+      <p>
+        Embedded retractable Mirrorshades. When activated as an Action, user is immune
+        to negative effects of bright light, such as from flashbangs.
+      </p>
+  dvTable: ""
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  humanityLoss:
+    roll: 2d6
+    static: 7
+  installLocation: clinic
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 0
+    usedSlots: 0
+  isElectronic: false
+  isFoundational: false
+  isRanged: false
+  isWeapon: false
+  magazine:
+    max: 0
+    value: 0
+  price:
+    market: 500
+  providesHardening: false
+  revealed: true
+  rof: 1
+  size: 1
+  source:
+    book: 12DoC
+    page: 4
+  type: cyberwareExternal
+  unarmedAutomaticCalculation: true
+  usage: toggled
+  usesType: magazine
+  weaponSkill: ""
+  weaponType: ""
+type: cyberware

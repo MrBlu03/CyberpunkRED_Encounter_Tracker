@@ -1,0 +1,31 @@
+_id: eTdomqPYaFg1CAp5
+_key: "!items!eTdomqPYaFg1CAp5"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/black-chrome/harriet.svg
+name: Harriet 100
+system:
+  brand: AmeriCar
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>A classic Roadbike with a more feminine look.</p>
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  price:
+    market: 21000
+  sdp: 35
+  seats: 2
+  source:
+    book: BC
+    page: 69
+  speedCombat: 20
+  speedNarrative: 100 MPH / 161 KPH
+type: vehicle

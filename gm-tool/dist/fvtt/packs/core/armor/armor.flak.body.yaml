@@ -1,0 +1,47 @@
+_id: wQXJTKA8KeEe2V2H
+_key: "!items!wQXJTKA8KeEe2V2H"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/armor/flak_body.svg
+name: Flak (Body)
+system:
+  bodyLocation:
+    ablation: 0
+    sp: 15
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        Metal plated armor to resist the most powerful hits. -4 to REF, DEX, and MOVE.
+      </p>
+  equipped: owned
+  favorite: false
+  headLocation:
+    ablation: 0
+    sp: 0
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isBodyLocation: true
+  isElectronic: false
+  isHeadLocation: false
+  isShield: false
+  penalty: 4
+  price:
+    market: 500
+  providesHardening: false
+  revealed: true
+  shieldHitPoints:
+    max: 0
+    value: 0
+  source:
+    book: Core
+    page: 350
+  usage: equipped
+type: armor

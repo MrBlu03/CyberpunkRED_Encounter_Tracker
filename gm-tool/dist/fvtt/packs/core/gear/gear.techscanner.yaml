@@ -1,0 +1,34 @@
+_id: 347vBbRcotzYQBbW
+_key: "!items!347vBbRcotzYQBbW"
+effects:
+  - tvqakDnmQ3P9ncWm
+img: systems/cyberpunk-red-core/icons/compendium/gear/tech_scanner.svg
+name: Techscanner
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>+2 to multiple TECH-based skills.</p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: true
+  price:
+    market: 1000
+  providesHardening: false
+  revealed: true
+  source:
+    book: Core
+    page: 355
+  usage: carried
+type: gear

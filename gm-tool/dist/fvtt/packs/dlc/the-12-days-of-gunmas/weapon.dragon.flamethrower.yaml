@@ -1,0 +1,52 @@
+_id: kKWg7W7ySbQGl5eT
+_key: "!items!kKWg7W7ySbQGl5eT"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/weapons/flamethrower.svg
+name: Dragon Flamethrower
+system:
+  ammoVariety:
+    - shotgunShell
+  attackmod: 0
+  brand: Kendachi
+  concealable:
+    concealable: false
+    isConcealed: false
+  critFailEffect: jammed
+  damage: 3d6
+  description:
+    value: |
+      <p>
+        Fire at your finger tips. Can only fire Incendiary Shotgun Shells, but targets
+        ignited by this weapon burn for 4HP a turn.
+      </p>
+  dvTable: ""
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 2
+  installedItems:
+    allowed: true
+    allowedTypes: []
+    list: []
+    slots: 0
+    usedSlots: 0
+  isRanged: true
+  magazine:
+    max: 2
+    value: 0
+  price:
+    market: 1000
+  quality: standard
+  revealed: true
+  rof: 1
+  source:
+    book: 12DoG
+    page: 3
+  unarmedAutomaticCalculation: true
+  usage: equipped
+  usesType: magazine
+  weaponSkill: Heavy Weapons
+  weaponType: shotgun
+type: weapon

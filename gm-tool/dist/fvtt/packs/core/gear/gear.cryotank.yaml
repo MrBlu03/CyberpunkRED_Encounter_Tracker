@@ -1,0 +1,33 @@
+_id: NXYo2GCb0CtmIcYW
+_key: "!items!NXYo2GCb0CtmIcYW"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/gear/cryotank.svg
+name: Cryotank
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>Holds a fully-sized human, heals injuries faster than normal.</p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: true
+  price:
+    market: 5000
+  providesHardening: false
+  revealed: true
+  source:
+    book: Core
+    page: 353
+  usage: toggled
+type: gear

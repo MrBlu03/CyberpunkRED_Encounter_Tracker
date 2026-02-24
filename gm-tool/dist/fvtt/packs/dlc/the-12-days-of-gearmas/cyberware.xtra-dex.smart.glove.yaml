@@ -1,0 +1,68 @@
+_id: YaBhjpiiLwydzqGt
+_key: "!items!YaBhjpiiLwydzqGt"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/the_12_days_of_gearmas/dynalar_xtra-dex_smart_glove.svg
+name: Xtra-Dex Smart Glove
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: Dynalar Technologies
+  concealable:
+    concealable: false
+    isConcealed: false
+  core: false
+  damage: 1d6
+  description:
+    value: |
+      <p>
+        A Smart Glove with Cyberfinger support. Has 2 Option Slots for Cyberarm
+        Options and is treated as a
+        @UUID[Compendium.cyberpunk-red-core.black-chrome_cyberware.Item.f9u0uhwRBcunP0gz]{Modular
+        Finger Cyberhand} for the sake of installing the 5 supported Cyberfingers*.
+      </p>
+      <p>
+        Requires Interface Plugs to access Cyberarm/Cyberfinger Options installed in
+        the glove.
+      </p>
+      <p>*Modular Finger Cyberhand must be added after Installation.</p>
+  dvTable: ""
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  humanityLoss:
+    roll: "0"
+    static: 0
+  installLocation: mall
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+      - ammo
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: true
+  isFoundational: true
+  isRanged: false
+  isWeapon: false
+  magazine:
+    max: 0
+    value: 0
+  price:
+    market: 1000
+  providesHardening: false
+  revealed: true
+  rof: 1
+  size: 1
+  source:
+    book: 12DoGear
+    page: 3
+  type: cyberArm
+  unarmedAutomaticCalculation: true
+  usage: toggled
+  usesType: magazine
+  weaponSkill: ""
+  weaponType: ""
+type: cyberware

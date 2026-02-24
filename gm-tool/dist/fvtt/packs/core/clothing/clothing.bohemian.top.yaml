@@ -1,0 +1,38 @@
+_id: 1H2rlvYXvDwoHpu2
+_key: "!items!1H2rlvYXvDwoHpu2"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/clothing/generic_top.svg
+name: Bohemian Top
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        Channel your inner 70s hippy! Show everyone how much of a free spirit you are
+        with these clothes.
+      </p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: false
+  price:
+    market: 20
+  providesHardening: false
+  revealed: true
+  source:
+    book: Core
+    page: 356
+  style: bohemian
+  type: top
+  usage: equipped
+type: clothing

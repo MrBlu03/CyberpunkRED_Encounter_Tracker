@@ -1,0 +1,45 @@
+_id: Bg1YEeF25HhfrzOG
+_key: "!items!Bg1YEeF25HhfrzOG"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/armor/bullet_proof_shield.svg
+name: Bullet Proof Shield
+system:
+  bodyLocation:
+    ablation: 0
+    sp: 0
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>Requires an arm and has HP that is reduced by damage.</p>
+  equipped: owned
+  favorite: false
+  headLocation:
+    ablation: 0
+    sp: 0
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isBodyLocation: false
+  isElectronic: false
+  isHeadLocation: false
+  isShield: true
+  penalty: 0
+  price:
+    market: 100
+  providesHardening: false
+  revealed: true
+  shieldHitPoints:
+    max: 10
+    value: 10
+  source:
+    book: Core
+    page: 351
+  usage: equipped
+type: armor

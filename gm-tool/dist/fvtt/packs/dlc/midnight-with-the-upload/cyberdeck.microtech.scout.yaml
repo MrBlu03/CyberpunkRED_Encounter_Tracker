@@ -1,0 +1,37 @@
+_id: G52izEikFPz8IftP
+_key: "!items!G52izEikFPz8IftP"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/default/cyberdeck.svg
+name: Microtech Scout
+system:
+  brand: Microtech
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>5 slots for Programs or Hardware.</p>
+      <p>
+        Netrunner can roll Pathfinder without a NET Action right after Jacking In.
+      </p>
+  equipped: owned
+  favorite: false
+  installLocation: mall
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+      - program
+    list: []
+    slots: 5
+    usedSlots: 0
+  isElectronic: true
+  price:
+    market: 500
+  providesHardening: false
+  quality: standard
+  size: 1
+  source:
+    book: MwtU
+    page: 3
+type: cyberdeck

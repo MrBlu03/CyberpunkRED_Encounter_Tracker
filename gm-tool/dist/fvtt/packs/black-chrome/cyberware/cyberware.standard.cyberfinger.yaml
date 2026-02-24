@@ -1,0 +1,57 @@
+_id: 6n9UMTK8mY6yDFB2
+_key: "!items!6n9UMTK8mY6yDFB2"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/black-chrome/cyberfinger.svg
+name: Standard Cyberfinger
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: Dynalar Technologies
+  concealable:
+    concealable: true
+    isConcealed: false
+  core: false
+  damage: 1d6
+  description:
+    value: |
+      <p>Cyberfinger. Can only be installed on a modular finger cyberhand.</p>
+  dvTable: ""
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  humanityLoss:
+    roll: "0"
+    static: 0
+  installLocation: mall
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+      - ammo
+    list: []
+    slots: 0
+    usedSlots: 0
+  isElectronic: true
+  isFoundational: false
+  isRanged: false
+  isWeapon: false
+  magazine:
+    max: 0
+    value: 0
+  price:
+    market: 20
+  providesHardening: false
+  revealed: true
+  rof: 1
+  size: 1
+  source:
+    book: BC
+    page: 26
+  type: cyberArm
+  unarmedAutomaticCalculation: true
+  usage: toggled
+  usesType: magazine
+  weaponSkill: ""
+  weaponType: ""
+type: cyberware

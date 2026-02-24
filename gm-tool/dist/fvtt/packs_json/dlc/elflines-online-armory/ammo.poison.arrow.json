@@ -1,0 +1,42 @@
+{
+  "_id": "IZwINpYpfLLAq5zb",
+  "_key": "!items!IZwINpYpfLLAq5zb",
+  "effects": [],
+  "img": "icons/weapons/ammunition/arrow-broadhead-green.webp",
+  "name": "Poison Arrow",
+  "system": {
+    "ablationValue": 1,
+    "amount": 10,
+    "brand": "",
+    "concealable": {
+      "concealable": true,
+      "isConcealed": false
+    },
+    "description": {
+      "value": "<p>\n  No immediate damage. If meat target hit,\n  <strong>DV13 Resist Torture/Drugs</strong> Check. On a fail 2d6 damage to HP.\n  No Ablation.\n</p>\n"
+    },
+    "favorite": false,
+    "overrides": {
+      "autofire": {
+        "minimum": 3,
+        "mode": "none",
+        "value": -1
+      },
+      "damage": {
+        "minimum": "1d6",
+        "mode": "set",
+        "value": "2d6"
+      }
+    },
+    "price": {
+      "market": 10
+    },
+    "source": {
+      "book": "ELO",
+      "page": 3
+    },
+    "type": "poison",
+    "variety": "arrow"
+  },
+  "type": "ammo"
+}

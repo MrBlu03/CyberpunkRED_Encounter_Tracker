@@ -1,0 +1,57 @@
+_id: aGxQy3sWYa5M9bLd
+_key: "!items!aGxQy3sWYa5M9bLd"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/black-chrome/flash-bulb.svg
+name: Flashbulb
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  core: false
+  damage: 2d6
+  description:
+    value: |
+      <p>Requires cyberarm. User can attempt to blind anyone within 25m/yds.</p>
+  dvTable: ""
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  humanityLoss:
+    roll: 2d6
+    static: 7
+  installLocation: clinic
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+      - ammo
+    list: []
+    slots: 0
+    usedSlots: 0
+  isElectronic: true
+  isFoundational: false
+  isRanged: false
+  isWeapon: false
+  magazine:
+    max: 0
+    value: 0
+  price:
+    market: 500
+  providesHardening: false
+  revealed: true
+  rof: 2
+  size: 2
+  source:
+    book: BC
+    page: 18
+  type: cyberArm
+  unarmedAutomaticCalculation: true
+  usage: toggled
+  usesType: magazine
+  weaponSkill: Brawling
+  weaponType: medMelee
+type: cyberware

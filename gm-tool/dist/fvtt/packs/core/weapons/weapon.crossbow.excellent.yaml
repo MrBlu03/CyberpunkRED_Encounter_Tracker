@@ -1,0 +1,54 @@
+_id: DDFkD0nWwz34WjRE
+_key: "!items!DDFkD0nWwz34WjRE"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/weapons/Crossbow_excellent.svg
+name: Crossbow (Excellent)
+system:
+  ammoVariety:
+    - arrow
+  attackmod: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  critFailEffect: jammed
+  damage: 4d6
+  description:
+    value: >
+      <p>An excellent quality crossbow, reloaded as part of an Attack
+      action.</p>
+
+      <p>+1 to Attack check.</p>
+  dvTable: DV Bows & Crossbows
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 2
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+      - ammo
+    list: []
+    slots: 3
+    usedSlots: 0
+  isRanged: true
+  magazine:
+    max: 1
+    value: 0
+  price:
+    market: 500
+  quality: excellent
+  revealed: true
+  rof: 1
+  source:
+    book: Core
+    page: 341
+  unarmedAutomaticCalculation: true
+  usage: equipped
+  usesType: magazine
+  weaponSkill: Archery
+  weaponType: bow
+type: weapon

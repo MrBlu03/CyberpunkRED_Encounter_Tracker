@@ -1,0 +1,67 @@
+{
+  "_id": "z6SGFU2FVhXqFpvT",
+  "_key": "!items!z6SGFU2FVhXqFpvT",
+  "effects": [],
+  "img": "systems/cyberpunk-red-core/icons/compendium/must_have_cyberware_deals/mood_eye.svg",
+  "name": "Mood Eye",
+  "system": {
+    "ammoVariety": [],
+    "attackmod": 0,
+    "brand": "",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "core": false,
+    "damage": "1d6",
+    "description": {
+      "value": "<p>\n  Color-shifting eye lenses. Color is dependent on Neural Link \"mood\" scans.\n  <strong>DV 21 Acting</strong> check to fake a mood scan and change color\n  accordingly. Lenses can be deactivated without an action.\n</p>\n<ul>\n  <li>Red: Rage</li>\n  <li>Blue: Sorrow</li>\n  <li>Yellow: Terror</li>\n  <li>Pink: Horny</li>\n  <li>Green: Envy</li>\n  <li>Gray: Flatlined</li>\n</ul>\n<p>Fashionware. Requires Neural Link.</p>\n"
+    },
+    "dvTable": "",
+    "favorite": false,
+    "fireModes": {
+      "autoFire": 0,
+      "suppressiveFire": false
+    },
+    "humanityLoss": {
+      "roll": "0",
+      "static": 0
+    },
+    "installLocation": "mall",
+    "installedItems": {
+      "allowed": false,
+      "allowedTypes": [
+        "itemUpgrade"
+      ],
+      "list": [],
+      "slots": 0,
+      "usedSlots": 0
+    },
+    "isElectronic": true,
+    "isFoundational": false,
+    "isRanged": false,
+    "isWeapon": false,
+    "magazine": {
+      "max": 0,
+      "value": 0
+    },
+    "price": {
+      "market": 100
+    },
+    "providesHardening": false,
+    "revealed": true,
+    "rof": 1,
+    "size": 1,
+    "source": {
+      "book": "MHCD",
+      "page": 3
+    },
+    "type": "fashionware",
+    "unarmedAutomaticCalculation": true,
+    "usage": "toggled",
+    "usesType": "magazine",
+    "weaponSkill": "",
+    "weaponType": ""
+  },
+  "type": "cyberware"
+}

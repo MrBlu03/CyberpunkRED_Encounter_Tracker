@@ -1,0 +1,20 @@
+_id: V3coVNoi7ZSuyf5h
+_key: "!items!V3coVNoi7ZSuyf5h"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/default/Default_Skill.svg
+name: Martial Arts (Aikido)
+system:
+  basic: false
+  category: fightingSkills
+  core: false
+  description:
+    value: ""
+  difficulty: difficult
+  favorite: false
+  level: 0
+  skillType: martialArt
+  source:
+    book: Core
+    page: 83
+  stat: dex
+type: skill

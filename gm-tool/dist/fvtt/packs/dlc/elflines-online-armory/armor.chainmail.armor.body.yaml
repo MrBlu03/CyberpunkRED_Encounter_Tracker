@@ -1,0 +1,44 @@
+_id: N0XtKbgIohJmwa5R
+_key: "!items!N0XtKbgIohJmwa5R"
+effects: []
+img: icons/equipment/chest/breastplate-scale-grey.webp
+name: Chainmail Armor (Body)
+system:
+  bodyLocation:
+    ablation: 0
+    sp: 12
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>Armor made up of innumerable metal rings. -2 to REF, DEX, and MOVE.</p>
+  equipped: owned
+  favorite: false
+  headLocation:
+    ablation: 0
+    sp: 0
+  installedItems:
+    allowed: true
+    allowedTypes: []
+    list: []
+    slots: 0
+    usedSlots: 0
+  isBodyLocation: true
+  isElectronic: false
+  isHeadLocation: false
+  isShield: false
+  penalty: 2
+  price:
+    market: 100
+  providesHardening: false
+  revealed: true
+  shieldHitPoints:
+    max: 0
+    value: 0
+  source:
+    book: ELO
+    page: 3
+  usage: equipped
+type: armor

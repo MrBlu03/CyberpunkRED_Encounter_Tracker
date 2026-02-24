@@ -1,0 +1,27 @@
+_id: MQpiPgEtPaIe6MJ6
+_key: "!items!MQpiPgEtPaIe6MJ6"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/critical_injuries/broken_ribs.svg
+name: Broken Ribs
+system:
+  deathSaveIncrease: false
+  description:
+    value: >
+      <p>Suffer crit damage at end of turn if you move more than 4m/yrds on
+      foot.</p>
+  favorite: false
+  location: body
+  quickFix:
+    dvFirstAid: 0
+    dvParamedic: 13
+    type: paramedic
+  revealed: true
+  source:
+    book: Core
+    page: 187
+  treatment:
+    dvParamedic: 15
+    dvSurgery: 13
+    type: paramedicSurgery
+  usage: toggled
+type: criticalInjury

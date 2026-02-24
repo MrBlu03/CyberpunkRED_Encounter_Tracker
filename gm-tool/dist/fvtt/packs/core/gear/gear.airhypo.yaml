@@ -1,0 +1,33 @@
+_id: Th74cfC87RqEJKAb
+_key: "!items!Th74cfC87RqEJKAb"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/gear/air_hypo.svg
+name: Airhypo
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>Hypodermic syringe.</p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: false
+  price:
+    market: 50
+  providesHardening: false
+  revealed: true
+  source:
+    book: Core
+    page: 352
+  usage: toggled
+type: gear

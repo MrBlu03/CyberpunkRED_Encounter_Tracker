@@ -1,0 +1,37 @@
+_id: NoN4GJNgu6tE6mqd
+_key: "!items!NoN4GJNgu6tE6mqd"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/black-chrome/killstrom-sonic-boom-amp.svg
+name: KillStrom Sonic Boom Amp
+system:
+  amount: 1
+  brand: KillStrom Music
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        While linked to an instrument, the User can take an Action to make everyone
+        nearby make a Resist Torture/Drugs Check.
+      </p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 0
+    usedSlots: 0
+  isElectronic: true
+  price:
+    market: 1000
+  providesHardening: false
+  revealed: true
+  source:
+    book: BC
+    page: 40
+  usage: toggled
+type: gear

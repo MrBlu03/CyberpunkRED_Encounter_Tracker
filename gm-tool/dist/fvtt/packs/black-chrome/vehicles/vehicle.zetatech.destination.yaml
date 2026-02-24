@@ -1,0 +1,32 @@
+_id: eK3VQaeSd2DFYJ9z
+_key: "!items!eK3VQaeSd2DFYJ9z"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/black-chrome/zetatech-destination.svg
+name: Zetatech Destination
+system:
+  brand: Zetatech
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>AV4 style Aerodyne, civilian model.</p>
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  price:
+    market: 40000
+  sdp: 100
+  seats: 4
+  source:
+    book: BC
+    page: 62
+  speedCombat: 40
+  speedNarrative: 200 MPH / 322 KPH
+type: vehicle

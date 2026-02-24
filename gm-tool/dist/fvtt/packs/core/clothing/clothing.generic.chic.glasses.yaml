@@ -1,0 +1,38 @@
+_id: M8voGXTG2a8S1CzV
+_key: "!items!M8voGXTG2a8S1CzV"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/clothing/generic_glasses.svg
+name: Generic Chic Glasses
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        The kind of clothing you find in the Mega-Plexes of the Dark Future. Perfect
+        if you don't want to stand out from a crowd.
+      </p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: false
+  price:
+    market: 20
+  providesHardening: false
+  revealed: true
+  source:
+    book: Core
+    page: 356
+  style: genericChic
+  type: glasses
+  usage: equipped
+type: clothing

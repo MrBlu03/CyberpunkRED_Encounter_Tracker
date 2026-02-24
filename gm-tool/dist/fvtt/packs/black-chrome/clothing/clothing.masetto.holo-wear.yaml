@@ -1,0 +1,38 @@
+_id: Ik8mQIo1XkBrPmN4
+_key: "!items!Ik8mQIo1XkBrPmN4"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/black-chrome/holo-wear.svg
+name: Masetto Holo-Wear
+system:
+  amount: 1
+  brand: Masetto Tech Clothing
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        Holographic clothing that can get disabled by EMP blasts for a minute. Can
+        swap styles with an action if purchased.
+      </p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 0
+    usedSlots: 0
+  isElectronic: true
+  price:
+    market: 1000
+  providesHardening: false
+  revealed: true
+  source:
+    book: BC
+    page: 35
+  style: genericChic
+  type: jacket
+  usage: toggled
+type: clothing

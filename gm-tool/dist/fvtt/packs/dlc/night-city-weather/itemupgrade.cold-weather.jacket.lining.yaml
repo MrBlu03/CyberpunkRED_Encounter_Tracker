@@ -1,0 +1,76 @@
+_id: ajAbsPsSmQxsBbKn
+_key: "!items!ajAbsPsSmQxsBbKn"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/night-city-weather/cold-weather-jacket-lining.svg
+name: Cold-Weather Jacket Lining
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  damage: 1d6
+  description:
+    value: |
+      <p>
+        Upgrade for any Jacket fashion item. User will not suffer Exposure penalties
+        from cold temperatures (CP:R pg 181).
+      </p>
+  dvTable: ""
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 0
+  installLocation: mall
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: false
+  isRanged: false
+  magazine:
+    max: 0
+    value: 0
+  modifiers:
+    Wardrobe & Style:
+      isSituational: false
+      type: modifier
+      value: null
+    attackmod:
+      type: modifier
+      value: null
+    cool:
+      isSituational: false
+      type: modifier
+      value: null
+    damage:
+      type: modifier
+      value: null
+    magazine:
+      type: modifier
+      value: null
+    rof:
+      type: modifier
+      value: null
+    secondaryWeapon:
+      configured: false
+  price:
+    market: 500
+  providesHardening: false
+  rof: 1
+  size: 1
+  source:
+    book: NCW
+    page: 6
+  type: clothing
+  unarmedAutomaticCalculation: true
+  usesType: magazine
+  weaponSkill: ""
+  weaponType: ""
+type: itemUpgrade

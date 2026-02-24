@@ -1,0 +1,16 @@
+_id: lRSq7Fcj0dEUqw6X
+_key: "!tables.results!bEeDgE9CfongXFAR.lRSq7Fcj0dEUqw6X"
+documentCollection: ""
+documentId: null
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/night_city_tarot/the_sun.svg
+range:
+  - 20
+  - 20
+text: >-
+  The Sun. If the target carries any explosives, the GM must choose one. It
+  explodes. If the target wasn't carrying any, the GM must choose one non-weapon
+  equipment on the target. It is Destroyed Beyond Repair. (See Night City Tarot
+  Page 5).
+type: 0
+weight: 1

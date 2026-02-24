@@ -1,0 +1,62 @@
+_id: MfNQoF64u5w8cK7A
+_key: "!items!MfNQoF64u5w8cK7A"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/black-chrome/neo-soviet-cyberarm.svg
+name: Neo-Soviet Cyberarm
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  core: false
+  damage: 1d6
+  description:
+    value: |
+      <p>
+        A soviet cybernetical replacement arm. Comes with a free hand pre-installed.
+        -1 to rolls requiring arm without BODY 8+.
+      </p>
+  dvTable: ""
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  humanityLoss:
+    roll: 2d6
+    static: 7
+  installLocation: hospital
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - cyberware
+      - itemUpgrade
+      - ammo
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: true
+  isFoundational: true
+  isRanged: false
+  isWeapon: false
+  magazine:
+    max: 0
+    value: 0
+  price:
+    market: 100
+  providesHardening: false
+  revealed: true
+  rof: 1
+  size: 0
+  source:
+    book: BC
+    page: 20
+  type: cyberArm
+  unarmedAutomaticCalculation: true
+  usage: toggled
+  usesType: magazine
+  weaponSkill: Archery
+  weaponType: assaultRifle
+type: cyberware

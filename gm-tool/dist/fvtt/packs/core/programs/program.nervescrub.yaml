@@ -1,0 +1,33 @@
+_id: iq3V4YMib0WVSZZD
+_key: "!items!iq3V4YMib0WVSZZD"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/programs/nervescrub.svg
+name: Nervescrub
+system:
+  atk: 0
+  blackIceType: antipersonnel
+  class: antipersonnelattacker
+  damage:
+    blackIce: "0"
+    standard: 1d6
+  def: 0
+  description:
+    value: |
+      <p>Lowers a Netrunner's INT, REF, and DEX by 1d6 (min. 1) for 1 hour.</p>
+  favorite: false
+  installLocation: mall
+  interface: 0
+  isRezzed: false
+  per: 0
+  price:
+    market: 100
+  prototypeActor: ""
+  revealed: true
+  rez: 0
+  size: 1
+  source:
+    book: Core
+    page: 369
+  spd: 0
+  usage: toggled
+type: program

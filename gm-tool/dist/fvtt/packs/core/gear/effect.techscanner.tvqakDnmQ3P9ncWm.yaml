@@ -1,0 +1,79 @@
+_id: tvqakDnmQ3P9ncWm
+_key: "!items.effects!347vBbRcotzYQBbW.tvqakDnmQ3P9ncWm"
+changes:
+  - key: bonuses.airVehicleTech
+    mode: 2
+    priority: null
+    value: "2"
+  - key: bonuses.basicTech
+    mode: 2
+    priority: null
+    value: "2"
+  - key: bonuses.cybertech
+    mode: 2
+    priority: null
+    value: "2"
+  - key: bonuses.electronicsAndSecurityTech
+    mode: 2
+    priority: null
+    value: "2"
+  - key: bonuses.landVehicleTech
+    mode: 2
+    priority: null
+    value: "2"
+  - key: bonuses.seaVehicleTech
+    mode: 2
+    priority: null
+    value: "2"
+  - key: bonuses.weaponstech
+    mode: 2
+    priority: null
+    value: "2"
+description: ""
+disabled: false
+duration:
+  combat: null
+  rounds: null
+  seconds: null
+  startRound: null
+  startTime: null
+  startTurn: null
+  turns: null
+flags:
+  cyberpunk-red-core:
+    changes:
+      cats:
+        "0": skill
+        "1": skill
+        "2": skill
+        "3": skill
+        "4": skill
+        "5": skill
+        "6": skill
+      situational:
+        "0":
+          isSituational: false
+          onByDefault: false
+        "1":
+          isSituational: false
+          onByDefault: false
+        "2":
+          isSituational: false
+          onByDefault: false
+        "3":
+          isSituational: false
+          onByDefault: false
+        "4":
+          isSituational: false
+          onByDefault: false
+        "5":
+          isSituational: false
+          onByDefault: false
+        "6":
+          isSituational: false
+          onByDefault: false
+icon: systems/cyberpunk-red-core/icons/compendium/gear/tech_scanner.svg
+name: Techscanner
+statuses: []
+tint: null
+transfer: true

@@ -1,0 +1,39 @@
+_id: rkLqCqLvZ26DyYDz
+_key: "!items!rkLqCqLvZ26DyYDz"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/default/cyberdeck.svg
+name: Phoenix
+system:
+  brand: Raven Microcybernetics
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>Never lose a Program again.</p>
+      <p>6 slots for Programs or Hardware.</p>
+      <p>
+        Any Program destroyed in a netrunning session is restored upon a safe Jack
+        Out.
+      </p>
+  equipped: owned
+  favorite: false
+  installLocation: mall
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+      - program
+    list: []
+    slots: 6
+    usedSlots: 0
+  isElectronic: true
+  price:
+    market: 1000
+  providesHardening: false
+  quality: standard
+  size: 1
+  source:
+    book: MwtU
+    page: 4
+type: cyberdeck

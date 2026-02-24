@@ -1,0 +1,35 @@
+_id: vTV6oSFUewadZRrZ
+_key: "!items!vTV6oSFUewadZRrZ"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/clothing/generic_footwear.svg
+name: Gang Colors Footwear
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>Show your allegiance with Gang colors!</p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: false
+  price:
+    market: 20
+  providesHardening: false
+  revealed: true
+  source:
+    book: Core
+    page: 356
+  style: gangColors
+  type: footwear
+  usage: equipped
+type: clothing

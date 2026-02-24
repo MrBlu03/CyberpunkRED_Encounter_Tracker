@@ -1,0 +1,20 @@
+_id: XDKI4NTzLn4b0Lkf
+_key: "!items!XDKI4NTzLn4b0Lkf"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/default/Default_Skill.svg
+name: Local Expert (University District)
+system:
+  basic: false
+  category: educationSkills
+  core: false
+  description:
+    value: ""
+  difficulty: typical
+  favorite: false
+  level: 0
+  skillType: localExpert
+  source:
+    book: Core
+    page: 135
+  stat: int
+type: skill

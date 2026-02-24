@@ -1,0 +1,39 @@
+_id: ZsltnSIORaBm5bh6
+_key: "!items!ZsltnSIORaBm5bh6"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/black-chrome/rocks.svg
+name: Rocks
+system:
+  ablationValue: 1
+  amount: 10
+  brand: ""
+  concealable:
+    concealable: true
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        Ammunition that can be used with the Nomad Rocker if of small enough size.
+        Ammunition is considered free and available if small rocks are able to be
+        collected in the area the user is in.
+      </p>
+  favorite: false
+  installLocation: mall
+  overrides:
+    autofire:
+      minimum: 3
+      mode: none
+      value: -1
+    damage:
+      minimum: 1d6
+      mode: none
+      value: 3d6
+  price:
+    market: 0
+  size: 0
+  source:
+    book: BC
+    page: 115
+  type: basic
+  variety: custom
+type: ammo

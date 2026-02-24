@@ -1,0 +1,12 @@
+_id: qVtkRbxUNz2Mr1GB
+_key: "!tables.results!zRHyYnlEqNlTA4l5.qVtkRbxUNz2Mr1GB"
+documentCollection: cyberpunk-red-core.core_gear
+documentId: Th74cfC87RqEJKAb
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/gear/air_hypo.svg
+range:
+  - 2
+  - 2
+text: Airhypo
+type: 2
+weight: 1

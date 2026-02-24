@@ -1,0 +1,20 @@
+_id: T6pocp9VStxtFPzP
+_key: "!tables!T6pocp9VStxtFPzP"
+description: >-
+  Source: Achievements and Loot Boxes pg.6
+
+  All weapons come fully loaded with a compatible ammo type of the GM's
+  choosing.
+displayRoll: true
+formula: 1d6
+img: icons/containers/boxes/crate-reinforced-green.webp
+name: A Box Marked With A Lime Green X
+replacement: true
+results:
+  - JMQL50Vwsp7AMmWo
+  - r6fFsAFxIRq1HriP
+  - a6fZu5y7jIoTN38p
+  - g0YvDqhptZVY8bIh
+  - lcpBqFf1ztvwm6ZJ
+  - X7XamnHpkEyA1BOt
+  - bEJSghOjTTcHngHW

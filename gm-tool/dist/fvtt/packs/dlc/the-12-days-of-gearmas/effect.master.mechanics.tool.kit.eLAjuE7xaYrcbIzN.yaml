@@ -1,0 +1,79 @@
+_id: eLAjuE7xaYrcbIzN
+_key: "!items.effects!yI9sUHnAIXGYncg9.eLAjuE7xaYrcbIzN"
+changes:
+  - key: bonuses.basicTech
+    mode: 2
+    priority: null
+    value: "4"
+  - key: bonuses.cybertech
+    mode: 2
+    priority: null
+    value: "4"
+  - key: bonuses.landVehicleTech
+    mode: 2
+    priority: null
+    value: "4"
+  - key: bonuses.seaVehicleTech
+    mode: 2
+    priority: null
+    value: "4"
+  - key: bonuses.airVehicleTech
+    mode: 2
+    priority: null
+    value: "4"
+  - key: bonuses.electronicsAndSecurityTech
+    mode: 2
+    priority: null
+    value: "4"
+  - key: bonuses.weaponstech
+    mode: 2
+    priority: null
+    value: "4"
+description: ""
+disabled: false
+duration:
+  combat: null
+  rounds: null
+  seconds: null
+  startRound: null
+  startTime: null
+  startTurn: null
+  turns: null
+flags:
+  cyberpunk-red-core:
+    changes:
+      cats:
+        "0": skill
+        "1": skill
+        "2": skill
+        "3": skill
+        "4": skill
+        "5": skill
+        "6": skill
+      situational:
+        "0":
+          isSituational: true
+          onByDefault: false
+        "1":
+          isSituational: true
+          onByDefault: false
+        "2":
+          isSituational: true
+          onByDefault: false
+        "3":
+          isSituational: true
+          onByDefault: false
+        "4":
+          isSituational: true
+          onByDefault: false
+        "5":
+          isSituational: true
+          onByDefault: false
+        "6":
+          isSituational: true
+          onByDefault: false
+icon: systems/cyberpunk-red-core/icons/compendium/gear/tech_bag.svg
+name: Master Mechanic's Tool Kit
+statuses: []
+tint: null
+transfer: true

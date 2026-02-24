@@ -1,0 +1,9 @@
+{
+  "_id": "z8NN97JkdZUUFYud",
+  "_key": "!macros!z8NN97JkdZUUFYud",
+  "command": "/*\n * Get EMP'd Items Macro\n *\n * Description:\n *   Compiles a list of Installed Cyberware, Carried Cyberdecks\n *   Carried Electronic Gear. Then selects 2 at random and outputs\n *   the results to chat.\n *\n * Usage:\n *   Select 1 or more tokens in a Scene then run the Macro\n */\n\n/*\n * Helper functions\n */\n\n// Shuffle an array's items\nfunction shuffle(array) {\n  let currentIndex = array.length,\n    randomIndex;\n  while (currentIndex != 0) {\n    randomIndex = Math.floor(Math.random() * currentIndex);\n    currentIndex--;\n    [array[currentIndex], array[randomIndex]] = [\n      array[randomIndex],\n      array[currentIndex],\n    ];\n  }\n  return array;\n}\n\n// Get all selected tokens\nconst allTokens = canvas.tokens.controlled;\n\nif (allTokens.length === 0) {\n  return ui.notifications.warn(game.i18n.localize(\"CPR.macro.noTokenSelected\"));\n}\n\nfor (const token of allTokens) {\n  let actor = token.actor;\n\n  const items = await game.cpr.api.actor.getEMPableItems(actor);\n\n  let empItems = shuffle(items).slice(0, 2);\n  let become = empItems.length > 1 ? \"become\" : \"becomes\";\n\n  let message;\n  if (empItems.length === 2) {\n    message = game.i18n.format(\"CPR.macro.emp.hasMultipleItems\", {\n      actor: token.document.name,\n      item1: empItems[0],\n      item2: empItems[1],\n    });\n  } else if (empItems.length === 1) {\n    message = game.i18n.format(\"CPR.macro.emp.hasSingleItem\", {\n      actor: token.document.name,\n      item: empItems[0],\n    });\n  } else {\n    message = game.i18n.format(\"CPR.macro.emp.hasNoItems\", {\n      actor: token.document.name,\n    });\n  }\n  ChatMessage.create({ content: message });\n}",
+  "img": "systems/cyberpunk-red-core/icons/macros/get-empd.svg",
+  "name": "Get EMP'd Items",
+  "scope": "global",
+  "type": "script"
+}

@@ -1,0 +1,31 @@
+_id: eKqDVQo3mzD16pCc
+_key: "!items!eKqDVQo3mzD16pCc"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/vehicles/speed_boat.svg
+name: Speedboat
+system:
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>A fast CHOOH<sup>2</sup>-powered speedboat.</p>
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  price:
+    market: 30000
+  sdp: 50
+  seats: 4
+  source:
+    book: Core
+    page: 190
+  speedCombat: 20
+  speedNarrative: 60 MPH / 97 KPH
+type: vehicle

@@ -1,0 +1,33 @@
+_id: j71ouZVOvc7xEfke
+_key: "!items!j71ouZVOvc7xEfke"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/gear/foodstick.svg
+name: Food Stick
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>Meal replacement bar.</p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 0
+    usedSlots: 0
+  isElectronic: false
+  price:
+    market: 10
+  providesHardening: false
+  revealed: true
+  source:
+    book: Core
+    page: 353
+  usage: toggled
+type: gear

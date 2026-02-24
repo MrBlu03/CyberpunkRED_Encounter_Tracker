@@ -1,0 +1,20 @@
+_id: fPnx3mKaMiRgGavI
+_key: "!items!fPnx3mKaMiRgGavI"
+effects: []
+img: icons/svg/item-bag.svg
+name: Brawling
+system:
+  basic: true
+  category: fightingSkills
+  core: true
+  description:
+    value: ""
+  difficulty: typical
+  favorite: false
+  level: 2
+  skillType: generic
+  source:
+    book: Core
+    page: 136
+  stat: dex
+type: skill

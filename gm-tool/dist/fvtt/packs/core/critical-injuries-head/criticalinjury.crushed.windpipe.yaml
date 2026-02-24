@@ -1,0 +1,27 @@
+_id: mVE8ovTniNKFs9Y7
+_key: "!items!mVE8ovTniNKFs9Y7"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/critical_injuries/crushed_windpipe.svg
+name: Crushed Windpipe
+system:
+  deathSaveIncrease: true
+  description:
+    value: |
+      <p>Cannot speak.</p>
+  favorite: false
+  location: head
+  quickFix:
+    dvFirstAid: 0
+    dvParamedic: 0
+    type: notApplicable
+  revealed: true
+  source:
+    book: Core
+    page: 188
+  treatment:
+    dvParamedic: 0
+    dvSurgery: 15
+    type: surgery
+  usage: toggled
+type: criticalInjury

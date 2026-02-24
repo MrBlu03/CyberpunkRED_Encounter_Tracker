@@ -1,0 +1,20 @@
+_id: VZhlxWbu9pn77WHo
+_key: "!items!VZhlxWbu9pn77WHo"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/default/Default_Skill.svg
+name: Martial Arts (Karate)
+system:
+  basic: false
+  category: fightingSkills
+  core: false
+  description:
+    value: ""
+  difficulty: difficult
+  favorite: false
+  level: 0
+  skillType: martialArt
+  source:
+    book: Core
+    page: 83
+  stat: dex
+type: skill

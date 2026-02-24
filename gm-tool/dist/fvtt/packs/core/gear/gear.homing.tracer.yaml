@@ -1,0 +1,33 @@
+_id: QIHx5oQOirtTlAaD
+_key: "!items!QIHx5oQOirtTlAaD"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/gear/homing_tracer.svg
+name: Homing Tracer
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>Range: 1 mile.</p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: true
+  price:
+    market: 500
+  providesHardening: false
+  revealed: true
+  source:
+    book: Core
+    page: 354
+  usage: toggled
+type: gear

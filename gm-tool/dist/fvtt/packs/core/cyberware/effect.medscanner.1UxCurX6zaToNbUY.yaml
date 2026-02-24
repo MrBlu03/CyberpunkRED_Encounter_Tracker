@@ -1,0 +1,39 @@
+_id: 1UxCurX6zaToNbUY
+_key: "!items.effects!B59L6Lf0RtqTDUw7.1UxCurX6zaToNbUY"
+changes:
+  - key: bonuses.firstAid
+    mode: 2
+    priority: null
+    value: "2"
+  - key: bonuses.paramedic
+    mode: 2
+    priority: null
+    value: "2"
+description: ""
+disabled: false
+duration:
+  combat: null
+  rounds: null
+  seconds: null
+  startRound: null
+  startTime: null
+  startTurn: null
+  turns: null
+flags:
+  cyberpunk-red-core:
+    changes:
+      cats:
+        "0": skill
+        "1": skill
+      situational:
+        "0":
+          isSituational: false
+          onByDefault: false
+        "1":
+          isSituational: false
+          onByDefault: false
+icon: systems/cyberpunk-red-core/icons/compendium/cyberware/medscanner.svg
+name: Medscanner
+statuses: []
+tint: null
+transfer: true

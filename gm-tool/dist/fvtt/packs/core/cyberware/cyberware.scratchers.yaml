@@ -1,0 +1,60 @@
+_id: dM6LI4fqDdgut7Uy
+_key: "!items!dM6LI4fqDdgut7Uy"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/cyberware/scratchers.svg
+name: Scratchers
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: ""
+  canIgnoreArmor: true
+  concealable:
+    concealable: false
+    isConcealed: false
+  core: false
+  critFailEffect: jammed
+  damage: 1d6
+  description:
+    value: |
+      <p>Sharp fingernails which are a Light Melee Weapon. Can be concealed.</p>
+  dvTable: ""
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  humanityLoss:
+    roll: 1d3
+    static: 2
+  ignoreArmorPercent: 50
+  ignoreBelowSP: 0
+  installLocation: mall
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: true
+  isFoundational: false
+  isRanged: false
+  isWeapon: true
+  magazine:
+    max: 0
+    value: 0
+  price:
+    market: 100
+  providesHardening: false
+  revealed: true
+  rof: 2
+  size: 1
+  source:
+    book: Core
+    page: 366
+  type: cyberArm
+  unarmedAutomaticCalculation: true
+  usage: toggled
+  usesType: magazine
+  weaponSkill: Melee Weapon
+  weaponType: lightMelee
+type: cyberware

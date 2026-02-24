@@ -1,0 +1,13 @@
+_id: NadBu2gykgTVe0A4
+_key: "!tables.results!4S3emhUCIIDNoTAg.NadBu2gykgTVe0A4"
+documentCollection: cyberpunk-red-core.core_ammo
+documentId: PBA9BUs49TQeLoDi
+drawn: false
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/ammo/pistolmedium_armorpiercing.png
+range:
+  - 3
+  - 3
+text: Medium Pistol (Armor-Piercing)
+type: 2
+weight: 1

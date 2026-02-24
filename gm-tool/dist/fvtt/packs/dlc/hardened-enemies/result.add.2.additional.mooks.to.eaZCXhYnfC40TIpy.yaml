@@ -1,0 +1,12 @@
+_id: eaZCXhYnfC40TIpy
+_key: "!tables.results!X85PAwW7OhzmiZ8X.eaZCXhYnfC40TIpy"
+documentCollection: ""
+documentId: null
+drawn: false
+img: icons/svg/d20-black.svg
+range:
+  - 2
+  - 2
+text: Add 2 additional Mooks to the encounter at the start of the 2nd Round.
+type: 0
+weight: 1

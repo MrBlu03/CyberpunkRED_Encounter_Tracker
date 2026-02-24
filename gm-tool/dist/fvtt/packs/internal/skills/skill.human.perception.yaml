@@ -1,0 +1,20 @@
+_id: FxviNlk84J78vEhV
+_key: "!items!FxviNlk84J78vEhV"
+effects: []
+img: icons/svg/item-bag.svg
+name: Human Perception
+system:
+  basic: true
+  category: socialSkills
+  core: true
+  description:
+    value: ""
+  difficulty: typical
+  favorite: false
+  level: 2
+  skillType: generic
+  source:
+    book: Core
+    page: 139
+  stat: emp
+type: skill

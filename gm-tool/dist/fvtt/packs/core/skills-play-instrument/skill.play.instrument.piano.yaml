@@ -1,0 +1,20 @@
+_id: 9evQ1G223JXAdQlF
+_key: "!items!9evQ1G223JXAdQlF"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/default/Default_Skill.svg
+name: Play Instrument (Piano)
+system:
+  basic: false
+  category: performanceSkills
+  core: false
+  description:
+    value: ""
+  difficulty: typical
+  favorite: false
+  level: 0
+  skillType: playInstrument
+  source:
+    book: Core
+    page: 83
+  stat: tech
+type: skill

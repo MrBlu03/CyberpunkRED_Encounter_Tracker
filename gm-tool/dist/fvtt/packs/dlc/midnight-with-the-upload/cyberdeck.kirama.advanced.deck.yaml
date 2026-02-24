@@ -1,0 +1,39 @@
+_id: PuGtYLlDTvSiBEKz
+_key: "!items!PuGtYLlDTvSiBEKz"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/default/cyberdeck.svg
+name: Kirama Advanced Deck
+system:
+  brand: Kirama
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        Though it may not be the flashiest choice, Kirama&rsquo;s finest Cyberdeck is
+        expertly balanced and offers some highly practical safety features.
+      </p>
+      <p>5 slots for Programs or Hardware.</p>
+      <p>Netrunner suffers no negative effects from an Unsafe Jack Out.</p>
+  equipped: owned
+  favorite: false
+  installLocation: mall
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+      - program
+    list: []
+    slots: 5
+    usedSlots: 0
+  isElectronic: true
+  price:
+    market: 500
+  providesHardening: false
+  quality: standard
+  size: 1
+  source:
+    book: MwtU
+    page: 3
+type: cyberdeck

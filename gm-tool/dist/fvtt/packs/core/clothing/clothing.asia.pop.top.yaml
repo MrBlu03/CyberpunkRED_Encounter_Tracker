@@ -1,0 +1,38 @@
+_id: 50Al0zACJwqGIfP9
+_key: "!items!50Al0zACJwqGIfP9"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/clothing/generic_top.svg
+name: Asia Pop Top
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        Following the latest Asian fashion trends, Asia Pop is sure to catch the eye
+        with it's bright colors and extravagant style.
+      </p>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: false
+  price:
+    market: 20
+  providesHardening: false
+  revealed: true
+  source:
+    book: Core
+    page: 356
+  style: asiaPop
+  type: top
+  usage: equipped
+type: clothing

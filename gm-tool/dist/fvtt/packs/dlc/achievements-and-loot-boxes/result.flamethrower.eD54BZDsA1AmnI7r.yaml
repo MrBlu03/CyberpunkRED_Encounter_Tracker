@@ -1,0 +1,12 @@
+_id: eD54BZDsA1AmnI7r
+_key: "!tables.results!bOtq937SNIahmbeK.eD54BZDsA1AmnI7r"
+documentCollection: cyberpunk-red-core.core_weapons
+documentId: qAqYtbD1yFgQNelR
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/weapons/flamethrower.svg
+range:
+  - 6
+  - 6
+text: Flamethrower
+type: 2
+weight: 1

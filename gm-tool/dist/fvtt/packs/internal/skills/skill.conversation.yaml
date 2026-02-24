@@ -1,0 +1,20 @@
+_id: DlYHwCapjvfyYgKh
+_key: "!items!DlYHwCapjvfyYgKh"
+effects: []
+img: icons/svg/item-bag.svg
+name: Conversation
+system:
+  basic: true
+  category: socialSkills
+  core: true
+  description:
+    value: ""
+  difficulty: typical
+  favorite: false
+  level: 2
+  skillType: generic
+  source:
+    book: Core
+    page: 138
+  stat: emp
+type: skill

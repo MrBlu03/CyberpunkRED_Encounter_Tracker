@@ -1,0 +1,13 @@
+_id: fABg1vUrxkxVFiXh
+_key: "!tables.results!bOtq937SNIahmbeK.fABg1vUrxkxVFiXh"
+documentCollection: cyberpunk-red-core.dlc_black-chrome-plus
+documentId: ZWoM763wXSI3njJA
+drawn: false
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/black-chrome-plus/scavenged-armor.svg
+range:
+  - 1
+  - 1
+text: Scavenged Armor
+type: 2
+weight: 1

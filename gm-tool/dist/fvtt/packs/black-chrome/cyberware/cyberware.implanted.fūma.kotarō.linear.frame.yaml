@@ -1,0 +1,81 @@
+_id: nH3p5XdyArI2faqK
+_key: "!items!nH3p5XdyArI2faqK"
+effects:
+  - 0kAtEuSpu0FoTiwE
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/default/default-implanted-linearframe.svg
+name: Implanted Fūma Kotarō Linear Frame
+system:
+  ammoVariety: []
+  attackmod: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  core: false
+  damage: 3d6
+  description:
+    value: |
+      <ul>
+        <li>Requires BODY 8, 2 Grafted Muscle and Bone Lace</li>
+        <li>
+          Increases BODY stat to 12 (adjusting your HP, Wound Threshold, and Death
+          Save)
+        </li>
+        <li>Increase Stealth +2</li>
+        <li>Drawing and sheathing the frame's weapons does not require an Action</li>
+        <li>
+          A Conceal check is not required for the weapons concealed in the frame.
+        </li>
+        <li>
+          <p>Frame has one of two weapon options*:</p>
+          <ul>
+            <li>Two excellent quality exotic heavy melee weapons</li>
+            <li>
+              One excellent quality light melee weapon and one excellent quality
+              exotic very heavy melee weapon
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <p><em>* Must be manually added.</em></p>
+  dvTable: ""
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  humanityLoss:
+    roll: 4d6
+    static: 14
+  installLocation: hospital
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - cyberware
+      - ammo
+    list: []
+    slots: 2
+    usedSlots: 0
+  isElectronic: true
+  isFoundational: true
+  isRanged: false
+  isWeapon: false
+  magazine:
+    max: 0
+    value: 0
+  price:
+    market: 5000
+  providesHardening: false
+  revealed: true
+  rof: 1
+  size: 1
+  source:
+    book: BC
+    page: 52
+  type: borgware
+  unarmedAutomaticCalculation: true
+  usage: installed
+  usesType: magazine
+  weaponSkill: Brawling
+  weaponType: assaultRifle
+type: cyberware

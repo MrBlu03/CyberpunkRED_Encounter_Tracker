@@ -1,0 +1,20 @@
+_id: bBSVyMIWcWtEt4nC
+_key: "!items!bBSVyMIWcWtEt4nC"
+effects: []
+img: icons/svg/item-bag.svg
+name: Interrogation
+system:
+  basic: false
+  category: socialSkills
+  core: true
+  description:
+    value: ""
+  difficulty: typical
+  favorite: false
+  level: 0
+  skillType: generic
+  source:
+    book: Core
+    page: 139
+  stat: cool
+type: skill

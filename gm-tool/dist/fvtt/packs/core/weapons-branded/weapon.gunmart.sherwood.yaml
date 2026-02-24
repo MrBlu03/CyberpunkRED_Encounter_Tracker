@@ -1,0 +1,58 @@
+_id: SzgNXQObSAXIEErU
+_key: "!items!SzgNXQObSAXIEErU"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/weapons/Bow_poor.svg
+name: GunMart Sherwood
+system:
+  ammoVariety:
+    - arrow
+  attackmod: 0
+  brand: GunMart
+  concealable:
+    concealable: false
+    isConcealed: false
+  critFailEffect: jammed
+  damage: 4d6
+  description:
+    value: |
+      <p>
+        A poor quality bow branded with the GunMart logo, reloaded as part of an
+        Attack action.
+      </p>
+      <p>
+        If you roll 1 on Attack (Crit fail) the weapon jams and requires using an
+        action to clear.
+      </p>
+  dvTable: DV Bows & Crossbows
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 2
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+      - ammo
+    list: []
+    slots: 3
+    usedSlots: 0
+  isRanged: true
+  magazine:
+    max: 1
+    value: 0
+  price:
+    market: 50
+  quality: standard
+  revealed: true
+  rof: 1
+  source:
+    book: Core
+    page: 341
+  unarmedAutomaticCalculation: true
+  usage: equipped
+  usesType: magazine
+  weaponSkill: Archery
+  weaponType: bow
+type: weapon

@@ -1,0 +1,42 @@
+{
+  "_id": "YdXY7sRFUX8KBKzq",
+  "_key": "!items!YdXY7sRFUX8KBKzq",
+  "effects": [],
+  "img": "systems/cyberpunk-red-core/icons/compendium/default/cyberdeck.svg",
+  "name": "Kerberos",
+  "system": {
+    "brand": "SGI Technologies",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "description": {
+      "value": "<p>Unleash the fires of Hell upon your rivals.</p>\n<p>6 slots for Programs, 5 slots for Hardware.</p>\n<p>Program slots will only accept Hellhound Black ICE.</p>\n"
+    },
+    "equipped": "owned",
+    "favorite": false,
+    "installLocation": "mall",
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade",
+        "program"
+      ],
+      "list": [],
+      "slots": 11,
+      "usedSlots": 0
+    },
+    "isElectronic": true,
+    "price": {
+      "market": 1000
+    },
+    "providesHardening": false,
+    "quality": "standard",
+    "size": 1,
+    "source": {
+      "book": "MwtU",
+      "page": 4
+    }
+  },
+  "type": "cyberdeck"
+}

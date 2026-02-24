@@ -1,0 +1,55 @@
+_id: GVG933xxERHQztLs
+_key: "!items!GVG933xxERHQztLs"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/weapons/Shotgun.svg
+name: Hades Multipurpose Assault Shotgun
+system:
+  ammoVariety:
+    - shotgunShell
+    - shotgunSlug
+  attackmod: 0
+  brand: MetaCorp
+  concealable:
+    concealable: false
+    isConcealed: false
+  critFailEffect: jammed
+  damage: 5d6
+  description:
+    value: |
+      <p>
+        The Hades Multipurpose Assault Shotgun is an Exotic Shotgun. The magazine
+        holds 16 shots.
+      </p>
+  dvTable: DV Shotgun (Slug)
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  handsReq: 2
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+      - ammo
+    list: []
+    slots: 0
+    usedSlots: 0
+  isRanged: true
+  magazine:
+    max: 16
+    value: 0
+  price:
+    market: 5000
+  quality: standard
+  revealed: true
+  rof: 1
+  source:
+    book: BC
+    page: 109
+  unarmedAutomaticCalculation: true
+  usage: equipped
+  usesType: magazine
+  weaponSkill: Shoulder Arms
+  weaponType: shotgun
+type: weapon

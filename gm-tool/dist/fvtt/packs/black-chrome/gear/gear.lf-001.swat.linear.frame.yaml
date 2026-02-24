@@ -1,0 +1,40 @@
+_id: DZe6EtplLToNFWjN
+_key: "!items!DZe6EtplLToNFWjN"
+effects:
+  - Mr1smM09ey7SR6II
+img: systems/cyberpunk-red-core/icons/compendium/default/default-linearframe.svg
+name: LF-001 SWAT Linear Frame
+system:
+  amount: 1
+  brand: Polska CyberTechnologies
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>Exoskeleton.</p>
+      <ul>
+        <li>Requires 2 Interface Plugs</li>
+        <li>Increases BODY to 12 while plugged in</li>
+        <li>Does not affect HP or Deathsave</li>
+        <li>Ignores the normal movement penalty for climbing and swimming</li>
+      </ul>
+  equipped: owned
+  favorite: false
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: true
+  price:
+    market: 5000
+  providesHardening: false
+  revealed: true
+  source:
+    book: BC
+    page: 53
+  usage: equipped
+type: gear

@@ -1,0 +1,48 @@
+_id: fyi3U9v6On4r1iiO
+_key: "!items!fyi3U9v6On4r1iiO"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/black-chrome/laser-light-street-jacket.svg
+name: Laser Light Street Jacket
+system:
+  bodyLocation:
+    ablation: 0
+    sp: 11
+  brand: Laser Light
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        Urban Flash-styled Light Armorjack that counts as a Light Tattoo while worn.
+      </p>
+  equipped: owned
+  favorite: false
+  headLocation:
+    ablation: 0
+    sp: 0
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 0
+    usedSlots: 0
+  isBodyLocation: true
+  isElectronic: true
+  isHeadLocation: false
+  isShield: false
+  penalty: 0
+  price:
+    market: 500
+  providesHardening: false
+  revealed: true
+  shieldHitPoints:
+    max: 0
+    value: 0
+  source:
+    book: BC
+    page: 31
+  usage: toggled
+type: armor

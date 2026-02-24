@@ -1,0 +1,59 @@
+{
+  "_id": "okVi2Gn9qk8KH7sD",
+  "_key": "!items!okVi2Gn9qk8KH7sD",
+  "effects": [],
+  "img": "systems/cyberpunk-red-core/icons/compendium/weapons/SniperRifle.svg",
+  "name": "Hello Cutie 1TruLuv",
+  "system": {
+    "ammoVariety": [],
+    "attackmod": 0,
+    "brand": "Sanroo",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "critFailEffect": "jammed",
+    "damage": "5d6",
+    "description": {
+      "value": "<p>Exotic Sniper Rifle. Can load non basic ammunition.</p>\n<p>\n  Equipped with a Sniping Scope and Infrared Night Vision Scope*, and built-in\n  Agent which includes a pseudo AI girlfriend who can recognize and talk to the\n  owner.\n</p>\n<p>\n  Take good care of it/her and use it/her regularly and the weapon improves.\n  Neglect it/her and you'll have to apologize...\n</p>\n<p>\n  <em\n    >* These upgrades need to be installed manually after adding to an actor<br\n  /></em>\n</p>\n"
+    },
+    "dvTable": "DV Sniper Rifle",
+    "equipped": "owned",
+    "favorite": false,
+    "fireModes": {
+      "autoFire": 0,
+      "suppressiveFire": false
+    },
+    "handsReq": 2,
+    "installedItems": {
+      "allowed": false,
+      "allowedTypes": [
+        "itemUpgrade"
+      ],
+      "list": [],
+      "slots": 0,
+      "usedSlots": 0
+    },
+    "isRanged": true,
+    "magazine": {
+      "max": 4,
+      "value": 0
+    },
+    "price": {
+      "market": 1000
+    },
+    "quality": "standard",
+    "revealed": true,
+    "rof": 1,
+    "source": {
+      "book": "BC+",
+      "page": 4
+    },
+    "unarmedAutomaticCalculation": true,
+    "usage": "toggled",
+    "usesType": "magazine",
+    "weaponSkill": "Shoulder Arms",
+    "weaponType": "sniperRifle"
+  },
+  "type": "weapon"
+}

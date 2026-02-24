@@ -1,0 +1,47 @@
+_id: XDMhclpr1Elz9CFY
+_key: "!items!XDMhclpr1Elz9CFY"
+effects: []
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/black-chrome/mimic-clothing-kit.svg
+name: Mimic Clothing (Bohemian)
+system:
+  bodyLocation:
+    ablation: 0
+    sp: 11
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  description:
+    value: >
+      <p>Light Armorjack made from a Mimic Clothing Kit and "Bohemian"
+      clothing.</p>
+  equipped: owned
+  favorite: false
+  headLocation:
+    ablation: 0
+    sp: 0
+  installedItems:
+    allowed: false
+    allowedTypes:
+      - itemUpgrade
+    list: []
+    slots: 3
+    usedSlots: 0
+  isBodyLocation: true
+  isElectronic: false
+  isHeadLocation: false
+  isShield: false
+  penalty: 0
+  price:
+    market: 150
+  providesHardening: false
+  revealed: true
+  shieldHitPoints:
+    max: 0
+    value: 0
+  source:
+    book: BC
+    page: 33
+  usage: equipped
+type: armor

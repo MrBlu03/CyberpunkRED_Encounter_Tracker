@@ -1,0 +1,20 @@
+_id: EkO3gpmabPfeGZeU
+_key: "!items!EkO3gpmabPfeGZeU"
+effects: []
+img: icons/svg/item-bag.svg
+name: Streetwise
+system:
+  basic: false
+  category: socialSkills
+  core: true
+  description:
+    value: ""
+  difficulty: typical
+  favorite: false
+  level: 0
+  skillType: generic
+  source:
+    book: Core
+    page: 139
+  stat: cool
+type: skill

@@ -1,0 +1,12 @@
+_id: JmBWc0G5bpw0tIC7
+_key: "!tables.results!xWZowpQzG7fpmoP7.JmBWc0G5bpw0tIC7"
+documentCollection: cyberpunk-red-core.core_ammo
+documentId: WOJD6hQVUVEK8AsJ
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/ammo/pistolheavy_rubber.png
+range:
+  - 2
+  - 2
+text: Heavy Pistol (Rubber)
+type: 2
+weight: 1

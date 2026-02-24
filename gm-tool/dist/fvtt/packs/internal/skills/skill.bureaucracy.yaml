@@ -1,0 +1,20 @@
+_id: 9Cn1HeCuzQZ27iJ7
+_key: "!items!9Cn1HeCuzQZ27iJ7"
+effects: []
+img: icons/svg/item-bag.svg
+name: Bureaucracy
+system:
+  basic: false
+  category: educationSkills
+  core: true
+  description:
+    value: ""
+  difficulty: typical
+  favorite: false
+  level: 0
+  skillType: generic
+  source:
+    book: Core
+    page: 133
+  stat: int
+type: skill

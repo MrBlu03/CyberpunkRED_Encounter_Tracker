@@ -1,0 +1,53 @@
+_id: eZM7VjirAA4bTsni
+_key: "!items!eZM7VjirAA4bTsni"
+effects: []
+img: systems/cyberpunk-red-core/icons/compendium/weapons/SMG_poor.svg
+name: Teen Dreem
+system:
+  ammoVariety:
+    - medPistol
+  attackmod: 0
+  brand: ""
+  concealable:
+    concealable: true
+    isConcealed: false
+  critFailEffect: jammed
+  damage: 2d6
+  description:
+    value: |
+      <p>
+        This SMG can use Autofire and Suppressive Fire all the way down to it's last 2
+        bullets. Caution is required however, as using either firing mode well melt
+        the gun beyond repair.
+      </p>
+  dvTable: DV SMG
+  equipped: owned
+  favorite: false
+  fireModes:
+    autoFire: 3
+    suppressiveFire: true
+  handsReq: 1
+  installedItems:
+    allowed: true
+    allowedTypes: []
+    list: []
+    slots: 0
+    usedSlots: 0
+  isRanged: true
+  magazine:
+    max: 10
+    value: 0
+  price:
+    market: 20
+  quality: standard
+  revealed: true
+  rof: 1
+  source:
+    book: 12DoG
+    page: 6
+  unarmedAutomaticCalculation: true
+  usage: equipped
+  usesType: magazine
+  weaponSkill: Handgun
+  weaponType: smg
+type: weapon

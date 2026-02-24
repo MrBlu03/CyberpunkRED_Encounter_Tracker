@@ -1,0 +1,40 @@
+_id: CyYpPh89G7IYyryM
+_key: "!items!CyYpPh89G7IYyryM"
+effects:
+  - maW3KSp6yjC85oUn
+  - 9fYAbvg99knLYj9T
+  - rw9YMhZaP2AQcYJw
+img: systems/cyberpunk-red-core/icons/compendium/drugs/synthcoke.svg
+name: Synthcoke
+system:
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: false
+    isConcealed: false
+  consumed: Synthcoke Primary
+  description:
+    value: |
+      <p><strong>Primary Effect</strong></p>
+      <p>Dose lasts 4 hours.</p>
+      <ul>
+        <li>+1 REF by 1 point for the duration</li>
+        <li>The user feels paranoid occasionally</li>
+      </ul>
+      <p><strong>Secondary Effect (DV15)</strong></p>
+      <ul>
+        <li>-2 REF unless under the Primary Effect</li>
+        <li>
+          GM will tell you when when you crave more Synthcoke. Roleplay accordingly.
+        </li>
+      </ul>
+  equipped: owned
+  favorite: false
+  price:
+    market: 20
+  revealed: true
+  source:
+    book: Core
+    page: 357
+  usage: snorted
+type: drug

@@ -1,0 +1,12 @@
+_id: l2HE2AEJWDP4KWxL
+_key: "!tables.results!McQc33tLYAp7djIV.l2HE2AEJWDP4KWxL"
+documentCollection: cyberpunk-red-core.black-chrome_ammo
+documentId: KPSBX2Ns6cj6JC4v
+drawn: false
+img: systems/cyberpunk-red-core/icons/compendium/ammo/grenade_flashbang.png
+range:
+  - 3
+  - 3
+text: Shuriken Tornado Grenade
+type: 2
+weight: 1

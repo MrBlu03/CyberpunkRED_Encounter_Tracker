@@ -1,0 +1,68 @@
+_id: vuq1KEbsMjpOTqhl
+_key: "!items!vuq1KEbsMjpOTqhl"
+effects:
+  - n1T1ojrhz0na565t
+img: >-
+  systems/cyberpunk-red-core/icons/compendium/default/default-implanted-linearframe.svg
+name: Implanted Vermilion Linear Frame
+system:
+  ammoVariety: []
+  attackmod: 0
+  brand: Wyzard Technologies
+  concealable:
+    concealable: false
+    isConcealed: false
+  core: false
+  damage: 1d6
+  description:
+    value: |
+      <ul>
+        <li>Requires BODY 8, 2 Grafted Muscle and Bone Lace</li>
+        <li>
+          Increases BODY stat to 12 (adjusting your HP, Wound Threshold, and Death
+          Save)
+        </li>
+        <li>No movement penalty for jumping</li>
+        <li>Operates as if paired Skate Feet are installed</li>
+      </ul>
+  dvTable: ""
+  favorite: false
+  fireModes:
+    autoFire: 0
+    suppressiveFire: false
+  humanityLoss:
+    roll: 4d6
+    static: 14
+  installLocation: mall
+  installedItems:
+    allowed: true
+    allowedTypes:
+      - itemUpgrade
+      - cyberware
+      - ammo
+    list: []
+    slots: 3
+    usedSlots: 0
+  isElectronic: true
+  isFoundational: true
+  isRanged: false
+  isWeapon: false
+  magazine:
+    max: 0
+    value: 0
+  price:
+    market: 5000
+  providesHardening: false
+  revealed: true
+  rof: 1
+  size: 0
+  source:
+    book: BC
+    page: 54
+  type: borgware
+  unarmedAutomaticCalculation: true
+  usage: installed
+  usesType: magazine
+  weaponSkill: Archery
+  weaponType: assaultRifle
+type: cyberware
