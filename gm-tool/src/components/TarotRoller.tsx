@@ -1,8 +1,7 @@
 import { useState, useMemo } from 'react';
-import { Dices, Sparkles, RefreshCw, Moon, AlertCircle } from 'lucide-react';
+import { Dices, Sparkles, RefreshCw, AlertCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
-import { d100 } from '@/lib/dice';
 import type { TarotCard, TarotDeckState } from '@/types';
 
 const TAROT_CARDS: TarotCard[] = [

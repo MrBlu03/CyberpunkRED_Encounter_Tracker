@@ -1,17 +1,15 @@
 import { useState, useEffect } from 'react';
 import { 
   Users, Plus, Trash2, Save, Bot, Crosshair, 
-  Wrench, ChevronDown, ChevronUp, Sparkles, LayoutPanelTop
+  Wrench, ChevronDown, ChevronUp
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { toast } from 'sonner';
-import type { Participant, CritMode, TarotDeckState } from '@/types';
+import type { Participant } from '@/types';
 
 interface EncounterGeneratorProps {
   onAddToEncounter?: (participants: Participant[]) => void;
-  critMode?: CritMode;
-  tarotDeck?: TarotDeckState;
 }
 
 interface EncounterParticipant {
@@ -108,9 +106,7 @@ const DIFFICULTY_MODS = {
 };
 
 export function EncounterGenerator({ 
-  onAddToEncounter,
-  critMode = 'raw',
-  tarotDeck
+  onAddToEncounter
 }: EncounterGeneratorProps) {
   const [participants, setParticipants] = useState<EncounterParticipant[]>([]);
   const [selectedTemplate, setSelectedTemplate] = useState<number | null>(null);

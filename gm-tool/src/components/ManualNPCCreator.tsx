@@ -2,13 +2,13 @@ import { useState, useEffect } from 'react';
 import { 
   UserPlus, Save, Trash2, Plus, Minus, Search, 
   Shield, Swords, Cpu, Zap, Crosshair,
-  X, Edit3, Copy, Dices, Wrench, Sparkles, LayoutPanelTop
+  X, Edit3, Copy, Dices, Wrench, Sparkles
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { toast } from 'sonner';
 import { getWoundState } from '@/lib/damage';
-import type { GeneratedNPC, Weapon, SavedNPC, CritMode, TarotDeckState } from '@/types';
+import type { GeneratedNPC, Weapon, SavedNPC } from '@/types';
 
 // FVTT Item interface
 interface FVTTItem {
@@ -44,8 +44,6 @@ interface ManualNPCCreatorProps {
   onAddToEncounter?: (npc: GeneratedNPC) => void;
   savedNPCs?: SavedNPC[];
   setSavedNPCs?: React.Dispatch<React.SetStateAction<SavedNPC[]>>;
-  critMode?: CritMode;
-  tarotDeck?: TarotDeckState;
 }
 
 const ROLES = [
@@ -69,9 +67,7 @@ const DEFAULT_STATS = {
 export function ManualNPCCreator({ 
   onAddToEncounter, 
   savedNPCs = [], 
-  setSavedNPCs,
-  critMode = 'raw',
-  tarotDeck
+  setSavedNPCs
 }: ManualNPCCreatorProps) {
   const [allItems, setAllItems] = useState<FVTTItem[]>([]);
   const [isLoading, setIsLoading] = useState(true);
