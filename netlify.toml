@@ -1,0 +1,17 @@
+[build]
+  # The directory where your app's code lives
+  base = "gm-tool"
+  
+  # The command to run to build your app
+  command = "npm run build"
+  
+  # The directory that Netlify will serve (relative to base)
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
