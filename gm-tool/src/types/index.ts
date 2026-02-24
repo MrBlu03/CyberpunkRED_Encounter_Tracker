@@ -128,10 +128,16 @@ export interface TarotCard {
   id: string;
   name: string;
   number: number;
+  roman?: string;
   suit: 'major' | 'cups' | 'pentacles' | 'swords' | 'wands';
   description: string;
   effect: string;
-  reversed?: boolean;
+}
+
+export interface TarotDeckState {
+  cardIds: string[]; // Order of the deck
+  drawnThisSession: boolean;
+  cardsSeenCount: number; // For shuffling rule: don't shuffle until all seen once
 }
 
 export interface ShopItem {

@@ -1,15 +1,17 @@
 import { useState, useEffect } from 'react';
 import { 
   Users, Plus, Trash2, Save, Bot, Crosshair, 
-  Wrench, ChevronDown, ChevronUp
+  Wrench, ChevronDown, ChevronUp, Sparkles, LayoutPanelTop
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { toast } from 'sonner';
-import type { Participant } from '@/types';
+import type { Participant, CritMode, TarotDeckState } from '@/types';
 
 interface EncounterGeneratorProps {
   onAddToEncounter?: (participants: Participant[]) => void;
+  critMode?: CritMode;
+  tarotDeck?: TarotDeckState;
 }
 
 interface EncounterParticipant {
@@ -105,7 +107,11 @@ const DIFFICULTY_MODS = {
   'very-hard': { statMod: 4, hpMod: 1.5, armorMod: 6 }
 };
 
-export function EncounterGenerator({ onAddToEncounter }: EncounterGeneratorProps) {
+export function EncounterGenerator({ 
+  onAddToEncounter,
+  critMode = 'raw',
+  tarotDeck
+}: EncounterGeneratorProps) {
   const [participants, setParticipants] = useState<EncounterParticipant[]>([]);
   const [selectedTemplate, setSelectedTemplate] = useState<number | null>(null);
   const [manualEntry, setManualEntry] = useState<EncounterParticipant>({
@@ -130,8 +136,18 @@ export function EncounterGenerator({ onAddToEncounter }: EncounterGeneratorProps
     try {
       const response = await fetch('/data/core.json');
       const data = await response.json();
-      const weapons = data.filter((item: any) => item.type === 'weapon');
-      setShopWeapons(weapons);
+      if (Array.isArray(data)) {
+        const seenIds = new Set<string>();
+        const weapons = data.filter((item: any) => {
+          if (item.type === 'weapon' && item._id) {
+            if (seenIds.has(item._id)) return false;
+            seenIds.add(item._id);
+            return true;
+          }
+          return false;
+        });
+        setShopWeapons(weapons);
+      }
     } catch (error) {
       console.error('Failed to load shop data:', error);
     }

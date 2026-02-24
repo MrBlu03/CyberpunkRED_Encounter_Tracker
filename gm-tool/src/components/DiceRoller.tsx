@@ -1,9 +1,10 @@
 import { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-import { Dices, X, Minimize2, Maximize2, History, Trash2, Sparkles } from 'lucide-react';
+import { Dices, X, Minimize2, Maximize2, History, Trash2, Sparkles, LayoutPanelTop } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
 import { rollDie, rollDiceDetailed } from '@/lib/dice';
+import type { CritMode, TarotDeckState } from '@/types';
 
 interface RollResult {
   id: string;
@@ -14,9 +15,15 @@ interface RollResult {
   timestamp: number;
   isCritical?: boolean;
   critCount?: number;
+  isTarotCrit?: boolean;
 }
 
-export function DiceRoller() {
+interface DiceRollerProps {
+  critMode?: CritMode;
+  tarotDeck?: TarotDeckState;
+}
+
+export function DiceRoller({ critMode = 'raw', tarotDeck }: DiceRollerProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [isMinimized, setIsMinimized] = useState(false);
   const [customRoll, setCustomRoll] = useState('');
@@ -54,7 +61,8 @@ export function DiceRoller() {
     
     // Check for critical hits (6s on d6)
     const critCount = sides === 6 ? rolls.filter(r => r === 6).length : 0;
-    const isCritical = critCount > 0;
+    const isCritical = critCount >= 2;
+    const isTarotCrit = critMode === 'tarot' && critCount >= 3;
     
     const result: RollResult = {
       id: crypto.randomUUID(),
@@ -64,7 +72,8 @@ export function DiceRoller() {
       modifier: 0,
       timestamp: Date.now(),
       isCritical,
-      critCount
+      critCount,
+      isTarotCrit
     };
     
     addToHistory(result);
@@ -79,8 +88,19 @@ export function DiceRoller() {
       });
     }
     
-    if (isCritical) {
-      toast.success(`🎲 CRITICAL! Rolled ${critCount} six${critCount > 1 ? 'es' : ''}! Total: ${total}`, {
+    if (isTarotCrit) {
+      if (tarotDeck?.drawnThisSession) {
+        toast.success(`🎲 CRITICAL! Rolled ${critCount} sixes! (Tarot limit reached for session - use RAW crit)`, {
+          icon: <Sparkles className="w-5 h-5 text-warning" />
+        });
+      } else {
+        toast.success(`🎴 NIGHT CITY TAROT! Rolled ${critCount} sixes! Draw a card!`, {
+          icon: <LayoutPanelTop className="w-5 h-5 text-primary" />,
+          duration: 10000
+        });
+      }
+    } else if (isCritical) {
+      toast.success(`🎲 CRITICAL! Rolled ${critCount} sixes! (+5 damage)`, {
         icon: <Sparkles className="w-5 h-5 text-warning" />
       });
     } else {
@@ -95,7 +115,8 @@ export function DiceRoller() {
     
     // Check for critical hits (6s on d6)
     const critCount = result.rolls.filter(r => r === 6).length;
-    const isCritical = critCount > 0;
+    const isCritical = critCount >= 2;
+    const isTarotCrit = critMode === 'tarot' && critCount >= 3;
     
     const rollResult: RollResult = {
       id: crypto.randomUUID(),
@@ -105,14 +126,26 @@ export function DiceRoller() {
       modifier: result.modifier,
       timestamp: Date.now(),
       isCritical,
-      critCount
+      critCount,
+      isTarotCrit
     };
     
     addToHistory(rollResult);
-    setCustomRoll('');
+    // Removed setCustomRoll('') to keep input persistent
     
-    if (isCritical) {
-      toast.success(`🎲 CRITICAL! Rolled ${critCount} six${critCount > 1 ? 'es' : ''}! Total: ${result.total}`, {
+    if (isTarotCrit) {
+      if (tarotDeck?.drawnThisSession) {
+        toast.success(`🎲 CRITICAL! Rolled ${critCount} sixes! (Tarot limit reached for session)`, {
+          icon: <Sparkles className="w-5 h-5 text-warning" />
+        });
+      } else {
+        toast.success(`🎴 NIGHT CITY TAROT! Rolled ${critCount} sixes! Draw a card!`, {
+          icon: <LayoutPanelTop className="w-5 h-5 text-primary" />,
+          duration: 10000
+        });
+      }
+    } else if (isCritical) {
+      toast.success(`🎲 CRITICAL! Rolled ${critCount} sixes! (+5 damage)`, {
         icon: <Sparkles className="w-5 h-5 text-warning" />
       });
     } else {
@@ -283,32 +316,52 @@ export function DiceRoller() {
               </Button>
             </div>
             
-            {/* Last Roll */}
+            {/* Recent Rolls (Last 5) */}
             {history.length > 0 && (
-              <div className={`p-3 rounded-lg border ${history[0].isCritical ? 'bg-warning/10 border-warning/50' : 'bg-primary/10 border-primary/30'}`}>
-                <div className="text-xs text-muted-foreground uppercase tracking-wider flex items-center gap-1">
-                  Last Roll
-                  {history[0].isCritical && <Sparkles className="w-3 h-3 text-warning" />}
+              <div className="space-y-2 mt-4 pt-4 border-t border-border">
+                <div className="text-xs text-muted-foreground uppercase tracking-wider mb-2">
+                  Recent Rolls
                 </div>
-                <div className="flex items-center gap-3 mt-1">
-                  <span className="font-mono text-primary">{history[0].expression}</span>
-                  <span className={`text-2xl font-bold ${history[0].isCritical ? 'text-warning' : ''}`}>{history[0].total}</span>
+                <div className="space-y-2 max-h-48 overflow-y-auto pr-1">
+                  {history.slice(0, 5).map((roll, idx) => (
+                    <div 
+                      key={roll.id} 
+                      className={`p-2 rounded-lg border transition-all ${
+                        idx === 0 
+                          ? (roll.isTarotCrit ? 'bg-primary/20 border-primary shadow-[0_0_10px_rgba(var(--primary),0.3)]' : roll.isCritical ? 'bg-warning/20 border-warning shadow-[0_0_10px_rgba(var(--warning),0.3)]' : 'bg-primary/10 border-primary/50') 
+                          : 'bg-secondary/30 border-transparent opacity-70 hover:opacity-100'
+                      }`}
+                    >
+                      <div className="flex items-center justify-between">
+                        <span className="font-mono text-xs text-primary">{roll.expression}</span>
+                        <span className="text-[10px] text-muted-foreground">{formatTime(roll.timestamp)}</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className={`font-bold ${idx === 0 ? 'text-lg' : 'text-base'} ${roll.isTarotCrit ? 'text-primary' : roll.isCritical ? 'text-warning' : ''}`}>
+                          {roll.total}
+                        </span>
+                        <div className="flex flex-wrap gap-1">
+                          {roll.rolls.map((r, i) => (
+                            <span key={i} className={`text-[10px] px-1 rounded ${r === 6 ? 'text-warning font-bold bg-warning/20' : 'text-muted-foreground bg-background/50'}`}>
+                              {r}
+                            </span>
+                          ))}
+                          {roll.modifier !== 0 && (
+                            <span className="text-[10px] text-muted-foreground self-center">
+                              {roll.modifier > 0 ? '+' : ''}{roll.modifier}
+                            </span>
+                          )}
+                        </div>
+                      </div>
+                      {idx === 0 && (roll.isTarotCrit || roll.isCritical) && (
+                        <div className={`text-[10px] mt-1 font-medium flex items-center gap-1 ${roll.isTarotCrit ? 'text-primary' : 'text-warning'}`}>
+                          {roll.isTarotCrit ? <LayoutPanelTop className="w-3 h-3" /> : <Sparkles className="w-3 h-3" />}
+                          {roll.isTarotCrit ? 'NIGHT CITY TAROT!' : `Critical Hit (${roll.critCount} sixes)!`}
+                        </div>
+                      )}
+                    </div>
+                  ))}
                 </div>
-                {history[0].rolls.length > 0 && (
-                  <div className="text-xs text-muted-foreground mt-1">
-                    Rolls: {history[0].rolls.map((r, i) => (
-                      <span key={i} className={r === 6 ? 'text-warning font-bold bg-warning/20 px-1 rounded' : ''}>
-                        {r}
-                      </span>
-                    )).reduce((prev, curr, i) => i === 0 ? [curr] : [...prev, ', ', curr], [] as React.ReactNode[])}
-                    {history[0].modifier !== 0 && ` ${history[0].modifier > 0 ? '+' : ''}${history[0].modifier}`}
-                  </div>
-                )}
-                {history[0].isCritical && (
-                  <div className="text-xs text-warning mt-1 font-medium">
-                    🎲 {history[0].critCount} Critical Hit{history[0].critCount && history[0].critCount > 1 ? 's' : ''}!
-                  </div>
-                )}
               </div>
             )}
           </div>

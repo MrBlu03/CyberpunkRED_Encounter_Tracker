@@ -2,14 +2,14 @@ import { useState, useEffect, useCallback } from 'react';
 import { 
   UserPlus, RefreshCw, Dices, Save, Users, Swords, Cpu, 
   Trash2, Shield, Zap, Sparkles, Bot, Crosshair,
-  Wrench, ChevronDown, ChevronUp
+  Wrench, ChevronDown, ChevronUp, LayoutPanelTop
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { toast } from 'sonner';
 import { generateFullName, rollDiceDetailed } from '@/lib/dice';
 import { getWoundState } from '@/lib/damage';
-import type { GeneratedNPC, SavedNPC, Weapon } from '@/types';
+import type { GeneratedNPC, SavedNPC, Weapon, CritMode, TarotDeckState } from '@/types';
 
 interface NPCGeneratorProps {
   onAddToEncounter?: (npc: GeneratedNPC) => void;
@@ -17,6 +17,8 @@ interface NPCGeneratorProps {
   mode?: 'single' | 'encounter';
   savedNPCs?: SavedNPC[];
   setSavedNPCs?: React.Dispatch<React.SetStateAction<SavedNPC[]>>;
+  critMode?: CritMode;
+  tarotDeck?: TarotDeckState;
 }
 
 // Difficulty presets matching the GitHub version
@@ -148,7 +150,9 @@ export function NPCGenerator({
   onAddMultiple, 
   mode = 'single',
   savedNPCs = [],
-  setSavedNPCs
+  setSavedNPCs,
+  critMode = 'raw',
+  tarotDeck
 }: NPCGeneratorProps) {
   const [generatedNPC, setGeneratedNPC] = useState<GeneratedNPC | null>(null);
   const [generatedEncounter, setGeneratedEncounter] = useState<GeneratedNPC[]>([]);
@@ -169,9 +173,98 @@ export function NPCGenerator({
   
   const loadShopData = async () => {
     try {
-      const response = await fetch('/data/core.json');
-      const data = await response.json();
-      setShopItems(data);
+      let allData: ShopItem[] = [];
+      const seenIds = new Set<string>();
+      
+      const normalizeItems = (data: any): ShopItem[] => {
+        if (!data) return [];
+        
+        // Helper to filter duplicates
+        const filterDuplicates = (items: any[]): ShopItem[] => {
+          return items.filter(item => {
+            if (item && item._id) {
+              if (seenIds.has(item._id)) return false;
+              seenIds.add(item._id);
+              return true;
+            }
+            return false;
+          }) as ShopItem[];
+        };
+
+        if (Array.isArray(data)) {
+          return filterDuplicates(data);
+        }
+        
+        if (typeof data === 'object' && data._id && data.name && data.type) {
+          if (!seenIds.has(data._id)) {
+            seenIds.add(data._id);
+            return [data as ShopItem];
+          }
+          return [];
+        }
+        
+        if (typeof data === 'object' && Object.values(data).every(v => typeof v === 'object')) {
+          return filterDuplicates(Object.values(data));
+        }
+        
+        return [];
+      };
+      
+      // Try loading combined FVTT items file for fast loading
+      try {
+        const response = await fetch('/fvtt/packs_json/all-items.json', { signal: AbortSignal.timeout(5000) });
+        if (response.ok) {
+          const data = await response.json();
+          allData = normalizeItems(data);
+        }
+      } catch (e) {
+        console.log('All-items loading error, trying manifest:', e);
+        
+        // Fallback to manifest-based loading
+        try {
+          const manifestResp = await fetch('/fvtt/packs_json/manifest.json', { signal: AbortSignal.timeout(5000) });
+          if (manifestResp.ok) {
+            const manifest = await manifestResp.json();
+            if (Array.isArray(manifest)) {
+              const batchSize = 20;
+              for (let i = 0; i < manifest.length; i += batchSize) {
+                const batch = manifest.slice(i, i + batchSize);
+                const results = await Promise.allSettled(
+                  batch.map(async (relPath) => {
+                    const jsonFile = `/fvtt/packs_json/${relPath}`;
+                    const resp = await fetch(jsonFile, { signal: AbortSignal.timeout(3000) });
+                    if (resp.ok) {
+                      const data = await resp.json();
+                      return normalizeItems(data);
+                    }
+                    return [];
+                  })
+                );
+                for (const result of results) {
+                  if (result.status === 'fulfilled') {
+                    allData = [...allData, ...result.value];
+                  }
+                }
+              }
+            }
+          }
+        } catch (e2) {
+          console.log('FVTT packs loading error:', e2);
+        }
+      }
+      
+      // Fallback to bundled data if no FVTT data
+      if (allData.length === 0) {
+        try {
+          const response = await fetch('/data/core.json', { signal: AbortSignal.timeout(3000) });
+          const data = await response.json();
+          allData = data as ShopItem[];
+        } catch (e) {
+          console.log('Fallback data loading error:', e);
+        }
+      }
+      
+      setShopItems(allData);
       setIsLoadingShop(false);
     } catch (error) {
       console.error('Failed to load shop data:', error);
@@ -297,10 +390,22 @@ export function NPCGenerator({
     const handleRoll = () => {
       const result = rollDiceDetailed(notation);
       const critCount = result.rolls.filter(r => r === 6).length;
-      const isCritical = critCount > 0;
+      const isCritical = critCount >= 2;
+      const isTarotCrit = critMode === 'tarot' && critCount >= 3;
       
-      if (isCritical) {
-        toast.success(`🎲 CRITICAL! ${label ? `${label}: ` : ''}Rolled ${critCount} six${critCount > 1 ? 'es' : ''}! Total: ${result.total}`, {
+      if (isTarotCrit) {
+        if (tarotDeck?.drawnThisSession) {
+          toast.success(`🎲 CRITICAL! ${label ? `${label}: ` : ''}Rolled ${critCount} sixes! (Tarot limit reached - use RAW crit)`, {
+            icon: <Sparkles className="w-5 h-5 text-warning" />
+          });
+        } else {
+          toast.success(`🎴 NIGHT CITY TAROT! ${label ? `${label}: ` : ''}Rolled ${critCount} sixes! Draw a card!`, {
+            icon: <LayoutPanelTop className="w-5 h-5 text-primary" />,
+            duration: 10000
+          });
+        }
+      } else if (isCritical) {
+        toast.success(`🎲 CRITICAL! ${label ? `${label}: ` : ''}Rolled ${critCount} sixes! (+5 damage)`, {
           icon: <Sparkles className="w-5 h-5 text-warning" />
         });
       } else {

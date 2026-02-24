@@ -9,7 +9,8 @@ import { rollInitiative } from '@/lib/dice';
 import { calculateDamage, getWoundState, canAct } from '@/lib/damage';
 import type { 
   Participant, EncounterState, SavedEncounter, SavedNPC, 
-  DamageType, CritMode, ThemeMode, ColorPalette, GeneratedNPC
+  DamageType, CritMode, ThemeMode, ColorPalette, GeneratedNPC,
+  TarotDeckState
 } from '@/types';
 
 // Components
@@ -38,6 +39,13 @@ function App() {
   const [themeMode, setThemeMode] = useLocalStorage<ThemeMode>('theme-mode', 'dark');
   const [colorPalette, setColorPalette] = useLocalStorage<ColorPalette>('color-palette', 'orange');
   const [critMode, setCritMode] = useLocalStorage<CritMode>('crit-mode', 'raw');
+  
+  // Tarot deck state
+  const [tarotDeck, setTarotDeck] = useLocalStorage<TarotDeckState>('cyberpunk-tarot-deck', {
+    cardIds: Array.from({ length: 22 }, (_, i) => i.toString()),
+    drawnThisSession: false,
+    cardsSeenCount: 0
+  });
   
   // Navigation state
   const [activeTab, setActiveTab] = useLocalStorage<TabType>('active-tab', 'encounter');
@@ -491,6 +499,8 @@ function App() {
                   onExportEncounters={exportEncounters}
                   onImportEncounters={importEncounters}
                   onOpenDamageDialog={openDamageDialog}
+                  critMode={critMode}
+                  tarotDeck={tarotDeck}
                 />
               )}
               
@@ -526,6 +536,8 @@ function App() {
                       onAddToEncounter={addNPCToEncounter}
                       savedNPCs={savedNPCs}
                       setSavedNPCs={setSavedNPCs}
+                      critMode={critMode}
+                      tarotDeck={tarotDeck}
                     />
                   )}
                   
@@ -534,6 +546,8 @@ function App() {
                       onAddToEncounter={addNPCToEncounter}
                       savedNPCs={savedNPCs}
                       setSavedNPCs={setSavedNPCs}
+                      critMode={critMode}
+                      tarotDeck={tarotDeck}
                     />
                   )}
                 </div>
@@ -546,6 +560,8 @@ function App() {
                     setActiveTab('encounter');
                     toast.success(`${newParticipants.length} participants added to encounter!`);
                   }}
+                  critMode={critMode}
+                  tarotDeck={tarotDeck}
                 />
               )}
               
@@ -554,11 +570,17 @@ function App() {
               )}
               
               {activeTab === 'tarot' && critMode === 'tarot' && (
-                <TarotRoller />
+                <TarotRoller 
+                  deckState={tarotDeck}
+                  setDeckState={setTarotDeck}
+                />
               )}
               
               {activeTab === 'shop' && (
-                <ShopGenerator />
+                <ShopGenerator 
+                  critMode={critMode}
+                  tarotDeck={tarotDeck}
+                />
               )}
               
               {activeTab === 'netrunning' && (
@@ -606,7 +628,7 @@ function App() {
       </div>
       
       {/* Floating Dice Roller */}
-      <DiceRoller />
+      <DiceRoller critMode={critMode} tarotDeck={tarotDeck} />
       
       {/* Damage Dialog */}
       <DamageDialog

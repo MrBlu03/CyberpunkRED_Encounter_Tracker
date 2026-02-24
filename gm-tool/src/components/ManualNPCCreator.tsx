@@ -2,13 +2,13 @@ import { useState, useEffect } from 'react';
 import { 
   UserPlus, Save, Trash2, Plus, Minus, Search, 
   Shield, Swords, Cpu, Zap, Crosshair,
-  X, Edit3, Copy, Dices, Wrench, Sparkles
+  X, Edit3, Copy, Dices, Wrench, Sparkles, LayoutPanelTop
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { toast } from 'sonner';
 import { getWoundState } from '@/lib/damage';
-import type { GeneratedNPC, Weapon, SavedNPC } from '@/types';
+import type { GeneratedNPC, Weapon, SavedNPC, CritMode, TarotDeckState } from '@/types';
 
 // FVTT Item interface
 interface FVTTItem {
@@ -44,6 +44,8 @@ interface ManualNPCCreatorProps {
   onAddToEncounter?: (npc: GeneratedNPC) => void;
   savedNPCs?: SavedNPC[];
   setSavedNPCs?: React.Dispatch<React.SetStateAction<SavedNPC[]>>;
+  critMode?: CritMode;
+  tarotDeck?: TarotDeckState;
 }
 
 const ROLES = [
@@ -64,7 +66,13 @@ const DEFAULT_STATS = {
   emp: 5
 };
 
-export function ManualNPCCreator({ onAddToEncounter, savedNPCs = [], setSavedNPCs }: ManualNPCCreatorProps) {
+export function ManualNPCCreator({ 
+  onAddToEncounter, 
+  savedNPCs = [], 
+  setSavedNPCs,
+  critMode = 'raw',
+  tarotDeck
+}: ManualNPCCreatorProps) {
   const [allItems, setAllItems] = useState<FVTTItem[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   
@@ -115,6 +123,7 @@ export function ManualNPCCreator({ onAddToEncounter, savedNPCs = [], setSavedNPC
     try {
       const packs = ['core', 'black-chrome', 'dlc'];
       let allData: FVTTItem[] = [];
+      const seenIds = new Set<string>();
       
       for (const pack of packs) {
         try {
@@ -122,7 +131,16 @@ export function ManualNPCCreator({ onAddToEncounter, savedNPCs = [], setSavedNPC
           if (response.ok) {
             const data = await response.json();
             if (Array.isArray(data)) {
-              allData = [...allData, ...data];
+              // Deduplicate while adding
+              const uniqueItems = data.filter(item => {
+                if (item && item._id) {
+                  if (seenIds.has(item._id)) return false;
+                  seenIds.add(item._id);
+                  return true;
+                }
+                return false;
+              });
+              allData = [...allData, ...uniqueItems];
             }
           }
         } catch (e) {

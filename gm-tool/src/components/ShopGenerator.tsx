@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react';
-import yaml from 'js-yaml';
-import { ShoppingCart, Search, Filter, RefreshCw, Package, Tag, Loader2, ShoppingBag, X, Plus, Minus, Trash2, Dices, Sparkles, FileText } from 'lucide-react';
+import { useState, useEffect, useMemo } from 'react';
+import { ShoppingCart, Search, Filter, RefreshCw, Package, Tag, Loader2, ShoppingBag, X, Plus, Minus, Trash2, Dices, Sparkles, FileText, LayoutPanelTop } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { toast } from 'sonner';
 import { rollDiceDetailed } from '@/lib/dice';
+import type { CritMode, TarotDeckState } from '@/types';
 
 // Foundry VTT format item interface
 interface FVTTItem {
@@ -24,6 +24,7 @@ interface FVTTItem {
     weaponType?: string;
     bodyLocation?: { sp: number };
     headLocation?: { sp: number };
+    armorType?: string;
     penalty?: number;
     attackmod?: number;
     rof?: number;
@@ -31,6 +32,8 @@ interface FVTTItem {
     weaponSkill?: string;
     hlCost?: number;
     slots?: number;
+    install?: string;
+    isRanged?: boolean;
   };
   img?: string;
 }
@@ -69,9 +72,13 @@ const LOCATIONS: Record<string, { name: string; description: string; qualityBonu
   'badlands': { name: 'Badlands', description: 'Nomad territory outside the city', qualityBonus: -0.4 }
 };
 
-export function ShopGenerator() {
+interface ShopGeneratorProps {
+  critMode?: CritMode;
+  tarotDeck?: TarotDeckState;
+}
+
+export function ShopGenerator({ critMode = 'raw', tarotDeck }: ShopGeneratorProps) {
   const [allItems, setAllItems] = useState<FVTTItem[]>([]);
-  const [filteredItems, setFilteredItems] = useState<FVTTItem[]>([]);
   const [cart, setCart] = useState<CartItem[]>([]);
   const [currentVendor, setCurrentVendor] = useState<Vendor | null>(null);
   const [showCart, setShowCart] = useState(false);
@@ -93,173 +100,17 @@ export function ShopGenerator() {
   useEffect(() => {
     loadShopData();
   }, []);
-  
-  // Apply filters when data or filters change
-  useEffect(() => {
-    applyFilters();
-  }, [allItems, filters, nightMarketMode, currentVendor]);
-  
-  // Clickable Dice Component
-  const ClickableDice = ({ notation }: { notation: string }) => {
-    const handleRoll = () => {
-      const result = rollDiceDetailed(notation);
-      const critCount = result.rolls.filter(r => r === 6).length;
-      const isCritical = critCount > 0;
-      
-      if (isCritical) {
-        toast.success(`🎲 CRITICAL! Rolled ${critCount} six${critCount > 1 ? 'es' : ''}! Total: ${result.total}`, {
-          icon: <Sparkles className="w-5 h-5 text-warning" />
-        });
-      } else {
-        toast.success(`Rolled ${notation}: ${result.total}`);
-      }
-    };
-    
-    return (
-      <button 
-        onClick={handleRoll}
-        className="inline-flex items-center gap-1 px-2 py-0.5 bg-secondary hover:bg-primary/20 hover:text-primary rounded font-mono text-xs transition-colors cursor-pointer"
-        title="Click to roll"
-      >
-        <Dices className="w-3 h-3" />
-        {notation}
-      </button>
-    );
-  };
-  
-  const loadShopData = async () => {
-    setIsLoading(true);
-    setLoadError(null);
-    try {
-      let allData: FVTTItem[] = [];
 
-      // Helper to flatten and normalize FVTT items
-      const normalizeItems = (data: any): FVTTItem[] => {
-        if (!data) return [];
-        if (Array.isArray(data)) return data as FVTTItem[];
-        if (typeof data === 'object' && Object.values(data).every(v => typeof v === 'object')) {
-          // Sometimes YAML is a dict of items
-          return Object.values(data) as FVTTItem[];
-        }
-        return [];
-      };
-
-      // Load all JSON files listed in the global manifest (all packs)
-      try {
-        const manifestResp = await fetch('/fvtt/packs_json/manifest.json');
-        if (manifestResp.ok) {
-          const manifest = await manifestResp.json();
-          if (Array.isArray(manifest)) {
-            for (const relPath of manifest) {
-              const jsonFile = `/fvtt/packs_json/${relPath}`;
-              try {
-                const resp = await fetch(jsonFile);
-                if (resp.ok) {
-                  const data = await resp.json();
-                  allData = [...allData, ...normalizeItems(data)];
-                }
-              } catch (e) {
-                // Ignore errors, continue
-              }
-            }
-          }
-        }
-      } catch (e) {
-        console.log('packs_json manifest loading error:', e);
-      }
-
-      // Load from public/data folder as fallback
-      if (allData.length === 0) {
-        const packs = ['core', 'black-chrome', 'dlc'];
-        for (const pack of packs) {
-          try {
-            const response = await fetch(`/data/${pack}.json`);
-            if (response.ok) {
-              const data = await response.json();
-              allData = [...allData, ...normalizeItems(data)];
-            }
-          } catch (error) {
-            console.log(`Pack ${pack} not available:`, error);
-          }
-        }
-      }
-
-      // If no data loaded, use fallback
-      if (allData.length === 0) {
-        allData = getFallbackData();
-      }
-
-      // Filter for shop items
-      const shopItems = allData.filter((item: FVTTItem) => {
-        if (!item || !item.type) return false;
-        const hasPrice = item.system?.price?.market !== undefined || 
-                        item.system?.cost !== undefined ||
-                        item.system?.value !== undefined;
-        const isShopItem = ['weapon', 'armor', 'cyberware', 'gear', 'drug', 'ammo', 'clothing', 'itemUpgrade'].includes(item.type);
-        return isShopItem && (hasPrice || item.type === 'cyberware');
-      });
-      setAllItems(shopItems);
-      setIsLoading(false);
-    } catch (error) {
-      console.error('Failed to load shop data:', error);
-      setLoadError(error instanceof Error ? error.message : 'Unknown error');
-      setAllItems(getFallbackData());
-      setIsLoading(false);
+  // Helper function to extract price from item
+  const getItemPrice = (item: FVTTItem): number => {
+    let price = item.system?.price?.market ?? item.system?.cost ?? item.system?.value ?? 0;
+    if (currentVendor) {
+      price = Math.round(price * currentVendor.markup);
     }
+    return price;
   };
-  
-  // Fallback data in case JSON files aren't available
-  const getFallbackData = (): FVTTItem[] => {
-    return [
-      // Weapons
-      { _id: 'w1', name: 'Medium Pistol', type: 'weapon', system: { price: { market: 50 }, damage: '2d6', rof: 2, weaponSkill: 'Handgun', quality: 'standard', description: { value: 'Standard sidearm' } } },
-      { _id: 'w2', name: 'Heavy Pistol', type: 'weapon', system: { price: { market: 100 }, damage: '3d6', rof: 2, weaponSkill: 'Handgun', quality: 'standard', description: { value: 'Powerful handgun' } } },
-      { _id: 'w3', name: 'Very Heavy Pistol', type: 'weapon', system: { price: { market: 100 }, damage: '4d6', rof: 1, weaponSkill: 'Handgun', quality: 'standard', description: { value: 'Maximum stopping power' } } },
-      { _id: 'w4', name: 'SMG', type: 'weapon', system: { price: { market: 100 }, damage: '2d6', rof: 3, weaponSkill: 'Autofire', quality: 'standard', description: { value: 'Compact automatic' } } },
-      { _id: 'w5', name: 'Heavy SMG', type: 'weapon', system: { price: { market: 100 }, damage: '3d6', rof: 3, weaponSkill: 'Autofire', quality: 'standard', description: { value: 'High rate of fire' } } },
-      { _id: 'w6', name: 'Assault Rifle', type: 'weapon', system: { price: { market: 500 }, damage: '5d6', rof: 3, weaponSkill: 'Shoulder Arms', quality: 'standard', description: { value: 'Military grade' } } },
-      { _id: 'w7', name: 'Sniper Rifle', type: 'weapon', system: { price: { market: 500 }, damage: '5d6', rof: 1, weaponSkill: 'Shoulder Arms', quality: 'standard', description: { value: 'Long range precision' } } },
-      { _id: 'w8', name: 'Shotgun', type: 'weapon', system: { price: { market: 500 }, damage: '5d6', rof: 1, weaponSkill: 'Shoulder Arms', quality: 'standard', description: { value: 'Close quarters devastation' } } },
-      { _id: 'w9', name: 'Heavy Melee Weapon', type: 'weapon', system: { price: { market: 50 }, damage: '1d6', rof: 2, weaponSkill: 'Melee Weapon', quality: 'standard', description: { value: 'Baseball bat, crowbar, etc.' } } },
-      { _id: 'w10', name: 'Light Melee Weapon', type: 'weapon', system: { price: { market: 10 }, damage: '1d6', rof: 2, weaponSkill: 'Melee Weapon', quality: 'standard', description: { value: 'Knife, baton, etc.' } } },
-      // Armor
-      { _id: 'a1', name: 'Leathers', type: 'armor', system: { price: { market: 20 }, bodyLocation: { sp: 4 }, quality: 'standard', description: { value: 'Basic protection' } } },
-      { _id: 'a2', name: 'Kevlar', type: 'armor', system: { price: { market: 50 }, bodyLocation: { sp: 7 }, quality: 'standard', description: { value: 'Bullet-resistant vest' } } },
-      { _id: 'a3', name: 'Light Armorjack', type: 'armor', system: { price: { market: 100 }, bodyLocation: { sp: 11 }, quality: 'standard', description: { value: 'Reinforced jacket' } } },
-      { _id: 'a4', name: 'Bodyweight Suit', type: 'armor', system: { price: { market: 1000 }, bodyLocation: { sp: 11 }, quality: 'standard', description: { value: 'Full body protection' } } },
-      { _id: 'a5', name: 'Medium Armorjack', type: 'armor', system: { price: { market: 100 }, bodyLocation: { sp: 12 }, quality: 'standard', description: { value: 'Heavy duty protection' } } },
-      { _id: 'a6', name: 'Heavy Armorjack', type: 'armor', system: { price: { market: 500 }, bodyLocation: { sp: 13 }, quality: 'standard', description: { value: 'Maximum protection' } } },
-      { _id: 'a7', name: 'Flak', type: 'armor', system: { price: { market: 500 }, bodyLocation: { sp: 15 }, quality: 'standard', description: { value: 'Military armor' } } },
-      { _id: 'a8', name: 'Metalgear', type: 'armor', system: { price: { market: 5000 }, bodyLocation: { sp: 18 }, quality: 'standard', description: { value: 'Powered armor' } } },
-      // Cyberware
-      { _id: 'c1', name: 'Neural Link', type: 'cyberware', system: { price: { market: 500 }, hlCost: 7, slots: 2, quality: 'standard', description: { value: 'Basic neural interface' } } },
-      { _id: 'c2', name: 'Interface Plugs', type: 'cyberware', system: { price: { market: 500 }, hlCost: 7, slots: 2, quality: 'standard', description: { value: 'Direct connection ports' } } },
-      { _id: 'c3', name: 'Chipware Socket', type: 'cyberware', system: { price: { market: 500 }, hlCost: 7, slots: 2, quality: 'standard', description: { value: 'Skill chip interface' } } },
-      { _id: 'c4', name: 'Cyberoptics', type: 'cyberware', system: { price: { market: 100 }, hlCost: 7, slots: 2, quality: 'standard', description: { value: 'Enhanced vision' } } },
-      { _id: 'c5', name: 'Cyberarm', type: 'cyberware', system: { price: { market: 500 }, hlCost: 7, slots: 2, quality: 'standard', description: { value: 'Prosthetic arm' } } },
-      { _id: 'c6', name: 'Cyberleg', type: 'cyberware', system: { price: { market: 500 }, hlCost: 7, slots: 2, quality: 'standard', description: { value: 'Prosthetic leg' } } },
-      { _id: 'c7', name: 'Subdermal Armor', type: 'cyberware', system: { price: { market: 1000 }, hlCost: 7, slots: 2, quality: 'standard', description: { value: 'Under-skin protection' } } },
-      { _id: 'c8', name: 'Scratchers', type: 'cyberware', system: { price: { market: 100 }, hlCost: 7, slots: 2, quality: 'standard', description: { value: 'Retractable claws' } } },
-      { _id: 'c9', name: 'Rippers', type: 'cyberware', system: { price: { market: 500 }, hlCost: 7, slots: 2, quality: 'standard', description: { value: 'Enhanced scratchers' } } },
-      { _id: 'c10', name: 'Big Knucks', type: 'cyberware', system: { price: { market: 100 }, hlCost: 7, slots: 2, quality: 'standard', description: { value: 'Reinforced knuckles' } } },
-      { _id: 'c11', name: 'Slice n\' Dice', type: 'cyberware', system: { price: { market: 1000 }, hlCost: 7, slots: 2, quality: 'standard', description: { value: 'Monofilament whip' } } },
-      { _id: 'c12', name: 'Wolvers', type: 'cyberware', system: { price: { market: 1000 }, hlCost: 7, slots: 2, quality: 'standard', description: { value: 'Retractable blades' } } },
-      // Gear
-      { _id: 'g1', name: 'Agent', type: 'gear', system: { price: { market: 100 }, quality: 'standard', description: { value: 'Personal AI assistant' } } },
-      { _id: 'g2', name: 'Audio Recorder', type: 'gear', system: { price: { market: 50 }, quality: 'standard', description: { value: 'Records audio' } } },
-      { _id: 'g3', name: 'Binoculars', type: 'gear', system: { price: { market: 50 }, quality: 'standard', description: { value: 'Enhanced vision' } } },
-      { _id: 'g4', name: 'Breathing Mask', type: 'gear', system: { price: { market: 20 }, quality: 'standard', description: { value: 'Filters toxic air' } } },
-      { _id: 'g5', name: 'Carryall', type: 'gear', system: { price: { market: 5 }, quality: 'standard', description: { value: 'Large bag' } } },
-      { _id: 'g6', name: 'Chemical Analyzer', type: 'gear', system: { price: { market: 1000 }, quality: 'standard', description: { value: 'Identifies substances' } } },
-      { _id: 'g7', name: 'Computer', type: 'gear', system: { price: { market: 50 }, quality: 'standard', description: { value: 'Laptop or deck' } } },
-      { _id: 'g8', name: 'First Aid Kit', type: 'gear', system: { price: { market: 10 }, quality: 'standard', description: { value: 'Basic medical supplies' } } },
-      { _id: 'g9', name: 'Flashlight', type: 'gear', system: { price: { market: 5 }, quality: 'standard', description: { value: 'Portable light' } } },
-      { _id: 'g10', name: 'Grapple Gun', type: 'gear', system: { price: { market: 100 }, quality: 'standard', description: { value: 'Fires grappling hook' } } },
-      { _id: 'g11', name: 'Handcuffs', type: 'gear', system: { price: { market: 10 }, quality: 'standard', description: { value: 'Restraints' } } },
-      { _id: 'g12', name: 'Homing Tracer', type: 'gear', system: { price: { market: 500 }, quality: 'standard', description: { value: 'Tracking device' } } },
-    ];
-  };
-  
+
+  // Seeded random number generator for deterministic filtering
   const seededRandom = (seedStr: string): number => {
     let seed = 0;
     for (let i = 0; i < seedStr.length; i++) {
@@ -268,8 +119,9 @@ export function ShopGenerator() {
     seed = (1103515245 * seed + 12345) % 0x80000000;
     return seed / 0x80000000;
   };
-  
-  const applyFilters = () => {
+
+  // Memoized filtered items for performance
+  const filteredItems = useMemo(() => {
     let filtered = [...allItems];
     
     // Type filter
@@ -343,16 +195,227 @@ export function ShopGenerator() {
       return filters.sortOrder === 'asc' ? comparison : -comparison;
     });
     
-    setFilteredItems(filtered);
+    return filtered;
+  }, [allItems, filters, nightMarketMode, currentVendor]);
+  
+  // Clickable Dice Component
+  const ClickableDice = ({ notation }: { notation: string }) => {
+    const handleRoll = () => {
+      const result = rollDiceDetailed(notation);
+      const critCount = result.rolls.filter(r => r === 6).length;
+      const isCritical = critCount >= 2;
+      const isTarotCrit = critMode === 'tarot' && critCount >= 3;
+      
+      if (isTarotCrit) {
+        if (tarotDeck?.drawnThisSession) {
+          toast.success(`🎲 CRITICAL! Rolled ${critCount} sixes! (Tarot limit reached - use RAW crit)`, {
+            icon: <Sparkles className="w-5 h-5 text-warning" />
+          });
+        } else {
+          toast.success(`🎴 NIGHT CITY TAROT! Rolled ${critCount} sixes! Draw a card!`, {
+            icon: <LayoutPanelTop className="w-5 h-5 text-primary" />,
+            duration: 10000
+          });
+        }
+      } else if (isCritical) {
+        toast.success(`🎲 CRITICAL! Rolled ${critCount} sixes! (+5 damage)`, {
+          icon: <Sparkles className="w-5 h-5 text-warning" />
+        });
+      } else {
+        toast.success(`Rolled ${notation}: ${result.total}`);
+      }
+    };
+    
+    return (
+      <button 
+        onClick={handleRoll}
+        className="inline-flex items-center gap-1 px-2 py-0.5 bg-secondary hover:bg-primary/20 hover:text-primary rounded font-mono text-xs transition-colors cursor-pointer"
+        title="Click to roll"
+      >
+        <Dices className="w-3 h-3" />
+        {notation}
+      </button>
+    );
   };
   
-  const getItemPrice = (item: FVTTItem): number => {
-    let price = item.system?.price?.market ?? item.system?.cost ?? item.system?.value ?? 0;
-    if (currentVendor) {
-      price = Math.round(price * currentVendor.markup);
+  const loadShopData = async () => {
+    setIsLoading(true);
+    setLoadError(null);
+    try {
+      let allData: FVTTItem[] = [];
+      const seenIds = new Set<string>();
+
+      // Helper to flatten and normalize FVTT items (with deduplication)
+      const normalizeItems = (data: any): FVTTItem[] => {
+        if (!data) return [];
+
+        // Helper to filter duplicates
+        const filterDuplicates = (items: any[]): FVTTItem[] => {
+          return items.filter(item => {
+            if (item && item._id) {
+              if (seenIds.has(item._id)) return false;
+              seenIds.add(item._id);
+              return true;
+            }
+            return false;
+          }) as FVTTItem[];
+        };
+
+        if (Array.isArray(data)) {
+          return filterDuplicates(data);
+        }
+
+        if (typeof data === 'object' && data._id && data.name && data.type) {
+          // Single item object - wrap in array (with deduplication)
+          if (!seenIds.has(data._id)) {
+            seenIds.add(data._id);
+            return [data as FVTTItem];
+          }
+          return [];
+        }
+
+        if (typeof data === 'object' && Object.values(data).every(v => typeof v === 'object')) {
+          return filterDuplicates(Object.values(data));
+        }
+
+        return [];
+      };
+
+      // Try loading combined FVTT items file for fast loading
+      try {
+        const response = await fetch('/fvtt/packs_json/all-items.json', { signal: AbortSignal.timeout(5000) });
+        if (response.ok) {
+          const data = await response.json();
+          allData = normalizeItems(data);
+        }
+      } catch (e) {
+        console.log('All-items loading error, trying manifest:', e);
+        
+        // Fallback to manifest-based loading
+        try {
+          const manifestResp = await fetch('/fvtt/packs_json/manifest.json', { signal: AbortSignal.timeout(5000) });
+          if (manifestResp.ok) {
+            const manifest = await manifestResp.json();
+            if (Array.isArray(manifest)) {
+              const batchSize = 20;
+              for (let i = 0; i < manifest.length; i += batchSize) {
+                const batch = manifest.slice(i, i + batchSize);
+                const results = await Promise.allSettled(
+                  batch.map(async (relPath) => {
+                    const jsonFile = `/fvtt/packs_json/${relPath}`;
+                    const resp = await fetch(jsonFile, { signal: AbortSignal.timeout(3000) });
+                    if (resp.ok) {
+                      const data = await resp.json();
+                      return normalizeItems(data);
+                    }
+                    return [];
+                  })
+                );
+                for (const result of results) {
+                  if (result.status === 'fulfilled') {
+                    allData = [...allData, ...result.value];
+                  }
+                }
+              }
+            }
+          }
+        } catch (e2) {
+          console.log('packs_json manifest loading error:', e2);
+        }
+      }
+
+      // Load from public/data folder as fallback
+      if (allData.length === 0) {
+        const packs = ['core', 'black-chrome', 'dlc'];
+        for (const pack of packs) {
+          try {
+            const response = await fetch(`/data/${pack}.json`, { signal: AbortSignal.timeout(3000) });
+            if (response.ok) {
+              const data = await response.json();
+              allData = [...allData, ...normalizeItems(data)];
+            }
+          } catch (error) {
+            console.log(`Pack ${pack} not available:`, error);
+          }
+        }
+      }
+
+      // If no data loaded, use fallback
+      if (allData.length === 0) {
+        allData = getFallbackData();
+      }
+
+      // Filter for shop items
+      const shopItems = allData.filter((item: FVTTItem) => {
+        if (!item || !item.type) return false;
+        const hasPrice = item.system?.price?.market !== undefined || 
+                        item.system?.cost !== undefined ||
+                        item.system?.value !== undefined;
+        const isShopItem = ['weapon', 'armor', 'cyberware', 'gear', 'drug', 'ammo', 'clothing', 'itemUpgrade', 'vehicle'].includes(item.type);
+        return isShopItem && (hasPrice || item.type === 'cyberware');
+      });
+      setAllItems(shopItems);
+      setIsLoading(false);
+    } catch (error) {
+      console.error('Failed to load shop data:', error);
+      setLoadError(error instanceof Error ? error.message : 'Unknown error');
+      setAllItems(getFallbackData());
+      setIsLoading(false);
     }
-    return price;
   };
+  
+  // Fallback data in case JSON files aren't available
+  const getFallbackData = (): FVTTItem[] => {
+    return [
+      // Weapons
+      { _id: 'w1', name: 'Medium Pistol', type: 'weapon', system: { price: { market: 50 }, damage: '2d6', rof: 2, weaponSkill: 'Handgun', quality: 'standard', description: { value: 'Standard sidearm' } } },
+      { _id: 'w2', name: 'Heavy Pistol', type: 'weapon', system: { price: { market: 100 }, damage: '3d6', rof: 2, weaponSkill: 'Handgun', quality: 'standard', description: { value: 'Powerful handgun' } } },
+      { _id: 'w3', name: 'Very Heavy Pistol', type: 'weapon', system: { price: { market: 100 }, damage: '4d6', rof: 1, weaponSkill: 'Handgun', quality: 'standard', description: { value: 'Maximum stopping power' } } },
+      { _id: 'w4', name: 'SMG', type: 'weapon', system: { price: { market: 100 }, damage: '2d6', rof: 3, weaponSkill: 'Autofire', quality: 'standard', description: { value: 'Compact automatic' } } },
+      { _id: 'w5', name: 'Heavy SMG', type: 'weapon', system: { price: { market: 100 }, damage: '3d6', rof: 3, weaponSkill: 'Autofire', quality: 'standard', description: { value: 'High rate of fire' } } },
+      { _id: 'w6', name: 'Assault Rifle', type: 'weapon', system: { price: { market: 500 }, damage: '5d6', rof: 3, weaponSkill: 'Shoulder Arms', quality: 'standard', description: { value: 'Military grade' } } },
+      { _id: 'w7', name: 'Sniper Rifle', type: 'weapon', system: { price: { market: 500 }, damage: '5d6', rof: 1, weaponSkill: 'Shoulder Arms', quality: 'standard', description: { value: 'Long range precision' } } },
+      { _id: 'w8', name: 'Shotgun', type: 'weapon', system: { price: { market: 500 }, damage: '5d6', rof: 1, weaponSkill: 'Shoulder Arms', quality: 'standard', description: { value: 'Close quarters devastation' } } },
+      { _id: 'w9', name: 'Heavy Melee Weapon', type: 'weapon', system: { price: { market: 50 }, damage: '1d6', rof: 2, weaponSkill: 'Melee Weapon', quality: 'standard', description: { value: 'Baseball bat, crowbar, etc.' } } },
+      { _id: 'w10', name: 'Light Melee Weapon', type: 'weapon', system: { price: { market: 10 }, damage: '1d6', rof: 2, weaponSkill: 'Melee Weapon', quality: 'standard', description: { value: 'Knife, baton, etc.' } } },
+      // Armor
+      { _id: 'a1', name: 'Leathers', type: 'armor', system: { price: { market: 20 }, bodyLocation: { sp: 4 }, quality: 'standard', description: { value: 'Basic protection' } } },
+      { _id: 'a2', name: 'Kevlar', type: 'armor', system: { price: { market: 50 }, bodyLocation: { sp: 7 }, quality: 'standard', description: { value: 'Bullet-resistant vest' } } },
+      { _id: 'a3', name: 'Light Armorjack', type: 'armor', system: { price: { market: 100 }, bodyLocation: { sp: 11 }, quality: 'standard', description: { value: 'Reinforced jacket' } } },
+      { _id: 'a4', name: 'Bodyweight Suit', type: 'armor', system: { price: { market: 1000 }, bodyLocation: { sp: 11 }, quality: 'standard', description: { value: 'Full body protection' } } },
+      { _id: 'a5', name: 'Medium Armorjack', type: 'armor', system: { price: { market: 100 }, bodyLocation: { sp: 12 }, quality: 'standard', description: { value: 'Heavy duty protection' } } },
+      { _id: 'a6', name: 'Heavy Armorjack', type: 'armor', system: { price: { market: 500 }, bodyLocation: { sp: 13 }, quality: 'standard', description: { value: 'Maximum protection' } } },
+      { _id: 'a7', name: 'Flak', type: 'armor', system: { price: { market: 500 }, bodyLocation: { sp: 15 }, quality: 'standard', description: { value: 'Military armor' } } },
+      { _id: 'a8', name: 'Metalgear', type: 'armor', system: { price: { market: 5000 }, bodyLocation: { sp: 18 }, quality: 'standard', description: { value: 'Powered armor' } } },
+      // Cyberware
+      { _id: 'c1', name: 'Neural Link', type: 'cyberware', system: { price: { market: 500 }, hlCost: 7, slots: 2, quality: 'standard', description: { value: 'Basic neural interface' } } },
+      { _id: 'c2', name: 'Interface Plugs', type: 'cyberware', system: { price: { market: 500 }, hlCost: 7, slots: 2, quality: 'standard', description: { value: 'Direct connection ports' } } },
+      { _id: 'c3', name: 'Chipware Socket', type: 'cyberware', system: { price: { market: 500 }, hlCost: 7, slots: 2, quality: 'standard', description: { value: 'Skill chip interface' } } },
+      { _id: 'c4', name: 'Cyberoptics', type: 'cyberware', system: { price: { market: 100 }, hlCost: 7, slots: 2, quality: 'standard', description: { value: 'Enhanced vision' } } },
+      { _id: 'c5', name: 'Cyberarm', type: 'cyberware', system: { price: { market: 500 }, hlCost: 7, slots: 2, quality: 'standard', description: { value: 'Prosthetic arm' } } },
+      { _id: 'c6', name: 'Cyberleg', type: 'cyberware', system: { price: { market: 500 }, hlCost: 7, slots: 2, quality: 'standard', description: { value: 'Prosthetic leg' } } },
+      { _id: 'c7', name: 'Subdermal Armor', type: 'cyberware', system: { price: { market: 1000 }, hlCost: 7, slots: 2, quality: 'standard', description: { value: 'Under-skin protection' } } },
+      { _id: 'c8', name: 'Scratchers', type: 'cyberware', system: { price: { market: 100 }, hlCost: 7, slots: 2, quality: 'standard', description: { value: 'Retractable claws' } } },
+      { _id: 'c9', name: 'Rippers', type: 'cyberware', system: { price: { market: 500 }, hlCost: 7, slots: 2, quality: 'standard', description: { value: 'Enhanced scratchers' } } },
+      { _id: 'c10', name: 'Big Knucks', type: 'cyberware', system: { price: { market: 100 }, hlCost: 7, slots: 2, quality: 'standard', description: { value: 'Reinforced knuckles' } } },
+      { _id: 'c11', name: 'Slice n\' Dice', type: 'cyberware', system: { price: { market: 1000 }, hlCost: 7, slots: 2, quality: 'standard', description: { value: 'Monofilament whip' } } },
+      { _id: 'c12', name: 'Wolvers', type: 'cyberware', system: { price: { market: 1000 }, hlCost: 7, slots: 2, quality: 'standard', description: { value: 'Retractable blades' } } },
+      // Gear
+      { _id: 'g1', name: 'Agent', type: 'gear', system: { price: { market: 100 }, quality: 'standard', description: { value: 'Personal AI assistant' } } },
+      { _id: 'g2', name: 'Audio Recorder', type: 'gear', system: { price: { market: 50 }, quality: 'standard', description: { value: 'Records audio' } } },
+      { _id: 'g3', name: 'Binoculars', type: 'gear', system: { price: { market: 50 }, quality: 'standard', description: { value: 'Enhanced vision' } } },
+      { _id: 'g4', name: 'Breathing Mask', type: 'gear', system: { price: { market: 20 }, quality: 'standard', description: { value: 'Filters toxic air' } } },
+      { _id: 'g5', name: 'Carryall', type: 'gear', system: { price: { market: 5 }, quality: 'standard', description: { value: 'Large bag' } } },
+      { _id: 'g6', name: 'Chemical Analyzer', type: 'gear', system: { price: { market: 1000 }, quality: 'standard', description: { value: 'Identifies substances' } } },
+      { _id: 'g7', name: 'Computer', type: 'gear', system: { price: { market: 50 }, quality: 'standard', description: { value: 'Laptop or deck' } } },
+      { _id: 'g8', name: 'First Aid Kit', type: 'gear', system: { price: { market: 10 }, quality: 'standard', description: { value: 'Basic medical supplies' } } },
+      { _id: 'g9', name: 'Flashlight', type: 'gear', system: { price: { market: 5 }, quality: 'standard', description: { value: 'Portable light' } } },
+      { _id: 'g10', name: 'Grapple Gun', type: 'gear', system: { price: { market: 100 }, quality: 'standard', description: { value: 'Fires grappling hook' } } },
+      { _id: 'g11', name: 'Handcuffs', type: 'gear', system: { price: { market: 10 }, quality: 'standard', description: { value: 'Restraints' } } },
+      { _id: 'g12', name: 'Homing Tracer', type: 'gear', system: { price: { market: 500 }, quality: 'standard', description: { value: 'Tracking device' } } },
+    ];
+  };
+  
   
   const generateRandomVendor = () => {
     const vendorTypes = Object.keys(VENDOR_TYPES);
@@ -411,7 +474,7 @@ export function ShopGenerator() {
     toast.info('Cart cleared');
   };
   
-  // Export cart to text file
+  // Export cart to text file - detailed receipt format
   const exportCartToTxt = () => {
     if (cart.length === 0) {
       toast.error('Cart is empty');
@@ -419,60 +482,136 @@ export function ShopGenerator() {
     }
     
     const total = getCartTotal();
-    const vendorName = currentVendor ? currentVendor.name : 'Generic Shop';
     const date = new Date().toLocaleDateString();
+    const time = new Date().toLocaleTimeString();
     
-    let content = `╔════════════════════════════════════════════════════════════════╗
-║           CYBERPUNK RED - SHOPPING RECEIPT                     ║
-╠════════════════════════════════════════════════════════════════╣
-║ Vendor: ${vendorName.padEnd(50)} ║
-║ Date: ${date.padEnd(52)} ║
-╠════════════════════════════════════════════════════════════════╣
-║ ITEM                                                           ║
-║ NAME                          TYPE        QTY    PRICE     TOTAL ║
-╠════════════════════════════════════════════════════════════════╣
+    let content = `CYBERPUNK RED - PURCHASE RECEIPT
+Date: ${date}, ${time}
+Night Market Mode: No
+
+Direct Purchase
+
+============================================================
+ITEMS PURCHASED:
+============================================================
+
 `;
     
-    cart.forEach(item => {
+    cart.forEach((item, index) => {
       const price = getItemPrice(item);
       const itemTotal = price * item.quantity;
-      const name = item.name.slice(0, 28).padEnd(28);
-      const type = item.type.slice(0, 10).padEnd(10);
-      const qty = item.quantity.toString().padStart(3);
-      const priceStr = `${price}eb`.padStart(8);
-      const totalStr = `${itemTotal}eb`.padStart(8);
       
-      content += `║ ${name} ${type} ${qty} ${priceStr} ${totalStr} ║\n`;
+      content += `${index + 1}. ${item.name}
+   Type: ${item.type.charAt(0).toUpperCase() + item.type.slice(1)}
+   Quantity: ${item.quantity}
+   Unit Price: €$${price.toLocaleString()}
+   Total Price: €$${itemTotal.toLocaleString()}
+`;
       
-      // Add stats for each item
-      const stats: string[] = [];
-      if (item.system.damage) stats.push(`DMG: ${item.system.damage}`);
-      if (item.system.rof) stats.push(`ROF: ${item.system.rof}`);
-      if (item.system.bodyLocation?.sp) stats.push(`Body SP: ${item.system.bodyLocation.sp}`);
-      if (item.system.headLocation?.sp) stats.push(`Head SP: ${item.system.headLocation.sp}`);
-      if (item.system.hlCost) stats.push(`HL: ${item.system.hlCost}`);
-      if (item.system.slots) stats.push(`Slots: ${item.system.slots}`);
-      if (item.system.weaponSkill) stats.push(`Skill: ${item.system.weaponSkill}`);
-      if (item.system.attackmod) stats.push(`ATK Mod: ${item.system.attackmod > 0 ? '+' : ''}${item.system.attackmod}`);
-      if (item.system.magazine?.max) stats.push(`Mag: ${item.system.magazine.max}`);
-      
-      if (stats.length > 0) {
-        const statsLine = `    [${stats.join(' | ')}]`;
-        content += `║ ${statsLine.slice(0, 62).padEnd(62)} ║\n`;
+      // Quality
+      if (item.system.quality) {
+        content += `   Quality: ${item.system.quality}
+`;
       }
       
-      // Add description if available
-      const desc = item.system.description?.value?.replace(/<[^>]*>/g, '').slice(0, 58);
+      // Brand
+      if (item.system.brand) {
+        content += `   Brand: ${item.system.brand}
+`;
+      }
+      
+      // Weapon-specific stats
+      if (item.type === 'weapon') {
+        if (item.system.damage) {
+          content += `   Damage: ${item.system.damage}
+`;
+        }
+        if (item.system.weaponType) {
+          content += `   Weapon Type: ${item.system.weaponType}
+`;
+        }
+        if (item.system.rof) {
+          content += `   Rate of Fire: ${item.system.rof}
+`;
+        }
+        if (item.system.magazine?.max) {
+          content += `   Magazine: ${item.system.magazine.max}
+`;
+        }
+        if (item.system.weaponSkill) {
+          content += `   Skill Required: ${item.system.weaponSkill}
+`;
+        }
+        if (item.system.attackmod) {
+          content += `   Attack Modifier: ${item.system.attackmod > 0 ? '+' : ''}${item.system.attackmod}
+`;
+        }
+      }
+      
+      // Armor-specific stats
+      if (item.type === 'armor') {
+        if (item.system.bodyLocation?.sp) {
+          content += `   Body SP: ${item.system.bodyLocation.sp}
+`;
+        }
+        if (item.system.headLocation?.sp) {
+          content += `   Head SP: ${item.system.headLocation.sp}
+`;
+        }
+        if (item.system.armorType) {
+          content += `   Armor Type: ${item.system.armorType}
+`;
+        }
+      }
+      
+      // Cyberware-specific stats
+      if (item.type === 'cyberware') {
+        if (item.system.hlCost) {
+          content += `   Humanity Cost: ${item.system.hlCost}
+`;
+        }
+        if (item.system.slots) {
+          content += `   Slots: ${item.system.slots}
+`;
+        }
+        if (item.system.category) {
+          content += `   Category: ${item.system.category}
+`;
+        }
+        if (item.system.install) {
+          content += `   Install: ${item.system.install}
+`;
+        }
+      }
+      
+      // Gear/Ammo/Other stats
+      if (item.system.category) {
+        content += `   Category: ${item.system.category}
+`;
+      }
+      
+      // Description
+      const desc = item.system.description?.value?.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim();
       if (desc) {
-        content += `║    "${desc}"${desc.length >= 58 ? '...' : ''}`.padEnd(65) + '║\n';
+        content += `   Description: ${desc}
+`;
       }
       
-      content += `║                                                                ║\n`;
+      // Source
+      if (item.system.source?.book && item.system.source?.page) {
+        content += `   Source: ${item.system.source.book}, p.${item.system.source.page}
+`;
+      } else if (item.system.source) {
+        content += `   Source: ${item.system.source}
+`;
+      }
+      
+      content += '\n';
     });
     
-    content += `╠════════════════════════════════════════════════════════════════╣
-║ ${`TOTAL: ${total}eb`.padStart(62)} ║
-╚════════════════════════════════════════════════════════════════╝
+    content += `============================================================
+TOTAL COST: €$${total.toLocaleString()}
+============================================================
 
 Generated by Cyberpunk RED GM Tool
 `;
@@ -481,10 +620,10 @@ Generated by Cyberpunk RED GM Tool
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    link.download = `cyberpunk-shopping-${date.replace(/\//g, '-')}.txt`;
+    link.download = `cyberpunk-purchase-${date.replace(/\//g, '-')}.txt`;
     link.click();
     URL.revokeObjectURL(url);
-    toast.success('Shopping list exported');
+    toast.success('Purchase receipt exported');
   };
   
   const getRarityColor = (quality?: string) => {

@@ -3,13 +3,14 @@ import { gsap } from 'gsap';
 import { 
   Plus, Trash2, Save, Upload, Download, Dices, Play, RotateCcw, 
   Skull, Heart, Crosshair, ChevronDown, ChevronUp,
-  User, Bot, AlertTriangle, Users, Target, Sparkles, Zap
+  User, Bot, AlertTriangle, Users, Target, Sparkles, Zap, LayoutPanelTop
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { toast } from 'sonner';
 import { rollDiceDetailed, d10 } from '@/lib/dice';
-import type { Participant, EncounterState, SavedEncounter, Weapon } from '@/types';
+import { SINGLE_SHOT_DV, getDVTableKey } from '@/lib/weaponRanges';
+import type { Participant, EncounterState, SavedEncounter, Weapon, CritMode, TarotDeckState } from '@/types';
 
 interface EncounterTrackerProps {
   participants: Participant[];
@@ -30,6 +31,8 @@ interface EncounterTrackerProps {
   onExportEncounters: () => void;
   onImportEncounters: (event: React.ChangeEvent<HTMLInputElement>) => void;
   onOpenDamageDialog: (participant: Participant) => void;
+  critMode?: CritMode;
+  tarotDeck?: TarotDeckState;
 }
 
 // Attack roll calculation: d10 + REF + Weapon Skill + Weapon Attack Mod
@@ -56,7 +59,9 @@ export function EncounterTracker({
   onDeleteEncounter,
   onExportEncounters,
   onImportEncounters,
-  onOpenDamageDialog
+  onOpenDamageDialog,
+  critMode = 'raw',
+  tarotDeck
 }: EncounterTrackerProps) {
   const [newParticipant, setNewParticipant] = useState({
     name: '',
@@ -130,10 +135,22 @@ export function EncounterTracker({
     const handleRoll = () => {
       const result = rollDiceDetailed(notation);
       const critCount = result.rolls.filter(r => r === 6).length;
-      const isCritical = critCount > 0;
+      const isCritical = critCount >= 2;
+      const isTarotCrit = critMode === 'tarot' && critCount >= 3;
       
-      if (isCritical) {
-        toast.success(`🎲 CRITICAL! ${label ? `${label}: ` : ''}Rolled ${critCount} six${critCount > 1 ? 'es' : ''}! Total: ${result.total}`, {
+      if (isTarotCrit) {
+        if (tarotDeck?.drawnThisSession) {
+          toast.success(`🎲 CRITICAL! ${label ? `${label}: ` : ''}Rolled ${critCount} sixes! (Tarot limit reached - use RAW crit)`, {
+            icon: <Sparkles className="w-5 h-5 text-warning" />
+          });
+        } else {
+          toast.success(`🎴 NIGHT CITY TAROT! ${label ? `${label}: ` : ''}Rolled ${critCount} sixes! Draw a card!`, {
+            icon: <LayoutPanelTop className="w-5 h-5 text-primary" />,
+            duration: 10000
+          });
+        }
+      } else if (isCritical) {
+        toast.success(`🎲 CRITICAL! ${label ? `${label}: ` : ''}Rolled ${critCount} sixes! (+5 damage)`, {
           icon: <Sparkles className="w-5 h-5 text-warning" />
         });
       } else {
@@ -177,25 +194,77 @@ export function EncounterTracker({
     }
   };
   
-  // Weapon Range Display Component
-  const WeaponRangeChart = ({ weapon }: { weapon: { name: string; system: { damage?: string; rof?: number; ranges?: Record<string, { range: number; dv: number }> } } }) => {
-    const ranges = weapon.system.ranges;
-    if (!ranges) return null;
+  // Weapon Range DV Chart - only for ranged weapons
+  const WeaponRangeChart = ({ weapon }: { weapon: { name: string; system: { damage?: string; rof?: number; weaponType?: string; isRanged?: boolean; ranges?: Record<string, { range: number; dv: number }> } } }) => {
+    const weaponType = weapon.system.weaponType || '';
+    const rof = weapon.system.rof || 1;
+    const isRanged = weapon.system.isRanged === true;
     
-    const rangeEntries = Object.entries(ranges).filter(([_, data]) => data && typeof data === 'object');
-    if (rangeEntries.length === 0) return null;
+    // Get the correct DV table key
+    const dvKey = getDVTableKey(weaponType, isRanged);
+    const isMelee = dvKey === 'melee';
+    
+    // Only show DV chart for ranged weapons
+    if (isMelee) {
+      return (
+        <div className="mt-1 text-[10px] text-muted-foreground italic">Melee - DV based on opponent's Defense</div>
+      );
+    }
+    
+    // Get DV values for single shot at each range band
+    const rangeBands = [
+      { name: '0-6m', max: 6 },
+      { name: '7-12m', max: 12 },
+      { name: '13-25m', max: 25 },
+      { name: '26-50m', max: 50 },
+      { name: '51-100m', max: 100 },
+      { name: '101-200m', max: 200 },
+    ];
+    
+    const singleShotDVs = SINGLE_SHOT_DV[dvKey] || SINGLE_SHOT_DV.pistol;
     
     return (
-      <div className="mt-1 text-xs">
-        <div className="flex gap-1 flex-wrap">
-          {rangeEntries.map(([name, data]) => (
-            <div key={name} className="bg-background/50 rounded px-1.5 py-0.5 text-center">
-              <span className="text-muted-foreground uppercase text-[9px]">{name.slice(0,2)}</span>
-              <span className="font-mono ml-1">{data.range}m</span>
-              <span className="text-primary font-bold ml-1">DV{data.dv}</span>
-            </div>
-          ))}
+      <div className="mt-1.5 p-1.5 bg-background/80 border border-border/50 rounded text-xs">
+        <div className="text-[10px] text-muted-foreground mb-1 font-mono">RANGE DV (single)</div>
+        <div className="flex gap-1">
+          {rangeBands.map((band, idx) => {
+            const dv = singleShotDVs[idx] || 15;
+            if (dv >= 99) return null; // N/A
+            return (
+              <div key={band.name} className="flex flex-col items-center bg-secondary/60 rounded px-1.5 py-0.5 min-w-[32px]">
+                <span className="text-[9px] text-muted-foreground">{band.name}</span>
+                <span className="font-bold text-primary">{dv}</span>
+              </div>
+            );
+          })}
         </div>
+        {rof > 1 && (
+          <div className="mt-1 pt-1 border-t border-border/30">
+            <div className="text-[9px] text-muted-foreground mb-0.5 font-mono">AUTOFIRE</div>
+            <div className="flex gap-1">
+              <div className="flex flex-col items-center bg-secondary/60 rounded px-1.5 py-0.5">
+                <span className="text-[9px] text-muted-foreground">0-12m</span>
+                <span className="font-bold text-accent">17</span>
+              </div>
+              <div className="flex flex-col items-center bg-secondary/60 rounded px-1.5 py-0.5">
+                <span className="text-[9px] text-muted-foreground">13-25m</span>
+                <span className="font-bold text-accent">19</span>
+              </div>
+              <div className="flex flex-col items-center bg-secondary/60 rounded px-1.5 py-0.5">
+                <span className="text-[9px] text-muted-foreground">26-50m</span>
+                <span className="font-bold text-accent">21</span>
+              </div>
+              <div className="flex flex-col items-center bg-secondary/60 rounded px-1.5 py-0.5">
+                <span className="text-[9px] text-muted-foreground">51-100m</span>
+                <span className="font-bold text-accent">24</span>
+              </div>
+              <div className="flex flex-col items-center bg-secondary/60 rounded px-1.5 py-0.5">
+                <span className="text-[9px] text-muted-foreground">&gt;100m</span>
+                <span className="font-bold text-accent">27</span>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     );
   };
@@ -435,7 +504,7 @@ export function EncounterTracker({
                 return (
                   <React.Fragment key={participant.id}>
                     <tr 
-                      className={`${getWoundClass(participant.woundState)} ${isCurrentTurn ? 'pulse-glow bg-primary/10' : ''}`}
+                      className={`${getWoundClass(participant.woundState)} ${isCurrentTurn ? 'bg-primary/20 border-l-2 border-l-primary' : ''}`}
                     >
                       <td>
                         <button 

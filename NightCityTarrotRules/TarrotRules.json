@@ -9,158 +9,116 @@
       "post_resolution": "After resolving, place the card on the bottom of the deck. Only one card can be pulled per game session.",
       "campaign_shuffle_rule": "After the first pull, don’t shuffle until every card has appeared once."
     },
-    "alternate_numbering": {
-      "strength": ["VIII", "XI"],
-      "justice": ["XI", "VIII"]
-    },
     "cards": [
       {
-        "number": 0,
-        "roman": "0",
+        "number": "(0)",
         "name": "The Fool",
-        "effect": "All of the victim’s cyberware is inoperable for 1 hour. Cyberlimbs hang limp and behave like dismembered meat limbs.",
-        "additional_penalty": "If the victim cannot sense opponents, they take an extra −4 to Checks (as if in smoke/darkness).",
-        "no_cyberware_case": "Suffer Foreign Object Critical Injury and 3d6 Humanity Loss."
+        "effect": "All of the victim's Cyberware is rendered inoperable for one hour. Cyberlimbs that are rendered inoperable act as their meat counterparts do when they have been dismembered, but they still hang loosely. Should this leave a target without any ability to sense an opponent, any Check they make suffers an additional -4 modifier, as if obscured by smoke or darkness. If the victim has no Cyberware they instead suffer the Foreign Object Critical Injury and experience 3d6 Humanity Loss."
       },
       {
-        "number": 1,
-        "roman": "I",
+        "number": "(I)",
         "name": "The Magician",
-        "effect": "GM chooses one piece of the victim’s cyberware; it is destroyed (repairable). Victim is Deadly On Fire.",
-        "no_cyberware_case": "Victim is Deadly On Fire and one worn/held weapon malfunctions (Action to clear)."
+        "effect": "The GM selects one of the victim's pieces of cyberware. That piece of cyberware is destroyed (although not beyond repair). Additionally, the victim is now Deadly On Fire (CP:R page 180). If the victim has no Cyberware, they are now Deadly on Fire, and one of their worn or held weapons malfunctions, requiring an Action to reverse the malfunction before it can be used again."
       },
       {
-        "number": 2,
-        "roman": "II",
+        "number": "(II)",
         "name": "The High Priestess",
-        "effect": "Victim suffers Foreign Object Critical Injury, but instead of move-triggered bonus damage they must beat DV 15 Resist Torture/Drugs or take 3d6 HP damage."
+        "effect": "The victim suffers the Foreign Object Critical Injury, except instead of re-suffering Bonus Damage whenever they move further than 4 m/yds on foot in a Turn, they must instead beat a DV 15 Resist Torture/Drugs Skill Check or suffer 3d6 damage directly to their Hit Points."
       },
       {
-        "number": 3,
-        "roman": "III",
+        "number": "(III)",
         "name": "The Empress",
-        "effect": "The next three successful Attacks against one opponent in this combat automatically cause Critical Injuries.",
-        "notes": "Applies to Light Melee Weapons; not to Poisons/Biotoxins/Stun Batons or other weapons that normally can’t crit."
+        "effect": "The music swells. The next three successful Attack Checks made against a single opponent in this combat are guaranteed to inflict Critical Injuries, no matter what the damage dice say. This applies to Light Melee Weapons but not Biotoxins, Poisons, Stun Batons, and other weapons normally incapable of causing a Critical Injury."
       },
       {
-        "number": 4,
-        "roman": "IV",
+        "number": "(IV)",
         "name": "The Emperor",
-        "effect": "GM selects a Player. That Player chooses one Head crit and one Body crit; the victim suffers both."
+        "effect": "The GM selects a Player to choose one Critical Injury from the Head table (CP:R page 188), and one from the Body table (CP:R page 187). The victim suffers both of those Critical Injuries."
       },
       {
-        "number": 5,
-        "roman": "V",
+        "number": "(V)",
         "name": "The Hierophant",
-        "effect": "Attack deals double its post-armor, post-multiplier damage.",
-        "cost": "If a weapon made the Attack, that weapon is destroyed beyond repair."
+        "effect": "The Attack deals twice the amount of damage it would have done, after armor and any multipliers are taken into account. However, if it was made by a weapon, that weapon is destroyed beyond repair."
       },
       {
-        "number": 6,
-        "roman": "VI",
+        "number": "(VI)",
         "name": "The Lovers",
-        "effect": "Attack hits the head regardless of aim.",
-        "melee_bonus": "If Melee, the victim becomes the defender in a grapple with the attacker."
+        "effect": "This Attack now hits the head, even if it was originally aimed elsewhere. Additionally, if it was a Melee Attack that drew The Lovers, the victim is now considered to be defender in a grapple with the attacker."
       },
       {
-        "number": 7,
-        "roman": "VII",
+        "number": "(VII)",
         "name": "The Chariot",
-        "effect": "Armor at the hit location is further ablated by 5, even if the Attack didn’t penetrate."
+        "effect": "The Attack finds a fortuitous flaw in the target's armor, which forms a gaping hole. The victim's armor in the damaged location is ablated by an additional 5 points, even if it was not penetrated by the Attack."
       },
       {
-        "number": 8,
-        "roman": "VIII",
-        "alt_roman": "XI",
+        "number": "(VIII or XI)",
         "name": "Strength",
-        "effect": "Attack deals +25 damage, added before armor SP subtraction and before multipliers."
+        "effect": "The Attack deals an additional 25 damage. This additional damage is added to the rolled damage before armor SP is subtracted and/or any multipliers are calculated."
       },
       {
-        "number": 9,
-        "roman": "IX",
+        "number": "(IX)",
         "name": "The Hermit",
-        "effect": "Victim suffers Lost Eye twice (penalty applied once).",
-        "additional_penalty": "If left with no way to sense opponents, they take −4 to all Skill Checks (as if obscured)."
+        "effect": "The victim suffers the Lost Eye Critical Injury twice, although the penalty for the injury is only applied once. Should this leave a target without any ability to sense an opponent, any Skill Check they make suffers an additional -4 modifier, as if obscured by smoke or darkness."
       },
       {
-        "number": 10,
-        "roman": "X",
+        "number": "(X)",
         "name": "Wheel of Fortune",
-        "ranged_case": "GM randomly selects a new target; the Attack hits that target instead.",
-        "melee_case": "Attacker immediately falls prone and the Attack misses.",
-        "weapon_side_effect": "Weapon used malfunctions (Action to clear)."
+        "effect": "The Attack goes wild. If it was a Ranged Attack, the GM randomly determines a new target to replace the intended target. If it was a Melee Attack, the person who caused Wheel of Fortune to be drawn immediately falls prone, and the Attack is considered a miss instead of a hit. Either way, any weapon used to make the Attack malfunctions, requiring an Action to reverse the malfunction before it can be used again."
       },
       {
-        "number": 11,
-        "roman": "XI",
-        "alt_roman": "VIII",
+        "number": "(XI)",
         "name": "Justice",
-        "effect": "For 1 minute, victim suffers −5 Evasion vs Melee and cannot dodge Ranged Attacks."
+        "effect": "The Attack knocks the wind out of the victim. For the next minute they suffer a -5 penalty to Evasion Skill Checks when attempting to avoid a Melee Attack and they cannot dodge Ranged Attacks at all."
       },
       {
-        "number": 12,
-        "roman": "XII",
+        "number": "(XII)",
         "name": "The Hanged Man",
-        "effect": "Victim is knocked prone and suffers Spinal Injury and Whiplash."
+        "effect": "The victim is knocked prone and suffers the Spinal Injury and Whiplash Critical Injuries."
       },
       {
-        "number": 13,
-        "roman": "XIII",
+        "number": "(XIII)",
         "name": "Death",
-        "effect": "Victim immediately rolls one Death Save. On a fail, they drop to 0 HP and are unconscious for 1 minute.",
-        "aftereffect": "On regaining consciousness, they regain 3d6 Humanity (up to max)."
+        "effect": "The victim must immediately roll a single Death Save. If they fail, they are reduced to 0 HP and are knocked unconscious for one minute. Upon regaining consciousness, the victim regains 3d6 Humanity Points (up to their maximum Humanity) from the experience."
       },
       {
-        "number": 14,
-        "roman": "XIV",
+        "number": "(XIV)",
         "name": "Temperance",
-        "effect": "Victim chooses one limb to be Dismembered and a different limb to be Broken."
+        "effect": "The victim must choose one of their limbs to suffer a Dismembered Critical Injury, and then must choose a different one of their limbs to suffer a Broken Critical Injury."
       },
       {
-        "number": 15,
-        "roman": "XV",
+        "number": "(XV)",
         "name": "The Devil",
-        "effect": "Attack hits the head. Victim suffers Brain Injury and Lost Ear."
+        "effect": "This Attack now hits the head, even if it was originally aimed elsewhere. Additionally, the victim suffers the Brain Injury and Lost Ear Critical Injuries."
       },
       {
-        "number": 16,
-        "roman": "XVI",
+        "number": "(XVI)",
         "name": "The Tower",
-        "effect": "Victim suffers Cracked Skull, Crushed Windpipe, and Whiplash; these cause no bonus damage.",
-        "buff": "For 1 hour, victim ignores the effects of the Seriously Wounded state (can’t feel pain)."
+        "effect": "The victim suffers the Cracked Skull, Crushed Windpipe, and Whiplash Critical Injuries. These Injuries deal no Bonus Damage. For one hour, the victim cannot feel pain and can ignore the effects of the Seriously Wounded Wound State."
       },
       {
-        "number": 17,
-        "roman": "XVII",
+        "number": "(XVII)",
         "name": "The Star",
-        "ranged_case": "Attack hits the first target, then automatically hits a second enemy within 20 m (GM’s choice); if none, it hits the original target again in the body. Roll new damage for the second hit.",
-        "melee_case": "Victim suffers Broken Ribs and Collapsed Lung."
+        "effect": "If the Star was drawn due to a Ranged Attack, it hits the first target, passes through, and ricochets into a second enemy within 20 m/yards, chosen by the GM. If there is no additional enemy, the ricochet instead hits the original target a second time. This ricochet Attack always hits and does so in the body. Roll new damage dice for the ricochet Attack. If The Star was drawn due to a Melee Attack, the victim suffers the Broken Ribs and Collapsed Lung Critical Injuries."
       },
       {
-        "number": 18,
-        "roman": "XVIII",
+        "number": "(XVIII)",
         "name": "The Moon",
-        "effect": "Victim suffers Foreign Object twice (once head, once body).",
-        "melee_weapon_rider": "If drawn by a melee weapon Attack, the weapon is stuck in the victim and the attacker is disarmed."
+        "effect": "The victim suffers the Foreign Object Critical Injury twice, once in the body and once in the head. If The Moon was drawn by a Melee Attack made using a melee weapon, that weapon is now stuck in the victim's body, and the attacker is disarmed."
       },
       {
-        "number": 19,
-        "roman": "XIX",
+        "number": "(XIX)",
         "name": "The Sun",
-        "effect": "If the victim carries explosives, one explodes immediately (GM chooses). Otherwise, GM selects a non-weapon item on the victim to be destroyed beyond repair."
+        "effect": "If the victim is carrying any grenades or other explosives, the GM chooses one of them to explode immediately. If they weren't carrying any grenades, the GM chooses a non-weapon piece of equipment on the victim to destroy beyond repair."
       },
       {
-        "number": 20,
-        "roman": "XX",
+        "number": "(XX)",
         "name": "Judgement",
-        "effect": "Victim suffers Crushed Fingers on one hand and Dismembered Hand on another."
+        "effect": "The victim suffers the Crushed Fingers Critical Injury on one of their hands, and the Dismembered Hand Critical Injury on another hand."
       },
       {
-        "number": 21,
-        "roman": "XXI",
+        "number": "(XXI)",
         "name": "The World",
-        "effect": "The attacker takes an extra Turn immediately after this one; during it they get +5 to any Skill Check, ignore all Wound State penalties, and don’t roll Death Saves if Mortally Wounded."
+        "effect": "The character who caused The World to be drawn may take an additional Turn after this one. During this additional Turn they receive a +5 to any Skill Check, ignore the negative effects of all Wound States, and do not have to make a Death Save if Mortally Wounded."
       }
     ]
-  }
-  
+}
