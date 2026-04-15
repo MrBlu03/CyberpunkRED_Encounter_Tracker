@@ -44,7 +44,7 @@ interface CartItem extends FVTTItem {
 
 interface Vendor {
   name: string;
-  type: 'weapons' | 'armor' | 'clothing' | 'general' | 'ripper-doc' | 'tech' | 'black-market';
+  type: 'weapons' | 'armor' | 'clothing' | 'general' | 'ripper-doc' | 'tech' | 'black-market' | 'dealership';
   location: 'city-center' | 'corpo-plaza' | 'watson' | 'westbrook' | 'santo-domingo' | 'pacifica' | 'badlands';
   description: string;
   specialties: string[];
@@ -59,7 +59,8 @@ const VENDOR_TYPES: Record<string, { name: string; specialties: string[]; markup
   'general': { name: 'General Store', specialties: ['gear', 'ammo', 'drug'], markup: 1.3 },
   'ripper-doc': { name: 'Ripperdoc', specialties: ['cyberware'], markup: 1.5 },
   'tech': { name: 'Tech Shop', specialties: ['gear', 'cyberware'], markup: 1.4 },
-  'black-market': { name: 'Black Market', specialties: ['weapon', 'cyberware', 'drug', 'armor'], markup: 2.0 }
+  'black-market': { name: 'Black Market', specialties: ['weapon', 'cyberware', 'drug', 'armor'], markup: 2.0 },
+  'dealership': { name: 'Vehicle Dealership', specialties: ['vehicle'], markup: 1.2 }
 };
 
 const LOCATIONS: Record<string, { name: string; description: string; qualityBonus: number }> = {
@@ -126,9 +127,31 @@ export function ShopGenerator({ critMode = 'raw', tarotDeck }: ShopGeneratorProp
     
     // Type filter
     if (filters.type !== 'all') {
-      filtered = filtered.filter(item => item.type === filters.type);
+        if (filters.type.startsWith('vehicle-')) {
+          const vType = filters.type.replace('vehicle-', '');
+          filtered = filtered.filter(item => {
+            if (item.type !== 'vehicle') return false;
+            if (item.system?.category === vType) return true;
+            
+            const searchStr = `${item.name} ${item.system?.description?.value || ''}`.toLowerCase();
+            switch (vType) {
+              case 'car':
+                return searchStr.includes('groundcar') || searchStr.includes('car') || searchStr.includes('van') || searchStr.includes('truck');
+              case 'motorcycle':
+                return searchStr.includes('motorcycle') || searchStr.includes('bike') || searchStr.includes('trike') || searchStr.includes('bicycle');
+              case 'air':
+                return searchStr.includes('av-') || searchStr.includes('av ') || searchStr.includes('helicopter') || searchStr.includes('aerodyne') || searchStr.includes('gyrocopter') || searchStr.includes('air');
+              case 'water':
+                return searchStr.includes('watercraft') || searchStr.includes('boat') || searchStr.includes('yacht') || searchStr.includes('seaskiff') || searchStr.includes('submarine') || searchStr.includes('jet ski');
+              default:
+                return false;
+            }
+          });
+        } else {
+          filtered = filtered.filter(item => item.type === filters.type);
+        }
     }
-    
+
     // Search filter
     if (filters.search) {
       const searchLower = filters.search.toLowerCase();
@@ -413,10 +436,18 @@ export function ShopGenerator({ critMode = 'raw', tarotDeck }: ShopGeneratorProp
       { _id: 'g10', name: 'Grapple Gun', type: 'gear', system: { price: { market: 100 }, quality: 'standard', description: { value: 'Fires grappling hook' } } },
       { _id: 'g11', name: 'Handcuffs', type: 'gear', system: { price: { market: 10 }, quality: 'standard', description: { value: 'Restraints' } } },
       { _id: 'g12', name: 'Homing Tracer', type: 'gear', system: { price: { market: 500 }, quality: 'standard', description: { value: 'Tracking device' } } },
-    ];
-  };
-  
-  
+        // Vehicles
+        { _id: 'v1', name: 'Compact Groundcar', type: 'vehicle', system: { price: { market: 10000 }, category: 'car', description: { value: 'Basic 2-door urban car.' } } },
+        { _id: 'v2', name: 'High Performance Groundcar', type: 'vehicle', system: { price: { market: 20000 }, category: 'car', description: { value: 'Sports car with higher top speed.' } } },
+        { _id: 'v3', name: 'Motorbike', type: 'vehicle', system: { price: { market: 5000 }, category: 'motorcycle', description: { value: 'Standard street bike.' } } },
+        { _id: 'v4', name: 'High Performance Motorbike', type: 'vehicle', system: { price: { market: 10000 }, category: 'motorcycle', description: { value: 'Racing superbike.' } } },
+        { _id: 'v5', name: 'AV-4', type: 'vehicle', system: { price: { market: 50000 }, category: 'air', description: { value: 'Aerodyne flying vehicle. Corpo standard.' } } },
+        { _id: 'v6', name: 'Seaskiff', type: 'vehicle', system: { price: { market: 5000 }, category: 'water', description: { value: 'Personal watercraft / speedboat.' } } },
+        { _id: 'v7', name: 'Cabin Cruiser', type: 'vehicle', system: { price: { market: 20000 }, category: 'water', description: { value: 'Small yacht for coastal travel.' } } },
+      ];
+    };
+
+
   const generateRandomVendor = () => {
     const vendorTypes = Object.keys(VENDOR_TYPES);
     const locations = Object.keys(LOCATIONS);
@@ -813,8 +844,15 @@ Generated by Cyberpunk RED GM Tool
             <option value="ammo">Ammo</option>
             <option value="drug">Drugs</option>
             <option value="clothing">Clothing</option>
-          </select>
-          
+              <optgroup label="Vehicles">
+                <option value="vehicle">All Vehicles</option>
+                <option value="vehicle-car">Cars & Groundcars</option>
+                <option value="vehicle-motorcycle">Motorcycles & Bikes</option>
+                <option value="vehicle-air">Air Vehicles (AVs)</option>
+                <option value="vehicle-water">Watercraft</option>
+              </optgroup>
+            </select>
+
           {/* Price Range */}
           <select
             value={filters.priceRange}

@@ -70,9 +70,10 @@ function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [npcSubTab, setNpcSubTab] = useState<'generator' | 'manual'>('generator');
   
-  // Refs for animations
+  // Refs for animations and accessing inner components
   const mainRef = useRef<HTMLDivElement>(null);
   const sidebarRef = useRef<HTMLDivElement>(null);
+  const diceRollerRef = useRef<{ rollCustom: (expr: string) => void }>(null);
   
   // Apply theme
   useEffect(() => {
@@ -323,8 +324,12 @@ function App() {
         shield: npc.equipment.armor.shield,
         shieldEquipped: true
       } : undefined,
-      weapons: npc.equipment.weapons
-    };
+      weapons: npc.equipment.weapons,
+        isGoon: npc.isGoon,
+        tier: npc.tier,
+        combatNumber: npc.combatNumber,
+        nonCombatNumber: npc.nonCombatNumber
+      };
     setParticipants(prev => [...prev, participant]);
     setActiveTab('encounter');
     toast.success(`${npc.name} added to encounter!`);
@@ -349,8 +354,12 @@ function App() {
         shield: npc.equipment.armor.shield,
         shieldEquipped: true
       } : undefined,
-      weapons: npc.equipment.weapons
-    }));
+      weapons: npc.equipment.weapons,
+        isGoon: npc.isGoon,
+        tier: npc.tier,
+        combatNumber: npc.combatNumber,
+        nonCombatNumber: npc.nonCombatNumber
+      }));
     setParticipants(prev => [...prev, ...newParticipants]);
     setActiveTab('encounter');
     toast.success(`${npcs.length} NPCs added to encounter!`);
@@ -476,7 +485,7 @@ function App() {
           ref={mainRef}
           className={`main-content flex-1 transition-all duration-300 ${sidebarOpen ? 'md:ml-64' : 'md:ml-16'} ml-0`}
         >
-          <div className="p-4 lg:p-8 max-w-7xl mx-auto">
+          <div className="p-4 lg:p-8 w-full max-w-[1920px] mx-auto">
             {/* Tab Content */}
             <div className="space-y-6">
               {activeTab === 'encounter' && (
@@ -497,6 +506,14 @@ function App() {
                   onLoadEncounter={loadSavedEncounter}
                   onDeleteEncounter={deleteSavedEncounter}
                   onExportEncounters={exportEncounters}
+                  onRollDamage={(expr, _label) => {
+                     console.log("Rolling damage from Encounter Tracker!", expr);
+                     if (diceRollerRef.current) {
+                       diceRollerRef.current.rollCustom(expr);
+                     } else {
+                       console.error("DiceRoller ref is not attached!");
+                     }
+                  }}
                   onImportEncounters={importEncounters}
                   onOpenDamageDialog={openDamageDialog}
                   critMode={critMode}
@@ -624,7 +641,7 @@ function App() {
       </div>
       
       {/* Floating Dice Roller */}
-      <DiceRoller critMode={critMode} tarotDeck={tarotDeck} />
+<DiceRoller ref={diceRollerRef} critMode={critMode} tarotDeck={tarotDeck} />
       
       {/* Damage Dialog */}
       <DamageDialog

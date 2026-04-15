@@ -140,7 +140,7 @@ interface ShopItem {
     headLocation?: { sp: number };
     price?: { market: number };
     hlCost?: number;
-    category?: string;
+    category?: string; weaponType?: string;
     description?: { value: string };
   };
 }
@@ -381,7 +381,7 @@ export function NPCGenerator({
       weaponSkill: shopWeapon.system.weaponSkill || 'Handgun',
       attackmod: shopWeapon.system.attackmod || 0,
       rof: shopWeapon.system.rof,
-      ranges: shopWeapon.system.ranges
+      ranges: shopWeapon.system.ranges, weaponType: shopWeapon.system.weaponType
     }
   });
   

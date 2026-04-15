@@ -23,7 +23,7 @@ interface FVTTItem {
     weaponSkill?: string;
     attackmod?: number;
     rof?: number;
-    magazine?: { max: number };
+    magazine?: { max: number }; weaponType?: string;
     ranges?: {
       pointBlank?: { range: number; dv: number };
       close?: { range: number; dv: number };
@@ -209,7 +209,7 @@ export function ManualNPCCreator({
           weaponSkill: item.system.weaponSkill || 'Handgun',
           attackmod: item.system.attackmod || 0,
           rof: item.system.rof,
-          ranges: item.system.ranges
+          ranges: item.system.ranges, weaponType: item.system.weaponType
         }
       };
       
@@ -266,7 +266,7 @@ export function ManualNPCCreator({
         damage: customWeapon.system?.damage || '2d6',
         weaponSkill: customWeapon.system?.weaponSkill || 'Handgun',
         attackmod: customWeapon.system?.attackmod || 0,
-        rof: customWeapon.system?.rof || 1
+        rof: customWeapon.system?.rof || 1, weaponType: customWeapon.system?.weaponType
       }
     };
     
@@ -464,7 +464,7 @@ export function ManualNPCCreator({
       
       {/* Basic Info */}
       <div className="glass-card rounded-xl p-4">
-        <div className="grid md:grid-cols-3 gap-4">
+        <div className="grid md:grid-cols-4 gap-4">
           <div>
             <label className="text-xs uppercase tracking-wider text-muted-foreground mb-1 block">Name</label>
             <Input
@@ -506,11 +506,42 @@ export function ManualNPCCreator({
               <span className="text-xs text-muted-foreground">(auto from BODY+WILL)</span>
             </div>
           </div>
+          <div>
+            <label className="text-xs uppercase tracking-wider text-muted-foreground mb-1 block">Goon Tier</label>
+            <select
+              value={npc.tier || 'none'}
+              onChange={e => {
+                const val = e.target.value;
+                if (val === 'none') {
+                  setNpc(prev => ({ ...prev, isGoon: false, tier: undefined, combatNumber: undefined, nonCombatNumber: undefined }));
+                } else {
+                  let cn = 11, ncn = 6, hp = 30;
+                  if (val === 'easy') { cn = 8; ncn = 4; hp = 20; }
+                  if (val === 'elite') { cn = 14; ncn = 8; hp = 45; }
+                  setNpc(prev => ({
+                    ...prev,
+                    isGoon: true,
+                    tier: val as any,
+                    combatNumber: cn,
+                    nonCombatNumber: ncn,
+                    hitPoints: { current: hp, max: hp }
+                  }));
+                }
+              }}
+              className="w-full px-3 py-2 bg-background border border-input rounded-md"
+            >
+              <option value="none">None (Full Stats)</option>
+              <option value="easy">Easy (CN+8/NC+4)</option>
+              <option value="average">Average (CN+11/NC+6)</option>
+              <option value="elite">Elite (CN+14/NC+8)</option>
+            </select>
+          </div>
         </div>
       </div>
-      
-      {/* Tabs */}
-      <div className="flex gap-2">
+
+      {/* Hide Tabs if Goon */}
+      {!npc.isGoon && (
+        <div className="flex gap-2">
         <button
           onClick={() => setActiveTab('stats')}
           className={`px-4 py-2 rounded-lg transition-colors ${
@@ -540,6 +571,8 @@ export function ManualNPCCreator({
         </button>
       </div>
       
+      )};
+
       {/* Stats Tab */}
       {activeTab === 'stats' && (
         <div className="glass-card rounded-xl p-6">

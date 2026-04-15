@@ -1,15 +1,16 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
-import { 
-  Plus, Trash2, Save, Upload, Download, Dices, Play, RotateCcw, 
+import {
+  Plus, Trash2, Save, Upload, Download, Dices, Play, RotateCcw,
   Skull, Heart, Crosshair, ChevronDown, ChevronUp,
-  User, Bot, AlertTriangle, Users, Target, Sparkles, Zap, LayoutPanelTop
+  User, Bot, AlertTriangle, Users, Target, Sparkles, Zap, LayoutPanelTop, Info
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { toast } from 'sonner';
 import { rollDiceDetailed, d10 } from '@/lib/dice';
-import { SINGLE_SHOT_DV, getDVTableKey } from '@/lib/weaponRanges';
 import type { Participant, EncounterState, SavedEncounter, Weapon, CritMode, TarotDeckState } from '@/types';
 
 interface EncounterTrackerProps {
@@ -30,6 +31,7 @@ interface EncounterTrackerProps {
   onDeleteEncounter: (id: string) => void;
   onExportEncounters: () => void;
   onImportEncounters: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onRollDamage?: (notation: string, label?: string) => void;
   onOpenDamageDialog: (participant: Participant) => void;
   critMode?: CritMode;
   tarotDeck?: TarotDeckState;
@@ -39,6 +41,60 @@ interface EncounterTrackerProps {
 const calculateAttackRoll = (ref: number, weaponSkill: number = 0, attackMod: number = 0): { roll: number; total: number } => {
   const roll = d10();
   return { roll, total: roll + ref + weaponSkill + attackMod };
+};
+
+const formatWeaponCategory = (weapon: Weapon): string => {
+  const type = weapon.system?.weaponType;
+  if (typeof type === 'string' && type) {
+    const result = type.replace(/([A-Z])/g, ' $1');
+    return result.charAt(0).toUpperCase() + result.slice(1);
+  }
+  
+  // Fallback for older saves or custom weapons that didn't retain weaponType
+  if (weapon.name) {
+    const lowerName = weapon.name.toLowerCase();
+    if (lowerName.includes('assault rifle')) return 'Assault Rifle';
+    if (lowerName.includes('sniper rifle')) return 'Sniper Rifle';
+    if (lowerName.includes('shotgun')) return 'Shotgun';
+    if (lowerName.includes('smg') || lowerName.includes('submachine')) return 'SMG';
+    
+    // If the name explicitly says what it is
+    if (lowerName.includes('heavy pistol')) return 'Heavy Pistol';
+    if (lowerName.includes('very heavy pistol')) return 'Very Heavy Pistol';
+    if (lowerName.includes('medium pistol')) return 'Medium Pistol';
+    if (lowerName.includes('pistol')) return 'Pistol';
+    
+    if (lowerName.includes('melee') || lowerName.includes('katana') || lowerName.includes('sword') || lowerName.includes('knife')) return 'Melee Weapon';
+    if (lowerName.includes('bow')) return 'Bow / Crossbow';
+    if (lowerName.includes('grenade')) return 'Grenade Launcher';
+    if (lowerName.includes('rocket')) return 'Rocket Launcher';
+  }
+  
+  if (weapon.system?.weaponSkill) {
+    const skill = weapon.system.weaponSkill.toLowerCase();
+    const damage = weapon.system.damage || '';
+    
+    if (skill.includes('handgun')) {
+      if (damage.includes('4d6')) return 'Very Heavy Pistol';
+      if (damage.includes('3d6')) return 'Heavy Pistol';
+      if (damage.includes('2d6')) return 'Medium Pistol';
+      return 'Pistol';
+    }
+    
+    if (skill.includes('shoulder arms')) {
+      if (damage.includes('5d6')) return 'Assault Rifle';
+      if (damage.includes('3d6')) return 'Shotgun';
+      return 'Rifle';
+    }
+    
+    if (skill.includes('melee')) return 'Melee Weapon';
+    if (skill.includes('heavy')) return 'Heavy Weapon';
+    if (skill.includes('archery')) return 'Bow / Crossbow';
+    
+    return weapon.system.weaponSkill;
+  }
+  
+  return 'Weapon';
 };
 
 export function EncounterTracker({
@@ -59,6 +115,7 @@ export function EncounterTracker({
   onDeleteEncounter,
   onExportEncounters,
   onImportEncounters,
+  onRollDamage,
   onOpenDamageDialog,
   critMode = 'raw',
   tarotDeck
@@ -72,7 +129,8 @@ export function EncounterTracker({
   });
   const [expandedRows, setExpandedRows] = useState<Set<string>>(new Set());
   const [showSaved, setShowSaved] = useState(false);
-  const [attackRolls, setAttackRolls] = useState<Record<string, { roll: number; total: number; weaponName: string }>>({});
+  const [attackRolls, setAttackRolls] = useState<Record<string, Array<{ roll: number; total: number; weaponName: string }>>>({});
+  const lastAutoRolledRound = useRef(-1);
   const tableRef = useRef<HTMLTableElement>(null);
   
   // Animate new rows
@@ -133,6 +191,10 @@ export function EncounterTracker({
   // Clickable Dice Component
   const ClickableDice = ({ notation, label }: { notation: string; label?: string }) => {
     const handleRoll = () => {
+      if (onRollDamage) {
+        onRollDamage(notation, label);
+        return;
+      }
       const result = rollDiceDetailed(notation);
       const critCount = result.rolls.filter(r => r === 6).length;
       const isCritical = critCount >= 2;
@@ -175,145 +237,178 @@ export function EncounterTracker({
     const participant = participants.find(p => p.id === participantId);
     if (!participant) return;
     
-    const weaponSkill = 0; // Could be expanded to track skills per participant
-    const attackMod = weapon.system.attackmod || 0;
-    const result = calculateAttackRoll(participant.ref, weaponSkill, attackMod);
+    let weaponSkill = 0;
+    let baseRef = participant.ref;
     
+    if (participant.isGoon) {
+      // 3-Goon method: Combat number replaces REF + Skill
+      baseRef = participant.combatNumber || 11;
+      weaponSkill = 0; 
+    } else {
+      const skillName = weapon.system.weaponSkill || '';
+      weaponSkill = participant.skills?.[skillName] || 0;
+    }
+
+    const attackMod = weapon.system.attackmod || 0;
+    const rof = weapon.system.rof || 1;
+
+    // Support ROF by rolling multiple times
+    const attacks: Array<{ roll: number; total: number; weaponName: string }> = [];
+    for (let i = 0; i < rof; i++) {
+        attacks.push({ ...calculateAttackRoll(baseRef, weaponSkill, attackMod), weaponName: weapon.name });
+    }
+
     setAttackRolls(prev => ({
       ...prev,
-      [`${participantId}-${weapon._id}`]: { ...result, weaponName: weapon.name }
+      [`${participantId}-${weapon._id}`]: attacks
     }));
+
+    attacks.forEach((result, idx) => {
+        const isCrit = result.roll === 10;
+        const prefix = rof > 1 ? `[Shot ${idx + 1}] ` : '';
+        const modStr = attackMod ? ` + Mod(${attackMod})` : '';
+        const statsStr = participant.isGoon 
+          ? `CN(${participant.combatNumber || 11})${modStr}`
+          : `REF(${participant.ref}) + Skill(${weaponSkill})${modStr}`;
+
+        if (isCrit) {
+          toast.success(`🎲 ${prefix}CRITICAL ATTACK! ${weapon.name}: d10(${result.roll}) + ${statsStr} = ${result.total}`, {
+            icon: <Sparkles className="w-5 h-5 text-warning" />
+          });
+        } else {
+          toast.success(`${prefix}Attack Roll - ${weapon.name}: d10(${result.roll}) + ${statsStr} = ${result.total}`);
+        }
+    });
+  };
+
+  const rollAllNPCAttacks = () => {
+    const npcs = participants.filter(p => !p.isPC && p.hp > 0);
+    if (npcs.length === 0) {
+      toast.info("No active NPCs to roll attacks for.");
+      return;
+    }
     
-    const isCrit = result.roll === 6;
-    if (isCrit) {
-      toast.success(`🎲 CRITICAL ATTACK! ${weapon.name}: d10(${result.roll}) + REF(${participant.ref}) = ${result.total}`, {
-        icon: <Sparkles className="w-5 h-5 text-warning" />
+    let rollCount = 0;
+    npcs.forEach(npc => {
+      if (npc.weapons && npc.weapons.length > 0) {
+        rollAttack(npc.id, npc.weapons[0]);
+        rollCount++;
+      }
+    });
+    
+    if (rollCount > 0) {
+      toast.success(`Rolled attacks for ${rollCount} NPCs!`, {
+        icon: <Crosshair className="w-5 h-5 text-primary" />
       });
-    } else {
-      toast.success(`Attack Roll - ${weapon.name}: d10(${result.roll}) + REF(${participant.ref}) = ${result.total}`);
     }
   };
-  
-  // Weapon Range DV Chart - only for ranged weapons
-  const WeaponRangeChart = ({ weapon }: { weapon: { name: string; system: { damage?: string; rof?: number; weaponType?: string; isRanged?: boolean; ranges?: Record<string, { range: number; dv: number }> } } }) => {
-    const weaponType = weapon.system.weaponType || '';
-    const rof = weapon.system.rof || 1;
-    const isRanged = weapon.system.isRanged === true;
-    
-    // Get the correct DV table key
-    const dvKey = getDVTableKey(weaponType, isRanged);
-    const isMelee = dvKey === 'melee';
-    
-    // Only show DV chart for ranged weapons
-    if (isMelee) {
-      return (
-        <div className="mt-1 text-[10px] text-muted-foreground italic">Melee - DV based on opponent's Defense</div>
-      );
+
+  // Auto-roll attacks on new round
+  useEffect(() => {
+    if (encounter.active && encounter.round > 0 && lastAutoRolledRound.current !== encounter.round) {
+      lastAutoRolledRound.current = encounter.round;
+      rollAllNPCAttacks();
     }
-    
-    // Get DV values for single shot at each range band
-    const rangeBands = [
-      { name: '0-6m', max: 6 },
-      { name: '7-12m', max: 12 },
-      { name: '13-25m', max: 25 },
-      { name: '26-50m', max: 50 },
-      { name: '51-100m', max: 100 },
-      { name: '101-200m', max: 200 },
-    ];
-    
-    const singleShotDVs = SINGLE_SHOT_DV[dvKey] || SINGLE_SHOT_DV.pistol;
-    
-    return (
-      <div className="mt-1.5 p-1.5 bg-background/80 border border-border/50 rounded text-xs">
-        <div className="text-[10px] text-muted-foreground mb-1 font-mono">RANGE DV (single)</div>
-        <div className="flex gap-1">
-          {rangeBands.map((band, idx) => {
-            const dv = singleShotDVs[idx] || 15;
-            if (dv >= 99) return null; // N/A
-            return (
-              <div key={band.name} className="flex flex-col items-center bg-secondary/60 rounded px-1.5 py-0.5 min-w-[32px]">
-                <span className="text-[9px] text-muted-foreground">{band.name}</span>
-                <span className="font-bold text-primary">{dv}</span>
-              </div>
-            );
-          })}
-        </div>
-        {rof > 1 && (
-          <div className="mt-1 pt-1 border-t border-border/30">
-            <div className="text-[9px] text-muted-foreground mb-0.5 font-mono">AUTOFIRE</div>
-            <div className="flex gap-1">
-              <div className="flex flex-col items-center bg-secondary/60 rounded px-1.5 py-0.5">
-                <span className="text-[9px] text-muted-foreground">0-12m</span>
-                <span className="font-bold text-accent">17</span>
-              </div>
-              <div className="flex flex-col items-center bg-secondary/60 rounded px-1.5 py-0.5">
-                <span className="text-[9px] text-muted-foreground">13-25m</span>
-                <span className="font-bold text-accent">19</span>
-              </div>
-              <div className="flex flex-col items-center bg-secondary/60 rounded px-1.5 py-0.5">
-                <span className="text-[9px] text-muted-foreground">26-50m</span>
-                <span className="font-bold text-accent">21</span>
-              </div>
-              <div className="flex flex-col items-center bg-secondary/60 rounded px-1.5 py-0.5">
-                <span className="text-[9px] text-muted-foreground">51-100m</span>
-                <span className="font-bold text-accent">24</span>
-              </div>
-              <div className="flex flex-col items-center bg-secondary/60 rounded px-1.5 py-0.5">
-                <span className="text-[9px] text-muted-foreground">&gt;100m</span>
-                <span className="font-bold text-accent">27</span>
-              </div>
-            </div>
-          </div>
-        )}
-      </div>
-    );
-  };
+  }, [encounter.active, encounter.round]);
   
-  // Weapon Quick View Component with Attack Button
-  const WeaponQuickView = ({ participant }: { participant: Participant }) => {
+  // Attack Quick View Component with Attack Button
+  const AttackQuickView = ({ participant }: { participant: Participant }) => {
     const weapons = participant.weapons;
     if (!weapons || weapons.length === 0) return <span className="text-muted-foreground text-xs">-</span>;
-    
+
     return (
-      <div className="space-y-1">
+      <div className="flex flex-wrap gap-2">
         {weapons.map((weapon, idx) => {
           const attackKey = `${participant.id}-${weapon._id}`;
           const attackResult = attackRolls[attackKey];
-          
+
+          if (!attackResult || attackResult.length === 0) return null;
+
           return (
-            <div key={idx} className="text-xs">
-              <div className="flex items-center gap-2 flex-wrap">
-                <Target className="w-3 h-3 text-primary" />
-                <span className="font-medium">{weapon.name}</span>
-                
-                {/* Attack Roll Button */}
-                <button
-                  onClick={() => rollAttack(participant.id, weapon)}
-                  className="inline-flex items-center gap-1 px-2 py-0.5 bg-primary/20 hover:bg-primary/40 text-primary rounded font-mono text-xs transition-colors"
-                  title="Roll Attack"
-                >
-                  <Zap className="w-3 h-3" />
-                  ATK
-                </button>
-                
-                {/* Show Attack Result */}
-                {attackResult && (
-                  <span className={`px-2 py-0.5 rounded font-mono font-bold ${attackResult.roll === 6 ? 'bg-warning/30 text-warning' : 'bg-secondary'}`}>
-                    {attackResult.total}
+            <div key={idx} className="flex flex-col gap-1 bg-secondary/10 border border-border/50 rounded-md p-1.5 min-w-[60px] items-center">
+                {!participant.isPC ? (
+                  <DropdownMenu>
+                    <DropdownMenuTrigger className="text-[10px] text-muted-foreground hover:text-primary transition-colors focus:outline-none leading-none truncate max-w-[80px]" title="View details">
+                      {formatWeaponCategory(weapon)}
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent className="p-2">
+                      <DropdownMenuLabel className="font-medium text-sm">
+                        {weapon.name}
+                      </DropdownMenuLabel>
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                ) : (
+                  <span className="text-[10px] text-muted-foreground leading-none truncate max-w-[80px]" title={weapon.name}>
+                    {weapon.name}
                   </span>
                 )}
-                
-                {/* Damage Dice */}
-                {weapon.system.damage && <ClickableDice notation={weapon.system.damage} label="DMG" />}
-                
-                {weapon.system.rof && (
-                  <span className="px-1.5 py-0.5 bg-secondary rounded font-mono">ROF:{weapon.system.rof}</span>
-                )}
+              <div className="flex gap-1 flex-wrap justify-center">
+                {attackResult.map((res, i) => (
+                  <div key={i} className={`flex items-center justify-center w-7 h-7 rounded border shadow-sm ${res.roll === 10 ? 'bg-warning/20 border-warning text-warning' : 'bg-background border-border'}`}>
+                    <span className="font-mono font-bold text-sm" title={`Roll: ${res.roll}`}>{res.total}</span>
+                  </div>
+                ))}
               </div>
-              <WeaponRangeChart weapon={weapon} />
             </div>
           );
         })}
+      </div>
+    );
+  };
+
+  // Weapon Quick View just lists weapons
+  const WeaponQuickView = ({ participant }: { participant: Participant }) => {
+    const weapons = participant.weapons;
+    if (!weapons || weapons.length === 0) return <span className="text-muted-foreground text-xs">-</span>;
+
+    return (
+      <div className="flex flex-wrap items-center gap-2">
+        {weapons.map((weapon, idx) => (
+          <div key={idx} className="text-xs">
+            <div className="flex items-center gap-1.5 flex-nowrap bg-secondary/10 p-1.5 rounded-md">
+              <Target className="w-3 h-3 text-primary" />
+                {!participant.isPC ? (
+                  <DropdownMenu>
+                    <DropdownMenuTrigger className="font-medium truncate max-w-[100px] hover:text-primary transition-colors focus:outline-none" title="View details">
+                      {formatWeaponCategory(weapon)}
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent className="p-2">
+                      <DropdownMenuLabel className="font-medium text-sm">
+                        {weapon.name}
+                      </DropdownMenuLabel>
+                      <DropdownMenuSeparator />
+                      <div className="text-xs text-muted-foreground px-2 py-1 space-y-1">
+                        <p>Skill: {weapon.system.weaponSkill || 'N/A'}</p>
+                        <p>Damage: {weapon.system.damage || 'N/A'}</p>
+                        <p>ROF: {weapon.system.rof || 1}</p>
+                      </div>
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                ) : (
+                  <span className="font-medium truncate max-w-[100px]" title={weapon.name}>
+                    {weapon.name}
+                  </span>
+                )}
+
+              {/* Attack Roll Button */}
+              <button
+                onClick={() => rollAttack(participant.id, weapon)}
+                className="inline-flex items-center gap-1 px-2 py-0.5 bg-primary/20 hover:bg-primary/40 text-primary rounded font-mono text-xs transition-colors"
+                title="Roll Attack"
+              >
+                <Zap className="w-3 h-3" />
+                ATK
+              </button>
+
+              {/* Damage Dice */}
+              {weapon.system.damage && <ClickableDice notation={weapon.system.damage} label="DMG" />}
+
+              {weapon.system.rof && (
+                <span className="px-1.5 py-0.5 bg-secondary rounded font-mono">ROF:{weapon.system.rof}</span>
+              )}
+            </div>
+          </div>
+        ))}
       </div>
     );
   };
@@ -389,6 +484,126 @@ export function EncounterTracker({
       
       {/* Controls */}
       <div className="flex flex-wrap gap-2">
+        {encounter.active && (
+          <Button onClick={rollAllNPCAttacks} className="gap-2 cyber-btn bg-destructive/80 hover:bg-destructive text-destructive-foreground">
+            <Crosshair className="w-4 h-4" />
+            NPC Attacks
+          </Button>
+        )}
+        
+        <Dialog>
+          <DialogTrigger asChild>
+            <Button variant="outline" className="gap-2 border-primary/50 text-primary hover:bg-primary/20">
+              <Info className="w-4 h-4" />
+              Range DVs
+            </Button>
+          </DialogTrigger>
+          <DialogContent className="max-w-[90vw] md:max-w-3xl max-h-[85vh] overflow-y-auto cyber-panel p-6">
+            <DialogHeader>
+              <DialogTitle className="text-2xl font-bold font-display text-primary mb-4">
+                Range DV Reference
+              </DialogTitle>
+            </DialogHeader>
+            
+            <div className="text-sm space-y-6 text-foreground/90">
+              <p><strong>To hit a target with a ranged attack:</strong> REF + Relevant Weapon Skill + 1d10 must beat the Difficulty Value (DV) listed for the weapon at that specific range.</p>
+              
+              <div className="space-y-2">
+                <h3 className="text-primary font-bold">Single Shot DVs</h3>
+                <div className="overflow-x-auto border border-border rounded-md">
+                  <table className="w-full text-left text-xs bg-card">
+                    <thead className="bg-secondary/20">
+                      <tr>
+                        <th className="p-2 border-b">Weapon Type</th>
+                        <th className="p-2 border-b">0-6m</th>
+                        <th className="p-2 border-b">7-12m</th>
+                        <th className="p-2 border-b">13-25m</th>
+                        <th className="p-2 border-b">26-50m</th>
+                        <th className="p-2 border-b">51-100m</th>
+                        <th className="p-2 border-b">101-200m</th>
+                        <th className="p-2 border-b">201-400m</th>
+                        <th className="p-2 border-b">401-800m</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="border-b border-border/50"><td className="p-2 font-bold">Pistol</td><td className="p-2">13</td><td className="p-2">15</td><td className="p-2">20</td><td className="p-2">25</td><td className="p-2">30</td><td className="p-2">30</td><td className="p-2">-</td><td className="p-2">-</td></tr>
+                      <tr className="border-b border-border/50"><td className="p-2 font-bold">SMG</td><td className="p-2">15</td><td className="p-2">13</td><td className="p-2">15</td><td className="p-2">20</td><td className="p-2">25</td><td className="p-2">25</td><td className="p-2">30</td><td className="p-2">-</td></tr>
+                      <tr className="border-b border-border/50"><td className="p-2 font-bold">Shotgun (Slug)</td><td className="p-2">13</td><td className="p-2">15</td><td className="p-2">20</td><td className="p-2">25</td><td className="p-2">30</td><td className="p-2">35</td><td className="p-2">-</td><td className="p-2">-</td></tr>
+                      <tr className="border-b border-border/50"><td className="p-2 font-bold">Assault Rifle</td><td className="p-2">17</td><td className="p-2">16</td><td className="p-2">15</td><td className="p-2">13</td><td className="p-2">15</td><td className="p-2">20</td><td className="p-2">25</td><td className="p-2">30</td></tr>
+                      <tr className="border-b border-border/50"><td className="p-2 font-bold">Sniper Rifle</td><td className="p-2">30</td><td className="p-2">25</td><td className="p-2">25</td><td className="p-2">20</td><td className="p-2">15</td><td className="p-2">16</td><td className="p-2">17</td><td className="p-2">20</td></tr>
+                      <tr className="border-b border-border/50"><td className="p-2 font-bold">Bows/Crossbows</td><td className="p-2">15</td><td className="p-2">13</td><td className="p-2">15</td><td className="p-2">17</td><td className="p-2">20</td><td className="p-2">22</td><td className="p-2">-</td><td className="p-2">-</td></tr>
+                      <tr className="border-b border-border/50"><td className="p-2 font-bold">Grenade Launcher</td><td className="p-2">16</td><td className="p-2">15</td><td className="p-2">15</td><td className="p-2">17</td><td className="p-2">20</td><td className="p-2">22</td><td className="p-2">25</td><td className="p-2">-</td></tr>
+                      <tr className="border-b border-border/50"><td className="p-2 font-bold">Rocket Launcher</td><td className="p-2">17</td><td className="p-2">16</td><td className="p-2">15</td><td className="p-2">15</td><td className="p-2">20</td><td className="p-2">20</td><td className="p-2">25</td><td className="p-2">30</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <h3 className="text-secondary font-bold">Autofire DVs (Core)</h3>
+                  <div className="overflow-x-auto border border-border rounded-md">
+                    <table className="w-full text-left text-xs bg-card">
+                      <thead className="bg-secondary/20">
+                        <tr>
+                          <th className="p-2 border-b">Type</th>
+                          <th className="p-2 border-b">0-6m</th>
+                          <th className="p-2 border-b">7-12m</th>
+                          <th className="p-2 border-b">13-25m</th>
+                          <th className="p-2 border-b">26-50m</th>
+                          <th className="p-2 border-b">51-100m</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr className="border-b border-border/50"><td className="p-2 font-bold">SMG</td><td className="p-2">15</td><td className="p-2">13</td><td className="p-2">15</td><td className="p-2">20</td><td className="p-2">25</td></tr>
+                        <tr className="border-b border-border/50"><td className="p-2 font-bold">AR</td><td className="p-2">17</td><td className="p-2">16</td><td className="p-2">15</td><td className="p-2">13</td><td className="p-2">15</td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <div className="space-y-2">
+                  <h3 className="text-secondary font-bold">Autofire DVs (Edgerunners DLC)</h3>
+                  <div className="overflow-x-auto border border-border rounded-md">
+                    <table className="w-full text-left text-xs bg-card">
+                      <thead className="bg-secondary/20">
+                        <tr>
+                          <th className="p-2 border-b">Type</th>
+                          <th className="p-2 border-b">0-6m</th>
+                          <th className="p-2 border-b">7-12m</th>
+                          <th className="p-2 border-b">13-25m</th>
+                          <th className="p-2 border-b">26-50m</th>
+                          <th className="p-2 border-b">51-100m</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr className="border-b border-border/50"><td className="p-2 font-bold">SMG</td><td className="p-2">20</td><td className="p-2">17</td><td className="p-2">20</td><td className="p-2">25</td><td className="p-2">30</td></tr>
+                        <tr className="border-b border-border/50"><td className="p-2 font-bold">AR</td><td className="p-2">22</td><td className="p-2">20</td><td className="p-2">17</td><td className="p-2">20</td><td className="p-2">25</td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <h3 className="text-muted-foreground font-bold">Thrown Weapons</h3>
+                <p className="text-xs">Cannot throw further than 25m. Attack is resolved using the <strong>Athletics</strong> skill.</p>
+                <div className="border border-border rounded-md max-w-sm">
+                  <table className="w-full text-left text-xs bg-card">
+                    <thead className="bg-secondary/20">
+                      <tr><th className="p-2 border-b">Range</th><th className="p-2 border-b">DV</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr className="border-b border-border/50"><td className="p-2 font-bold">0-6m</td><td className="p-2">16</td></tr>
+                      <tr className="border-b border-border/50"><td className="p-2 font-bold">7-25m</td><td className="p-2">15</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </DialogContent>
+        </Dialog>
+
         <Button onClick={onRollAll} variant="outline" className="gap-2">
           <Dices className="w-4 h-4" />
           Roll NPCs
@@ -485,14 +700,13 @@ export function EncounterTracker({
               <tr>
                 <th className="w-8"></th>
                 <th>Name</th>
-                <th className="text-center">REF</th>
-                <th className="text-center">Init</th>
-                <th className="text-center">Roll</th>
-                <th className="text-center">Total</th>
+                  <th className="text-center">REF/TIER</th>
+                  <th className="text-center">INIT</th>
                 <th className="text-center">HP</th>
                 <th className="text-center">Armor</th>
-                <th>Weapons</th>
-                <th className="text-center">Status</th>
+                  <th className="min-w-[150px] max-w-[400px]">Weapons</th>
+                  <th className="text-center">Status</th>
+                  <th className="min-w-[100px] max-w-[350px]">Attacks</th>
                 <th className="text-right">Actions</th>
               </tr>
             </thead>
@@ -521,24 +735,14 @@ export function EncounterTracker({
                           {isCurrentTurn && <span className="text-xs bg-primary text-primary-foreground px-1.5 py-0.5 rounded">TURN</span>}
                         </div>
                       </td>
-                      <td className="text-center">{participant.ref}</td>
-                      <td className="text-center">{participant.initiativeSkill}</td>
                       <td className="text-center">
-                        {participant.isPC ? (
-                          <Input
-                            type="number"
-                            value={participant.rolled ?? ''}
-                            onChange={e => {
-                              const roll = parseInt(e.target.value) || 0;
-                              const total = roll + participant.ref + participant.initiativeSkill;
-                              onUpdateParticipant(participant.id, { rolled: roll, total });
-                            }}
-                            placeholder="d10"
-                            className="w-14 mx-auto text-center cyber-input py-1 text-xs"
-                            title="Enter player's d10 roll"
-                          />
+                        {participant.isGoon ? (
+                          <div className="flex flex-col items-center justify-center leading-tight">
+                            <span className="font-bold text-accent capitalize text-xs">{participant.tier}</span>
+                            <span className="text-[10px] text-muted-foreground whitespace-nowrap">CN:{participant.combatNumber} NC:{participant.nonCombatNumber}</span>
+                          </div>
                         ) : (
-                          <span className="font-mono">{participant.rolled ?? '-'}</span>
+                          participant.ref
                         )}
                       </td>
                       <td className="text-center">
@@ -547,9 +751,9 @@ export function EncounterTracker({
                             type="number"
                             value={participant.total ?? ''}
                             onChange={e => onUpdateParticipant(participant.id, { total: parseInt(e.target.value) || 0 })}
-                            placeholder="Total"
+                            placeholder="INIT"
                             className="w-16 mx-auto text-center cyber-input py-1 font-bold"
-                            title="Player's total initiative (auto-calculated from roll)"
+                            title="Player's total initiative"
                           />
                         ) : (
                           <span className="font-mono font-bold">{participant.total ?? '-'}</span>
@@ -620,14 +824,17 @@ export function EncounterTracker({
                           <span className="text-muted-foreground text-xs">None</span>
                         )}
                       </td>
-                      <td className="min-w-[200px]">
-                        <WeaponQuickView participant={participant} />
-                      </td>
-                      <td className="text-center">
-                        <div className="flex items-center justify-center gap-2">
-                          {getWoundIcon(participant.woundState)}
-                          <span className="text-xs capitalize">{participant.woundState.replace(/-/g, ' ')}</span>
-                        </div>
+                        <td>
+                          <WeaponQuickView participant={participant} />
+                        </td>
+                        <td className="text-center">
+                          <div className="flex items-center justify-center gap-2">
+                            {getWoundIcon(participant.woundState)}
+                            <span className="text-xs capitalize">{participant.woundState.replace(/-/g, ' ')}</span>
+                          </div>
+                        </td>
+                        <td>
+                          <AttackQuickView participant={participant} />
                       </td>
                       <td className="text-right">
                         <div className="flex items-center justify-end gap-1">

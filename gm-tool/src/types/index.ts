@@ -68,6 +68,11 @@ export interface Participant {
   armor?: Armor;
   cover?: Cover;
   weapons?: Weapon[];
+  skills?: Record<string, number>;
+  isGoon?: boolean;
+  tier?: 'easy' | 'average' | 'elite';
+  combatNumber?: number;
+  nonCombatNumber?: number;
 }
 
 export interface EncounterState {
@@ -216,6 +221,10 @@ export interface GeneratedNPC {
     cyberware: string[];
     gear: string[];
   };
+  isGoon?: boolean;
+  tier?: 'easy' | 'average' | 'elite';
+  combatNumber?: number;
+  nonCombatNumber?: number;
 }
 
 export interface EncounterTemplate {

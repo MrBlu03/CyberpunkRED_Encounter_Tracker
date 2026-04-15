@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useImperativeHandle } from 'react';
 import { gsap } from 'gsap';
 import { Dices, X, Minimize2, Maximize2, History, Trash2, Sparkles, LayoutPanelTop } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -23,7 +23,7 @@ interface DiceRollerProps {
   tarotDeck?: TarotDeckState;
 }
 
-export function DiceRoller({ critMode = 'raw', tarotDeck }: DiceRollerProps) {
+export const DiceRoller = React.forwardRef(({ critMode = 'raw', tarotDeck }: DiceRollerProps, ref) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isMinimized, setIsMinimized] = useState(false);
   const [customRoll, setCustomRoll] = useState('');
@@ -108,10 +108,24 @@ export function DiceRoller({ critMode = 'raw', tarotDeck }: DiceRollerProps) {
     }
   };
   
-  const rollCustom = () => {
-    if (!customRoll.trim()) return;
+  useImperativeHandle(ref, () => ({
+    rollCustom: (expr: string) => {
+      setCustomRoll(expr);
+      setIsOpen(true);
+      setIsMinimized(false);
+      setShowHistory(true);
+      
+      // Since addToHistory uses functional state updates, 
+      // we don't need setTimeout. Processing synchronously 
+      // ensures all state changes are batched correctly.
+      rollCustomExpr(expr);
+    }
+  }));
+
+  const rollCustomExpr = (expr: string) => {
+    if (!expr.trim()) return;
     
-    const result = rollDiceDetailed(customRoll);
+    const result = rollDiceDetailed(expr);
     
     // Check for critical hits (6s on d6)
     const critCount = result.rolls.filter(r => r === 6).length;
@@ -120,7 +134,7 @@ export function DiceRoller({ critMode = 'raw', tarotDeck }: DiceRollerProps) {
     
     const rollResult: RollResult = {
       id: crypto.randomUUID(),
-      expression: customRoll,
+      expression: expr,
       total: result.total,
       rolls: result.rolls,
       modifier: result.modifier,
@@ -131,7 +145,6 @@ export function DiceRoller({ critMode = 'raw', tarotDeck }: DiceRollerProps) {
     };
     
     addToHistory(rollResult);
-    // Removed setCustomRoll('') to keep input persistent
     
     if (isTarotCrit) {
       if (tarotDeck?.drawnThisSession) {
@@ -149,8 +162,12 @@ export function DiceRoller({ critMode = 'raw', tarotDeck }: DiceRollerProps) {
         icon: <Sparkles className="w-5 h-5 text-warning" />
       });
     } else {
-      toast.success(`Rolled ${customRoll}: ${result.total}`);
+      toast.success(`Rolled ${expr}: ${result.total}`);
     }
+  };
+
+  const rollCustom = () => {
+    rollCustomExpr(customRoll);
   };
   
   const clearHistory = () => {
@@ -369,4 +386,4 @@ export function DiceRoller({ critMode = 'raw', tarotDeck }: DiceRollerProps) {
       </div>
     </div>
   );
-}
+});

@@ -23,6 +23,10 @@ interface EncounterParticipant {
   initiative?: number;
   armor?: { head: number; body: number };
   weapons?: string[];
+  isGoon?: boolean;
+  tier?: 'easy' | 'average' | 'elite';
+  combatNumber?: number;
+  nonCombatNumber?: number;
 }
 
 interface EncounterTemplate {
@@ -89,6 +93,14 @@ const ENCOUNTER_TEMPLATES: EncounterTemplate[] = [
   }
 ];
 
+// Random Names for Bulk Generation
+const RANDOM_STREET_NAMES = [
+  'Ghost', 'Viper', 'Spike', 'Neon', 'Chrome', 'Jax', 'Rat', 'Zephyr', 'Rogue', 'Rex',
+  'Blitz', 'Nova', 'Clutch', 'Ripper', 'Sly', 'Zen', 'Echo', 'Cipher', 'Vortex', 'Quake',
+  'Crash', 'Havoc', 'Riot', 'Grit', 'Wire', 'Slash', 'Bolt', 'Dash', 'Razor', 'Scrap',
+  'Torque', 'Byte', 'Glitch', 'Krypt', 'Null', 'Void', 'Hex', 'Pulse', 'Fuse', 'Grid'
+];
+
 // Automated unit stats
 const AUTOMATED_UNIT_STATS: Record<string, { hp: number; armor: number; ref: number; weapons: string[] }> = {
   turret: { hp: 25, armor: 15, ref: 8, weapons: ['Assault Rifle'] },
@@ -118,7 +130,12 @@ export function EncounterGenerator({
     difficulty: 'moderate',
     hp: 25,
     ref: 6,
-    initiative: 0
+    initiative: 0,
+    tier: 'average',
+    combatNumber: 11,
+    nonCombatNumber: 6,
+    weapons: [],
+    armor: { head: 7, body: 7 }
   });
   const [expandedRows, setExpandedRows] = useState<Set<string>>(new Set());
   const [shopWeapons, setShopWeapons] = useState<any[]>([]);
@@ -160,23 +177,44 @@ export function EncounterGenerator({
     
     for (let i = 0; i < enemyCount; i++) {
       const enemyType = template.enemyTypes[Math.floor(Math.random() * template.enemyTypes.length)];
-      const baseHp = 25;
-      const baseRef = 6;
-      
-      newParticipants.push({
-        id: crypto.randomUUID(),
-        name: `${enemyType} ${i + 1}`,
-        type: 'enemy',
-        count: 1,
-        difficulty: template.difficulty,
-        hp: Math.floor(baseHp * diffMod.hpMod),
-        ref: Math.min(10, Math.max(2, baseRef + diffMod.statMod)),
-        initiative: Math.floor(Math.random() * 5),
-        armor: { head: diffMod.armorMod, body: diffMod.armorMod + 4 }
-      });
-    }
-    
-    // Generate turrets
+        const baseRef = 6;
+
+        let tier: 'easy' | 'average' | 'elite' = 'average';
+        let cn = 11;
+        let ncn = 6;
+        let hp = 30;
+
+        if (template.difficulty === 'easy') {
+          tier = 'easy'; cn = 8; ncn = 4; hp = 20;
+        } else if (template.difficulty === 'moderate') {
+          tier = 'average'; cn = 11; ncn = 6; hp = 30;
+        } else {
+          tier = 'elite'; cn = 14; ncn = 8; hp = 45;
+        }
+
+        const validWeapons = shopWeapons.filter(w => !w.name.toLowerCase().includes('grenade') && !w.name.toLowerCase().includes('rocket'));
+        const weaponsSource = validWeapons.length > 0 ? validWeapons : [{ name: 'Heavy Pistol' }, { name: 'Assault Rifle' }, { name: 'Shotgun' }, { name: 'Combat Knife' }];
+        const randomWeapon = weaponsSource[Math.floor(Math.random() * weaponsSource.length)].name;
+
+        const streetName = RANDOM_STREET_NAMES[Math.floor(Math.random() * RANDOM_STREET_NAMES.length)];
+        newParticipants.push({
+          id: crypto.randomUUID(),
+          name: `${enemyType} "${streetName}"`,
+          type: 'enemy',
+          count: 1,
+          difficulty: template.difficulty,
+          hp: Math.floor(hp * diffMod.hpMod),
+          ref: Math.min(10, Math.max(2, baseRef + diffMod.statMod)),
+          initiative: Math.floor(Math.random() * 5),
+          armor: { head: diffMod.armorMod, body: diffMod.armorMod + 4 },
+          weapons: [randomWeapon],
+          isGoon: true,
+          tier: tier,
+          combatNumber: cn,
+          nonCombatNumber: ncn
+        });
+      }
+// Generate turrets
     if (template.includeTurrets) {
       for (let i = 0; i < template.turretCount; i++) {
         newParticipants.push({
@@ -223,23 +261,79 @@ export function EncounterGenerator({
       return;
     }
     
-    const newParticipant: EncounterParticipant = {
-      ...manualEntry,
-      id: crypto.randomUUID(),
-      name: manualEntry.name
-    };
-    
-    // Set default stats for automated units
-    if (manualEntry.type !== 'enemy' && AUTOMATED_UNIT_STATS[manualEntry.type]) {
-      const stats = AUTOMATED_UNIT_STATS[manualEntry.type];
-      newParticipant.hp = stats.hp;
-      newParticipant.ref = stats.ref;
-      newParticipant.initiative = stats.ref;
-      newParticipant.armor = { head: 0, body: stats.armor };
-      newParticipant.weapons = stats.weapons;
+    const count = manualEntry.count || 1;
+    const newParticipants: EncounterParticipant[] = [];
+
+    for (let i = 0; i < count; i++) {
+      const isGoon = manualEntry.type === 'enemy';
+      
+      let name = manualEntry.name;
+      if (count > 1) {
+        if (isGoon) {
+          const streetName = RANDOM_STREET_NAMES[Math.floor(Math.random() * RANDOM_STREET_NAMES.length)];
+          name = `${manualEntry.name} "${streetName}"`;
+        } else {
+          name = `${manualEntry.name} ${i + 1}`;
+        }
+      }
+      
+      const newParticipant: EncounterParticipant = {
+        ...manualEntry,
+        id: crypto.randomUUID(),
+        name,
+        count: 1, // Store as individual items
+        isGoon
+      };
+      
+      if (isGoon) {
+        // Assign random armor based on tier if nothing was explicitly modified
+        if (!manualEntry.armor || (manualEntry.armor.head === 7 && manualEntry.armor.body === 7 && manualEntry.tier !== 'easy')) {
+           // Provide standard gear based on difficulty
+           if (manualEntry.tier === 'easy') {
+             newParticipant.armor = { head: 7, body: 7 }; // Leathers
+           } else if (manualEntry.tier === 'average') {
+             newParticipant.armor = { head: 11, body: 11 }; // Kevlar
+           } else if (manualEntry.tier === 'elite') {
+             newParticipant.armor = { head: 12, body: 12 }; // Light Armorjack
+           }
+        }
+        
+        // Handle random weapons
+        if (manualEntry.weapons && manualEntry.weapons.length > 0) {
+          const weaponReq = manualEntry.weapons[0];
+          if (weaponReq.startsWith('random-')) {
+            const damageReq = weaponReq.replace('random-', ''); // e.g. "2d6"
+            const validWeapons = shopWeapons.filter(w => 
+              w.system?.damage === damageReq && 
+              w.type === 'weapon' &&
+              !w.name.toLowerCase().includes('grenade') && 
+              !w.name.toLowerCase().includes('rocket')
+            );
+            
+            if (validWeapons.length > 0) {
+              const rw = validWeapons[Math.floor(Math.random() * validWeapons.length)];
+              newParticipant.weapons = [rw.name];
+            } else {
+              newParticipant.weapons = ['Heavy Pistol']; // fallback
+            }
+          }
+        }
+      } else {
+        // Set default stats for automated units
+        if (AUTOMATED_UNIT_STATS[manualEntry.type]) {
+          const stats = AUTOMATED_UNIT_STATS[manualEntry.type];
+          newParticipant.hp = stats.hp;
+          newParticipant.ref = stats.ref;
+          newParticipant.initiative = stats.ref;
+          newParticipant.armor = { head: 0, body: stats.armor };
+          newParticipant.weapons = stats.weapons;
+        }
+      }
+
+      newParticipants.push(newParticipant);
     }
     
-    setParticipants(prev => [...prev, newParticipant]);
+    setParticipants(prev => [...prev, ...newParticipants]);
     setManualEntry({
       id: '',
       name: '',
@@ -248,9 +342,14 @@ export function EncounterGenerator({
       difficulty: 'moderate',
       hp: 25,
       ref: 6,
-      initiative: 0
+      initiative: 0,
+      tier: 'average',
+      combatNumber: 11,
+      nonCombatNumber: 6,
+      weapons: [],
+      armor: { head: 7, body: 7 }
     });
-    toast.success(`Added ${newParticipant.name}`);
+    toast.success(`Added ${newParticipants.length} participant${newParticipants.length > 1 ? 's' : ''}`);
   };
   
   // Remove participant
@@ -282,6 +381,7 @@ export function EncounterGenerator({
         const weapons: import('@/types').Weapon[] = [];
         p.weapons?.forEach(wName => {
           const shopWeapon = shopWeapons.find((w: any) => 
+            w.name.toLowerCase() === wName.toLowerCase() ||
             w.name.toLowerCase().includes(wName.toLowerCase().split(' ')[0])
           );
           if (shopWeapon) {
@@ -293,7 +393,7 @@ export function EncounterGenerator({
                 weaponSkill: shopWeapon.system.weaponSkill || 'Handgun',
                 attackmod: shopWeapon.system.attackmod || 0,
                 rof: shopWeapon.system.rof,
-                ranges: shopWeapon.system.ranges
+                ranges: shopWeapon.system.ranges, weaponType: shopWeapon.system.weaponType
               }
             });
           }
@@ -310,10 +410,14 @@ export function EncounterGenerator({
           woundState: 'not-wounded',
           isPC: false,
           armor: p.armor || { head: 0, body: 0 },
-          weapons: weapons.length > 0 ? weapons : undefined
-        });
-      }
-    });
+            weapons: weapons.length > 0 ? weapons : undefined,
+            isGoon: p.isGoon,
+            tier: p.tier,
+            combatNumber: p.combatNumber,
+            nonCombatNumber: p.nonCombatNumber
+          });
+        }
+      });
     
     if (onAddToEncounter) {
       onAddToEncounter(encounterParticipants);
@@ -439,34 +543,146 @@ export function EncounterGenerator({
               max={10}
             />
           </div>
-          <div>
-            <label className="text-xs text-muted-foreground mb-1 block">HP</label>
-            <Input
-              type="number"
-              value={manualEntry.hp}
-              onChange={e => setManualEntry(prev => ({ 
-                ...prev, 
-                hp: parseInt(e.target.value) || 25
-              }))}
-              className="cyber-input"
-              min={1}
-            />
-          </div>
-          <div>
-            <label className="text-xs text-muted-foreground mb-1 block">REF</label>
-            <Input
-              type="number"
-              value={manualEntry.ref}
-              onChange={e => setManualEntry(prev => ({ 
-                ...prev, 
-                ref: parseInt(e.target.value) || 6
-              }))}
-              className="cyber-input"
-              min={1}
-              max={10}
-            />
-          </div>
+          {manualEntry.type !== 'enemy' && (
+            <>
+              <div>
+                <label className="text-xs text-muted-foreground mb-1 block">HP</label>
+                <Input
+                  type="number"
+                  value={manualEntry.hp}
+                  onChange={e => setManualEntry(prev => ({ 
+                    ...prev, 
+                    hp: parseInt(e.target.value) || 25
+                  }))}
+                  className="cyber-input"
+                  min={1}
+                />
+              </div>
+              <div>
+                <label className="text-xs text-muted-foreground mb-1 block">REF</label>
+                <Input
+                  type="number"
+                  value={manualEntry.ref}
+                  onChange={e => setManualEntry(prev => ({ 
+                    ...prev, 
+                    ref: parseInt(e.target.value) || 6
+                  }))}
+                  className="cyber-input"
+                  min={1}
+                  max={10}
+                />
+              </div>
+            </>
+          )}
+
+          {manualEntry.type === 'enemy' && (
+            <>
+              <div>
+                <label className="text-xs text-muted-foreground mb-1 block">Tier & HP</label>
+                <div className="flex gap-2">
+                  <select
+                    value={manualEntry.tier}
+                    onChange={e => {
+                      const t = e.target.value as 'easy' | 'average' | 'elite';
+                      const stats = {
+                        easy: { hp: 20, cn: 8, ncn: 4 },
+                        average: { hp: 30, cn: 11, ncn: 6 },
+                        elite: { hp: 45, cn: 14, ncn: 8 }
+                      }[t];
+                      setManualEntry(prev => ({
+                        ...prev, tier: t, hp: stats.hp, combatNumber: stats.cn, nonCombatNumber: stats.ncn
+                      }));
+                    }}
+                    className="w-1/2 px-3 py-2 bg-background border border-border rounded-lg text-sm"
+                  >
+                    <option value="easy">Easy</option>
+                    <option value="average">Avg</option>
+                    <option value="elite">Elite</option>
+                  </select>
+                  <Input
+                    type="number"
+                    value={manualEntry.hp}
+                    onChange={e => setManualEntry(prev => ({ ...prev, hp: parseInt(e.target.value) || 1 }))}
+                    className="cyber-input w-1/2"
+                  />
+                </div>
+              </div>
+              <div>
+                <label className="text-xs text-muted-foreground mb-1 block">CN / NCN</label>
+                <div className="flex gap-2">
+                  <Input
+                    type="number"
+                    value={manualEntry.combatNumber}
+                    onChange={e => setManualEntry(prev => ({ ...prev, combatNumber: parseInt(e.target.value) || 1 }))}
+                    className="cyber-input w-1/2"
+                    title="Combat Number"
+                  />
+                  <Input
+                    type="number"
+                    value={manualEntry.nonCombatNumber}
+                    onChange={e => setManualEntry(prev => ({ ...prev, nonCombatNumber: parseInt(e.target.value) || 1 }))}
+                    className="cyber-input w-1/2"
+                    title="Non-Combat Number"
+                  />
+                </div>
+              </div>
+            </>
+          )}
         </div>
+
+        {manualEntry.type === 'enemy' && (
+          <div className="grid md:grid-cols-6 gap-4 mt-4">
+            <div className="col-span-2">
+              <label className="text-xs text-muted-foreground mb-1 block">Weapon</label>
+              <select 
+                value={manualEntry.weapons?.[0] || ''}
+                onChange={e => setManualEntry(prev => ({
+                  ...prev,
+                  weapons: [e.target.value]
+                }))}
+                className="w-full px-3 py-2 bg-background border border-border rounded-lg text-sm"
+              >
+                <option value="">Select Weapon...</option>
+                <optgroup label="Random by Damage">
+                  <option value="random-1d6">Random 1d6 Damage</option>
+                  <option value="random-2d6">Random 2d6 Damage</option>
+                  <option value="random-3d6">Random 3d6 Damage</option>
+                  <option value="random-4d6">Random 4d6 Damage</option>
+                  <option value="random-5d6">Random 5d6 Damage</option>
+                  <option value="random-6d6">Random 6d6 Damage</option>
+                  <option value="random-8d6">Random 8d6 Damage</option>
+                </optgroup>
+                <optgroup label="Specific Weapons">
+                  {shopWeapons
+                    .filter(w => w.name && w.system && !w.name.toLowerCase().includes('grenade') && !w.name.toLowerCase().includes('rocket'))
+                    .sort((a,b) => a.name.localeCompare(b.name))
+                    .map(w => (
+                    <option key={w._id} value={w.name}>{w.name} ({w.system.damage || '2d6'})</option>
+                  ))}
+                </optgroup>
+              </select>
+            </div>
+            
+            <div>
+              <label className="text-xs text-muted-foreground mb-1 block">Head Armor</label>
+              <Input
+                type="number"
+                value={manualEntry.armor?.head || 0}
+                onChange={e => setManualEntry(prev => ({ ...prev, armor: { ...prev.armor!, head: parseInt(e.target.value) || 0 } }))}
+                className="cyber-input"
+              />
+            </div>
+            <div>
+              <label className="text-xs text-muted-foreground mb-1 block">Body Armor</label>
+              <Input
+                type="number"
+                value={manualEntry.armor?.body || 0}
+                onChange={e => setManualEntry(prev => ({ ...prev, armor: { ...prev.armor!, body: parseInt(e.target.value) || 0 } }))}
+                className="cyber-input"
+              />
+            </div>
+          </div>
+        )}
         <div className="mt-4 flex justify-end">
           <Button onClick={addManualParticipant} className="cyber-btn">
             <Plus className="w-4 h-4 mr-2" />
