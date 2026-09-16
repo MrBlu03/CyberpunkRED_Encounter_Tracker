@@ -287,88 +287,82 @@ export function EncounterTracker({
     };
   };
 
-  // Execute Automatic Combat for all generic NPCs at round start
-  const executeRoundCombat = (roundNumber: number) => {
-    const activeNPCs = participants.filter(
-      p => !p.isPC && !p.isCustomNPC && !p.manualControl && p.hp > 0 && !p.dead && canAct(p.woundState)
-    );
-    if (activeNPCs.length === 0) return;
-
-    // Dynamically rotate and re-assign opponents at round start for all enemies and allies
+  // Dynamically rotate and re-assign opponents at round start for all active combatants
+  const setupRoundTargets = (roundNumber: number) => {
     const roundTargetMap = retargetEnemiesForRound(participants, roundNumber);
-
-    // Update participants with new targetIds so the UI immediately reflects the dynamic new opponent for each combatant
     roundTargetMap.forEach((newTarget, attackerId) => {
       onUpdateParticipant(attackerId, { targetId: newTarget.id });
     });
+    toast.info(`🔄 Round ${roundNumber}: Dynamic target opponents updated.`);
+  };
 
-    let resolvedCount = 0;
-    const currentParticipantsMap = new Map(participants.map(p => [p.id, p]));
-    const batchActions: CombatAction[] = [];
-    const incomingPCAttacks: PendingPCAttackItem[] = [];
+  // Execute turn action for an automated NPC when their initiative turn arrives
+  const executeNPCTurn = (attacker: Participant, roundNumber: number) => {
+    if (attacker.hp <= 0 || attacker.dead || !canAct(attacker.woundState)) return;
+    if (attacker.isPC || attacker.affiliation === 'player' || attacker.manualControl || (attacker.isCustomNPC && attacker.affiliation === 'friendly_npc')) return;
 
-    activeNPCs.forEach(attacker => {
-      const weapon = attacker.weapons && attacker.weapons.length > 0 ? attacker.weapons[0] : null;
-      if (!weapon) return;
-
-      // Primary target: dynamic round target acquired at round start, falling back to manual assignment
-      const dynamicTarget = roundTargetMap.get(attacker.id);
-      const target = dynamicTarget 
-        ? (currentParticipantsMap.get(dynamicTarget.id) || dynamicTarget)
-        : (attacker.targetId ? currentParticipantsMap.get(attacker.targetId) : targetMap.get(attacker.id));
-      if (!target || target.hp <= 0 || target.dead) return;
-
-      // Case 1: Target is an NPC (Generic NPC vs Generic NPC: Friendly vs Hostile, or Hostile vs Friendly)
-      if (!target.isPC && target.affiliation !== 'player' && !target.manualControl && !(target.isCustomNPC && target.affiliation === 'friendly_npc')) {
-        const currentDefender = currentParticipantsMap.get(target.id) || target;
-        if (currentDefender.hp <= 0) return;
-
-        const { action, updatedDefender } = resolveAttack({
-          attacker,
-          defender: currentDefender,
-          weapon,
-          round: roundNumber
-        });
-
-        currentParticipantsMap.set(updatedDefender.id, updatedDefender);
-        batchActions.push(action);
-        resolvedCount++;
-        return;
-      }
-
-      // Case 2: Target is a Player Character (PC)
-      if (target.isPC || target.affiliation === 'player') {
-        const pendingItem = createPendingPCAttackItem(attacker, target, weapon, roundNumber);
-        incomingPCAttacks.push(pendingItem);
-      }
-    });
-
-    // Apply updated NPC defenders
-    if (resolvedCount > 0) {
-      currentParticipantsMap.forEach((updated, id) => {
-        onUpdateParticipant(id, updated);
-      });
-      setCombatActions(prev => [...batchActions, ...prev]);
-
-      // Generate round narration recap
-      const recap = generateRoundNarrative(roundNumber, batchActions, selectedTone, getSpotlightParticipant());
-      setCurrentRoundRecap(recap);
-
-      toast.success(`⚡ Round ${roundNumber}: Auto-resolved ${resolvedCount} NPC vs NPC combat actions!`, {
-        icon: <Sparkles className="w-5 h-5 text-primary" />
-      });
+    const weapon = attacker.weapons && attacker.weapons.length > 0 ? attacker.weapons[0] : null;
+    if (!weapon) {
+      toast.info(`${attacker.name} has no weapon equipped to attack.`);
+      return;
     }
 
-    // Queue incoming attacks targeting PCs for GM adjudication
-    if (incomingPCAttacks.length > 0) {
-      setPendingPCAttacks(prev => [...prev, ...incomingPCAttacks]);
-      toast.warning(`⚠️ Round ${roundNumber}: ${incomingPCAttacks.length} incoming attack(s) targeting players! Reviewing now...`, {
+    const currentParticipantsMap = new Map(participants.map(p => [p.id, p]));
+    const target = attacker.targetId 
+      ? currentParticipantsMap.get(attacker.targetId) 
+      : targetMap.get(attacker.id);
+
+    if (!target || target.hp <= 0 || target.dead) {
+      toast.info(`${attacker.name} has no valid living opponent.`);
+      return;
+    }
+
+    // Case 1: Target is another generic NPC -> Auto-resolve attack immediately
+    if (!target.isPC && target.affiliation !== 'player' && !target.manualControl && !(target.isCustomNPC && target.affiliation === 'friendly_npc')) {
+      const currentDefender = currentParticipantsMap.get(target.id) || target;
+      if (currentDefender.hp <= 0) return;
+
+      const { action, updatedDefender } = resolveAttack({
+        attacker,
+        defender: currentDefender,
+        weapon,
+        round: roundNumber
+      });
+
+      onUpdateParticipant(updatedDefender.id, updatedDefender);
+      setCombatActions(prev => [action, ...prev]);
+
+      const roundActions = [action, ...combatActions.filter(a => a.round === roundNumber)];
+      const recap = generateRoundNarrative(roundNumber, roundActions, selectedTone, getSpotlightParticipant());
+      setCurrentRoundRecap(recap);
+
+      if (action.hit) {
+        const critStr = action.isTarotCrit && action.tarotCard 
+          ? ` 🎴 Tarot: ${action.tarotCard.name}` 
+          : action.isCritical 
+            ? ` 💥 ${action.criticalInjuryName}` 
+            : '';
+        const downStr = action.downed ? ' 💀 TARGET DOWNED!' : '';
+        toast.success(`⚡ [Turn: ${attacker.name}] Hit ${target.name} with ${weapon.name} for ${action.hpDamage} HP!${critStr}${downStr}`, {
+          icon: <Crosshair className="w-5 h-5 text-primary" />
+        });
+      } else {
+        toast.info(`⚡ [Turn: ${attacker.name}] Attack was evaded/missed by ${target.name} (Atk ${action.attackRoll} vs Def ${action.defenseRoll})`);
+      }
+      return;
+    }
+
+    // Case 2: Target is a Player Character (PC) -> Trigger GM Review Popup immediately on this NPC's turn!
+    if (target.isPC || target.affiliation === 'player') {
+      const pendingItem = createPendingPCAttackItem(attacker, target, weapon, roundNumber);
+      setPendingPCAttacks([pendingItem]);
+      toast.warning(`⚠️ [Turn: ${attacker.name}] Incoming attack targeting ${target.name}! Reviewing Range DV vs Evade...`, {
         icon: <AlertTriangle className="w-5 h-5 text-warning" />
       });
     }
   };
 
-  // Automatic Round-Start Trigger: runs automatically when encounter starts or round advances
+  // Round-Start Hook: dynamically retarget opponents when a new round begins without premature execution
   const lastProcessedRoundRef = useRef<number>(0);
   useEffect(() => {
     if (!encounter.active || encounter.round <= 0) {
@@ -377,9 +371,39 @@ export function EncounterTracker({
     }
     if (encounter.round !== lastProcessedRoundRef.current) {
       lastProcessedRoundRef.current = encounter.round;
-      executeRoundCombat(encounter.round);
+      setupRoundTargets(encounter.round);
     }
   }, [encounter.active, encounter.round]);
+
+  // Turn-by-Turn Initiative Hook: auto-executes NPC turns as GM cycles through initiative order
+  const lastExecutedTurnKeyRef = useRef<string>('');
+  useEffect(() => {
+    if (!encounter.active || !activeTurnParticipant || encounter.round <= 0) {
+      if (!encounter.active || encounter.round <= 0) {
+        lastExecutedTurnKeyRef.current = '';
+      }
+      return;
+    }
+    const turnKey = `R${encounter.round}-T${encounter.turnIndex}-${activeTurnParticipant.id}`;
+    if (lastExecutedTurnKeyRef.current === turnKey) return;
+    lastExecutedTurnKeyRef.current = turnKey;
+
+    const isAutomatedNPC = 
+      !activeTurnParticipant.isPC && 
+      activeTurnParticipant.affiliation !== 'player' && 
+      !activeTurnParticipant.manualControl && 
+      !activeTurnParticipant.isCustomNPC && 
+      activeTurnParticipant.hp > 0 && 
+      !activeTurnParticipant.dead && 
+      canAct(activeTurnParticipant.woundState);
+
+    if (isAutomatedNPC) {
+      const timer = setTimeout(() => {
+        executeNPCTurn(activeTurnParticipant, encounter.round);
+      }, 150);
+      return () => clearTimeout(timer);
+    }
+  }, [encounter.active, encounter.round, encounter.turnIndex, activeTurnParticipant?.id]);
 
   // Handle manual attack from an attacker card
   const handleAttackAction = (attacker: Participant, weapon: Weapon, customTarget?: Participant) => {
@@ -982,6 +1006,24 @@ export function EncounterTracker({
                     <span className={`px-2 py-0.5 text-[10px] font-mono font-bold uppercase rounded-md border ${badgeColor}`}>
                       {affiliation.replace('_', ' ')}
                     </span>
+                    {isTurn && (
+                      p.isPC || p.affiliation === 'player' ? (
+                        <span className="px-2 py-0.5 text-[10px] font-mono font-bold uppercase rounded-md bg-emerald-500/25 text-emerald-300 border border-emerald-500/50 flex items-center gap-1 shadow-sm">
+                          <Sparkles className="w-3 h-3 text-emerald-400" />
+                          Player Turn
+                        </span>
+                      ) : p.manualControl || (p.isCustomNPC && p.affiliation === 'friendly_npc') ? (
+                        <span className="px-2 py-0.5 text-[10px] font-mono font-bold uppercase rounded-md bg-amber-500/25 text-amber-300 border border-amber-500/50 flex items-center gap-1 shadow-sm">
+                          <ShieldAlert className="w-3 h-3 text-amber-400" />
+                          GM Manual Turn
+                        </span>
+                      ) : (
+                        <span className="px-2 py-0.5 text-[10px] font-mono font-bold uppercase rounded-md bg-primary/25 text-primary border border-primary/50 flex items-center gap-1 shadow-sm">
+                          <Crosshair className="w-3 h-3 text-primary animate-pulse" />
+                          Active NPC Turn
+                        </span>
+                      )
+                    )}
                     {(p.manualControl || (p.isCustomNPC && p.affiliation === 'friendly_npc')) && (
                       <span className="px-2 py-0.5 text-[10px] font-mono font-bold uppercase rounded-md bg-amber-500/20 text-amber-300 border border-amber-500/40" title="GM has exclusive manual control over movesets and actions (excluded from auto-combat)">
                         GM Controlled
@@ -1250,6 +1292,19 @@ export function EncounterTracker({
                       </div>
                     )}
                   </div>
+                )}
+
+                {/* Active NPC Automated Turn Action Button */}
+                {isTurn && !p.isPC && p.affiliation !== 'player' && !p.manualControl && !p.isCustomNPC && p.hp > 0 && !p.dead && (
+                  <Button
+                    size="sm"
+                    onClick={() => executeNPCTurn(p, Math.max(1, encounter.round))}
+                    className="cyber-btn text-xs px-2.5 h-8 bg-primary hover:bg-primary/90 text-primary-foreground font-mono font-bold flex items-center gap-1 shadow-md shadow-primary/25 cursor-pointer"
+                    title="Execute / Re-run this NPC's automated turn attack"
+                  >
+                    <Crosshair className="w-3.5 h-3.5" />
+                    <span>Run Turn</span>
+                  </Button>
                 )}
 
                 {/* Weapons Attack Action Buttons with Normalized Category & Range DV Access */}

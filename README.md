@@ -11,11 +11,15 @@ A high-performance, polished web application for Game Masters running **Cyberpun
 - **Inline PC Entry**: Direct number inputs on Player Character cards allow seamless manual initiative entry without cumbersome modals.
 - **Automatic Initiative Sorting**: Dynamic round and turn progression with active combatant indicators.
 
-### ⚔️ Auto-Resolved NPC vs NPC Combat
-- **Automatic Round-Start Execution**: Combat calculations run **automatically at round start** (Round 1, Round 2, etc.) without requiring a manual button click. Generic NPC vs NPC actions resolve in the background, updating HP, armor SP, and wound states.
+### ⚔️ Initiative-Ordered Turn-by-Turn Combat Automation
+- **Person-by-Person Initiative Execution**: Combat progresses sequentially as the GM cycles through initiative order (`Next Turn`), perfectly matching tabletop cadence.
+- **Player & Manual Ally Deference**: When a Player Character or GM-controlled ally is active in initiative, the system immediately defers to them—**zero premature attack popups**. The GM listens to the player's declaration and manually applies damage to the enemy of their choice.
+- **Automated NPC Turn Execution**: When an automated generic NPC's turn arrives in initiative, the system kicks in automatically:
+  - If targeting another NPC: rolls and auto-resolves attack checks, defenses, armor SP absorption, and HP damage in real-time.
+  - If targeting a Player Character: prompts the **GM Combat Review Queue** right then on that NPC's turn to confirm Range Chart DV vs declared Evade.
 - **Round-Start Dynamic Opponent Retargeting**: Every round at round start, enemies dynamically acquire a new opponent from the opposing faction (PCs and friendly NPCs), rotating targets systematically across all active combatants so enemies don't dogpile the same character indefinitely.
 - **Dedicated Player Damage Application on Enemies**: An intuitive, inline **"Player Dmg"** panel on every enemy card allows the GM to effortlessly take in player attack damage, choose Body or Head (x2 dmg), toggle Armor-Piercing (AP, -2 SP), and press `Enter` to automatically calculate RAW SP absorption, SP ablation, and penetrating HP loss.
-- **RAW Range Chart vs Player Evade Adjudication**: When an attack targets a Player Character, the **GM Combat Review Queue** adjudicates the hit using the official Cyberpunk RED **Range Chart DVs** (0-6m, 7-12m, 13-25m, etc.) by default. If the player declares an Evade, the GM toggles evasion to oppose the roll with the player's Evasion check.
+- **RAW Range Chart vs Player Evade Adjudication**: When an attack targets a Player Character, the review dialog adjudicates the hit using official Cyberpunk RED **Range Chart DVs** (0-6m, 7-12m, 13-25m, etc.) by default, or opposed roll if the player declared Evade.
 - **Armor Halving for Melee**: Attacks with blades, brawling, and melee weapons automatically halve effective armor SP.
 - **Damage & SP Ablation**: Penetrating damage reduces HP and ablates armor SP automatically. Armor-Piercing (AP) ammo ablates 2 SP.
 
