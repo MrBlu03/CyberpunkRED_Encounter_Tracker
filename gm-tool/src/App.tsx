@@ -5,11 +5,10 @@ import {
   Menu, X, Network
 } from 'lucide-react';
 import { useLocalStorage } from '@/hooks/useLocalStorage';
-import { rollInitiative } from '@/lib/dice';
 import { calculateDamage, getWoundState, canAct } from '@/lib/damage';
 import type { 
-  Participant, EncounterState, SavedEncounter, SavedNPC, 
-  DamageType, CritMode, ThemeMode, ColorPalette, GeneratedNPC,
+  Participant, EncounterState, SavedEncounter, 
+  DamageType, CritMode, ThemeMode, ColorPalette,
   TarotDeckState
 } from '@/types';
 
@@ -28,7 +27,6 @@ import { SettingsManager } from '@/components/SettingsManager';
 import { DamageDialog } from '@/components/DamageDialog';
 import { FloatingCombatControls } from '@/components/FloatingCombatControls';
 import { NetrunningArchitecture } from '@/components/NetrunningArchitecture';
-import { ManualNPCCreator } from '@/components/ManualNPCCreator';
 import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
 
@@ -62,13 +60,11 @@ function App() {
   
   // Saved data
   const [savedEncounters, setSavedEncounters] = useLocalStorage<SavedEncounter[]>('cyberpunk-saved-encounters', []);
-  const [savedNPCs, setSavedNPCs] = useLocalStorage<SavedNPC[]>('cyberpunk-saved-npcs', []);
   
   // UI state
   const [damageDialogOpen, setDamageDialogOpen] = useState(false);
   const [selectedParticipant, setSelectedParticipant] = useState<Participant | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [npcSubTab, setNpcSubTab] = useState<'generator' | 'manual'>('generator');
   
   // Refs for animations and accessing inner components
   const mainRef = useRef<HTMLDivElement>(null);
@@ -145,7 +141,9 @@ function App() {
   const rollAllInitiative = useCallback(() => {
     setParticipants(prev => prev.map(p => {
       if (p.isPC) return p; // PCs enter their own initiative
-      const { roll, total } = rollInitiative(p.ref, p.initiativeSkill);
+      const bonus = p.isGoon ? (p.combatNumber ?? 11) : (p.ref + (p.initiativeSkill || 0));
+      const roll = Math.floor(Math.random() * 10) + 1;
+      const total = roll + bonus;
       return { ...p, rolled: roll, total };
     }));
     toast.success('Initiative rolled for all NPCs (PCs enter manually)');
@@ -153,7 +151,9 @@ function App() {
   
   const rollAllInitiativeIncludingPCs = useCallback(() => {
     setParticipants(prev => prev.map(p => {
-      const { roll, total } = rollInitiative(p.ref, p.initiativeSkill);
+      const bonus = p.isGoon ? (p.combatNumber ?? 11) : (p.ref + (p.initiativeSkill || 0));
+      const roll = Math.floor(Math.random() * 10) + 1;
+      const total = roll + bonus;
       return { ...p, rolled: roll, total };
     }));
     toast.success('Initiative rolled for all participants');
@@ -258,11 +258,6 @@ function App() {
     event.target.value = '';
   }, [setSavedEncounters]);
   
-  const openDamageDialog = useCallback((participant: Participant) => {
-    setSelectedParticipant(participant);
-    setDamageDialogOpen(true);
-  }, []);
-  
   const handleDamageApply = useCallback((damage: number, options: {
     location: 'head' | 'body';
     damageType: DamageType;
@@ -305,71 +300,6 @@ function App() {
     setDamageDialogOpen(false);
     setSelectedParticipant(null);
   }, [selectedParticipant, updateParticipant]);
-  
-  const addNPCToEncounter = useCallback((npc: GeneratedNPC) => {
-    const participant: Participant = {
-      id: crypto.randomUUID(),
-      name: npc.name,
-      ref: npc.stats.ref,
-      initiativeSkill: npc.skills.initiative || 0,
-      hp: npc.hitPoints.current,
-      maxHp: npc.hitPoints.max,
-      woundState: getWoundState(npc.hitPoints.current, npc.hitPoints.max),
-      dead: false,
-      isPC: false,
-      notes: `Role: ${npc.role}`,
-      armor: npc.equipment.armor ? {
-        head: npc.equipment.armor.head || 0,
-        body: npc.equipment.armor.body || 0,
-        shield: npc.equipment.armor.shield,
-        shieldEquipped: true
-      } : undefined,
-      weapons: npc.equipment.weapons,
-        isGoon: npc.isGoon,
-        tier: npc.tier,
-        combatNumber: npc.combatNumber,
-        nonCombatNumber: npc.nonCombatNumber
-      };
-    setParticipants(prev => [...prev, participant]);
-    setActiveTab('encounter');
-    toast.success(`${npc.name} added to encounter!`);
-  }, [setParticipants]);
-  
-  // Add multiple NPCs to encounter (used by NPCGenerator in encounter mode)
-  const addMultipleNPCs = useCallback((npcs: GeneratedNPC[]) => {
-    const newParticipants: Participant[] = npcs.map(npc => ({
-      id: crypto.randomUUID(),
-      name: npc.name,
-      ref: npc.stats.ref,
-      initiativeSkill: npc.skills.initiative || 0,
-      hp: npc.hitPoints.current,
-      maxHp: npc.hitPoints.max,
-      woundState: getWoundState(npc.hitPoints.current, npc.hitPoints.max),
-      dead: false,
-      isPC: false,
-      notes: `Role: ${npc.role}`,
-      armor: npc.equipment.armor ? {
-        head: npc.equipment.armor.head || 0,
-        body: npc.equipment.armor.body || 0,
-        shield: npc.equipment.armor.shield,
-        shieldEquipped: true
-      } : undefined,
-      weapons: npc.equipment.weapons,
-        isGoon: npc.isGoon,
-        tier: npc.tier,
-        combatNumber: npc.combatNumber,
-        nonCombatNumber: npc.nonCombatNumber
-      }));
-    setParticipants(prev => [...prev, ...newParticipants]);
-    setActiveTab('encounter');
-    toast.success(`${npcs.length} NPCs added to encounter!`);
-  }, [setParticipants]);
-  
-  // Use addMultipleNPCs in the NPCGenerator encounter mode
-  useEffect(() => {
-    // This ensures the function is used
-    if (false) addMultipleNPCs([]);
-  }, [addMultipleNPCs]);
   
   // Navigation items
   const navItems: { id: TabType; label: string; icon: React.ElementType }[] = [
@@ -498,26 +428,17 @@ function App() {
                   onAddParticipant={addParticipant}
                   onUpdateParticipant={updateParticipant}
                   onRemoveParticipant={removeParticipant}
-                  onRollAll={rollAllInitiative}
+                  onRollAllNPCs={rollAllInitiative}
                   onRollAllWithPCs={rollAllInitiativeIncludingPCs}
                   onClearRolls={clearRolls}
                   onStartEncounter={startEncounter}
+                  onEndEncounter={endEncounter}
+                  onNextTurn={nextTurn}
                   onSaveEncounter={saveCurrentEncounter}
                   onLoadEncounter={loadSavedEncounter}
                   onDeleteEncounter={deleteSavedEncounter}
                   onExportEncounters={exportEncounters}
-                  onRollDamage={(expr, _label) => {
-                     console.log("Rolling damage from Encounter Tracker!", expr);
-                     if (diceRollerRef.current) {
-                       diceRollerRef.current.rollCustom(expr);
-                     } else {
-                       console.error("DiceRoller ref is not attached!");
-                     }
-                  }}
                   onImportEncounters={importEncounters}
-                  onOpenDamageDialog={openDamageDialog}
-                  critMode={critMode}
-                  tarotDeck={tarotDeck}
                 />
               )}
               
@@ -526,46 +447,16 @@ function App() {
               )}
               
               {activeTab === 'npc' && (
-                <div className="space-y-6">
-                  <div className="flex gap-2">
-                    <button
-                      onClick={() => setNpcSubTab('generator')}
-                      className={`px-4 py-2 rounded-lg transition-colors ${
-                        npcSubTab === 'generator' ? 'bg-primary text-primary-foreground' : 'bg-secondary hover:bg-secondary/80'
-                      }`}
-                    >
-                      <Zap className="w-4 h-4 inline mr-2" />
-                      Auto Generator
-                    </button>
-                    <button
-                      onClick={() => setNpcSubTab('manual')}
-                      className={`px-4 py-2 rounded-lg transition-colors ${
-                        npcSubTab === 'manual' ? 'bg-primary text-primary-foreground' : 'bg-secondary hover:bg-secondary/80'
-                      }`}
-                    >
-                      <UserPlus className="w-4 h-4 inline mr-2" />
-                      Manual Creator
-                    </button>
-                  </div>
-                  
-                  {npcSubTab === 'generator' && (
-                    <NPCGenerator 
-                      onAddToEncounter={addNPCToEncounter}
-                      savedNPCs={savedNPCs}
-                      setSavedNPCs={setSavedNPCs}
-                      critMode={critMode}
-                      tarotDeck={tarotDeck}
-                    />
-                  )}
-                  
-                  {npcSubTab === 'manual' && (
-                    <ManualNPCCreator
-                      onAddToEncounter={addNPCToEncounter}
-                      savedNPCs={savedNPCs}
-                      setSavedNPCs={setSavedNPCs}
-                    />
-                  )}
-                </div>
+                <NPCGenerator 
+                  onAddToEncounter={(npc) => {
+                    setParticipants(prev => [...prev, npc]);
+                    setActiveTab('encounter');
+                  }}
+                  onAddMultipleToEncounter={(npcs) => {
+                    setParticipants(prev => [...prev, ...npcs]);
+                    setActiveTab('encounter');
+                  }}
+                />
               )}
               
               {activeTab === 'encounter-gen' && (
@@ -607,20 +498,20 @@ function App() {
               {activeTab === 'pcs' && (
                 <PCManager 
                   onAddToEncounter={(pc) => {
-                    addParticipant({
-                      name: pc.name,
-                      ref: pc.ref,
-                      initiativeSkill: 0,
-                      hp: pc.hp,
-                      maxHp: pc.maxHp,
-                      isPC: true,
-                      armor: {
-                        head: pc.armorHead,
-                        body: pc.armorBody,
-                        shield: pc.shieldSp,
-                        shieldEquipped: false
-                      }
+                    setParticipants(prev => {
+                      const exists = prev.some(p => p.id === pc.id);
+                      if (exists) return prev.map(p => p.id === pc.id ? pc : p);
+                      return [...prev, pc];
                     });
+                    setActiveTab('encounter');
+                  }}
+                  onAddPartyToEncounter={(party) => {
+                    setParticipants(prev => {
+                      const existingIds = new Set(prev.map(p => p.id));
+                      const newOnly = party.filter(p => !existingIds.has(p.id));
+                      return [...prev, ...newOnly];
+                    });
+                    setActiveTab('encounter');
                   }}
                 />
               )}

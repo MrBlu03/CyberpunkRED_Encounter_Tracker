@@ -1,113 +1,92 @@
-# Cyberpunk RED Encounter Tracker
+# Cyberpunk RED Encounter Tracker & GM Combat Command Center
 
-A web-based tool for Game Masters running Cyberpunk RED tabletop RPG sessions. This tool provides various utilities to help manage encounters, including cover management, critical injury rolling, and more.
+A high-performance, polished web application for Game Masters running **Cyberpunk RED** tabletop RPG sessions. Designed from the ground up for speed, automation, and narrative immersion, this tool dramatically cuts down combat friction during complex shootouts and street gang wars.
 
-## 🚀 Live Demo
+---
 
-The application is deployed on Netlify and can be accessed at:
-**https://cyberpunkred-gm-tool.netlify.app/gm-tool/**
+## 🚀 Key Features
 
-## ✨ Features
+### ⚡ 1-Click Initiative & Turn Order
+- **Instant NPC Roll**: Roll initiatives for all hostile and friendly NPCs with a single button (`1d10 + REF + Init Skill`, accounting for Kerenzikov and Sandevistan cyberware).
+- **Inline PC Entry**: Direct number inputs on Player Character cards allow seamless manual initiative entry without cumbersome modals.
+- **Automatic Initiative Sorting**: Dynamic round and turn progression with active combatant indicators.
 
-### 🎯 Core Tools
-- **Cover Management System** - Track and manage cover positions, types, and bonuses for combat encounters
-- **Critical Injury Roller** - Automated critical injury generation with proper Cyberpunk RED rules
-- **Tarot Card Integration** - Night City Tarot rules and card management
-- **Encounter Tracker** - Comprehensive encounter management for GMs
+### ⚔️ Auto-Resolved NPC vs NPC Combat
+- **Lightning-Fast Mass Combat**: Auto-resolves all NPC vs NPC attacks in one batch with complete Cyberpunk RED RAW rule fidelity.
+- **Bullet Dodging Mechanic**: Only combatants with REF 8+ or cybernetic reflexes (Kerenzikov/Sandevistan) attempt to evade ranged fire (DEX + Evasion DV check); others rely on static Range DVs.
+- **Armor Halving for Melee**: Attacks with blades, brawling, and melee weapons automatically halve effective armor SP.
+- **Damage & SP Ablation**: Penetrating damage reduces HP and ablates armor SP automatically. Armor-Piercing (AP) ammo ablates 2 SP.
+- **GM Review Intercept for PCs**: When an attack targets a Player Character, execution halts and opens the **GM Combat Review Dialog** to let the GM inspect rolls, toggle hit/evasion, override damage, and select hit locations before applying consequences.
 
-### 🛡️ Combat Assistance
-- **Armor Tracking** - Monitor armor ablation and damage application
-- **Ammo Management** - Track ammunition usage and different ammo types
-- **Damage Calculator** - Automated damage calculations with armor penetration
-- **Critical Hit Handling** - Proper critical hit resolution and effects
+### 🎮 GM Exclusive Manual Control for Custom Allies & Bosses
+- **Custom-Made NPCs**: When creating custom NPCs or friendly allies, the GM can flag them for **Exclusive Manual Control**.
+- **Excluded from Auto-Resolve**: Generic goons follow the auto-combat rules, while custom-crafted allies and bosses remain 100% under GM manual command.
+- **Opposed & Contest Check Engine**: A single Stat Number derives all NPC modifiers, with a 1-click **OPPOSE** button to contest any player check (Stealth, Athletics, Grapple, Social, Tech) using exploding 1d10 dice.
 
-### 📊 Data Management
-- **Compendium Integration** - Access to comprehensive item databases
-- **Custom Item Creation** - Create and manage custom weapons, armor, and gear
-- **Character Sheet Integration** - Seamless integration with character data
-- **Real-time Updates** - Live updates during combat and encounters
+### 🎬 Cinematic Round Narration Engine with Initiative Hand-off
+- **Automated Combat Sequence Narration**: Transforms mechanical combat actions of each round into vivid, cinematic prose.
+- **Tone Presets**: Choose between **Cyberpunk Gritty**, **High-Octane Action Movie**, and **Tactical Breacher** styles.
+- **Initiative Spotlight & Turn Hand-off**: Seamlessly transitions from the chaotic NPC firefight to the player's or GM-controlled ally's active turn with customized hand-off narration.
+- **1-Click Clipboard Copy**: Instantly copy narration to read aloud or paste into virtual tabletops or Discord channels.
 
-### 🎮 User Experience
-- **Responsive Design** - Works on desktop, tablet, and mobile devices
-- **Modern UI** - Clean, intuitive interface following Cyberpunk RED aesthetics
-- **Offline Capable** - Core functionality works without internet connection
-- **Fast Performance** - Optimized for quick access during live gameplay
+### 🎴 Night City Tarot & Critical Injury Rules
+- **Tarot vs Normal Crits**: Automatically tracks how many `6`s are rolled on damage dice.
+  - **2x Sixes**: Normal Critical Injury (+5 bonus HP damage and specific injury table roll with Cyberware/First Aid treatment DVs).
+  - **3+ Sixes**: **Night City Tarot Critical Hit**, automatically drawing from the canonical 22 Major Arcana Tarot deck with mechanical effects.
 
-## 🛠️ Local Development
+### 🔫 Authentic Foundry VTT Compendium Integration (Zero Hardcoded Fallbacks)
+- **100% Direct Data Extraction**: Weapons, armor, cyberware, ammo, and explosives are loaded directly from the official Foundry VTT Cyberpunk RED system pack (`foundryItems.json`).
+- **Tactical Loadout Biases**: Equip squads with **Balanced**, **Melee-Heavy**, **Ranged Specialist**, or **Demolitionist** loadouts.
+- **Dynamic Threat Scaling**: Enemy equipment and stats scale dynamically across **Street (Easy)**, **Dangerous (Medium)**, **Deadly (Hard)**, and **Overkill (Extreme)**:
+  - *Deadly/Overkill* enemies automatically equip specialized Ammunition (Armor-Piercing, Incendiary, Smart, Expansive) and Ordnance (Frag, Flashbang, EMP, AP Grenades, and Rockets).
+- **Ordnance Throw / Detonation**: Direct action buttons on combatant cards to throw grenades or fire rockets with explosive SP ablation rules.
 
-To run this project locally:
+### 🎯 Weapon Range DV Reference & Classification Normalizer
+- **Interactive Range DV Chart**: Displays exact target DVs for all weapon categories across 0–6m, 7–12m, 13–25m, 26–50m, 51–100m, 101–200m, 201–400m, and 401–800m.
+- **Quick Range Badges**: Normalized weapon categorization badges for instant DV checking on any equipped weapon.
 
-1. Navigate to the `gm-tool` directory:
+### 🎲 Upgraded Cyberpunk RED Dice Roller
+- Dedicated roller supporting exploding 1d10s, critical botches (Natural 1 with subtraction), damage dice (d6s), stat modifiers, and log history.
+
+---
+
+## 🛠️ Tech Stack
+
+- **React 18** with **TypeScript**
+- **Vite** build engine & development server
+- **Tailwind CSS** with custom dark cyberpunk aesthetic
+- **Lucide Icons**
+- **Sonner** toast notifications
+- **Foundry VTT Cyberpunk RED System Data** (`fvtt-cyberpunk-red-core`)
+
+---
+
+## 📦 Project Setup & Local Development
+
+1. **Clone the repository**:
    ```bash
-   cd gm-tool
+   git clone https://github.com/MrBlu03/CyberpunkRED_Encounter_Tracker.git
+   cd CyberpunkRED_Encounter_Tracker/gm-tool
    ```
 
-2. Install dependencies:
+2. **Install dependencies**:
    ```bash
    npm install
    ```
 
-3. Start the development server:
+3. **Start the local development server**:
    ```bash
    npm run dev
    ```
 
-4. Open your browser and visit `http://localhost:5173`
+4. **Build for production**:
+   ```bash
+   npm run build
+   ```
 
-## 🏗️ Building for Production
+---
 
-To build the project for production:
+## 📜 License & Disclaimers
 
-```bash
-cd gm-tool
-npm run build
-```
-
-The built files will be in the `gm-tool/dist` directory.
-
-## 📦 Project Structure
-
-- `gm-tool/` - Main React application built with Vite
-- `fvtt-cyberpunk-red-core-master/` - Foundry VTT module data
-- `NightCityTarrotRules/` - Tarot rules data
-
-## 🙏 Credits & Acknowledgments
-
-### Data Sources
-This project utilizes data and content from the following sources:
-
-- **[Cyberpunk RED Core - Foundry VTT System](https://foundryvtt.com/packages/cyberpunk-red-core)** - Comprehensive game system data including:
-  - Item compendiums (weapons, armor, cyberware, gear)
-  - Character sheet functionality
-  - Combat mechanics and rules
-  - Critical injury systems
-  - Netrunning tools and programs
-
-*DISCLAIMER: This game system is unofficial content provided under the Homebrew Content Policy of R. Talsorian Games and is not officially supported or endorsed by RTG. This content references materials that are the property of R. Talsorian Games and its licensees.*
-
-### Development Team
-- **CPR Dev Team** - Original Foundry VTT system development
-- **Community Contributors** - Testing, coding, content creation, and feedback
-
-### Technology Stack
-- **React 18** - Frontend framework
-- **Vite** - Build tool and development server
-- **TypeScript** - Type-safe development
-- **GitHub Pages** - Hosting and deployment
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-## 🔗 Links
-
-- [Live Demo](https://mrblu03.github.io/CyberpunkRED_Encounter_Tracker/)
-- [Foundry VTT Cyberpunk RED Core](https://foundryvtt.com/packages/cyberpunk-red-core)
-- [R. Talsorian Games](https://rtalsoriangames.com/) - Official Cyberpunk RED publisher
+This project is an unofficial fan-made utility for Game Masters running **Cyberpunk RED**, governed by the Homebrew Content Policy of R. Talsorian Games. Cyberpunk RED is a trademark of R. Talsorian Games, Inc.
+Item compendium data is derived from the open-source Foundry VTT Cyberpunk RED system.

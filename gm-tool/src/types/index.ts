@@ -12,20 +12,40 @@ export type ThemeMode = 'dark' | 'light';
 
 export type ColorPalette = 'orange' | 'blue' | 'red';
 
+export type Affiliation = 'player' | 'friendly_npc' | 'hostile_npc' | 'neutral';
+
 export interface WeaponRange {
   range: number;
   dv: number;
 }
 
+export type CombatStyle = 'balanced' | 'melee_focused' | 'ranged_focused' | 'demolitionist';
+
+export type EncounterDifficulty = 'easy' | 'medium' | 'hard' | 'extreme';
+
+export interface OrdnanceItem {
+  _id: string;
+  name: string;
+  damage: string;
+  type: string;
+  count: number;
+  effect?: string;
+}
+
 export interface Weapon {
   _id: string;
   name: string;
+  type?: string;
+  ammoType?: string; // e.g. 'Armor-Piercing', 'Incendiary', 'Smart', 'Expansive', 'Basic'
   system: {
     damage: string;
-    weaponSkill: string;
-    attackmod: number;
+    weaponSkill?: string;
+    attackmod?: number;
     rof?: number;
     range?: number;
+    weaponType?: string;
+    quality?: string;
+    magazine?: { max: number; value?: number };
     ranges?: {
       pointBlank?: WeaponRange;
       close?: WeaponRange;
@@ -40,6 +60,8 @@ export interface Weapon {
 export interface Armor {
   head: number;
   body: number;
+  maxHead?: number;
+  maxBody?: number;
   shield?: number;
   shieldEquipped?: boolean;
 }
@@ -55,12 +77,18 @@ export interface Cover {
 export interface Participant {
   id: string;
   name: string;
+  role?: string;
+  affiliation?: Affiliation; // 'player' | 'friendly_npc' | 'hostile_npc' | 'neutral'
   ref: number;
+  dex?: number;
+  body?: number;
+  will?: number;
   initiativeSkill: number;
   rolled?: number;
   total?: number;
   hp: number;
   maxHp: number;
+  seriouslyWoundedThreshold?: number;
   dead: boolean;
   woundState: WoundState;
   isPC: boolean;
@@ -69,10 +97,19 @@ export interface Participant {
   cover?: Cover;
   weapons?: Weapon[];
   skills?: Record<string, number>;
+  cyberware?: Array<{ _id?: string; name: string; type?: string; description?: string; benefit?: string }>;
   isGoon?: boolean;
-  tier?: 'easy' | 'average' | 'elite';
+  tier?: 'easy' | 'average' | 'elite' | 'mook' | 'lieutenant' | 'boss';
   combatNumber?: number;
   nonCombatNumber?: number;
+  evasionSkill?: number;
+  targetId?: string; // Target participant id for auto-attack
+  ammoType?: string; // e.g. 'Armor-Piercing', 'Incendiary', 'Smart', 'Expansive', 'Basic'
+  ordinance?: OrdnanceItem[];
+  combatStyle?: CombatStyle;
+  difficulty?: EncounterDifficulty;
+  isCustomNPC?: boolean; // Custom-made NPC
+  manualControl?: boolean; // If true, GM controls their movesets directly (excluded from auto-resolve)
 }
 
 export interface EncounterState {
@@ -100,12 +137,22 @@ export interface SavedNPC {
 export interface PC {
   id: string;
   name: string;
+  handle?: string;
+  role: string;
   ref: number;
+  dex?: number;
+  body?: number;
+  will?: number;
   hp: number;
   maxHp: number;
   armorHead: number;
   armorBody: number;
   shieldSp?: number;
+  initiativeSkill?: number;
+  evasionSkill?: number;
+  weapons?: Weapon[];
+  skills?: Record<string, number>;
+  notes?: string;
 }
 
 export interface DamageCalculation {
@@ -114,6 +161,8 @@ export interface DamageCalculation {
   location: 'head' | 'body';
   damageType: DamageType;
   isCritical: boolean;
+  criticalInjuryName?: string;
+  criticalInjuryEffect?: string;
   armorSP: number;
   coverSP: number;
   coverDamage: number;
@@ -127,6 +176,54 @@ export interface CriticalInjury {
   name: string;
   description: string;
   effect: string;
+  quickFix?: string;
+  treatment?: string;
+}
+
+export interface CombatAction {
+  id: string;
+  round: number;
+  attackerId: string;
+  attackerName: string;
+  attackerAffiliation: Affiliation;
+  defenderId: string;
+  defenderName: string;
+  defenderAffiliation: Affiliation;
+  weaponName: string;
+  damageFormula: string;
+  attackRoll: number;
+  attackBreakdown: string;
+  defenseType: 'dodge' | 'dv' | 'none';
+  defenseRoll?: number;
+  defenseBreakdown?: string;
+  hit: boolean;
+  hitLocation: 'head' | 'body';
+  damageRoll: number;
+  damageDice: number[];
+  sixCount?: number;
+  isCritical: boolean;
+  isTarotCrit?: boolean;
+  tarotCard?: { id?: string; name: string; number?: number; roman?: string; effect: string };
+  criticalInjuryName?: string;
+  criticalInjuryEffect?: string;
+  spBefore: number;
+  spAbsorbed: number;
+  spAfter: number;
+  coverDamage?: number;
+  hpDamage: number;
+  hpBefore: number;
+  hpAfter: number;
+  woundStateAfter: WoundState;
+  downed: boolean;
+  timestamp: string;
+}
+
+export interface RoundRecap {
+  round: number;
+  narrative: string;
+  tone: 'cyberpunk' | 'high_octane' | 'tactical';
+  actions: CombatAction[];
+  generatedAt: string;
 }
 
 export interface TarotCard {
@@ -140,9 +237,9 @@ export interface TarotCard {
 }
 
 export interface TarotDeckState {
-  cardIds: string[]; // Order of the deck
+  cardIds: string[];
   drawnThisSession: boolean;
-  cardsSeenCount: number; // For shuffling rule: don't shuffle until all seen once
+  cardsSeenCount: number;
 }
 
 export interface ShopItem {
@@ -187,6 +284,7 @@ export interface GeneratedNPC {
   id: string;
   name: string;
   role: string;
+  affiliation?: Affiliation;
   difficulty?: string;
   stats: {
     int: number;
@@ -213,8 +311,8 @@ export interface GeneratedNPC {
       body: number;
       shield?: number;
       system?: {
-        headLocation: { sp: number };
-        bodyLocation: { sp: number };
+        headLocation?: { sp: number };
+        bodyLocation?: { sp: number };
       };
     };
     weapons: Weapon[];
@@ -222,7 +320,7 @@ export interface GeneratedNPC {
     gear: string[];
   };
   isGoon?: boolean;
-  tier?: 'easy' | 'average' | 'elite';
+  tier?: 'easy' | 'average' | 'elite' | 'mook' | 'lieutenant' | 'boss';
   combatNumber?: number;
   nonCombatNumber?: number;
 }

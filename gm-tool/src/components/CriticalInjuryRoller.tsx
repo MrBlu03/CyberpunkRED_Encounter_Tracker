@@ -1,213 +1,166 @@
 import { useState } from 'react';
-import { Skull, Dices, RefreshCw, AlertTriangle } from 'lucide-react';
+import { Skull, RefreshCw, AlertTriangle, Sparkles, Heart, Activity } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
-import { d6 } from '@/lib/dice';
-
-interface CriticalInjury {
-  location: string;
-  severity: string;
-  name: string;
-  description: string;
-  effect: string;
-}
-
-const CRITICAL_INJURIES: Record<string, Record<string, CriticalInjury>> = {
-  '1': { // Head
-    '1': { location: 'Head', severity: 'Mortal', name: 'Brain Injury', description: 'The target\'s brain is severely damaged.', effect: 'Target is unconscious and will die in 1d6 minutes without medical attention.' },
-    '2': { location: 'Head', severity: 'Severe', name: 'Skull Fracture', description: 'The target\'s skull is cracked.', effect: 'Target is unconscious for 1d6 hours. -2 to all actions for 1 week.' },
-    '3': { location: 'Head', severity: 'Severe', name: 'Eye Damage', description: 'The target loses an eye.', effect: 'Permanent loss of one eye. -4 to all sight-based actions.' },
-    '4': { location: 'Head', severity: 'Moderate', name: 'Concussion', description: 'The target is severely concussed.', effect: 'Target is stunned for 1d6 rounds. -2 to all actions for 24 hours.' },
-    '5': { location: 'Head', severity: 'Moderate', name: 'Broken Jaw', description: 'The target\'s jaw is broken.', effect: 'Cannot speak clearly. Eating requires liquids only. Heals in 4 weeks.' },
-    '6': { location: 'Head', severity: 'Light', name: 'Ear Damage', description: 'The target\'s ear is damaged.', effect: 'Partial hearing loss in one ear. -2 to audio-based perception.' }
-  },
-  '2': { // Body
-    '1': { location: 'Body', severity: 'Mortal', name: 'Spinal Injury', description: 'The target\'s spine is severed.', effect: 'Target is paralyzed from the waist down. Permanent without cybernetic replacement.' },
-    '2': { location: 'Body', severity: 'Severe', name: 'Collapsed Lung', description: 'The target\'s lung collapses.', effect: 'Target cannot move faster than a walk. -4 to all physical actions.' },
-    '3': { location: 'Body', severity: 'Severe', name: 'Ruptured Organ', description: 'A major organ is ruptured.', effect: 'Target will die in 1d6 hours without surgery.' },
-    '4': { location: 'Body', severity: 'Moderate', name: 'Broken Ribs', description: 'Multiple ribs are broken.', effect: '-2 to all physical actions. Breathing is painful.' },
-    '5': { location: 'Body', severity: 'Moderate', name: 'Internal Bleeding', description: 'The target is bleeding internally.', effect: 'Loses 1 HP per minute until treated.' },
-    '6': { location: 'Body', severity: 'Light', name: 'Bruised Torso', description: 'Severe bruising across the torso.', effect: '-1 to all physical actions for 24 hours.' }
-  },
-  '3': { // Arm
-    '1': { location: 'Arm', severity: 'Severe', name: 'Severed Arm', description: 'The arm is completely severed.', effect: 'Permanent loss of arm. Requires cybernetic replacement.' },
-    '2': { location: 'Arm', severity: 'Severe', name: 'Shattered Elbow', description: 'The elbow joint is shattered.', effect: 'Arm unusable until repaired. Surgery required.' },
-    '3': { location: 'Arm', severity: 'Moderate', name: 'Broken Arm', description: 'The arm bone is broken.', effect: 'Arm unusable for 6 weeks. -4 to actions using that arm.' },
-    '4': { location: 'Arm', severity: 'Moderate', name: 'Dislocated Shoulder', description: 'The shoulder is dislocated.', effect: 'Arm unusable until reset. -2 to actions after reset for 2 weeks.' },
-    '5': { location: 'Arm', severity: 'Light', name: 'Fractured Wrist', description: 'The wrist is fractured.', effect: '-2 to fine motor actions with that hand for 4 weeks.' },
-    '6': { location: 'Arm', severity: 'Light', name: 'Sprained Arm', description: 'The arm is severely sprained.', effect: '-1 to actions using that arm for 1 week.' }
-  },
-  '4': { // Leg
-    '1': { location: 'Leg', severity: 'Severe', name: 'Severed Leg', description: 'The leg is completely severed.', effect: 'Permanent loss of leg. Requires cybernetic replacement.' },
-    '2': { location: 'Leg', severity: 'Severe', name: 'Shattered Knee', description: 'The knee is shattered.', effect: 'Cannot walk unassisted. Surgery required.' },
-    '3': { location: 'Leg', severity: 'Moderate', name: 'Broken Leg', description: 'The leg bone is broken.', effect: 'Movement reduced by half for 8 weeks.' },
-    '4': { location: 'Leg', severity: 'Moderate', name: 'Dislocated Hip', description: 'The hip is dislocated.', effect: 'Cannot walk until reset. -2 to movement for 3 weeks after.' },
-    '5': { location: 'Leg', severity: 'Light', name: 'Fractured Ankle', description: 'The ankle is fractured.', effect: 'Movement reduced by half for 4 weeks.' },
-    '6': { location: 'Leg', severity: 'Light', name: 'Sprained Leg', description: 'The leg is severely sprained.', effect: '-1 to movement for 1 week.' }
-  }
-};
-
-const LOCATION_NAMES: Record<string, string> = {
-  '1': 'Head',
-  '2': 'Body',
-  '3': 'Arm',
-  '4': 'Leg'
-};
+import { rollDie, CRITICAL_INJURIES_BODY, CRITICAL_INJURIES_HEAD } from '@/lib/combatEngine';
 
 export function CriticalInjuryRoller() {
-  const [result, setResult] = useState<CriticalInjury | null>(null);
+  const [targetLocation, setTargetLocation] = useState<'head' | 'body'>('body');
+  const [die1, setDie1] = useState<number | null>(null);
+  const [die2, setDie2] = useState<number | null>(null);
   const [isRolling, setIsRolling] = useState(false);
-  const [locationRoll, setLocationRoll] = useState<number | null>(null);
-  const [severityRoll, setSeverityRoll] = useState<number | null>(null);
-  
+  const [currentInjury, setCurrentInjury] = useState<{
+    name: string;
+    description: string;
+    effect: string;
+    quickFix: string;
+    treatment: string;
+  } | null>(null);
+
   const rollCritical = () => {
     setIsRolling(true);
-    setResult(null);
-    
-    // Animate the roll
+    setCurrentInjury(null);
+
     let rolls = 0;
     const interval = setInterval(() => {
-      setLocationRoll(d6());
-      setSeverityRoll(d6());
+      setDie1(rollDie(6));
+      setDie2(rollDie(6));
       rolls++;
-      
+
       if (rolls >= 10) {
         clearInterval(interval);
-        const finalLocation = d6();
-        const finalSeverity = d6();
-        
-        // Map 5-6 to 3-4 for location (arms and legs combined)
-        const mappedLocation = finalLocation > 4 ? '4' : finalLocation > 2 ? '3' : finalLocation.toString();
-        
-        setLocationRoll(finalLocation);
-        setSeverityRoll(finalSeverity);
-        
-        const injury = CRITICAL_INJURIES[mappedLocation]?.[finalSeverity.toString()];
-        if (injury) {
-          setResult(injury);
-          toast.success(`Rolled ${injury.severity} critical injury!`);
-        }
+        const final1 = rollDie(6);
+        const final2 = rollDie(6);
+        const total = final1 + final2;
+
+        setDie1(final1);
+        setDie2(final2);
+
+        const table = targetLocation === 'head' ? CRITICAL_INJURIES_HEAD : CRITICAL_INJURIES_BODY;
+        const injury = table[total] || table[7];
+
+        setCurrentInjury(injury);
         setIsRolling(false);
+        toast.success(`Rolled ${injury.name} on ${targetLocation.toUpperCase()}! (+5 Bonus Damage)`, {
+          icon: <Sparkles className="w-5 h-5 text-warning" />
+        });
       }
-    }, 100);
+    }, 80);
   };
-  
-  const getSeverityColor = (severity: string) => {
-    switch (severity) {
-      case 'Mortal': return 'text-destructive border-destructive';
-      case 'Severe': return 'text-warning border-warning';
-      case 'Moderate': return 'text-primary border-primary';
-      case 'Light': return 'text-success border-success';
-      default: return 'text-muted-foreground border-border';
-    }
-  };
-  
+
+  const totalRoll = (die1 || 0) + (die2 || 0);
+
   return (
-    <div className="space-y-6">
-      <div className="flex items-center gap-3">
-        <div className="w-10 h-10 rounded-lg bg-destructive/20 flex items-center justify-center">
-          <Skull className="w-5 h-5 text-destructive" />
+    <div className="space-y-6 max-w-4xl mx-auto">
+      {/* Header Banner */}
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-5 rounded-2xl bg-gradient-to-r from-card/90 via-card/50 to-rose-500/10 border border-rose-500/20 backdrop-blur-md shadow-lg">
+        <div className="flex items-center gap-3.5">
+          <div className="w-12 h-12 rounded-xl bg-rose-500/20 border border-rose-500/30 flex items-center justify-center text-rose-500 shadow-inner">
+            <Skull className="w-6 h-6" />
+          </div>
+          <div>
+            <h2 className="text-2xl font-black tracking-wide text-foreground uppercase" style={{ fontFamily: 'var(--font-display)' }}>
+              Critical Injury Roller
+            </h2>
+            <p className="text-xs text-muted-foreground">
+              Official Cyberpunk RED Core Rulebook RAW (2d6 Head & Body Trauma Tables with Quick Fix DVs).
+            </p>
+          </div>
         </div>
-        <div>
-          <h2 className="text-2xl font-bold" style={{ fontFamily: 'var(--font-display)' }}>
-            Critical Injury Roller
-          </h2>
-          <p className="text-sm text-muted-foreground">
-            Roll for critical injuries per Cyberpunk RED RAW
-          </p>
+
+        {/* Location selector */}
+        <div className="flex items-center gap-1.5 p-1 rounded-xl bg-secondary/40 border border-border">
+          <button
+            onClick={() => setTargetLocation('body')}
+            className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+              targetLocation === 'body' ? 'bg-primary text-primary-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground'
+            }`}
+          >
+            Body Criticals
+          </button>
+          <button
+            onClick={() => setTargetLocation('head')}
+            className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+              targetLocation === 'head' ? 'bg-primary text-primary-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground'
+            }`}
+          >
+            Head Criticals
+          </button>
         </div>
       </div>
-      
-      <div className="flex justify-center">
-        <Button 
-          onClick={rollCritical} 
+
+      {/* Main Roll Area */}
+      <div className="p-8 rounded-2xl bg-card border border-border shadow-xl text-center space-y-6">
+        <div className="flex justify-center gap-4">
+          <div className="w-20 h-20 rounded-2xl bg-secondary/60 border-2 border-border flex items-center justify-center text-3xl font-black font-mono text-primary shadow-inner">
+            {die1 ?? '?'}
+          </div>
+          <div className="flex items-center text-xl font-black text-muted-foreground">+</div>
+          <div className="w-20 h-20 rounded-2xl bg-secondary/60 border-2 border-border flex items-center justify-center text-3xl font-black font-mono text-primary shadow-inner">
+            {die2 ?? '?'}
+          </div>
+          <div className="flex items-center text-xl font-black text-muted-foreground">=</div>
+          <div className="w-20 h-20 rounded-2xl bg-rose-500/20 border-2 border-rose-500/50 flex items-center justify-center text-3xl font-black font-mono text-rose-400 shadow-lg shadow-rose-500/10">
+            {die1 && die2 ? totalRoll : '?'}
+          </div>
+        </div>
+
+        <Button
+          onClick={rollCritical}
           disabled={isRolling}
-          className="cyber-btn text-lg px-8 py-6"
+          className="cyber-btn bg-rose-600 hover:bg-rose-500 text-white font-black text-base px-8 py-6 shadow-lg shadow-rose-600/30"
         >
           <RefreshCw className={`w-5 h-5 mr-2 ${isRolling ? 'animate-spin' : ''}`} />
-          {isRolling ? 'Rolling...' : 'Roll Critical Injury'}
+          {isRolling ? 'Rolling 2d6...' : `Roll ${targetLocation.toUpperCase()} Critical Injury`}
         </Button>
       </div>
-      
-      {/* Dice Display */}
-      <div className="flex justify-center gap-8">
-        <div className="text-center">
-          <div className="text-sm uppercase tracking-wider text-muted-foreground mb-2">Location</div>
-          <div className="w-20 h-20 rounded-xl bg-secondary flex items-center justify-center text-4xl font-bold font-mono">
-            {locationRoll || '?'}
-          </div>
-          <div className="text-sm text-muted-foreground mt-2">
-            {locationRoll ? LOCATION_NAMES[locationRoll > 4 ? '4' : locationRoll > 2 ? '3' : locationRoll.toString()] || 'Arm/Leg' : '-'}
-          </div>
-        </div>
-        <div className="text-center">
-          <div className="text-sm uppercase tracking-wider text-muted-foreground mb-2">Severity</div>
-          <div className="w-20 h-20 rounded-xl bg-secondary flex items-center justify-center text-4xl font-bold font-mono">
-            {severityRoll || '?'}
-          </div>
-          <div className="text-sm text-muted-foreground mt-2">
-            {severityRoll ? ['', 'Mortal', 'Severe', 'Severe', 'Moderate', 'Moderate', 'Light'][severityRoll] : '-'}
-          </div>
-        </div>
-      </div>
-      
-      {/* Result */}
-      {result && (
-        <div className={`glass-card rounded-xl p-6 border-2 animate-in ${getSeverityColor(result.severity)}`}>
-          <div className="flex items-center gap-3 mb-4">
-            <AlertTriangle className="w-6 h-6" />
+
+      {/* Result Card */}
+      {currentInjury && (
+        <div className="p-6 rounded-2xl bg-card border-2 border-rose-500/40 shadow-2xl backdrop-blur-md animate-in space-y-4">
+          <div className="flex items-center justify-between border-b border-border/60 pb-3">
             <div>
-              <h3 className="text-2xl font-bold" style={{ fontFamily: 'var(--font-display)' }}>
-                {result.name}
+              <span className="text-[10px] font-mono uppercase text-muted-foreground block font-bold">
+                2d6 ROLL: {totalRoll} ({targetLocation.toUpperCase()})
+              </span>
+              <h3 className="text-2xl font-black text-rose-400 flex items-center gap-2">
+                <AlertTriangle className="w-6 h-6 text-warning" />
+                {currentInjury.name}
               </h3>
-              <p className="text-sm opacity-80">
-                {result.severity} • {result.location}
-              </p>
+            </div>
+            <span className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-rose-500/20 text-rose-400 border border-rose-500/30">
+              +5 Bonus Damage to HP
+            </span>
+          </div>
+
+          <p className="text-sm text-foreground/90 font-medium">
+            {currentInjury.description}
+          </p>
+
+          <div className="p-4 rounded-xl bg-secondary/30 border border-border space-y-2">
+            <div>
+              <span className="text-xs font-bold text-muted-foreground uppercase block">Trauma Effect:</span>
+              <p className="text-sm font-bold text-rose-300">{currentInjury.effect}</p>
             </div>
           </div>
-          
-          <div className="space-y-4">
-            <div>
-              <h4 className="font-bold text-sm uppercase tracking-wider mb-1">Description</h4>
-              <p className="text-muted-foreground">{result.description}</p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 pt-2">
+            <div className="p-3 rounded-xl bg-secondary/20 border border-border">
+              <span className="text-[11px] font-bold text-muted-foreground uppercase block flex items-center gap-1">
+                <Activity className="w-3.5 h-3.5 text-cyan-400" /> Quick Fix
+              </span>
+              <p className="text-xs text-foreground font-mono mt-1">{currentInjury.quickFix}</p>
             </div>
-            
-            <div className="p-4 bg-background/50 rounded-lg">
-              <h4 className="font-bold text-sm uppercase tracking-wider mb-1">Game Effect</h4>
-              <p>{result.effect}</p>
+
+            <div className="p-3 rounded-xl bg-secondary/20 border border-border">
+              <span className="text-[11px] font-bold text-muted-foreground uppercase block flex items-center gap-1">
+                <Heart className="w-3.5 h-3.5 text-emerald-400" /> Treatment / Surgery
+              </span>
+              <p className="text-xs text-foreground font-mono mt-1">{currentInjury.treatment}</p>
             </div>
           </div>
         </div>
       )}
-      
-      {/* Reference Table */}
-      <div className="glass-card rounded-xl p-6">
-        <h3 className="font-bold mb-4 flex items-center gap-2" style={{ fontFamily: 'var(--font-display)' }}>
-          <Dices className="w-5 h-5 text-primary" />
-          Critical Injury Reference
-        </h3>
-        
-        <div className="grid md:grid-cols-2 gap-4 text-sm">
-          <div>
-            <h4 className="font-medium mb-2 text-primary">Location (1d6)</h4>
-            <ul className="space-y-1 text-muted-foreground">
-              <li>1: Head</li>
-              <li>2: Body</li>
-              <li>3-4: Arm</li>
-              <li>5-6: Leg</li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-medium mb-2 text-primary">Severity (1d6)</h4>
-            <ul className="space-y-1 text-muted-foreground">
-              <li>1: Mortal</li>
-              <li>2-3: Severe</li>
-              <li>4-5: Moderate</li>
-              <li>6: Light</li>
-            </ul>
-          </div>
-        </div>
-      </div>
     </div>
   );
 }

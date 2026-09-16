@@ -1,232 +1,266 @@
-// Cyberpunk RED Weapon Range and DV Tables
-// Based on the Core Rulebook
+// Cyberpunk RED Weapon Range and DV Reference Engine
+// Based on the Cyberpunk RED Core Rulebook (p. 173)
 
-export interface RangeEntry {
-  range: number;
-  dv: number;
+import type { Weapon } from '@/types';
+
+export interface RangeBand {
+  id: string;
+  name: string;
+  rangeLabel: string;
+  minMeters: number;
+  maxMeters: number;
 }
 
-export interface WeaponRangeTable {
-  [key: string]: RangeEntry;
-}
-
-// Base Single Shot DV by Range (for Pistols, SMGs, Rifles)
-export const SINGLE_SHOT_DV: Record<string, number[]> = {
-  // [0-6m, 7-12m, 13-25m, 26-50m, 51-100m, 101-200m, >200m]
-  // Pistols (all types)
-  pistol: [13, 15, 17, 19, 21, 24, 27],
-  mediumPistol: [13, 15, 17, 19, 21, 24, 27],
-  heavyPistol: [13, 15, 17, 19, 21, 24, 27],
-  vHeavyPistol: [13, 15, 17, 19, 21, 24, 27],
-  // SMG
-  smg: [13, 15, 17, 19, 21, 24, 27],
-  // Rifles
-  rifle: [13, 15, 17, 19, 21, 24, 27],
-  assaultRifle: [13, 15, 17, 19, 21, 24, 27],
-  sniperRifle: [13, 15, 17, 19, 21, 24, 27],
-  // Heavy Weapons
-  heavyWeapon: [13, 15, 17, 19, 21, 24, 27],
-  grenadeLauncher: [13, 15, 17, 19, 21, 24, 27],
-  rocketLauncher: [13, 15, 17, 19, 21, 24, 27],
-  // Shotgun with Buckshot (different)
-  shotgunBuckshot: [9, 13, 17, 21, 99, 99, 99], // 99 = not applicable
-  shotgun: [9, 13, 17, 21, 99, 99, 99], // Default shotgun is buckshot
-  // Shotgun with Slug
-  shotgunSlug: [13, 15, 17, 19, 21, 24, 27],
-  // Archery
-  bow: [15, 17, 19, 21, 24, 27, 30],
-  crossbow: [15, 17, 19, 21, 24, 27, 30],
-  // Thrown Weapons (same as pistols)
-  thrownWeapon: [13, 15, 17, 19, 21, 24, 27],
-  // Melee (not applicable - uses Defense)
-  melee: [99, 99, 99, 99, 99, 99, 99],
-  lightMelee: [99, 99, 99, 99, 99, 99, 99],
-  medMelee: [99, 99, 99, 99, 99, 99, 99],
-  heavyMelee: [99, 99, 99, 99, 99, 99, 99],
-  vHeavyMelee: [99, 99, 99, 99, 99, 99, 99],
-};
-
-// Map FVTT weapon types to DV table keys
-export function getDVTableKey(weaponType: string, isRanged: boolean = true): string {
-  if (!isRanged || !weaponType) {
-    return 'melee';
-  }
-  
-  const typeMap: Record<string, string> = {
-    pistol: 'pistol',
-    mediumPistol: 'mediumPistol',
-    heavyPistol: 'heavyPistol',
-    vHeavyPistol: 'vHeavyPistol',
-    smg: 'smg',
-    rifle: 'rifle',
-    assaultRifle: 'assaultRifle',
-    sniperRifle: 'sniperRifle',
-    sniper: 'sniperRifle',
-    shotgun: 'shotgun',
-    heavyWeapon: 'heavyWeapon',
-    grenadeLauncher: 'grenadeLauncher',
-    rocketLauncher: 'rocketLauncher',
-    bow: 'bow',
-    crossbow: 'crossbow',
-    thrownWeapon: 'thrownWeapon',
-    melee: 'melee',
-    lightMelee: 'lightMelee',
-    medMelee: 'medMelee',
-    heavyMelee: 'heavyMelee',
-    vHeavyMelee: 'vHeavyMelee',
-  };
-  
-  return typeMap[weaponType] || 'pistol';
-}
-
-// Burst/Autofire DV by Range
-export const BURST_AUTOFIRE_DV: Record<string, number[]> = {
-  // [0-12m, 13-25m, 26-50m, 51-100m, >100m]
-  smg: [12, 15, 22, 28, 99],
-  assaultRifle: [12, 10, 12, 18, 99],
-  autofire: [17, 19, 21, 24, 27],
-};
-
-// Range band labels
-export const RANGE_BANDS = [
-  { name: 'Point Blank', short: 'PB', maxMeters: 6 },
-  { name: 'Close', short: 'CL', maxMeters: 12 },
-  { name: 'Medium', short: 'MD', maxMeters: 25 },
-  { name: 'Long', short: 'LG', maxMeters: 50 },
-  { name: 'Extreme', short: 'EX', maxMeters: 100 },
-  { name: 'Beyond Extreme', short: '>', maxMeters: Infinity },
+// The 8 official Core Rulebook Range Brackets
+export const RANGE_BANDS: RangeBand[] = [
+  { id: 'pb', name: 'Point Blank', rangeLabel: '0-6m', minMeters: 0, maxMeters: 6 },
+  { id: 'close', name: 'Close', rangeLabel: '7-12m', minMeters: 7, maxMeters: 12 },
+  { id: 'medium', name: 'Medium', rangeLabel: '13-25m', minMeters: 13, maxMeters: 25 },
+  { id: 'long', name: 'Long', rangeLabel: '26-50m', minMeters: 26, maxMeters: 50 },
+  { id: 'extreme', name: 'Extreme', rangeLabel: '51-100m', minMeters: 51, maxMeters: 100 },
+  { id: 'bracket6', name: 'Extreme+', rangeLabel: '101-200m', minMeters: 101, maxMeters: 200 },
+  { id: 'bracket7', name: 'Beyond', rangeLabel: '201-400m', minMeters: 201, maxMeters: 400 },
+  { id: 'bracket8', name: 'Max', rangeLabel: '401-800m', minMeters: 401, maxMeters: 800 },
 ];
 
-// Get range band index for a distance in meters
+// Single Shot DV by Range (Cyberpunk RED Core Rulebook p. 173)
+// null indicates the weapon cannot be used or will not reach this distance
+export const SINGLE_SHOT_DV_TABLE: Record<string, (number | null)[]> = {
+  // Range:              0-6m, 7-12m, 13-25m, 26-50m, 51-100m, 101-200m, 201-400m, 401-800m
+  'Pistol':            [13,   15,    20,     25,     30,      30,       null,     null],
+  'Medium Pistol':     [13,   15,    20,     25,     30,      30,       null,     null],
+  'Heavy Pistol':      [13,   15,    20,     25,     30,      30,       null,     null],
+  'Very Heavy Pistol': [13,   15,    20,     25,     30,      30,       null,     null],
+  'SMG':               [15,   13,    15,     20,     25,      25,       30,       null],
+  'Heavy SMG':         [15,   13,    15,     20,     25,      25,       30,       null],
+  'Shotgun (Slug)':    [13,   15,    20,     25,     30,      35,       null,     null],
+  'Shotgun':           [13,   15,    20,     25,     30,      35,       null,     null],
+  'Shotgun (Buckshot)':[13,   13,    13,     null,   null,    null,     null,     null], // Hits 3x3m area
+  'Assault Rifle':     [17,   16,    15,     13,     15,      20,       25,       30],
+  'Sniper Rifle':      [30,   25,    25,     20,     15,      16,       17,       20],
+  'Rifle':             [17,   16,    15,     13,     15,      20,       25,       30],
+  'Bow / Crossbow':    [15,   13,    15,     17,     20,      22,       null,     null],
+  'Grenade Launcher':  [16,   15,    15,     17,     20,      22,       25,       null],
+  'Rocket Launcher':   [17,   16,    15,     15,     20,      20,       25,       30],
+};
+
+// Autofire Range Bands and DV Table (Core Rulebook & Edgerunners)
+export const AUTOFIRE_RANGE_BANDS = [
+  { label: '0-6m', min: 0, max: 6 },
+  { label: '7-12m', min: 7, max: 12 },
+  { label: '13-25m', min: 13, max: 25 },
+  { label: '26-50m', min: 26, max: 50 },
+  { label: '51-100m', min: 51, max: 100 },
+];
+
+export const AUTOFIRE_DV_TABLE: Record<string, (number | null)[]> = {
+  'SMG':           [20, 17, 20, 25, 30],
+  'Heavy SMG':     [20, 17, 20, 25, 30],
+  'Assault Rifle': [22, 20, 17, 20, 25],
+};
+
+// Thrown weapons DV
+export const THROWN_WEAPON_RULES = {
+  maxRangeMeters: 25,
+  skill: 'Athletics',
+  bands: [
+    { label: '0-6m', dv: 16 },
+    { label: '7-25m', dv: 15 },
+  ],
+};
+
+/**
+ * Normalizes any weapon item to its standard Cyberpunk RED category.
+ * Preserves the exact classification logic previously used in the tool.
+ */
+export function formatWeaponCategory(weapon: Partial<Weapon> | null | undefined): string {
+  if (!weapon) return 'Weapon';
+
+  const type = weapon.system?.weaponType;
+  if (typeof type === 'string' && type) {
+    if (type === 'vHeavyPistol') return 'Very Heavy Pistol';
+    if (type === 'vHeavyMelee') return 'Very Heavy Melee';
+    if (type === 'heavySmg') return 'Heavy SMG';
+    const result = type.replace(/([A-Z])/g, ' $1').trim();
+    return result.charAt(0).toUpperCase() + result.slice(1);
+  }
+
+  // Fallback for older saves or custom weapons that didn't retain weaponType
+  if (weapon.name) {
+    const lowerName = weapon.name.toLowerCase();
+    if (lowerName.includes('assault rifle')) return 'Assault Rifle';
+    if (lowerName.includes('sniper rifle') || lowerName.includes('sniper')) return 'Sniper Rifle';
+    if (lowerName.includes('shotgun')) return 'Shotgun';
+    if (lowerName.includes('heavy smg')) return 'Heavy SMG';
+    if (lowerName.includes('smg') || lowerName.includes('submachine')) return 'SMG';
+
+    // Specific pistol sizes
+    if (lowerName.includes('very heavy pistol') || lowerName.includes('v. heavy pistol')) return 'Very Heavy Pistol';
+    if (lowerName.includes('heavy pistol')) return 'Heavy Pistol';
+    if (lowerName.includes('medium pistol')) return 'Medium Pistol';
+    if (lowerName.includes('pistol') || lowerName.includes('handgun') || lowerName.includes('revolver')) return 'Pistol';
+
+    if (
+      lowerName.includes('melee') || 
+      lowerName.includes('katana') || 
+      lowerName.includes('sword') || 
+      lowerName.includes('knife') || 
+      lowerName.includes('blade') || 
+      lowerName.includes('machete') || 
+      lowerName.includes('axe') || 
+      lowerName.includes('cyberarm')
+    ) {
+      return 'Melee Weapon';
+    }
+
+    if (lowerName.includes('bow') || lowerName.includes('crossbow')) return 'Bow / Crossbow';
+    if (lowerName.includes('grenade launcher')) return 'Grenade Launcher';
+    if (lowerName.includes('rocket launcher')) return 'Rocket Launcher';
+  }
+
+  // Fallback by weaponSkill & damage
+  if (weapon.system?.weaponSkill) {
+    const skill = weapon.system.weaponSkill.toLowerCase();
+    const damage = weapon.system.damage || '';
+
+    if (skill.includes('handgun')) {
+      if (damage.includes('4d6')) return 'Very Heavy Pistol';
+      if (damage.includes('3d6')) return 'Heavy Pistol';
+      if (damage.includes('2d6')) return 'Medium Pistol';
+      return 'Pistol';
+    }
+
+    if (skill.includes('shoulder arms')) {
+      if (damage.includes('5d6')) return 'Assault Rifle';
+      if (damage.includes('3d6')) return 'Shotgun';
+      return 'Rifle';
+    }
+
+    if (skill.includes('melee') || skill.includes('brawling') || skill.includes('martial arts')) return 'Melee Weapon';
+    if (skill.includes('heavy')) return 'Heavy Weapon';
+    if (skill.includes('archery')) return 'Bow / Crossbow';
+
+    return weapon.system.weaponSkill;
+  }
+
+  return 'Weapon';
+}
+
+export interface WeaponRangeResolution {
+  category: string;
+  isRanged: boolean;
+  canAutofire: boolean;
+  singleShotDVs: Array<{ label: string; dv: number | null }>;
+  autofireDVs?: Array<{ label: string; dv: number | null }>;
+}
+
+/**
+ * Resolves a weapon's range bands and DVs for both single shot and autofire.
+ */
+export function getWeaponRangeResolution(weapon: Partial<Weapon> | null | undefined): WeaponRangeResolution {
+  const category = formatWeaponCategory(weapon);
+  const isMelee = 
+    category.toLowerCase().includes('melee') || 
+    weapon?.system?.weaponSkill?.toLowerCase().includes('melee') ||
+    weapon?.system?.weaponSkill?.toLowerCase().includes('brawling') ||
+    weapon?.system?.weaponSkill?.toLowerCase().includes('martial arts');
+
+  if (isMelee) {
+    return {
+      category,
+      isRanged: false,
+      canAutofire: false,
+      singleShotDVs: []
+    };
+  }
+
+  // Check if weapon has custom Foundry VTT system.ranges defined
+  const fvttRanges = weapon?.system?.ranges;
+  let singleShotDVs: Array<{ label: string; dv: number | null }>;
+
+  if (fvttRanges && (fvttRanges.pointBlank || fvttRanges.close || fvttRanges.medium)) {
+    singleShotDVs = [
+      { label: '0-6m', dv: fvttRanges.pointBlank?.dv ?? null },
+      { label: '7-12m', dv: fvttRanges.close?.dv ?? null },
+      { label: '13-25m', dv: fvttRanges.medium?.dv ?? null },
+      { label: '26-50m', dv: fvttRanges.long?.dv ?? null },
+      { label: '51-100m', dv: fvttRanges.extreme?.dv ?? null },
+    ];
+  } else {
+    // Map from canonical table
+    const tableRow = SINGLE_SHOT_DV_TABLE[category] || 
+      (category.includes('Pistol') ? SINGLE_SHOT_DV_TABLE['Pistol'] :
+       category.includes('SMG') ? SINGLE_SHOT_DV_TABLE['SMG'] :
+       category.includes('Shotgun') ? SINGLE_SHOT_DV_TABLE['Shotgun (Slug)'] :
+       category.includes('Sniper') ? SINGLE_SHOT_DV_TABLE['Sniper Rifle'] :
+       category.includes('Rifle') ? SINGLE_SHOT_DV_TABLE['Assault Rifle'] :
+       category.includes('Bow') ? SINGLE_SHOT_DV_TABLE['Bow / Crossbow'] :
+       category.includes('Grenade') ? SINGLE_SHOT_DV_TABLE['Grenade Launcher'] :
+       category.includes('Rocket') ? SINGLE_SHOT_DV_TABLE['Rocket Launcher'] :
+       SINGLE_SHOT_DV_TABLE['Pistol']);
+
+    singleShotDVs = RANGE_BANDS.map((band, i) => ({
+      label: band.rangeLabel,
+      dv: tableRow ? tableRow[i] ?? null : null
+    }));
+  }
+
+  // Check autofire support (SMG, Assault Rifle, or Autofire skill)
+  const canAutofire = 
+    category.includes('SMG') || 
+    category.includes('Assault Rifle') || 
+    weapon?.system?.weaponSkill?.toLowerCase() === 'autofire';
+
+  let autofireDVs: Array<{ label: string; dv: number | null }> | undefined;
+  if (canAutofire) {
+    const autoRow = category.includes('Assault Rifle') ? AUTOFIRE_DV_TABLE['Assault Rifle'] : AUTOFIRE_DV_TABLE['SMG'];
+    autofireDVs = AUTOFIRE_RANGE_BANDS.map((band, i) => ({
+      label: band.label,
+      dv: autoRow ? autoRow[i] ?? null : null
+    }));
+  }
+
+  return {
+    category,
+    isRanged: true,
+    canAutofire,
+    singleShotDVs,
+    autofireDVs
+  };
+}
+
+/**
+ * Get range band index for a distance in meters (0 to 7)
+ */
 export function getRangeBandIndex(distanceMeters: number): number {
   if (distanceMeters <= 6) return 0;
   if (distanceMeters <= 12) return 1;
   if (distanceMeters <= 25) return 2;
   if (distanceMeters <= 50) return 3;
   if (distanceMeters <= 100) return 4;
-  return 5;
+  if (distanceMeters <= 200) return 5;
+  if (distanceMeters <= 400) return 6;
+  return 7;
 }
 
-// Get range band name
-export function getRangeBandName(distanceMeters: number): string {
+/**
+ * Get single shot DV for weapon category at a given distance
+ */
+export function getSingleShotDV(weaponCategory: string, distanceMeters: number): number | null {
+  const table = SINGLE_SHOT_DV_TABLE[weaponCategory] || SINGLE_SHOT_DV_TABLE['Pistol'];
   const idx = getRangeBandIndex(distanceMeters);
-  return RANGE_BANDS[idx].name;
+  return table[idx] ?? null;
 }
 
-// Get Single Shot DV for a weapon type at a given distance
-export function getSingleShotDV(weaponType: string, distanceMeters: number): number {
-  const dvTable = SINGLE_SHOT_DV[weaponType] || SINGLE_SHOT_DV.pistol;
-  const idx = getRangeBandIndex(distanceMeters);
-  const dv = dvTable[idx];
-  return dv >= 99 ? -1 : dv; // -1 means N/A
+/**
+ * Get autofire DV for weapon category at a given distance
+ */
+export function getBurstAutofireDV(weaponCategory: string, distanceMeters: number): number | null {
+  const table = weaponCategory.includes('Assault Rifle') ? AUTOFIRE_DV_TABLE['Assault Rifle'] : AUTOFIRE_DV_TABLE['SMG'];
+  if (distanceMeters <= 6) return table[0];
+  if (distanceMeters <= 12) return table[1];
+  if (distanceMeters <= 25) return table[2];
+  if (distanceMeters <= 50) return table[3];
+  if (distanceMeters <= 100) return table[4];
+  return null; // Beyond 100m autofire is out of range
 }
-
-// Get Burst/Autofire DV for a weapon type at a given distance
-export function getBurstAutofireDV(weaponType: string, distanceMeters: number): number {
-  // Use autofire table for generic autofire, or specific weapon type
-  const dvTable = BURST_AUTOFIRE_DV[weaponType] || BURST_AUTOFIRE_DV.autofire;
-  
-  // Autofire ranges: 0-12, 13-25, 26-50, 51-100, >100
-  let idx: number;
-  if (distanceMeters <= 12) idx = 0;
-  else if (distanceMeters <= 25) idx = 1;
-  else if (distanceMeters <= 50) idx = 2;
-  else if (distanceMeters <= 100) idx = 3;
-  else idx = 4;
-  
-  const dv = dvTable[idx];
-  return dv >= 99 ? -1 : dv;
-}
-
-// Get DV for autofire attack
-export function getAutofireDV(distanceMeters: number): number {
-  return getBurstAutofireDV('autofire', distanceMeters);
-}
-
-// Weapon type to skill mapping
-export const WEAPON_SKILLS: Record<string, string> = {
-  pistol: 'Handgun',
-  mediumPistol: 'Handgun',
-  heavyPistol: 'Handgun',
-  veryHeavyPistol: 'Handgun',
-  smg: 'Autofire',
-  shotgun: 'Shoulder Arms',
-  shotgunBuckshot: 'Shoulder Arms',
-  shotgunSlug: 'Shoulder Arms',
-  rifle: 'Shoulder Arms',
-  assaultRifle: 'Shoulder Arms',
-  sniper: 'Shoulder Arms',
-  bow: 'Archery',
-  crossbow: 'Archery',
-  grenadeLauncher: 'Heavy Weapons',
-  heavyWeapon: 'Heavy Weapons',
-  rocketLauncher: 'Heavy Weapons',
-  melee: 'Melee Weapon',
-  exotic: 'Exotic Weapon',
-};
-
-// Weapon categories
-export const WEAPON_CATEGORIES = {
-  PISTOLS: ['pistol', 'mediumPistol', 'heavyPistol', 'veryHeavyPistol'],
-  SMGS: ['smg'],
-  SHOTGUNS: ['shotgun', 'shotgunBuckshot', 'shotgunSlug'],
-  RIFLES: ['rifle', 'assaultRifle', 'sniper'],
-  HEAVY: ['heavyWeapon', 'grenadeLauncher', 'rocketLauncher'],
-  ARCHERY: ['bow', 'crossbow'],
-  MELEE: ['melee'],
-};
-
-// Get weapon category
-export function getWeaponCategory(weaponType: string): string {
-  for (const [category, types] of Object.entries(WEAPON_CATEGORIES)) {
-    if (types.includes(weaponType)) return category;
-  }
-  return 'PISTOLS'; // default
-}
-
-// DV modifiers for various combat situations
-export const DV_MODIFIERS = {
-  // Attacker conditions
-  attackerProne: +1,
-  attackerRunning: +1,
-  attackerMovingVehicle: +2,
-  attackerInWater: +2,
-  
-  // Target conditions
-  targetProne: 0,
-  targetRunning: +2,
-  targetDiving: +2,
-  targetInMelee: +2,
-  targetInSmoke: +2,
-  targetInFog: +2,
-  targetInDarkness: +2,
-  targetInRain: +1,
-  targetInWind: +1,
-  
-  // Combat actions
-  calledShot: +4,
-  calledShotLimb: +6,
-  hipFire: +2,
-  suppressiveFire: +4,
-  burst: +1,
-  
-  // Aiming (from table)
-  aim1Turn: -2,
-  aim2Turns: -4,
-  
-  // Range modifiers (reference)
-  pointBlank: -2,
-  close: 0,
-  medium: +2,
-  long: +4,
-  extreme: +8,
-};
-
-// Range table for display
-export const RANGE_TABLE_DISPLAY = {
-  pistol: { headers: ['0-6m', '7-12m', '13-25m', '26-50m', '51-100m', '101-200m', '>200m'], values: [13, 15, 17, 19, 21, 24, 27] },
-  shotgunBuckshot: { headers: ['0-6m', '7-12m', '13-25m', '26-50m'], values: [9, 13, 17, 21] },
-  shotgunSlug: { headers: ['0-6m', '7-12m', '13-25m', '26-50m', '51-100m', '101-200m', '>200m'], values: [13, 15, 17, 19, 21, 24, 27] },
-  bow: { headers: ['0-6m', '7-12m', '13-25m', '26-50m', '51-100m', '101-200m', '>200m'], values: [15, 17, 19, 21, 24, 27, 30] },
-  autofire: { headers: ['0-12m', '13-25m', '26-50m', '51-100m', '>100m'], values: [17, 19, 21, 24, 27] },
-};
