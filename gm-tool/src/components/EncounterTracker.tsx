@@ -116,76 +116,49 @@ export function EncounterTracker({
   const [quickAddSP, setQuickAddSP] = useState(11);
   const [quickAddRef, setQuickAddRef] = useState(6);
 
-  // Opposed / Contest Check State (1d10 exploding + single NPC Stat Number vs player roll)
-  const [activeContest, setActiveContest] = useState<{
-    npc: Participant;
+  // Opposed Check State (1d10 exploding + single NPC Stat Number)
+  const [lastOpposeRolls, setLastOpposeRolls] = useState<Record<string, {
+    total: number;
+    breakdown: string;
     statNumber: number;
-    contestName: string;
-    d10Result: { total: number; baseRoll: number; explosion?: number; botch?: number; breakdown: string };
-    npcTotal: number;
-    playerRoll: number | '';
-  } | null>(null);
+    exploded?: boolean;
+    botched?: boolean;
+  }>>({});
 
-  const handleTriggerContest = (npc: Participant, defaultName: string = 'General Opposed Check') => {
+  const handleQuickOppose = (npc: Participant) => {
     const statNumber = getNPCStatNumber(npc);
     const d10Result = rollD10Exploding();
     const npcTotal = d10Result.total + statNumber;
 
-    setActiveContest({
-      npc,
-      statNumber,
-      contestName: defaultName,
-      d10Result,
-      npcTotal,
-      playerRoll: ''
-    });
-
-    toast.success(`🎲 ${npc.name} Opposed Roll: ${npcTotal} (1d10 + Stat #${statNumber})`);
-  };
-
-  const handleRerollContest = () => {
-    if (!activeContest) return;
-    const d10Result = rollD10Exploding();
-    const npcTotal = d10Result.total + activeContest.statNumber;
-    setActiveContest(prev => prev ? ({ ...prev, d10Result, npcTotal }) : null);
-    toast.info(`🎲 Re-rolled ${activeContest.npc.name}: ${npcTotal}`);
-  };
-
-  const handleLogContestAction = () => {
-    if (!activeContest) return;
-    const pRoll = typeof activeContest.playerRoll === 'number' ? activeContest.playerRoll : null;
-    let outcomeText = '';
-    let hit = true;
-    if (pRoll !== null) {
-      if (activeContest.npcTotal > pRoll) {
-        outcomeText = `[NPC Wins vs PC ${pRoll} by ${activeContest.npcTotal - pRoll}]`;
-        hit = true;
-      } else if (pRoll > activeContest.npcTotal) {
-        outcomeText = `[Player Wins with ${pRoll} vs NPC ${activeContest.npcTotal}]`;
-        hit = false;
-      } else {
-        outcomeText = `[Tie at ${activeContest.npcTotal} - Status Quo Holds]`;
-        hit = true;
+    setLastOpposeRolls(prev => ({
+      ...prev,
+      [npc.id]: {
+        total: npcTotal,
+        breakdown: d10Result.breakdown,
+        statNumber,
+        exploded: d10Result.baseRoll === 10,
+        botched: d10Result.baseRoll === 1
       }
-    }
+    }));
+
+    toast.success(`🎲 ${npc.name} Oppose Roll: ${npcTotal} (${d10Result.breakdown} + Stat #${statNumber})`);
 
     const action: CombatAction = {
       id: crypto.randomUUID(),
       round: encounter.round,
-      attackerId: activeContest.npc.id,
-      attackerName: activeContest.npc.name,
-      attackerAffiliation: activeContest.npc.affiliation || 'hostile_npc',
+      attackerId: npc.id,
+      attackerName: npc.name,
+      attackerAffiliation: npc.affiliation || 'hostile_npc',
       defenderId: 'player',
-      defenderName: 'Player Character',
+      defenderName: 'Player Check',
       defenderAffiliation: 'player',
-      weaponName: `Contest: ${activeContest.contestName} ${outcomeText}`,
+      weaponName: 'Opposed Check',
       damageFormula: '-',
-      attackRoll: activeContest.npcTotal,
-      attackBreakdown: `1d10(${activeContest.d10Result.breakdown}) + Stat#(${activeContest.statNumber}) = ${activeContest.npcTotal}`,
+      attackRoll: npcTotal,
+      attackBreakdown: `1d10(${d10Result.breakdown}) + Stat#(${statNumber}) = ${npcTotal}`,
       defenseType: 'dodge',
-      defenseRoll: pRoll ?? 0,
-      defenseBreakdown: pRoll !== null ? `PC Roll = ${pRoll}` : undefined,
-      hit,
+      defenseRoll: 0,
+      hit: true,
       hitLocation: 'body',
       damageRoll: 0,
       damageDice: [],
@@ -202,8 +175,6 @@ export function EncounterTracker({
     };
 
     setCombatActions(prev => [action, ...prev]);
-    toast.success(`Logged opposed check to combat log`);
-    setActiveContest(null);
   };
 
   // Target pairings for active combat
@@ -1068,18 +1039,38 @@ export function EncounterTracker({
                   </select>
                 </div>
 
-                {/* Oppose / Contest Any Player Check Button */}
+                {/* Oppose Any Player Check Button & Instant Outcome Display */}
                 {!p.isPC && p.affiliation !== 'player' && (
-                  <Button
-                    size="sm"
-                    disabled={p.hp <= 0}
-                    onClick={() => handleTriggerContest(p)}
-                    className="cyber-btn text-xs px-2.5 h-8 bg-amber-500/15 hover:bg-amber-500/30 text-amber-300 border border-amber-500/50 font-mono flex items-center gap-1.5 font-bold shadow-sm cursor-pointer"
-                    title={`Oppose or contest any player check using Stat #${getNPCStatNumber(p)}`}
-                  >
-                    <ShieldAlert className="w-3.5 h-3.5 text-amber-400" />
-                    <span>OPPOSE</span>
-                  </Button>
+                  <div className="flex items-center gap-1.5">
+                    <Button
+                      size="sm"
+                      disabled={p.hp <= 0}
+                      onClick={() => handleQuickOppose(p)}
+                      className="cyber-btn text-xs px-2.5 h-8 bg-amber-500/15 hover:bg-amber-500/30 text-amber-300 border border-amber-500/50 font-mono flex items-center gap-1.5 font-bold shadow-sm cursor-pointer"
+                      title={`Roll Oppose check: 1d10 (exploding) + Stat #${getNPCStatNumber(p)}`}
+                    >
+                      <ShieldAlert className="w-3.5 h-3.5 text-amber-400" />
+                      <span>OPPOSE</span>
+                    </Button>
+
+                    {lastOpposeRolls[p.id] && (
+                      <div
+                        className={`flex items-center gap-1 px-2 py-0.5 rounded border text-xs font-mono font-bold animate-in fade-in zoom-in-95 duration-150 ${
+                          lastOpposeRolls[p.id].exploded
+                            ? 'bg-emerald-500/20 text-emerald-300 border-emerald-500/50 shadow-[0_0_8px_rgba(16,185,129,0.3)]'
+                            : lastOpposeRolls[p.id].botched
+                              ? 'bg-rose-500/20 text-rose-300 border-rose-500/50 shadow-[0_0_8px_rgba(244,63,94,0.3)]'
+                              : 'bg-amber-500/20 text-amber-300 border-amber-500/50'
+                        }`}
+                        title={`Breakdown: 1d10(${lastOpposeRolls[p.id].breakdown}) + Stat #${lastOpposeRolls[p.id].statNumber} = ${lastOpposeRolls[p.id].total}`}
+                      >
+                        <span className="text-[10px] text-muted-foreground uppercase">Roll:</span>
+                        <span className="text-sm font-black text-white">{lastOpposeRolls[p.id].total}</span>
+                        {lastOpposeRolls[p.id].exploded && <span className="text-[10px] text-emerald-400 font-normal" title="Exploded!">⚡</span>}
+                        {lastOpposeRolls[p.id].botched && <span className="text-[10px] text-rose-400 font-normal" title="Botched!">💥</span>}
+                      </div>
+                    )}
+                  </div>
                 )}
 
                 {/* Weapons Attack Action Buttons with Normalized Category & Range DV Access */}
@@ -1352,165 +1343,7 @@ export function EncounterTracker({
         </Dialog>
       )}
 
-      {/* OPPOSED / CONTEST CHECK RESOLVER MODAL */}
-      {activeContest && (
-        <Dialog open={!!activeContest} onOpenChange={open => !open && setActiveContest(null)}>
-          <DialogContent className="max-w-lg bg-card border-2 border-amber-500/50 shadow-2xl backdrop-blur-2xl">
-            <DialogHeader>
-              <div className="flex items-center justify-between">
-                <DialogTitle className="text-lg font-black tracking-wider uppercase text-amber-400 flex items-center gap-2 font-mono">
-                  <ShieldAlert className="w-5 h-5 text-amber-400" />
-                  Opposed Check vs Player
-                </DialogTitle>
-                <span className="text-xs font-mono font-bold px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/40">
-                  {activeContest.npc.name} (Stat #{activeContest.statNumber})
-                </span>
-              </div>
-            </DialogHeader>
 
-            <div className="space-y-4 py-2">
-              {/* Contest Skill / Context Selector */}
-              <div>
-                <label className="text-[11px] font-bold text-muted-foreground uppercase block mb-1.5">
-                  Contest Type / Check Context
-                </label>
-                <div className="flex flex-wrap gap-1.5">
-                  {[
-                    'Perception vs Stealth',
-                    'Athletics / Grapple',
-                    'Brawling / Melee',
-                    'Social / Interrogation',
-                    'Cybertech / Interface',
-                    'General Opposed Check'
-                  ].map(preset => (
-                    <button
-                      key={preset}
-                      type="button"
-                      onClick={() => setActiveContest(prev => prev ? ({ ...prev, contestName: preset }) : null)}
-                      className={`px-2.5 py-1 rounded-lg text-xs font-mono transition-all cursor-pointer border ${
-                        activeContest.contestName === preset
-                          ? 'bg-amber-500 text-black font-black border-amber-400 shadow-sm'
-                          : 'bg-secondary/40 hover:bg-secondary text-muted-foreground border-border'
-                      }`}
-                    >
-                      {preset}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              {/* Side-by-Side: NPC Opposed Roll vs Player Input */}
-              <div className="grid grid-cols-2 gap-3">
-                {/* NPC Roll Box */}
-                <div className="p-4 rounded-xl bg-amber-500/10 border-2 border-amber-500/40 text-center space-y-1">
-                  <span className="text-[10px] font-bold uppercase text-amber-400 block tracking-wider">
-                    {activeContest.npc.name} Roll
-                  </span>
-                  <div className="text-4xl font-black font-mono text-amber-300 leading-tight">
-                    {activeContest.npcTotal}
-                  </div>
-                  <div className="text-[11px] text-muted-foreground font-mono">
-                    1d10 ({activeContest.d10Result.breakdown}) + Stat#({activeContest.statNumber})
-                  </div>
-                  {activeContest.d10Result.baseRoll === 10 && (
-                    <span className="inline-block text-[10px] font-bold px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
-                      ⚡ Natural 10 Exploded!
-                    </span>
-                  )}
-                  {activeContest.d10Result.baseRoll === 1 && (
-                    <span className="inline-block text-[10px] font-bold px-1.5 py-0.5 rounded bg-rose-500/20 text-rose-400 border border-rose-500/30">
-                      💥 Natural 1 Botched!
-                    </span>
-                  )}
-                </div>
-
-                {/* Player Roll Box */}
-                <div className="p-4 rounded-xl bg-secondary/30 border border-border text-center space-y-2 flex flex-col justify-center">
-                  <span className="text-[10px] font-bold uppercase text-muted-foreground block tracking-wider">
-                    Player's Total Roll
-                  </span>
-                  <Input
-                    type="number"
-                    placeholder="Enter total..."
-                    value={activeContest.playerRoll}
-                    onChange={e => {
-                      const val = e.target.value === '' ? '' : parseInt(e.target.value);
-                      setActiveContest(prev => prev ? ({ ...prev, playerRoll: val }) : null);
-                    }}
-                    className="cyber-input font-mono font-black text-2xl text-center h-12 w-full text-foreground"
-                    autoFocus
-                  />
-                  <span className="text-[10px] text-muted-foreground">
-                    Type what player rolled on their check
-                  </span>
-                </div>
-              </div>
-
-              {/* Outcome Comparison Banner */}
-              {typeof activeContest.playerRoll === 'number' && (
-                <div className={`p-3 rounded-xl border text-center font-bold text-sm flex items-center justify-center gap-2 ${
-                  activeContest.npcTotal > activeContest.playerRoll
-                    ? 'bg-amber-500/20 border-amber-500/50 text-amber-300'
-                    : activeContest.playerRoll > activeContest.npcTotal
-                      ? 'bg-emerald-500/20 border-emerald-500/50 text-emerald-400'
-                      : 'bg-blue-500/20 border-blue-500/50 text-blue-300'
-                }`}>
-                  {activeContest.npcTotal > activeContest.playerRoll ? (
-                    <>
-                      <span>🏆 NPC WINS CONTEST!</span>
-                      <span className="font-mono text-xs font-normal">
-                        ({activeContest.npcTotal} vs {activeContest.playerRoll}, beats player by {activeContest.npcTotal - activeContest.playerRoll})
-                      </span>
-                    </>
-                  ) : activeContest.playerRoll > activeContest.npcTotal ? (
-                    <>
-                      <span>🛡️ PLAYER WINS CONTEST!</span>
-                      <span className="font-mono text-xs font-normal">
-                        ({activeContest.playerRoll} vs {activeContest.npcTotal}, beats NPC by {activeContest.playerRoll - activeContest.npcTotal})
-                      </span>
-                    </>
-                  ) : (
-                    <>
-                      <span>🤝 TIE AT {activeContest.npcTotal}!</span>
-                      <span className="font-mono text-xs font-normal">
-                        (Defender / Existing status quo holds in CP:R)
-                      </span>
-                    </>
-                  )}
-                </div>
-              )}
-            </div>
-
-            <DialogFooter className="flex items-center justify-between sm:justify-between w-full gap-2">
-              <Button
-                variant="outline"
-                onClick={handleRerollContest}
-                className="cyber-btn text-xs border-amber-500/40 text-amber-300 hover:bg-amber-500/20"
-              >
-                <Dices className="w-3.5 h-3.5 mr-1" />
-                Re-Roll NPC (1d10)
-              </Button>
-
-              <div className="flex items-center gap-2">
-                <Button
-                  variant="ghost"
-                  onClick={() => setActiveContest(null)}
-                  className="cyber-btn text-xs"
-                >
-                  Close
-                </Button>
-                <Button
-                  onClick={handleLogContestAction}
-                  className="cyber-btn bg-amber-500 hover:bg-amber-400 text-black font-bold text-xs shadow-md"
-                >
-                  <Check className="w-3.5 h-3.5 mr-1 text-black" />
-                  Record to Combat Log
-                </Button>
-              </div>
-            </DialogFooter>
-          </DialogContent>
-        </Dialog>
-      )}
 
       {/* CINEMATIC ROUND ACTION RECAP MODAL (WITH FULL-SCREEN THEATER & TELEPROMPTER MODE) */}
       {showNarrationModal && currentRoundRecap && (
