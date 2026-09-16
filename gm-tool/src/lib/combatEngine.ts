@@ -933,3 +933,38 @@ export function autoPairTargets(participants: Participant[]): Map<string, Partic
 
   return targetMap;
 }
+
+/**
+ * Dynamically re-assigns opponents for all active combatants at round start.
+ * Rotates opponents each round across living targets (PCs and friendly NPCs)
+ * so every round the enemy acquires a new opponent.
+ */
+export function retargetEnemiesForRound(
+  participants: Participant[],
+  roundNumber: number
+): Map<string, Participant> {
+  const targetMap = new Map<string, Participant>();
+  const active = participants.filter(p => !p.dead && p.hp > 0);
+  const hostiles = active.filter(p => p.affiliation === 'hostile_npc' || (!p.isPC && p.affiliation !== 'friendly_npc'));
+  const opponents = active.filter(p => p.affiliation === 'friendly_npc' || p.isPC || p.affiliation === 'player');
+
+  if (opponents.length === 0) return targetMap;
+
+  hostiles.forEach((hostile, hIdx) => {
+    // Distribute and rotate opponents by round number so every round they acquire a new target
+    const targetIdx = (hIdx + (roundNumber - 1)) % opponents.length;
+    const opponent = opponents[targetIdx];
+    targetMap.set(hostile.id, opponent);
+  });
+
+  // Friendly NPCs also rotate opponents among hostiles
+  const friendlyNpcs = active.filter(p => p.affiliation === 'friendly_npc' && !p.isPC);
+  if (hostiles.length > 0) {
+    friendlyNpcs.forEach((friendly, fIdx) => {
+      const targetIdx = (fIdx + (roundNumber - 1)) % hostiles.length;
+      targetMap.set(friendly.id, hostiles[targetIdx]);
+    });
+  }
+
+  return targetMap;
+}

@@ -13,22 +13,28 @@ A high-performance, polished web application for Game Masters running **Cyberpun
 
 ### ⚔️ Auto-Resolved NPC vs NPC Combat
 - **Automatic Round-Start Execution**: Combat calculations run **automatically at round start** (Round 1, Round 2, etc.) without requiring a manual button click. Generic NPC vs NPC actions resolve in the background, updating HP, armor SP, and wound states.
+- **Round-Start Dynamic Opponent Retargeting**: Every round at round start, enemies dynamically acquire a new opponent from the opposing faction (PCs and friendly NPCs), rotating targets systematically across all active combatants so enemies don't dogpile the same character indefinitely.
 - **Dedicated Player Damage Application on Enemies**: An intuitive, inline **"Player Dmg"** panel on every enemy card allows the GM to effortlessly take in player attack damage, choose Body or Head (x2 dmg), toggle Armor-Piercing (AP, -2 SP), and press `Enter` to automatically calculate RAW SP absorption, SP ablation, and penetrating HP loss.
 - **RAW Range Chart vs Player Evade Adjudication**: When an attack targets a Player Character, the **GM Combat Review Queue** adjudicates the hit using the official Cyberpunk RED **Range Chart DVs** (0-6m, 7-12m, 13-25m, etc.) by default. If the player declares an Evade, the GM toggles evasion to oppose the roll with the player's Evasion check.
 - **Armor Halving for Melee**: Attacks with blades, brawling, and melee weapons automatically halve effective armor SP.
 - **Damage & SP Ablation**: Penetrating damage reduces HP and ablates armor SP automatically. Armor-Piercing (AP) ammo ablates 2 SP.
+
+### 📜 Prominent Live Combat & Dice Roll Feed
+- **Unmistakable Real-Time Telemetry**: Every single exploding 1d10 roll, attack total, Range Chart DV check, opposed roll, damage dice roll, SP absorption, and ablation is prominently logged with high-contrast cyberpunk styling.
+- **Top Header Quick-Jump & Badge**: A dedicated **"Rolls & Log"** button with a real-time action counter in the top bar smoothly scrolls directly to the live feed.
+- **Filter Chips Bar**: Instantly filter logged events by **All Rolls**, **Hits**, **Evades/Misses**, **Crits**, and **Opposed Checks**.
+- **Full Calculation Transparency**: Every entry displays exact formulas, modifiers, and defender vital statuses (e.g. `d10[8] + Bonus[11] vs DV 15`, `Dmg 14 [4+5+5] vs SP 11 -> Net -3 HP`).
 
 ### 🎮 GM Exclusive Manual Control for Custom Allies & Bosses
 - **Custom-Made NPCs**: When creating custom NPCs or friendly allies, the GM can flag them for **Exclusive Manual Control**.
 - **Excluded from Auto-Resolve**: Generic goons follow the auto-combat rules, while custom-crafted allies and bosses remain 100% under GM manual command.
 - **Streamlined 1-Click Oppose Check**: A single Stat Number derives all NPC modifiers, with a 1-click **OPPOSE** button to instantly roll exploding 1d10 + Stat# and display the outcome inline without popup modals.
 
-### 🎬 Full-Screen Teleprompter & Cinematic Round Narration
-- **Full-Screen Theater Mode**: Round narration opens in an immersive full-screen teleprompter modal with adjustable reading font sizes (**Normal**, **Large**, **Teleprompter 3xl text**).
-- **Automated Combat Sequence Narration**: Transforms mechanical combat actions of each round into vivid, cinematic prose.
-- **Tone Presets**: Choose between **Cyberpunk Gritty**, **High-Octane Action Movie**, and **Tactical Breacher** styles.
-- **Initiative Spotlight & Turn Hand-off**: Seamlessly transitions from the chaotic NPC firefight to the player's or GM-controlled ally's active turn with customized hand-off narration.
-- **1-Click Clipboard Copy**: Instantly copy narration to read aloud or paste into virtual tabletops or Discord channels.
+### 🎬 Full-Screen Tactical SITREP Teleprompter (Zero Fluff)
+- **Strictly Tactical SITREP Telemetry**: No AI prose fluff—presents an itemized military-grade sitrep breakdown with exact hit/evade checks, damage dealt, armor ablation, and critical injuries so the GM can spice up the scene with their own flair.
+- **Full-Screen Theater & Teleprompter**: Opens in an immersive high-contrast full-screen terminal teleprompter with font size toggles (**Normal**, **Large**, **Teleprompter**).
+- **Initiative Spotlight & Turn Hand-off**: Concludes every sitrep by passing active combat initiative to the Player Character or GM-controlled ally whose turn is up.
+- **1-Click Clipboard Copy**: Instantly copy the entire sitrep to clipboard.
 
 ### 🔄 Granular Encounter Reset & Clear Engine
 - **3-Option Encounter Reset**:

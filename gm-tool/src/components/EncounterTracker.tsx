@@ -3,8 +3,9 @@ import {
   Play, Dices, Swords, Shield, Heart, Skull, 
   Crosshair, Sparkles, Copy, Check, AlertTriangle,
   Flame, Plus, Trash2, ArrowRight, ShieldAlert,
-  Clock, Save, FolderOpen, Download, Upload,
-  Bomb, Zap, RotateCcw, Maximize2, Minimize2, Users
+  Save, FolderOpen, Download, Upload,
+  Bomb, Zap, RotateCcw, Maximize2, Minimize2, Users,
+  ScrollText
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -12,7 +13,8 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from '
 import { toast } from 'sonner';
 import { 
   rollD10Exploding, resolveAttack, autoPairTargets, rollDamage, 
-  rollCriticalInjury, getNPCStatNumber, applyPlayerDamageToDefender 
+  rollCriticalInjury, getNPCStatNumber, applyPlayerDamageToDefender,
+  retargetEnemiesForRound
 } from '@/lib/combatEngine';
 import { generateRoundNarrative } from '@/lib/narrativeEngine';
 import type { NarrativeTone } from '@/lib/narrativeEngine';
@@ -109,7 +111,8 @@ export function EncounterTracker({
   const [showNarrationModal, setShowNarrationModal] = useState(false);
   const [isFullscreenNarration, setIsFullscreenNarration] = useState(true);
   const [narrationFontSize, setNarrationFontSize] = useState<'normal' | 'large' | 'teleprompter'>('large');
-  const [selectedTone, setSelectedTone] = useState<NarrativeTone>('cyberpunk');
+  const [selectedTone] = useState<NarrativeTone>('tactical');
+  const [combatLogFilter, setCombatLogFilter] = useState<'all' | 'hits' | 'evades' | 'crits' | 'oppose'>('all');
   const [copiedNarration, setCopiedNarration] = useState(false);
   const [showSavedModal, setShowSavedModal] = useState(false);
   const [showResetModal, setShowResetModal] = useState(false);
@@ -291,6 +294,14 @@ export function EncounterTracker({
     );
     if (activeNPCs.length === 0) return;
 
+    // Dynamically rotate and re-assign opponents at round start for all enemies and allies
+    const roundTargetMap = retargetEnemiesForRound(participants, roundNumber);
+
+    // Update participants with new targetIds so the UI immediately reflects the dynamic new opponent for each combatant
+    roundTargetMap.forEach((newTarget, attackerId) => {
+      onUpdateParticipant(attackerId, { targetId: newTarget.id });
+    });
+
     let resolvedCount = 0;
     const currentParticipantsMap = new Map(participants.map(p => [p.id, p]));
     const batchActions: CombatAction[] = [];
@@ -300,7 +311,11 @@ export function EncounterTracker({
       const weapon = attacker.weapons && attacker.weapons.length > 0 ? attacker.weapons[0] : null;
       if (!weapon) return;
 
-      const target = attacker.targetId ? currentParticipantsMap.get(attacker.targetId) : targetMap.get(attacker.id);
+      // Primary target: dynamic round target acquired at round start, falling back to manual assignment
+      const dynamicTarget = roundTargetMap.get(attacker.id);
+      const target = dynamicTarget 
+        ? (currentParticipantsMap.get(dynamicTarget.id) || dynamicTarget)
+        : (attacker.targetId ? currentParticipantsMap.get(attacker.targetId) : targetMap.get(attacker.id));
       if (!target || target.hp <= 0 || target.dead) return;
 
       // Case 1: Target is an NPC (Generic NPC vs Generic NPC: Friendly vs Hostile, or Hostile vs Friendly)
@@ -771,15 +786,42 @@ export function EncounterTracker({
 
 
 
-          {/* Cinematic Round Narration Button */}
+          {/* Live Combat & Roll Log Quick-Jump Button */}
+          <Button
+            onClick={() => {
+              const el = document.getElementById('combat-action-log');
+              if (el) {
+                el.scrollIntoView({ behavior: 'smooth' });
+                el.classList.add('ring-2', 'ring-primary');
+                setTimeout(() => el.classList.remove('ring-2', 'ring-primary'), 1500);
+              }
+            }}
+            variant="outline"
+            className={`cyber-btn text-xs font-mono font-bold transition-all cursor-pointer ${
+              combatActions.length > 0
+                ? 'border-primary/60 bg-primary/10 text-primary hover:bg-primary/20 shadow-sm'
+                : 'border-border text-muted-foreground'
+            }`}
+            title="Jump down to view all dice rolls and combat actions in the Live Combat Log"
+          >
+            <ScrollText className="w-4 h-4 mr-1.5 text-primary" />
+            <span>Rolls & Log</span>
+            {combatActions.length > 0 ? (
+              <span className="ml-1.5 px-1.5 py-0.2 rounded-full text-[10px] bg-primary text-primary-foreground font-black">
+                {combatActions.length}
+              </span>
+            ) : null}
+          </Button>
+
+          {/* Tactical SITREP Narration Button */}
           <Button
             onClick={handleGenerateNarration}
             variant="outline"
             className="cyber-btn border-border/80 hover:border-primary text-xs"
-            title="View or regenerate the cinematic action sequence recap for this round."
+            title="View the Tactical SITREP telemetry recap for this round (zero fluff)."
           >
             <Sparkles className="w-4 h-4 mr-1.5 text-warning" />
-            Round Narration
+            Tactical SITREP
           </Button>
 
           {/* Encounter Lifecycle */}
@@ -1605,13 +1647,13 @@ export function EncounterTracker({
 
 
 
-      {/* CINEMATIC ROUND ACTION RECAP MODAL (WITH FULL-SCREEN THEATER & TELEPROMPTER MODE) */}
+      {/* TACTICAL ROUND SITREP TELEPROMPTER MODAL (WITH FULL-SCREEN THEATER & TELEPROMPTER MODE) */}
       {showNarrationModal && currentRoundRecap && (
         <Dialog open={showNarrationModal} onOpenChange={setShowNarrationModal}>
           <DialogContent className={
             isFullscreenNarration
               ? "fixed inset-0 z-50 max-w-none w-screen h-screen m-0 rounded-none bg-background/98 backdrop-blur-3xl flex flex-col border-0 p-6 md:p-10 overflow-hidden shadow-2xl"
-              : "max-w-3xl bg-card border-2 border-primary shadow-2xl backdrop-blur-2xl"
+              : "max-w-4xl bg-card border-2 border-primary shadow-2xl backdrop-blur-2xl"
           }>
             <DialogHeader className="border-b border-border/60 pb-3 flex-shrink-0">
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-3">
@@ -1621,15 +1663,19 @@ export function EncounterTracker({
                   </div>
                   <div>
                     <DialogTitle className="text-lg md:text-xl font-black tracking-wider uppercase text-primary flex items-center gap-2 font-mono">
-                      Round {currentRoundRecap.round} Cinematic Narration
+                      Round {currentRoundRecap.round} Tactical SITREP
                     </DialogTitle>
                     <span className="text-[11px] text-muted-foreground font-mono">
-                      {isFullscreenNarration ? 'Full-Screen Teleprompter / Theater Mode' : 'Compact View'} • {currentRoundRecap.actions.length} Actions Resolved
+                      Strict Telemetry Breakdown • Zero Fluff • {currentRoundRecap.actions.length} Engagements
                     </span>
                   </div>
                 </div>
 
                 <div className="flex items-center flex-wrap gap-2">
+                  <span className="px-2.5 py-1 rounded text-[10px] font-bold uppercase bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 font-mono tracking-wider">
+                    TACTICAL VIEW ONLY
+                  </span>
+
                   {/* Font Size Selector for Reading / Teleprompter */}
                   <div className="flex items-center gap-1 bg-secondary/40 p-1 rounded-lg border border-border">
                     <span className="text-[10px] text-muted-foreground font-mono px-1 font-bold">FONT:</span>
@@ -1643,25 +1689,6 @@ export function EncounterTracker({
                         title={`${size.toUpperCase()} Reading Size`}
                       >
                         {size === 'normal' ? 'Normal' : size === 'large' ? 'Large' : 'Teleprompter'}
-                      </button>
-                    ))}
-                  </div>
-
-                  {/* Tone Presets */}
-                  <div className="flex items-center gap-1 bg-secondary/40 p-1 rounded-lg border border-border">
-                    {(['cyberpunk', 'high_octane', 'tactical'] as NarrativeTone[]).map(tone => (
-                      <button
-                        key={tone}
-                        onClick={() => {
-                          setSelectedTone(tone);
-                          const recap = generateRoundNarrative(currentRoundRecap.round, currentRoundRecap.actions, tone, getSpotlightParticipant());
-                          setCurrentRoundRecap(recap);
-                        }}
-                        className={`px-2.5 py-1 rounded text-[10px] font-bold uppercase transition-all cursor-pointer ${
-                          selectedTone === tone ? 'bg-primary text-primary-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground'
-                        }`}
-                      >
-                        {tone.replace('_', ' ')}
                       </button>
                     ))}
                   </div>
@@ -1681,20 +1708,20 @@ export function EncounterTracker({
               </div>
             </DialogHeader>
 
-            {/* Main Narrative Reading Body */}
-            <div className={`flex-1 overflow-y-auto my-4 p-6 md:p-8 rounded-2xl bg-secondary/15 border-2 border-primary/20 shadow-inner font-sans text-foreground/90 whitespace-pre-line space-y-4 ${
+            {/* Main SITREP Reading Body */}
+            <div className={`flex-1 overflow-y-auto my-4 p-6 md:p-8 rounded-2xl bg-black/85 border-2 border-primary/30 shadow-inner font-mono text-emerald-400 whitespace-pre-wrap leading-relaxed ${
               narrationFontSize === 'teleprompter'
-                ? 'text-xl md:text-2xl leading-relaxed md:leading-loose font-normal tracking-wide max-w-5xl mx-auto'
+                ? 'text-lg md:text-xl tracking-wide max-w-5xl mx-auto'
                 : narrationFontSize === 'large'
-                  ? 'text-base md:text-lg leading-relaxed font-normal max-w-4xl mx-auto'
-                  : 'text-sm md:text-base leading-relaxed max-w-3xl mx-auto'
+                  ? 'text-sm md:text-base max-w-4xl mx-auto'
+                  : 'text-xs md:text-sm max-w-3xl mx-auto'
             }`}>
               {currentRoundRecap.narrative}
             </div>
 
             <DialogFooter className="flex items-center justify-between sm:justify-between w-full border-t border-border/60 pt-3 flex-shrink-0">
               <span className="text-xs text-muted-foreground font-mono">
-                Read aloud directly to players from this teleprompter screen.
+                Itemized telemetry sitrep for GM narration and manual flavor.
               </span>
               <div className="flex items-center gap-2">
                 <Button
@@ -1831,58 +1858,229 @@ export function EncounterTracker({
         </Dialog>
       )}
 
-      {/* COMBAT ACTIONS HISTORY LOG */}
-      {combatActions.length > 0 && (
-        <div className="p-5 rounded-2xl bg-card/60 border border-border backdrop-blur-md space-y-3">
-          <div className="flex items-center justify-between border-b border-border/50 pb-2">
-            <h3 className="text-sm font-black uppercase tracking-wider text-muted-foreground flex items-center gap-2">
-              <Clock className="w-4 h-4 text-primary" />
-              Combat Action Log ({combatActions.length})
-            </h3>
-            <button
-              onClick={() => setCombatActions([])}
-              className="text-[11px] text-muted-foreground hover:text-destructive underline cursor-pointer"
-            >
-              Clear Log
-            </button>
+      {/* COMBAT ACTIONS & LIVE DICE ROLLS LOG */}
+      <div id="combat-action-log" className="p-5 md:p-6 rounded-2xl bg-card/90 border-2 border-primary/40 backdrop-blur-xl shadow-2xl space-y-4 transition-all">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-border/60 pb-3">
+          <div className="flex items-center gap-3">
+            <div className="w-9 h-9 rounded-xl bg-primary/20 border border-primary/40 flex items-center justify-center text-primary">
+              <ScrollText className="w-5 h-5 text-primary" />
+            </div>
+            <div>
+              <div className="flex items-center gap-2">
+                <h3 className="text-base font-black uppercase tracking-wider text-primary font-mono flex items-center gap-2">
+                  Live Combat & Dice Roll Feed
+                </h3>
+                <span className="flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                  LIVE TELEMETRY
+                </span>
+              </div>
+              <p className="text-[11px] text-muted-foreground font-mono">
+                All automatic attack rolls, range chart DVs, defense checks, damage math, and SP ablations stream here.
+              </p>
+            </div>
           </div>
 
-          <div className="space-y-2 max-h-56 overflow-y-auto pr-1">
-            {combatActions.slice(0, 15).map(act => (
-              <div
-                key={act.id}
-                className="p-2.5 rounded-xl bg-secondary/20 border border-border text-xs flex items-center justify-between gap-3 font-mono"
+          <div className="flex items-center gap-2">
+            {combatActions.length > 0 && (
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => {
+                  setCombatActions([]);
+                  toast.info('Combat action log cleared.');
+                }}
+                className="cyber-btn text-xs text-muted-foreground hover:text-destructive hover:border-destructive/40"
               >
-                <div className="flex items-center gap-2">
-                  <span className="text-[10px] text-muted-foreground">R{act.round}</span>
-                  <span className="font-bold text-foreground">{act.attackerName}</span>
-                  <span className="text-muted-foreground">→</span>
-                  <span className="font-bold text-foreground">{act.defenderName}</span>
-                  <span className="text-muted-foreground">({act.weaponName})</span>
-                </div>
-
-                <div className="flex items-center gap-2 text-right">
-                  {act.hit ? (
-                    <span className="text-rose-400 font-bold">
-                      HIT (-{act.hpDamage} HP, SP {act.spAfter})
-                      {act.isTarotCrit && act.tarotCard ? (
-                        <span className="text-primary ml-1 font-bold">🎴 Tarot: {act.tarotCard.name}</span>
-                      ) : act.isCritical ? (
-                        <span className="text-warning ml-1 font-bold">💥 {act.criticalInjuryName}</span>
-                      ) : null}
-                    </span>
-                  ) : (
-                    <span className="text-emerald-400">
-                      EVADED (Atk {act.attackRoll} vs Def {act.defenseRoll})
-                    </span>
-                  )}
-                  {act.downed && <span className="text-rose-500 font-black">💀 DOWN</span>}
-                </div>
-              </div>
-            ))}
+                Clear Log
+              </Button>
+            )}
           </div>
         </div>
-      )}
+
+        {/* Filter Chips Bar */}
+        <div className="flex items-center flex-wrap gap-2 pt-1">
+          <span className="text-[11px] font-mono font-bold text-muted-foreground uppercase mr-1">FILTER:</span>
+          {(['all', 'hits', 'evades', 'crits', 'oppose'] as const).map(filterKey => {
+            const count = 
+              filterKey === 'all' ? combatActions.length :
+              filterKey === 'hits' ? combatActions.filter(a => a.hit && a.weaponName !== 'Opposed Check').length :
+              filterKey === 'evades' ? combatActions.filter(a => !a.hit).length :
+              filterKey === 'crits' ? combatActions.filter(a => a.isCritical || a.isTarotCrit).length :
+              combatActions.filter(a => a.weaponName === 'Opposed Check').length;
+
+            const label = 
+              filterKey === 'all' ? 'All Rolls' :
+              filterKey === 'hits' ? 'Hits' :
+              filterKey === 'evades' ? 'Evades/Misses' :
+              filterKey === 'crits' ? 'Crits' : 'Opposed Checks';
+
+            return (
+              <button
+                key={filterKey}
+                onClick={() => setCombatLogFilter(filterKey)}
+                className={`px-2.5 py-1 rounded-lg text-xs font-mono font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
+                  combatLogFilter === filterKey
+                    ? 'bg-primary text-primary-foreground shadow-md'
+                    : 'bg-secondary/40 text-muted-foreground hover:text-foreground border border-border/50'
+                }`}
+              >
+                <span>{label}</span>
+                <span className="px-1.5 py-0.2 rounded-full text-[10px] bg-background/50 font-mono">
+                  {count}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Log Entries or Empty Placeholder */}
+        {combatActions.length === 0 ? (
+          <div className="p-8 rounded-xl bg-secondary/15 border border-dashed border-border/70 text-center space-y-2">
+            <div className="flex justify-center">
+              <ScrollText className="w-8 h-8 text-muted-foreground/50 animate-pulse" />
+            </div>
+            <h4 className="text-sm font-bold font-mono text-muted-foreground uppercase">
+              No Combat Actions Recorded Yet
+            </h4>
+            <p className="text-xs text-muted-foreground/80 max-w-md mx-auto font-sans">
+              Advance combat rounds or declare attacks from combatant cards above. All weapon hit/evade checks, exploding d10 rolls, and damage calculations will display here in real-time.
+            </p>
+          </div>
+        ) : (
+          <div className="space-y-2.5 max-h-96 overflow-y-auto pr-1">
+            {combatActions
+              .filter(act => {
+                if (combatLogFilter === 'hits') return act.hit && act.weaponName !== 'Opposed Check';
+                if (combatLogFilter === 'evades') return !act.hit;
+                if (combatLogFilter === 'crits') return act.isCritical || act.isTarotCrit;
+                if (combatLogFilter === 'oppose') return act.weaponName === 'Opposed Check';
+                return true;
+              })
+              .map(act => {
+                const isOppose = act.weaponName === 'Opposed Check';
+                const isHit = act.hit && !isOppose;
+
+                return (
+                  <div
+                    key={act.id}
+                    className={`p-3.5 rounded-xl border transition-all space-y-2 font-mono text-xs ${
+                      isOppose
+                        ? 'bg-amber-950/20 border-amber-500/40 text-amber-200'
+                        : isHit
+                          ? 'bg-rose-950/15 border-rose-500/40 text-foreground'
+                          : 'bg-secondary/20 border-border text-muted-foreground'
+                    }`}
+                  >
+                    {/* Header Row: Round, Combatants, Result Badge */}
+                    <div className="flex flex-wrap items-center justify-between gap-2">
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <span className="px-2 py-0.5 rounded bg-primary/20 text-primary font-black text-[10px] border border-primary/30">
+                          R{act.round}
+                        </span>
+                        <span className="text-[10px] text-muted-foreground">{act.timestamp || ''}</span>
+                        
+                        <div className="flex items-center gap-1.5 font-bold text-foreground">
+                          <span className={act.attackerAffiliation === 'player' ? 'text-emerald-400' : act.attackerAffiliation === 'friendly_npc' ? 'text-blue-400' : 'text-rose-400'}>
+                            [{act.attackerName}]
+                          </span>
+                          <span className="text-muted-foreground">➔</span>
+                          <span className={act.defenderAffiliation === 'player' ? 'text-emerald-400' : act.defenderAffiliation === 'friendly_npc' ? 'text-blue-400' : 'text-rose-400'}>
+                            [{act.defenderName}]
+                          </span>
+                        </div>
+
+                        <span className="px-2 py-0.5 rounded bg-secondary/50 border border-border text-[11px] text-muted-foreground">
+                          {act.weaponName} {act.damageFormula && act.damageFormula !== '-' ? `(${act.damageFormula})` : ''}
+                        </span>
+                      </div>
+
+                      {/* Result Tag */}
+                      <div className="flex items-center gap-1.5 flex-wrap">
+                        {isOppose ? (
+                          <span className="px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/40 font-bold">
+                            OPPOSED CHECK: {act.attackRoll}
+                          </span>
+                        ) : act.hit ? (
+                          <span className="px-2 py-0.5 rounded bg-rose-500/20 text-rose-400 border border-rose-500/40 font-bold flex items-center gap-1">
+                            ✓ HIT (-{act.hpDamage} HP)
+                          </span>
+                        ) : (
+                          <span className="px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 font-bold">
+                            ✗ EVADED / MISSED
+                          </span>
+                        )}
+
+                        {act.isTarotCrit && act.tarotCard && (
+                          <span className="px-2 py-0.5 rounded bg-purple-500/20 text-purple-300 border border-purple-500/40 font-bold">
+                            🎴 TAROT: {act.tarotCard.name}
+                          </span>
+                        )}
+
+                        {act.isCritical && act.criticalInjuryName && (
+                          <span className="px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/40 font-bold">
+                            💥 {act.criticalInjuryName}
+                          </span>
+                        )}
+
+                        {act.downed && (
+                          <span className="px-2 py-0.5 rounded bg-red-600 text-white font-black animate-pulse">
+                            💀 DOWNED
+                          </span>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Detailed Dice Breakdown & Damage Telemetry */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 p-2.5 rounded-lg bg-background/60 border border-border/40 text-[11px]">
+                      <div>
+                        <span className="text-muted-foreground block text-[10px] font-bold uppercase">Attack Check:</span>
+                        <span className="text-foreground">
+                          🎲 <strong>Atk Roll:</strong> {act.attackRoll} {act.attackBreakdown ? `(${act.attackBreakdown})` : ''}
+                        </span>
+                        <span className="text-muted-foreground block mt-0.5">
+                          🛡️ <strong>Defense:</strong> {
+                            act.defenseType === 'dv' 
+                              ? `Range Chart DV ${act.defenseRoll ?? '-'}`
+                              : act.defenseRoll !== undefined
+                                ? `Evade Roll ${act.defenseRoll} (${act.defenseBreakdown || 'Opposed'})`
+                                : 'None'
+                          }
+                        </span>
+                      </div>
+
+                      <div>
+                        <span className="text-muted-foreground block text-[10px] font-bold uppercase">Ballistic Impact:</span>
+                        {isOppose ? (
+                          <span className="text-muted-foreground">Contested check resolution complete.</span>
+                        ) : act.hit ? (
+                          <span className="text-foreground">
+                            💥 <strong>Dmg Roll:</strong> {act.damageRoll} {act.damageDice && act.damageDice.length > 0 ? `[${act.damageDice.join('+')}]` : ''} vs SP {act.spBefore} ➔ Net <strong>-{act.hpDamage} HP</strong> (Armor ablated to SP {act.spAfter})
+                          </span>
+                        ) : (
+                          <span className="text-muted-foreground">Attack deflected or evaded. No armor or HP damage taken.</span>
+                        )}
+                        {!isOppose && act.hit && (
+                          <span className="text-muted-foreground block mt-0.5 text-[10px]">
+                            Vital Status: Defender HP {act.hpAfter}/{act.hpBefore} ({act.woundStateAfter || 'Normal'})
+                          </span>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Critical Injury Detail (if any) */}
+                    {(act.isTarotCrit || act.isCritical) && (
+                      <div className="p-2 rounded bg-amber-500/10 border border-amber-500/30 text-amber-300 text-[11px] flex items-center gap-2">
+                        <span>💥 <strong>Critical Trauma:</strong></span>
+                        <span>{act.isTarotCrit && act.tarotCard ? `${act.tarotCard.name} (${act.tarotCard.effect})` : `${act.criticalInjuryName} (${act.criticalInjuryEffect || 'Injury penalty applied'})`}</span>
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+          </div>
+        )}
+      </div>
 
       {/* QUICK ADD PARTICIPANT MODAL */}
       {showQuickAdd && (
