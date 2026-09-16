@@ -213,10 +213,15 @@ function App() {
     toast.success('Reset encounter state: HP & Armor restored to maximum, round set to 1');
   }, [setParticipants, setEncounter]);
   
-  const nextTurn = useCallback(() => {
+  const nextTurn = useCallback((targetTurnIndex?: number, targetRound?: number) => {
     if (!encounter.active) return;
     setEncounter(prev => {
       const acting = orderedParticipants.filter(p => canAct(p.woundState));
+      if (typeof targetTurnIndex === 'number') {
+        const newRound = typeof targetRound === 'number' ? targetRound : prev.round;
+        const wrappedIndex = targetTurnIndex % Math.max(acting.length, 1);
+        return { ...prev, round: newRound, turnIndex: wrappedIndex };
+      }
       const nextIndex = prev.turnIndex + 1;
       const newRound = nextIndex >= acting.length ? prev.round + 1 : prev.round;
       const wrappedIndex = nextIndex % Math.max(acting.length, 1);

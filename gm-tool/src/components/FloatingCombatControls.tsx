@@ -11,7 +11,7 @@ interface FloatingCombatControlsProps {
   encounter: EncounterState;
   participants: Participant[];
   activeTurnParticipant: Participant | null;
-  onNextTurn: () => void;
+  onNextTurn: (targetTurnIndex?: number, targetRound?: number) => void;
   onPauseEncounter: () => void;
   onResumeEncounter: () => void;
   onEndEncounter: () => void;
@@ -184,7 +184,7 @@ export function FloatingCombatControls({
           {/* Next Turn Button */}
           {encounter.active && (
             <Button
-              onClick={onNextTurn}
+              onClick={() => onNextTurn()}
               size="sm"
               className="cyber-btn h-7 px-2.5 text-xs bg-primary hover:bg-primary/90 text-primary-foreground font-bold font-mono flex items-center gap-1 shadow-sm cursor-pointer ml-1"
               title="Advance to next turn"
