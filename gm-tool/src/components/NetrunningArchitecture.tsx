@@ -4,13 +4,14 @@ import {
   Skull, FileText, Lock, 
   Cpu, Zap, Terminal, Eye, EyeOff,
   Dice5, Download, Upload, LogOut,
-  Info, Edit3, X
+  Info, Edit3, X, Key, RefreshCw, Compass
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { toast } from 'sonner';
 import { useLocalStorage } from '@/hooks/useLocalStorage';
 import { d6, d10, rollDice } from '@/lib/dice';
+import { rollD10Exploding } from '@/lib/combatEngine';
 import type { 
   NETArchitecture, 
   ArchitectureFloor, 
@@ -685,6 +686,21 @@ export function NetrunningArchitecture() {
   const [currentFloorId, setCurrentFloorId] = useState<string | null>(null);
   const [netrunLog, setNetrunLog] = useState<NetrunLogEntry[]>([]);
   
+  // RAW Action Point Tracking & Virus State
+  const [netRound, setNetRound] = useState(1);
+  const [netActionsRemaining, setNetActionsRemaining] = useState(3);
+  const [showVirusModal, setShowVirusModal] = useState(false);
+  const [virusInstructions, setVirusInstructions] = useState('');
+  const [virusDV, setVirusDV] = useState(8);
+
+  // RAW Cyberpunk RED NET Actions per turn based on Interface rank (p. 198)
+  const getMaxNetActions = useCallback((iface: number) => {
+    if (iface >= 10) return 5;
+    if (iface >= 7) return 4;
+    if (iface >= 4) return 3;
+    return 2;
+  }, []);
+  
   // ICE details dialog
   const [selectedICE, setSelectedICE] = useState<FloorContent | null>(null);
   
@@ -836,10 +852,13 @@ export function NetrunningArchitecture() {
     
     setActiveRun(newRun);
     setCurrentFloorId(architecture.floors[0]?.id || null);
-    setRevealedFloors(new Set());
+    setRevealedFloors(new Set([architecture.floors[0]?.id || '']));
     setNetrunLog(newRun.log);
+    const maxActs = getMaxNetActions(netrunnerInterface);
+    setNetRound(1);
+    setNetActionsRemaining(maxActs);
     toast.success(`Netrun started! ${netrunnerName} is now in the Architecture.`);
-  }, [netrunnerName, netrunnerInterface, netrunnerHP, setActiveRun]);
+  }, [netrunnerName, netrunnerInterface, netrunnerHP, setActiveRun, getMaxNetActions]);
   
   // End netrun
   const endNetrun = useCallback(() => {
@@ -928,6 +947,338 @@ export function NetrunningArchitecture() {
     };
     setNetrunLog(prev => [...prev, logEntry]);
   }, [activeRun, setActiveRun]);
+  
+  // Advance Round & Refresh Actions
+  const advanceRound = useCallback(() => {
+    if (!activeRun) return;
+    const nextR = netRound + 1;
+    const maxActs = getMaxNetActions(activeRun.netrunner.interface);
+    setNetRound(nextR);
+    setNetActionsRemaining(maxActs);
+    
+    const floor = activeRun.architecture.floors.find(f => f.id === currentFloorId);
+    const logEntry: NetrunLogEntry = {
+      id: crypto.randomUUID(),
+      timestamp: new Date().toISOString(),
+      floorNumber: floor?.floorNumber || 1,
+      action: 'Next Turn',
+      result: `Turn ${nextR} started. NET Actions refreshed (${maxActs}/${maxActs}).`,
+      success: true
+    };
+    setNetrunLog(prev => [...prev, logEntry]);
+    toast.success(`Turn ${nextR} started! Refreshed to ${maxActs} NET Actions.`);
+  }, [activeRun, netRound, getMaxNetActions, currentFloorId]);
+
+  // Pathfinder Roll Action
+  const handlePathfinder = useCallback((targetDV: number) => {
+    if (!activeRun) return;
+    if (netActionsRemaining <= 0) {
+      toast.error('No NET Actions remaining this turn! Advance turn or reset actions.');
+      return;
+    }
+
+    const iface = activeRun.netrunner.interface;
+    const roll = rollD10Exploding();
+    const total = roll.total + iface;
+    const success = total >= targetDV;
+    const margin = total - targetDV;
+
+    setNetActionsRemaining(prev => Math.max(0, prev - 1));
+
+    const currentFloor = activeRun.architecture.floors.find(f => f.id === currentFloorId);
+    const currentNum = currentFloor?.floorNumber || 1;
+
+    let resultMsg = '';
+    if (success) {
+      const floorsToReveal: string[] = [];
+      const numToReveal = targetDV >= 10 ? 99 : (targetDV >= 8 ? 3 : 2);
+      activeRun.architecture.floors.forEach(f => {
+        if (f.floorNumber >= currentNum && f.floorNumber <= currentNum + numToReveal) {
+          floorsToReveal.push(f.id);
+        }
+      });
+      setRevealedFloors(prev => new Set([...prev, ...floorsToReveal]));
+
+      resultMsg = `Pathfinder SUCCEEDED (Rolled ${roll.total} + ${iface} = ${total} vs DV ${targetDV}, margin +${margin}). Revealed ${floorsToReveal.length} floors ahead!`;
+      toast.success(resultMsg);
+    } else {
+      resultMsg = `Pathfinder FAILED (Rolled ${roll.total} + ${iface} = ${total} vs DV ${targetDV}, missed by ${Math.abs(margin)}). Architecture topology remains obscured.`;
+      toast.error(resultMsg);
+    }
+
+    const logEntry: NetrunLogEntry = {
+      id: crypto.randomUUID(),
+      timestamp: new Date().toISOString(),
+      floorNumber: currentNum,
+      action: `Pathfinder (DV ${targetDV})`,
+      result: resultMsg,
+      success
+    };
+    setNetrunLog(prev => [...prev, logEntry]);
+  }, [activeRun, netActionsRemaining, currentFloorId]);
+
+  // Backdoor (Crack Password)
+  const handleBackdoor = useCallback((content: FloorContent) => {
+    if (!activeRun || !currentFloorId) return;
+    if (netActionsRemaining <= 0) {
+      toast.error('No NET Actions remaining this turn!');
+      return;
+    }
+
+    const iface = activeRun.netrunner.interface;
+    const roll = rollD10Exploding();
+    const total = roll.total + iface;
+    const dv = content.dv || 8;
+    const success = total >= dv;
+    const margin = total - dv;
+
+    setNetActionsRemaining(prev => Math.max(0, prev - 1));
+    const currentFloor = activeRun.architecture.floors.find(f => f.id === currentFloorId);
+    const currentNum = currentFloor?.floorNumber || 1;
+
+    let resultMsg = '';
+    if (success) {
+      updateFloorContent(currentFloorId, content.id, { accessed: true });
+      resultMsg = `Backdoor SUCCEEDED on "${content.name}" (Rolled ${roll.total} + ${iface} = ${total} vs DV ${dv}, margin +${margin}). Password cracked!`;
+      toast.success(resultMsg);
+    } else {
+      resultMsg = `Backdoor FAILED on "${content.name}" (Rolled ${roll.total} + ${iface} = ${total} vs DV ${dv}, missed by ${Math.abs(margin)}). Access denied.`;
+      toast.error(resultMsg);
+    }
+
+    const logEntry: NetrunLogEntry = {
+      id: crypto.randomUUID(),
+      timestamp: new Date().toISOString(),
+      floorNumber: currentNum,
+      action: 'Backdoor',
+      result: resultMsg,
+      success
+    };
+    setNetrunLog(prev => [...prev, logEntry]);
+  }, [activeRun, currentFloorId, netActionsRemaining, updateFloorContent]);
+
+  // Control Node Action
+  const handleControl = useCallback((content: FloorContent) => {
+    if (!activeRun || !currentFloorId) return;
+    if (netActionsRemaining <= 0) {
+      toast.error('No NET Actions remaining this turn!');
+      return;
+    }
+
+    const iface = activeRun.netrunner.interface;
+    const roll = rollD10Exploding();
+    const total = roll.total + iface;
+    const dv = content.dv || 8;
+    const success = total >= dv;
+    const margin = total - dv;
+
+    setNetActionsRemaining(prev => Math.max(0, prev - 1));
+    const currentFloor = activeRun.architecture.floors.find(f => f.id === currentFloorId);
+    const currentNum = currentFloor?.floorNumber || 1;
+
+    let resultMsg = '';
+    if (success) {
+      updateFloorContent(currentFloorId, content.id, { accessed: true });
+      resultMsg = `Control SUCCEEDED on "${content.name}" (Rolled ${roll.total} + ${iface} = ${total} vs DV ${dv}, margin +${margin}). Node commanded!`;
+      toast.success(resultMsg);
+    } else {
+      resultMsg = `Control FAILED on "${content.name}" (Rolled ${roll.total} + ${iface} = ${total} vs DV ${dv}, missed by ${Math.abs(margin)}). Node resisted.`;
+      toast.error(resultMsg);
+    }
+
+    const logEntry: NetrunLogEntry = {
+      id: crypto.randomUUID(),
+      timestamp: new Date().toISOString(),
+      floorNumber: currentNum,
+      action: 'Control Node',
+      result: resultMsg,
+      success
+    };
+    setNetrunLog(prev => [...prev, logEntry]);
+  }, [activeRun, currentFloorId, netActionsRemaining, updateFloorContent]);
+
+  // Eye-Dee (Decrypt File)
+  const handleEyeDee = useCallback((content: FloorContent) => {
+    if (!activeRun || !currentFloorId) return;
+    if (netActionsRemaining <= 0) {
+      toast.error('No NET Actions remaining this turn!');
+      return;
+    }
+
+    const iface = activeRun.netrunner.interface;
+    const roll = rollD10Exploding();
+    const total = roll.total + iface;
+    const dv = content.dv || 8;
+    const success = total >= dv;
+    const margin = total - dv;
+
+    setNetActionsRemaining(prev => Math.max(0, prev - 1));
+    const currentFloor = activeRun.architecture.floors.find(f => f.id === currentFloorId);
+    const currentNum = currentFloor?.floorNumber || 1;
+
+    let resultMsg = '';
+    if (success) {
+      updateFloorContent(currentFloorId, content.id, { accessed: true });
+      resultMsg = `Eye-Dee SUCCEEDED on "${content.name}" (Rolled ${roll.total} + ${iface} = ${total} vs DV ${dv}, margin +${margin}). Decrypted: ${content.fileContent || content.description || 'Confidential Data File'}`;
+      toast.success(`Decrypted "${content.name}"!`);
+    } else {
+      resultMsg = `Eye-Dee FAILED on "${content.name}" (Rolled ${roll.total} + ${iface} = ${total} vs DV ${dv}, missed by ${Math.abs(margin)}). Encryption intact.`;
+      toast.error(resultMsg);
+    }
+
+    const logEntry: NetrunLogEntry = {
+      id: crypto.randomUUID(),
+      timestamp: new Date().toISOString(),
+      floorNumber: currentNum,
+      action: 'Eye-Dee',
+      result: resultMsg,
+      success
+    };
+    setNetrunLog(prev => [...prev, logEntry]);
+  }, [activeRun, currentFloorId, netActionsRemaining, updateFloorContent]);
+
+  // Slide (Disengage & Flee from ICE)
+  const handleSlide = useCallback((content: FloorContent) => {
+    if (!activeRun || !currentFloorId) return;
+    if (netActionsRemaining <= 0) {
+      toast.error('No NET Actions remaining this turn!');
+      return;
+    }
+
+    const ice = content.blackICE;
+    const icePerception = ice?.perception || 4;
+    const iface = activeRun.netrunner.interface;
+
+    const netrunnerRoll = rollD10Exploding();
+    const iceRoll = rollD10Exploding();
+    const netrunnerTotal = netrunnerRoll.total + iface;
+    const iceTotal = iceRoll.total + icePerception;
+    const success = netrunnerTotal > iceTotal;
+
+    setNetActionsRemaining(prev => Math.max(0, prev - 1));
+    const currentFloor = activeRun.architecture.floors.find(f => f.id === currentFloorId);
+    const currentNum = currentFloor?.floorNumber || 1;
+
+    let resultMsg = '';
+    if (success) {
+      const prevFloor = activeRun.architecture.floors.find(f => f.floorNumber === currentNum - 1);
+      if (prevFloor) {
+        setCurrentFloorId(prevFloor.id);
+      }
+      resultMsg = `Slide SUCCEEDED vs ${content.name}! (Netrunner ${netrunnerTotal} vs ICE Perception ${iceTotal}). Slipped past Black ICE without taking damage!`;
+      toast.success(resultMsg);
+    } else {
+      resultMsg = `Slide FAILED vs ${content.name}! (Netrunner ${netrunnerTotal} vs ICE Perception ${iceTotal}). The Black ICE corners the runner!`;
+      toast.error(resultMsg);
+    }
+
+    const logEntry: NetrunLogEntry = {
+      id: crypto.randomUUID(),
+      timestamp: new Date().toISOString(),
+      floorNumber: currentNum,
+      action: 'Slide',
+      result: resultMsg,
+      success
+    };
+    setNetrunLog(prev => [...prev, logEntry]);
+  }, [activeRun, currentFloorId, netActionsRemaining]);
+
+  // Zap (Direct Attack)
+  const handleZap = useCallback((content: FloorContent) => {
+    if (!activeRun || !currentFloorId) return;
+    if (netActionsRemaining <= 0) {
+      toast.error('No NET Actions remaining this turn!');
+      return;
+    }
+
+    const ice = content.blackICE;
+    const iceDef = ice?.defense || 4;
+    const iface = activeRun.netrunner.interface;
+
+    const netrunnerRoll = rollD10Exploding();
+    const iceDefRoll = rollD10Exploding();
+    const netrunnerTotal = netrunnerRoll.total + iface;
+    const iceDefTotal = iceDefRoll.total + iceDef;
+    const hits = netrunnerTotal > iceDefTotal;
+
+    setNetActionsRemaining(prev => Math.max(0, prev - 1));
+    const currentFloor = activeRun.architecture.floors.find(f => f.id === currentFloorId);
+    const currentNum = currentFloor?.floorNumber || 1;
+
+    let resultMsg = '';
+    if (hits) {
+      const dmg = Math.floor(Math.random() * 6) + 1;
+      const currentRez = (content.blackICE?.rez ?? 10) - dmg;
+      if (currentRez <= 0) {
+        updateFloorContent(currentFloorId, content.id, { defeated: true });
+        resultMsg = `Zap HIT ${content.name}! (${netrunnerTotal} vs Def ${iceDefTotal}). Dealt ${dmg} REZ damage! ${content.name} DEFEATED and derezzed!`;
+        toast.success(resultMsg);
+      } else {
+        if (content.blackICE) {
+          content.blackICE.rez = currentRez;
+        }
+        resultMsg = `Zap HIT ${content.name}! (${netrunnerTotal} vs Def ${iceDefTotal}). Dealt ${dmg} REZ damage (${currentRez} REZ remains).`;
+        toast.success(resultMsg);
+      }
+    } else {
+      resultMsg = `Zap MISSED ${content.name} (${netrunnerTotal} vs Def ${iceDefTotal}). Attack deflected!`;
+      toast.error(resultMsg);
+    }
+
+    const logEntry: NetrunLogEntry = {
+      id: crypto.randomUUID(),
+      timestamp: new Date().toISOString(),
+      floorNumber: currentNum,
+      action: 'Zap',
+      result: resultMsg,
+      success: hits
+    };
+    setNetrunLog(prev => [...prev, logEntry]);
+  }, [activeRun, currentFloorId, netActionsRemaining, updateFloorContent]);
+
+  // Virus Implantation
+  const handleVirusSubmit = useCallback(() => {
+    if (!activeRun || !currentFloorId) return;
+    if (netActionsRemaining <= 0) {
+      toast.error('No NET Actions remaining this turn!');
+      return;
+    }
+    if (!virusInstructions.trim()) {
+      toast.error('Enter virus programming instructions!');
+      return;
+    }
+
+    const iface = activeRun.netrunner.interface;
+    const roll = rollD10Exploding();
+    const total = roll.total + iface;
+    const success = total >= virusDV;
+    const margin = total - virusDV;
+
+    setNetActionsRemaining(prev => Math.max(0, prev - 1));
+    const currentFloor = activeRun.architecture.floors.find(f => f.id === currentFloorId);
+    const currentNum = currentFloor?.floorNumber || 1;
+
+    let resultMsg = '';
+    if (success) {
+      resultMsg = `VIRUS PLANTED! (Rolled ${roll.total} + ${iface} = ${total} vs DV ${virusDV}, margin +${margin}). Payload: "${virusInstructions}"`;
+      toast.success(resultMsg);
+      setShowVirusModal(false);
+      setVirusInstructions('');
+    } else {
+      resultMsg = `Virus creation failed (Rolled ${roll.total} + ${iface} = ${total} vs DV ${virusDV}, missed by ${Math.abs(margin)}). Payload rejected by system architecture.`;
+      toast.error(resultMsg);
+    }
+
+    const logEntry: NetrunLogEntry = {
+      id: crypto.randomUUID(),
+      timestamp: new Date().toISOString(),
+      floorNumber: currentNum,
+      action: `Virus (DV ${virusDV})`,
+      result: resultMsg,
+      success
+    };
+    setNetrunLog(prev => [...prev, logEntry]);
+  }, [activeRun, currentFloorId, netActionsRemaining, virusInstructions, virusDV]);
   
   // Export architectures
   const exportArchitectures = useCallback(() => {
@@ -1068,6 +1419,193 @@ export function NetrunningArchitecture() {
                 </button>
               ))}
             </div>
+          </div>
+
+          {/* RAW Netrunner Action HUD */}
+          <div className="mb-5 p-4 rounded-xl border-2 border-cyan-500/40 bg-cyan-950/20 space-y-4">
+            <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-cyan-500/20">
+              <div className="flex items-center gap-3">
+                <div className="px-2.5 py-1 rounded bg-cyan-500 text-black font-mono font-bold text-xs">
+                  TURN {netRound}
+                </div>
+                <div className="flex items-center gap-1.5 text-xs font-mono">
+                  <span className="text-muted-foreground">NET Actions:</span>
+                  <div className="flex items-center gap-1">
+                    {Array.from({ length: getMaxNetActions(activeRun.netrunner.interface) }).map((_, idx) => (
+                      <span
+                        key={idx}
+                        className={`w-3 h-3 rounded-full ${
+                          idx < netActionsRemaining 
+                            ? 'bg-cyan-400 shadow-[0_0_8px_rgba(34,211,238,0.8)]' 
+                            : 'bg-secondary border border-border'
+                        }`}
+                      />
+                    ))}
+                  </div>
+                  <span className="font-bold text-cyan-400 ml-1">
+                    {netActionsRemaining} / {getMaxNetActions(activeRun.netrunner.interface)}
+                  </span>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-2">
+                <Button
+                  onClick={advanceRound}
+                  size="sm"
+                  className="cyber-btn bg-cyan-600 hover:bg-cyan-500 text-white font-bold text-xs h-8"
+                >
+                  <RefreshCw className="w-3.5 h-3.5 mr-1.5" />
+                  Next Turn (Refresh Actions)
+                </Button>
+                <Button
+                  onClick={() => setShowVirusModal(true)}
+                  size="sm"
+                  variant="outline"
+                  className="text-xs h-8 border-destructive/40 text-destructive hover:bg-destructive/10"
+                >
+                  <Zap className="w-3.5 h-3.5 mr-1" />
+                  Plant Virus
+                </Button>
+              </div>
+            </div>
+
+            {/* Standard Netrunner Actions Panel */}
+            <div className="space-y-2">
+              <div className="text-xs font-bold uppercase tracking-wider text-cyan-400 flex items-center gap-1.5">
+                <Compass className="w-3.5 h-3.5" />
+                Pathfinder Checks (Interface + 1d10 Exploding)
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
+                <Button
+                  onClick={() => handlePathfinder(6)}
+                  variant="outline"
+                  size="sm"
+                  className="text-xs justify-between bg-secondary/30 hover:bg-cyan-500/20 hover:border-cyan-500/50"
+                  disabled={netActionsRemaining <= 0}
+                >
+                  <span>Survey Layout</span>
+                  <span className="font-mono font-bold text-cyan-400">DV 6</span>
+                </Button>
+                <Button
+                  onClick={() => handlePathfinder(8)}
+                  variant="outline"
+                  size="sm"
+                  className="text-xs justify-between bg-secondary/30 hover:bg-cyan-500/20 hover:border-cyan-500/50"
+                  disabled={netActionsRemaining <= 0}
+                >
+                  <span>Scan Next 3 Floors & ICE</span>
+                  <span className="font-mono font-bold text-cyan-400">DV 8</span>
+                </Button>
+                <Button
+                  onClick={() => handlePathfinder(10)}
+                  variant="outline"
+                  size="sm"
+                  className="text-xs justify-between bg-secondary/30 hover:bg-cyan-500/20 hover:border-cyan-500/50"
+                  disabled={netActionsRemaining <= 0}
+                >
+                  <span>Reveal Full Blueprint</span>
+                  <span className="font-mono font-bold text-cyan-400">DV 10</span>
+                </Button>
+              </div>
+            </div>
+
+            {/* Floor Target Actions */}
+            {activeRun.architecture.floors.find(f => f.id === currentFloorId) && (
+              <div className="space-y-2 pt-2 border-t border-cyan-500/20">
+                <div className="text-xs font-bold uppercase tracking-wider text-muted-foreground flex items-center gap-1.5">
+                  <Terminal className="w-3.5 h-3.5 text-primary" />
+                  Target Floor Actions (Floor {activeRun.architecture.floors.find(f => f.id === currentFloorId)?.floorNumber})
+                </div>
+
+                <div className="flex flex-wrap gap-2">
+                  {activeRun.architecture.floors.find(f => f.id === currentFloorId)?.contents.map(content => {
+                    if (content.type === 'password') {
+                      return (
+                        <Button
+                          key={content.id}
+                          onClick={() => handleBackdoor(content)}
+                          size="sm"
+                          disabled={content.accessed || netActionsRemaining <= 0}
+                          className={`text-xs ${
+                            content.accessed 
+                              ? 'bg-success/20 text-success border border-success/40' 
+                              : 'cyber-btn-secondary'
+                          }`}
+                        >
+                          <Key className="w-3.5 h-3.5 mr-1" />
+                          {content.accessed ? `Unlocked: ${content.name}` : `Backdoor: ${content.name} (DV ${content.dv})`}
+                        </Button>
+                      );
+                    }
+
+                    if (content.type === 'control-node') {
+                      return (
+                        <Button
+                          key={content.id}
+                          onClick={() => handleControl(content)}
+                          size="sm"
+                          disabled={content.accessed || netActionsRemaining <= 0}
+                          className={`text-xs ${
+                            content.accessed 
+                              ? 'bg-success/20 text-success border border-success/40' 
+                              : 'cyber-btn-secondary'
+                          }`}
+                        >
+                          <Cpu className="w-3.5 h-3.5 mr-1" />
+                          {content.accessed ? `Seized: ${content.name}` : `Control: ${content.name} (DV ${content.dv})`}
+                        </Button>
+                      );
+                    }
+
+                    if (content.type === 'file') {
+                      return (
+                        <Button
+                          key={content.id}
+                          onClick={() => handleEyeDee(content)}
+                          size="sm"
+                          disabled={content.accessed || netActionsRemaining <= 0}
+                          className={`text-xs ${
+                            content.accessed 
+                              ? 'bg-success/20 text-success border border-success/40' 
+                              : 'cyber-btn-secondary'
+                          }`}
+                        >
+                          <FileText className="w-3.5 h-3.5 mr-1" />
+                          {content.accessed ? `Decrypted: ${content.name}` : `Eye-Dee: ${content.name} (DV ${content.dv})`}
+                        </Button>
+                      );
+                    }
+
+                    if (content.type === 'black-ice' && !content.defeated) {
+                      return (
+                        <div key={content.id} className="flex items-center gap-1">
+                          <Button
+                            onClick={() => handleSlide(content)}
+                            size="sm"
+                            disabled={netActionsRemaining <= 0}
+                            className="text-xs bg-amber-600 hover:bg-amber-500 text-white font-bold"
+                          >
+                            <LogOut className="w-3.5 h-3.5 mr-1" />
+                            Slide vs {content.name} (PER {content.blackICE?.perception || 4})
+                          </Button>
+                          <Button
+                            onClick={() => handleZap(content)}
+                            size="sm"
+                            disabled={netActionsRemaining <= 0}
+                            className="text-xs bg-destructive hover:bg-destructive/80 text-white font-bold"
+                          >
+                            <Zap className="w-3.5 h-3.5 mr-1" />
+                            Zap {content.name} (DEF {content.blackICE?.defense || 4})
+                          </Button>
+                        </div>
+                      );
+                    }
+
+                    return null;
+                  })}
+                </div>
+              </div>
+            )}
           </div>
           
           {/* Current Floor Display */}
@@ -1360,6 +1898,67 @@ export function NetrunningArchitecture() {
                 <li>• Click the info icon on ICE to see full details</li>
                 <li>• Track defeated ICE and accessed nodes/files</li>
               </ul>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Virus Programming Modal */}
+      {showVirusModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md p-4">
+          <div className="glass-card rounded-2xl p-6 max-w-md w-full border-2 border-destructive/50 space-y-4">
+            <div className="flex items-center justify-between pb-3 border-b border-border">
+              <div className="flex items-center gap-2">
+                <Zap className="w-5 h-5 text-destructive" />
+                <h3 className="font-bold text-lg text-destructive" style={{ fontFamily: 'var(--font-display)' }}>
+                  Plant Virus in Architecture
+                </h3>
+              </div>
+              <Button onClick={() => setShowVirusModal(false)} variant="ghost" size="sm" className="h-7 w-7 p-0">
+                <X className="w-4 h-4" />
+              </Button>
+            </div>
+
+            <p className="text-xs text-muted-foreground">
+              Cyberpunk RED Virus Action: The Netrunner writes and leaves behind a custom program to manipulate or sabotage the architecture. Requires 1 NET Action and an Interface check.
+            </p>
+
+            <div>
+              <label className="text-xs font-semibold text-muted-foreground mb-1 block">Virus Complexity & Target DV</label>
+              <select
+                value={virusDV}
+                onChange={e => setVirusDV(parseInt(e.target.value))}
+                className="cyber-input text-xs"
+              >
+                <option value={6}>DV 6 - Simple (Activate fire sprinklers, unlock one maglock)</option>
+                <option value={8}>DV 8 - Moderate (Loop security cameras, spoof alarm signals)</option>
+                <option value={10}>DV 10 - Complex (Erase entire database, reformat mainframe)</option>
+                <option value={12}>DV 12 - Extreme (Permanent catastrophic overload)</option>
+              </select>
+            </div>
+
+            <div>
+              <label className="text-xs font-semibold text-muted-foreground mb-1 block">Virus Instructions / Payload</label>
+              <Input
+                value={virusInstructions}
+                onChange={e => setVirusInstructions(e.target.value)}
+                placeholder="e.g., Erase video logs, trigger fire suppression, shut down turret targeting"
+                className="cyber-input text-xs"
+              />
+            </div>
+
+            <div className="flex justify-end gap-2 pt-2">
+              <Button onClick={() => setShowVirusModal(false)} variant="ghost" size="sm" className="text-xs">
+                Cancel
+              </Button>
+              <Button 
+                onClick={handleVirusSubmit} 
+                className="cyber-btn bg-destructive hover:bg-destructive/80 text-white font-bold text-xs"
+                size="sm"
+              >
+                <Zap className="w-3.5 h-3.5 mr-1" />
+                Inject Virus (Roll Interface vs DV {virusDV})
+              </Button>
             </div>
           </div>
         </div>

@@ -4,7 +4,7 @@ import {
   Crosshair, Sparkles, Copy, Check, AlertTriangle,
   Flame, Plus, Trash2, ArrowRight, ShieldAlert,
   Clock, Save, FolderOpen, Download, Upload,
-  Bomb, Zap
+  Bomb, Zap, RotateCcw, Maximize2, Minimize2, Users
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -46,6 +46,9 @@ interface EncounterTrackerProps {
   onDeleteEncounter: (id: string) => void;
   onExportEncounters: () => void;
   onImportEncounters: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onClearAllCombatants?: () => void;
+  onClearNPCsOnly?: () => void;
+  onResetCombatState?: () => void;
 }
 
 export function EncounterTracker({
@@ -66,15 +69,21 @@ export function EncounterTracker({
   onLoadEncounter,
   onDeleteEncounter,
   onExportEncounters,
-  onImportEncounters
+  onImportEncounters,
+  onClearAllCombatants,
+  onClearNPCsOnly,
+  onResetCombatState
 }: EncounterTrackerProps) {
   // Combat history and narration state
   const [combatActions, setCombatActions] = useState<CombatAction[]>([]);
   const [currentRoundRecap, setCurrentRoundRecap] = useState<RoundRecap | null>(null);
   const [showNarrationModal, setShowNarrationModal] = useState(false);
+  const [isFullscreenNarration, setIsFullscreenNarration] = useState(true);
+  const [narrationFontSize, setNarrationFontSize] = useState<'normal' | 'large' | 'teleprompter'>('large');
   const [selectedTone, setSelectedTone] = useState<NarrativeTone>('cyberpunk');
   const [copiedNarration, setCopiedNarration] = useState(false);
   const [showSavedModal, setShowSavedModal] = useState(false);
+  const [showResetModal, setShowResetModal] = useState(false);
 
   // GM Review Intercept Modal state (for attacks targeting PCs)
   const [pendingPCAttack, setPendingPCAttack] = useState<{
@@ -771,6 +780,17 @@ export function EncounterTracker({
           >
             <Save className="w-3.5 h-3.5 mr-1" />
             Save
+          </Button>
+
+          {/* Reset / Clear Encounter Button */}
+          <Button
+            onClick={() => setShowResetModal(true)}
+            variant="outline"
+            className="cyber-btn border-destructive/50 hover:bg-destructive/20 text-destructive text-xs font-mono font-bold"
+            title="Reset or clear combatants, rounds, and combat state"
+          >
+            <RotateCcw className="w-3.5 h-3.5 mr-1" />
+            Reset / Clear
           </Button>
 
           {/* Quick Add Button */}
@@ -1492,69 +1512,227 @@ export function EncounterTracker({
         </Dialog>
       )}
 
-      {/* CINEMATIC ROUND ACTION RECAP MODAL */}
+      {/* CINEMATIC ROUND ACTION RECAP MODAL (WITH FULL-SCREEN THEATER & TELEPROMPTER MODE) */}
       {showNarrationModal && currentRoundRecap && (
         <Dialog open={showNarrationModal} onOpenChange={setShowNarrationModal}>
-          <DialogContent className="max-w-2xl bg-card border-2 border-primary shadow-2xl backdrop-blur-2xl">
-            <DialogHeader>
-              <div className="flex items-center justify-between">
-                <DialogTitle className="text-xl font-black tracking-wider uppercase text-primary flex items-center gap-2 font-mono">
-                  <Sparkles className="w-5 h-5 text-warning" />
-                  Round {currentRoundRecap.round} Action Narration
-                </DialogTitle>
-                <div className="flex items-center gap-1 bg-secondary/40 p-1 rounded-lg border border-border">
-                  {(['cyberpunk', 'high_octane', 'tactical'] as NarrativeTone[]).map(tone => (
-                    <button
-                      key={tone}
-                      onClick={() => {
-                        setSelectedTone(tone);
-                        const recap = generateRoundNarrative(currentRoundRecap.round, currentRoundRecap.actions, tone, getSpotlightParticipant());
-                        setCurrentRoundRecap(recap);
-                      }}
-                      className={`px-2.5 py-1 rounded text-[10px] font-bold uppercase transition-all cursor-pointer ${
-                        selectedTone === tone ? 'bg-primary text-primary-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground'
-                      }`}
-                    >
-                      {tone.replace('_', ' ')}
-                    </button>
-                  ))}
+          <DialogContent className={
+            isFullscreenNarration
+              ? "fixed inset-0 z-50 max-w-none w-screen h-screen m-0 rounded-none bg-background/98 backdrop-blur-3xl flex flex-col border-0 p-6 md:p-10 overflow-hidden shadow-2xl"
+              : "max-w-3xl bg-card border-2 border-primary shadow-2xl backdrop-blur-2xl"
+          }>
+            <DialogHeader className="border-b border-border/60 pb-3 flex-shrink-0">
+              <div className="flex flex-col md:flex-row md:items-center justify-between gap-3">
+                <div className="flex items-center gap-3">
+                  <div className="w-9 h-9 rounded-xl bg-primary/20 border border-primary/40 flex items-center justify-center text-primary">
+                    <Sparkles className="w-5 h-5 text-warning animate-pulse" />
+                  </div>
+                  <div>
+                    <DialogTitle className="text-lg md:text-xl font-black tracking-wider uppercase text-primary flex items-center gap-2 font-mono">
+                      Round {currentRoundRecap.round} Cinematic Narration
+                    </DialogTitle>
+                    <span className="text-[11px] text-muted-foreground font-mono">
+                      {isFullscreenNarration ? 'Full-Screen Teleprompter / Theater Mode' : 'Compact View'} • {currentRoundRecap.actions.length} Actions Resolved
+                    </span>
+                  </div>
+                </div>
+
+                <div className="flex items-center flex-wrap gap-2">
+                  {/* Font Size Selector for Reading / Teleprompter */}
+                  <div className="flex items-center gap-1 bg-secondary/40 p-1 rounded-lg border border-border">
+                    <span className="text-[10px] text-muted-foreground font-mono px-1 font-bold">FONT:</span>
+                    {(['normal', 'large', 'teleprompter'] as const).map(size => (
+                      <button
+                        key={size}
+                        onClick={() => setNarrationFontSize(size)}
+                        className={`px-2 py-1 rounded text-[10px] font-bold uppercase transition-all cursor-pointer ${
+                          narrationFontSize === size ? 'bg-primary text-primary-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground'
+                        }`}
+                        title={`${size.toUpperCase()} Reading Size`}
+                      >
+                        {size === 'normal' ? 'Normal' : size === 'large' ? 'Large' : 'Teleprompter'}
+                      </button>
+                    ))}
+                  </div>
+
+                  {/* Tone Presets */}
+                  <div className="flex items-center gap-1 bg-secondary/40 p-1 rounded-lg border border-border">
+                    {(['cyberpunk', 'high_octane', 'tactical'] as NarrativeTone[]).map(tone => (
+                      <button
+                        key={tone}
+                        onClick={() => {
+                          setSelectedTone(tone);
+                          const recap = generateRoundNarrative(currentRoundRecap.round, currentRoundRecap.actions, tone, getSpotlightParticipant());
+                          setCurrentRoundRecap(recap);
+                        }}
+                        className={`px-2.5 py-1 rounded text-[10px] font-bold uppercase transition-all cursor-pointer ${
+                          selectedTone === tone ? 'bg-primary text-primary-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground'
+                        }`}
+                      >
+                        {tone.replace('_', ' ')}
+                      </button>
+                    ))}
+                  </div>
+
+                  {/* Toggle Full-Screen Theater */}
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    onClick={() => setIsFullscreenNarration(!isFullscreenNarration)}
+                    className="cyber-btn text-xs h-8 border-primary/40 text-primary hover:bg-primary/10"
+                    title={isFullscreenNarration ? 'Exit Full-Screen Theater' : 'Open Full-Screen Theater'}
+                  >
+                    {isFullscreenNarration ? <Minimize2 className="w-3.5 h-3.5 mr-1" /> : <Maximize2 className="w-3.5 h-3.5 mr-1" />}
+                    <span>{isFullscreenNarration ? 'Exit Fullscreen' : 'Fullscreen'}</span>
+                  </Button>
                 </div>
               </div>
             </DialogHeader>
 
-            <div className="p-4 rounded-xl bg-secondary/20 border border-border max-h-[60vh] overflow-y-auto font-sans leading-relaxed text-sm text-foreground/90 whitespace-pre-line space-y-3">
+            {/* Main Narrative Reading Body */}
+            <div className={`flex-1 overflow-y-auto my-4 p-6 md:p-8 rounded-2xl bg-secondary/15 border-2 border-primary/20 shadow-inner font-sans text-foreground/90 whitespace-pre-line space-y-4 ${
+              narrationFontSize === 'teleprompter'
+                ? 'text-xl md:text-2xl leading-relaxed md:leading-loose font-normal tracking-wide max-w-5xl mx-auto'
+                : narrationFontSize === 'large'
+                  ? 'text-base md:text-lg leading-relaxed font-normal max-w-4xl mx-auto'
+                  : 'text-sm md:text-base leading-relaxed max-w-3xl mx-auto'
+            }`}>
               {currentRoundRecap.narrative}
             </div>
 
-            <DialogFooter className="flex items-center justify-between sm:justify-between w-full">
-              <span className="text-[11px] text-muted-foreground font-mono">
-                {currentRoundRecap.actions.length} combat engagements resolved
+            <DialogFooter className="flex items-center justify-between sm:justify-between w-full border-t border-border/60 pt-3 flex-shrink-0">
+              <span className="text-xs text-muted-foreground font-mono">
+                Read aloud directly to players from this teleprompter screen.
               </span>
               <div className="flex items-center gap-2">
                 <Button
                   onClick={handleCopyNarration}
-                  className="cyber-btn bg-primary text-primary-foreground font-bold text-xs"
+                  className="cyber-btn bg-secondary hover:bg-secondary/80 text-foreground font-bold text-xs border border-border"
                 >
                   {copiedNarration ? (
                     <>
-                      <Check className="w-3.5 h-3.5 mr-1.5" />
-                      Copied to Clipboard!
+                      <Check className="w-3.5 h-3.5 mr-1.5 text-emerald-400" />
+                      Copied!
                     </>
                   ) : (
                     <>
                       <Copy className="w-3.5 h-3.5 mr-1.5" />
-                      Copy Narration
+                      Copy Text
                     </>
                   )}
                 </Button>
                 <Button
-                  variant="outline"
                   onClick={() => setShowNarrationModal(false)}
-                  className="cyber-btn text-xs"
+                  className="cyber-btn bg-primary text-primary-foreground font-bold text-xs"
                 >
-                  Done
+                  Close Theater View
                 </Button>
               </div>
+            </DialogFooter>
+          </DialogContent>
+        </Dialog>
+      )}
+
+      {/* RESET / CLEAR ENCOUNTER MODAL */}
+      {showResetModal && (
+        <Dialog open={showResetModal} onOpenChange={setShowResetModal}>
+          <DialogContent className="max-w-lg bg-card border-2 border-destructive/60 shadow-2xl backdrop-blur-2xl">
+            <DialogHeader>
+              <DialogTitle className="text-xl font-black uppercase text-destructive flex items-center gap-2 font-mono">
+                <RotateCcw className="w-5 h-5 text-destructive" />
+                Reset / Clear Encounter
+              </DialogTitle>
+            </DialogHeader>
+
+            <div className="space-y-3 py-3">
+              <p className="text-xs text-muted-foreground">
+                Choose how you would like to reset or clear this encounter:
+              </p>
+
+              {/* Option 1: Clear NPCs Only (Keep PCs) */}
+              <div className="p-4 rounded-xl bg-secondary/30 hover:bg-secondary/50 border border-border transition-all flex items-center justify-between gap-4">
+                <div>
+                  <h4 className="text-sm font-bold text-foreground flex items-center gap-2">
+                    <Users className="w-4 h-4 text-emerald-400" />
+                    Clear NPCs Only (Keep PCs)
+                  </h4>
+                  <p className="text-xs text-muted-foreground mt-0.5">
+                    Removes all hostile and friendly NPCs. Keeps Player Characters intact in standby mode. Wipes combat actions log.
+                  </p>
+                </div>
+                <Button
+                  size="sm"
+                  onClick={() => {
+                    if (onClearNPCsOnly) onClearNPCsOnly();
+                    setCombatActions([]);
+                    setCurrentRoundRecap(null);
+                    setShowResetModal(false);
+                  }}
+                  className="cyber-btn bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs whitespace-nowrap"
+                >
+                  Clear NPCs
+                </Button>
+              </div>
+
+              {/* Option 2: Reset Combat State (Keep Combatants) */}
+              <div className="p-4 rounded-xl bg-secondary/30 hover:bg-secondary/50 border border-border transition-all flex items-center justify-between gap-4">
+                <div>
+                  <h4 className="text-sm font-bold text-foreground flex items-center gap-2">
+                    <Heart className="w-4 h-4 text-primary" />
+                    Reset Combat State (Restore HP & SP)
+                  </h4>
+                  <p className="text-xs text-muted-foreground mt-0.5">
+                    Keeps all current combatants. Restores full HP and armor SP to maximum, clears wounds, resets round to 1, turn to 0, and clears initiatives.
+                  </p>
+                </div>
+                <Button
+                  size="sm"
+                  onClick={() => {
+                    if (onResetCombatState) onResetCombatState();
+                    setCombatActions([]);
+                    setCurrentRoundRecap(null);
+                    setShowResetModal(false);
+                  }}
+                  className="cyber-btn bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-xs whitespace-nowrap"
+                >
+                  Reset State
+                </Button>
+              </div>
+
+              {/* Option 3: Full Wipe (Clear Everything) */}
+              <div className="p-4 rounded-xl bg-destructive/10 hover:bg-destructive/20 border border-destructive/30 transition-all flex items-center justify-between gap-4">
+                <div>
+                  <h4 className="text-sm font-bold text-destructive flex items-center gap-2">
+                    <Trash2 className="w-4 h-4 text-destructive" />
+                    Wipe Everything (Full Reset)
+                  </h4>
+                  <p className="text-xs text-muted-foreground mt-0.5">
+                    Completely wipes all combatants (PCs and NPCs), resets round to 0/standby, and clears the combat log.
+                  </p>
+                </div>
+                <Button
+                  size="sm"
+                  variant="destructive"
+                  onClick={() => {
+                    if (onClearAllCombatants) onClearAllCombatants();
+                    setCombatActions([]);
+                    setCurrentRoundRecap(null);
+                    setShowResetModal(false);
+                  }}
+                  className="cyber-btn bg-destructive hover:bg-destructive/90 text-white font-bold text-xs whitespace-nowrap"
+                >
+                  Wipe All
+                </Button>
+              </div>
+            </div>
+
+            <DialogFooter>
+              <Button
+                variant="ghost"
+                onClick={() => setShowResetModal(false)}
+                className="cyber-btn text-xs"
+              >
+                Cancel
+              </Button>
             </DialogFooter>
           </DialogContent>
         </Dialog>

@@ -1,6 +1,6 @@
 # Cyberpunk RED Encounter Tracker & GM Combat Command Center
 
-A high-performance, polished web application for Game Masters running **Cyberpunk RED** tabletop RPG sessions. Designed from the ground up for speed, automation, and narrative immersion, this tool dramatically cuts down combat friction during complex shootouts and street gang wars.
+A high-performance, polished web application for Game Masters running **Cyberpunk RED** tabletop RPG sessions. Designed from the ground up for speed, automation, and narrative immersion, this tool dramatically cuts down combat friction during complex shootouts, netruns, and street gang wars.
 
 ---
 
@@ -23,30 +23,69 @@ A high-performance, polished web application for Game Masters running **Cyberpun
 - **Excluded from Auto-Resolve**: Generic goons follow the auto-combat rules, while custom-crafted allies and bosses remain 100% under GM manual command.
 - **Opposed & Contest Check Engine**: A single Stat Number derives all NPC modifiers, with a 1-click **OPPOSE** button to contest any player check (Stealth, Athletics, Grapple, Social, Tech) using exploding 1d10 dice.
 
-### 🎬 Cinematic Round Narration Engine with Initiative Hand-off
+### 🎬 Full-Screen Teleprompter & Cinematic Round Narration
+- **Full-Screen Theater Mode**: Round narration opens in an immersive full-screen teleprompter modal with adjustable reading font sizes (**Normal**, **Large**, **Teleprompter 3xl text**).
 - **Automated Combat Sequence Narration**: Transforms mechanical combat actions of each round into vivid, cinematic prose.
 - **Tone Presets**: Choose between **Cyberpunk Gritty**, **High-Octane Action Movie**, and **Tactical Breacher** styles.
 - **Initiative Spotlight & Turn Hand-off**: Seamlessly transitions from the chaotic NPC firefight to the player's or GM-controlled ally's active turn with customized hand-off narration.
 - **1-Click Clipboard Copy**: Instantly copy narration to read aloud or paste into virtual tabletops or Discord channels.
+
+### 🔄 Granular Encounter Reset & Clear Engine
+- **3-Option Encounter Reset**:
+  1. *Clear NPCs Only (Keep PCs)*: Wipes hostile and friendly NPCs while keeping Player Characters intact in standby.
+  2. *Reset Combat State (Keep Combatants)*: Restores all combatants to full max HP and armor SP, clears wounds and initiative, without deleting cards.
+  3. *Wipe Everything (Full Reset)*: Clean slate wiping all combatants and resetting combat state to Round 0.
+
+### 🏪 Night City Market & Shop (100% Authentic Foundry Data)
+- **Direct Pack Integration (Zero Hardcoded Fallbacks)**: Directly imports all 913 authentic items from official Foundry VTT Cyberpunk RED system compendiums (`foundryItems.json`).
+- **RAW Night Market Generator**: Roll procedural underground Night Markets with flavored atmospheric venues (Cargo Superfreighters, Subway Concourse, Megabuilding Atrium, Nomad Perimeter) and specialized merchant stalls (Armory, Cyberware Chop-Shop, Tactical Armor, Tech, Pharmaceuticals, Luxury Fashion, Nomad Vehicles).
+- **Fixer Operator Rank Requirements**: Visual badges on every item indicating required Fixer Operator rank (Everyday ≤100eb, Costly ≤500eb, Premium ≤1,000eb, Expensive ≤5,000eb, Very Expensive ≤10,000eb, Luxury >10,000eb).
+- **Interactive Haggling Assistant**: Rolls 1d10 Exploding + Trading Skill vs Merchant DV (13, 15, 17, 21). On success, applies a 10% or 20% discount directly to the active shopping cart; on fumble, vendor demands a 10% surcharge.
+- **Full Cart & Text Invoice Export**: Real-time quantity adjustments, price calculations, and 1-click text receipt export.
+
+### 🌐 Interactive Netrunner Action HUD
+- **Turn-Based NET Action Point Tracking**: Implements RAW NET Actions per turn based on Interface rank (Rank 1–3: 2 actions, Rank 4–6: 3 actions, Rank 7–9: 4 actions, Rank 10: 5 actions).
+- **Canonical Netrunning Roll Actions**:
+  - **Pathfinder** (DV 6 Survey, DV 8 ICE Scan, DV 10 Full Architecture Blueprint) with automated floor reveals.
+  - **Backdoor**: Crack password nodes on current floor using Interface + 1d10 vs DV.
+  - **Control Node**: Seize control of automated sentry turrets, cameras, elevators, and maglock doors.
+  - **Eye-Dee**: Decrypt confidential data files and display secret intel.
+  - **Slide**: Disengage and flee from hostile Black ICE using Interface vs ICE Perception.
+  - **Zap**: Direct attack dealing 1d6 damage to Black ICE REZ.
+  - **Plant Virus**: Program custom payload instructions with complexity DVs (DV 6, 8, 10, 12).
+- **Next Turn / Refresh Actions**: 1-click turn advance and action pool replenishment.
+
+### ⏱️ Campaign Time, Survival & Emergency Hub
+- **Night City Master Clock & Calendar**: Dynamic 24-hour day/night cycle, day of the week, and quick time skips (+5m, +15m, +30m, +1h, +4h, +8h, +1d, +7d).
+- **RAW Natural Healing Rate Calculator**:
+  - Calculates HP recovery per full day of rest based on **BODY stat** (Core p. 222).
+  - Toggles for Medtech Care (+2 HP/day bonus), Cryotank (2x healing rate, Critical Injuries healed in half time), and Speedheal boost.
+  - 1-Click **"Rest Until Full Health"** button that automatically advances in-game time by the exact number of days needed.
+- **Trauma Team AV-4 Emergency Dispatch Timer**:
+  - Canonical response times: Executive Silver (3 min / 60 rounds), High Priority (7 min / 140 rounds), Standard (10 min / 200 rounds).
+  - Live countdown timer with 3-second combat rounds remaining and animated en-route status.
+  - **Web Audio Synthesizer**: Plays authentic dual-tone emergency beacon sirens upon dispatch and arrival.
+- **Monthly Rent & Lifestyle Billing Tracker**:
+  - Tracks days remaining until rent is due on the 1st of every month.
+  - Housing tiers (Cube Hotel €$500, Cargo Container €$1,000, Studio €$1,500, Two-Bedroom €$2,500, Penthouse €$15,000).
+  - Food & lifestyle tiers (Kibble €$100, Prepak €$600, Good Prepak €$1,200, Fresh Food €$1,500).
+  - 1-Click **"Pay Rent & Advance to 1st of Next Month"** button.
 
 ### 🎴 Night City Tarot & Critical Injury Rules
 - **Tarot vs Normal Crits**: Automatically tracks how many `6`s are rolled on damage dice.
   - **2x Sixes**: Normal Critical Injury (+5 bonus HP damage and specific injury table roll with Cyberware/First Aid treatment DVs).
   - **3+ Sixes**: **Night City Tarot Critical Hit**, automatically drawing from the canonical 22 Major Arcana Tarot deck with mechanical effects.
 
-### 🔫 Authentic Foundry VTT Compendium Integration (Zero Hardcoded Fallbacks)
-- **100% Direct Data Extraction**: Weapons, armor, cyberware, ammo, and explosives are loaded directly from the official Foundry VTT Cyberpunk RED system pack (`foundryItems.json`).
-- **Tactical Loadout Biases**: Equip squads with **Balanced**, **Melee-Heavy**, **Ranged Specialist**, or **Demolitionist** loadouts.
-- **Dynamic Threat Scaling**: Enemy equipment and stats scale dynamically across **Street (Easy)**, **Dangerous (Medium)**, **Deadly (Hard)**, and **Overkill (Extreme)**:
-  - *Deadly/Overkill* enemies automatically equip specialized Ammunition (Armor-Piercing, Incendiary, Smart, Expansive) and Ordnance (Frag, Flashbang, EMP, AP Grenades, and Rockets).
-- **Ordnance Throw / Detonation**: Direct action buttons on combatant cards to throw grenades or fire rockets with explosive SP ablation rules.
+### 🔫 Tactical Squad & Encounter Generator
+- **Procedural Scenario Presets**: Generate street gang ambushes, corporate security extractions, high-security compound raids, and cyberpsycho hunts.
+- **Combat Style Biases**: Generate fireteams with **Balanced**, **Melee-Focused**, **Ranged Specialist**, or **Demolitionist** loadouts.
+- **Authentic Weapon & Ordnance Loadouts**: Equipped directly from Foundry packs with special ammo (Armor-Piercing, Incendiary, Expansive, Smart) and ordnance (Frag, EMP Grenades, Rockets).
+- **Role-Based Combat Cyberware**: Automatically equips Subdermal Armor, Kerenzikov, Sandevistan, Wolvers, and Targeting Scopes.
+- **Single Stat Block Support**: All units generated with `isGoon: true`, `Combat Number (CN)`, and `Non-Combat Number (NCN)`.
 
 ### 🎯 Weapon Range DV Reference & Classification Normalizer
 - **Interactive Range DV Chart**: Displays exact target DVs for all weapon categories across 0–6m, 7–12m, 13–25m, 26–50m, 51–100m, 101–200m, 201–400m, and 401–800m.
 - **Quick Range Badges**: Normalized weapon categorization badges for instant DV checking on any equipped weapon.
-
-### 🎲 Upgraded Cyberpunk RED Dice Roller
-- Dedicated roller supporting exploding 1d10s, critical botches (Natural 1 with subtraction), damage dice (d6s), stat modifiers, and log history.
 
 ---
 
@@ -57,7 +96,8 @@ A high-performance, polished web application for Game Masters running **Cyberpun
 - **Tailwind CSS** with custom dark cyberpunk aesthetic
 - **Lucide Icons**
 - **Sonner** toast notifications
-- **Foundry VTT Cyberpunk RED System Data** (`fvtt-cyberpunk-red-core`)
+- **Web Audio API** synthesized audio alerts
+- **Foundry VTT Cyberpunk RED System Data** (`foundryItems.json`)
 
 ---
 

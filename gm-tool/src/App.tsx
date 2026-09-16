@@ -182,6 +182,36 @@ function App() {
     setEncounter(prev => ({ ...prev, active: false, archived: true }));
     toast.info('Encounter ended');
   }, [setEncounter]);
+
+  const clearAllCombatants = useCallback(() => {
+    setParticipants([]);
+    setEncounter({ active: false, round: 0, turnIndex: 0, archived: false });
+    toast.info('Cleared all combatants from encounter');
+  }, [setParticipants, setEncounter]);
+
+  const clearNPCsOnly = useCallback(() => {
+    setParticipants(prev => prev.filter(p => p.isPC));
+    setEncounter({ active: false, round: 0, turnIndex: 0, archived: false });
+    toast.info('Cleared all NPCs. Player Characters retained.');
+  }, [setParticipants, setEncounter]);
+
+  const resetCombatState = useCallback(() => {
+    setParticipants(prev => prev.map(p => ({
+      ...p,
+      hp: p.maxHp,
+      armor: p.armor ? {
+        ...p.armor,
+        head: p.armor.maxHead ?? p.armor.head,
+        body: p.armor.maxBody ?? p.armor.body
+      } : undefined,
+      woundState: 'not-wounded' as const,
+      dead: false,
+      rolled: undefined,
+      total: undefined
+    })));
+    setEncounter({ active: false, round: 1, turnIndex: 0, archived: false });
+    toast.success('Reset encounter state: HP & Armor restored to maximum, round set to 1');
+  }, [setParticipants, setEncounter]);
   
   const nextTurn = useCallback(() => {
     if (!encounter.active) return;
@@ -439,6 +469,9 @@ function App() {
                   onDeleteEncounter={deleteSavedEncounter}
                   onExportEncounters={exportEncounters}
                   onImportEncounters={importEncounters}
+                  onClearAllCombatants={clearAllCombatants}
+                  onClearNPCsOnly={clearNPCsOnly}
+                  onResetCombatState={resetCombatState}
                 />
               )}
               
