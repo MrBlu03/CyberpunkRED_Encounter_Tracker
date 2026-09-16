@@ -10,21 +10,50 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from '@/components/ui/dialog';
 import { toast } from 'sonner';
-import { rollD10Exploding, resolveAttack, autoPairTargets, rollDamage, rollCriticalInjury, getNPCStatNumber } from '@/lib/combatEngine';
+import { 
+  rollD10Exploding, resolveAttack, autoPairTargets, rollDamage, 
+  rollCriticalInjury, getNPCStatNumber, applyPlayerDamageToDefender 
+} from '@/lib/combatEngine';
 import { generateRoundNarrative } from '@/lib/narrativeEngine';
 import type { NarrativeTone } from '@/lib/narrativeEngine';
 import { getWoundState, canAct } from '@/lib/damage';
 import { 
-  WeaponRangeChart, 
   WeaponQuickBadge, 
   RangeDVReferenceModal 
 } from '@/components/WeaponRangeChart';
-import { formatWeaponCategory } from '@/lib/weaponRanges';
+import { formatWeaponCategory, getWeaponRangeResolution } from '@/lib/weaponRanges';
 import { drawRandomTarotCard } from '@/lib/tarot';
 import type { 
   Participant, EncounterState, SavedEncounter, Weapon, 
   CombatAction, RoundRecap, Affiliation, OrdnanceItem
 } from '@/types';
+
+export interface PendingPCAttackItem {
+  id: string;
+  attacker: Participant;
+  pcDefender: Participant;
+  weapon: Weapon;
+  attackRoll: number;
+  attackBreakdown: string;
+  rangeBands: Array<{ label: string; dv: number | null }>;
+  selectedBandIndex: number;
+  selectedDV: number | null;
+  declaredEvade: boolean;
+  evadeBonus: number;
+  evadeBreakdown: string;
+  evadeRoll: number | '';
+  overrideHit: boolean;
+  damageRoll: number;
+  damageDice: number[];
+  sixCount: number;
+  isCritical: boolean;
+  isTarotCrit: boolean;
+  tarotCard?: { id?: string; name: string; number?: number; roman?: string; effect: string };
+  criticalInjuryName?: string;
+  criticalInjuryEffect?: string;
+  hitLocation: 'head' | 'body';
+  modifiedDamage: number;
+}
 
 interface EncounterTrackerProps {
   participants: Participant[];
@@ -85,28 +114,16 @@ export function EncounterTracker({
   const [showSavedModal, setShowSavedModal] = useState(false);
   const [showResetModal, setShowResetModal] = useState(false);
 
-  // GM Review Intercept Modal state (for attacks targeting PCs)
-  const [pendingPCAttack, setPendingPCAttack] = useState<{
-    attacker: Participant;
-    pcDefender: Participant;
-    weapon: Weapon;
-    attackRoll: number;
-    attackBreakdown: string;
-    defenseRoll: number;
-    defenseBreakdown: string;
-    damageRoll: number;
-    damageDice: number[];
-    sixCount: number;
-    isCritical: boolean;
-    isTarotCrit: boolean;
-    tarotCard?: { id?: string; name: string; number?: number; roman?: string; effect: string };
-    criticalInjuryName?: string;
-    criticalInjuryEffect?: string;
-    hitLocation: 'head' | 'body';
-    hit: boolean;
-    modifiedDamage: number;
-    overrideHit: boolean;
-  } | null>(null);
+  // GM Review Intercept Modal queue (for attacks targeting PCs)
+  const [pendingPCAttacks, setPendingPCAttacks] = useState<PendingPCAttackItem[]>([]);
+  const currentPendingPCAttack = pendingPCAttacks[0] || null;
+
+  // Inline Player Damage input state per enemy NPC
+  const [playerDamageInputs, setPlayerDamageInputs] = useState<Record<string, {
+    damage: string;
+    location: 'body' | 'head';
+    ap: boolean;
+  }>>({});
 
   // Quick manual add participant modal
   const [showQuickAdd, setShowQuickAdd] = useState(false);
@@ -190,20 +207,166 @@ export function EncounterTracker({
   };
 
   // Auto-generate round narrative when advancing round
-  const prevRoundRef = useRef<number>(encounter.round);
-  useEffect(() => {
-    if (encounter.round > 1 && encounter.round !== prevRoundRef.current) {
-      prevRoundRef.current = encounter.round;
-      const lastRoundActions = combatActions.filter(a => a.round === encounter.round - 1);
-      if (lastRoundActions.length > 0) {
-        const recap = generateRoundNarrative(encounter.round - 1, lastRoundActions, selectedTone, getSpotlightParticipant());
-        setCurrentRoundRecap(recap);
-        setShowNarrationModal(true);
-      }
-    }
-  }, [encounter.round, combatActions, selectedTone, activeTurnParticipant]);
+  // Helper to create a structured pending attack targeting a PC
+  const createPendingPCAttackItem = (
+    attacker: Participant, 
+    pcDefender: Participant, 
+    weapon: Weapon,
+    _roundNumber: number = Math.max(1, encounter.round)
+  ): PendingPCAttackItem => {
+    const attackerBonus = attacker.isGoon ? (attacker.combatNumber ?? 11) : (attacker.ref + 4);
+    const atkD10 = rollD10Exploding();
+    const totalAttack = atkD10.total + attackerBonus;
 
-  // Handle single manual attack from an attacker
+    // Resolve weapon range DVs
+    const rangeRes = getWeaponRangeResolution(weapon);
+    const rangeBands = rangeRes.singleShotDVs;
+    let defaultBandIndex = rangeBands.findIndex(b => b.label === '7-12m' && b.dv !== null);
+    if (defaultBandIndex === -1) {
+      defaultBandIndex = rangeBands.findIndex(b => b.dv !== null);
+    }
+    if (defaultBandIndex === -1) defaultBandIndex = 0;
+    const selectedDV = rangeBands[defaultBandIndex]?.dv ?? (rangeRes.isRanged ? 15 : null);
+
+    // Player Evade stats (DEX + Evasion skill)
+    const defBonus = (pcDefender.dex ?? pcDefender.ref ?? 6) + (pcDefender.evasionSkill ?? 4);
+
+    // Preliminary damage calculation
+    const rolled = rollDamage(weapon.system?.damage || '3d6');
+    let critName: string | undefined;
+    let critEffect: string | undefined;
+    if (rolled.isCritical) {
+      const crit = rollCriticalInjury('body');
+      critName = crit.injury.name;
+      critEffect = crit.injury.effect;
+    }
+
+    let tarotCard: { id?: string; name: string; number?: number; roman?: string; effect: string } | undefined;
+    if (rolled.isTarotCrit) {
+      const card = drawRandomTarotCard();
+      tarotCard = {
+        id: card.id,
+        name: card.name,
+        number: card.number,
+        roman: card.roman,
+        effect: card.effect
+      };
+    }
+
+    // Default Hit rule: Unless player declares an evade, weapon hit is determined by Range Chart!
+    const defaultHit = selectedDV !== null ? totalAttack >= selectedDV : true;
+
+    return {
+      id: crypto.randomUUID(),
+      attacker,
+      pcDefender,
+      weapon,
+      attackRoll: totalAttack,
+      attackBreakdown: `d10(${atkD10.breakdown}) + Bonus(${attackerBonus}) = ${totalAttack}`,
+      rangeBands,
+      selectedBandIndex: defaultBandIndex,
+      selectedDV,
+      declaredEvade: !rangeRes.isRanged, // If melee, evasion is opposed by default; if ranged, default to Range Chart!
+      evadeBonus: defBonus,
+      evadeBreakdown: `DEX(${pcDefender.dex ?? 6}) + Evasion(${pcDefender.evasionSkill ?? 4}) = +${defBonus}`,
+      evadeRoll: '',
+      overrideHit: defaultHit,
+      damageRoll: rolled.total,
+      damageDice: rolled.dice,
+      sixCount: rolled.sixCount,
+      isCritical: rolled.isCritical,
+      isTarotCrit: rolled.isTarotCrit,
+      tarotCard,
+      criticalInjuryName: critName,
+      criticalInjuryEffect: critEffect,
+      hitLocation: 'body',
+      modifiedDamage: rolled.total
+    };
+  };
+
+  // Execute Automatic Combat for all generic NPCs at round start
+  const executeRoundCombat = (roundNumber: number) => {
+    const activeNPCs = participants.filter(
+      p => !p.isPC && !p.isCustomNPC && !p.manualControl && p.hp > 0 && !p.dead && canAct(p.woundState)
+    );
+    if (activeNPCs.length === 0) return;
+
+    let resolvedCount = 0;
+    const currentParticipantsMap = new Map(participants.map(p => [p.id, p]));
+    const batchActions: CombatAction[] = [];
+    const incomingPCAttacks: PendingPCAttackItem[] = [];
+
+    activeNPCs.forEach(attacker => {
+      const weapon = attacker.weapons && attacker.weapons.length > 0 ? attacker.weapons[0] : null;
+      if (!weapon) return;
+
+      const target = attacker.targetId ? currentParticipantsMap.get(attacker.targetId) : targetMap.get(attacker.id);
+      if (!target || target.hp <= 0 || target.dead) return;
+
+      // Case 1: Target is an NPC (Generic NPC vs Generic NPC: Friendly vs Hostile, or Hostile vs Friendly)
+      if (!target.isPC && target.affiliation !== 'player' && !target.manualControl && !(target.isCustomNPC && target.affiliation === 'friendly_npc')) {
+        const currentDefender = currentParticipantsMap.get(target.id) || target;
+        if (currentDefender.hp <= 0) return;
+
+        const { action, updatedDefender } = resolveAttack({
+          attacker,
+          defender: currentDefender,
+          weapon,
+          round: roundNumber
+        });
+
+        currentParticipantsMap.set(updatedDefender.id, updatedDefender);
+        batchActions.push(action);
+        resolvedCount++;
+        return;
+      }
+
+      // Case 2: Target is a Player Character (PC)
+      if (target.isPC || target.affiliation === 'player') {
+        const pendingItem = createPendingPCAttackItem(attacker, target, weapon, roundNumber);
+        incomingPCAttacks.push(pendingItem);
+      }
+    });
+
+    // Apply updated NPC defenders
+    if (resolvedCount > 0) {
+      currentParticipantsMap.forEach((updated, id) => {
+        onUpdateParticipant(id, updated);
+      });
+      setCombatActions(prev => [...batchActions, ...prev]);
+
+      // Generate round narration recap
+      const recap = generateRoundNarrative(roundNumber, batchActions, selectedTone, getSpotlightParticipant());
+      setCurrentRoundRecap(recap);
+
+      toast.success(`⚡ Round ${roundNumber}: Auto-resolved ${resolvedCount} NPC vs NPC combat actions!`, {
+        icon: <Sparkles className="w-5 h-5 text-primary" />
+      });
+    }
+
+    // Queue incoming attacks targeting PCs for GM adjudication
+    if (incomingPCAttacks.length > 0) {
+      setPendingPCAttacks(prev => [...prev, ...incomingPCAttacks]);
+      toast.warning(`⚠️ Round ${roundNumber}: ${incomingPCAttacks.length} incoming attack(s) targeting players! Reviewing now...`, {
+        icon: <AlertTriangle className="w-5 h-5 text-warning" />
+      });
+    }
+  };
+
+  // Automatic Round-Start Trigger: runs automatically when encounter starts or round advances
+  const lastProcessedRoundRef = useRef<number>(0);
+  useEffect(() => {
+    if (!encounter.active || encounter.round <= 0) {
+      lastProcessedRoundRef.current = 0;
+      return;
+    }
+    if (encounter.round !== lastProcessedRoundRef.current) {
+      lastProcessedRoundRef.current = encounter.round;
+      executeRoundCombat(encounter.round);
+    }
+  }, [encounter.active, encounter.round]);
+
+  // Handle manual attack from an attacker card
   const handleAttackAction = (attacker: Participant, weapon: Weapon, customTarget?: Participant) => {
     const target = customTarget || targetMap.get(attacker.id);
     if (!target) {
@@ -213,70 +376,12 @@ export function EncounterTracker({
 
     // Check if target is a Player Character
     if (target.isPC || target.affiliation === 'player') {
-      // Intercept with GM Review Dialog
-      const attackerBonus = attacker.isGoon ? (attacker.combatNumber ?? 11) : (attacker.ref + 4);
-      const atkD10 = rollD10Exploding();
-      const totalAttack = atkD10.total + attackerBonus;
-
-      // Initial PC Evasion roll (1d10 + DEX + Evasion)
-      const defBonus = (target.dex ?? target.ref ?? 6) + (target.evasionSkill ?? 4);
-      const defD10 = rollD10Exploding();
-      const totalDefense = defD10.total + defBonus;
-
-      const hit = totalAttack > totalDefense;
-
-      // Preliminary damage calculation
-      const rolled = rollDamage(weapon.system?.damage || '3d6');
-      const dice = rolled.dice;
-      const sum = rolled.total;
-      const sixCount = rolled.sixCount;
-      const isCrit = rolled.isCritical;
-      const isTarotCrit = rolled.isTarotCrit;
-      let critName: string | undefined;
-      let critEffect: string | undefined;
-      if (isCrit) {
-        const crit = rollCriticalInjury('body');
-        critName = crit.injury.name;
-        critEffect = crit.injury.effect;
-      }
-
-      let tarotCard: { id?: string; name: string; number?: number; roman?: string; effect: string } | undefined;
-      if (isTarotCrit) {
-        const card = drawRandomTarotCard();
-        tarotCard = {
-          id: card.id,
-          name: card.name,
-          number: card.number,
-          roman: card.roman,
-          effect: card.effect
-        };
-      }
-
-      setPendingPCAttack({
-        attacker,
-        pcDefender: target,
-        weapon,
-        attackRoll: totalAttack,
-        attackBreakdown: `d10(${atkD10.breakdown}) + Bonus(${attackerBonus}) = ${totalAttack}`,
-        defenseRoll: totalDefense,
-        defenseBreakdown: `d10(${defD10.breakdown}) + Bonus(${defBonus}) = ${totalDefense}`,
-        damageRoll: sum,
-        damageDice: dice,
-        sixCount,
-        isCritical: isCrit,
-        isTarotCrit,
-        tarotCard,
-        criticalInjuryName: critName,
-        criticalInjuryEffect: critEffect,
-        hitLocation: 'body',
-        hit,
-        modifiedDamage: sum,
-        overrideHit: hit
-      });
+      const pendingItem = createPendingPCAttackItem(attacker, target, weapon, Math.max(1, encounter.round));
+      setPendingPCAttacks(prev => [...prev, pendingItem]);
       return;
     }
 
-    // Target is an NPC: Resolve automatically with bullet dodging rule!
+    // Target is an NPC: Resolve automatically!
     const { action, updatedDefender } = resolveAttack({
       attacker,
       defender: target,
@@ -284,13 +389,9 @@ export function EncounterTracker({
       round: Math.max(1, encounter.round)
     });
 
-    // Update defender in state
     onUpdateParticipant(updatedDefender.id, updatedDefender);
-
-    // Record action in combat log
     setCombatActions(prev => [action, ...prev]);
 
-    // Show toast
     if (action.hit) {
       const critStr = action.isCritical ? ` 💥 CRIT! (${action.criticalInjuryName})` : '';
       const downStr = action.downed ? ' 💀 DOWNED!' : '';
@@ -302,111 +403,127 @@ export function EncounterTracker({
     }
   };
 
-  // Confirm GM Review Attack against PC
-  const handleConfirmPCAttack = () => {
-    if (!pendingPCAttack) return;
-    const { attacker, pcDefender, weapon, overrideHit, modifiedDamage, hitLocation, isCritical, criticalInjuryName, criticalInjuryEffect } = pendingPCAttack;
+  // Update active pending attack in queue
+  const updateCurrentPendingPCAttack = (updates: Partial<PendingPCAttackItem>) => {
+    setPendingPCAttacks(prev => {
+      if (prev.length === 0) return prev;
+      return [{ ...prev[0], ...updates }, ...prev.slice(1)];
+    });
+  };
 
-    if (!overrideHit) {
-      toast.info(`${pcDefender.name} successfully dodged or deflected the attack!`);
+  // Confirm GM Review Attack against PC
+  const handleConfirmPCAttack = (forceHit?: boolean) => {
+    if (!currentPendingPCAttack) return;
+    const item = currentPendingPCAttack;
+    const isHit = forceHit !== undefined ? forceHit : item.overrideHit;
+
+    if (!isHit) {
+      toast.info(`${item.pcDefender.name} avoided the attack! (Range DV or Evaded)`);
       const action: CombatAction = {
         id: crypto.randomUUID(),
         round: Math.max(1, encounter.round),
-        attackerId: attacker.id,
-        attackerName: attacker.name,
-        attackerAffiliation: attacker.affiliation || 'hostile_npc',
-        defenderId: pcDefender.id,
-        defenderName: pcDefender.name,
+        attackerId: item.attacker.id,
+        attackerName: item.attacker.name,
+        attackerAffiliation: item.attacker.affiliation || 'hostile_npc',
+        defenderId: item.pcDefender.id,
+        defenderName: item.pcDefender.name,
         defenderAffiliation: 'player',
-        weaponName: weapon.name,
-        damageFormula: weapon.system?.damage || '3d6',
-        attackRoll: pendingPCAttack.attackRoll,
-        attackBreakdown: pendingPCAttack.attackBreakdown,
-        defenseType: 'dodge',
-        defenseRoll: pendingPCAttack.defenseRoll,
-        defenseBreakdown: pendingPCAttack.defenseBreakdown,
+        weaponName: item.weapon.name,
+        damageFormula: item.weapon.system?.damage || '3d6',
+        attackRoll: item.attackRoll,
+        attackBreakdown: item.attackBreakdown,
+        defenseType: item.declaredEvade ? 'dodge' : 'dv',
+        defenseRoll: item.declaredEvade ? (typeof item.evadeRoll === 'number' ? item.evadeRoll : item.evadeBonus) : (item.selectedDV ?? 15),
+        defenseBreakdown: item.declaredEvade ? `PC Evade (${item.evadeRoll !== '' ? item.evadeRoll : item.evadeBonus})` : `Range DV ${item.selectedDV}`,
         hit: false,
-        hitLocation,
+        hitLocation: item.hitLocation,
         damageRoll: 0,
         damageDice: [],
         isCritical: false,
-        spBefore: hitLocation === 'head' ? (pcDefender.armor?.head ?? 0) : (pcDefender.armor?.body ?? 0),
+        spBefore: item.hitLocation === 'head' ? (item.pcDefender.armor?.head ?? 0) : (item.pcDefender.armor?.body ?? 0),
         spAbsorbed: 0,
-        spAfter: hitLocation === 'head' ? (pcDefender.armor?.head ?? 0) : (pcDefender.armor?.body ?? 0),
+        spAfter: item.hitLocation === 'head' ? (item.pcDefender.armor?.head ?? 0) : (item.pcDefender.armor?.body ?? 0),
         hpDamage: 0,
-        hpBefore: pcDefender.hp,
-        hpAfter: pcDefender.hp,
-        woundStateAfter: pcDefender.woundState,
+        hpBefore: item.pcDefender.hp,
+        hpAfter: item.pcDefender.hp,
+        woundStateAfter: item.pcDefender.woundState,
         downed: false,
         timestamp: new Date().toLocaleTimeString()
       };
       setCombatActions(prev => [action, ...prev]);
-      setPendingPCAttack(null);
+      setPendingPCAttacks(prev => prev.slice(1));
       return;
     }
 
     // Hit confirmed: Apply Armor SP reduction & ablation
-    const currentArmor = pcDefender.armor || { head: 0, body: 0 };
-    const currentSP = hitLocation === 'head' ? (currentArmor.head ?? 0) : (currentArmor.body ?? 0);
-    const spAbsorbed = Math.min(modifiedDamage, currentSP);
-    let hpDamage = Math.max(0, modifiedDamage - currentSP);
+    const currentArmor = item.pcDefender.armor || { head: 0, body: 0 };
+    const currentSP = item.hitLocation === 'head' ? (currentArmor.head ?? 0) : (currentArmor.body ?? 0);
+    const spAbsorbed = Math.min(item.modifiedDamage, currentSP);
+    let hpDamage = Math.max(0, item.modifiedDamage - currentSP);
 
-    if (isCritical) {
+    if (item.hitLocation === 'head') {
+      hpDamage *= 2;
+    }
+
+    if (item.isCritical) {
       hpDamage += 5;
     }
 
     let spAfter = currentSP;
     if (hpDamage > 0 && currentSP > 0) {
-      spAfter = Math.max(0, currentSP - 1);
+      const isAP = item.weapon.ammoType === 'Armor-Piercing';
+      spAfter = Math.max(0, currentSP - (isAP ? 2 : 1));
     }
 
-    const hpAfter = Math.max(0, pcDefender.hp - hpDamage);
+    const hpAfter = Math.max(0, item.pcDefender.hp - hpDamage);
     const updatedArmor = {
       ...currentArmor,
-      head: hitLocation === 'head' ? spAfter : currentArmor.head,
-      body: hitLocation === 'body' ? spAfter : currentArmor.body
+      head: item.hitLocation === 'head' ? spAfter : currentArmor.head,
+      body: item.hitLocation === 'body' ? spAfter : currentArmor.body
     };
-    const woundState = getWoundState(hpAfter, pcDefender.maxHp);
+    const woundState = getWoundState(hpAfter, item.pcDefender.maxHp);
     const downed = hpAfter <= 0;
 
     const updatedPC: Participant = {
-      ...pcDefender,
+      ...item.pcDefender,
       hp: hpAfter,
       armor: updatedArmor,
       woundState,
       dead: downed
     };
 
-    onUpdateParticipant(pcDefender.id, updatedPC);
+    onUpdateParticipant(item.pcDefender.id, updatedPC);
 
     const action: CombatAction = {
       id: crypto.randomUUID(),
       round: Math.max(1, encounter.round),
-      attackerId: attacker.id,
-      attackerName: attacker.name,
-      attackerAffiliation: attacker.affiliation || 'hostile_npc',
-      defenderId: pcDefender.id,
-      defenderName: pcDefender.name,
+      attackerId: item.attacker.id,
+      attackerName: item.attacker.name,
+      attackerAffiliation: item.attacker.affiliation || 'hostile_npc',
+      defenderId: item.pcDefender.id,
+      defenderName: item.pcDefender.name,
       defenderAffiliation: 'player',
-      weaponName: weapon.name,
-      damageFormula: weapon.system?.damage || '3d6',
-      attackRoll: pendingPCAttack.attackRoll,
-      attackBreakdown: pendingPCAttack.attackBreakdown,
-      defenseType: 'dodge',
-      defenseRoll: pendingPCAttack.defenseRoll,
-      defenseBreakdown: pendingPCAttack.defenseBreakdown,
+      weaponName: item.weapon.name,
+      damageFormula: item.weapon.system?.damage || '3d6',
+      attackRoll: item.attackRoll,
+      attackBreakdown: item.attackBreakdown,
+      defenseType: item.declaredEvade ? 'dodge' : 'dv',
+      defenseRoll: item.declaredEvade ? (typeof item.evadeRoll === 'number' ? item.evadeRoll : item.evadeBonus) : (item.selectedDV ?? 15),
+      defenseBreakdown: item.declaredEvade ? `PC Evade (${item.evadeRoll !== '' ? item.evadeRoll : item.evadeBonus})` : `Range DV ${item.selectedDV}`,
       hit: true,
-      hitLocation,
-      damageRoll: modifiedDamage,
-      damageDice: pendingPCAttack.damageDice,
-      isCritical,
-      criticalInjuryName,
-      criticalInjuryEffect,
+      hitLocation: item.hitLocation,
+      damageRoll: item.modifiedDamage,
+      damageDice: item.damageDice,
+      isCritical: item.isCritical,
+      isTarotCrit: item.isTarotCrit,
+      tarotCard: item.tarotCard,
+      criticalInjuryName: item.criticalInjuryName,
+      criticalInjuryEffect: item.criticalInjuryEffect,
       spBefore: currentSP,
       spAbsorbed,
       spAfter,
       hpDamage,
-      hpBefore: pcDefender.hp,
+      hpBefore: item.pcDefender.hp,
       hpAfter,
       woundStateAfter: woundState,
       downed,
@@ -414,68 +531,42 @@ export function EncounterTracker({
     };
 
     setCombatActions(prev => [action, ...prev]);
-    toast.success(`Damage applied to ${pcDefender.name}: -${hpDamage} HP (Armor ablated to ${spAfter})`);
-    setPendingPCAttack(null);
+    toast.success(`Damage applied to ${item.pcDefender.name}: -${hpDamage} HP (Armor ablated to ${spAfter})`);
+    setPendingPCAttacks(prev => prev.slice(1));
   };
 
-  // Auto-resolve all generic NPC vs NPC combat in one batch
-  // Custom-made NPCs and participants with manualControl are EXCLUDED from auto-resolution so GM retains 100% control
-  const handleAutoResolveNPCCombat = () => {
-    const activeNPCs = participants.filter(
-      p => !p.isPC && !p.isCustomNPC && !p.manualControl && p.hp > 0 && !p.dead && canAct(p.woundState)
-    );
-    if (activeNPCs.length === 0) {
-      toast.info('No generic auto-combat NPCs available. (Custom NPCs remain under GM manual control).');
+  // Helper to handle GM applying player damage to an enemy/defender
+  const handleApplyPlayerDamage = (defender: Participant) => {
+    const input = playerDamageInputs[defender.id];
+    const damage = parseInt(input?.damage || '');
+    if (isNaN(damage) || damage <= 0) {
+      toast.error('Enter a valid damage number dealt by player');
       return;
     }
+    const location = input?.location || 'body';
+    const damageType = input?.ap ? 'armor-piercing' : 'normal';
 
-    let resolvedCount = 0;
-    const currentParticipantsMap = new Map(participants.map(p => [p.id, p]));
-    const batchActions: CombatAction[] = [];
-
-    activeNPCs.forEach(attacker => {
-      const weapon = attacker.weapons && attacker.weapons.length > 0 ? attacker.weapons[0] : null;
-      if (!weapon) return;
-
-      const target = targetMap.get(attacker.id);
-      // Only auto-resolve if target is another generic NPC (Friendly vs Hostile)!
-      // Never auto-target PCs or GM-controlled custom friendly NPCs
-      if (!target || target.isPC || target.manualControl || (target.isCustomNPC && target.affiliation === 'friendly_npc') || target.hp <= 0) return;
-
-      const currentDefender = currentParticipantsMap.get(target.id) || target;
-      if (currentDefender.hp <= 0) return;
-
-      const { action, updatedDefender } = resolveAttack({
-        attacker,
-        defender: currentDefender,
-        weapon,
-        round: Math.max(1, encounter.round)
-      });
-
-      currentParticipantsMap.set(updatedDefender.id, updatedDefender);
-      batchActions.push(action);
-      resolvedCount++;
+    const result = applyPlayerDamageToDefender({
+      defender,
+      damage,
+      hitLocation: location,
+      damageType,
+      round: Math.max(1, encounter.round)
     });
 
-    if (resolvedCount === 0) {
-      toast.info('No valid generic NPC vs NPC targets found. (Hostiles may be targeting PCs or GM-controlled allies).');
-      return;
+    onUpdateParticipant(defender.id, result.updatedDefender);
+    setCombatActions(prev => [result.action, ...prev]);
+
+    setPlayerDamageInputs(prev => ({
+      ...prev,
+      [defender.id]: { damage: '', location: 'body', ap: false }
+    }));
+
+    if (result.hpDamage > 0) {
+      toast.success(`💥 Applied ${result.hpDamage} HP damage to ${defender.name}! (${location.toUpperCase()} SP ${result.spBefore} ➔ ${result.spAfter})`);
+    } else {
+      toast.info(`🛡️ ${defender.name}'s armor absorbed all ${damage} damage! SP remains ${result.spBefore}.`);
     }
-
-    // Apply all updated defender participants
-    currentParticipantsMap.forEach((updated, id) => {
-      onUpdateParticipant(id, updated);
-    });
-
-    setCombatActions(prev => [...batchActions, ...prev]);
-
-    // Generate cinematic round narrative immediately with GM initiative spotlight handoff!
-    const recap = generateRoundNarrative(Math.max(1, encounter.round), batchActions, selectedTone, getSpotlightParticipant());
-    setCurrentRoundRecap(recap);
-
-    toast.success(`⚡ Auto-resolved ${resolvedCount} generic NPC combat actions with bullet dodging!`, {
-      icon: <Sparkles className="w-5 h-5 text-primary" />
-    });
   };
 
   // Detonate / Throw Ordnance (Grenade, Rocket, Explosive)
@@ -678,16 +769,7 @@ export function EncounterTracker({
             Roll NPC Initiatives
           </Button>
 
-          {/* Auto-Resolve NPC vs NPC Combat Button */}
-          <Button
-            onClick={handleAutoResolveNPCCombat}
-            disabled={!encounter.active}
-            className="cyber-btn bg-primary hover:bg-primary/90 text-primary-foreground font-black text-xs shadow-md shadow-primary/20"
-            title="Auto-resolves all Friendly vs Hostile NPC attacks with bullet dodging & damage!"
-          >
-            <Swords className="w-4 h-4 mr-1.5" />
-            Auto-Resolve NPC vs NPC
-          </Button>
+
 
           {/* Cinematic Round Narration Button */}
           <Button
@@ -1019,6 +1101,61 @@ export function EncounterTracker({
 
               {/* Right Column: Weapon Attacks & Target Assignment */}
               <div className="flex items-center gap-2 flex-wrap justify-end w-full md:w-auto">
+                {/* Take Player Damage Widget (for Enemies / NPCs) */}
+                {!p.isPC && (
+                  <div className="flex items-center gap-1.5 p-1 px-2 rounded-xl bg-rose-500/10 border border-rose-500/30">
+                    <span className="text-[10px] font-mono uppercase font-bold text-rose-400">Player Dmg:</span>
+                    <Input
+                      type="number"
+                      placeholder="Dmg"
+                      value={playerDamageInputs[p.id]?.damage || ''}
+                      onChange={e => setPlayerDamageInputs(prev => ({
+                        ...prev,
+                        [p.id]: { ...(prev[p.id] || { location: 'body', ap: false }), damage: e.target.value }
+                      }))}
+                      onKeyDown={e => {
+                        if (e.key === 'Enter') handleApplyPlayerDamage(p);
+                      }}
+                      className="cyber-input w-16 h-8 text-xs font-mono font-black text-center bg-background border-border p-1"
+                      title="Enter total damage dealt by player and press Enter"
+                    />
+                    <select
+                      value={playerDamageInputs[p.id]?.location || 'body'}
+                      onChange={e => setPlayerDamageInputs(prev => ({
+                        ...prev,
+                        [p.id]: { ...(prev[p.id] || { damage: '', ap: false }), location: e.target.value as 'body' | 'head' }
+                      }))}
+                      className="cyber-input h-8 text-[11px] font-mono bg-background border-border px-1"
+                    >
+                      <option value="body">Body (SP {p.armor?.body ?? 0})</option>
+                      <option value="head">Head (SP {p.armor?.head ?? 0} x2)</option>
+                    </select>
+                    <button
+                      type="button"
+                      onClick={() => setPlayerDamageInputs(prev => ({
+                        ...prev,
+                        [p.id]: { ...(prev[p.id] || { damage: '', location: 'body' }), ap: !prev[p.id]?.ap }
+                      }))}
+                      className={`h-8 px-2 rounded text-[10px] font-mono font-bold border transition-colors ${
+                        playerDamageInputs[p.id]?.ap
+                          ? 'bg-amber-500/20 text-amber-300 border-amber-500/50 shadow-sm'
+                          : 'bg-secondary/40 text-muted-foreground border-border hover:text-foreground'
+                      }`}
+                      title="Armor-Piercing Ammunition (-2 SP ablation on hit)"
+                    >
+                      AP
+                    </button>
+                    <Button
+                      size="sm"
+                      onClick={() => handleApplyPlayerDamage(p)}
+                      className="cyber-btn h-8 px-3 text-xs bg-rose-600 hover:bg-rose-500 text-white font-mono font-bold shadow-sm cursor-pointer"
+                      title="Apply damage: ablates target SP and reduces target HP"
+                    >
+                      Apply
+                    </Button>
+                  </div>
+                )}
+
                 {/* Target Selector */}
                 <div className="flex items-center gap-1">
                   <Crosshair className="w-3.5 h-3.5 text-muted-foreground" />
@@ -1152,86 +1289,208 @@ export function EncounterTracker({
         )}
       </div>
 
-      {/* GM REVIEW INTERCEPT MODAL (TRIGGERED WHEN NPC TARGETS A PC) */}
-      {pendingPCAttack && (
-        <Dialog open={!!pendingPCAttack} onOpenChange={open => { if (!open) setPendingPCAttack(null); }}>
+      {/* GM REVIEW INTERCEPT MODAL (FOR ATTACKS TARGETING PCS: RANGE CHART VS EVADE) */}
+      {currentPendingPCAttack && (
+        <Dialog open={!!currentPendingPCAttack} onOpenChange={open => { if (!open) setPendingPCAttacks([]); }}>
           <DialogContent className="max-w-xl bg-card border-2 border-primary/50 shadow-2xl backdrop-blur-xl">
             <DialogHeader>
-              <DialogTitle className="text-xl font-black tracking-wide text-primary flex items-center gap-2">
-                <AlertTriangle className="w-6 h-6 text-warning animate-bounce" />
-                GM COMBAT REVIEW: Attack Targeting Player
-              </DialogTitle>
+              <div className="flex items-center justify-between">
+                <DialogTitle className="text-lg font-black tracking-wide text-primary flex items-center gap-2 font-mono">
+                  <AlertTriangle className="w-5 h-5 text-warning animate-bounce" />
+                  GM COMBAT REVIEW: Attack Targeting Player
+                </DialogTitle>
+                {pendingPCAttacks.length > 1 && (
+                  <span className="text-xs font-mono font-bold px-2 py-0.5 rounded bg-primary/20 text-primary border border-primary/40">
+                    Attack 1 of {pendingPCAttacks.length}
+                  </span>
+                )}
+              </div>
             </DialogHeader>
 
-            <div className="space-y-4 py-3">
+            <div className="space-y-4 py-2">
               {/* Threat Summary */}
-              <div className="p-4 rounded-xl bg-secondary/30 border border-border space-y-2">
+              <div className="p-3.5 rounded-xl bg-secondary/30 border border-border space-y-2">
                 <div className="text-sm font-bold text-foreground flex items-center justify-between">
-                  <span>{pendingPCAttack.attacker.name}</span>
-                  <span className="text-xs text-muted-foreground font-mono">VS</span>
-                  <span className="text-primary font-black">{pendingPCAttack.pcDefender.name}</span>
+                  <span className="font-mono text-rose-400 font-bold">{currentPendingPCAttack.attacker.name}</span>
+                  <span className="text-xs text-muted-foreground font-mono">ATTACKING</span>
+                  <span className="text-primary font-black font-mono text-base">{currentPendingPCAttack.pcDefender.name}</span>
                 </div>
                 <div className="text-xs text-muted-foreground flex items-center justify-between flex-wrap gap-1">
                   <span>
-                    Weapon: <strong className="text-foreground">{pendingPCAttack.weapon.name}</strong>{' '}
+                    Weapon: <strong className="text-foreground">{currentPendingPCAttack.weapon.name}</strong>{' '}
                     <span className="text-primary font-mono font-bold">
-                      [{formatWeaponCategory(pendingPCAttack.weapon)}]
+                      [{formatWeaponCategory(currentPendingPCAttack.weapon)}]
                     </span>{' '}
-                    ({pendingPCAttack.weapon.system?.damage})
+                    ({currentPendingPCAttack.weapon.system?.damage || '3d6'})
                   </span>
                   <span className="text-[11px] font-mono text-muted-foreground">
-                    ROF: {pendingPCAttack.weapon.system?.rof ?? 1}
-                  </span>
-                </div>
-                <div className="pt-2 border-t border-border/50">
-                  <WeaponRangeChart weapon={pendingPCAttack.weapon} compact />
-                </div>
-              </div>
-
-              {/* Attack vs Defense Rolls */}
-              <div className="grid grid-cols-2 gap-3">
-                <div className="p-3 rounded-xl bg-secondary/20 border border-border">
-                  <span className="text-[10px] font-bold uppercase text-muted-foreground block">Attacker Roll</span>
-                  <div className="text-2xl font-black font-mono text-foreground mt-1">
-                    {pendingPCAttack.attackRoll}
-                  </div>
-                  <span className="text-[11px] text-muted-foreground font-mono">
-                    {pendingPCAttack.attackBreakdown}
-                  </span>
-                </div>
-
-                <div className="p-3 rounded-xl bg-secondary/20 border border-border">
-                  <span className="text-[10px] font-bold uppercase text-muted-foreground block">PC Evasion Check</span>
-                  <div className="text-2xl font-black font-mono text-foreground mt-1">
-                    {pendingPCAttack.defenseRoll}
-                  </div>
-                  <span className="text-[11px] text-muted-foreground font-mono">
-                    {pendingPCAttack.defenseBreakdown}
+                    ROF: {currentPendingPCAttack.weapon.system?.rof ?? 1}
                   </span>
                 </div>
               </div>
 
-              {/* Hit Status & Critical Injury */}
-              <div className={`p-3 rounded-xl border flex items-center justify-between ${
-                pendingPCAttack.overrideHit 
-                  ? 'bg-rose-500/10 border-rose-500/30 text-rose-400' 
-                  : 'bg-emerald-500/10 border-emerald-500/30 text-emerald-400'
-              }`}>
-                <div className="flex items-center gap-2">
-                  {pendingPCAttack.overrideHit ? (
-                    <Flame className="w-5 h-5 text-rose-500" />
+              {/* Attacker Roll & Defense Resolution Side-by-Side */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                {/* Attacker Roll Box */}
+                <div className="p-3 rounded-xl bg-secondary/20 border border-border flex flex-col justify-between">
+                  <div>
+                    <span className="text-[10px] font-bold uppercase text-muted-foreground block font-mono">
+                      Attacker Roll ({currentPendingPCAttack.attacker.name})
+                    </span>
+                    <div className="text-3xl font-black font-mono text-amber-400 mt-1">
+                      {currentPendingPCAttack.attackRoll}
+                    </div>
+                  </div>
+                  <span className="text-[11px] text-muted-foreground font-mono mt-2">
+                    {currentPendingPCAttack.attackBreakdown}
+                  </span>
+                </div>
+
+                {/* Defense Resolution: Range Chart DV or Evade */}
+                <div className="p-3 rounded-xl bg-secondary/20 border border-border space-y-2">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[10px] font-bold uppercase text-muted-foreground block font-mono">
+                      Defense Mode
+                    </span>
+                    <label className="flex items-center gap-1.5 cursor-pointer text-xs font-mono font-bold text-foreground">
+                      <input
+                        type="checkbox"
+                        checked={currentPendingPCAttack.declaredEvade}
+                        onChange={e => {
+                          const declared = e.target.checked;
+                          let newHit = currentPendingPCAttack.overrideHit;
+                          if (!declared) {
+                            newHit = currentPendingPCAttack.selectedDV !== null 
+                              ? currentPendingPCAttack.attackRoll >= currentPendingPCAttack.selectedDV 
+                              : true;
+                          } else if (typeof currentPendingPCAttack.evadeRoll === 'number') {
+                            newHit = currentPendingPCAttack.attackRoll > currentPendingPCAttack.evadeRoll;
+                          }
+                          updateCurrentPendingPCAttack({ declaredEvade: declared, overrideHit: newHit });
+                        }}
+                        className="rounded border-border text-primary focus:ring-primary h-3.5 w-3.5 cursor-pointer"
+                      />
+                      <span>Player Evades?</span>
+                    </label>
+                  </div>
+
+                  {!currentPendingPCAttack.declaredEvade ? (
+                    /* Default: Range Chart DV Selection */
+                    <div className="space-y-1.5">
+                      <span className="text-[10px] text-muted-foreground font-mono block">
+                        Target Range DV (Single Shot):
+                      </span>
+                      {currentPendingPCAttack.rangeBands.length > 0 ? (
+                        <div className="grid grid-cols-3 gap-1">
+                          {currentPendingPCAttack.rangeBands.map((band, idx) => {
+                            const isSelected = currentPendingPCAttack.selectedBandIndex === idx;
+                            const isNA = band.dv === null;
+                            return (
+                              <button
+                                key={band.label}
+                                type="button"
+                                disabled={isNA}
+                                onClick={() => {
+                                  const hit = band.dv !== null && currentPendingPCAttack.attackRoll >= band.dv;
+                                  updateCurrentPendingPCAttack({
+                                    selectedBandIndex: idx,
+                                    selectedDV: band.dv,
+                                    overrideHit: hit
+                                  });
+                                }}
+                                className={`p-1 text-center rounded border font-mono text-[10px] transition-all cursor-pointer ${
+                                  isSelected
+                                    ? 'bg-primary text-primary-foreground font-bold border-primary shadow-sm'
+                                    : isNA
+                                      ? 'bg-secondary/10 text-muted-foreground/30 border-transparent cursor-not-allowed'
+                                      : 'bg-secondary/40 hover:bg-secondary text-foreground border-border'
+                                }`}
+                              >
+                                <div className="text-[9px] opacity-80">{band.label}</div>
+                                <div className="font-black">{isNA ? '-' : `DV ${band.dv}`}</div>
+                              </button>
+                            );
+                          })}
+                        </div>
+                      ) : (
+                        <div className="text-xs font-mono text-muted-foreground italic">
+                          Melee Attack (Opposed check against Evasion)
+                        </div>
+                      )}
+                    </div>
                   ) : (
-                    <Shield className="w-5 h-5 text-emerald-500" />
+                    /* Player Declared Evade Input & Quick Roll */
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-between text-[11px] font-mono">
+                        <span className="text-muted-foreground">Evasion Skill:</span>
+                        <span className="text-foreground font-bold">{currentPendingPCAttack.evadeBreakdown}</span>
+                      </div>
+                      <div className="flex items-center gap-1.5">
+                        <Input
+                          type="number"
+                          placeholder="Player Total"
+                          value={currentPendingPCAttack.evadeRoll}
+                          onChange={e => {
+                            const val = e.target.value === '' ? '' : parseInt(e.target.value);
+                            const hit = typeof val === 'number' ? currentPendingPCAttack.attackRoll > val : currentPendingPCAttack.overrideHit;
+                            updateCurrentPendingPCAttack({ evadeRoll: val, overrideHit: hit });
+                          }}
+                          className="cyber-input font-mono font-black text-sm h-8 text-center"
+                          autoFocus
+                        />
+                        <Button
+                          type="button"
+                          size="sm"
+                          onClick={() => {
+                            const d10 = rollD10Exploding();
+                            const total = d10.total + currentPendingPCAttack.evadeBonus;
+                            const hit = currentPendingPCAttack.attackRoll > total;
+                            updateCurrentPendingPCAttack({
+                              evadeRoll: total,
+                              overrideHit: hit
+                            });
+                            toast.info(`🎲 Rolled PC Evade: ${total} (1d10 + ${currentPendingPCAttack.evadeBonus})`);
+                          }}
+                          className="cyber-btn h-8 px-2.5 text-xs bg-secondary hover:bg-primary/20 text-foreground font-mono"
+                          title="Roll 1d10 exploding + DEX + Evasion"
+                        >
+                          <Dices className="w-3.5 h-3.5 mr-1 text-primary" />
+                          Roll
+                        </Button>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              {/* Hit Status & Critical Injury Banner */}
+              <div className={`p-3 rounded-xl border flex items-center justify-between ${
+                currentPendingPCAttack.overrideHit 
+                  ? 'bg-rose-500/15 border-rose-500/40 text-rose-300' 
+                  : 'bg-emerald-500/15 border-emerald-500/40 text-emerald-300'
+              }`}>
+                <div className="flex items-center gap-2.5">
+                  {currentPendingPCAttack.overrideHit ? (
+                    <Flame className="w-5 h-5 text-rose-400 shrink-0" />
+                  ) : (
+                    <Shield className="w-5 h-5 text-emerald-400 shrink-0" />
                   )}
                   <div>
-                    <span className="font-bold text-sm">
-                      {pendingPCAttack.overrideHit ? 'ATTACK HITS PC' : 'PC DODGED / EVADED'}
+                    <span className="font-bold text-sm block">
+                      {currentPendingPCAttack.overrideHit ? 'ATTACK HITS PLAYER' : 'PLAYER EVADED / MISSED'}
                     </span>
-                    {pendingPCAttack.isCritical && pendingPCAttack.overrideHit && (
-                      <span className="text-xs text-warning block font-mono">
-                        {pendingPCAttack.isTarotCrit 
-                          ? `🎴 NIGHT CITY TAROT CRIT (${pendingPCAttack.sixCount}x 6s rolled!)` 
-                          : `💥 CRITICAL INJURY: ${pendingPCAttack.criticalInjuryName} (+5 direct HP damage!)`}
+                    <span className="text-[11px] text-muted-foreground font-mono">
+                      {!currentPendingPCAttack.declaredEvade
+                        ? (currentPendingPCAttack.selectedDV !== null 
+                            ? `Attack ${currentPendingPCAttack.attackRoll} vs Range DV ${currentPendingPCAttack.selectedDV}`
+                            : 'Range DV Check')
+                        : `Attack ${currentPendingPCAttack.attackRoll} vs PC Evade ${currentPendingPCAttack.evadeRoll !== '' ? currentPendingPCAttack.evadeRoll : '?'}`}
+                    </span>
+                    {currentPendingPCAttack.isCritical && currentPendingPCAttack.overrideHit && (
+                      <span className="text-xs text-amber-400 block font-mono font-bold mt-0.5">
+                        {currentPendingPCAttack.isTarotCrit 
+                          ? `🎴 TAROT CRIT (${currentPendingPCAttack.sixCount}x 6s rolled!)` 
+                          : `💥 CRITICAL INJURY: ${currentPendingPCAttack.criticalInjuryName} (+5 direct HP!)`}
                       </span>
                     )}
                   </div>
@@ -1239,41 +1498,42 @@ export function EncounterTracker({
 
                 {/* GM Override Hit Toggle */}
                 <button
-                  onClick={() => setPendingPCAttack(prev => prev ? ({ ...prev, overrideHit: !prev.overrideHit }) : null)}
-                  className="px-2.5 py-1 rounded bg-secondary hover:bg-secondary/80 text-xs font-mono font-bold text-foreground border border-border cursor-pointer"
+                  type="button"
+                  onClick={() => updateCurrentPendingPCAttack({ overrideHit: !currentPendingPCAttack.overrideHit })}
+                  className="px-2.5 py-1 rounded bg-secondary hover:bg-secondary/80 text-xs font-mono font-bold text-foreground border border-border cursor-pointer shrink-0"
                 >
-                  Toggle Hit / Dodge
+                  Toggle Hit / Miss
                 </button>
               </div>
 
-              {/* Night City Tarot Drawn Card Display (3+ Sixes) */}
-              {pendingPCAttack.overrideHit && pendingPCAttack.isTarotCrit && pendingPCAttack.tarotCard && (
+              {/* Night City Tarot Drawn Card Display */}
+              {currentPendingPCAttack.overrideHit && currentPendingPCAttack.isTarotCrit && currentPendingPCAttack.tarotCard && (
                 <div className="p-3.5 rounded-xl bg-primary/10 border-2 border-primary/40 space-y-1.5 shadow-md">
                   <div className="flex items-center justify-between">
                     <span className="text-xs font-black uppercase text-primary flex items-center gap-1.5 font-mono">
                       <Sparkles className="w-4 h-4 text-warning" />
-                      Night City Tarot Drawn: {pendingPCAttack.tarotCard.name} ({pendingPCAttack.tarotCard.roman})
+                      Night City Tarot Drawn: {currentPendingPCAttack.tarotCard.name} ({currentPendingPCAttack.tarotCard.roman})
                     </span>
                     <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-primary/20 text-primary border border-primary/50">
-                      {pendingPCAttack.sixCount}x SIXES
+                      {currentPendingPCAttack.sixCount}x SIXES
                     </span>
                   </div>
                   <p className="text-xs text-foreground/90 font-sans leading-relaxed">
-                    {pendingPCAttack.tarotCard.effect}
+                    {currentPendingPCAttack.tarotCard.effect}
                   </p>
                 </div>
               )}
 
               {/* Damage & Location Review */}
-              {pendingPCAttack.overrideHit && (
-                <div className="p-4 rounded-xl bg-card border border-border space-y-3">
+              {currentPendingPCAttack.overrideHit && (
+                <div className="p-3.5 rounded-xl bg-card border border-border space-y-3">
                   <div className="flex items-center justify-between flex-wrap gap-2">
                     <div className="flex items-center gap-2">
-                      <label className="text-xs font-bold text-muted-foreground uppercase">
+                      <label className="text-xs font-bold text-muted-foreground uppercase font-mono">
                         Damage Dice:
                       </label>
                       <div className="flex items-center gap-1">
-                        {pendingPCAttack.damageDice.map((d, i) => (
+                        {currentPendingPCAttack.damageDice.map((d, i) => (
                           <span
                             key={i}
                             className={`w-6 h-6 flex items-center justify-center rounded font-mono text-xs font-bold border ${
@@ -1284,26 +1544,26 @@ export function EncounterTracker({
                           </span>
                         ))}
                       </div>
-                      {typeof pendingPCAttack.sixCount === 'number' && pendingPCAttack.sixCount > 0 && (
+                      {typeof currentPendingPCAttack.sixCount === 'number' && currentPendingPCAttack.sixCount > 0 && (
                         <span className={`text-[10px] font-mono font-bold px-1.5 py-0.5 rounded border ${
-                          pendingPCAttack.sixCount >= 3 
+                          currentPendingPCAttack.sixCount >= 3 
                             ? 'bg-primary/20 text-primary border-primary/50' 
                             : 'bg-amber-500/20 text-amber-300 border-amber-500/40'
                         }`}>
-                          {pendingPCAttack.sixCount}x [6]s
+                          {currentPendingPCAttack.sixCount}x [6]s
                         </span>
                       )}
                     </div>
 
                     <div className="flex items-center gap-2">
-                      <span className="text-xs text-muted-foreground">Hit Location:</span>
+                      <span className="text-xs text-muted-foreground font-mono">Location:</span>
                       <select
-                        value={pendingPCAttack.hitLocation}
-                        onChange={e => setPendingPCAttack(prev => prev ? ({ ...prev, hitLocation: e.target.value as 'head' | 'body' }) : null)}
-                        className="cyber-input text-xs h-7 bg-background border-border"
+                        value={currentPendingPCAttack.hitLocation}
+                        onChange={e => updateCurrentPendingPCAttack({ hitLocation: e.target.value as 'head' | 'body' })}
+                        className="cyber-input text-xs h-7 bg-background border-border font-mono"
                       >
-                        <option value="body">Body (SP {pendingPCAttack.pcDefender.armor?.body ?? 0})</option>
-                        <option value="head">Head (SP {pendingPCAttack.pcDefender.armor?.head ?? 0}) - x2 Dmg</option>
+                        <option value="body">Body (SP {currentPendingPCAttack.pcDefender.armor?.body ?? 0})</option>
+                        <option value="head">Head (SP {currentPendingPCAttack.pcDefender.armor?.head ?? 0}) - x2 Dmg</option>
                       </select>
                     </div>
                   </div>
@@ -1311,32 +1571,32 @@ export function EncounterTracker({
                   <div className="flex items-center gap-3">
                     <Input
                       type="number"
-                      value={pendingPCAttack.modifiedDamage}
-                      onChange={e => setPendingPCAttack(prev => prev ? ({ ...prev, modifiedDamage: parseInt(e.target.value) || 0 }) : null)}
-                      className="cyber-input font-mono font-black text-xl text-primary w-28 text-center"
+                      value={currentPendingPCAttack.modifiedDamage}
+                      onChange={e => updateCurrentPendingPCAttack({ modifiedDamage: parseInt(e.target.value) || 0 })}
+                      className="cyber-input font-mono font-black text-xl text-primary w-24 text-center h-9"
                     />
-                    <div className="text-xs text-muted-foreground">
-                      Target SP will absorb damage first. Any penetrating damage reduces HP and ablates SP by 1.
+                    <div className="text-xs text-muted-foreground font-mono">
+                      Damage vs SP {currentPendingPCAttack.hitLocation === 'head' ? (currentPendingPCAttack.pcDefender.armor?.head ?? 0) : (currentPendingPCAttack.pcDefender.armor?.body ?? 0)}: penetrates and ablates armor by 1.
                     </div>
                   </div>
                 </div>
               )}
             </div>
 
-            <DialogFooter className="gap-2">
+            <DialogFooter className="flex items-center justify-between sm:justify-between w-full gap-2">
               <Button
                 variant="outline"
-                onClick={() => setPendingPCAttack(null)}
-                className="cyber-btn text-xs"
+                onClick={() => handleConfirmPCAttack(false)}
+                className="cyber-btn text-xs border-border/80 text-muted-foreground hover:text-foreground"
               >
-                Cancel
+                Record Miss / Evaded
               </Button>
               <Button
-                onClick={handleConfirmPCAttack}
-                className="cyber-btn bg-primary text-primary-foreground font-bold text-xs"
+                onClick={() => handleConfirmPCAttack(true)}
+                className="cyber-btn bg-primary text-primary-foreground font-bold text-xs shadow-md"
               >
                 <Check className="w-4 h-4 mr-1.5" />
-                {pendingPCAttack.overrideHit ? 'Confirm & Apply Damage' : 'Record Dodge / Miss'}
+                {currentPendingPCAttack.overrideHit ? 'Confirm & Apply Damage' : 'Apply Damage Anyway'}
               </Button>
             </DialogFooter>
           </DialogContent>

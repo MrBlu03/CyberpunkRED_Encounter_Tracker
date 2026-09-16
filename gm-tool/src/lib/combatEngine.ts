@@ -548,6 +548,340 @@ export function resolveAttack({
 }
 
 /**
+ * Resolves an attack roll against a fixed DV (e.g. from the official Range Chart).
+ * Meeting or exceeding the target DV results in a successful hit.
+ */
+export function resolveAttackAgainstDV({
+  attacker,
+  defender,
+  weapon,
+  targetDV,
+  rangeLabel = 'Range DV',
+  round = 1,
+  aimedHead = false,
+  damageType = 'normal'
+}: {
+  attacker: Participant;
+  defender: Participant;
+  weapon: Weapon;
+  targetDV: number;
+  rangeLabel?: string;
+  round?: number;
+  aimedHead?: boolean;
+  damageType?: DamageType;
+}): {
+  action: CombatAction;
+  updatedDefender: Participant;
+  attackRoll: number;
+  attackBreakdown: string;
+  hit: boolean;
+  damageRoll: number;
+  damageDice: number[];
+  sixCount: number;
+  isCritical: boolean;
+  isTarotCrit: boolean;
+  tarotCard?: { id?: string; name: string; number?: number; roman?: string; effect: string };
+  criticalInjuryName?: string;
+  criticalInjuryEffect?: string;
+} {
+  // 1. Attack Check
+  const attackerBonus = getAttackerCombatBonus(attacker, weapon);
+  const attackD10 = rollD10Exploding();
+  const aimedPenalty = aimedHead ? -8 : 0;
+  const totalAttack = attackD10.total + attackerBonus.base + aimedPenalty;
+  const attackBreakdown = `d10(${attackD10.breakdown}) + ${attackerBonus.breakdown}${aimedHead ? ' - Aimed(-8)' : ''} = ${totalAttack}`;
+
+  // 2. Hit determination against target DV (must meet or beat DV in CP:R)
+  const hit = totalAttack >= targetDV;
+
+  const hitLocation = aimedHead ? 'head' : 'body';
+  const damageFormula = weapon.system?.damage || '3d6';
+
+  let damageRoll = 0;
+  let damageDice: number[] = [];
+  let sixCount = 0;
+  let isCritical = false;
+  let isTarotCrit = false;
+  let tarotCard: { id?: string; name: string; number?: number; roman?: string; effect: string } | undefined;
+  let criticalInjuryName: string | undefined;
+  let criticalInjuryEffect: string | undefined;
+
+  let spBefore = 0;
+  let spAbsorbed = 0;
+  let spAfter = 0;
+  let coverDamage = 0;
+  let hpDamage = 0;
+
+  const hpBefore = defender.hp;
+  const currentArmor = defender.armor || { head: 0, body: 0 };
+  spBefore = hitLocation === 'head' ? (currentArmor.head || 0) : (currentArmor.body || 0);
+  spAfter = spBefore;
+
+  let currentCover = defender.cover;
+
+  // 3. Roll Damage (always pre-roll so GM sees potential damage whether hit or miss)
+  const rolled = rollDamage(damageFormula);
+  damageRoll = rolled.total;
+  damageDice = rolled.dice;
+  sixCount = rolled.sixCount;
+  isCritical = rolled.isCritical;
+  isTarotCrit = rolled.isTarotCrit;
+
+  if (isCritical) {
+    const crit = rollCriticalInjury(hitLocation);
+    criticalInjuryName = crit.injury.name;
+    criticalInjuryEffect = crit.injury.effect;
+  }
+
+  if (isTarotCrit) {
+    const card = drawRandomTarotCard();
+    tarotCard = {
+      id: card.id,
+      name: card.name,
+      number: card.number,
+      roman: card.roman,
+      effect: card.effect
+    };
+  }
+
+  if (hit) {
+    let remainingDamage = damageRoll;
+
+    // Cover absorption
+    if (currentCover && currentCover.hp > 0) {
+      const coverSP = currentCover.sp || 0;
+      const afterSP = Math.max(0, remainingDamage - coverSP);
+      const absorbed = Math.min(afterSP, currentCover.hp);
+      coverDamage = absorbed;
+      currentCover = {
+        ...currentCover,
+        hp: Math.max(0, currentCover.hp - absorbed)
+      };
+      remainingDamage = Math.max(0, afterSP - currentCover.hp);
+    }
+
+    // Armor SP absorption
+    const isMelee = weapon.system?.weaponType === 'melee' || weapon.system?.weaponSkill === 'Melee Weapon';
+    const effectiveAmmo = weapon.ammoType || attacker.ammoType;
+    const isAP = effectiveAmmo === 'Armor-Piercing' || damageType === 'armor-piercing';
+
+    let effectiveSP = spBefore;
+    if (isMelee || damageType === 'half-armor') {
+      effectiveSP = Math.floor(spBefore / 2);
+    } else if (damageType === 'ignore-armor') {
+      effectiveSP = 0;
+    }
+
+    spAbsorbed = Math.min(remainingDamage, effectiveSP);
+    let netDamage = Math.max(0, remainingDamage - effectiveSP);
+
+    if (hitLocation === 'head') {
+      netDamage *= 2;
+    }
+
+    if (isCritical) {
+      netDamage += 5;
+    }
+
+    if (netDamage > 0 && spBefore > 0) {
+      const ablateAmount = isAP ? 2 : 1;
+      spAfter = Math.max(0, spBefore - ablateAmount);
+    }
+
+    hpDamage = netDamage;
+  }
+
+  const hpAfter = Math.max(0, hpBefore - hpDamage);
+  const newWoundState = getWoundState(hpAfter, defender.maxHp);
+  const downed = hpAfter <= 0;
+
+  const updatedArmor = {
+    ...currentArmor,
+    head: hitLocation === 'head' ? spAfter : currentArmor.head,
+    body: hitLocation === 'body' ? spAfter : currentArmor.body
+  };
+
+  const updatedDefender: Participant = {
+    ...defender,
+    hp: hpAfter,
+    armor: updatedArmor,
+    cover: currentCover,
+    woundState: newWoundState,
+    dead: downed
+  };
+
+  const action: CombatAction = {
+    id: crypto.randomUUID(),
+    round,
+    attackerId: attacker.id,
+    attackerName: attacker.name,
+    attackerAffiliation: attacker.affiliation || (attacker.isPC ? 'player' : 'hostile_npc'),
+    defenderId: defender.id,
+    defenderName: defender.name,
+    defenderAffiliation: defender.affiliation || (defender.isPC ? 'player' : 'hostile_npc'),
+    weaponName: weapon.name,
+    damageFormula,
+    attackRoll: totalAttack,
+    attackBreakdown,
+    defenseType: 'dv',
+    defenseRoll: targetDV,
+    defenseBreakdown: `${rangeLabel} (DV ${targetDV})`,
+    hit,
+    hitLocation,
+    damageRoll,
+    damageDice,
+    sixCount,
+    isCritical,
+    isTarotCrit,
+    tarotCard,
+    criticalInjuryName,
+    criticalInjuryEffect,
+    spBefore,
+    spAbsorbed,
+    spAfter,
+    coverDamage,
+    hpDamage,
+    hpBefore,
+    hpAfter,
+    woundStateAfter: newWoundState,
+    downed,
+    timestamp: new Date().toLocaleTimeString()
+  };
+
+  return {
+    action,
+    updatedDefender,
+    attackRoll: totalAttack,
+    attackBreakdown,
+    hit,
+    damageRoll,
+    damageDice,
+    sixCount,
+    isCritical,
+    isTarotCrit,
+    tarotCard,
+    criticalInjuryName,
+    criticalInjuryEffect
+  };
+}
+
+/**
+ * Applies player damage to an enemy/defender with full RAW Armor SP absorption,
+ * ablation, and wound state tracking.
+ */
+export function applyPlayerDamageToDefender({
+  defender,
+  damage,
+  hitLocation = 'body',
+  damageType = 'normal',
+  round = 1,
+  attackerName = 'Player Character'
+}: {
+  defender: Participant;
+  damage: number;
+  hitLocation?: 'head' | 'body';
+  damageType?: DamageType;
+  round?: number;
+  attackerName?: string;
+}): {
+  updatedDefender: Participant;
+  spBefore: number;
+  spAbsorbed: number;
+  spAfter: number;
+  hpDamage: number;
+  hpBefore: number;
+  hpAfter: number;
+  action: CombatAction;
+} {
+  const hpBefore = defender.hp;
+  const currentArmor = defender.armor || { head: 0, body: 0 };
+  const spBefore = hitLocation === 'head' ? (currentArmor.head || 0) : (currentArmor.body || 0);
+
+  let effectiveSP = spBefore;
+  if (damageType === 'half-armor') {
+    effectiveSP = Math.floor(spBefore / 2);
+  } else if (damageType === 'ignore-armor') {
+    effectiveSP = 0;
+  }
+
+  const spAbsorbed = Math.min(damage, effectiveSP);
+  let netDamage = Math.max(0, damage - effectiveSP);
+
+  if (hitLocation === 'head') {
+    netDamage *= 2;
+  }
+
+  let spAfter = spBefore;
+  if (netDamage > 0 && spBefore > 0) {
+    const ablateAmount = damageType === 'armor-piercing' ? 2 : 1;
+    spAfter = Math.max(0, spBefore - ablateAmount);
+  }
+
+  const hpDamage = netDamage;
+  const hpAfter = Math.max(0, hpBefore - hpDamage);
+  const newWoundState = getWoundState(hpAfter, defender.maxHp);
+  const downed = hpAfter <= 0;
+
+  const updatedArmor = {
+    ...currentArmor,
+    head: hitLocation === 'head' ? spAfter : currentArmor.head,
+    body: hitLocation === 'body' ? spAfter : currentArmor.body
+  };
+
+  const updatedDefender: Participant = {
+    ...defender,
+    hp: hpAfter,
+    armor: updatedArmor,
+    woundState: newWoundState,
+    dead: downed
+  };
+
+  const action: CombatAction = {
+    id: crypto.randomUUID(),
+    round,
+    attackerId: 'player',
+    attackerName,
+    attackerAffiliation: 'player',
+    defenderId: defender.id,
+    defenderName: defender.name,
+    defenderAffiliation: defender.affiliation || 'hostile_npc',
+    weaponName: `Player Attack (${hitLocation.toUpperCase()}${damageType !== 'normal' ? ` [${damageType}]` : ''})`,
+    damageFormula: `${damage} direct`,
+    attackRoll: 0,
+    attackBreakdown: 'Player Attack Hit',
+    defenseType: 'dodge',
+    defenseRoll: 0,
+    hit: true,
+    hitLocation,
+    damageRoll: damage,
+    damageDice: [],
+    sixCount: 0,
+    isCritical: false,
+    isTarotCrit: false,
+    spBefore,
+    spAbsorbed,
+    spAfter,
+    hpDamage,
+    hpBefore,
+    hpAfter,
+    woundStateAfter: newWoundState,
+    downed,
+    timestamp: new Date().toLocaleTimeString()
+  };
+
+  return {
+    updatedDefender,
+    spBefore,
+    spAbsorbed,
+    spAfter,
+    hpDamage,
+    hpBefore,
+    hpAfter,
+    action
+  };
+}
+
+/**
  * Automatically pairs attackers with opposing targets in the encounter
  */
 export function autoPairTargets(participants: Participant[]): Map<string, Participant> {

@@ -12,16 +12,16 @@ A high-performance, polished web application for Game Masters running **Cyberpun
 - **Automatic Initiative Sorting**: Dynamic round and turn progression with active combatant indicators.
 
 ### ⚔️ Auto-Resolved NPC vs NPC Combat
-- **Lightning-Fast Mass Combat**: Auto-resolves all NPC vs NPC attacks in one batch with complete Cyberpunk RED RAW rule fidelity.
-- **Bullet Dodging Mechanic**: Only combatants with REF 8+ or cybernetic reflexes (Kerenzikov/Sandevistan) attempt to evade ranged fire (DEX + Evasion DV check); others rely on static Range DVs.
+- **Automatic Round-Start Execution**: Combat calculations run **automatically at round start** (Round 1, Round 2, etc.) without requiring a manual button click. Generic NPC vs NPC actions resolve in the background, updating HP, armor SP, and wound states.
+- **Dedicated Player Damage Application on Enemies**: An intuitive, inline **"Player Dmg"** panel on every enemy card allows the GM to effortlessly take in player attack damage, choose Body or Head (x2 dmg), toggle Armor-Piercing (AP, -2 SP), and press `Enter` to automatically calculate RAW SP absorption, SP ablation, and penetrating HP loss.
+- **RAW Range Chart vs Player Evade Adjudication**: When an attack targets a Player Character, the **GM Combat Review Queue** adjudicates the hit using the official Cyberpunk RED **Range Chart DVs** (0-6m, 7-12m, 13-25m, etc.) by default. If the player declares an Evade, the GM toggles evasion to oppose the roll with the player's Evasion check.
 - **Armor Halving for Melee**: Attacks with blades, brawling, and melee weapons automatically halve effective armor SP.
 - **Damage & SP Ablation**: Penetrating damage reduces HP and ablates armor SP automatically. Armor-Piercing (AP) ammo ablates 2 SP.
-- **GM Review Intercept for PCs**: When an attack targets a Player Character, execution halts and opens the **GM Combat Review Dialog** to let the GM inspect rolls, toggle hit/evasion, override damage, and select hit locations before applying consequences.
 
 ### 🎮 GM Exclusive Manual Control for Custom Allies & Bosses
 - **Custom-Made NPCs**: When creating custom NPCs or friendly allies, the GM can flag them for **Exclusive Manual Control**.
 - **Excluded from Auto-Resolve**: Generic goons follow the auto-combat rules, while custom-crafted allies and bosses remain 100% under GM manual command.
-- **Opposed & Contest Check Engine**: A single Stat Number derives all NPC modifiers, with a 1-click **OPPOSE** button to contest any player check (Stealth, Athletics, Grapple, Social, Tech) using exploding 1d10 dice.
+- **Streamlined 1-Click Oppose Check**: A single Stat Number derives all NPC modifiers, with a 1-click **OPPOSE** button to instantly roll exploding 1d10 + Stat# and display the outcome inline without popup modals.
 
 ### 🎬 Full-Screen Teleprompter & Cinematic Round Narration
 - **Full-Screen Theater Mode**: Round narration opens in an immersive full-screen teleprompter modal with adjustable reading font sizes (**Normal**, **Large**, **Teleprompter 3xl text**).
