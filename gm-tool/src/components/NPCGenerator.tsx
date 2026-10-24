@@ -1,14 +1,15 @@
 import { useState, useEffect } from 'react';
 import { 
   Bot, Plus, Shield, Swords, Trash2, Save, Sparkles, Search,
-  ArrowRight, UserPlus, Heart, Target, Crosshair, Bomb, Zap, ShieldAlert
+  ArrowRight, UserPlus, Heart, Target, Crosshair, Bomb, Zap, ShieldAlert,
+  Dices, RefreshCw
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { toast } from 'sonner';
 import { useLocalStorage } from '@/hooks/useLocalStorage';
 import { compendium, CORE_WEAPONS } from '@/lib/compendium';
-import type { EquippedCyberware } from '@/lib/compendium';
+import type { EquippedCyberware, GeneratedRandomNPC } from '@/lib/compendium';
 import type { Participant, SavedNPC, Weapon, Affiliation, CombatStyle, EncounterDifficulty, OrdnanceItem } from '@/types';
 
 interface NPCGeneratorProps {
@@ -171,9 +172,14 @@ const GOON_PRESETS: GoonPreset[] = [
 ];
 
 export function NPCGenerator({ onAddToEncounter, onAddMultipleToEncounter }: NPCGeneratorProps) {
-  const [activeTab, setActiveTab] = useState<'presets' | 'custom' | 'saved'>('presets');
+  const [activeTab, setActiveTab] = useState<'presets' | 'random' | 'custom' | 'saved'>('presets');
   const [categoryFilter, setCategoryFilter] = useState<string>('all');
   const [savedNPCs, setSavedNPCs] = useLocalStorage<SavedNPC[]>('cyberpunk-saved-npcs', []);
+
+  // Quick Random NPC State
+  const [randomCategory, setRandomCategory] = useState<'any' | 'street' | 'corpo' | 'police' | 'freelance' | 'elite'>('any');
+  const [randomTier, setRandomTier] = useState<'any' | 'mook' | 'lieutenant' | 'boss'>('any');
+  const [generatedRandomNPC, setGeneratedRandomNPC] = useState<GeneratedRandomNPC | null>(null);
 
   // Compendium state
   const [compendiumItems, setCompendiumItems] = useState<Weapon[]>(CORE_WEAPONS);
@@ -281,6 +287,67 @@ export function NPCGenerator({ onAddToEncounter, onAddMultipleToEncounter }: NPC
     });
   };
 
+  const handleRollRandom = () => {
+    const rolled = compendium.generateRandomNPC({
+      category: randomCategory,
+      tier: randomTier === 'any' ? undefined : randomTier,
+      difficulty: selectedDifficulty,
+      style: selectedStyle
+    });
+    setGeneratedRandomNPC(rolled);
+    toast.success(`Generated: ${rolled.name}!`, {
+      icon: <Dices className="w-5 h-5 text-warning" />
+    });
+  };
+
+  const handleSpawnRandom = (count: number = 1) => {
+    if (!generatedRandomNPC) return;
+    const newParticipants: Participant[] = [];
+    for (let i = 1; i <= count; i++) {
+      const suffix = count > 1 ? ` #${i}` : '';
+      newParticipants.push({
+        ...generatedRandomNPC,
+        id: crypto.randomUUID(),
+        name: count > 1 ? `${generatedRandomNPC.name.replace(/ \([^)]+\)/, '')}${suffix} (${generatedRandomNPC.faction})` : generatedRandomNPC.name
+      });
+    }
+
+    if (onAddMultipleToEncounter) {
+      onAddMultipleToEncounter(newParticipants);
+    } else if (onAddToEncounter) {
+      newParticipants.forEach(p => onAddToEncounter(p));
+    }
+
+    toast.success(`Spawned ${count}x ${generatedRandomNPC.name}!`, {
+      icon: <Sparkles className="w-5 h-5 text-primary" />
+    });
+  };
+
+  const handleSendToCustom = (npcToEdit: GeneratedRandomNPC) => {
+    setCustomName(npcToEdit.name);
+    setCustomRole(npcToEdit.role || 'Solo');
+    setCustomAffiliation(npcToEdit.affiliation || 'hostile_npc');
+    setCustomTier(npcToEdit.tier === 'boss' ? 'boss' : npcToEdit.tier === 'lieutenant' ? 'lieutenant' : 'mook');
+    setCustomCN(npcToEdit.combatNumber || 11);
+    setCustomHP(npcToEdit.hp || 35);
+    setCustomHeadSP(npcToEdit.armor?.head || 11);
+    setCustomBodySP(npcToEdit.armor?.body || 11);
+    if (npcToEdit.weapons && npcToEdit.weapons.length > 0) {
+      setCustomWeapons(npcToEdit.weapons);
+    }
+    if (npcToEdit.cyberware && npcToEdit.cyberware.length > 0) {
+      setCustomCyberware(npcToEdit.cyberware as EquippedCyberware[]);
+    }
+    if (npcToEdit.ammoType) {
+      setCustomAmmoType(npcToEdit.ammoType);
+    }
+    if (npcToEdit.ordinance) {
+      setCustomOrdnance(npcToEdit.ordinance);
+    }
+    setActiveTab('custom');
+    toast.info(`Transferred ${npcToEdit.name} to Custom Creator for fine-tuning!`);
+  };
+
   const handleCreateCustom = (andSave: boolean = false) => {
     if (!customName.trim()) {
       toast.error('Enemy Name is required');
@@ -382,6 +449,20 @@ export function NPCGenerator({ onAddToEncounter, onAddMultipleToEncounter }: NPC
             }`}
           >
             Squad Presets
+          </button>
+          <button
+            onClick={() => {
+              setActiveTab('random');
+              if (!generatedRandomNPC) {
+                handleRollRandom();
+              }
+            }}
+            className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
+              activeTab === 'random' ? 'bg-primary text-primary-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground'
+            }`}
+          >
+            <Dices className="w-3.5 h-3.5 text-warning" />
+            Random Roll
           </button>
           <button
             onClick={() => setActiveTab('custom')}
@@ -620,6 +701,339 @@ export function NPCGenerator({ onAddToEncounter, onAddMultipleToEncounter }: NPC
               );
             })}
           </div>
+        </div>
+      )}
+
+      {/* RANDOM NPC ROLL TAB */}
+      {activeTab === 'random' && (
+        <div className="space-y-5 animate-in">
+          {/* Controls Bar */}
+          <div className="p-4 rounded-2xl bg-card border border-warning/30 shadow-md space-y-4">
+            <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-3">
+              <div>
+                <h3 className="text-base font-black uppercase text-foreground flex items-center gap-2" style={{ fontFamily: 'var(--font-display)' }}>
+                  <Dices className="w-5 h-5 text-warning" />
+                  Procedural Cyberpunk RED NPC Generator
+                </h3>
+                <p className="text-xs text-muted-foreground">
+                  Instantly roll canonical NPCs with street handles, motives, authentic Foundry VTT weapons, cyberware, and scaled threat statistics.
+                </p>
+              </div>
+
+              {/* Big Roll Button */}
+              <Button
+                onClick={handleRollRandom}
+                className="cyber-btn bg-gradient-to-r from-amber-500 to-rose-600 hover:from-amber-400 hover:to-rose-500 text-white font-black text-sm px-5 py-2.5 shadow-lg shadow-amber-500/20 cursor-pointer flex items-center gap-2"
+              >
+                <Dices className="w-4 h-4 animate-spin-slow" />
+                Roll New NPC
+              </Button>
+            </div>
+
+            {/* Filter and Configuration Strip */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 pt-3 border-t border-border/60">
+              {/* Category / Faction Filter */}
+              <div className="space-y-1">
+                <span className="text-[10px] font-black uppercase text-muted-foreground font-mono">Faction / Category:</span>
+                <select
+                  value={randomCategory}
+                  onChange={e => setRandomCategory(e.target.value as any)}
+                  className="cyber-input w-full bg-background border border-border text-xs rounded-lg px-2.5 py-1.5"
+                >
+                  <option value="any">🎲 Any / All Factions</option>
+                  <option value="street">Street Gangs (Maelstrom, Claws, 6th St)</option>
+                  <option value="corpo">Megacorp Security (Arasaka, Militech)</option>
+                  <option value="police">Police & Law (NCPD Beat, SWAT)</option>
+                  <option value="freelance">Freelancers (Solos, Netrunners)</option>
+                  <option value="elite">Elites & Cyberpsychos</option>
+                </select>
+              </div>
+
+              {/* Threat Tier */}
+              <div className="space-y-1">
+                <span className="text-[10px] font-black uppercase text-muted-foreground font-mono">Threat Tier:</span>
+                <select
+                  value={randomTier}
+                  onChange={e => setRandomTier(e.target.value as any)}
+                  className="cyber-input w-full bg-background border border-border text-xs rounded-lg px-2.5 py-1.5"
+                >
+                  <option value="any">🎲 Random Threat Tier</option>
+                  <option value="mook">Mook (Street Scum, SP 4-7)</option>
+                  <option value="lieutenant">Lieutenant (Veteran, SP 11)</option>
+                  <option value="boss">Boss / Psycho (Heavy, SP 13-15)</option>
+                </select>
+              </div>
+
+              {/* Difficulty */}
+              <div className="space-y-1">
+                <span className="text-[10px] font-black uppercase text-muted-foreground font-mono">Encounter Difficulty:</span>
+                <select
+                  value={selectedDifficulty}
+                  onChange={e => setSelectedDifficulty(e.target.value as EncounterDifficulty)}
+                  className="cyber-input w-full bg-background border border-border text-xs rounded-lg px-2.5 py-1.5"
+                >
+                  <option value="easy">Street (Easy) • Basic Ammo</option>
+                  <option value="medium">Dangerous (Med) • Smoke/Basic</option>
+                  <option value="hard">Deadly (Hard) • +1 Stats, AP Ammo</option>
+                  <option value="extreme">Overkill (Extreme) • +2 Stats, Smart/Incendiary</option>
+                </select>
+              </div>
+
+              {/* Combat Style */}
+              <div className="space-y-1">
+                <span className="text-[10px] font-black uppercase text-muted-foreground font-mono">Tactical Bias:</span>
+                <select
+                  value={selectedStyle}
+                  onChange={e => setSelectedStyle(e.target.value as CombatStyle)}
+                  className="cyber-input w-full bg-background border border-border text-xs rounded-lg px-2.5 py-1.5"
+                >
+                  <option value="balanced">Balanced (Pistol + Melee)</option>
+                  <option value="melee_focused">Melee Specialist (Blades/Claws)</option>
+                  <option value="ranged_focused">Ranged Specialist (Rifles/SMGs)</option>
+                  <option value="demolitionist">Demolitionist (Shotgun/Grenades/Rockets)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          {/* Generated Random NPC Dossier Display */}
+          {generatedRandomNPC && (
+            <div className={`p-6 rounded-2xl bg-card border-2 shadow-2xl space-y-5 transition-all relative overflow-hidden ${
+              generatedRandomNPC.tier === 'boss' ? 'border-rose-500/50 shadow-rose-500/10' :
+              generatedRandomNPC.tier === 'lieutenant' ? 'border-amber-500/50 shadow-amber-500/10' :
+              'border-blue-500/50 shadow-blue-500/10'
+            }`}>
+              {/* Background watermark badge */}
+              <div className="absolute -top-10 -right-10 w-44 h-44 bg-primary/5 rounded-full pointer-events-none blur-2xl" />
+
+              {/* Top Banner: Name, Tier, Affiliation, Motive */}
+              <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-3 border-b border-border/60 pb-4">
+                <div>
+                  <div className="flex items-center flex-wrap gap-2 mb-1.5">
+                    <span className={`px-2.5 py-0.5 text-[10px] font-black uppercase rounded-md border ${
+                      generatedRandomNPC.tier === 'boss' ? 'bg-rose-500/20 text-rose-400 border-rose-500/30' :
+                      generatedRandomNPC.tier === 'lieutenant' ? 'bg-amber-500/20 text-amber-400 border-amber-500/30' :
+                      'bg-blue-500/20 text-blue-400 border-blue-500/30'
+                    }`}>
+                      {generatedRandomNPC.tier}
+                    </span>
+                    <span className="px-2 py-0.5 text-[10px] font-bold uppercase rounded-md bg-secondary/60 text-foreground border border-border">
+                      {generatedRandomNPC.role}
+                    </span>
+                    <span className={`px-2 py-0.5 text-[10px] font-bold uppercase rounded-md border ${
+                      generatedRandomNPC.affiliation === 'friendly_npc' ? 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30' :
+                      generatedRandomNPC.affiliation === 'neutral' ? 'bg-zinc-500/20 text-zinc-400 border-zinc-500/30' :
+                      'bg-rose-500/20 text-rose-400 border-rose-500/30'
+                    }`}>
+                      {generatedRandomNPC.affiliation === 'friendly_npc' ? 'Friendly Ally' :
+                       generatedRandomNPC.affiliation === 'neutral' ? 'Neutral' : 'Hostile Enemy'}
+                    </span>
+                  </div>
+
+                  <h3 className="text-2xl font-black text-foreground tracking-wide flex items-center gap-2">
+                    {generatedRandomNPC.name}
+                  </h3>
+
+                  {generatedRandomNPC.quirk && (
+                    <p className="text-xs text-primary/90 italic font-mono mt-1 flex items-center gap-1.5">
+                      <Sparkles className="w-3.5 h-3.5 text-warning flex-shrink-0" />
+                      "{generatedRandomNPC.quirk}"
+                    </p>
+                  )}
+                </div>
+
+                {/* Quick Deploy Buttons in Header */}
+                <div className="flex items-center gap-2 flex-wrap">
+                  <Button
+                    size="sm"
+                    onClick={() => handleSpawnRandom(1)}
+                    className="cyber-btn bg-primary text-primary-foreground text-xs font-bold shadow-md shadow-primary/20"
+                  >
+                    <Plus className="w-3.5 h-3.5 mr-1" />
+                    Deploy +1
+                  </Button>
+                  <Button
+                    size="sm"
+                    onClick={() => handleSpawnRandom(3)}
+                    variant="outline"
+                    className="cyber-btn text-xs font-mono"
+                    title="Spawn 3 identical squad members"
+                  >
+                    Squad (+3)
+                  </Button>
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    onClick={handleRollRandom}
+                    className="cyber-btn text-xs border-warning/40 text-warning hover:bg-warning/10"
+                    title="Roll another random NPC"
+                  >
+                    <RefreshCw className="w-3.5 h-3.5 mr-1" />
+                    Re-Roll
+                  </Button>
+                </div>
+              </div>
+
+              {/* Combat Stats Grid */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-3 text-center">
+                <div className="p-3 rounded-xl bg-secondary/30 border border-border">
+                  <span className="text-[10px] text-muted-foreground uppercase font-mono block">Combat #</span>
+                  <span className="font-mono font-black text-lg text-primary">{generatedRandomNPC.combatNumber}</span>
+                  <span className="text-[9px] text-muted-foreground block">Atk / Def / Skill</span>
+                </div>
+                <div className="p-3 rounded-xl bg-secondary/30 border border-border">
+                  <span className="text-[10px] text-muted-foreground uppercase font-mono block">Non-Combat #</span>
+                  <span className="font-mono font-black text-lg text-foreground">{generatedRandomNPC.nonCombatNumber}</span>
+                  <span className="text-[9px] text-muted-foreground block">General DVs</span>
+                </div>
+                <div className="p-3 rounded-xl bg-secondary/30 border border-border">
+                  <span className="text-[10px] text-muted-foreground uppercase font-mono block">Hit Points</span>
+                  <span className="font-mono font-black text-lg text-rose-400">{generatedRandomNPC.hp}</span>
+                  <span className="text-[9px] text-muted-foreground block">Wound at ≤{generatedRandomNPC.seriouslyWoundedThreshold}</span>
+                </div>
+                <div className="p-3 rounded-xl bg-secondary/30 border border-border">
+                  <span className="text-[10px] text-muted-foreground uppercase font-mono block">Armor SP</span>
+                  <span className="font-mono font-black text-lg text-cyan-400">
+                    {generatedRandomNPC.armor?.head}/{generatedRandomNPC.armor?.body}
+                  </span>
+                  <span className="text-[9px] text-muted-foreground block">Head / Body</span>
+                </div>
+                <div className="p-3 rounded-xl bg-secondary/30 border border-border">
+                  <span className="text-[10px] text-muted-foreground uppercase font-mono block">REF / DEX</span>
+                  <span className="font-mono font-bold text-base text-foreground">
+                    {generatedRandomNPC.ref} / {generatedRandomNPC.dex}
+                  </span>
+                  <span className="text-[9px] text-muted-foreground block">Speed Attributes</span>
+                </div>
+                <div className="p-3 rounded-xl bg-secondary/30 border border-border">
+                  <span className="text-[10px] text-muted-foreground uppercase font-mono block">Init Bonus</span>
+                  <span className="font-mono font-bold text-base text-amber-400">
+                    +{generatedRandomNPC.initiativeSkill || 0}
+                  </span>
+                  <span className="text-[9px] text-muted-foreground block">
+                    {(generatedRandomNPC.initiativeSkill || 0) > 0 ? 'Speedware Active' : 'Standard'}
+                  </span>
+                </div>
+              </div>
+
+              {/* Weapons & Ordnance Section */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {/* Weapons */}
+                <div className="p-4 rounded-xl bg-secondary/15 border border-border/60 space-y-2">
+                  <span className="text-xs font-bold text-muted-foreground uppercase flex items-center gap-1.5">
+                    <Swords className="w-3.5 h-3.5 text-primary" />
+                    Equipped Weapons ({generatedRandomNPC.weapons?.length || 0})
+                  </span>
+                  <div className="space-y-1.5">
+                    {generatedRandomNPC.weapons?.map((w, idx) => (
+                      <div key={idx} className="flex items-center justify-between p-2 rounded-lg bg-card border border-border text-xs font-mono">
+                        <div className="flex items-center gap-2 truncate pr-2">
+                          <Swords className="w-3.5 h-3.5 text-primary flex-shrink-0" />
+                          <span className="font-bold text-foreground truncate">{w.name}</span>
+                          <span className="text-[11px] text-muted-foreground">({w.system.damage})</span>
+                        </div>
+                        <div className="flex items-center gap-1.5 flex-shrink-0">
+                          <span className="text-[10px] px-1.5 py-0.5 rounded bg-secondary text-muted-foreground">
+                            ROF {w.system.rof || 1}
+                          </span>
+                          {w.ammoType && w.ammoType !== 'Basic' && (
+                            <span className="text-[10px] px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30">
+                              {w.ammoType}
+                            </span>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Cyberware & Explosives */}
+                <div className="p-4 rounded-xl bg-secondary/15 border border-border/60 space-y-2">
+                  <span className="text-xs font-bold text-muted-foreground uppercase flex items-center gap-1.5">
+                    <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+                    Combat Cyberware & Ordnance
+                  </span>
+                  
+                  {/* Cyberware tags */}
+                  <div className="flex flex-wrap gap-1.5">
+                    {generatedRandomNPC.cyberware && generatedRandomNPC.cyberware.length > 0 ? (
+                      generatedRandomNPC.cyberware.map((c, idx) => (
+                        <span
+                          key={idx}
+                          className="text-[11px] font-mono px-2 py-0.5 rounded bg-amber-500/10 border border-amber-500/30 text-amber-300 flex items-center gap-1"
+                          title={c.benefit || c.description}
+                        >
+                          <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+                          {c.name}
+                        </span>
+                      ))
+                    ) : (
+                      <span className="text-xs text-muted-foreground italic">No specialized cyberware.</span>
+                    )}
+                  </div>
+
+                  {/* Ordnance tags */}
+                  {generatedRandomNPC.ordinance && generatedRandomNPC.ordinance.length > 0 && (
+                    <div className="pt-2 border-t border-border/40 flex flex-wrap gap-1.5">
+                      {generatedRandomNPC.ordinance.map((ord, oidx) => (
+                        <span
+                          key={oidx}
+                          className="text-[11px] font-mono px-2 py-0.5 rounded bg-rose-500/15 border border-rose-500/30 text-rose-300 flex items-center gap-1"
+                        >
+                          <Bomb className="w-3 h-3" />
+                          {ord.name} ({ord.damage}) x{ord.count}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              {/* Action Bar */}
+              <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-4 border-t border-border/60">
+                <div className="flex items-center gap-2">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => {
+                      if (!generatedRandomNPC) return;
+                      const saved: SavedNPC = {
+                        id: crypto.randomUUID(),
+                        name: generatedRandomNPC.name,
+                        npc: generatedRandomNPC,
+                        savedAt: new Date().toISOString()
+                      };
+                      setSavedNPCs(prev => [...prev, saved]);
+                      toast.success(`Saved "${generatedRandomNPC.name}" to NPC Catalog!`);
+                    }}
+                    className="cyber-btn text-xs"
+                  >
+                    <Save className="w-3.5 h-3.5 mr-1" />
+                    Save to Catalog
+                  </Button>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => handleSendToCustom(generatedRandomNPC)}
+                    className="cyber-btn text-xs border-primary/40 text-primary hover:bg-primary/10"
+                  >
+                    <UserPlus className="w-3.5 h-3.5 mr-1" />
+                    Edit in Custom Creator
+                  </Button>
+                </div>
+
+                <div className="flex items-center gap-2">
+                  <Button
+                    onClick={() => handleSpawnRandom(1)}
+                    className="cyber-btn bg-primary text-primary-foreground font-bold text-xs"
+                  >
+                    <ArrowRight className="w-4 h-4 mr-1.5" />
+                    Deploy to Active Encounter
+                  </Button>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       )}
 

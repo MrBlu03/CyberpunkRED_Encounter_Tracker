@@ -2,7 +2,7 @@
 // Derived 100% directly from official Foundry VTT packs with NO hardcoded fallbacks
 
 import foundryItemsRaw from '@/data/foundryItems.json';
-import type { Weapon, Armor, ShopItem, CombatStyle, EncounterDifficulty, OrdnanceItem } from '@/types';
+import type { Weapon, Armor, ShopItem, CombatStyle, EncounterDifficulty, OrdnanceItem, Participant, Affiliation } from '@/types';
 
 export interface FVTTItem {
   _id: string;
@@ -515,7 +515,233 @@ class CompendiumService {
       cyberware
     };
   }
+
+  // Generates a fully randomized, unique Cyberpunk RED NPC with authentic gear & flavor
+  generateRandomNPC(options: RandomNPCOptions = {}): GeneratedRandomNPC {
+    const category = options.category || 'any';
+    
+    // Filter archetypes
+    let pool = RANDOM_ARCHETYPES;
+    if (category !== 'any') {
+      pool = pool.filter(a => a.category === category);
+      if (pool.length === 0) pool = RANDOM_ARCHETYPES;
+    }
+    if (options.role) {
+      const match = pool.filter(a => a.role.toLowerCase().includes(options.role!.toLowerCase()));
+      if (match.length > 0) pool = match;
+    }
+
+    const arch = pool[Math.floor(Math.random() * pool.length)];
+    const firstName = RANDOM_FIRST_NAMES[Math.floor(Math.random() * RANDOM_FIRST_NAMES.length)];
+    const handle = RANDOM_HANDLES[Math.floor(Math.random() * RANDOM_HANDLES.length)];
+    const surname = RANDOM_SURNAMES[Math.floor(Math.random() * RANDOM_SURNAMES.length)];
+    const quirk = RANDOM_QUIRKS[Math.floor(Math.random() * RANDOM_QUIRKS.length)];
+
+    // Determine Tier
+    let tier: 'mook' | 'lieutenant' | 'boss' = options.tier || 'mook';
+    if (!options.tier) {
+      if (arch.category === 'elite') {
+        tier = Math.random() < 0.6 ? 'boss' : 'lieutenant';
+      } else {
+        const roll = Math.random();
+        if (roll < 0.65) tier = 'mook';
+        else if (roll < 0.90) tier = 'lieutenant';
+        else tier = 'boss';
+      }
+    }
+
+    // Determine Difficulty & Combat Style
+    const difficulty: EncounterDifficulty = options.difficulty || 'medium';
+    const style: CombatStyle = options.style || arch.preferredStyles[Math.floor(Math.random() * arch.preferredStyles.length)];
+    const affiliation: Affiliation = options.affiliation || arch.defaultAffiliation;
+
+    // Base stats by Tier
+    let baseCN = 10;
+    let baseNCN = 6;
+    let baseHP = 25;
+    let baseHeadSP = 7;
+    let baseBodySP = 7;
+    let baseRef = 6;
+    let baseDex = 6;
+    let baseBody = 6;
+    let baseWill = 6;
+
+    if (tier === 'mook') {
+      baseCN = 10;
+      baseNCN = 6;
+      baseHP = 25;
+      baseHeadSP = 4;
+      baseBodySP = 7;
+      baseRef = 6;
+      baseDex = 6;
+      baseBody = 6;
+      baseWill = 5;
+    } else if (tier === 'lieutenant') {
+      baseCN = 12;
+      baseNCN = 8;
+      baseHP = 40;
+      baseHeadSP = 11;
+      baseBodySP = 11;
+      baseRef = 7;
+      baseDex = 7;
+      baseBody = 7;
+      baseWill = 6;
+    } else { // boss
+      baseCN = 15;
+      baseNCN = 10;
+      baseHP = 60;
+      baseHeadSP = 13;
+      baseBodySP = 13;
+      baseRef = 8;
+      baseDex = 8;
+      baseBody = 8;
+      baseWill = 7;
+    }
+
+    // Threat Scaling modifiers
+    const diffStatBonus = difficulty === 'extreme' ? 2 : difficulty === 'hard' ? 1 : difficulty === 'easy' ? -1 : 0;
+    const diffArmorBonus = difficulty === 'extreme' ? 2 : difficulty === 'hard' ? 1 : difficulty === 'easy' ? -1 : 0;
+    const diffHpBonus = difficulty === 'extreme' ? 10 : difficulty === 'hard' ? 5 : difficulty === 'easy' ? -5 : 0;
+
+    const finalCN = Math.max(6, baseCN + diffStatBonus);
+    const finalNCN = Math.max(4, baseNCN + diffStatBonus);
+    const finalHP = Math.max(15, baseHP + diffHpBonus);
+    const finalHeadSP = Math.max(0, baseHeadSP + diffArmorBonus);
+    const finalBodySP = Math.max(4, baseBodySP + diffArmorBonus);
+    const finalRef = Math.min(10, Math.max(4, baseRef + diffStatBonus));
+    const finalDex = Math.min(10, Math.max(4, baseDex + diffStatBonus));
+
+    // Get authentic Foundry loadout
+    const loadout = this.getTacticalLoadout({
+      role: arch.role,
+      style,
+      difficulty,
+      tier
+    });
+
+    // Initiative calculation including cyberware
+    let initBonus = 0;
+    if (loadout.cyberware.some(c => c.name.toLowerCase().includes('kerenzikov'))) initBonus += 2;
+    if (loadout.cyberware.some(c => c.name.toLowerCase().includes('sandevistan'))) initBonus += 3;
+
+    const fullName = `${firstName} "${handle}" ${surname} (${arch.faction})`;
+
+    return {
+      id: crypto.randomUUID(),
+      name: fullName,
+      handle,
+      quirk,
+      faction: arch.faction,
+      category: arch.category,
+      role: `${arch.role} [${arch.faction}]`,
+      affiliation,
+      ref: finalRef,
+      dex: finalDex,
+      body: baseBody,
+      will: baseWill,
+      initiativeSkill: initBonus,
+      hp: finalHP,
+      maxHp: finalHP,
+      seriouslyWoundedThreshold: Math.ceil(finalHP / 2),
+      dead: false,
+      woundState: 'not-wounded',
+      isPC: false,
+      isGoon: true,
+      tier,
+      combatNumber: finalCN,
+      nonCombatNumber: finalNCN,
+      armor: {
+        head: finalHeadSP,
+        body: finalBodySP,
+        maxHead: finalHeadSP,
+        maxBody: finalBodySP
+      },
+      weapons: loadout.weapons.map(w => ({ ...w, ammoType: loadout.ammoType })),
+      ammoType: loadout.ammoType,
+      ordinance: loadout.ordinance,
+      cyberware: loadout.cyberware,
+      combatStyle: style,
+      difficulty,
+      notes: quirk,
+      isCustomNPC: false,
+      manualControl: false
+    };
+  }
 }
+
+export interface RandomNPCOptions {
+  role?: string;
+  category?: 'street' | 'corpo' | 'police' | 'freelance' | 'elite' | 'any';
+  tier?: 'mook' | 'lieutenant' | 'boss';
+  difficulty?: EncounterDifficulty;
+  style?: CombatStyle;
+  affiliation?: Affiliation;
+}
+
+export interface GeneratedRandomNPC extends Participant {
+  handle: string;
+  quirk: string;
+  faction: string;
+  category: string;
+}
+
+const RANDOM_FIRST_NAMES = [
+  'Jax', 'Valerie', 'Dex', 'Raven', 'Cruz', 'Maya', 'Silas', 'Zane', 'Nix', 'Kage',
+  'Lex', 'Dante', 'Kira', 'Reno', 'Jinx', 'Rocco', 'Sonya', 'Victor', 'T-Bug', 'Bishop',
+  'Cole', 'Reese', 'Cinder', 'Damian', 'Elena', 'Malik', 'Talia', 'Gideon', 'Roxie', 'Cassian'
+];
+
+const RANDOM_HANDLES = [
+  'Volt', 'Spike', 'Chrome', 'Wraith', 'Blade', 'Cipher', 'Slick', 'Trigger', 'Zero', 'Ghost',
+  'Viper', 'Riot', 'Razor', 'Brick', 'Echo', 'Frost', 'Burner', 'Shade', 'Havoc', 'Neon',
+  'Glitch', 'Wire', 'Null', 'Slash', 'Torque', 'Pulse', 'Fuse', 'Grid', 'Krypt', 'Byte'
+];
+
+const RANDOM_SURNAMES = [
+  'Kovacs', 'Chen', 'Vance', 'Tanaka', 'Sterling', 'Alvarez', 'Mercer', 'Rossi', 'Dubois', 'Novak',
+  'Sato', 'Kane', 'Thorne', 'Reyes', 'Ward', 'Morales', 'Blackwood', 'Kim', 'Cross', 'Mendoza'
+];
+
+const RANDOM_QUIRKS = [
+  'Twitchy cyberarm; taps fingers rhythmically before pulling the trigger.',
+  'Cold, methodical professional; checks exits and sightlines constantly.',
+  'Heavy combat stim abuser with bloodshot eyes and reckless courage.',
+  'Former corporate black-ops operator burning bridges across Night City.',
+  'Desperate street punk trying to prove their worth to the local fixers.',
+  'Chromed-out brawler obsessed with tearing through metal with mono-blades.',
+  'Armored veteran nursing an old grudge against NCPD and trauma teams.',
+  'Smack-talking mercenary who loves the smell of explosive cordite.',
+  'Cautious marksman who prefers high perches and suppressive crossfires.',
+  'Flashy gonk draped in neon synth-leather, always playing to the crowd.',
+  'Cyberware fanatic constantly tuning their neural speedware in combat.',
+  'Paranoid net-runner bodyguard; carries portable EMP charges at all times.'
+];
+
+interface RandomArchetype {
+  role: string;
+  faction: string;
+  category: 'street' | 'corpo' | 'police' | 'freelance' | 'elite';
+  defaultAffiliation: Affiliation;
+  preferredStyles: CombatStyle[];
+}
+
+const RANDOM_ARCHETYPES: RandomArchetype[] = [
+  { role: 'Boosterganger', faction: 'Maelstrom', category: 'street', defaultAffiliation: 'hostile_npc', preferredStyles: ['melee_focused', 'balanced'] },
+  { role: 'Street Ronin', faction: 'Tyger Claws', category: 'street', defaultAffiliation: 'hostile_npc', preferredStyles: ['melee_focused', 'ranged_focused'] },
+  { role: 'Militia Veteran', faction: '6th Street', category: 'street', defaultAffiliation: 'hostile_npc', preferredStyles: ['balanced', 'ranged_focused'] },
+  { role: 'Barrio Gunner', faction: 'Valentinos', category: 'street', defaultAffiliation: 'hostile_npc', preferredStyles: ['ranged_focused', 'demolitionist'] },
+  { role: 'Corpo Enforcer', faction: 'Arasaka Security', category: 'corpo', defaultAffiliation: 'hostile_npc', preferredStyles: ['balanced', 'ranged_focused'] },
+  { role: 'Shock Trooper', faction: 'Militech Special Tactics', category: 'corpo', defaultAffiliation: 'hostile_npc', preferredStyles: ['demolitionist', 'ranged_focused'] },
+  { role: 'Smart-Link Specialist', faction: 'Kang Tao Ops', category: 'corpo', defaultAffiliation: 'hostile_npc', preferredStyles: ['ranged_focused'] },
+  { role: 'Beat Officer', faction: 'NCPD Patrol', category: 'police', defaultAffiliation: 'friendly_npc', preferredStyles: ['balanced', 'ranged_focused'] },
+  { role: 'Tactical Solo', faction: 'NCPD SWAT', category: 'police', defaultAffiliation: 'hostile_npc', preferredStyles: ['ranged_focused', 'demolitionist'] },
+  { role: 'Max-Tac Operative', faction: 'NCPD Psycho Squad', category: 'elite', defaultAffiliation: 'hostile_npc', preferredStyles: ['balanced', 'demolitionist'] },
+  { role: 'Hired Muscle', faction: 'Freelance Solo', category: 'freelance', defaultAffiliation: 'hostile_npc', preferredStyles: ['balanced', 'melee_focused'] },
+  { role: 'Net-Infiltrator', faction: 'Underground Netrunner', category: 'freelance', defaultAffiliation: 'hostile_npc', preferredStyles: ['ranged_focused', 'balanced'] },
+  { role: 'Combat Medic', faction: 'Ripperdoc Tech', category: 'freelance', defaultAffiliation: 'friendly_npc', preferredStyles: ['balanced'] },
+  { role: 'Outrider Gunner', faction: 'Nomad Clan', category: 'street', defaultAffiliation: 'friendly_npc', preferredStyles: ['ranged_focused', 'demolitionist'] },
+  { role: 'Chromed Berserker', faction: 'Combat Zone Cyberpsycho', category: 'elite', defaultAffiliation: 'hostile_npc', preferredStyles: ['melee_focused', 'demolitionist'] }
+];
 
 export const compendium = new CompendiumService();
 
